@@ -1,0 +1,76 @@
+\subsection{Equations trigonométriques}
+
+
+\begin{exercice}
+Résoudre dans $\R$ puis dans $[-\pi, \pi[$:
+\begin{equation}
+\cos(3x-1)=\sin(2x)
+\end{equation}
+
+
+\begin{equation}
+\cos(3x)+\cos(2x)+\cos(-x)=0
+\end{equation}
+\end{exercice}
+
+\begin{correction}
+$$\cos(3x-1)=\sin(2x)$$
+Equivaut à 
+$$\cos(3x-1)=\cos(\frac{\pi}{2}-2x)$$
+Donc 
+$$\left\{ \begin{array}{cc}
+3x-1&\equiv \frac{\pi}{2}-2x\quad [2\pi]\\
+ou &\\
+3x-1&\equiv -\frac{\pi}{2}+2x\quad [2\pi]
+\end{array}\right.$$
+C'est à dire : 
+$$\left\{ \begin{array}{cc}
+5x&\equiv \frac{\pi}{2}+1\quad [2\pi]\\
+ou &\\
+x&\equiv 1-\frac{\pi}{2}\quad [2\pi]
+\end{array}\right.$$
+
+$$\left\{ \begin{array}{cc}
+x&\equiv \frac{\pi}{10}+\frac{1}{5}\quad [\frac{2\pi}{5}]\\
+ou &\\
+x&\equiv 1-\frac{\pi}{2}\quad [2\pi]
+\end{array}\right.$$
+
+
+
+
+
+
+Sur $\R $ : les solutions sont $$\cS=\bigcup_{k\in \Z} \{ \frac{\pi}{10}+\frac{1}{5} + \frac{2k\pi}{5},1-\frac{\pi}{2}+2k\pi \}$$
+Sur $[-\pi, \pi[$:
+$$\cS\cap [-\pi, \pi[ = \{  \frac{\pi}{10}+\frac{1}{5},  \frac{\pi}{2}+\frac{1}{5} ,  \frac{-3\pi}{10}+\frac{1}{5},  \frac{-7\pi}{10}+\frac{1}{5} ,  \frac{9\pi}{10}+\frac{1}{5}, 1-\frac{\pi}{2}\}$$
+
+
+(On a $\frac{1}{5}< \frac{\pi}{10} \Longleftrightarrow 1<\frac{\pi}{2} $, qui est vrai, donc $ \frac{9\pi}{10}+\frac{1}{5}<\pi$  )
+
+\begin{equation}\tag{(2)}
+\cos(3x)+\cos(2x)+\cos(-x)=0
+\end{equation}
+$\cos(3x) =\Re((e^{ix})^3)=\cos^3(x) -3\cos(x)\sin^2(x)=4\cos^3(x)-3\cos(x) $\\
+$\cos(2x) = \cos^2(x)-\sin^2(x)=2\cos^2(x)-1$\\
+L'équation est équivalente  à 
+$$4\cos^3(x)+2\cos^2(x)-2\cos(x)-1=0$$
+Notons $X=\cos(x)$, on obtient l'équation 
+$$4X^3+2X^2-2X-1 =0.$$
+Or $4X^3+2X^2-2X-1  =4(X+\frac{1}{2}) (X-\frac{\sqrt{2}}{2})(X+\frac{\sqrt{2}}{{2}})$
+On a donc 
+
+$\left\{ \begin{array}{cc}
+\cos(x)&=\frac{-1}{2}\\
+ou&\\
+\cos(x)&=\frac{\sqrt{2}}{2}\\
+ou&\\
+\cos(x)&=-\frac{\sqrt{2}}{2}\\
+\end{array}\right.$
+
+\conclusion{$\cS = \{ \frac{2\pi}{3}+2k\pi, -\frac{2\pi}{3}+2k\pi, \frac{\pi}{4}+2k\pi, -\frac{\pi}{4}+2k\pi,\frac{3\pi}{4}+2k\pi,-\frac{3\pi}{4}+2k\pi\,  |\, k\in \Z\}$}
+
+et 
+\conclusion{$\cS \cap[-\pi, \pi[ =  \{ \frac{2\pi}{3}, -\frac{2\pi}{3}, \frac{\pi}{4}, -\frac{\pi}{4},\frac{3\pi}{4},-\frac{3\pi}{4} \}$}
+
+\end{correction}

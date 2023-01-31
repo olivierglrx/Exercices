@@ -1,0 +1,468 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, August 25, 2004 17:43:57}
+%TCIDATA{LastRevised=Saturday, August 28, 2004 15:18:59}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option economique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES I }}\vspace{0.5cm}
+
+\textbf{Année 1997\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\vspace{13cm}
+
+\hfill \textbf{Tournez la page}
+
+\hfill \textbf{S.V.P\qquad }
+
+\newpage
+
+\section*{Exercice1}
+
+$\alpha $ est un réel strictement positif. Pour tout $n\in \mathbb{N}$ on
+pose : 
+\begin{equation*}
+u_{n}\left( \alpha \right) =\dfrac{n!}{\prod\limits_{k=0}^{n}\left( \alpha
++k\right) }
+\end{equation*}
+
+\begin{enumerate}
+\item Etude de la convergence de la suite $\left( u_{n}\left( \alpha \right)
+\right) _{n\in \mathbb{N}}$
+
+\begin{enumerate}
+\item Montrer que la suite $\left( u_{n}\left( \alpha \right) \right) _{n\in 
+\mathbb{N}}$ est monotone et convergente. Que peut-on déduire pour la série
+de terme général $\left( u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha
+\right) \right) $ ?
+
+On note $\ell \left( \alpha \right) $ la limite de la suite $\left(
+u_{n}\left( \alpha \right) \right) _{n\in \mathbb{N}}$
+
+\item On suppose que $\ell \left( \alpha \right) $ est non nulle. Démontrer
+que : 
+\begin{equation*}
+u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha \right) \underset{%
+n\rightarrow +\infty }{\thicksim }\dfrac{\alpha \ell \left( \alpha \right) }{%
+n}
+\end{equation*}
+
+\item Déduire de ce qui précède que $\ell \left( \alpha \right) =0$
+\end{enumerate}
+
+\item Dans cette question : $\alpha \in ]0,1]$
+
+\begin{enumerate}
+\item Montrer que : 
+\begin{equation*}
+\forall n\in \mathbb{N\;\;}u_{n}\left( \alpha \right) \geqslant \dfrac{1}{%
+n+\alpha }
+\end{equation*}
+
+\item Quelle est la nature de la série de terme général $u_{n}\left( \alpha
+\right) $ ?
+\end{enumerate}
+
+\item On pose pour tout entier naturel $n$ : 
+\begin{equation*}
+I_{n}\left( \alpha \right) =\int\limits_{0}^{+\infty }e^{-\alpha t}\left(
+1-e^{-t}\right) ^{n}dt
+\end{equation*}
+
+\begin{enumerate}
+\item Etudier la convergence de l'intégrale généralisée $I_{n}\left( \alpha
+\right) $ et calculer $I_{0}\left( \alpha \right) $
+
+\item Soit un réel $x$ strictement positif. Intégrer par parties : 
+\begin{equation*}
+\int\limits_{0}^{x}e^{-\alpha t}\left( 1-e^{-t}\right) ^{n}dt
+\end{equation*}%
+et en déduire une relation simple entre $I_{n}\left( \alpha \right) $ et $%
+I_{n-1}\left( \alpha +1\right) $, pour tout $n$ entier naturel non nul.
+
+\item En déduire : $\forall n\in \mathbb{N\;\;}I_{n}\left( \alpha \right)
+=u_{n}$
+\end{enumerate}
+
+\item On suppose désormais que $\alpha >1$
+
+\begin{enumerate}
+\item Montrer que, pour tout $N$ entier naturel : 
+\begin{equation*}
+\sum_{n=0}^{N}I_{n}\left( \alpha \right) =\dfrac{1}{\alpha -1}-I_{N+1}\left(
+\alpha -1\right)
+\end{equation*}
+
+\item En déduire que la série de terme général $u_{n}\left( \alpha \right) $
+est convergente, et donner en fonction de $\alpha $ la valeur de $%
+\sum\limits_{n=0}^{+\infty }u_{n}\left( \alpha \right) $.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2}
+
+$\mathfrak{M}_{3}\left( \mathbb{R}\right) $ désigne l'ensemble des matrices
+carrées d'ordre 3 à coefficients réels.\newline
+$\mathfrak{M}_{3,1}\left( \mathbb{R}\right) $ est l'ensemble des matrices
+colonnes à trois lignes dont les coefficients sont réels.\newline
+On pose : 
+\begin{equation*}
+A=\left( 
+\begin{array}{lll}
+1 & 0 & 2 \\ 
+\dfrac{3}{2} & -2 & 6 \\ 
+\dfrac{1}{2} & -1 & \dfrac{5}{2}%
+\end{array}%
+\right) \;\text{et }B=\left( 
+\begin{array}{c}
+x \\ 
+y \\ 
+z%
+\end{array}%
+\right) 
+\end{equation*}%
+où $x,\;y$ et $z$ sont des nombres réels.\newline
+On définit alors une suite de matrices colonnes $\left( X_{n}\right) _{n\in 
+\mathbb{N}}$ de la manière suivante :
+
+\begin{equation*}
+\left\{ 
+\begin{array}{l}
+X_{0}\in \mathfrak{M}_{3,1}\left( \mathbb{R}\right) \\ 
+\forall n\in \mathbb{N\;X}_{n+1}=AX_{n}+B%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que 0 , $\dfrac{1}{2}$ et $1$ sont les valeurs propres de A,
+et préciser des vecteurs propres $u,\;v$ et $w$ qui leur sont respectivement
+associés.
+
+\item Justifier les affirmations suivantes :
+
+\begin{itemize}
+\item il existe un unique triplet $\left( \alpha ,\beta ,\gamma \right) $ de 
+$\mathbb{R}^{3}$ tel que : 
+\begin{equation*}
+B=\alpha u+\beta v+\gamma w
+\end{equation*}
+
+\item Pour tout entier naturel $n,$ il existe un unique triplet $\left(
+\alpha _{n},\beta _{n},\gamma _{n}\right) $ de $\mathbb{R}^{3}$ tel que : 
+\begin{equation*}
+X_{n}=\alpha _{n}u+\beta _{n}v+\gamma _{n}w
+\end{equation*}
+\end{itemize}
+
+\item Etablir par récurrence que 
+\begin{equation*}
+n\in \mathbb{N}^{\ast }\;\;\left\{ 
+\begin{array}{l}
+\alpha _{n}=\alpha \\ 
+\beta _{n}=\left( \dfrac{1}{2}\right) ^{n}\left( \beta _{0}-2\beta \right)
++2\beta \\ 
+\gamma _{n}=\gamma _{0}+n\gamma%
+\end{array}%
+\right.
+\end{equation*}
+
+\item Soit $\left( a_{n}\right) _{n\in \mathbb{N}},\;\left( b_{n}\right)
+_{n\in \mathbb{N}}$ et $\left( c_{n}\right) _{n\in \mathbb{N}}$ les suites ré%
+elles telles que : 
+\begin{equation*}
+\forall n\in \mathbb{N\;}X_{n}=\left( 
+\begin{array}{c}
+a_{n} \\ 
+b_{n} \\ 
+c_{n}%
+\end{array}%
+\right)
+\end{equation*}%
+On dit que la suite de matrices colonnes $\left( X_{n}\right) _{n\in \mathbb{%
+N}}$ converge si les suites réelles $\left( a_{n}\right) _{n\in \mathbb{N}%
+},\;\left( b_{n}\right) _{n\in \mathbb{N}}$ et $\left( c_{n}\right) _{n\in 
+\mathbb{N}}$ convergent. Dans ce cas on écrit : 
+\begin{equation*}
+\lim X_{n}=\left( 
+\begin{array}{c}
+\lim a_{n} \\ 
+\lim b_{n} \\ 
+\lim c_{n}%
+\end{array}%
+\right)
+\end{equation*}
+
+\begin{enumerate}
+\item Prouver que $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge si et
+seulement si le réel $\gamma $ (introduit en 2.) est nul.
+
+\item En déduire que $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge si et
+seulement si : 
+\begin{equation*}
+3x-4y+12z=0
+\end{equation*}
+\end{enumerate}
+
+\item On dit que le couple $(A,B)$ admet une position d'équilibre stable si
+la suite $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge vers la même
+limite quelle que soit la valeur de $X_{0}$.
+\end{enumerate}
+
+Expliquer pourquoi, quelle que soit la valeur de $B$, le couple $\left(
+A,B\right) $ n'admet pas de position d'équilibre stable.
+
+\section*{Exercice 3}
+
+Dans tout le problème (qui comporte deux parties indépendantes), on suppose
+que la durée, exprimée en minutes, d'une communication téléphonique est une
+variable aléatoire réelle $D$ qui suit la loi exponentielle de paramètre $%
+\alpha $
+
+\subsection*{I Comparaison de deux tarifications}
+
+Pour ses communications, on propose à l'utilisateur d'une ligne téléphonique
+deux tarifications $T_{1}$ et $T_{2}$, exprimées en francs, définies de la fa%
+çon suivante :
+
+\begin{itemize}
+\item $T_{1}=aD$, où $a$ est un nombre réel strictement supérieur à 1 qui
+représente le prix d'une minute de communication
+
+\item $T_{2}$ est à valeurs dans $\mathbb{N}^{\ast }$ et, pour tout $n$
+entier naturel non nul : $\{T_{2}=n\}=\{n-1<D\leqslant n\}$
+\end{itemize}
+
+\begin{enumerate}
+\item Calculer $E(T_{1})$ en fonction de $a$ et de $\alpha $.
+
+\item Déterminer la loi de $T_{2}$. De quelle loi s'agit-il ? Exprimer $%
+E(T_{2})$ en fonction de $\alpha $
+
+\item On pose : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\forall t\in \mathbb{R}_{+}^{\ast }:\varphi \left( t\right) =\dfrac{t}{%
+1-e^{-t}} \\ 
+\varphi \left( 0\right) =1%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $\varphi $ est une fonction de classe $C^{1}$ sur $%
+[0,+\infty \lbrack $
+
+\item On définit de plus la fonction $\psi $ sur $[0,+\infty \lbrack $ par : 
+\begin{equation*}
+\forall t\in \mathbb{R}:\psi \left( t\right) =1-\left( 1+t\right) e^{-t}
+\end{equation*}%
+Utiliser cette fonction pour en déduire que $\varphi $ réalise une bijection
+de$[0,+\infty \lbrack $ vers $[1,+\infty \lbrack $
+\end{enumerate}
+
+\item Comparaison des tarifications
+
+\begin{enumerate}
+\item Montrer qu'il existe un unique réel $\alpha _{0}$ strictement positif
+tel que $\varphi \left( \alpha _{0}\right) =a$
+
+\item Préciser quelle est, en moyenne, la tarification la plus avantageuse
+suivant la valeur de la durée moyenne d'une communication.
+\end{enumerate}
+
+\item Pour $a=1,25$ donner, en utilisant votre calculatrice. une valeur
+approchée de $\dfrac{1}{\alpha _{0}}$
+
+(on ne donnera que les deux premières décimales fournies par la
+calculatrice).
+\end{enumerate}
+
+\subsection*{II Étude d'un standard téléphonique}
+
+Dans toute cette partie, $\theta $ est un nombre réel strictement positif
+représentant un temps exprimé en minutes. Un standard téléphonique de capacit%
+é illimitée reçoit des communications téléphoniques entre l'instant 0 et
+l'instant $\theta $ inclus.
+
+\subsubsection*{II. A) Cas d'une seule communication}
+
+On désigne par n un entier naturel non nul. L'instant où débute la
+communication est une variable aléatoire réelle $I_{n}$ telle que : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+I_{n}\left( \Omega \right) =\left\{ \dfrac{\theta }{n},\dfrac{2\theta }{n}%
+,\dots ,\dfrac{\left( n-1\right) \theta }{n},\dfrac{n\theta }{n}\right\}  \\ 
+\forall k\in \left[ \left[ 1,n\right] \right] :p\left( I_{n}=\dfrac{k\theta 
+}{n}\right) =\dfrac{1}{n}%
+\end{array}%
+\right. 
+\end{equation*}%
+où $p$ désigne la probabilité. De plus $I_{n}$ et $D$ (la durée aléatoire de
+la communication) sont indépendantes.
+
+\begin{enumerate}
+\item Pour tout réel positif $t,$ rappeler quelle est l'expression de $%
+p\left( D>t\right) $ en fonction de $t$ et de $\alpha $.
+
+\item En déduire, pour $k$ élément de $\left[ \left[ 1,n\right] \right] $ la
+probabilité conditionnelle de $\left\{ D+I_{n}>\theta \right\} $ sachant $%
+\left\{ I_{n}=\dfrac{k\theta }{n}\right\} .$
+
+\item Démontrer l'égalité suivante : 
+\begin{equation*}
+p\left( D+I_{n}>\theta \right) =\dfrac{1}{n}\left( \dfrac{1-e^{-\alpha
+\theta }}{1-e^{-\dfrac{\alpha \theta }{n}}}\right)
+\end{equation*}
+
+\item Déterminer : 
+\begin{equation*}
+\lim_{n\rightarrow +\infty }p\left( D+I_{n}>\theta \right)
+\end{equation*}
+\end{enumerate}
+
+\subsubsection*{II. B) Étude de l'encombrement du standard à l'instant $%
+\protect\theta $}
+
+Dans cette partie on définit les nombres réels $p$ et $q$ par : 
+\begin{equation*}
+p=\dfrac{1-e^{-\alpha \theta }}{\alpha \theta }\text{ et }q=1-p
+\end{equation*}%
+On suppose désormais que la probabilité qu'une communication reçue dans
+l'intervalle de temps $\left[ 0,\theta \right] $ se poursuive au-delà de
+l'instant $\theta $ est égale à $p$.\newline
+On note $N_{\theta }$ la variable aléatoire réelle égale au nombre de
+communications reçues dans l'intervalle de temps $\left[ 0,\theta \right] $
+et l'on suppose que $N_{\theta }$ suit une loi de Poisson de paramètre $%
+\theta $.\newline
+On note$C_{\theta }$ la variable aléatoire réelle égale au nombre de
+communications reçues dans l'intervalle de temps $\left[ 0,\theta \right] $
+qui se poursuivent au-delà de l'instant $\theta $\newline
+Les instants aléatoires où les communications se terminent sont mutuellement
+indépendant.
+
+\begin{enumerate}
+\item Loi de probabilité de $C_{\theta }$
+
+\begin{enumerate}
+\item Soit $r$ un entier naturel. Quelle est la loi conditionnelle de $%
+C_{\theta }$ sachant que $\left\{ N_{\theta }=r\right\} $ ?
+
+\item Démontrer que l'on a : 
+\begin{equation*}
+\forall r\in \mathbb{N\;\;\forall }k\in \left[ \left[ 0,r\right] \right]
+,\quad p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta
+}=r\right\} \right) =\dfrac{e^{-\theta }\left( p\theta \right) ^{k}\left(
+q\theta \right) ^{r-k}}{k!\left( r-k\right) !}
+\end{equation*}
+
+\item En déduire, pour tout entier naturel $k$, une expression simple de $%
+p\left( C_{\theta }=k\right) $ en fonction de $k$, $p,$ et $\theta $. Quelle
+est la loi de probabilité de $C_{\theta }?$
+\end{enumerate}
+
+\item Étude de l'espérance de $C_{\theta }$
+
+\begin{enumerate}
+\item Déterminer l'expression de $E\left( C_{\theta }\right) $ en fonction
+de $\theta $ et de $\alpha $.
+
+\item Quelle est la limite de $E\left( C_{\theta }\right) $ lorsque $\theta $
+tend vers$+\infty $ ? Vérifier qu'elle majore $E\left( C_{\theta }\right) $.
+\end{enumerate}
+\end{enumerate}
+
+\label{fin}
+
+\end{document}

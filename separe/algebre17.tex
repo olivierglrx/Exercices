@@ -1,0 +1,74 @@
+\subsection{Tirages conditionnels  }
+
+\begin{exercice}
+Une urne contient $b\in \N^*$ boules blanches et $n\in \N^*$ boules noires. On effectue des tirages successifs. Après chaque tirage, on remet la boule tirée dans l'urne en y rajoutant $a\in \N^*$ boules de la même couleur. \\
+On répète l'expèrience à chaque tirage. \\
+On note $B_i$ l'événement \og Obtenir une boule blanche au tirage $i$\fg \, et $N_i$    \og Obtenir une boule noire au tirage $i$\fg.
+\begin{enumerate}
+\item Calculer $\bP(B_1)$ et $\bP(B_2)$.
+\item Pour $p,q\in \N$, déterminer la probabilité d'obtenir d'abord $p$ boules blanches puis $q$ boules noires. 
+\item Préciser cette valeur pour $b=n=a$. 
+\item Déterminer la probabilité d'obtenir exactement $p$ boules blanches en $p+q$ tirages. 
+\item Préciser cette valeur pour $p=n=a$. 
+\item 
+\begin{enumerate}
+\item Ecrire une fonction Python qui modélise  le tirage d'une boule dans une urne avec $b$ boules blanches et $n$ boules noires.
+\item Ecrire une fonction Python qui modélise $N$ tirages successifs (comme décris dans l'énoncé) et retourne le nombre de boules blanches tirées. 
+\item Ecrire une fonction Python qui effectue l'expérience décrite et retourne le numéro du premier tirage où l'on tire une boule blanche. 
+\end{enumerate}
+
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Pour $B_1$ il s'agit d'une probabilité uniforme, sur un ensemble de $b+n$ éléments.  $\bP(B_1) =\frac{b}{b+n}$.
+
+Pour $B_2$ on utilise le systême complet d'événements $B_1, N_1$, la formule des probabilités totales donne : 
+\begin{align*}
+\bP(B_2) &= \bP(B_2|B_1) \bP(B_1) + \bP(B_2|N_1) \bP(N_1)\\
+			&= \frac{b+a}{b+n+a}\frac{b}{b+n}+\frac{b}{b+n+a}\frac{n}{b+n}\\
+			&= \frac{b^2+ab +bn }{(b+n+a)(b+n)}
+\end{align*}
+\item Soit $E_{p,q}$ l'événements "obtenir $p$ boules blanches puis $q$ boules noires".
+On a $$E_{p,q} = \cap_{i=1}^p B_i \cap_{i=p+1}^{p+q} N_{i}$$
+Ce qui donne en utilisant la formule des probabilités composées :
+\begin{align*}
+\bP(E_{p,q}) &= \bP(B_1) \bP_{B_1} (B_2) \dots \bP_{\cap_{i=1}^{p-1} B_i} (B_p)  \bP_{\cap_{i=1}^{p} B_i} (N_p)  \bP_{\cap_{i=1}^{p} B_i \cap N_p} (N_{p+1})  \dots  \bP_{\cap_{i=1}^{p}B_i \cap_{i=p+1}^{p+q-1} N_{i}} (N_{p+q}) \\
+&= \frac{b}{b+n } \frac{b+a}{b+n+a }  \dots \frac{b+(p-1)a}{b+n +(p-1)a} \frac{n}{b+n+p a }  \frac{n+a}{b+n+(p+1) a }  \dots \frac{n+(q-1)a}{b+n+(p+q-1) a }  \\
+\end{align*}
+\item Si $a=b=n$
+\begin{align*}
+\frac{b}{b+n } \frac{b+a}{b+n+a }  \dots \frac{b+(p-1)a}{b+n +(p-1)a}  &=  \frac{n}{n+n } \frac{n+n}{n+n+n }  \dots \frac{n+(p-1)n}{n+n +(p-1)n} \\
+&= \frac{1}{2 } \frac{2}{3}  \dots \frac{np}{(p+1)n} \\
+&=  \frac{1}{(p+1)} 
+\end{align*} 
+
+et 
+\begin{align*}
+\frac{n}{b+n+p a }  \frac{n+a}{b+n+(p+1) a }  \dots \frac{n+(q-1)a}{b+n+(p+q-1) a }  
+&= \frac{n}{(p+2)n }  \frac{n+n}{(p+3)n }  \dots \frac{n+(q-1)n}{n+n+(p+q-1) n } \\
+&=\frac{1}{(p+2) }  \frac{2}{(p+3) }  \dots \frac{q}{(p+q+1)  }\\
+&= \frac{q! (p+1)!}{(p+q+1)!}\\
+&= \frac{1}{\binom{p+q+1}{p+1}}
+\end{align*}
+
+On obtient :
+$$\bP(E_{p,q}) =  \frac{1}{\binom{p+q+1}{p+1}(p+1)} $$
+
+\item Soit $F_{p,q}$ l'événement 'obtenir exactement $p$ boules blanches en $p+q$ tirages'. On peut ainsi choisir indépendamment le numéro des $p$  tirages parmi les $p+q$ où l'on tire les blanches. On obtient donc $\binom{p+q}{p}\Card(E_{p,q})  =\Card(F_{p,q})$
+$$\bP(F_{p,q}) = \binom{p+q}{p}\bP(E_{p,q})$$
+
+\item 
+ On a donc pour $b=n=a$ d'après les deux questions précédentes : 
+ \begin{align*}
+ \bP(F_{p,q})  & =  \frac{\binom{p+q}{p}}{\binom{p+q+1}{p+1}(p+1)}  \\
+ 					&= \frac{1}{p+q+1 }
+ \end{align*}
+ 
+ \item \begin{enumerate}
+ \item 
+  
+ \end{enumerate}
+\end{enumerate}
+\end{correction}

@@ -1,0 +1,26 @@
+
+\begin{correction}   \; \textbf{Module et argument de $\mathbf{1+u}$ avec $\mathbf{u}$ de module 1:}\\
+Comme $u\in\bC$ est un complexe de module 1, il s'\'ecrit sous la forme $u=e^{i\varphi}$ avec $\varphi$ un argument.\\
+Par la m\'ethode des angles moiti\'es, on obtient:
+$$
+1+u = e^{i0}+e^{i\varphi}= e^{\frac{i\varphi}{2}}\left( e^{-\frac{i\varphi}{2}}+e{\frac{i\varphi}{2}}  \right)= 2\cos{\left(\ddp\frac{\varphi}{2}  \right)}e^{\frac{i\varphi}{2}}.$$
+Ainsi, $|1+u|=2\left|\cos{\left(\ddp\frac{\varphi}{2}\right)}\right|$ et il faut \'etudier le signe de $\cos{\left(\ddp\frac{\varphi}{2}\right)}$.
+\begin{itemize}
+ \item[$\bullet$] Si $\cos{\left(\ddp\frac{\varphi}{2}\right)}\geq 0$, alors $\left\lbrace\begin{array}{l}
+|1+u|=2\cos{\left(\ddp\frac{\varphi}{2}\right)} \vsec\\
+\arg{(1+u)}\equiv \ddp\frac{\varphi}{2}\lbrack 2\pi\rbrack.
+\end{array}\right.$\\
+Et la r\'esolution de $\cos{\left(\ddp\frac{\varphi}{2}\right)}\geq 0$ donne
+$$
+\cos{\left(\ddp\frac{\varphi}{2}\right)}\geq 0  \Leftrightarrow \exists k\in\Z,\ -\ddp\frac{\pi}{2}+2k\pi\leq \ddp\frac{\varphi}{2}\leq \ddp\frac{\pi}{2}+2k\pi\Leftrightarrow  \exists k\in\Z,\ -\pi+4k\pi\leq \varphi\leq \pi+4k\pi.$$
+\item[$\bullet$] Si $\cos{\left(\ddp\frac{\varphi}{2}\right)}\leq 0$, alors $\left\lbrace\begin{array}{l}
+|1+u|=-2\cos{\left(\ddp\frac{\varphi}{2}\right)} \vsec\\
+\arg{(1+u)}\equiv \ddp\frac{\varphi}{2}+\pi\lbrack 2\pi\rbrack.
+\end{array}\right.$\\
+En effet, $-1=e^{i\pi}$.\\
+Et la r\'esolution de $\cos{\left(\ddp\frac{\varphi}{2}\right)}\leq 0$ donne
+$$
+\cos{\left(\ddp\frac{\varphi}{2}\right)}\leq 0  \Leftrightarrow \exists k\in\Z,\ \ddp\frac{\pi}{2}+2k\pi\leq \ddp\frac{\varphi}{2}\leq \ddp\frac{3\pi}{2}+2k\pi
+\Leftrightarrow  \exists k\in\Z,\ \pi+4k\pi\leq \varphi\leq 3\pi+4k\pi.$$  
+\end{itemize}
+\end{correction}

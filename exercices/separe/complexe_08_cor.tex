@@ -1,0 +1,40 @@
+
+\begin{correction}   \;
+\begin{enumerate}
+\item \textbf{Lin\'eariser $\mathbf{\sin^5{x}}$} : on utilise la formule d'Euler, puis on d\'eveloppe gr\^ace \`a la formule du bin\^ome de Newton. Il suffit ensuite de rassembler les exponentielles conjugu\'ees, et d'appliquer \`a nouveau la formule d'Euler dans l'autre sens.
+$$\begin{array}{rcl}
+\sin^5 x & = & \ddp \left( \frac{e^{ix} - e^{-i x}}{2i} \right)^5\vsec\\
+& =& \ddp \frac{1}{32 i} \left( e^{5ix} - 5 e^{4ix}e^{-ix} + 10 e^{3ix} e^{-2ix} - 10 e^{2ix}e^{-3ix} + 5 e^{ix}e^{-4ix} - e^{-5ix}\right)\vsec\\
+& =& \ddp \frac{1}{32 i} \left( e^{5ix} - e^{-5ix} + 5 (-e^{3ix} + e^{-3ix}) + 10 (e^{ix} - e^{-ix} ) \right)\vsec\\
+& = & \ddp \frac{1}{32 i} \left( 2i \sin(5x) - 10i \sin(3x) + 20 i\sin x\right) 
+\end{array}$$
+On obtient finalement : \fbox{$\sin^5{x}=\ddp\frac{\sin{(5x)}}{16}-\ddp\frac{5}{16}\sin{(3x)}+\ddp\frac{5}{8}\sin{x}$}.\\
+Une primitive est donc donn\'ee par : $F(x) = -\ddp\frac{1}{80}\cos{(5x)}+\ddp\frac{5}{48}\cos{(3x)}-\ddp\frac{5}{8}\cos{x}+C$, avec $C \in \R$.
+%---
+\item \textbf{Lin\'eariser $\mathbf{\sin^3{x}\cos^2{x}}$} : Attention de ne pas lin\'eariser s\'eparemment les deux termes ! Il faut ici d\'evelopper toutes les exponentielles, avant de repasser aux cosinus et sinus.
+$$\begin{array}{rcl}
+\sin^3{x}\cos^2{x} & = &\ddp \left( \frac{e^{ix}-e^{-ix}}{2i}\right)^3 \left( \frac{e^{ix}+e^{-ix}}{2}\right)^2\vsec\\
+& = & \ddp \frac{-1}{8i} \times \frac{1}{4} \times \left(e^{3ix} - 3 e^{ix} + 3 e^{-ix} - e^{-3ix}\right) \left(e^{2ix} + 2 + e^{-2ix}\right)\vsec\\
+& = & \ddp \frac{-1}{32i} \left(e^{5ix} + 2e^{3ix} + e^{ix} - 3e^{3ix} - 6 e^{ix} - 3 e^{-ix} + 3 e^{ix} + 6 e^{-ix} + 3 e^{-3ix} - e^{-ix} - 2 e^{-3ix} - e^{-5ix} \right)\vsec\\
+& = & \ddp \frac{-1}{32i} \left(e^{5ix} - e^{-5ix} - (e^{3ix} - e^{-3ix}) - 2 (e^{ix} - e^{-ix})\right)\vsec\\
+& = & \ddp \frac{-1}{32i} \left(2i \sin (5x) - 2i \sin(3x) - 4i \sin x\right)
+\end{array}$$
+On obtient : \fbox{$\sin^3{x}\cos^2{x}=-\ddp\frac{\sin{(5x)}}{16}+\ddp\frac{\sin{(3x)}}{16}+\ddp\frac{\sin{x}}{8}$}.\\
+Une primitive est donc donn\'ee par : $F(x) = \ddp\frac{\cos{(5x)}}{80}-\ddp\frac{\cos{(3x)}}{48}-\ddp\frac{\cos{x}}{8}+C$, avec $C \in \R$.
+%---
+\item \textbf{Lin\'eariser $\mathbf{\cos^6{x}}$}: On obtient : \fbox{$\cos^6{x}=\ddp\frac{\cos{(6x)}}{32}+\ddp\frac{3\cos{(4x)}}{16}+\ddp\frac{15\cos{(2x)}}{32}+\ddp\frac{5}{8}$}.\\
+Une primitive est donc donn\'ee par : $F(x) = \ddp\frac{\sin{(6x)}}{192}+\ddp\frac{3\sin{(4x)}}{64}+\ddp\frac{15\sin{(2x)}}{64}+\ddp\frac{5}{8}x+C$, avec $C \in \R$.
+%---
+\item \textbf{Lin\'eariser $\mathbf{\sin^6{(x)}}$}: On obtient : \fbox{$\sin^6{(x)}=-\ddp\frac{\cos{(6x)}}{32}+\ddp\frac{3}{16}\cos{(4x)}-\ddp\frac{15}{32}\cos{(2x)}+\ddp\frac{5}{16}$}.\\
+Une primitive est donc donn\'ee par : $F(x) = \ddp\frac{-1}{192} \sin{(6x)} +\ddp\frac{3}{64}\sin{(4x)}-\ddp\frac{15}{64}\sin{(2x)}+\ddp\frac{5}{16}x+C$, avec $C \in \R$.
+%---
+\item \textbf{Lin\'eariser $\mathbf{\sin^4{(x)}\cos^3{(x)}}$}: On obtient :\\
+ \fbox{$\sin^4{(x)}\cos^3{(x)}= \ddp\frac{1}{2^6}\left(  \cos{(7x)}-\cos{(5x)}-3\cos{(3x)}+3\cos{(x)} \right) $}.\\
+ 
+Une primitive est donc donn\'ee par : $$F(x) = \ddp\frac{1}{2^6}\left( \ddp\frac{ \sin{(7x)}}{7} -\ddp\frac{\sin{(5x)}}{5}-\sin{(3x)}+3\sin{(x)} \right)+C,$$ avec $C \in \R$.
+%---
+\item \textbf{Lin\'eariser $\mathbf{\sin^4{(x)}\cos^4{(x)}}$}: On obtient : \fbox{$\sin^4{(x)}\cos^4{(x)}= \ddp\frac{1}{2^7}\left(  \cos{(8x)}-4\cos{(4x)}+3 \right) $}.\\
+Une primitive est donc donn\'ee par : $F(x) = \ddp\frac{1}{2^7}\left(  \ddp\frac{\sin{(8x)}}{8}-\sin{(4x)}+3x \right)+C$, avec $C \in \R$.
+%---
+\end{enumerate}
+\end{correction}

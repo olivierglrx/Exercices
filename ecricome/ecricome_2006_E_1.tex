@@ -1,0 +1,421 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, October 18, 2006 10:13:00}
+%TCIDATA{LastRevised=Wednesday, October 18, 2006 11:25:48}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+\pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option economique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES}} \vspace{0.5cm}
+
+\textbf{Année 2006\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\vspace{13cm}
+
+\hfill \textbf{Tournez la page}
+
+\hfill \textbf{S.V.P\qquad }
+
+\newpage
+
+\section*{EXERCICE 1}
+
+. On considère la fonction $f$ définie pour tout réel $x$ par : 
+\begin{equation*}
+.f\left( x\right) =x+1+2e^{x}
+\end{equation*}
+
+ainsi que la fonction $g\ $des deux variables réelles $x$ et $y$ définie par
+: 
+\begin{equation*}
+g\left( x,y\right) =e^{x}\left( x+y^{2}+e^{x}\right)
+\end{equation*}
+
+\subsection*{1. Recherche d'extremum local de $g.$}
+
+\begin{enumerate}
+\item Etudier les variations de $f$ et donner les limites de $f\left(
+x\right) $ lorsque $x$ tend vers $+\infty $ et $-\infty $.
+
+\item Justifier l'existence d'une asymptote oblique au voisinage de $-\infty 
+$ et donner la position de la courbe représentative de $f$ par rapport à
+cette asymptote.
+
+\item Déduire des variations de $f$ l'existence d'un unique réel $\alpha $, é%
+lément de l'intervalle $\left[ -2,-1\right] $ tel que $f\left( \alpha
+\right) =0$. ( on rappelle que $e\simeq 2,7$ )
+
+\item Déterminer le seul point critique de $g$, c'est-à-dire le seul couple
+de $\mathbb{R}^{2}$, en lequel $g$ est susceptible de présenter un extremum.
+
+\item Vérifier que $g$ présente un extremum relatif $\beta $ en ce point.
+Est-ce un maximum ou un minimum ?
+
+\item Montrer que l'on a : 
+\begin{equation*}
+4\beta +\alpha ^{2}-1=0
+\end{equation*}
+\end{enumerate}
+
+\subsection*{2. Etude d'une suite réelle.}
+
+On s'intéresse à la suite $\left( u_{n}\right) _{n\in \mathbb{N}}$ définie
+par son premier terme $u_{0}=-1$ et par la relation 
+\begin{equation*}
+\forall n\in \mathbb{N\quad }u_{n+1}=u_{n}-\frac{f\left( u_{n}\right) }{%
+f^{\prime }\left( u_{n}\right) }
+\end{equation*}
+
+\begin{enumerate}
+\item Prouver que $f$ est convexe sur $\mathbb{R}$. En déduire que que pour
+tous réels $x$ et $t$ :
+
+\begin{equation*}
+f\left( x\right) +\left( t-x\right) f^{\prime }\left( x\right) \leqslant
+f\left( t\right)
+\end{equation*}
+
+\item En déduire l'inégalité suivante : 
+\begin{equation*}
+\forall n\in \mathbb{N\quad \alpha }\leqslant u_{n+1}
+\end{equation*}%
+Puis que pour tout entier naturel $n$. : 
+\begin{equation*}
+\alpha \leqslant u_{n+1}\leqslant u_{n}\leqslant -1
+\end{equation*}%
+En déduire que la suite $\left( u_{n}\right) _{n\in \mathbb{N}}$ est
+convergente vers un réel à préciser
+
+\item On admet que pour tout $x$ de l'intervalle$\left[ -2,-1\right] :$%
+\begin{equation*}
+0\leqslant \left( x-\alpha \right) f^{\prime }\left( x\right) -f\left(
+x\right) \leqslant \frac{\left( x-\alpha \right) ^{2}}{e}
+\end{equation*}
+
+\begin{enumerate}
+\item Prouver alors que pour tout entier naturel $n$ : 
+\begin{equation*}
+0\leqslant u_{n+1}-\alpha \leqslant \frac{\left( u_{n}-\alpha \right) ^{2}}{e%
+}
+\end{equation*}
+
+\item Puis démontrer par récurrence que pour tout entier naturel $n$ :
+
+\begin{equation*}
+0\leqslant u_{n}-\alpha \leqslant \frac{1}{e^{2^{n}}-1}
+\end{equation*}
+\end{enumerate}
+
+\item Écrire un programme en langage Pascal permettant, lorsque l'entier
+naturel $p$ est donné par l'utilisateur, de calculer une valeur approchée de 
+$\alpha $, de telle sorte que l'on ait : 
+\begin{equation*}
+0\leqslant u_{n}-\alpha \leqslant 10^{-p}
+\end{equation*}
+\end{enumerate}
+
+\section*{EXERCICE 2}
+
+Pour tout entier naturel $n$, on définit la fonction $f_{n}$ de la variable r%
+éelle $x$ par : 
+\begin{equation*}
+f_{n}\left( x\right) =x^{n}\exp \left( -\frac{x^{2}}{2}\right)
+\end{equation*}
+
+\begin{enumerate}
+\item Justifier que $f_{n}\left( x\right) $ est négligeable devant $\dfrac{1%
+}{x^{2}}$ au voisinage de $+\infty $.
+
+\item Prouver la convergence de l'intégrale $\int\limits_{0}^{+\infty
+}f_{n}\left( x\right) dx$
+
+\item O pose $I_{n}=\int\limits_{0}^{+\infty }f_{n}\left( x\right) dx$
+
+\begin{enumerate}
+\item A l'aide d'une intégration par parties portant sur des intégrales dé%
+finies sur le segment $\left[ 0,A\right] $ avec $A\geqslant 0$, prouver que
+pour tout entier naturel $n:$%
+\begin{equation*}
+I_{n+2}=\left( n+1\right) I_{n}
+\end{equation*}
+
+\item En utilisant la loi normale centrée réduite, justifier que : 
+\begin{equation*}
+I_{0}=\sqrt{\frac{\pi }{2}}
+\end{equation*}
+
+\item Donner la valeur de $I_{1}$
+
+\item Démontrer par récurrence que pour tout entier naturel $n:$
+
+\begin{eqnarray*}
+I_{2n} &=&\sqrt{\frac{\pi }{2}}\frac{\left( 2n\right) !}{2^{n}n!} \\
+I_{2n+1} &=&2^{n}n!
+\end{eqnarray*}
+\end{enumerate}
+
+\item Soit $f$ la fonction définie pour tout réel $x$ par : 
+\begin{equation*}
+\left\{ 
+\begin{array}{cc}
+f\left( x\right) =f_{1}\left( x\right) & \text{si }x\geqslant 0 \\ 
+f\left( x\right) =0 & \text{si }x<0%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Démontrer que $f$ est une densité de probabilité.
+
+\item Soit $X$ une variable aléatoire réelle qui admet $f$ pour densité de
+probabilité.
+
+\begin{enumerate}
+\item Justifier que $X$ admet une espérance $E\left( X\right) $, et préciser
+sa valeur
+
+\item Justifier que $X$ admet une variance $V\left( X\right) $, et préciser
+sa valeur.
+\end{enumerate}
+\end{enumerate}
+
+\item On désigne par $F$ et $G$ les fonctions de répartitions respectives de 
+$X$ et de $Y=X^{2}$
+
+\begin{enumerate}
+\item Exprimer $G\left( x\right) $ en fonction de $F\left( x\right) $ en
+distinguant les deux cas : $x<0$ et $x\geqslant 0$
+
+\item En déduire que $Y$ est une variable à densité. Reconnaître la loi de $%
+Y $ et donner la valeur de $E\left( Y\right) $ et $V\left( Y\right) $
+\end{enumerate}
+\end{enumerate}
+
+\newpage
+
+\section*{EXERCICE 3}
+
+$E$ désigne l'espace des fonctions polynômes à coefficients réels, dont le
+degré est inférieur ou égal à l'entier naturel 2.
+
+\subsection*{1. Etude d'un endomorphisme de $E$.}
+
+On considère l'application $f$ qui, à tout élément $P$ de $E, $ associe la
+fonction polynôme $Q$ telle que : 
+\begin{equation*}
+\text{pour tout }x\text{ réel :\qquad }Q\left( x\right) =\left( x-1\right)
+P^{\prime }\left( x\right) +P\left( x\right)
+\end{equation*}
+et $\mathcal{B=}\left( P_{0},P_{1},P_{2}\right) $ la base canonique de $E$ dé%
+finie par : 
+\begin{equation*}
+\text{pour tout réel }x:\qquad P_{0}\left( x\right) =1,\;P_{1}\left(
+x\right) =x\text{ et }P_{2}\left( x\right) =x^{2}
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $f$ est un endomorphisme de $E$.
+
+\item Vérifier que la matrice $A$ de $f$ dans $\mathcal{B}$, s'écrit sous la
+forme : 
+\begin{equation*}
+A=\left( 
+\begin{array}{rrr}
+1 & -1 & 0 \\ 
+0 & 2 & -2 \\ 
+0 & 0 & 3%
+\end{array}
+\right)
+\end{equation*}
+
+\item Quelles sont les valeurs propres de $f$ ? $f$ est-il diagonalisable ? $%
+f$ est-il un automorphisme de $E$ ?
+
+\item Déterminer l'image par $f$ des fonctions polynômes $%
+R_{0},\,R_{1},\,R_{2}$ définies par : 
+\begin{equation*}
+\text{pour tout réel }x:\qquad R_{0}\left( x\right) =1,\quad R_{1}\left(
+x\right) =x-1\text{ et }R_{2}\left( x\right) =\left( x-1\right) ^{2}
+\end{equation*}
+
+\item Montrer que $\mathcal{B}^{\prime }=\left( R_{0},R_{1},R_{2}\right) $
+est une base de vecteurs propres de $f$. Écrire la matrice de passage $P$ de
+la base $\mathcal{B}$ à la base $\mathcal{B}^{\prime }$ ainsi que la matrice 
+$D$ de $f$ dans la base $\mathcal{B}^{\prime }.$
+
+\item Vérifier que pour tout réel $x$ : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+R_{2}x+2R_{1}\left( x\right) +R_{0}\left( x\right) =P_{2}\left( x\right) \\ 
+R_{1}\left( x\right) +R_{0}\left( x\right) =P_{1}\left( x\right)%
+\end{array}
+\right.
+\end{equation*}
+
+En déduire la matrice de passage de la base $\mathcal{B}^{\prime }$ à la
+base $\mathcal{B}$
+
+\item Écrire $A^{-1}$ en fonction de $D^{-1}.$ Démontrer par récurrence que
+pour tout entier naturel $n$ : 
+\begin{equation*}
+\left[ A^{-1}\right] ^{n}=P\left[ D^{-1}\right] ^{n}P^{-1}
+\end{equation*}
+et expliciter la troisième colonne de la matrice $\left[ A^{-1}\right] ^{n}$
+\end{enumerate}
+
+\subsection*{2. Suite d'épreuves aléatoires.}
+
+On dispose d'une urne qui contient trois boules numérotées de 0 à 2.
+
+On s'intéresse à une suite d'épreuves définies de la manière suivante :
+
+\begin{itemize}
+\item La première épreuve consiste à choisir au hasard une boule dans cette
+urne.
+
+\item Si $j$ est le numéro de la boule tirée, on enlève de l'urne toutes les
+boules dont le numéro est strictement supérieur à $j$, le tirage suivant se
+faisant alors dans l'urne ne contenant plus que les boules numérotées de $0$ 
+à $j$.
+\end{itemize}
+
+On considère alors la variable aléatoire réelle $X_{k}$ égale au numéro de
+la boule obtenue à la $k^{\grave{e}me}$ épreuve ($k\geqslant 0$)
+
+On note alors $U_{k}$ la matrice unicolonne définie par : 
+\begin{equation*}
+U_{k}=\left( 
+\begin{array}{c}
+P\left[ X_{k}=0\right] \\ 
+P\left[ X_{k}=1\right] \\ 
+P\left[ X_{k}=2\right]%
+\end{array}%
+\right)
+\end{equation*}%
+où $P\left[ X_{k}=j\right] $ est la probabilité de tirer la boule numéro $j$ 
+à la $k^{\grave{e}me}$ épreuve.
+
+On convient de définir la matrice $U_{0}$ par : 
+\begin{equation*}
+U_{0}=\left( 
+\begin{array}{c}
+0 \\ 
+0 \\ 
+1%
+\end{array}
+\right)
+\end{equation*}
+
+\begin{enumerate}
+\item Déterminer la loi de $X_{2}$ (On pourra s'aider d'un arbre). Calculer
+l'espérance et la variance de $X_{2}$
+
+\item Par utilisation de la formule des probabilités totales, prouver que
+pour tout entier naturel $k$ :
+
+\begin{equation*}
+U_{k+1}=A^{-1}U_{k}
+\end{equation*}
+
+\item Écrire $U_{k}$ en fonction de $A^{-1}$ et $U_{0}$
+
+\item Pour tout $k$ de $\mathbb{N}$, donner la loi de $X_{k}$ et vérifier
+que l'on a : 
+\begin{equation*}
+\lim_{k\rightarrow +\infty }P\left[ X_{k}=0\right] =1,\quad
+\lim_{k\rightarrow +\infty }P\left[ X_{k}=1\right] =0,\quad
+\lim_{k\rightarrow +\infty }P\left[ X_{k}=2\right] =0
+\end{equation*}
+\end{enumerate}
+
+\label{fin}
+
+\end{document}

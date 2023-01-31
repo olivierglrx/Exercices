@@ -1,0 +1,72 @@
+\subsection{Suite arithmético-géométrique}
+
+\begin{exercice}
+Soit $(a, b) \in \R^2$ tels que $0<a<b.$ On pose $u_0=a, v_0=b$ et pour tout $n\in \N$:
+$$ u_{n+1} =\sqrt{u_n v_n}, \quad v_{n+1} = \frac{u_n +v_n}{2}.$$
+\begin{enumerate}
+\item Montrer que :  $\forall n\in \N, \, 0<u_n<v_n.$
+%\item Montrer que $\suiteu$ est croissante et $\suite{v}$ et décroissante. 
+\item Montrer que :  $\forall n\in \N, \, v_n-u_n\leq \frac{1}{2^n}(v_0-u_0).$
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item Montrons par récurrence la propriété $\cP(n)$ définie pour tout $n$ par : \og $  0<u_n<v_n$ \fg. 
+\textbf{Initialisation:}  Pour $n=0$, la propriété est vraie, d'après l'hypothèse faite dans l'énoncé  $0<a<b.$ 
+
+ \textbf{H\'er\'edit\'e:}\\
+Soit $n\geq 0$ fix\'e. On suppose la propri\'et\'e vraie \`a l'ordre $n$. Montrons qu'alors $\mathcal{P}(n+1)$ est vraie.\\
+On a $u_{n+1} = \sqrt{u_n v_n}$ qui est bien défini car $u_n $ et $v_n$ sont positifs par hypothèse de récurrence. Cette expression assure aussi que $u_{n+1}$ est positif. 
+
+De plus, 
+\begin{align*}
+v_{n+1}-u_{n+1} &= \frac{u_n +v_n}{2} - \sqrt{u_n v_n}&  \text{Par définition. }\\
+						&= \frac{u_n -2 \sqrt{u_nv_n}+v_n}{2} \\
+						&= \frac{(\sqrt{u_n} -\sqrt{v_n})^2}{2} 			&  \text{car $u_n$ et   $v_n$ sont positifs. }\\	
+						&>0
+\end{align*} 
+Ainsi $v_{n+1} > u_{n+1}$
+La propriété $\cP$ est donc vraie au rang $n+1$.
+
+\textbf{Conclusion:}\\
+Il r\'esulte du principe de r\'ecurrence que pour tout $ n\geq 0$:
+\begin{center}
+\fbox{$  0<u_n<v_n$}
+\end{center}
+
+\item 
+Montrons par récurrence la propriété définie $\cP(n)$ définie pour tout $n$ par : \og $  v_n-u_n\leq \frac{1}{2^n}(v_0-u_0).$\fg. 
+\textbf{Initialisation:}  Pour $n=0$, la propriété est vraie car le terme de gauche vaut $v_0-u_0$ et le terme de droite vaut $\frac{1}{1}(v_0-u_0)$. 
+
+ \textbf{H\'er\'edit\'e:}\\
+Soit $n\geq 0$ fix\'e. On suppose la propri\'et\'e vraie \`a l'ordre $n$. Montrons qu'alors $\mathcal{P}(n+1)$ est vraie.\\
+Montrons tout d'abord que $v_{n+1}-u_{n+1} \leq \frac{1}{2} (v_n -u_n)$. 
+En effet, on a 
+\begin{align*}
+v_{n+1}-u_{n+1} -\frac{1}{2} (v_n -u_n)&= \frac{u_n +v_n}{2} - \sqrt{u_n v_n}  -\frac{1}{2} (v_n -u_n)\\
+															&=u_n - \sqrt{u_n v_n}\\
+															&=\sqrt{u_n}(\sqrt{u_n} - \sqrt{ v_n})\\
+															&<0															
+\end{align*}
+On a donc bien $v_{n+1}-u_{n+1} \leq \frac{1}{2} (v_n -u_n)$. On applique maintenant l'hypothèse de récurrence, on a alors 
+\begin{align*}
+v_{n+1}-u_{n+1} & \leq \frac{1}{2} \times \frac{1}{2^n}(v_0-u_0)\\
+						 & \leq \frac{1}{2^{n+1}}(v_0-u_0)				
+\end{align*}
+
+La propriété $P$ est donc vraie au rang $n+1$.
+
+\textbf{Conclusion:}\\
+Il r\'esulte du principe de r\'ecurrence que pour tout $ n\geq 0$:
+\begin{center}
+\fbox{$  v_n-u_n\leq \frac{1}{2^n}(v_0-u_0).$}
+\end{center}
+
+
+
+
+
+\end{enumerate}
+\end{correction}

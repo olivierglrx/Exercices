@@ -1,0 +1,381 @@
+\documentclass[a4paper, 11pt,reqno]{article}
+\input{/Users/olivierglorieux/Desktop/BCPST/2020:2021/preambule.tex}
+\newif\ifshow
+\showfalse
+%\geometry{hmargin=3cm,vmargin=4cm }
+\input{/Users/olivierglorieux/Desktop/BCPST/2021:2022/ifshow.tex}
+
+
+\author{Olivier Glorieux}
+
+
+\begin{document}
+
+\title{DS4
+}
+
+\begin{exercice}
+
+
+Le but de cet exercice est de calculer la valeur de 
+$$\lim_{n\tv \infty} \sum_{k=0}^n \frac{1}{k!}$$
+
+\paragraph{Convergence}
+On note $S_n=\ddp   \sum_{k=0}^n \frac{1}{k!}$ et $R_n=\ddp \sum_{k=0}^n \frac{1}{k!} +\frac{1}{n(n!)}$
+\begin{enumerate}
+\item Donner la monotonie de $\suite{S}$ et de $\suiteun{R}$
+\item En déduire que les suites $\suite{S}$ et de $\suiteun{R}$ convergent et ont même limite. 
+\end{enumerate}
+
+\paragraph{Informatique}
+\begin{enumerate}
+\item Ecrire une fonction \texttt{factorielle} qui prend en argument un entier $n$ et retourne la valeur de $n!$
+\item Ecrire deux fonctions \texttt{S} et \texttt{R} qui prennent en argument un entier $n$ et retourne respectivement la valeur de $S_n$ et $R_n$. 
+\item Ecrire une fonction \texttt{limite} qui prend en argument un réel positif $\epsilon$ et  retourne la valeur de $S_n$ pour laquelle $|S_n -R_n|\leq \epsilon$ (la premiere valeur pour laquelle cette condition est satisfaite).
+\end{enumerate}
+
+
+\paragraph{Calcul de la limite}
+Pour tout $n\in \N$ on définit la fonction $f_n$ par 
+$$f_n(x)  = \ddp \sum_{k=0}^n \frac{x^k}{k!} \quadet g_n(x) =f_n(x)e^{-x}$$
+On rappelle que par convention $\forall x \in \R, \, x^0 =1$, et $0!=1$
+\begin{enumerate}
+\item Exprimer $g_1(x)$ sans le signe somme. 
+\item Calculer $g_n(0)$ et exprimer $g_n(1)$ à l'aide de $S_n$. 
+\item Montrer que pour tout $x\in \R$ et tout $n\in \N$: $$f'_n(x) = \sum_{k=0}^{n-1} \frac{x^k}{k!}$$
+\item En déduire que  pour tout $x\in \R$ et tout $n\in \N$ $g'_n(x)= \frac{-x^ne^{-x}}{n!}$
+\item  \begin{enumerate}
+\item Exprimer en fonction de $n\in \N$ la valeur de  $\int_0^1 \frac{-e^{-x}}{n!}dx$
+\item A l'aide d'un encadrement de $g_n'(x)$, montrer que pour tout $x\in \R$ et tout $n\in \N$ $$ \frac{e^{-1}-1}{n!}\leq \int_0^1 g'_n(x) dx\leq 0$$
+\end{enumerate}
+
+
+\item En déduire que pour tout $n\in \N$:  $$ \frac{e^{-1}-1}{n!} \leq S_ne^{-1}-1\leq 0$$
+\item En déduire la limite de $\suite{S}$. 
+\end{enumerate}
+
+\end{exercice}
+\begin{correction}
+\paragraph{Convergence}
+\begin{enumerate}
+\item $\forall n\in \N$ 
+$$S_{n+1}-S_n = \sum_{k=0}^{n+1} \frac{1}{k!}- \sum_{k=0}^n \frac{1}{k!}=\frac{1}{(n+1)!}\geq 0$$
+Donc \conclusion{ $\suite{S}$ est croissante}
+
+ $\forall n\in \N^*$ 
+ \begin{align*}
+ R_{n+1}-R_n &= S_{n+1}-S_n +\frac{1}{(n+1) ((n+1)!)}-\frac{1}{n (n!)}\\
+ 					&=\frac{1}{(n+1)!} +\frac{n-(n+1)^2}{n(n+1)((n+1)!)}\\
+ 					&=\frac{n(n+1)+n-(n+1)^2}{n(n+1)((n+1)!)}\\
+ 					&=\frac{n^2+n+n-(n^2+2n+1)}{n(n+1)((n+1)!)}\\
+ 					&=\frac{-1}{n(n+1)((n+1)!)}
+ \end{align*}
+donc $R_{n+1}-R_n<0$, ainsi
+
+\conclusion{ $\suiteun{R}$ est décroissante}
+\item $\forall n \in \N^*,  R_n-S_n=\frac{1}{n (n!)}$ donc 
+$$\lim_{n\tv +\infty} R_n-S_n= 0$$
+De plus $\suite{S}$ est croissante, $\suiteun{R}$ est décroissante. Donc les deux suites sont adjacentes. 
+
+\conclusion{Le théorème sur les suites adjacentes assure que les suites convergent et ont même limite. }
+
+\end{enumerate}
+\paragraph{Informatique}
+\begin{enumerate}
+\item \begin{lstlisting}
+def factorielle(n):
+  p=1
+  for i in range(1,n+1):
+    p=p*i
+  return(p)
+\end{lstlisting}
+\item \begin{lstlisting}
+def S(n):
+  s=0
+  for k in range(n+1):
+    s=s+1/factorielle(k)
+  return(s)
+  
+def R(n):
+  return(S(n)+1/(n*factorielle(n))
+
+\end{lstlisting}
+\item \begin{lstlisting}
+def limite(epsilon):
+  n=1
+  while n*factorielle(n) >1/epsilon:
+    n=n+1
+  return(S(n)) 
+\end{lstlisting}
+\end{enumerate}
+
+\paragraph{Calcul de la limite}
+\begin{enumerate}
+\item On a pour tout $x\in \R$ : $g_1(x) =f_1(x)e^{-x} = \ddp \sum_{k=0}^1 \frac{x^k}{k!} e^{-x}= (1+x)e^{-x}$
+\conclusion{ $g_1(x) =(1+x)e^{-x}$}
+\item $g_n(0)= f_n(0)e^{-0}=\sum_{k=0}^n \frac{0^k}{k!}=1 $
+\conclusion{ $g_n(0)=1$}
+
+$g_n(1) = f_n(1)e^{-1}= \sum_{k=0}^n \frac{1}{k!}e^{-1}=S_ne^{-1}$
+\conclusion{ $g_n(1)=S_n e^{-1}$}
+
+\item La dérivée d'une somme de fonction est égale à la somme des dérivées des fonctions et $u_k:x\mapsto \frac{x^k}{k!}$ se dérive en 
+$$u'_k(x) = \frac{kx^{k-1}}{k!} = \frac{x^{k-1}}{(k-1)!}$$
+si $k\geq 1$ et $u'_0(x)=0$
+
+Ainsi $f_n'(x) = \sum_{k=0}^n u'_k(x)=  u'_0(x)+\sum_{k=1}^n \frac{x^{k-1}}{(k-1)!}$
+On fait ensuite le changement de variable $i=k-1$ et  on obtient 
+\conclusion{$f_n'(x)= \sum_{i=0}^{n-1} \frac{x^{i}}{(i)!}$}
+
+\item Pour tout $x\in \R$ et tout $n\in \N$ on a 
+\begin{align*}
+g'_n(x) &= f'_n(x)e^{-x} -f_n(x)e^{-x}\\
+			&= (f'_n(x)-f_n(x))e^{-x}
+\end{align*}
+D'après la question précédente : $f'_n(x)-f_n(x)= -\frac{x^{n}}{n!}$. On obtient donc 
+
+\conclusion{ $g'_n(x)= -\frac{x^{n}e^{-x}}{n!}$}
+
+\item 
+\begin{enumerate}
+\item  $\int_0^1 \frac{-e^{-x}}{n!}dx= \frac{-1}{n!} \int_0^1 e^{-x}= \frac{-1}{n!} [-e^{-x}]_0^1 = \frac{-1}{n!} (-e^{-1}+1)= \frac{e^{-1}-1}{n!}$
+\item 
+D'après la question précédente on a pour tout $x\in [0,1]$ et tout $n\in \N $ : $x^n\geq 0$ et $e^{-x}\geq 0$ donc 
+$$g'_n(x) \leq 0$$
+Par positivité de l'intégrale, on a alors 
+\conclusion{$\ddp \int_0^1 g'_n(x) dx \leq 0.$}
+
+De même, $x^n\leq 1 $ donc 
+$$g'_n(x) \geq \frac{-e^{-x}}{n!}
+$$
+
+Par positivité de l'intégrale, on a alors 
+$$\int_0^1 g'_n(x) dx \geq \int_0^1 \frac{-e^{-x}}{n!}dx.$$
+Donc 
+\conclusion{  $\ddp \frac{e^{-1}-1}{n!}\leq  \int_0^1g'_n(x)dx$}
+\end{enumerate}
+\item On a pour tout $n\in \N$
+$$\int_0^1g_n'(x) dx = [g_n(x)]_0^1 =g_n(1)-g_n(0) = S_ne^{-1} -1$$
+Donc d'après la question précédente 
+\conclusion{$\frac{e^{-1}-1}{n!}\leq S_ne^{-1} -1\leq 0$}
+
+\item On  a d'après la question précédente
+$$\frac{e^{-1}-1}{n!}\leq S_ne^{-1} -1\leq 0$$
+donc en isolant $S_n$ au milieu des deux inégalités on obtient :  
+$$e(\frac{e^{-1}-1}{n!}+1)\leq S_n\leq e$$
+
+
+
+Or 
+$\lim_{n\tv +\infty} \frac{e^{-1}-1}{n!}=0$. Donc
+$$\lim_{n\tv +\infty} e(\frac{e^{-1}-1}{n!}+1)=e$$
+Ainsi d'après le théorème d'encadrement la suite $\suite{S}$ converge et 
+\conclusion{ $\lim_{n\tv+\infty } S_n=e$ }
+
+
+
+\end{enumerate}
+
+\end{correction}
+
+\begin{exercice}
+\begin{enumerate}
+\item Résoudre l'inéquation :  $$ (E_1)   \quad : \quad 2x-1\leq \frac{1}{2x+1}$$
+\item En déduire les solutions de $(E_2)$ sur $[0, 2\pi[$
+$$(E_2)   \quad : \quad   2\cos(X)-1\leq \frac{1}{2\cos(X)+1}$$
+
+\end{enumerate}
+
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item \begin{align*}
+(E_1)\equivaut 2x-1 -\frac{1}{2x+1}\leq 0\\
+		\equivaut  \frac{4x^2-1-1}{2x+1}\leq 0\\
+		\equivaut  \frac{4x^2-2}{2x+1}\leq 0\\
+		\equivaut  \frac{4(x+\frac{1}{\sqrt{2}})(x-\frac{1}{\sqrt{2}}) }{2x+1}\leq 0\\
+\end{align*}
+On en déduit (après avoir fait un tableau de signe si besoin) les solutions de $(E_1) $
+\conclusion{ $S_1 = \left] -\infty, \frac{-1}{\sqrt{2}}\right]\cup \left]\frac{-1}{2} , \frac{1}{\sqrt{2}}\right]$}
+\item $X$ est solution de $(E_2)$ si et seulement si $\cos(X) $ est solution de $(E_1)$ c'est à dire si et seulement si 
+$$\cos(X) \in  
+\left] -\infty, \frac{-1}{\sqrt{2}}\right]\cup \left]\frac{-1}{2} , \frac{1}{\sqrt{2}}\right]$$
+
+Comme pour tout $X\in \R$, $\cos(X)\geq-1$ on obtient 
+$$\cos(X) \in  
+\left[ -1 ,\frac{-1}{\sqrt{2}}\right]\cup \left]\frac{-1}{2} , \frac{1}{\sqrt{2}}\right]$$
+
+A l'aide du cercle trigonométrique, on trouve les solutions sur $[0,2\pi[:$
+$$X\in \left[\frac{\pi}{4}, \frac{2\pi}{3}  \right[ \cup   \left[\frac{3\pi}{4}, \frac{5\pi}{4}\right]  \cup   \left] \frac{4\pi}{3}, \frac{7\pi}{4}\right]$$
+
+
+\end{enumerate}
+
+\end{correction}
+
+\begin{exercice}
+Une urne contient 3 boules jaunes, 2 boules vertes et 5 boules rouges. Les boules sont toutes distingables, numérotées par exemple.  On tire successivement et avec remise 4 boules.
+\begin{enumerate}
+\item Combien y-a-t-il de tirages possibles ? 
+\item Combien de tirages amènent aucune boule rouge ?
+\item Combien de tirages amènent que des boules vertes ?
+\item Combien de tirages amènent exactement 2 boules jaunes ?
+\item Combien de tirages amènent des boules d'une seule couleur ?
+%\item Combien de tirages amènent es boules des trois couleurs ?
+\end{enumerate}
+
+\end{exercice}
+\begin{enumerate}
+\item On fait $4 (=p)$ tirages successifs (ordre) avec remise dans un ensemble à 10 éléments ($n=10$)
+\conclusion{ Il  y  a $10^4$ tirages possibles}
+\item Pour obtenir aucune boule rouge il faut tirer des boules vertes ou jaunes, il y en  a 5. On  a donc 
+\conclusion{ Il  y  a $5^4$ tirages possibles sans boule rouge}
+\item Il y a 2 boules vertes donc 
+\conclusion{ Il  y  a $2^4$ tirages possibles avec que des boules vertes}
+
+\item Il faut tirer 2 boules jaunes (3 possibilités) et 2 boules parmi les vertes ou rouges (7 possiblités). Ensuite il faut positionner les boules jaunes parmi les 4 tirages, cela fait $\binom{4}{2}$ positions possibles. 
+\conclusion{ Il  y  a $\binom{4}{2}3^2 7^2$ tirages possibles exactement 2 boules jaunes}
+\item Pour obtenir qu'une seule couleur on a 3 façons de faire : que des vertes $V$ , que des jaunes $J$ ou que des rouges $R$. 
+On a déjà calcule le cardinal de $V$ à la question 3. On fait de même avec $J$ on obtient $\Card(J) =3^4$ et $\Card(R)=5^4$. Finalement 
+\conclusion{ Il y a $2^4+3^4+5^4$ tirages qui amènent qu'une seule couleur}
+
+\end{enumerate}
+
+\begin{exercice}
+On considère les mains  de $5$ cartes (tirages simultanés de 5 cartes) que l'on  peut obtenir d'un jeu de $52$ cartes. 
+\begin{enumerate}
+\item Combien y-a-t-il de mains différentes ? 
+\item  Combien y-a-t-il de mains  comprenant exactement deux as ?
+\item  Combien y-a-t-il de mains  comprenant au moins un coeur ?
+\item  Combien y-a-t-il de mains  comprenant exactement un roi et un coeur  ?
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item C'est un tirage sans ordre et sans répétition. 
+\conclusion{ Il y a $\binom{52}{5}$ mains possibles.}
+\item Pour dénombrer les mains avec exactement 2 as, il faut dénombrer le choix de deux as parmi les 4 possibles : $\binom{4}{2}$ puis les 3 cartes parmi les 48 autres possibles : $\binom{48}{3}$. Au final il y  a 
+\conclusion{ $\binom{4}{2}\binom{48}{3}$ avec exactement 2 as.}
+\item On cherche l'événement contraire : les mains comprenant 0 coeur. Il y en a 
+$\binom{52-13}{5}$ Ainsi il y  a
+\conclusion{ $\binom{52}{5}- \binom{39}{5}$ mains contenant au moins un coeur.}
+\item Soit $E=\{ \text{mains contenant  exactement un roi et un coeur }\}$. On chercher à déterminer le cardinal de $E$. 
+
+Il faut regarder à part les mains contenant le roi de coeur. 
+Soit $$A_1= \{ \text{mains contenant le roi de coeur et pas d'autre coeur ni de roi}\}$$
+$$A_2= \{ \text{mains contenant le roi -qui n'est pas de coeur - et un coeur -qui n'est pas le roi.}\}$$
+On a d'une part 
+$$\Card(A_1) =  \binom{1}{1} \binom{52-16}{5} $$
+et d'autre part
+$$\Card(A_2) =  \binom{3}{1} \binom{12}{1} \binom{52-16}{3}$$
+Par ailleurs, on a $E=A_1\cup A_2$ et $A_1\cap A_2=\emptyset$
+Donc $\Card(E) = \Card(A_1) +\Card(A_2)$ et 
+\conclusion{ $\Card(E)=\binom{36}{5}+ 3\times 12\binom{36}{3}$}
+
+
+
+
+\end{enumerate}
+\end{correction}
+
+
+
+
+\begin{exercice}
+Soit $\suite{u}$ la suite définie par 
+$$\left\{ 
+\begin{array}{ccl}
+u_0&=&1\\
+u_{n+1} &=& \sin(u_n)
+\end{array}
+\right.$$
+
+\begin{enumerate}
+\item Montrer que pour tout $n\in \N$, $0<u_n<\frac{\pi}{2}$.
+\item On note $f(x) = \sin(x)-x$.  A l'aide d'une étude de fonction, montrer que pour tout $x\in \R_+^*$, $f(x)<0.$
+\item En déduire le sens de variation de $\suite{u}$.
+%\item Montrer que $\suite{u}$ est bornée.
+\item En déduire que $\suite{u}$ converge vers $\ell \in \R$
+\item  Montrer que $f(x)=0 \equivaut x=0$.
+\item Déterminer la valeur de $\ell$. 
+\end{enumerate}
+
+Info 
+\begin{enumerate}
+\item Ecrire une fonction qui prend en paramètre $n\in \N$ et qui retourne la valeur de $u_n$. 
+\item 
+Ecrire une fonction qui prend en paramètre $e\in \R^+$ et qui retourne la valeur du premier terme $n_0\in \N$ telle que $|u_{n_0}-\ell| \leq e$ et la valeur de $u_{n_0}$.
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item On fait une récurrence. 
+Pour tout $n\in \N$ on note  $P(n)$ la propriété définie par:  $" 0<u_n<\frac{\pi}{2}"$
+Par définition $u_0= 1$, et on a bien $0<1<\frac{\pi}{2}$ (car $\pi>3$) 
+Donc la propriété $P$ est vraie au rang $0$.  
+
+ On suppose qu'il existe $n_0\in \N$ tel que $P_{n_0}$ soit vraie et on  va montrer que ceci implique $P_{n_0+1}$ 
+
+En effet, pour tout $x\in ]0,\frac{\pi}{2}[,$ $\sin(x) \in ]0,1[\subset ]0,\pi/2[$ \footnote{en d'autres termes, $]0,\pi/2[ $ est stable par la fonction sinus}. Donc 
+si $P_{n_0}$ est vraie, c'est à dire  $u_{n_0} \in  ]0,\frac{\pi}{2}[ $, on a  alors $u_{n_0+1}=\sin(u_{n_0}) \in ]0,1[$.
+De nouveau comme $1< \frac{\pi}{2}$ ceci implique $P_{n_0+1}$. 
+
+Par récurrence, la propriété $P(n)$ est vraie pour tout $n\in \N$. 
+
+
+\item  La fonction $f$ est dérivable sur $\R$ et $f'(x) =\cos(x)-1\leq 0$. 
+Donc $f$ est décroissante et $f(0)=0$. Donc pour tout $x\in \R_+^*,$ $f(x)< 0$.
+\item $u_{n+1}-u_n =\sin(u_n)-u_n=f(u_n)$
+Comme pour tout $n\in \N$, $u_n>0$ d'après la question 1, on a donc 
+$f(u_n) <0$ d'après la question 2. Ainsi pour tout $n\in \N$
+$$u_{n+1} \leq u_n$$ ce qui assure que la suite $\suite{u}$ est décroissante. 
+
+\item La suite $\suite{u}$ est minorée (par 0) d'après la question $1$ et décroissante d'après la question précédente. Par théorème de la limite monotone, la suite converge vers $\ell \geq 0$ 
+
+\item L'étude de $f$ a montré que $f(x)<0$ sur $\R^*_+$  et $f(x)>0$ sur $\R^*_-$. Ainsi $f(x)=0 \implique x=0$. Réciproquement, si $x=0$ , $f(0) =\sin(0)-0=0$. L'équivalence est bien montrée. 
+
+\item Comme $\suite{u}$ converge vers $\ell\in \R$ on a aussi 
+$\lim u_{n+1} =\ell$. De plus, comme la fonction sinus est continue sur $\R$ on a $\lim \sin(u_n) = \sin(\lim u_n) $. Ainsi la limite $\ell$ satisfait  $\ell =\sin(\ell)$. Ce qui d'après la question précédente implique $\ell=0$. 
+
+Finalement $$\lim u_n= 0$$
+
+\end{enumerate}
+
+INFO
+
+
+\begin{lstlisting}[language =Python]
+from math import sin
+def u(n):
+  x=1	#valeur de u0
+  for i in range(n):
+     x=sin(x) 	#relation de recurrence que l'on applique n fois avec range(n)
+  return(x)
+
+from math import abs
+def limite(e):
+   L=0 #valeur de la limite
+   n=0  #on met en place un compteur
+   val=u(n)  #valeur de u0 
+ 
+   while abs(val-L)>e: #tant que la valeur de |u(n)-L| est plus grande que e
+      n+=1 #on incremente la valeur du compteur de 1 
+      val =u(n) #on actualise la valeur de u(n)
+      
+   return(n, u(n))
+\end{lstlisting}
+
+
+
+\end{correction}
+
+
+
+
+
+
+\end{document}

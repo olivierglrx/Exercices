@@ -1,0 +1,91 @@
+\subsection{$u_{n+1}=\sin(u_n)$ (Pb)}
+
+\begin{exercice}
+Soit $\suite{u}$ la suite définie par 
+$$\left\{ 
+\begin{array}{ccl}
+u_0&=&1\\
+u_{n+1} &=& \sin(u_n)
+\end{array}
+\right.$$
+
+\begin{enumerate}
+\item Montrer que pour tout $n\in \N$, $0<u_n<\frac{\pi}{2}$.
+\item On note $f(x) = \sin(x)-x$. Montrer que pour tout $x\in \R_+^*$, $f(x)<0.$
+\item En déduire le sens de variation de $\suite{u}$.
+%\item Montrer que $\suite{u}$ est bornée.
+\item En déduire que $\suite{u}$ converge vers $\ell \in \R$
+\item  Montrer que $f(x)=0 \equivaut x=0$.
+\item Déterminer la valeur de $\ell$. 
+\end{enumerate}
+
+Info 
+\begin{enumerate}
+\item Ecrire une fonction qui prend en paramètre $n\in \N$ et qui retourne la valeur de $u_n$. (Pour ceux qui n'ont pas encore vu les fonctions, vous pouvez écrire un script qui demande à l'utilisateur la valeur de $n$ souhaité et qui retourne la valeur de $u_n$ sans les fonctions, mais bon c'est pas si différent... ) 
+\item 
+Ecrire une fonction qui prend en paramètre $e\in \R^+$ et qui retourne la valeur du premier terme $n_0\in \N$ telle que $|u_{n_0}-\ell| \leq e$ et la valeur de $u_{n_0}$. (même remarque) 
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item On fait une récurrence. 
+Pour tout $n\in \N$ on note  $P(n)$ la propriété définie par:  $" 0<u_n<\frac{\pi}{2}"$
+Par définition $u_0= 1$, et on a bien $0<1<\frac{\pi}{2}$ (car $\pi>3$) 
+Donc la propriété $P$ est vraie au rang $0$.  
+
+ On suppose qu'il existe $n_0\in \N$ tel que $P_{n_0}$ soit vraie et on  va montrer que ceci implique $P_{n_0+1}$ 
+
+En effet, pour tout $x\in ]0,\frac{\pi}{2}[,$ $\sin(x) \in ]0,1[\subset ]0,\pi/2[$ \footnote{en d'autres termes, $]0,\pi/2[ $ est stable par la fonction sinus}. Donc 
+si $P_{n_0}$ est vraie, c'est à dire  $u_{n_0} \in  ]0,\frac{\pi}{2}[ $, on a  alors $u_{n_0+1}=\sin(u_{n_0}) \in ]0,1[$.
+De nouveau comme $1< \frac{\pi}{2}$ ceci implique $P_{n_0+1}$. 
+
+Par récurrence, la propriété $P(n)$ est vraie pour tout $n\in \N$. 
+
+
+\item  La fonction $f$ est dérivable sur $\R$ et $f'(x) =\cos(x)-1\leq 0$. 
+Donc $f$ est décroissante et $f(0)=0$. Donc pour tout $x\in \R_+^*,$ $f(x)< 0$.
+\item $u_{n+1}-u_n =\sin(u_n)-u_n=f(u_n)$
+Comme pour tout $n\in \N$, $u_n>0$ d'après la question 1, on a donc 
+$f(u_n) <0$ d'après la question 2. Ainsi pour tout $n\in \N$
+$$u_{n+1} \leq u_n$$ ce qui assure que la suite $\suite{u}$ est décroissante. 
+
+\item La suite $\suite{u}$ est minorée (par 0) d'après la question $1$ et décroissante d'après la question précédente. Par théorème de la limite monotone, la suite converge vers $\ell \geq 0$ 
+
+\item L'étude de $f$ a montré que $f(x)<0$ sur $\R^*_+$  et $f(x)>0$ sur $\R^*_-$. Ainsi $f(x)=0 \implique x=0$. Réciproquement, si $x=0$ , $f(0) =\sin(0)-0=0$. L'équivalence est bien montrée. 
+
+\item Comme $\suite{u}$ converge vers $\ell\in \R$ on a aussi 
+$\lim u_{n+1} =\ell$. De plus, comme la fonction sinus est continue sur $\R$ on a $\lim \sin(u_n) = \sin(\lim u_n) $. Ainsi la limite $\ell$ satisfait  $\ell =\sin(\ell)$. Ce qui d'après la question précédente implique $\ell=0$. 
+
+Finalement $$\lim u_n= 0$$
+
+\end{enumerate}
+
+INFO
+
+
+\begin{lstlisting}[language =Python]
+from math import sin
+def u(n):
+  x=1	#valeur de u0
+  for i in range(n):
+     x=sin(x) 	#relation de recurrence que l'on applique n fois avec range(n)
+  return(x)
+
+from math import abs
+def limite(e):
+   L=0 #valeur de la limite
+   n=0  #on met en place un compteur
+   val=u(n)  #valeur de u0 
+ 
+   while abs(val-L)>e: #tant que la valeur de |u(n)-L| est plus grande que e
+      n+=1 #on incremente la valeur du compteur de 1 
+      val =u(n) #on actualise la valeur de u(n)
+      
+   return(n, u(n))
+\end{lstlisting}
+
+
+
+\end{correction}

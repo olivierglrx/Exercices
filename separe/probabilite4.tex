@@ -1,0 +1,36 @@
+\subsection{Urnes, boules et tirages ! }
+\begin{exercice}   \;
+Une urne A contient 1 boule rouge et 2 noires. Une urne B contient 3 rouges et 1 noire. Au d\'epart, on choisit une urne, la probabilit\'e de choisir l'urne A est $p\in \; \rbrack 0,1\lbrack$. Puis on choisit une boule dans cette urne. Si, \`a un tirage quelconque, on a tir\'e une boule rouge, le tirage suivant se fait dans A, sinon, on choisit une boule de B. Les tirages se font avec remise. On note $p_n$ la probabilit\'e de choisir une boule rouge au tirage de num\'ero $n$. Calculer $p_1$, puis exprimer $p_{n+1}$ en fonction de $p_n$. En d\'eduire $p_n$ en fonction de $n$ puis la limite de la suite $(p_n)_{n\in\N^{\star}}$.
+\end{exercice}
+\begin{correction}
+On note $R_n$ l'événement " tirer une Rouge au tirage $n$" et $N_n$: " tirer une Noire au tirage $n$". On a évidemment $\overline{N_n} =R_n$. 
+
+\begin{align*}
+p_{n+1} &= \bP(R_{n+1} ) \quad \text{Par définition} \\
+			&= \bP(R_{n+1}  | R_n ) \bP(R_n) +   \bP(R_{n+1}  | N_n ) \bP(N_n)  \quad \text{Par la formule des probabilités totales} 
+\end{align*}
+
+$\bP(R_{n+1}  | R_n ) =\frac{1}{3}$  car si on a tiré une boule rouge au tirage $n$ le tirage se fait dans l'urne $A$ qui contient 3 boules dont seuleemnt une noire. De même $\bP(R_{n+1}  | N_n ) =\frac{3}{4}$.
+Ainsi
+\begin{align*}
+p_{n+1} &= \frac{1}{3}p_n + \frac{3}{4}(1-p_n)\\
+			&= \frac{-5}{12} p_n + \frac{3}{4}
+\end{align*}
+
+C'est une suite arithmético géométrique. On cherche $\ell\in \R$ tel que 
+$$\ell =  \frac{-5}{12} \ell+ \frac{3}{4}$$
+on trouve $\ell = \frac{9}{17}$
+On sait d'après le cours (ou  on refait le calcul) que la suite $u_n=p_n - \ell  $ est géométrique de raison $\frac{-5}{12}$. 
+Ainsi pour tout $n\in \N^*$ on a 
+$$u_n = u_1 \left(\frac{-5}{12} \right)^{n-1}$$
+et $u_1 = p_1- \frac{9}{17} $
+Il faut encore calculer $p_1$ 
+On a $p_1= \bP(R_1) = \bP(R_1|A) \bP(A) +  \bP(R_1|B) \bP(B)$ d'après la formule des probabilités totales (ici $A$ et $B$ sont les événements 'choix de l'urne .... ') 
+On a donc $p_1 = \frac{1}{3}p +\frac{3}{4}(1-p)= \frac{-5}{12} p + \frac{3}{4}$
+
+Finalement $u_1= \frac{-5}{12} p + \frac{3}{4} - \frac{9}{17}=  \frac{-5}{12} p-\frac{15}{68}$
+
+Et $$p_n = \frac{9}{17}  + \left(\frac{-5}{12} p-\frac{15}{68}\right) \left(\frac{-5}{12} \right)^{n-1}$$
+La limite de $p_n$ est $\frac{9}{17}$.
+
+\end{correction}

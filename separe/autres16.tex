@@ -1,0 +1,59 @@
+\subsection{Complexe, raisonnement par l'absurde, recurrence}
+
+\begin{exercice}
+Soit $z,z'$ deux nombres complexes.
+
+\begin{enumerate}
+\item Rappeler les valeurs de $A=z\bar{z}$, $B=|z\bar{z}|$, $C=|\bar{z}z'|^2$ en fonction de $|z|$ et $|z'|$. 
+\item On suppose dans cette question et  la suivante que $|z|<1 $ et $|z' |<1$. Montrer que $$\bar{z}z'\neq 1$$
+
+\item  Montrer que 
+$$1- \left| \frac{z-z'}{1-\bar{z} z' } \right|^2 = \frac{(1-|z'|^2)(1-|z|^2)}{|1-\bar{z}z'|^2}$$
+\item Soit $\suite{z}$ une suite de nombres complexes vérifiant : $|z_0|<1, |z_1|<1$  et pour tout $n\in \N$ :
+$$z_{n+2} =\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}$$
+
+Montrer que pour tout $n\in \N$, $|z_n|<1$ et que $\bar{z_n}z_{n+1}\neq 1$, et donc que $\suite{z}$ est bien définie pour tout $n\in \N$. \\
+\footnotesize{On pourra utiliser les deux questions précédentes dans une récurrence double}
+
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Comme $|z|<1$ et $|z'|<1$ on a $|\bar{z}z'|= |\bar{z}| |z'| =|z||z'| <1$. Or si deux nombres complexes sont égaux ils ont même module, donc $\bar{z}z' $ ne peut pas être égal à $1$, sinon ils auraient le même module. 
+\item Après avoir mis au même dénominateur le membre de gauche, on va utiliser le fait que pour tout complexe $u$, on a $|u|^2 = u\bar{u}$ :
+\begin{align*}
+1- \left| \frac{z-z'}{1-\bar{z} z' } \right|^2  &= \frac{| 1-\bar{z} z' |^2 -|z-z' |^2}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' )(\bar{ 1-\bar{z} z'} )   -(z-z' )(\bar{z-z'})}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' )(1-z\bar{z'}  )   -(z-z' )(\bar{z}-\bar{z'})}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' -z\bar{z'} + |\bar{z}z'|^2  )   -(|z|^2-\bar{z'}z - \bar{z}z' +|z'|^2)}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1+ |\bar{z}z'|^2-|z|^2-|z'|^2)}{|1-\bar{z} z'  |^2}
+\end{align*}
+Remarquons enfin que $(1-|z|^2) (1-|z'|^2)  =1 +|zz'|^2 -|z|^2 -|z'|^2$. Or 
+$ |\bar{z}z'|^2 = |\bar{z}|^2|z'|^2 =|z|^2 |z'|^2  = |zz'|^2$.
+On a bien 
+\conclusion{$\ddp 1- \ddp \left| \ddp \frac{z-z'}{1-\bar{z} z' } \right|^2    = \frac{(1-|z|^2) (1-|z'|^2) }{|1-\bar{z} z'  |^2}$}
+
+
+\item Soit $P(n)$ la propriété : \og $|z_n|<1$ et $|z_{n+1}|<1$\fg \,. Remarquons que d'après la question 2, $P(n)$ implique que $\bar{z_n}z_{n+1}\neq 1 $ et donc que $z_{n+2}$ est bien définie. 
+
+Prouvons $P(n)$ par récurrence. 
+
+\underline{Initialisation} : 
+$P(0)$ est vraie d'après l'énoncé : $|z_0|<1 $ et $|z_1|<1$.\\
+
+\underline{Hérédité} : On suppose qu'il existe $n\in \N$   tel que $P(n)$ soit vraie. Montrons alors $P(n+1)$ :  \og $|z_{n+1}|<1$ et $|z_{n+2}|<1$\fg. Par hypothèse de récurrence on sait déjà que $|z_{n+1}|<1$ il reste donc à prouver que $|z_{n+2} <1$. 
+
+On a $$|z_{n+2}| = \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|$$
+ Or d'après la question 3, 
+ $$ \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|^2 = 1- \frac{(1-|z_n|^2) (1-|z_{n+1}|^2) }{|1-\bar{z_n} z_{n+1}  |^2}$$
+ 
+Par hypothèse de récurrence,  $(1-|z_n|^2) (1-|z_{n+1}|^2)>0$. Le dénominateur est aussi positif, donc $\frac{(1-|z_n|^2) (1-|z_{n+1}|^2) }{|1-\bar{z_n} z_{n+1}  |^2}>0$ et ainsi :
+ $$ \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|^2 < 1$$
+Donc $|z_{n+2}|<1$. On a donc prouvé que la propriété $P$ était hériditaire. 
+
+\underline{Conclusion} : Par principe de récurrence, $P(n)$ est vraie pour tout $n\in \N$ et comme remarqué au début de récurrence, ceci implique que $\suite{z}$ est bien définie pour tout $n\in \N$.  
+
+ 
+\end{enumerate}
+\end{correction}

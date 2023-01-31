@@ -1,0 +1,154 @@
+\subsection{Etude application linéaire [Godillon 17-18]}
+
+\begin{exercice}%d 'après DS8 godillon lycée hoche 2017-2018http://math1a.bcpsthoche.fr/docs/DS_1718.pdf
+On considère l'application $\phi : \R^3 \tv \R^3, $ définie par 
+$$(x,y,z) \mapsto (x-3y +3z, 2y-z, 2y-z).$$
+\begin{enumerate}
+\item Justifier que $\phi$ est un endomorphisme de $\R^3$.
+\item
+\begin{enumerate}
+\item  Déterminer une représentation paramétrique de $\ker(\phi)$. 
+\item Déterminer la dimension de $\ker (\phi)$. Que peut-on en déduire pour l'application $\phi$ ?
+
+\end{enumerate}
+\item Déterminer la dimension de $\im(\phi)$.  Que peut-on en déduire pour l'application $\phi$ ?
+\item Soit $\Id$ l'application identité de $\R^3$
+\begin{enumerate}
+\item Que vaut l'applicaiton $\phi\circ \phi$ ?
+\item En déduire que $\phi\circ (\phi-\Id)$ et $(\phi-\Id) \circ \phi$ sont égales à l'application constante égale à $0$. 
+\item A l'aide des résultats précédents, montrer que $\im( \phi - \Id) \subset \ker(\phi)$ et 
+$\im( \phi) \subset \ker(\phi- \Id)$.
+\item Que peut-on en déduire pour l'application $\phi- \Id$ ? 
+\end{enumerate}
+\item Montrer que $\ker(\phi-\Id) = \Im(\phi)$.
+\item \begin{enumerate}
+\item Déterminer une base $(e_1)$  de $\ker(\phi)$ et une base $(e_2,e_3)$ de $\ker(\phi-\Id)$
+\item Montrer que $(e_1, e_2, e_3) $ est une base de $\R^3$.
+\item Ecrire la matrice de $\phi$ dans la base $(e_1, e_2, e_3) $.
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+
+
+\item Vérifions tout d'abord que $\phi$ est linéaire. Soit $u=(x,y,z), u'=(x',y',z')\in\R^3$ et $\lambda\in \R$. 
+On a 
+\begin{align*}
+\phi( u+\lambda v  ) &= \phi(  (x+\lambda x', y+\lambda y' , z+\lambda z'))\\
+								&= (x+\lambda x'-3(y+\lambda y' ) +3(z+\lambda z'), 2(y+\lambda y' )-(z+\lambda z'), 2(y+\lambda y' )-(z+\lambda z'))\\
+								&= (x-3y +3z, 2y-z, 2y-z) + \lambda  (x'-3y' +3z', 2y'-z', 2y'-z')\\
+								&= \phi(u) +\lambda \phi(v)
+\end{align*}
+Comme l'espace de départ et d'arrive de $\phi $ est $\R^3$, $\phi$ est bien un endomorphisme. 
+
+\item \begin{enumerate}
+\item Soit $(x,y,z)\in \ker( \phi)$, on a 
+alors $\phi(x,y,z)= 0_{\R^3}$ c'est-à-dire : 
+$$(x-3y +3z, 2y-z, 2y-z)=(0,0,0)$$
+On obtient ainsi le système :
+$$\left\{ 
+\begin{array}{rcc}
+x-3y +3z &=&0\\
+2y-z &=&0\\
+2y-z&=&0
+\end{array}
+\right.
+\equivaut 
+\left\{ 
+\begin{array}{rcc}
+x &=&-\frac{3z}{2}\\
+y &=&\frac{z}{2}\\
+\phantom{}& &
+\end{array}
+\right.
+$$ 
+On obtient le noyau de $\phi$ sous forme paramétrique, en prenant $z$ comme paramétre:
+$$\ker(\phi) =\left\{ 
+\left(\frac{-3z}{2} , \frac{z}{2}, z\right)\,  |\, z\in \R
+\right\}$$
+\item Ainsi on a 
+$$\ker(\phi)  =\Vect(\left( \frac{-3}{2}, \frac{1}{2}, 1\right))$$
+C'est une famille génératice de $\ker(\phi)$ par définition. C'est aussi une famille libre car elle ne contient qu'un seul vecteur qui est non nul. 
+On a alors une base de $\ker (\phi)$ qui est donc de dimension 1. 
+
+$\ker(\phi)$ n'est pas  réduit à $\{ 0\}$, l'application $\phi$ n'est pas injective.
+
+\end{enumerate}
+\item D'après le théorème du rang, $\dim(\Im(\phi))= \dim (\R^3 )- \dim(\ker(\phi)) = 2$. Ainsi $\phi$ n'est pas surjective. 
+
+\item 
+\begin{enumerate}
+\item Traitons le problème matriticiellement. Soit $M= \left( 
+\begin{array}{ccc}
+1 &0& 0\\
+-3 &2& 2\\
+3 &-1& -1
+\end{array}\right)$
+La matrice de $\phi$ dans la base canonique. Le calcul montre que $M^2 = M$, ainsi 
+$$\phi \circ \phi = \phi.$$
+\item 
+\begin{align*}
+\phi \circ (\phi - \Id ) &= \phi \circ \phi -\phi \circ \Id\\
+								&= \phi  -\phi \\
+							&=0.
+\end{align*}
+(Et  $\phi$  et $\phi-\Id$ commutent. )
+\item Soit $y\in \Im(\phi -\Id)$, c'est-à-dire, qu'il existe $x\in \R^3$ tel que $y =(\phi-Id)(x)$. Par ailleurs $\phi(y) = (\phi \circ (\phi-Id))(x) =0$ d'après l	a question précédente. 
+Donc $y\in \ker(\phi)$. Ce résultat étant vrai pour tout $y\in \Im(\phi -\Id)$ on a bien 
+$$\Im(\phi -\Id) \subset \ker(\phi)$$
+
+Un argument mot-pour-mot similaire en échangeant les roles de $\phi$ et $\phi- \Id$ montre l'inclusion 
+$$\Im(\phi) \subset \ker(\phi-\Id)$$
+ \item La dimension du noyau de $\phi-\Id$ est au moins 2 car contient $\Im(\phi)$. Mais la dimension du noyau de $\phi-\Id$ est strictement inférieur à 3, sinon on aurait $\phi-\Id = 0 $ (ie $\phi = \Id $) ce qui n'est pas le cas. Donc $\dim(\ker (\phi-\Id)) = 2$ et $\phi-\Id$ n'est pas injective. 
+\end{enumerate}
+\item L'argument précédent montre que $\dim(\ker (\phi-\Id)) = 2$. On a donc
+$$\left.\begin{array}{ccc}
+\Im(\phi)&\subset& \ker (\phi-\Id) \\
+\dim(\Im(\phi)) &=& \dim(\ker (\phi-\Id)) 
+\end{array} \right\} \implique \ker (\phi-\Id) =\Im(\phi)$$
+
+\item \begin{enumerate}
+\item $e_1=\left( -3, 1, 2\right)$ est une base de $\ker (\phi)$. 
+
+$e_2= (1,3,0), e_3=(0,2,1)$ est une base de $\ker(\phi-\Id)$ ( à vérifier) 
+
+Calculons le rang de la famille $\cB =(e_1, e_2, e_3)$, il est égal au rang de la matrice  associée : 
+$$rg(\cB) = rg ( \left(\begin{array}{ccc}
+-3 & 1 &0 \\
+1 & 3 &2 \\
+2 & 0 &1 
+\end{array}\right)  = rg \left(\begin{array}{ccc}
+1 & 3 &2 \\
+-3 & 1 &0 \\
+2 & 0 &1 
+\end{array}\right)  = rg \left(\begin{array}{ccc}
+1 & 3 &2 \\
+0 & 10 &6 \\
+0 & -6 &-3
+\end{array}\right)=rg \left(\begin{array}{ccc}
+1 & 3 &2 \\
+0 & 5 &3 \\
+0 & -2 &-1
+\end{array}\right)  $$
+
+$$\phantom{rg(\cB)} =rg \left(\begin{array}{ccc}
+1 & 3 &2 \\
+0 & 5 &3 \\
+0 & 0 &1
+\end{array}\right)  =3$$
+Cette famille est bien une base. 
+
+\item Par définition du noyau $\phi(e_1) = 0$. De même $\phi-\Id (e_2) = \phi-\Id (e_3) =0$ Donc 
+$\phi(e_2)=e_2 $ et $\phi(e_3)= e_3$. 
+On obtient alors la matrice de $\phi$ dans la base $\cB$:
+$$Mat_{\cB} (\phi)  =\left(\begin{array}{ccc}
+0 & 0&0 \\
+0 & 1 &0 \\
+0 & 0 &1
+\end{array}\right) $$
+
+\end{enumerate}
+\end{enumerate}
+\end{correction}

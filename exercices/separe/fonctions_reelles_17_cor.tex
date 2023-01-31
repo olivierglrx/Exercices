@@ -1,0 +1,58 @@
+\begin{correction}  \;
+\begin{enumerate}
+\item  \textbf{Ensemble de d\'efinition, de d\'erivabilit\'e et d\'eriv\'ee de $\mathbf{f}$ d\'efinie par: $\mathbf{f(x)=\ddp\frac{\ln{(|x^2-1|)}}{x}}$:}
+\begin{itemize}
+\item[$\bullet$] \underline{Ensemble de d\'efinition:} La fonction $f$ est bien d\'efinie si et seulement si $|x^2-1|>0$ et $x\not= 0$. Or une valeur absolue est toujours positive ou nulle donc on a: $|x^2-1|>0\Leftrightarrow x^2-1\not= 0 \Leftrightarrow x\notin \lbrace -1,1\rbrace$.  
+Donc $\mathcal{D}_f=\R\setminus\lbrace -1,0,1\rbrace$.
+\item[$\bullet$] \underline{Ensemble de d\'erivabilit\'e:} La fonction $f$ est d\'erivable sur $\mathcal{D}_f$ comme somme, compos\'ee et quotient de fonctions d\'erivables (il y a une valeur absolue mais on a bien $x^2-1\not= 0$ sur $\mathcal{D}_f$ donc le domaine de d\'erivabilit\'e est bien \'egal au domaine de d\'efinition).
+\item[$\bullet$] \underline{D\'eriv\'ee:} Comme il y a une valeur absolue, on \'etudie des cas afin d'enlever la valeur absolue. 
+On a:
+\begin{center}
+ \begin{tikzpicture}
+ \tkzTabInit{ $x$          /1,%
+       $|x^2-1|$       /1,
+       $f(x)$          /2}%
+     { $-\infty$,$-1$,$1$,$+\infty$}%
+\tkzTabLine{,x^2-1,0,1-x^2,0,x^2-1}
+\tkzTabLine{,\ddp\frac{\ln{(x^2-1)}}{x},d,\ddp\frac{\ln{(1-x^2)}}{x},d,\ddp\frac{\ln{(x^2-1)}}{x},}                   
+\end{tikzpicture}
+\end{center}
+On obtient donc ainsi l'expression de $f^{\prime}$ en d\'erivant l'expression de $f$ selon les cas:
+\begin{itemize}
+\item[$\star$] Si $x\in\rbrack -\infty,-1\lbrack\cup\rbrack 1,+\infty\lbrack$: on a alors $f^{\prime}(x)=\ddp\frac{2x^2-(x^2-1)\ln{(x^2-1)}}{x^2(x^2-1)}$.
+\item[$\star$] Si $x\in\rbrack -1,0\lbrack\cup\rbrack 0,1\lbrack$: on a alors $f^{\prime}(x)=\ddp\frac{2x^2-(x^2-1)\ln{(1-x^2)}}{x^2(x^2-1)}$.
+\end{itemize}
+On peut remarquer que l'on peut regrouper ces deux cas en une formule g\'en\'erale en utilisant de nouveau la valeur absolue et on obtient: \fbox{$\forall x\in\mathcal{D}_f,\ f^{\prime}(x)=\ddp\frac{2x^2-(x^2-1)\ln{|x^2-1|}}{x^2(x^2-1)}  .$}
+ \end{itemize}
+ %-------------
+\item  \textbf{Ensemble de d\'efinition, de d\'erivabilit\'e et d\'eriv\'ee de $\mathbf{f}$ d\'efinie par: $\mathbf{f(x)=\ddp\frac{x}{\sqrt{|e^x-1|+1}}}$:}
+\begin{itemize}
+\item[$\bullet$] \underline{Ensemble de d\'efinition:} La fonction $f$ est bien d\'efinie si et seulement si $|e^x-1|+1>0$: toujours vrai comme somme de deux termes positifs dont l'un est strictement positif car $1>0$ et une valeur absolue est toujours positive ou nulle. Donc $\mathcal{D}_f=\R$.
+\item[$\bullet$] \underline{Ensemble de d\'erivabilit\'e:} La fonction $f$ est d\'erivable si et seulement si $x\in\mathcal{D}_f$ et $e^x-1\not= 0$ (\`{a} cause de la pr\'esence de la valeur absolue). Or on a: $e^x-1\not=0\Leftrightarrow x\not= 0$. Ainsi la fonction $f$ est d\'erivable sur $\R^{\star}$ comme somme compos\'ee et quotient de fonctions d\'erivables.
+\item[$\bullet$] \underline{D\'eriv\'ee:} Comme il y a une valeur absolue, on \'etudie des cas afin d'enlever la valeur absolue. 
+On a:
+\begin{center}
+ \begin{tikzpicture}
+ \tkzTabInit{ $x$          /1,%
+       $|e^x-1|$       /1,
+       $f(x)$          /2}%
+     { $-\infty$,$0$,$+\infty$}%
+\tkzTabLine{,1-e^x,0,e^x-1}
+\tkzTabLine{,\ddp\frac{x}{\sqrt{2-e^x}},d,\ddp\frac{x}{\sqrt{e^x}},}          
+\end{tikzpicture}
+\end{center}
+On obtient donc ainsi l'expression de $f^{\prime}$ en d\'erivant l'expression de $f$ selon les cas:
+\begin{itemize}
+\item[$\star$] \fbox{Si $x\in\rbrack -\infty,0\lbrack$: on a alors $f^{\prime}(x)=\ddp\frac{ 4-2e^x+xe^x }{ 2(2-e^x)\sqrt{2-e^x} }$.}
+\item[$\star$] \fbox{Si $x\in\rbrack 0,+\infty\lbrack$: on a alors $f^{\prime}(x)=\ddp\frac{2-x}{2\sqrt{e^x}}$.}
+\end{itemize}
+
+ \end{itemize}
+\end{enumerate}
+\end{correction}
+
+
+
+
+%----------------------------------
+%------------------------------------------------

@@ -1,0 +1,44 @@
+\subsection{Etude dérivabilité }
+
+\begin{exercice}   \;
+Etudier la continuité et la dérivabilité de 
+$$f(x)=\left\{\begin{array}{ll}
+x^2\sin\left(\frac 1x\right)&x\neq 0\\
+0&x=0
+\end{array}\right.\quad\quad\quad
+g(x)=\left\{\begin{array}{ll}
+x^3\sin\left(\frac 1x\right)&x\neq 0\\
+0&x=0.
+\end{array}\right.$$
+
+Ces fonctions sont-elles de classe $\cC^1$ ? 
+\end{exercice}
+
+\begin{correction}
+
+$f$ et $g$ sont $\cC^\infty$ sur $\R^*$ comme composée et produit de fonctions usuelles et on a $\forall x\in \R^*$
+
+$$f'(x) = 2x \sin\left(\frac 1x\right) -\cos\left(\frac 1x\right)$$
+et 
+
+$$g'(x) = 3x^2 \sin\left(\frac 1x\right) -x\cos\left(\frac 1x\right)$$
+
+
+Etudions la dérivabilité en $0$. 
+On  a $\tau_{f,0} (x)=\frac{f(x)-f(0)}{x-0}= x\sin\left(\frac 1x\right)$ 
+On montre comme dans le TD que $\lim_{x\tv0}\tau_{f,0} (x) =0$
+Donc $f$ est dérivable en $0$ et $f'(0)=0$
+
+De même, avec 
+$\tau_{g,0} (x)=\frac{g(x)-g(0)}{x-0}= x^2\sin\left(\frac 1x\right)$ 
+On montre que $\lim_{x\tv0}\tau_{g,0} (x) =0$
+Donc $g$ est dérivable en $0$ et $g'(0)=0$
+
+
+Il faut maintenant étudier la continuité de  la dérivée. 
+$$\lim_{x\tv 0} g'(x) = \lim_{x\tv 0}  3x^2 \sin\left(\frac 1x\right) -x\cos\left(\frac 1x\right) = 0$$
+Donc $g'$ est continue en $0$  ainsi $g$ est de classe $\cC^1$ sur $\R$. 
+
+En revanche $f'(x) $ n'admet pas de limite en $0$ et en particulier $f'$ n'est pas continue en $0$. Ainsi $f$ n'est  pas de classe $\cC^1$. 
+
+\end{correction}

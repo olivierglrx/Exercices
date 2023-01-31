@@ -1,0 +1,97 @@
+
+\begin{correction}   \;
+\begin{enumerate}
+\item \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n} x^{2k}}$:}\\
+\noindent On reconna\^{i}t la somme des termes d'une suite g\'eom\'etrique et on obtient donc en utilisant le fait que $x^{2k}=(x^2)^k$:\\
+\noindent  
+\begin{center}
+$\ddp \sum\limits_{k=0}^{n} x^{2k}=\ddp \sum\limits_{k=0}^{n} (x^2)^{k}=\fbox{$\left\lbrace \begin{array}{ll}  \ddp\frac{1-x^{2n+2}}{1-x^2} & \hbox{si}\ x\not= 1\ \hbox{et}\ x\not=-1\vsec\\ n+1 & \hbox{si}\ x= 1\ \hbox{ou}\ x=-1.   \end{array}\right.$}$\\
+\end{center}
+
+\textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n} x^{2k+1}}$:}\\
+\noindent On reconna\^{i}t la somme des termes d'une suite g\'eom\'etrique et on obtient donc en utilisant le fait que $x^{2k+1}=(x^2)^k\times x$:\\
+\noindent \begin{center}
+$\ddp \sum\limits_{k=0}^{n} x^{2k+1}=x\ddp \sum\limits_{k=0}^{n} (x^2)^{k}=\fbox{$\left\lbrace \begin{array}{ll}  x\times \ddp\frac{1-x^{2n+2}}{1-x^2} & \hbox{si}\ x\not= 1\ \hbox{et}\ x\not=-1\vsec\\ n+1 & \hbox{si}\ x= 1\vsec\\ -(n+1)& \hbox{si}\ x=-1.   \end{array}\right.$}$
+\end{center}
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n} a^k 2^{3k} x^{-k}}$:}\\
+\noindent On reconna\^{i}t la somme des termes d'une suite g\'eom\'etrique et on obtient donc en utilisant le fait que $a^k 2^{3k} x^{-k}=a^k(2^3)^k\times \ddp\frac{1}{x^k}=a^k\times 8^k\times \left(\ddp\frac{1}{x} \right)^k=\left(\ddp\frac{8a}{x} \right)^k$:\\
+
+\begin{center}
+ $\ddp \sum\limits_{k=0}^{n} a^k 2^{3k} x^{-k}=\ddp \sum\limits_{k=0}^{n} \left(\ddp\frac{8a}{x}\right)^k=\fbox{$\left\lbrace \begin{array}{ll}  \ddp\frac{1-\left( \frac{8a}{x}\right)^{n+1}}{1-\left( \frac{8a}{x}\right)} & \hbox{si}\ x\not= 8a \vsec\\ n+1 & \hbox{si}\ x= 8a.   \end{array}\right.$}$ 
+\end{center}
+
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=0}^{n} (i^2+n+3)}$:}\\
+\noindent Par lin\'earit\'e de la somme, on obtient: 
+\begin{align*}
+\ddp \sum\limits_{i=0}^{n} (i^2+n+3)&=\ddp \sum\limits_{i=0}^{n} i^2+(n+3)\ddp \sum\limits_{i=0}^{n} 1\\
+&= \ddp\frac{n(n+1)(2n+1)}{6}+(n+3)(n+1)\\
+&=\fbox{$ \ddp\frac{n+1}{6}\left( 2n^2+7n+18 \right)$}
+\end{align*}
+
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=8}^{21}\ddp\frac{2j-5}{6}}$:}\\
+%\noindent Par lin\'earit\'e de la somme, on obtient: $\ddp \sum\limits_{j=8}^{21} \ddp\frac{2j-5}{6}=
+%\ddp\frac{1}{6}\left\lbrack    2\ddp \sum\limits_{j=8}^{21} j-5\ddp \sum\limits_{j=8}^{21}1  \right\rbrack=
+%\ddp\frac{1}{6}\left\lbrack    2\times \ddp\frac{(21+8)(21-8+1)}{2}-5(21-8+1)  \right\rbrack=
+%\fbox{$\ddp\frac{28}{3}.$}$
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^{n} (2i-1)^3}$:}\\
+\noindent On commence par d\'evelopper la puissance cube \`{a} l'int\'erieur de la somme puis on utilise la lin\'earit\'e de la somme. On obtient donc:
+\begin{align*}
+\ddp \sum\limits_{i=1}^{n} (2i-1)^3&=\ddp \sum\limits_{i=1}^{n} \left( 8i^3-12i^2+6i-1 \right)\\
+&=8 \ddp \sum\limits_{i=1}^{n} i^3-12\ddp \sum\limits_{i=1}^{n}i^2+6\ddp \sum\limits_{i=1}^{n} i-\ddp \sum\limits_{i=1}^{n}1. 
+\end{align*}
+On utilise ensuite le formulaire sur les sommes et on obtient alors:
+\begin{align*}
+ \ddp \sum\limits_{i=1}^{n} (2i-1)^3&=8\left( \ddp\frac{n(n+1)}{2} \right)^2-12\ddp\frac{n(n+1)(2n+1)}{6}+6\ddp\frac{n(n+1)}{2}-n\\
+ 	&= \fbox{$n^2(4n^2+4n+1)$} .
+\end{align*}
+
+Une autre solution consiste à faire la somme des paires entre $1$ et $2n$ puis simplifier l'expression avec la somme de tous les entiers au cube. 
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n} \ddp\frac{p}{q+1}}$:}\\
+%\noindent Comme ni $p$, ni $q$ ne d\'ependent de l'indice de sommation $k$, par lin\'earit\'e de la somme, on obtient: $\ddp \sum\limits_{k=0}^{n} \ddp\frac{p}{q+1}=\ddp\frac{p}{q+1}\ddp \sum\limits_{k=0}^{n} 1=\fbox{$ \ddp\frac{p(n+1)}{q+1}$.}$
+%-------------------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}}$:}\\
+\noindent On commence par utiliser les propri\'et\'es sur les puissances et on obtient que: $(1-a^2)^{2k+1}=\lbrack(1-a^2)^2\rbrack^k \times (1-a^2)^1$. Par lin\'earit\'e de la somme et en reconnaissant de plus la somme d'une suite g\'eom\'etrique, on a: $\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}=(1-a^2)\ddp \sum\limits_{k=2}^{n^2} \lbrack (1-a^2)^2 \rbrack^k$. On doit donc \'etudier deux cas selon que $(1-a^2)^2\not= 1$ ou que $(1-a^2)^2= 1$.
+\begin{itemize}
+\item[$\bullet$] Cas 1: si $(1-a^2)^2\not= 1$:\\
+\noindent On obtient alors: $\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}=(1-a^2)\times ((1-a^2)^2)^2\times \ddp\frac{1-\lbrack (1-a^2)^2\rbrack^{n^2-1}}{1-(1-a^2)^2}=(1-a^2)^5\times \ddp\frac{1- (1-a^2)^{2n^2-2}}{2a^2-a^4}=\fbox{$(1-a^2)^5\times \ddp\frac{1- (1-a^2)^{2n^2-2}}{a^2(2-a^2)}$.}$
+\item[$\bullet$] Cas 2: si $(1-a^2)^2= 1$:\\
+\noindent Regardons \`{a} quels $a$ cela correctionrespond: $(1-a^2)^2= 1\Leftrightarrow 1-a^2=1\ \hbox{ou}\ 1-a^2=-1\Leftrightarrow a^2=0\ \hbox{ou}\ a^2=2\Leftrightarrow a=-\sqrt{2}\ \hbox{ou}\ a=0\ \hbox{ou}\ a=\sqrt{2}$. Calculons alors la somme pour ces $a$: $\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}=(1-a^2)\ddp \sum\limits_{k=2}^{n^2} 1=(1-a^2)\times (n^2-1).$ Il faut alors distinguer encorrectione deux cas: 
+\begin{itemize}
+\item[$\star$] Si $a=0$ alors $1-a^2=1$ et \fbox{$\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}=n^2-1.$}
+\item[$\star$] Si $a=-\sqrt{2}$ ou $a=\sqrt{2}$ alors $1-a^2=-1$ et \fbox{$\ddp \sum\limits_{k=2}^{n^2} (1-a^2)^{2k+1}=-n^2+1.$}
+\end{itemize}
+\end{itemize}
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=1}^n (3\times 2^k+1) }$:}\\
+\noindent $\ddp \sum\limits_{k=1}^n (3\times 2^k+1)=3 \ddp \sum\limits_{k=1}^n 2^k+\ddp \sum\limits_{k=1}^n 1=3\times 2\times \ddp\frac{1-2^n}{1-2} +n $ par lin\'earit\'e et car $2\not=1$. Donc 
+\begin{center}
+\fbox{$\ddp \sum\limits_{k=1}^n (3\times 2^k+1) =6(2^n-1)+n.$}
+\end{center}
+
+\item  \textbf{Calcul de $\mathbf{\ddp\frac{1}{n}\ddp \sum\limits_{k=0}^{n-1} \exp{\left(\ddp\frac{k}{n}\right)} }$:}\\
+\noindent $\ddp\frac{1}{n}\ddp \sum\limits_{k=0}^{n-1} \exp{\left(\ddp\frac{k}{n}\right)} = \ddp\frac{1}{n}\ddp \sum\limits_{k=0}^{n-1} \left( e^{\frac{1}{n}} \right)^{k}=\ddp\frac{1}{n} \ddp\frac{ 1-\left( e^{\frac{1}{n}} \right)^{n}  }{1-e^{\frac{1}{n}} }$ car $e^{\frac{1}{n}} \not= 1$. Ainsi \fbox{$\ddp\frac{1}{n}\ddp \sum\limits_{k=0}^{n-1} \exp{\left(\ddp\frac{k}{n}\right)} =\ddp\frac{1}{n} \ddp\frac{ 1-e  }{1-e^{\frac{1}{n}} }$.} 
+
+
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^n (2k-1+2^k) }$:}\\
+\noindent $\ddp \sum\limits_{k=0}^n (2k-1+2^k)=2\ddp \sum\limits_{k=0}^n k-\ddp \sum\limits_{k=0}^n 1+\ddp \sum\limits_{k=0}^n 2^k=2\ddp\frac{n(n+1)}{2} -(n+1)+ \ddp\frac{1-2^{n+1}}{1-2}$ par  lin\'earit\'e et car $2\not=1$. Ainsi \fbox{$\ddp \sum\limits_{k=0}^n (2k-1+2^k)=n^2+2^{n+1}-2$.}
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=1}^n 2^{2k+1} }$:}\\
+%\noindent $\ddp \sum\limits_{k=1}^n 2^{2k+1} =2\ddp \sum\limits_{k=1}^n (2^2)^k=2\ddp \sum\limits_{k=1}^n 4^k=2\times 4\times \ddp\frac{1-4^n}{1-4} $ par  lin\'earit\'e et car $4\not=1$. Ainsi \fbox{$\ddp \sum\limits_{k=1}^n 2^{2k+1} =\ddp\frac{8}{3}(4^n-1)$.}
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=0}^n 3(i+1)i}$:}\\
+%\noindent $\ddp \sum\limits_{i=0}^n 3(i+1)i=3\ddp \sum\limits_{i=0}^n i^2+3\ddp \sum\limits_{i=0}^n i=3\ddp\frac{n(n+1)(2n+1)}{6}+3\ddp\frac{n(n+1)}{2}=\fbox{$ n(n+1)(n+2)$.}$ On a utilis\'e la lin\'earit\'e de la somme et le formulaire sur les sommes usuelles.
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=0}^n\ddp \binom{n}{j}a^j}$:}\\
+\noindent \fbox{$\ddp \sum\limits_{j=0}^n\binom{n}{j}a^j=(1+a)^n$} en reconnaissant un bin\^{o}me de Newton car $\ddp \sum\limits_{j=0}^n\binom{n}{j}a^j=\ddp \sum\limits_{j=0}^n\binom{n}{j}a^j 1^{n-j}$\\
+\noindent  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=1}^{n+1}\ddp \binom{n}{j}a^j}$:}\\
+\noindent On se ram\`{e}ne \`{a} la formule du bin\^{o}me de Newton en utilisant la relation de Chasles: 
+$\ddp \sum\limits_{j=1}^{n+1}\ddp \binom{n}{j}a^j=\ddp \sum\limits_{j=0}^{n}\ddp \binom{n}{j}a^j-\binom{n}{0}a^0+\binom{n}{n+1}a^{n+1}$. Par convention, on a: $\binom{n}{n+1}=0$ et ainsi on obtient en utilisant le bin\^{o}me de Newton: \fbox{$\ddp \sum\limits_{j=1}^{n+1}\ddp \binom{n}{j}a^j=(1+a)^n-1 .$}
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=0}^{n}\ddp \binom{n}{i}(-1)^{i}}$:}\\
+\noindent \noindent \fbox{$\ddp \sum\limits_{j=0}^n\binom{n}{j}(-1)^j=0$} gr\^ace au bin\^{o}me de Newton car $\ddp \sum\limits_{j=0}^n\binom{n}{j}(-1)^j=\ddp \sum\limits_{j=0}^n\binom{n}{j}(-1)^j 1^{n-j}=(1-1)^n$.
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^{n}\ddp \binom{n+1}{i}(-1)^{i}}$:}\\
+\noindent On se ram\`{e}ne \`{a} la formule du bin\^{o}me de Newton en utilisant la relation de Chasles: 
+$\ddp \sum\limits_{i=1}^{n}\ddp \binom{n+1}{i}(-1)^{i}=\ddp \sum\limits_{i=0}^{n+1}\ddp \binom{n+1}{i}(-1)^{i}-\ddp \binom{n+1}{0}(-1)^{0}-\ddp \binom{n+1}{n+1}(-1)^{n+1}=(1-1)^{n+1}-1-(-1)^{n+1}=-1+(-1)^{n+2}=-1+(-1)^n=(-1)^n-1.$ Ainsi on obtient que: \fbox{$\ddp \sum\limits_{i=1}^{n}\ddp \binom{n+1}{i}(-1)^{i}=(-1)^n-1$.}
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=0}^n\ddp \binom{n}{j}  \ddp\frac{(-1)^{j-1}}{2^{j+1}}}$:}\\
+\noindent On se ram\`{e}ne \`{a} la formule du bin\^{o}me de Newton en utilisant les propri\'et\'es sur les puissances. On obtient
+$\ddp \sum\limits_{j=0}^n\ddp \binom{n}{j}  \ddp\frac{(-1)^{j-1}}{2^{j+1}}=\ddp\frac{-1}{2}\ddp \sum\limits_{j=0}^n\ddp \binom{n}{j} \left( \ddp\frac{-1}{2}\right)^j=\ddp\frac{-1}{2} \left(  1-\ddp\demi \right)^n=\fbox{$ \ddp\frac{-1}{2^{n+1}}  $.}$
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n-1} \ddp\frac{1}{3^k}\ddp \binom{n}{k}}$:}\\
+\noindent $\ddp \sum\limits_{k=0}^{n-1} \ddp\frac{1}{3^k}\binom{n}{k}=\ddp \sum\limits_{k=0}^{n-1}\binom{n}{k}\left( \ddp\frac{1}{3}\right)^k1^{n-k}$. Afin de pouvoir utiliser la formule du bin\^{o}me de Newton, on utilise la relation de Chasles pour obtenir:
+$\ddp \sum\limits_{k=0}^{n-1} \ddp\frac{1}{3^k}\binom{n}{k}=\ddp \sum\limits_{k=0}^{n}\binom{n}{k}\left( \ddp\frac{1}{3}\right)^k1^{n-k}-\binom{n}{n}\left( \ddp\frac{1}{3}\right)^n=\left( 1+\ddp\frac{1}{3} \right)^n- \ddp\frac{1}{3^n}=\left(\ddp\frac{4}{3} \right)^n- \ddp\frac{1}{3^n}=\fbox{$\ddp\frac{4^n-1}{3^n}.$}$
+\end{enumerate}
+\end{correction}

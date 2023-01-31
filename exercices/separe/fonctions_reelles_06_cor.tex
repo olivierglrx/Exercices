@@ -1,0 +1,127 @@
+\begin{correction}  \; \textbf{R\'esolution d'\'equations et d'in\'equations avec $\ln{}$, $\exp{}$ et $x\mapsto a^x$.}
+
+
+\begin{enumerate}
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{\ln{(x^2-4e^2)}<1+\ln{(3x)}}$:}\\
+\noindent \begin{itemize}
+\item[$\star$]  Domaine de r\'esolution: $\mathcal{D}= \; \rbrack 2e,+\infty\lbrack$
+\item[$\star$]  On a : $\ln{(x^2-4e^2)}<1+\ln{(3x)}\Leftrightarrow x^2-3xe-4e^2<0$. Un tableau de signe donne \fbox{$\mathcal{S}= \; ]2 e, 4 e[$}.
+\end{itemize}
+%---
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{\ln{(1+e^{-x})}<x}$:}\\
+%\noindent \begin{itemize}
+%\item[$\star$]  Domaine de r\'esolution: $\mathcal{D}=\R$
+%\item[$\star$]  
+%$\ln{(1+e^{-x})}<x\Leftrightarrow 1+e^{-x}<e^x\Leftrightarrow e^{2x}-e^x-1>0$.
+%On pose $X=e^x$ et on se ram\`ene ainsi \`a la r\'esolution d'une in\'equation du second degr\'e. On obtient 
+%\fbox{$\mathcal{S}=\left\rbrack \ln{\left( \ddp\frac{1+\sqrt{5}}{2} \right)},+\infty\right\lbrack$.}
+%\end{itemize}
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{|\ln{x}|<1}$:}\\
+\noindent \begin{itemize}
+\item[$\star$]  Domaine de r\'esolution: $\mathcal{D}=\R^{+\star}$.
+\item[$\star$]  On distingue deux cas :
+\begin{itemize}
+\item[$\bullet$] Si $x\geq 1$, alors $|\ln{x}|=\ln{x}$ et on doit r\'esoudre $\ln{x}<1\Leftrightarrow x<e$, donc $\mathcal{S_1}= [1,e[$.
+\item[$\bullet$] Si $0<x<1$, alors $|\ln{x}|=-\ln{x}$ et on doit r\'esoudre $-\ln{x}<1 \Leftrightarrow x>\ddp\frac{1}{e}$, donc $\mathcal{S}_2 = \ddp \left]\frac{1}{e} , 1 \right[$.
+\end{itemize}
+Ainsi, $\mathcal{S}=\mathcal{S}_1 \cup \mathcal{S}_2$, soit : \fbox{$\mathcal{S}=\left\rbrack \ddp\frac{1}{e},e\right\lbrack$}.
+\end{itemize}
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{\ln{(2x+4)} -\ln{(6-x)}=\ln{(3x-2)}-\ln{(x)}}$:}\\
+\noindent \begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\left\rbrack \ddp\frac{2}{3},6\right\lbrack$.
+\item[$\star$] En utilisant les propri\'et\'es du logarithme n\'ep\'erien, on a: $\ln{\lbrack x(2x+4)\rbrack}=\ln{\lbrack (3x-2)(6-x)\rbrack}$. Ce qui est \'equivalent \`{a} $x(2x+4)=(3x-2)(6-x)$ car la fonction exponentielle est strictement croissante sur $\R$. En passant tout du m\^{e}me c\^{o}t\'e et en d\'eveloppant, on obtient: \fbox{$\mathcal{S}=\left \lbrace \ddp\frac{6}{5},2\right\rbrace$}.
+\end{itemize} 
+%---
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^{3x}-6e^{2x}+8e^x>0}$:}\\
+%\noindent \begin{itemize}
+%\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+%\item[$\star$] On pose $X=e^x$ et on se ram\`{e}ne ainsi \`{a} r\'esoudre $X^3-6X^2+8X>0\Leftrightarrow X(X-2)(X-4)>0$. Un tableau de signe donne que c'est \'equivalent \`{a}: $0<X<2$ ou $X>4$ ce qui est \'equivalent \`{a}: $e^x<2$ ou $e^x>4$ car une exponentielle est toujours strictement positive. La fonction logarithme n\'ep\'erien \'etant strictement  croissante sur $\R^{+\star}$, on obtient \fbox{$\mathcal{S}=\rbrack -\infty, \ln{(2)}\lbrack\cup\rbrack \ln{4},+\infty\lbrack$.}
+%\end{itemize} 
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{2^{2x+1}+2^x=1}$:}\\
+\noindent \begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+\item[$\star$] 
+On a  :  $2^{2x+1}+2^x=1  \; \Leftrightarrow \; 2\times (2^x)^2+2^x-1=0$. On pose $X=2^x$, et on doit r\'esoudre $2X^2+X-1=0.$
+Le discriminant est 9 et les racines sont ainsi $-1$ et $\ddp\demi$.
+On obtient alors 
+$$\begin{array}{llll}
+2^{2x+1}+2^x=1& \Leftrightarrow &\left\lbrace\begin{array}{lll}
+e^{x\ln{2}}=-1\vsec\\
+\hbox{ou}\vsec\\
+e^{x\ln{2}}=\ddp\demi
+\end{array}\right. & \vsec\\
+&\Leftrightarrow & e^{x\ln{2}}=\ddp\demi & \hbox{car}\ e^{x\ln{2}}>0\vsec\\
+&\Leftrightarrow & x\ln{2}=-\ln{2}&  \hbox{car la fonction logarithme est strictement croissante} \vsec\\
+&\Leftrightarrow & x=-1.&
+\end{array}$$
+Ainsi, on obtient \fbox{$ \mathcal{S}=\lbrace -1  \rbrace$}.
+\end{itemize}
+%---
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^{3x}-e^{2x}-e^{x+1}+e\leq 0}$:}\\
+%\noindent 
+%\begin{itemize}
+%\item[$\star$]  Domaine de r\'esolution: $\mathcal{D}=\R$.
+%\item[$\star$] On pose $X=e^x$ et on doit alors r\'esoudre $X^3-X^2-eX+e\leq 0$. On remarque que 1 est racine \'evidente et ainsi on peut factoriser par 1. Par identification des coefficients d'un polyn\^{o}me, on obtient que: 
+%$X^3-X^2-eX+e\leq 0\Leftrightarrow (X-1)(X^2-e)\leq 0$. Un tableau de signe donne $X\leq -\sqrt{e}\ \hbox{ou}\ X\in [1, \sqrt{e}]$. On doit donc r\'esoudre $e^x\leq -\sqrt{e}$ ou $e^x\in [1, \sqrt{e}]$. Or une exponentielle est toujours strictement positive donc on doit r\'esoudre $e^x\in [1, \sqrt{e}]$. En composant par la fonction $\ln$ qui est strictement croissante sur $\R^{+\star}$, on obtient $x\in [0, \ln (\sqrt{e})]\Leftrightarrow x\in \left[0, \ddp\demi \right]$.
+%\item[$\star$] Conclusion: \fbox{$\mathcal{S}=\left\lbrack 0, \ddp\demi \right\rbrack  $.}
+%\end{itemize}
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{(\ln{x})^2-3\ln{x}-4\leq 0}$:}\\
+%\noindent 
+%\begin{itemize}
+%\item[$\star$]  Domaine de r\'esolution: $\mathcal{D}=\R^{+\star}$.
+%\item[$\star$] On pose $X=\ln{(x)}$ et on doit alors r\'esoudre $X^2-3X-4\leq 0$. Le discriminant vaut $\Delta=25$ et les racines sont $-1$ et $4$. Ainsi, un tableau de signe donne que: $X^2-3X-4\leq 0\Leftrightarrow -1\leq X\leq 4$. On doit donc r\'esoudre $-1\leq \ln{(x)}\leq 4$. En composant par la fonction $\exp{}$ qui est strictement croissante sur $\R$, on obtient que: $e^{-1}\leq x\leq e^4$.
+%\item[$\star$] Conclusion: \fbox{$\mathcal{S}=\left\lbrack e^{-1},e^4\right\rbrack  $.}
+%\end{itemize}
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^{\sin{x}}-\ddp\frac{9}{e^{\sin{x}}}\geq 0}$:}\\
+%\noindent \begin{itemize}
+%\item[$\star$]  Domaine de d\'efinition: $\mathcal{D}=\R$ car pour tout $x\in\R$, $e^{\sin{x}}>0$.
+%\item[$\star$]  
+%$e^{\sin{x}}-\ddp\frac{9}{e^{\sin{x}}}\geq 0\Leftrightarrow \ddp\frac{e^{2\sin{x}}-9}{e^{\sin{x}}}\geq 0\Leftrightarrow X^2-9\geq 0$ car $e^{\sin{x}}>0$ et en posant $X=e^{\sin{x}}$. Comme $e^{\sin{x}}\leq -3$ est impossible, on obtient alors: $e^{\sin{x}}-\ddp\frac{9}{e^{\sin{x}}}\geq 0 \Leftrightarrow e^{\sin{x}}\geq 3\Leftrightarrow \sin{x}\geq \ln{3}$ en composant par la fonction $\ln{}$ qui est strictement croissante sur $\R^{+\star}$. Or $\ln{3}>1$, donc \fbox{$\mathcal{S}=\emptyset$.}
+%\end{itemize} 
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{2e^{2x}-e^x-1\leq 0}$:}\\
+\noindent \begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+\item[$\star$] On pose $X=e^x$ et on doit r\'esoudre $2X^2-X-1\leq 0$. On obtient $X \in \left] -\ddp \demi, 1\right[$, soit $e^x>\ddp - \demi$ et $e^x <1$. La première \'equation est toujours vraie, et la deuxi\`eme \'equivaut  \`a $x<0$. On a donc : \fbox{$\mathcal{S}= \; \rbrack -\infty,0\rbrack$}.
+\end{itemize} 
+%--------
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{2\ln{(x)}+\ln{(2x-1)}>\ln{(2x+8)}+2\ln{(x-1)}}$:}\\
+\noindent \begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\rbrack 1,+\infty\lbrack$.
+\item[$\star$] En utilisant les propri\'et\'es du logarithme n\'ep\'erien et le fait que la fonction exponentielle est strictement croissante sur $\R$, on doit r\'esoudre $5x^2-14x+8<0$. En n'oubliant pas le domaine de d\'efinition, on obtient \fbox{$\mathcal{S}= \; \rbrack 1,2\lbrack$}.
+\end{itemize} 
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{4e^x-3e^{\frac{x}{2}}\geq 0}$:}\\
+\noindent \begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+\item[$\star$] On pose $X=e^{\frac{x}{2}}$ et cela revient \`{a} r\'esoudre $4X^2-3X\geq 0\Leftrightarrow X(4X-3)\geq 0$. Ce qui est \'equivalent \`{a} $e^{\frac{x}{2}} \leq 0$ ou $e^{\frac{x}{2}}\geq \ddp\frac{3}{4}$. La premi\`{e}re in\'equation est impossible et la deuxi\`{e}me donne \fbox{$\mathcal{S}=\left\lbrack 2\ln{\left( \ddp\frac{3}{4}\right)},+\infty\right\lbrack$}.
+\end{itemize} 
+%--
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^x-e^{-x}=3}$:}\\
+%\noindent \begin{itemize}
+%\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+%\item[$\star$] On met tout sur le m\^{e}me d\'enominateur et on obtient: $\ddp\frac{ e^{2x}-3e^x-1 }{e^x}=0$. On pose $X=e^x$ et on doit donc r\'esoudre $X^2-3X-1=0$. En repassant \`{a} $x$, on obtient 
+%\fbox{$\mathcal{S}=\left\lbrace   \ln{\left(\ddp\frac{3+\sqrt{13}}{2} \right)} \right\rbrace $.}
+%\end{itemize} 
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{9^x-2\times 3^x-8>0}$:}\\
+\noindent 
+\begin{itemize}
+\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+\item[$\star$] On peut remarquer que: $9^x=(3^x)^2$. Ainsi on pose $X=3^x$ et on obtient que: $X^2-2X-8>0$. Le discriminant vaut $\Delta=36$ et les racines sont $-2$ et 4. Ainsi on doit r\'esoudre $3^x<-2$ ou $3^x>4$. Or on sait que $3^x=e^{x\ln{3}}$ ainsi la premi\`{e}re in\'equation est impossible et la deuxi\`{e}me in\'equation donne: 
+$3^x>4 \Leftrightarrow x>\ddp\frac{\ln{4}}{\ln{3}}$ en composant par la fonction $\ln{}$ qui est strictement croissante sur $\R^{+\star}$ et car $\ln{3}>0$.  On a donc : \fbox{$\mathcal{S}=\left\rbrack \ddp\frac{\ln{4}}{\ln{3}},+\infty   \right\lbrack $}.
+\end{itemize} 
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{2^{4x}-3\times 2^{2x+1}+2^3<0}$:}\\
+%\noindent 
+%\begin{itemize}
+%\item[$\star$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+%\item[$\star$] On peut remarquer que: $2^{4x}=4^{2x}=(4^x)^2$ et $2^{2x+1}=2\times 2^{2x}=2\times 4^x$. Ainsi l'in\'equation \`{a} r\'esoudre est \'equivalente \`{a}: $(4^{x})^2 -6\times 4^x+8<0$.
+%Ainsi on pose $X=4^x$ et on obtient que: $X^2-6X+8<0$. Le discriminant vaut $\Delta=4$ et les racines sont $2$ et 4. Ainsi on doit r\'esoudre $2<4^x<4$. Or on sait que $4^x=e^{x\ln{4}}$ ainsi on obtient que:
+%$2<4^x<4 \Leftrightarrow \ln{2}<x\ln{4}<\ln{4}$ en composant par la fonction $\ln{}$ qui est strictement croissante sur $\R^{+\star}$. Comme $\ln{4}>0$ et $\ln{4}=2\ln{2}$, on obtient au final que: $2^{4x}-3\times 2^{2x+1}+2^3<0 \Leftrightarrow \ddp\demi <x<1$. 
+%\item[$\star$] Conclusion: \fbox{$\mathcal{S}=\left\rbrack \ddp\frac{1}{2},1 \right\lbrack $.}
+%\end{itemize} 
+\end{enumerate}
+\end{correction}

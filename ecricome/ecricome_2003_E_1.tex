@@ -1,0 +1,511 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, August 25, 2004 17:43:57}
+%TCIDATA{LastRevised=Saturday, August 28, 2004 15:05:03}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option economique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES}} \vspace{0.5cm}
+
+\textbf{Année 2003\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\vspace{13cm}
+
+\hfill \textbf{Tournez la page}
+
+\hfill \textbf{S.V.P\qquad }
+
+\newpage
+
+\section*{Exercice1}
+
+On considère l'espace vectoriel $E=\mathbb{R}^{3}$ et $f$ l'endomorphisme de 
+$E$ dont la matrice dans la base canonique $\mathcal{B}=\left( 
+\overrightarrow{e_{1}},\overrightarrow{e_{2}},\overrightarrow{e_{3}}\right) $
+est la matrice $A$ :
+
+\begin{equation*}
+A=\left( 
+\begin{array}{lll}
+3 & -2 & 3 \\ 
+1 & 0 & 2 \\ 
+0 & 0 & 2%
+\end{array}
+\right)
+\end{equation*}
+
+\noindent \textbf{1. Calcul des puissances de }$A$
+
+\begin{enumerate}
+\item Déterminer les valeurs propres $\lambda _{1}$ et $\lambda _{2}$ de
+l'endomorphisme $f$, avec $\lambda _{1}<\lambda _{2}$
+
+\item La matrice $A$ est-elle inversible ? (On ne demande pas la matrice $%
+A^{-1}$).
+
+\item Déterminer une base et la dimension de chacun des sous-espaces propres
+de $f$.
+
+\item Justifier que $f$ n'est pas diagonalisable.
+
+\item Déterminer le vecteur $\overrightarrow{u_{1}}$ de $E$ vérifiant :
+
+\begin{itemize}
+\item $\overrightarrow{u_{1}}$ est un vecteur propre de $f$ associé à la
+valeur propre $\lambda _{1}$
+
+\item la première composante de $\overrightarrow{u_{1}}$ est l.
+\end{itemize}
+
+\item Déterminer le vecteur $\overrightarrow{u_{2}}$ de $E$ vérifiant :
+
+\begin{itemize}
+\item $\overrightarrow{u_{2}}$ est un vecteur propre de $f$ associe à la
+valeur propre $\lambda _{2}$
+
+\item la deuxième composante de $\overrightarrow{u_{2}}$ est l.
+\end{itemize}
+
+\item Soit $\overrightarrow{u_{3}}=(1,1,1)$. Montrer que $\mathcal{C}=\left( 
+\overrightarrow{u_{1}},\overrightarrow{u_{2}},\overrightarrow{u_{3}}\right) $
+est une basede $E$.
+
+\item Déterminer la matrice de passage $P$ de la la base $\mathcal{B}$ dans
+la base $\mathcal{C}$ puis la matrice de passage de la base $\mathcal{C}$ à
+la base $\mathcal{B}$.
+
+\item Montrer que : $f\left( \overrightarrow{u_{3}}\right) =\overrightarrow{%
+u_{2}}+2\overrightarrow{u_{3}}$
+
+\item En déduire que la matrice de $f$ dans la base $\mathcal{C}$ est la
+matrice: 
+\begin{equation*}
+T=\left( 
+\begin{array}{lll}
+1 & 0 & 0 \\ 
+0 & 2 & 1 \\ 
+0 & 0 & 2%
+\end{array}%
+\right)
+\end{equation*}
+
+\item Rappeler la relation matricielle entre $A$ et $T$.
+
+\item Prouver que pour tout élément $n$ de $\mathbb{N}^{\times }$ il existe
+un réel $\alpha _{n}$ tel que : 
+\begin{equation*}
+T^{n}=\left( 
+\begin{array}{lll}
+1 & 0 & 0 \\ 
+0 & 2^{n} & \alpha _{n} \\ 
+0 & 0 & 2^{n}%
+\end{array}%
+\right)
+\end{equation*}%
+On donnera le réel $\alpha _{1}$ ainsi qu'une relation entre $\alpha _{n+1}$
+et $\alpha _{n}$
+
+\item Montrer que : 
+\begin{equation*}
+\forall n\in \mathbb{N}^{\times },\;\alpha _{n}=n2^{n-1}
+\end{equation*}%
+En déduire l'écriture matricielle de $A^{n}$ en fonction de $n$.
+\end{enumerate}
+
+\noindent \textbf{2. Matrices commutant avec }$A$\textbf{.}
+
+\noindent $\mathfrak{M}_{3}\left( \mathbb{R}\right) $ désignant l'ensemble
+des matrices carrées d'ordre 3, on considère le sous-ensemble $C\left(
+A\right) $ de $\mathfrak{M}_{3}\left( \mathbb{R}\right) $ des matrices $M$
+telles que : 
+\begin{equation*}
+AM=MA
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $C(A)$ est un sous-espace vectoriel de $\mathfrak{M}%
+_{3}\left( \mathbb{R}\right) $
+
+\item Pour $M$ appartenant à $\mathfrak{M}_{3}\left( \mathbb{R}\right) $ on
+pose $M^{\prime }=P^{-1}MP.$
+
+Montrer que : 
+\begin{equation*}
+AM=MA\Longleftrightarrow TM^{\prime }=M^{\prime }T
+\end{equation*}%
+($T$ est définie dans la question \textbf{1}.10)
+
+\item Montrer qu'une matrice $M^{\prime }$ de $\mathfrak{M}_{3}\left( 
+\mathbb{R}\right) $) vérifie $TM^{\prime }=M^{\prime }T$ si et seulement si $%
+M^{\prime }$ est de la forme $\left( 
+\begin{array}{lll}
+a & 0 & 0 \\ 
+0 & b & c \\ 
+0 & 0 & b%
+\end{array}%
+\right) $ où $a,$ $b$, $c$ sont trois réels.
+
+\item En déduire que $M$ appartient à $C(A)$ si et seulement si il existe
+des réels $a,b,c$ tels que : 
+\begin{equation*}
+M=\left( 
+\begin{array}{ccc}
+-a+2b & 2a-2b & -a+b+2c \\ 
+-a+b & 2a-b & -a+b+c \\ 
+0 & 0 & b%
+\end{array}%
+\right)
+\end{equation*}
+
+\item Déterminer alors une base de $C(A)$ ainsi que la dimension de $C(A)$.
+\end{enumerate}
+
+\section*{\protect\LARGE Exercice 2}
+
+On considère les fonctions $ch$ et $sh$ définies sur $\mathbb{R}$ par :
+
+\begin{equation*}
+ch\left( x\right) =\dfrac{e^{x}+e^{-x}}{2}\;\;\;sh\left( x\right) =\dfrac{%
+e^{x}-e^{-x}}{2}
+\end{equation*}%
+ainsi que la fonction $f$ définie sur $\mathbb{R}$ par : 
+\begin{equation*}
+\left\{ 
+\begin{array}{l}
+f\left( x\right) =\dfrac{x}{sh\left( x\right) }\text{ si }x\neq 0 \\ 
+f\left( 0\right) =1%
+\end{array}%
+\right.
+\end{equation*}%
+On s'intéresse dans cet exercice à la convergence de la suite $\left(
+u_{n}\right) _{n\in \mathbb{N}}$ définie par la relation de récurrence : 
+\begin{equation*}
+\left\{ 
+\begin{array}{l}
+u_{0}=1 \\ 
+\forall n\in \mathbb{N\;\;}u_{n+1}=f\left( u_{n}\right)%
+\end{array}%
+\right.
+\end{equation*}
+
+\noindent \textbf{1. Etude des fonctions }$ch$\textbf{, }$sh$\textbf{, et }$%
+f $\textbf{.}
+
+\begin{enumerate}
+\item Etudier la parité des fonctions $ch$ et $sh$.
+
+\item Dresser le tableau de variations de la fonction $sh$, puis en déduire
+le signe de $sh\left( x\right) $ pour $x$ appartenant à $\mathbb{R}$.
+
+\item Déterminer un équivalent en $+\infty $ de $sh(x)$. En déduire l'allure
+de la courbe représentative de la fonction $sh$ en $+\infty $.
+
+\item Montrer que la fonction $sh$ réalise une bijection de $\mathbb{R}$
+dans $\mathbb{R}$
+
+\item Etudier les variations de la fonction $ch$.
+
+\item Montrer que : 
+\begin{equation*}
+\forall x\in \mathbb{R},\;\;ch\left( x\right) >sh\left( x\right)
+\end{equation*}
+
+\item Donner sur un méme graphique l'allure des courbes représentatives des
+fonctions $ch$ et $sh$.
+
+\item Etudier la parité de la fonction $f$.
+
+\item Déterminer le développement limité d'ordre 3 en 0 de la fontion $sh.$
+
+\item En déduire que la fonction $f$ est continue en $0,$ dérivable en 0 et d%
+éterminer $f^{\prime }\left( 0\right) $.
+
+\item Justifier que $f$ est dérivable sur $\mathbb{R}_{+}^{\times }$ et sur $%
+\mathbb{R}_{-}^{\times }$ et calculer $f^{\prime }\left( x\right) $ pour $%
+x\in \mathbb{R}^{\times }$
+
+\item On pose : 
+\begin{equation*}
+\forall x\in \mathbb{R}^{+},\;\;h\left( x\right) =shx-xch\left( x\right)
+\end{equation*}%
+Etudier les variations de $h$, puis en déduire le signe de $h\left( x\right) 
+$.
+
+\item Déterminer les variations de $f$ sur $\mathbb{R}^{+}$ et donner
+l'allure de la courbe représentative de la fonction $f$. (On ne cherchera
+pas les points d'inflexion).
+\end{enumerate}
+
+\noindent \textbf{2. Etude de la suite }$\left( u_{n}\right) _{n\in \mathbb{N%
+}}$\textbf{.}
+
+\noindent On donne :
+
+\begin{eqnarray*}
+f\left( 0.8\right) &\simeq &0.9,\;\;f(1)\simeq 0.85, \\
+sh(0.6) &\simeq &0.64,\;\;sh(0.8)\simeq 0.89,\;\;sh(1)\simeq
+1.18,\;\;sh(1.2)\simeq 1.51
+\end{eqnarray*}
+
+\begin{enumerate}
+\item Justifier que $f\left( \left[ 0.8,1\right] \right) \subset \left[ 0.8,1%
+\right] $, puis que : 
+\begin{equation*}
+\forall n\in \mathbb{N},\;\;u_{n}\in \left[ 0.8,1\right]
+\end{equation*}
+
+\item Montrer que l'équation $f\left( x\right) =x$ admet une unique solution 
+$\alpha $ sur $\mathbb{R}$ (on pourra utiliser la question \textbf{1.4, }
+sans cherche à déterminer $\alpha $).
+
+\item Donner um encadrement de $\alpha $ et justifier que : 
+\begin{equation*}
+\forall x\in \left[ 0.8,1\right] ,\;\;\dfrac{h\left( 1\right) }{sh^{2}\left(
+0.8\right) }\leqslant f^{\prime }\left( x\right) \leqslant \dfrac{h\left(
+0.8\right) }{sh^{2}\left( 1\right) }
+\end{equation*}
+
+\item On donne : 
+\begin{equation*}
+\dfrac{h\left( 1\right) }{sh^{2}\left( 0.8\right) }\simeq -0.47\text{ et }%
+\dfrac{h\left( 0.8\right) }{sh^{2}\left( 1\right) }\simeq -0.13
+\end{equation*}%
+Montrer que : 
+\begin{equation*}
+\forall n\in \mathbb{N},\mathbb{\;\;}\left\vert u_{n+1}-\alpha \right\vert
+\leqslant 0.5\left\vert u_{n}-\alpha \right\vert
+\end{equation*}%
+Puis que : 
+\begin{equation*}
+\forall n\in \mathbb{N},\mathbb{\;\;}\left\vert u_{n}-\alpha \right\vert
+\leqslant 0.2\left( 0.5\right) ^{n}
+\end{equation*}
+
+\item En déduire la limite de la suite $\left( u_{n}\right) $ quand $n$ tend
+vers $+\infty $.
+
+\item Ecrire un programme en Turbo-Pascal permettant de calculer et
+d'afficher $u_{10}$
+\end{enumerate}
+
+\section*{\protect\LARGE Exercice 3}
+
+Sous diverses hypothèses, l'exercice étudie différentes situations
+probabilistes concernant une entreprise de construction produisant des
+objets sur deux chaînes de montage $A$ et $B$ qui fonctionnent indé%
+pendemment l'une de l'autre.\newline
+Pour une chaîne donnée, les fabrications des pièces sont indépendantes.
+
+\noindent \textbf{Partie 1.}
+
+On suppose que $A$ produit $60\%$ des objets et $B$ produit $40\%$ des
+objets. La probabilité qu'un objet construit par la chaine $A$ soit dé%
+fectueux est $0.1$ alors que la probabilité pour qu'un objet construit par
+la chaine $B$ soit défectueux est $0.2$.
+
+\begin{enumerate}
+\item On choisit au hasard un objet à la sortie de l'entreprise. On constate
+que cet objet est défectueux. Calculer la probabilité de l'événement
+\textquotedblleft l'objet provient de la chaîne A\textquotedblleft\ .
+
+\item On suppose de plus que le nombre d'objets produits en une heure par $A$
+est une variable aléatoire $Y$ qui suit une loi de Poisson de paramètre $%
+\lambda =20.$
+
+On considère la variable aléatoire $X$ représentant le nombre d'objets dé%
+fectueux produits par la chaîne $A$ en une heure.
+
+\begin{enumerate}
+\item Rappeler la loi de $Y$ ainsi que la valeur de l'espérance et de la
+variance de $Y$.
+
+\item Soient $k$ et $n$ deux entiers naturels, déterminer la probabilité
+conditionnelle $P\left[ X=k/Y=n\right] $. (On distinguera les cas $%
+k\leqslant n$ et $k>n$ ).
+
+\item En déduire, en utilisant le système complet d'événements $\left(
+Y=i\right) _{i\in \mathbb{N}},$ que $X$ suit une loi de Poisson de paramètre
+2 .
+\end{enumerate}
+\end{enumerate}
+
+\noindent \textbf{Partie 2.}
+
+\noindent Soit $f$ la fonction définie sur $\mathbb{R}$ par : 
+\begin{equation*}
+\left\{ 
+\begin{array}{ccc}
+f\left( t\right) =\dfrac{2}{\left( 1+t\right) ^{3}}\text{ } & \text{si} & 
+t\geqslant 0 \\ 
+f\left( t\right) =0 & \text{si} & t<0%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $f$ est une densité d'une variable aléatoire $Z$
+
+\item Déterminer la fonction de répartition $F_{Z}$ de $Z$.
+
+\item Justifier la convergence de l'intégrale : 
+\begin{equation*}
+\int\limits_{0}^{+\infty }\dfrac{2t}{\left( 1+t\right) ^{3}}dt
+\end{equation*}%
+La calculer en effectuant le changement de variable $u=t+1$.
+
+\item Prouver que $Z$ admet une espérance et la déterminer.
+
+\item $Z$ admet-elle une variance ?
+
+\item Dans cette partie, on suppose que le temps de fabrication, exprimé en
+minutes d'un pièce par la chaîne $A$ (respectivement $B$) est une variable al%
+éatoire $Z_{1}$ ( respectivement $Z_{2}$) où $Z_{1}$ et$Z_{2}$ sont deux
+variables aléatoires indépendantes suivant la même loi que que $Z$.
+
+\begin{enumerate}
+\item On considère les événements :
+
+$C=$ \textquotedblleft le temps de fabrication d'une pièce sur la chaine $B$
+est supérieur à 2 minutes\textquotedblleft .
+
+$D=$ \textquotedblleft le temps de fabrication d'une pièce sur la chaîne $B$
+est inférieur à 3 minutes\textquotedblleft .
+
+Calculer les probabilités suivante : $P\left( C\right) ,P\left( D\right)
+,P\left( D/C\right) .$
+
+\item On note $T=\max (Z_{1},Z_{2})$ et $G_{T}$ la fonction de répartition
+de $T$.
+
+\begin{enumerate}
+\item Exprimer l'événement $\left( T\leqslant x\right) $ en fonction des évé%
+nements $\left( Z_{1}\leqslant x\right) $ et $\left( Z_{2}\leqslant x\right) 
+$
+
+\item Montrer que : 
+\begin{equation*}
+\forall x\in \mathbb{R},\;\;G_{T}\left( x\right) =\left[ F_{Z}\left(
+x\right) \right] ^{2}
+\end{equation*}
+\end{enumerate}
+
+\item En déduire que $T$ est une variable aléatoire à densité dont on
+donnera une densité.
+\end{enumerate}
+\end{enumerate}
+
+\noindent \textbf{Partie 3.}
+
+\noindent On suppose maintenant que pour qu'une pièce soit terminée, il faut
+qu'elle passe par la chaîne $A$ puis par la chaîne $B$.\newline
+Le temps de passage exprimé en minutes pour un objet sur la chaîne $A$ est
+une variable aléatoire $M$ suivant une loi exponentielle de paramètre 2.%
+\newline
+Le temps de passage exprimé en minutes pour un objet sur la chaîne $B$ est
+une variable aléatoire $N$ suivant une loi uniforme sur $\left[ 0,1\right] $%
+\newline
+Les variables $M$ et $N$ sont indépendantes.
+
+\begin{enumerate}
+\item Rappeler l'expression d'une densité de probabilité $v$ de $M$ et d'une
+densité $w$ de $N$.
+
+\item On note $S$ la variable aléatoire représentant le temps total de
+fabrication d'une pièce.
+
+Exprimer $S$ en fonction de $M$ et de $N$ et déterminer le temps moyen de
+fabrication d'une pièce.
+\end{enumerate}
+
+\label{fin}
+
+\end{document}

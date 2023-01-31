@@ -1,0 +1,33 @@
+
+\begin{correction}   \;
+\begin{enumerate}
+\item D\`{e}s que l'on a une soustraction entre deux sommes de m\^{e}me type avec juste un d\'ecalage d'indice, il faut reconna\^{i}tre une somme t\'elescopique et savoir la calculer. Le calcul utilise un ou plusieurs changements d'indice puis la relation de Chasles.
+\begin{itemize}
+\item[$\bullet$] \textbf{Calcul de $\mathbf{S=\ddp \sum\limits_{i=0}^{n} (x_{i+1}-x_i)}$:}\\
+\noindent $S=\ddp \sum\limits_{i=0}^{n} (x_{i+1}-x_i)=\ddp \sum\limits_{i=0}^{n} x_{i+1}-\ddp \sum\limits_{i=0}^{n} x_i $ par lin\'earit\'e. On pose alors le changement d'indice: $j=i+1$ dans la premi\`{e}re somme et on obtient: $S=\ddp \sum\limits_{j=1}^{n+1} x_{j}-\ddp \sum\limits_{i=0}^{n} x_i $. Comme l'indice de sommation est muet, on a: $S=\ddp \sum\limits_{i=1}^{n+1} x_{i}-\ddp \sum\limits_{i=0}^{n} x_i$. La relation de Chasles donne: $S=\ddp \sum\limits_{i=1}^{n} x_{i}+x_{n+1}-\ddp \sum\limits_{i=1}^{n} x_i-x_0=\fbox{$x_{n+1}-x_0$.}$
+\item[$\bullet$] \textbf{Calcul de $S^{\prime}=\mathbf{\ddp \sum\limits_{i=1}^{n} (x_{i+1}-x_{i-1})}$:}\\
+\noindent $S^{\prime}=\ddp \sum\limits_{i=1}^{n} (x_{i+1}-x_{i-1})=\ddp \sum\limits_{i=1}^{n} x_{i+1}-\ddp \sum\limits_{i=1}^{n} x_{i-1} $ par lin\'earit\'e. On pose alors le changement d'indice: $j=i+1$ dans la premi\`{e}re somme et le changement $k=i-1$ dans la deuxi\`{e}me somme et on obtient: $S^{\prime}=\ddp \sum\limits_{j=2}^{n+1} x_{j}-\ddp \sum\limits_{k=0}^{n-1} x_k $. Comme l'indice de sommation est muet, on a: $S^{\prime}=\ddp \sum\limits_{i=2}^{n+1} x_{i}-\ddp \sum\limits_{i=0}^{n-1} x_i$. La relation de Chasles donne: $S^{\prime}=\ddp \sum\limits_{i=2}^{n-1} x_{i}+x_{n}+x_{n+1}-\ddp \sum\limits_{i=2}^{n-1} x_i-x_0-x_1= \fbox{$ x_{n+1}+x_n-x_0-x_1$.}$
+\end{itemize}
+%\item Il s'agit ici de faire appara\^{i}tre une somme t\'elescopique puis d'appliquer la m\'ethode pr\'ec\'edente.
+%\item \textbf{Calcul de $\mathbf{S=\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k(k+1)}}$: }
+%\begin{itemize}
+%\item[$\bullet$]  Classiquement pour ce type de somme, on commence par montrer qu'il existe deux r\'eels $a$ et $b$ tels que pour tout $k\in\N^{\star}$: $\ddp\frac{1}{k(k+1)}=\ddp\frac{a}{k}+\ddp\frac{b}{k+1}$. En mettant au m\^{e}me d\'enominateur, on obtient que: $\forall k\in\N^{\star},\quad \ddp\frac{1}{k(k+1)}=\ddp\frac{  (a+b)k+a }{k(k+1)}.$
+%Cette relation doit \^{e}tre vraie pour tout $k\in\N^{\star}$ donc, par identification, on obtient que: $\left\lbrace \begin{array}{lll}  a+b&=&0\vsec\\ a&=&1  \end{array}\right.$ donc $a=1$ et $b=-1$. Ainsi, on obtient, par lin\'earit\'e, que: $S=\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k+1}.$
+%\item[$\bullet$] Il s'agit alors bien d'une somme t\'elescopique. On pose le changement d'indice: $j=k+1$ dans la deuxi\`{e}me somme et on obtient: $S=\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{j=2}^{n+1} \ddp\frac{1}{j}=\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{k=2}^{n+1} \ddp\frac{1}{k}=\fbox{$1-\ddp\frac{1}{n+1}$}$ en utilisation le fait que l'indice de sommation est muet et la relation de Chasles.
+%\end{itemize}
+%\item \textbf{Calcul de $\mathbf{S=\ddp \sum\limits_{k=1}^{n} \ln{\left\lbrack  \ddp\frac{k}{k+1} \right\rbrack}}$:}
+%\begin{itemize}
+%\item[$\bullet$]  On transforme cette somme en utilisant les propri\'et\'es du logarithme n\'ep\'erien et on obtient: $\ln{\left(  \ddp\frac{k}{k+1}\right)}=\ln{(k)}-\ln{(k+1)}.$
+%\item[$\bullet$]  Ainsi transform\'ee, la somme $S$ est bien de type t\'elescopique car on a bien une soustraction de 2 sommes de m\^{e}me type avec juste un d\'ecalage d'indice. En effet, par lin\'earit\'e, on obtient:
+%$S=\ddp \sum\limits_{k=1}^{n} \ln{(k)}-\ddp \sum\limits_{k=1}^{n} \ln{(k+1)}.$ On pose le changement d'indice $j=k+1$ dans la deuxi\`{e}me somme et on obtient $S=\ddp \sum\limits_{k=1}^{n} \ln{(k)}-\ddp \sum\limits_{j=2}^{n+1} \ln{(j)}=\ln{(1)}-\ln{(n+1)}=\fbox{$-\ln{(n+1)}$.}$
+%\end{itemize}
+\item \textbf{Calcul de $\mathbf{S=\ddp \sum\limits_{k=3}^{n} \ln{\left\lbrack  \ddp\frac{k^2}{(k+1)(k-2)} \right\rbrack}}$:}\\ 
+On transforme cette somme en utilisant les propri\'et\'es du logarithme n\'ep\'erien et on obtient: $\ln{\left(  \ddp\frac{k^2}{(k+1)(k-2)}\right)}=2\ln{(k)}-\ln{(k+1)}-\ln{(k-2)}.$\\
+Ainsi transform\'ee, la somme $S$ est bien de type t\'elescopique car on a bien une soustraction de 3 sommes de m\^{e}me type avec juste des d\'ecalages d'indice. En effet, par lin\'earit\'e, on obtient:
+$S=2\ddp \sum\limits_{k=3}^{n} \ln{(k)}-\ddp \sum\limits_{k=3}^{n} \ln{(k+1)}-\ddp \sum\limits_{k=3}^{n} \ln{(k-2)}.$ On pose le changement d'indice $j=k+1$ dans la deuxi\`{e}me somme et le changement $i=k-2$ dans la troisi\`{e}me somme et on obtient 
+$$\begin{array}{lll}
+S&=&2\ddp \sum\limits_{k=3}^{n} \ln{(k)}-\ddp \sum\limits_{j=4}^{n+1} \ln{(j)}-\ddp \sum\limits_{j=1}^{n-2} \ln{(j)}\vsec\\
+&=& 2\ln{(3)}+2\ln{(n-1)}+2\ln{(n)}-\ln{(n-1)}-\ln{(n)}-\ln{(n+1)}-\ln{(1)}-\ln{(2)}-\ln{(3)}\vsec\\
+&=& \fbox{$\ln{\left( \ddp\frac{ 3n(n-1) }{ 2(n+1) }  \right)}$.}\end{array}$$
+\end{enumerate}
+\end{correction}

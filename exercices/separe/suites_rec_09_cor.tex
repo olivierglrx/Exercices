@@ -1,0 +1,37 @@
+
+\begin{correction} \;
+C'est une suite de type $u_{n+1}=f(u_n)$, on donne les id\'ees de l'\'etude. Ainsi la r\'edaction dans une copie doit \^{e}tre beaucoup plus d\'etaill\'ee qu'ici.
+\begin{enumerate}
+ \item \'Etude de la fonction $f$ associ\'ee: $x\mapsto \sqrt{1+x^2}$\\
+\noindent La fonction $f$ est d\'efinie, continue et d\'erivable sur $\R$ et 
+$$\forall x\in\R,\ f^{\prime}(x)=\ddp\frac{x}{\sqrt{1+x^2}}.$$
+On obtient ainsi le tableau de variation suivant:
+\begin{center}
+\begin{tikzpicture}
+ \tkzTabInit{ $x$          /1,%
+       $f'(x)$      /1,%
+       $f(x)$       /2}%
+     { $-\infty$, $0$ ,$+\infty$ }%
+  \tkzTabLine {,$-$,0,$+$,}%
+  \tkzTabVar{
+       +/ $+\infty$        /,
+        -/$1$           /,%
+       +/$+\infty$           /,
+                      } 
+\end{tikzpicture}
+\end{center}
+\item Calcul des limites \'eventuelles:\\
+\noindent La fonction $f$ est continue sur $\R$, ainsi, si la suite $\suiteu$ converge, elle ne peut converger que vers $l$ v\'erifiant 
+$l=f(l)$. Un calcul rapide montre qu'il n'y a pas de limite \'eventuelle.
+\item La suite est bien d\'efinie et elle appartient \`{a} $I$ intervalle stable par $f$:\\
+\noindent On remarque que $\lbrack 0,+\infty\lbrack$ est un intervalle stable par $f$ et que $u_0=\ddp\demi\in\lbrack 0,+\infty\lbrack$. Un raisonnement par r\'ecurrence permet alors de v\'erifier que la suite est bien d\'efinie et que:
+$$\forall n\in\N,\quad u_n\geq 0.$$
+\item \'Etude de la monotonie de la suite:\\
+La fonction $f$ est croissante sur $\lbrack 0,+\infty\lbrack$ et la suite $\suiteu$ est bien \`a valeurs dans $\lbrack 0,+\infty\lbrack$, ainsi, la suite $\suiteu$ est monotone. Il suffit alors de comparer $u_1$ et $u_0$ et on obtient
+$$u_1=\ddp\frac{\sqrt{5}}{2}>u_0.$$
+Ainsi, un raisonnemnt par r\'ecurrence permet de montrer que la suite $\suiteu$ est croissante (voir les exemples du cours, le raisonnement par r\'ecurrence est obligatoire).
+\item \'Etude de la convergence de la suite:\\
+\noindent La suite $\suiteu$ est croissante donc d'apr\`es le th\'eor\`eme sur les suites monotones, elle tend vers une limite finie ou $+\infty$. Comme il n'y a pas de limite \'eventuelle possible, on montre 
+par un raisonnement rapide par l'absurde que la suite $\suiteu$ tend vers $+\infty$
+\end{enumerate}
+\end{correction}

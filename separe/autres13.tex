@@ -1,0 +1,137 @@
+\subsection{Etude de $\sinh$ sur $\R$ et $\bC$ (A vérifier)} 
+
+
+\begin{exercice}
+On définit la fonction \emph{sinus hyperbolique} de  $\bC$ dans $\bC$ par  
+$$\forall z\in \bC, \sinh(z) =\frac{e^z -e^{-z}}{2}$$
+
+
+\begin{enumerate}
+\item Etude de la fonction $\sinh$ sur $\bC$.
+\begin{enumerate}
+\item Que vaut $\sinh(z)$ quand $z$ est imaginaire pur ? 
+\item La fonction $\sinh$ est elle injective ? 
+\end{enumerate}
+
+\item  On note $\mathrm{sh}$ la restriction de la fonction $\sinh$ à $\R$:
+$$\mathrm{sh} :  \begin{array}{|ccc}
+\R &\tv& \R\\
+x &\mapsto & \frac{e^x -e^{-x}}{2}
+\end{array}$$ 
+
+Etude de la fonction $\mathrm{sh}$ sur $\R$. 
+\begin{enumerate}
+\item Etudier la fonction $\mathrm{sh}$. 
+\item Montrer que $\mathrm{sh}$ réalise une bijection de $\R$ sur un ensemble que l'on précisera.
+\item \warning A retravailler \warning En déduire que la fonction $\sinh$ est surjective  de $\bC$ dans $\bC$.  
+%\item Calculer la dérivée seconde $\sh''$. 
+%\item Démontrer que pour tout $x\in \R$, $\sh(x) \geq x$. 
+\item On note $\ddp \mathrm{ch}(x)  =\frac{e^x +e^{-x}}{2}$. Montrer que pour tout $x\in \R$, $\mathrm{ch}^2(x)-\mathrm{sh}^2(x)=1$
+\end{enumerate}
+\item Etude de la réciproque. 
+On note $\mathrm{argsh} : \R \tv \R$ la bijection réciproque de $\mathrm{sh}$. 
+\begin{enumerate}
+\item  Comment  obtenir la courbe représentative de $\mathrm{argsh} $ à partir de celle de $\mathrm{sh}$. 
+
+\item Démontrer que $\mathrm{argsh} $ est dérivable sur $\R$ et que l'on a :
+$$\forall x\in \R, \mathrm{argsh}'(x) = \frac{1}{\sqrt{1+x^2}}$$
+
+\item En résolvant $y=\mathrm{sh}(x)$ déterminer l'expression de $\mathrm{argsh}(y)$ en fonction de $y$ et retrouver ensuite  le résultat de la question précédente. 
+\end{enumerate}
+\item Etudier la limite de $\mathrm{argsh}(x) - \ln(x)$ quand $x \tv +\infty$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+Soit $z$ un imaginaire pur, il existe donc $\theta \in \R$ tel que $z=i\theta$. On a alors 
+$\sinh(z) = \sinh(i\theta) = \frac{e^{i\theta}  - e^{-i\theta} }{2} = i\sin(\theta)$ d'après les formules d'Euler. 
+\item En particulier la fonction $\sinh$ n'est pas injective sur $\bC$ : on  a  
+$\sinh(0 ) = \sinh(2i\pi)=0$. 
+
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item  La fonction $\sh$ est définie et dérivable sur $\R$. Sa dérivée vaut pour tout $x\in \R$:  $\sh'(x) =\frac{e^x+e^{-x}}{2}$. Comme l'exponentielle est psitive sur $\R$, $\sh'(x)>0$ et la fonction est donc strictement croissante. 
+\item Ses limites valent $ \lim_{x\tv +\infty} sh(x)= +\infty$ et $ \lim_{x\tv -\infty} sh(x)= -\infty$. Comme $\sh$  est continue, le théorème de la bijection assure que $\sh$ est bijective de $\R$ dans $\R$. 
+
+\item Cette question était mal posée et trop compliquée, je l'ai retirée du barême. Je propose la solution à la fin de l'exercice. 
+
+\item Soit $x\in \R$ on a :
+\begin{align*}
+\ch^2(x)-\sh^2(x)&= \frac{(e^x+e^{-x})^2}{4}-\frac{(e^x-e^{-x})^2}{4}\\
+							&= \frac{(e^{2x}+2e^0+e^{-2x})}{4}-\frac{(e^{2x}-2e^0 +e^{-2x})}{4}\\
+					&= \frac{4}{4}=1
+\end{align*}
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item C'est du cours : il suffit de faire la symétrie par rapport à la première diagonale, la droite d'équation $y=x$. 
+\item La fonction $\argsh$ est dérivable car $\sh$ est dérivable de dérivée non nulle sur $\R$. Sa dérivée vérifie  : 
+$$\argsh'(x) = \frac{1}{\sh'(\argsh(x))}$$
+Or le calcul montre que $\sh'(x) = \ch(x) $,  comme de plus $\ch (x)= \sqrt{1+\sh^2(x)}$ d'après la question 2d) on  a : 
+$$\argsh'(x) = \frac{1}{\ch(\argsh(x))} = \frac{1 }{\sqrt{1+\sh^2(\argsh(x))}}= \frac{1}{\sqrt{1+x^2}}$$
+
+
+
+
+\item On résout $y = \sh(x)$. On obtient : 
+\begin{align*}
+y &= \frac{e^{x}-e^{-x}}{2}\\
+2ye^{x} &=e^{2x}-1\\
+e^{2x}-2ye^{x}-1&=0
+\end{align*}
+En posant $u=e^{x}$, on obtient une équation du second degré  
+$u^2 -2yu -1=0$ qui admet deux racines réelles : 
+$$u_+ = y + \sqrt{y^2 +1}  \quadet  u_- = y - \sqrt{y^2 +1}$$
+Comme $u_-$ est négatif et que l'on a posé $ u=e^x$ la seule solution de $
+e^{2x}-2ye^{x}-1=0$ est $e^x =  y + \sqrt{y^2 +1}  $, autrement dit 
+$$x= \ln( y +\sqrt{y^2+1}).$$
+En d'autres termes, pour tout $x\in \R$,  $$\argsh(x) = \ln( x +\sqrt{x^2+1})$$
+On retrouve que cette fonction est dérivable sur $\R$ et sa dérivée vaut 
+\begin{align*}
+\argsh'(x)  &= \left(1 + \frac{2x}{2\sqrt{x^2+1}} \right)\frac{1}{ x+\sqrt{x^2+1} }\\
+&= \left( \frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}} \right)\frac{1}{ x+\sqrt{x^2+1} }\\
+				&= \frac{1}{\sqrt{x^2+1}}
+\end{align*}
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+\item Pour tout $x\in \R^+$ on a 
+\begin{align*}
+\argsh(x)- \ln(x) &= \ln\left(x+\sqrt{x^2+1}\right) -\ln(x) \\
+							&= \ln\left(\frac{x+\sqrt{x^2+1}}{x}\right)  \\
+							&= \ln\left(1+\sqrt{+\frac{1}{x^2}}\right)  
+\end{align*}
+Comme $\lim_{x\tv+\infty} \frac{1}{x^2}=0$ on a 
+$$\lim_{x\tv+\infty} \argsh(x)- \ln(x) =\ln(2).$$
+
+
+
+\end{enumerate}
+
+
+Surjectivité de $\sinh$. Il faut commencer de la même manière que pour trouver l'expression de $\argsh$ dans $\R$ mais en se rappelant que $y\in \bC$. Pour tout $y\in \bC$ on cherche $z\in \bC$ tel que $\sinh(z) =y$. Autrement dit on résout 
+$$e^{2z}-2ye^{z} +1=0$$
+Soit $Z=e^{z}$. On souhaite résoudre $Z^2 -2yZ+1=0$. 
+Ici $y$ est complexe.  Le discriminant vaut $\Delta=4y^2+4$ (il n'est ni positif, ni négatif, il est complexe !) Il existe $u \in \bC$ tel que $u^2 =\Delta$. 
+Les deux racines sont donc 
+$$Z_+ = \frac{2y +u}{2} \quadet Z_- = \frac{2y-u}{2}$$
+On revient à la variable $z$.  Pour cela il faut écrire 
+$Z_+ $ (ou $Z_-$ d'ailleurs) sous forme trigonométrique : 
+$Z_+ = |Z_+|e^{i\theta_+}$. 
+et on fini par prendre $z = \ln(|Z_+|) +i\theta_+$
+(Ici le logarithme est bien définie, c'est le logarithme réel que l'on connait, bon il faudrait vérifier que $|Z_+|$ n'est pas égal à 0 ce qui équivaut à $Z_+ =0$...) 
+De nouveau on retrouve que la fonction n'est pas injective, on peut prendre $\theta_+ $ modulo $2\pi$. 
+\end{correction}

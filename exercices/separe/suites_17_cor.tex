@@ -1,0 +1,39 @@
+
+\begin{correction} \;
+\'Etude de la monotonie des suites suivantes.
+\begin{enumerate}
+ \item La suite $\suiteu$ est d\'efinie par une somme, on \'etudie donc le signe de $u_{n+1}-u_n$.
+$$u_{n+1}-u_n=\sum\limits_{k=0}^{n+1}\ddp\frac{1}{2^k}-(n+1)-\sum\limits_{k=0}^{n}\ddp\frac{1}{2^k}+n=\ddp\frac{1}{2^{n+1}}-1.$$
+Or, pour tout $n\in\N$, on a: $\ddp\frac{1}{2^{n+1}}<1$. Ainsi la suite $\suiteu$ est d\'ecroissante.
+\item La suite $\suiteu$ est plut\^ot de type produit. Comme tous ses termes sont strictement positifs, on compare $\ddp\frac{u_{n+1}}{u_n}$ \`a 1. On obtient
+$$\ddp\frac{u_{n+1}}{u_n}=\ddp\frac{(n+1)!}{2^{n+2}} \times \ddp\frac{2^{n+1}}{n!}=\ddp\frac{n+1}{2}.$$
+Un calcul rapide donne
+$$\ddp\frac{n+1}{2}<1\Leftrightarrow n+1<2\Leftrightarrow n<1.$$
+Ainsi, la suite $(u_n)_{n\in\N^{\star}}$ est croissante ou encorrectione la suite $\suiteu$ est croissante \`{a} partir du rang 1.
+\item 
+La suite $(u_n)_{n\in\N^{\star}}$ est une suite d\'efinie explicitement et $u_n=f(n)$ avec
+$$f:\ x\mapsto f(x)=\ddp\frac{\ln{x}}{x}.$$
+L'\'etude de la monotonie de la fonction $f$ sur $\lbrack 1,+\infty\lbrack$ permet d'en d\'eduire directement la monotonie de la suite.\\
+\noindent La fonction $f$ est d\'erivable sur $\R^{+\star}$ comme quotient dont le d\'enominateur ne s'annule pas de fonctions d\'erivables. On obtient
+$$\forall x\in\R^{+\star},\ f^{\prime}(x)=\ddp\frac{1-\ln{x}}{x^2}.$$
+\'Etudions le signe de $1-\ln{x}$ ($x^2\geq 0$ donc le signe de la d\'eriv\'ee est bien le signe de $1-\ln{x}$):\\
+\noindent $1-\ln{x}>0  \Leftrightarrow  \ln{x}<1
+\Leftrightarrow x<e $ car la fonction exponentielle est strictement croissante.
+Ainsi, la fonction $f$ est strictement d\'ecroissante sur $\lbrack e,+\infty\lbrack$. Ainsi, \`a partir du rang 3, la suite $(u_n)_{n\geq 3}$ est d\'ecroissante.
+\item La suite $\suiteu$ est d\'efinie par une somme, on \'etudie donc le signe de $u_{n+1}-u_n$.
+$$\begin{array}{lll}
+u_{n+1}-u_n&=&\sum\limits_{k=0}^{2(n+1)}\ddp\frac{(-1)^k}{k+1}-\sum\limits_{k=0}^{2n}\ddp\frac{(-1)^k}{k+1}\vsec\\
+&=& \sum\limits_{k=0}^{2n+2}\ddp\frac{(-1)^k}{k+1}-\sum\limits_{k=0}^{2n}\ddp\frac{(-1)^k}{k+1}\vsec\\
+&=& \ddp\frac{1}{2n+3}-\ddp\frac{1}{2n+2}\vsec\\
+&=& \ddp\frac{-1}{(2n+3)(2n+2)}.
+\end{array}$$
+Ainsi, la suite $\suiteu$ est d\'ecroissante.
+\item 
+On remarque que
+$$u_{n+1}-u_n=n+1+2(-1)^{n+1}-n-2(-1)^n=1+2(-1)^{n+1}+2(-1)^{n+1}=1+4(-1)^{n+1}.$$
+Ainsi, si $n=2p$ pair, on obtient: $u_{2p+1}-u_{2p}=5>0$ et si $n=2p+1$ impair, on obtient: $u_{2p+2}-u_{2p+1}=-3<0$. Ainsi la suite $\suiteu$ n'est pas monotone.
+\item La suite $\suiteu$ est d\'efinie par une somme, on \'etudie donc le signe de $u_{n+1}-u_n$.
+$$u_{n+1}-u_n = \sum\limits_{k=2}^{n+1}\ddp\frac{1}{k \ln k}-\sum\limits_{k=2}^{n}\ddp\frac{1}{k \ln k} = \ddp\frac{1}{(n+1) \ln (n+1)} > 0.$$
+Ainsi, la suite $\suiteu$ est croissante.
+\end{enumerate}
+\end{correction}

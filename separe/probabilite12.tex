@@ -1,0 +1,69 @@
+\subsection{Tirages boules urnes simultanés/successifs. }
+
+
+\begin{exercice}
+On dispose d'une urne avec 3 boules rouges, 5 boules vertes et 8 boules jaunes. 
+On tire simultanément 3 boules.
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item Quelle est la probabilité d'obtenir 3 boules rouges ?
+\item Quelle est la probabilité d'obtenir 3 boules de la même couleur ?
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes. \\
+\end{enumerate}
+On tire maintenant les boules de façon successive et avec remise. 
+\item 
+\begin{enumerate}
+\item Quelle est la probabilité d'obtenir 3 boules rouges ?
+\item Quelle est la probabilité d'obtenir 3 boules de la même couleur ?
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes. 
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes sachant que la première est rouge. 
+\end{enumerate}
+\end{enumerate} 
+
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item L'univers $\Omega$ est l'ensemble de 5 boules parmis 16.
+$$\Card(\Omega)  =\binom{16}{5}$$
+ \begin{enumerate}
+
+\item Il y a 3 rouges. Donc l'événement A= 'piocher trois boules rouges' est de cardinal $\Card(A) = \binom{3}{3}$
+et $$P(A) = \frac{1}{\binom{16}{5}}$$
+\item On peut choisir 3 rouges 3 vertest ou 3 jaunces. Ces événements sont incompatibles donc l'événement B= 'piocher trois boules de la même couleur' est de cardinal $\Card(B) = \binom{3}{3}+\binom{5}{3}+\binom{8}{3} $
+et $$P(B) = \frac{\binom{3}{3}+\binom{5}{3}+\binom{8}{3}}{\binom{16}{5}}$$
+\item Il faut donc piocher une jaune, une verte et une rouge. Le cardinal de l'événement C:' piocher trois boules de couleurs différentes' est donc 
+$\Card( C)  = \binom{3}{1}\binom{5}{1}\binom{8}{1} $
+et $$P(C) = \frac{3*5*8}{\binom{16}{5}}$$
+
+\end{enumerate}
+\item L'univers $\Omega$ est l'ensemble de 5 boules tirer successivement  parmi 16 avec répétition  car on remet les boules. 
+$$\Card(\Omega)  =16^5$$
+\begin{enumerate}
+
+
+\item Il y a 3 rouges. Donc l'événement A= 'piocher trois boules rouges' est de cardinal $\Card(A) = 3^5$
+et $$P(A) = \left(\frac{3}{16}\right)^5$$
+
+\item On peut choisir 3 rouges 3 vertest ou 3 jaunces. Ces événements sont incompatibles donc l'événement B= 'piocher trois boules de la même couleur' est de cardinal $\Card(B) = 3^5+5^5+8^5$
+et $$P(B) =\left(\frac{3}{16}\right)^5+\left(\frac{5}{16}\right)^5+\left(\frac{8}{16}\right)^5$$
+
+\item Il faut donc piocher une jaune, une verte et une rouge. On peut piocher ces boules dans l'ordre que l'on veut il faut donc multiplier par le cardinal des permutations sur 3 éléments. Le cardinal de l'événement C:' piocher trois boules de couleurs différentes' est donc 
+$\Card( C)  =3*5*8 *(3!) $
+et $$P(C) = \frac{3*5*8*6}{16^5}$$
+\item Soit $D$ l'événément 'piocher une rouge en premier'. 
+On a $P(D) = \frac{3}{16}$. 
+On cherche $P_D(C)= \frac{P(D\cap C)}{P(D)}$
+L'événement $D\cap C$ est : 'piocher une boule rouge en premier et obtenir 3 boules de couleurs différentes. 
+Il faut donc piocher une jaune et une verte sur les 2 autres tirages (On peut piocher ces boules dans l'ordre que l'on veut il faut donc multiplier par le cardinal des permutations sur 2 éléments.)
+On a donc $P(D\cap C)  =\frac{3}{16}*\frac{5}{16}*\frac{8}{16}*2!=\frac{15}{16^2}$
+
+Donc $$P_D(C) = \frac{\frac{15}{16^2}}{\frac{3}{16}}= \frac{5}{16}$$
+
+\end{enumerate}
+\end{enumerate}
+\end{correction}

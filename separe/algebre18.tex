@@ -1,0 +1,220 @@
+\subsection{Calcul de $\sum_{k=1}^n \frac{1}{k+n}$ (Pb)}
+
+
+
+\begin{probleme}
+On se propose dans ce problème de calculer la limite de la  suite : 
+$$S_n=\sum_{k=0}^{n} \frac{1}{k+n}$$
+
+
+\begin{enumerate}
+\item Etude de la convergence de $\suiteun{S}$.
+\begin{enumerate}
+\item  Déterminer le sens de variation de $\suiteun{S}$.
+\item Montrer que pour tout $n\in \N^*$, $S_n \geq 0$.
+\item En déduire que $\suiteun{S}$ converge.  On note $\ell $ sa limite. 
+\end{enumerate}
+
+\item   Minoration de la limite
+\begin{enumerate}
+
+\item A l'aide d'un changement de variable montrer que : 
+$$\forall n\in \N^*,\,  S_n  =\sum_{k=n}^{2n}\frac1{k}$$
+\item Montrer à l'aide d'une somme téléscopique que, pour tout $n\in\N^*$ :
+$$\sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right) =\ln\left(\frac{2n+1}{n}\right) $$
+
+\item En déduire la limite de $\ddp \sum_{k=n}^{2n}\ln\left( 1 +\frac{1}{k}\right)$.
+
+\item A l'aide d'une étude de fonction,  montrer que pour tout $x\geq 0 $ :
+$$ \ln (1+x) \leq x.$$
+
+\item Montrer à l'aide des questions précédentes que $$\ell \geq \ln(2).$$\\ \footnotesize{On pourra aussi utiliser le résultat en bas de page \footnote{ On rapelle le résultat suivant : 
+
+Théorème  : Soient  $\suite{u}$ et $\suite{v}$ deux suites. Si
+\begin{itemize}
+\item Pour tout $n\in \N $, $u_n\leq v_n$.
+\item  Et $\suite{u}$ et $\suite{v}$ admettent des limites.
+\end{itemize} 
+Alors 
+$$\lim_{n\tv \infty} u_n \leq \lim_{n\tv \infty} v_n$$
+
+}}
+
+
+\end{enumerate}
+\item Majoration de la limite.
+\begin{enumerate}
+\item A l'aide d'une étude de fonction,  montrer que pour tout $x\geq 0 $ :
+$$x-\frac{x^2}{2} \leq  \ln (1+x)$$
+\item On pose $e_n  =\ddp \sum_{k=n}^{2n} \frac{1}{2k^2}$. On va montrer que $\suiteun{e}$ tend vers $0$. 
+\begin{enumerate}
+\item Justifier que pour tout $n\in \N^*$, $e_n \geq 0$.
+\item Montrer que pour tout $n\in \N^*$, $e_n \leq \frac{n+1}{2n^2}$.
+\item Conclure. 
+\end{enumerate}
+\item Montrer que pour tout $n\in \N^*$,  
+$$S_n \leq e_n + \sum_{k=n}^{2n}\ln\left( 1 +\frac{1}{k}\right)$$
+\item En déduire la valeur de $\ell$. 
+
+\end{enumerate}
+
+\end{enumerate}
+
+
+\end{probleme}
+
+\begin{correction}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item On calcule $S_{n+1}-S_n$ on obtient 
+$$S_{n+1}-S_n = \sum_{k=0}^{n+1} \frac{1}{k+n+1}- \sum_{k=0}^n \frac{1}{k+n}$$
+On fait un changemetn de variable sur la première somme en posant $i=k+1$ on a alors 
+$$S_{n+1} -S_n  =\sum_{i=1}^{n+2} \frac{1}{i+n}- \sum_{k=0}^n \frac{1}{k+n}$$
+Ce qui se simplifie en 
+$$S_{n+1} -S_n  =\frac{1}{2n+1} +\frac{1}{2n+2} - \frac{1}{n}$$
+
+On obtient en mettant au même dénominateur 
+$$S_{n+1}-S_n  =\frac{-3n-2}{n(2n+1)(2n+2)}<0$$
+
+
+
+
+
+
+
+
+
+\conclusion{$\suiteun{S}$ est décroissante. }
+\item
+Il y avait une erreur dans le sujet... La somme aurait du partir de 1 au lieu de $0$. On se rend compte que l'inégalité demandée pour $n=1$ est d'ailleurs fausse. 
+
+Pour la somme $\sum_{k=1}^n\frac{1}{k+n}$ voilà ce qu'on aurait pu faire. 
+$\forall k\in \intent{,n}, \quad \frac{1}{k+n}\leq \frac{1}{1+n}$
+En sommant ces inégalités on obtient 
+$\sum_{k=1}^n \frac{1}{k+n}\leq \sum_{k=1}^n \frac{1}{1+n}$
+et $\sum_{k=1}^n \frac{1}{1+n} =\frac{1}{1+n}\sum_{k=1}^n 1 = \frac{n}{n+1}$
+Ainsi
+\conclusion{ $S_n \leq \frac{n}{n+1}$}
+
+Sinon on peut montrer que $S_n = \sum_{k=0}^{n} \frac{1}{k+n}$ est majorée par $\frac{n+1}{n}$ avec la même méthode. Mais ce n'est pas très utile, on voudrait plutot montrer qu'elle est minorée.  Et, comme $S_n$ est une somme de terme positif, $S_n\geq 0$. 
+
+\item 
+$\suite{S}$ est minorée par $0$ est  décroissante donc
+\conclusion{ $\suiteun{S}$ converge. }
+
+Avec la suite $u_n =\sum_{k=1}^n \frac{1}{k+n}$ on aurait pu dire que $\suite{u}$ était croissante. De plus $u_n\leq \frac{n}{n+1}\leq 1$ donc majorée par $1$. Ainsi $\suite{u}$ converge. 
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+
+
+\item On fait une étude de fonction : soit $f : \R_+ \tv \R$ définie par $f(x)=x-\ln(1+x)$.  La fonction $f$ est dérivable sur $\R_+$ et $$f'(x) =1 -\frac{1}{1+x}= \frac{x}{1+x}.$$.
+Ainsi pour tout $x>0$, $f'(x)>0$, donc $f$ est croissante sur $\R_+$. Comme $f(0)=0-\ln(1) =0$, on a donc pour tout $x\geq 0$
+$f(x)\geq 0$, c'est-à-dire $x-\ln(1+x)\geq 0$. Finalement 
+\conclusion{ $\forall x\geq 0, \, x\geq \ln(1+x)$}
+ 
+ \item On pose le changement de variable $i=k+n$. On a 
+ Comme $k\in \intent{0,n}$, on a $i=k+n\in \intent{n,2n}$ et donc 
+ $$S_n = \sum_{i=n}^{2n} \frac{1}{i}$$
+ Comme l'indice est muet on a bien 
+ \conclusion{  $S_n = \ddp \sum_{k=n}^{2n} \frac{1}{k}$}
+ 
+ \item 
+ \begin{align*}
+ \sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right) &=  \sum_{k=n}^{2n} \ln\left( \frac{k+1}{k}\right)\\
+  &=  \sum_{k=n}^{2n} \ln\left( k+1\right) - \ln(k)\\
+  &=  \sum_{k=n}^{2n} \ln\left( k+1\right) -  \sum_{k=n}^{2n} \ln(k)
+ \end{align*}
+ On fait le changmeent de variable $i = k+1$  dans la première somme : on obtient 
+$$ \sum_{k=n}^{2n} \ln\left( k+1\right)  = \sum_{i=n+1}^{2n+1} \ln(i)  $$
+Ainsi 
+ \begin{align*}
+ \sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right) &= \sum_{i=n+1}^{2n+1} \ln(i)  - \sum_{k=n}^{2n}\ln(k)\\
+ &=\sum_{i=n+1}^{2n} \ln(i) +\ln(2n+1)  -\left( \ln(n)+ \sum_{k=n+1}^{2n}\ln(k)\right)\\
+  &=\ln(2n+1) -\ln(n) + \sum_{i=n+1}^{2n} \ln(i) - \sum_{k=n+1}^{2n}\ln(k)\\
+  &=\ln\left(\frac{2n+1}{n}\right)
+ \end{align*}
+
+\item En tant que quotient de polynômes on a $\lim_{n\tv +\infty } \frac{2n+1}{n}= 2$
+Par composition, on a 
+$\ddp \lim_{n\tv+\infty }  \ln\left(\frac{2n+1}{n}\right)= \ln(2)$
+Donc 
+\conclusion{ $\ddp \lim_{n\tv +\infty}  \sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right) = \ln(2)$}
+
+\item D'après la question 1), on a pour tout $k\in \N^*$ 
+$$\ln\left( 1 +\frac{1}{k}\right) \leq \frac{1}{k}$$
+Donc en sommant pour $k\in \intent{n,2n}$ on obtient : 
+$$\sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right)\leq S_n$$
+On applique maintenant le résultat de bas de page, avec $u_n =\ddp  \sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right)$, $v_n =S_n$ qui sont deux suites qui admettent bien des limites donc 
+$$\lim_{n\tv +\infty}  \sum_{k=n}^{2n} \ln\left( 1 +\frac{1}{k}\right) \leq \lim_{n\tv +\infty} S_n$$
+
+On obtient bien : 
+\conclusion{ $\ln(2)\leq \ell$}
+
+
+
+
+ 
+\end{enumerate}
+\item \begin{enumerate}
+\item On fait une autre étude de fonction. On pose 
+$g(x) =\ln(1+x) -x+\frac{x^2}{2}$. La fonction $g$ est définie et dérivable sur $\R_+$ et on a 
+$$g'(x) = \frac{1}{1+x}-1 +x = \frac{1-1-x+x+x^2}{1+x}= \frac{x^2}{1+x}$$
+Donc $g'(x)\geq 0 $ pour tout $x\geq 0$ et donc 
+$g$ est croissante sur $\R_+$. Comme $g(0) = 0$, on obtient pour tout $x\geq 0$, $g(x)\geq g(0) =0 $.
+Ainsi   pour tout $x\geq 0$, on a $\ln(1+x) -x+\frac{x^2}{2} \geq 0$, d'où
+\conclusion{ $\forall x\geq 0, \,  \ln(1+x) \geq x-\frac{x^2}{2} $}
+
+\item 
+\begin{enumerate}
+\item La suite $\suite{e}$ est une somme de termes positifs, donc positive.
+\item On va majorer tout les termes par le plus grand terme apparaissant dans la somme. On a 
+$\forall k\in \intent{n,2n} , \, \frac{1}{2k^2} \leq \frac{1}{2n^2}$
+
+Donc $$e_n =\sum_{k=n}^{2n} \frac{1}{2k^2}\leq \sum_{k=n}^{2n}  \frac{1}{2n^2}$$
+Or $\ddp \sum_{k=n}^{2n}  \frac{1}{2n^2} = \frac{1}{2n^2} \sum_{k=n}^{2n} 1$. 
+Il y a $(n+1)$ entier entre $n $ et $2n$ donc 
+$\ddp \sum_{k=n}^{2n} 1 =n+1$.
+
+On a finalement 
+$e_n \leq \frac{1}{2n^2} (n+1)$, c'est-à-dire:
+\conclusion{ $\forall n\geq 1, \, e_n\leq \frac{n+1}{2n^2}$}
+
+\item D'après les questions précédentes , pour tout $n\geq 1$ 
+
+$$0\leq e_n \leq  \frac{n+1}{2n^2}$$
+On a par ailleurs $\ddp  \lim_{n\tv +\infty } \frac{n+1}{2n^2} =\lim_{n\tv +\infty} \frac{n}{2n^2} = 0$ et $\ddp \lim_{n\tv +\infty} 0=0.$
+
+Donc le théorème des gendarmes assure que 
+\conclusion{ $\ddp \lim_{n\tv +\infty} e_n =0$}
+
+\end{enumerate}
+
+
+\item On applique l'inégalité obtenue en 2a) à $\frac{1}{k}>0$. On obtient donc, pour tout $k\in \N^*$ : 
+$$\frac{1}{k}-\frac{1}{2k^2}\leq \ln\left(1+\frac{1}{k} \right)$$
+En sommant ces inégalités entre $n$ et $2n$ on obtient donc 
+$$\sum_{k=n}^{2n} \left(\frac{1}{k}-\frac{1}{2k^2}\right) \leq \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$$
+
+Ce qui donne en utilisant la linéarité : 
+
+$$\sum_{k=n}^{2n} \frac{1}{k}-\sum_{k=n}^{2n}  \frac{1}{2k^2} \leq \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$$
+D'où 
+
+$$S_n - e_n \leq \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$$
+En faisant passer $e_n$ dans le membre de droite on obtient 
+\conclusion{$\ddp  S_n \leq e_n +  \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$} 
+
+\item On applique le théorème de bas de page aux suites 
+$u_n=S_n$ et $v_n =e_n +  \ddp \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$ et on obtient 
+$\ddp \lim_{n\tv +\infty} S_n \leq \lim_{n\tv +\infty} e_n +  \sum_{k=n}^{2n}\ln\left(1+\frac{1}{k} \right)$
+Par somme de limites on obtient bien 
+$$\ell \leq \ln(2)$$
+Avec l'inégalité $\ln(2)\leq \ell$ obtenue en 2e) on obtient : 
+
+\conclusion{ $\ddp \lim_{n\tv +\infty} S_n =\ln(2)$}
+\end{enumerate}
+\end{enumerate}
+\end{correction}

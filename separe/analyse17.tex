@@ -1,0 +1,196 @@
+\subsection{Suite récurrente et césaro PB(long)}
+\begin{exercice}
+Le but de cet exerice est l'étude de  la suite $\left(a_{n}\right)$ définie par $a_{1}=1$ et $\forall n \in \mathbb{N}^{*}, a_{n+1}=$ $\frac{a_{n}\left(1+a_{n}\right)}{1+2 a_{n}} .$
+
+\begin{enumerate}
+\item Etude de la limite de $\suiteun{a}$.
+\begin{enumerate}
+
+\item  Calculer $a_{2}$ et $a_{3}$.
+\item Etudier la fonction $f$ définie par  $f(x) =\frac{x(x+1)}{1+2x}$
+\item Déterminer l'image directe de $]0,1[$ par $f$. 
+\item  Démontrer que, $\forall n \geqslant 2$, on a $0<a_{n}<1$.
+\item Montrer que la suite $\suiteun{a}$ est décroissante.
+\item Rédoudre l'équation $f(x)=x$ sur $[0,1]$. 
+\item En déduire la limite de $\suiteun{a}$.
+\end{enumerate}
+\item Un résultat intermédiaire. 
+
+Soit $\suiteun{u} $ une suite croissante, admettant une limite $\ell$ en $+\infty$ et $\suiteun{C}$ définie par 
+$$C_n=\frac{1}{n}\sum_{k=1}^n  u_n$$
+\begin{enumerate}
+\item Montrer que pour tout $n\in \N^*$, $C_n\leq u_n$. 
+\item Montrer que pour $\suiteun{C}$ est croissante. 
+\item Montrer que pour tout $n\in \N^*$, $2C_{2n}-C_n \geq u_{n+1}$. 
+\item En déduire que $\suiteun{C}$ converge et donner la valeur de sa  la limite en fonction de celle de $\suiteun{u}$. 
+
+\end{enumerate}
+\item Etude d'un équivalent de $\suiteun{a}$.
+\begin{enumerate}
+\item Montrer que $\frac{1}{a_{n+1}}-\frac{1}{a_{n}}=\frac{1}{1+a_{n}}$.
+\item On pose $u_{n}=\frac{1}{a_{n+1}}-\frac{1}{a_{n}} .$ Déterminer la limite de $\suiteun{u}$.
+\item Montrer que $\suite{u}$ est croissante. 
+\item En posant $C_{n}=\ddp \frac{1}{n} \sum_{k=1}^{n} u_{k}$, exprimer $C_{n}$ en fonction de $a_{n+1}$ et de $a_{1}$.
+\item Conclure à l'aide de la question 2.e que $a_n \equivalent{+\infty} \frac{1}{n}$.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item \begin{enumerate}
+\item $a_2 = \frac{1(1+1)}{1+2\times1}= \frac{2}{3}$
+
+ $a_3 =  \frac{ \frac{2}{3}(1+ \frac{2}{3})}{1+2\times \frac{2}{3}}= \frac{ \frac{10}{9}}{\frac{7}{3}} = \frac{10}{21}$
+ 
+\conclusion{  $a_2 = \frac{2}{3}$ et $a_3 =  \frac{10}{21}$}
+ 
+\item $f$ est continue et dérivable sur $\R\setminus \{ \frac{-1}{2}\}$ et $\forall x\in  \R\setminus \{ \frac{-1}{2}\}$ 
+$$ f'(x) = \frac{(2x+1)(1+2x) -x(x+1)2  }{(1+2x)^2 } = \frac{2x^2 +2x +1}{(1+2x)^2}$$
+
+Le discriminant du numérateur vaut $\Delta = 4 - 8=-4<0$ donc $f'$ est strictement positif sur $\R\setminus \{ \frac{-1}{2}\}$
+Ainsi $f$ est strictement croissante sur $]-\infty, \frac{-1}{2}[$ et sur $]\frac{-1}{2},+\infty[$.
+
+\item  $f(0)=0$ et $f(1)=\frac{2}{3}$, comme $f$ est continue et strictement croissante sur $[0,1]$, le thoérème de la bijection assure que 
+\conclusion{$f(]0,1[) = ]0,\frac{2}{3}[$}
+
+\item On montre le résultat par récurrence. Soit $P(n)$ la propriété 
+$$P(n): " 0<a_n<1"$$
+
+\paragraph{Initialisation : }
+$P(2)$ est vraie d'après la question 1a)
+
+\paragraph{Hérédité : }
+On suppose qu'il existe $n\geq 2$ tel que $P(n)$ soit vraie, on a alors $0<a_n <1$. D'après l'étude de $f$ on a alors que $f(a_n) \in 0,\frac{2}{3}
+\subset ]0,1[$, donc 
+$$a_{n+1} =f(a_n) \in ]0,1[$$
+
+\paragraph{Conclusion : }
+La propriété $P(n)$ est héréditaire donc pour tout $n\geq 2$, on  a 
+\conclusion{ $0<a_n<1$}
+
+
+
+\item  Pour tout $n\in N^*$ on a 
+\begin{eqnarray*}
+a_{n+1} -a_n &= f(a_n) -a_n\\
+					&= \frac{a_n(1+a_n)}{1+2a_n)} - a_n\\
+					&=  \frac{a_n(1+a_n) - a_n -2a_n^2}{1+2a_n)} \\
+					&=  \frac{-a_n^2}{1+2a_n)} 
+\end{eqnarray*}
+Or on a a prouvé que $a_n\in ]0,1[$ donc $1+2a_n>0$ et $-a_n^2<0$ donc 
+$a_{n+1}-a_n<0$. Ainsi: 
+\conclusion{ $\suite{a}$ est décroissante }
+
+\item
+\begin{eqnarray}
+f(x) &= x\\
+\equivaut \frac{x(x+1)}{1+2x}&=x\\
+\equivaut \frac{-2x^2)}{1+2x}&=0\\ 
+\equivaut x=0 
+\end{eqnarray}
+Donc 
+
+\conclusion{  La seule solution de $f(x)=x$ est $x=0$}
+
+\item La suite $\suiteun{a}$ est décroissante et minorée donc elle converge, notons $\ell$ sa limite. Par unicité de la limite $a_{n+1} $ converge vers $\ell$ et par continuité de $f$ la suite $f(a_n) $ converge vers $f(\ell)$ 
+Ainsi $f(\ell)=\ell$ et finalement d'après la question précédente:  
+\conclusion{ $\ddp \lim_{n\tv +\infty } a_n = 0$}
+
+\end{enumerate}
+\item \begin{enumerate}
+\item Par croissance de $\suiteun{u}$ on a pour  tout $k\in \intent{1,n}$, 
+$$u_k \leq u_n$$
+Donc $$\sum_{k=1}^n u_k \leq \sum_{k=1}^n u_n,$$
+c'est-à-dire $\sum_{k=1}^n u_k \leq n u_n$
+En divisant par $n\in \N^*$ on obtient :
+\conclusion{ $C_n \leq u_n$}
+
+\item 
+$C_{n+1} =\frac{1}{n+1} \sum_{k=1}^{n+1} u_k = \frac{1}{n+1} \sum_{k=1}^{n} u_k +\frac{1}{n+1} u_{n+1}$
+Or $C_n \leq u_n \leq u_{n+1} $ où la deuxième inégalité vient de la croissance de $\suiteun{u}$. Donc
+
+\begin{eqnarray*}
+C_{n+1} &\geq \frac{1}{n+1} \sum_{k=1}^{n} u_k + \frac{1}{n+1} C_n\\
+			&\geq \frac{1}{n+1} nC_n + \frac{1}{n+1} C_n\\
+			&\geq \frac{n+1}{n+1} C_n \\
+			&\geq C_n	
+\end{eqnarray*}
+
+Ainsi :
+\conclusion{ $\suiteun{C}$  est croissante.}
+
+
+\item \begin{eqnarray}
+2 C_{2n}-C_n &= 2 \frac{1}{2n }\sum_{k=1}^{2n} u_k - \frac{1}{n }\sum_{k=1}^{n} u_k\\
+					&= \frac{1}{n }\sum_{k=1}^{2n} u_k - \frac{1}{n }\sum_{k=1}^{n} u_k\\
+				&= \frac{1}{n }\sum_{k=n+1}^{2n} u_k 
+\end{eqnarray}
+Or par croissance de $\suiteun{u}$, pour tout $k\geq n+1$, $u_k\geq u_{n+1}$ Donc  
+$$\sum_{k=n+1}^{2n} u_k  \geq \sum_{k=n+1}^{2n} u_{n+1} = nu_{n+1}$$
+
+Finalement 
+\begin{eqnarray*}
+2 C_{2n}-C_n &\geq \frac{1}{n }nu_{n+1}\\ 
+					&\geq u_{n+1}
+\end{eqnarray*}
+
+
+\item D'aprés $2a)$ $C_n \leq u_n$ et comme $u_n $ est croissante $u_n\leq \ell$. Donc $C_n\leq \ell$. 
+
+D'après 2b) $\suiteun{C} $ est majorée, donc $\suiteun{C}$ converge en vertu du théorème de la limite monotone.  Soit $\ell'$ sa limite. 
+
+D'après 2a) $$\ell' \leq \ell$$
+
+Et d'après 2c) $2 \ell' - \ell' \geq \ell $ d'où $$\ell' \geq \ell$$
+
+Finalement
+\conclusion{ $\suiteun{C}$ converge et $\lim_{n\tv +\infty } C_n =\ell$.}
+
+
+
+
+\end{enumerate}
+\item \begin{enumerate}
+\item On a pour tout $n\geq 1$
+\begin{eqnarray*}
+\frac{1}{a_{n+1}} -\frac{1}{a_n} &= \frac{1+2a_n}{a_n(1+a_n)} -\frac{1}{a_n}\\
+&= \frac{1+2a_n - (1+a_n)}{a_n(1+a_n)} \\
+&= \frac{a_n}{a_n(1+a_n)} \\
+&= \frac{1}{(1+a_n)} 
+\end{eqnarray*}
+Ce qui est bien l'égalité demandée. 
+\item Pour tout $n\geq 1$:  $u_n =\frac{1}{1+a_n}$, or $\suiteun{a}$ converge et $\lim_{n\tv+\infty} a_n =0$ donc 
+\conclusion{ $\lim_{n\tv+\infty} u_n =\frac{1}{1+0}=1$ }
+
+\item $u_{n+1}-u_n= \frac{1}{a_{n+2}}- \frac{1}{a_n}$
+Comme $\suiteun{a}$  est décroissante $a_n\geq a_{n+2}$ et donc 
+$\frac{1}{a_{n+2}}- \frac{1}{a_n}\geq  0$ 
+\conclusion{$\suiteun{u}$ est croissante}
+
+
+\item $C_n =\frac{1}{n }\sum_{k=1}^n \frac{1}{a_{k+1}} -\frac{1}{a_k} $
+On reconnait une somme télescopique : on a donc 
+\conclusion{ $C_n = \frac{1}{n}\left(\frac{1}{a_{n+1}} - \frac{1}{a_1}\right)$ }
+
+
+
+\item D'après la question précédente : 
+
+$$a_{n+1} = \frac{1}{C_n +\frac{1}{a_1}}= \frac{1}{nC_n +1}$$
+
+D'après la question $2d)$ Comme $\suiteun{u}$ est croissante et converge  vers $1$, $C_n$ converge aussi vers $1$. 
+On a donc $$a_n \equivalent{+\infty} \frac{1}{n+1}\equivalent{+\infty} \frac{1}{n}$$
+
+Au final 
+
+
+
+\item 
+\item 
+\item 
+\end{enumerate}
+\end{enumerate}
+\end{correction}

@@ -1,0 +1,165 @@
+\subsection{Nombre de surjections (Pb)}
+
+\begin{exercice}
+Pour tout $n\in \N^*$, on note $E_n=\intent{1,n}$. 
+On note $S_{n,p}$ le nombre de surjections de $E_n$ sur $E_p$. 
+\begin{enumerate}
+\item Calculer $S_{n,p}$ si $p>n$. 
+\item Justifier grâce au cardinal qu'une surjection de $E_n$ dans $E_n$ est une bijection. En déduire $S_{n,n}$.
+\item Déterminer $S_{n,1}$. 
+\item Combien y-a-t-il d'applications de $E_n$ dans $E_2$ ? Parmi ces applications lesquelles ne sont pas surjectives ? En déduire $S_{n,2}$. 
+\item Soit $f$ une surjection de $E_{p+1}$ dans $E_p$, justifier que tous les éléments de $E_p$ ont exactement un antécédent sauf un qui en a exactement deux. 
+En déduire que $S_{p+1,p} = \frac{p}{2}(p+1)!$\\
+
+On suppose désormais que $0< p \leq n$. 
+\item Montrer que $\ddp \sum_{k=0}^p \binom{p}{k}(-1)^k=0$
+\item Montrer que pour tout $(k,q)$ tel que $0\leq k \leq q \leq p $ 
+$$\binom{p}{q}\binom{q}{k}=\binom{p}{k}\binom{p-k}{q-k}.$$
+\item \begin{enumerate}
+\item En déduire que, si 
+$0\leq k <p$, alors $\ddp \sum_{q=k}^p \binom{p}{q}\binom{q}{k} (-1)^q =0$.
+\item  Que vaut la somme précédente quand $k=p$ ?
+\end{enumerate}
+
+\item Montrer que pour tout entier $q$ de $E_p$ le nombre d'applications de $E_n$ dans $E_p$ ayant un enemble d'image à $q$ éléments est égal à $\binom{p}{q} S_{n,q}$. 
+\item En déduire que $p^n =\ddp \sum_{q=1}^p\binom{p}{q} S_{n,q}$. 
+\item A l'aide d'une inversion de sommes montrer que : $\ddp \sum_{k=1}^p (-1)^k \binom{p}{k}k^n=\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q}  $.
+\item A l'aide des questions précédentes (8, 10, 11 notamment), en déduire que $S_{n,p} = \ddp (-1)^p \sum_{k=1}^p (-1)^k \binom{p}{k}k^n$.\\
+
+Dans les questions suivantes on va essayer de déterminer une relation de récurrence entre $S_{n,p}$ et les valeurs de $S_{n-1,p}$ et $S_{n-1,p-1}$
+\item Soit $\phi : E_n \tv E_p$  une surjection. (Combien y-a-t-il de possibilités pour $\phi$ ? ) On note $\phi_1$ la restriction de $\phi$ à $E_{n-1}$. 
+\begin{enumerate}
+\item Supposons que $\phi_1$ est surjective. Combien y-a-t-il de possibilité pour $\phi_1$ ? 
+\item Supposons que $\phi_1$ n'est pas surjective, en déduire que $Im(\phi) = Im(\phi_1) \cup \{ \phi(n)\}$ cette union étant disjointe. $Im(\phi)$ désigne l'image  de la fonction, c'est-à-dire $\{ \phi(e) \, |\, e\in E_n\}$. Montrer ainsi que $\phi_1$ est surjective de $E_{n-1}$ sur $E_p\setminus\{ \phi(n)\}$. Combien y-a-t-il de possibilités pour $\phi_1$ ?
+\item En déduire que $S_{n,p}= p(S_{n-1,p} +S_{n-1,p-1})$.
+\item A l'image du triangle de Pascal, construire une table des $S_{n,p}$ pour $0\leq p\leq n \leq 5$
+\item Ecrire un programme Python qui prend en argument $(n,p)$ et retourne la valeur de $S_{n,p}$.
+\end{enumerate}
+
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item  D'après le cours si il existe une surjection de $E\tv F$ alors $\Card(E) \geq \Card(F)$. Ainsi $S_{n,p}=0$ dès que $p>n$.  
+\item Si $f :E_n\tv E_n$ est une surjection alors tous les éléments de l'image ont au moins un antécédents par définition. Mais ils ont au plus un antécédent sinon le cardinal de $f(E_n) $ serait strictement plus petit que celui de $E_n$. Ainsi d'après le cours $S_{n,n} =n!$. 
+\item Il n'y a qu'une seule application de $E_n$ dans $E_1$ : l'application constante égale à $1$. Cette application est bien surjcetive, donc $S_{n,1} = 1$. 
+\item Il y a  $2^n$ applications de $E_n $ dans $E_2$ (cf cours). Seules les applications constantes (l'application constante à $
+1$ et celle constante à $2$) ne sont pas surjectives. On trouve alors 
+$$S_{n,2} = 2^n -2.$$ 
+\item Soit $f$ une surjection de $E_{p+1}$ dans $E_p$. Tous les éléments ont au moins un antécédent par définition d'une surjection.  Comme  $\Card(E_{p+1}) =\Card E_p +1 $ il y a un élément de $E_p$ qui a deux antécédents. 
+
+On choisit les deux éléments qui auront la même image : 
+il y  a $\binom{p+1}{2}$ façons de choisir $2$ éléments dans $E_{p+1}$. Ensuite, choisir à chaque éléments une image revient à choisir une bijection entre deux ensembles à $p$ éléments, soit $p!$ choix .
+On  a alors $$S_{p+1,p} = \binom{p+1}{2} p! = \frac{p(p+1)}{2} p! = \frac{p}{2}(p+1)!.$$
+
+
+ \item C'est le binome de Newton 
+ $$\sum_{k= 0}^p \binom{p}{k}(-1)^k  =(1+(-1))^p = 0^p =0.$$ 
+ \item Cf DM 4 sur le binome. 
+ \item 
+ \begin{enumerate}
+\item Soit
+$0\leq k <p$ 
+\begin{align*}
+\sum_{q=k}^p \binom{p}{q}\binom{q}{k} (-1)^q &= \sum_{q=k}^p\binom{p}{k}\binom{p-k}{q-k}(-1)^q &\text{ D'après Q7} \\
+&= \binom{p}{k} \sum_{q=k}^p\binom{p-k}{q-k}(-1)^q &\binom{p}{k} \text{ ne dépend pas de $q$}\\
+&= \binom{p}{k} \sum_{j=0}^{p-k}\binom{p-k}{j}(-1)^{(j+k)}& \text{ Changement d'indice $q= j+k$}\\
+&= \binom{p}{k}(-1)^k \sum_{j=0}^{p-k}\binom{p-k}{j}(-1)^{j}\\
+&= 0 &\text{D'après Q6}
+\end{align*}
+
+\item  Si $k=p$ on  cherche la valeur de 
+$$\sum_{q=p}^p \binom{p}{q}\binom{q}{p} (-1)^q $$
+Il y a qu'un seul terme dans cette somme, il vaut $(-1)^p$. 
+\end{enumerate}
+
+\item Pour compter le nombre d'applications qui ont pour image $q$ éléments il suffit de dénombre les images possibles ($q$ éléments parmis $E_p$) : $\binom{p}{q}$. Ce choix fait, il suffit de dénombre les applications $E_n$ dans $E_p$ qui ont exactement ces $q$ élements comme image : c'est-à-dire par définitin $S_{n,q}$. Ainsi  il y a $\binom{p}{q}S_{n,q}$ applications qui ont pour image $q$ éléments dans $E_p$. 
+
+\item On regarde la partition suivante 
+$$\{\text{ applications } E_n \tv E_p\} =\bigcup_{q=1}^n \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \} $$
+On a $\Card(\{\text{ applications } E_n \tv E_p\}) =p^n$ et \\
+$\ddp \Card \bigcup_{q=1}^n \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \}  = \ddp \sum_{q=1}^n \Card  \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \} =\sum_{q=1}^n \binom{p}{q}S_{n,q}$
+D'où 
+$$p^n =\sum_{q=1}^n \binom{p}{q}S_{n,q}$$
+\item 
+On repart de la formule obtenue à la question précédente, dont on  va changer le noms des variables pour se rapprocher de la formule demandée : 
+$$k^n =\sum_{q=1}^n \binom{k}{q}S_{n,q}$$
+Donc 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k} k^n  = \sum_{k=1}^p \sum_{q=1}^n  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$$
+Remarquons que la somme de droite vaut $0$ pour $q>k$ à cause de $\binom{k}{q}$. On a donc 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k} k^n  = \sum_{k=1}^p \sum_{q=1}^k  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$$
+Comme suggéré par l'énoncé on fait maintenant une interversion de somme 
+
+$\ddp \sum_{k=1}^p \sum_{q=1}^k  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}=\sum_{q=1}^p \sum_{k=q}^p  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$
+Avec l'équation précédente on obtient bien le résultat désiré :
+$$\ddp \sum_{k=1}^p (-1)^k \binom{p}{k}k^n=\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q} .$$
+\item D'après 8a),b) on sait que pour $q<p$
+$$\sum_{k=q}^p \binom{p}{k}\binom{k}{q} (-1)^k = 0$$
+et pour $q=p$ 
+$$\sum_{k=q}^p \binom{p}{k}\binom{k}{q} (-1)^k = (-1)^p$$
+Ainsi dans la double somme de 11, la somme la plus intérieure vaut $0$ sauf si $q=p$, on obtient ainsi : 
+$$\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q} = (-1)^pS_{n,p}$$
+
+D'après la formule préalablement obtenue en $11$, on obtient 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k } k^n = (-1)^p S_{n,p}$$
+Soit 
+$$S_{n,p}= (-1)^p \sum_{k=1}^p (-1)^k \binom{p}{k } k^n$$
+(où on utilise $\frac{1}{(-1)^p} = \frac{(-1)^p}{(-1)^{2p}} = (-1)^p$)
+
+
+\item Il y a $S_{n,p}$ possibilités pour $\phi$ par définition de $S_{n,p}$. 
+\begin{enumerate}
+\item Si $\phi_1$ est surjective, il  y a $S_{n-1,p}$ possibilités pour $\phi_1$.
+\item Remarquons que par définition de l'image  l'égalité entre les ensembles est toujours réalisée.  $Im(\phi_1) \cup \{ \phi(n)\} \subset Im(\phi)$. Il faut donc montrer que l'union est disjointe. Pour cela on remarque que lorsque $\phi_1$ n'est pas surjective et que $\phi$ est surjective $\phi(n)$ est nécessairement un élément qui a un unique antécédent : $n$. On obtient bien alors $\phi(n)$ n'est pas dans l'imgae de $\phi_1$, soit en d'autres termes, que l'union est disjointe. 
+
+$\phi_1$ est alors une fonction de $E_{n-1} $ dans $E_p$ dont l'image est celle de $\phi$ ($E_p$) privée de $\phi(n)$. il y a donc $S_{n-1,p-1}$ possibilités pour $\phi_1$ 
+\item Une fois $\phi_1$ choisit, dont on vient de voir qu'il y a $S_{n-1,p}+S_{n-1,p-1}$ possibilités, il reste à choisir la valeur de $\phi(n)$ ce qui laisse $p$ possibilités, indépendantes du choix de $\phi_1$. On obtient ainsi 
+$$S_{n,p} = p (S_{n-1,p}+S_{n-1,p-1})$$
+\item 
+$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+& p=1& p=2 & p=3& p=4& p=5\\
+\hline
+n=1& 1 &0 & 0 &0 &0  \\
+\hline
+n=2& 1& 2!=2& 0 & 0& 0 \\
+\hline
+n=3& 1&2(1+2)=6 &3 (2+0)=6  &0 & 0 \\
+\hline
+n=4& 1&2(6+1)=14 & 3(6+6)=36 & 4(6+0)=24&0  \\
+\hline
+n=5& 1&2(14+1)=30 & 3(14+36)=150 &4(24+36)=240 & 5(24+0)=120 \\
+\hline
+\end{array}
+$
+\item 
+Deux solutions.  Grace à ce qu'on vient de voir à la question 13)c) on peut programmer une fonction récursivement de la manière suivante : 
+\begin{lstlisting}
+def S_rec(n,p):
+  if p>n:
+    return 0
+  if p==1:
+    return 1
+  else:
+    return( p*( S_rec(n-1,p) +S_rec(n-1,p-1)))
+ 
+\end{lstlisting}
+
+Sinon on utilise la somme obtenue en 12: 
+\begin{lstlisting}
+from math import factorial
+def S_binomial(n,p):
+  if p>n:
+    return 0
+  else: 
+    s=0
+    for k in range(1,p+1):
+      s=s+((-1)**k)*factorial(p)/(factorial(k) *factorial(p-k) )* k**n
+  return(((-1)**p)* s)
+\end{lstlisting}
+\end{enumerate}
+\end{enumerate}
+\end{correction}

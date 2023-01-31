@@ -1,0 +1,87 @@
+\subsection{Etude des racines de  $X^5 +tX-1$}
+
+\begin{exercice}
+Pour tout réel $t>0, $ on note $P_t$ le polynôme $X^5 +tX-1 \in \R_5[X]$. Le but de ce problème est d'étudier les racines de $P_t$ en fonction de $t>0$. 
+\begin{enumerate}
+\item On fixe $t>0$ pour cette question. Prouver que $P_t$ admet une unique racine notée $f(t)$. 
+\item Montrer que $f(t) \in ]0,1[$ pour tout $t>0.$
+\item Montrer que $f$ est strictement décroissante sur $]0,+\infty[$.
+\item En déduire que $f$ admet des limites finies en $0^+$ et en $+\infty$.
+
+\item Déterminer $\lim_{t\tv 0^+} f(t)$. 
+
+\item Déterminer $\lim_{t\tv+\infty} f(t)$. 
+\item En déduire  $\lim_{t\tv +\infty} tf(t)= 1$. (Comment noter ce résultat avec le signe équivalent : $\sim$) 
+
+\item Justifier que $f$ est la bijection réciproque de $g : ]0,1[\tv ]0,+\infty[$ 
+$x \mapsto\frac{1-x^5}{x}$
+\item \begin{enumerate}
+\item Justifier que $f$ est dérivale sur $]0,+\infty[ $ et exprimer $f'(t)$ en fonction de $f(t)$ pour tout $t>0$.
+\item En déduire la limite de $f'(t)$ en $0$. Calculer la limite de $t^2 f'(t)$ en $+\infty$ (Comment noter ce résultat avec le signe équivalent : $\sim$) 
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item On considère la dérivée de la fonction polynomiale. On a $P'_t(X) = 5X^4 +t $. Ainsi pour tout $x\in \R$ et pour tout $t>0$ 
+$P'_t(x) \geq 0$. La fonction polynomiale $x\mapsto P_t(x)$ est donc strictement croissante  sur $\R$, par ailleurs elle est continue. On peut appliquer le théorème de la bijection à $P_t$ pour la valeur  
+$0 \in ]\lim_{x\tv +\infty} P_t(x) =+\infty $, $\lim_{x\tv -\infty} P_t(x) =-\infty [$.  Il existe donc une unique valeur, notée $f(t)$ par l'énoncé, telle que $P'_t(f(t)) =0$. 
+
+\item Par définition de $P_t$ on a $P_t(0) = -1<0$ et $P_t(1) = t >0$. Comme $x\mapsto P_t(x)$ est strictement croissante et $P_t(f(f))=0$ on  obtient $f(t) \in ]0,1[$. 
+
+\item Soit $t_1>t_2 $, on a $P_{t_1} (X)-P_{t_2} (X) = X^5 +t_1X-1 - (X^5 +t_2 X -1) = (t_1-t_2)X$
+Donc pour $x>0$ on a 
+$$P_{t_1} (x)-P_{t_2} (x)>0$$
+On applique ce résultat à $f(t_2)$ on obtient 
+$$P_{t_1} (f(t_2))-P_{t_2} (f(t_2))>0$$
+$$P_{t_1} (f(t_2))>0$$
+Comme $x\mapsto P_{t_1}(x)$ est une fonction croissant et que $P_{t_1}(f(t_1)) =0$ on obtient $f(t_2)> f(t_1)$
+Finalement $t\mapsto f(t) $ est décroissante. 
+
+\item $f$ est montone et bornée. Le théorème des limites monotones assure que  $f$ admet des limites finies en $0^+$ et en $+\infty$. 
+
+
+\item Notons $\ell$ la limite  $\lim_{t\tv 0^+}f(t)= \ell$. Par définition de $f$ on a $f(t)^5 +t f(t)-1= 0$. Cette expression admet une limite quand $t\tv 0$, on  a $\lim_{t\tv 0^+} f(t)^5 +t f(t)-1 =\ell^5-1$. Par unicité de la limite on a donc $\ell^5-1 =0$. Et donc $\ell =1$ (car $\ell$ est réel).  
+
+\item Notons $\ell'$  la limite  $\lim_{t\tv +\infty }f(t)= \ell'$.
+Supposons par l'absurde que cette limite soit non nulle. On a alors $\lim_{t\tv +\infty } tf(t) =+\infty$. En passant à la limite dans l'égalité 
+$f(t)^5 +tf(t) -1 =0$ on obtient 
+$+\infty =0$ ce qui est absurde. 
+Donc $$\lim_{t\tv +\infty }f(t)=0.$$
+
+\item En repartant de l'égalité $f(t)^5 +tf(t)-1=0$ on obtient 
+$$tf(t) = 1 -f(t)^5$$
+Comme $lim_{t\tv +\infty} f(t)=0$ on a 
+$$\lim_{t\tv +\infty} tf(t)=1$$
+En d'autres termes $\ddp f(t)\sim_{+\infty} \frac{1}{t}$ 
+
+\item $f$ est strictement  montone sur $]0,+\infty[$ donc $f$ est une bijection $]0,+\infty[$ sur son image. $\lim_{t\tv 0 }f(t)=1$ et  $\lim_{t\tv +\infty }f(t)=0$. Donc $f( ]0,+\infty[) =]0,1[$ et $f$ est une bijection de $]0,+\infty[$ sur $]0,1[$. 
+
+Par définition de $f$ on  a
+$f(t)^5 +tf(t)-1=0$
+Donc 
+$tf(t) =  -f(t)^5 +1$. Comme $f(t)>0$, on  a :
+$$t =\frac{1-f(t)^5}{f(t)}$$
+Soit $g(x) = \frac{1-x^5}{x}$ on a bien $g(f(t)) =t$ Donc $g\circ f =\Id$. Ainsi  la réciproque de $f$  est bien la fonction $g : ]0,1[\tv ]0,\infty[$. 
+\item 
+\begin{enumerate}
+\item $g$ est dérivable et pour tout $x\in ]0,1[$ 
+$$g'(x) = \frac{-1-4x^5}{x^2}.$$
+$g'(x) $ est différent de $0$ car $-1-4x^5$ est différent de $0$ sur $]0,1[$, donc $f$ est dérivable et 
+$$f'(t) =\frac{1}{g'(f(t)} =  \frac{f(t)^2}{ -1-4f(t)^5}.$$
+
+\item $\lim_{t\tv 0} f(t) = 1$ donc $$\lim_{t\tv 0} f'(t) = \frac{1^2}{-1-4\times 1 }= \frac{-1}{5}$$
+
+On  a aussi 
+$t^2 f'(t) = \frac{(tf(t)^2}{-1-4 f(t)^5}$ Comme $\lim_{t\tv \infty } tf(t)=1 $ et $\lim_{t\tv \infty } f(t)=0 $  en passant à la limite dans l'égalité précédente on obtient : 
+$$\lim_{t\tv \infty } t^2f'(t)=\frac{1}{-1}=-1 $$ 
+En d'autres termes : 
+$$f'(t) \sim_{+\infty} \frac{-1}{t^2}$$
+
+\end{enumerate}
+
+
+
+\end{enumerate}
+\end{correction}

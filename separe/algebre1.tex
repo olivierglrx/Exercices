@@ -1,0 +1,84 @@
+\subsection{Système linéaire}
+
+
+\begin{exercice}
+Soit $\lambda \in \R$. On considère le système suivant 
+$$(S_\lambda)\quad  \left\{ \begin{array}{ccccc}
+2x &+y& & =& \lambda x\\
+ &y & & =& \lambda y \\
+ -x&-y&+z&=&\lambda z
+\end{array}\right. $$
+
+\begin{enumerate}
+\item Mettre le système sous forme échelonné. 
+\item En donner le rang en fonction de $\lambda$. 
+\item Déterminer $\Sigma$ l'ensemble des réels $\lambda$ pour lequel ce système \underline{n'est pas} de Cramer. 
+\item Pour $\lambda \in \Sigma$, résoudre $S_\lambda$
+\item Quelle est la solution si $\lambda \notin \Sigma$ ? 
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item En échangeant les lignes et les colonnes on peut voir que le système est déjà échelonné ! 
+
+$$(S_\lambda)\equivaut  \left\{ \begin{array}{ccccc}
+(2-\lambda)x &+y& & =&0 \\
+ &(1-\lambda)y & & =& 0 \\
+ -x&-y&+(1-\lambda)z&=&0
+\end{array}\right. $$
+
+$L_3\leftarrow L_1, L_2 \leftarrow _3, L_1\leftarrow L_2$
+$$
+(S_\lambda)\equivaut  \left\{ \begin{array}{ccccc}
+ -x&-y&+(1-\lambda)z&=&0\\
+(2-\lambda)x &+y& & =&0 \\
+ &(1-\lambda)y & & =& 0 
+\end{array}\right.$$
+$ C_3\leftarrow C_1, C_2 \leftarrow C_3, C_1\leftarrow C_2$
+$$
+\equivaut \left\{ \begin{array}{ccccc}
+ (1-\lambda)z&-x&-y&=&0\\
+ &(2-\lambda)x&+y & =&0 \\
+ &  & (1-\lambda)y& =& 0 
+\end{array}\right.$$
+
+
+\item Si $(2-\lambda)\neq 0$ et $(1-\lambda)\neq 0$ c'est-à-dire si $\lambda \notin\{ 1,2\}$ 
+\conclusion{ Le système est triangulaire de rang $3$. }
+
+Si  $(2-\lambda)= 0$,  c'est-à-dire si $\lambda=2$ on a:
+$$S_2\equivaut  \left\{ \begin{array}{ccccc}
+ -z&-x&-y&=&0\\
+ & &+y & =&0 \\
+ &  & -y& =& 0 
+\end{array}\right.$$
+$$S_2\equivaut  \left\{ \begin{array}{ccccc}
+ -z&-x&-y&=&0\\
+ & &+y & =&0 
+\end{array}\right.$$
+\conclusion{Le système est de rang 2. }
+
+Si  $(1-\lambda)= 0$,  c'est-à-dire si $\lambda=1$ on a:
+$$S_1\equivaut  \left\{ \begin{array}{ccccc}
+ &-x&-y&=&0\\
+ & x&+y & =&0 \\
+ &  &0 & =& 0 
+\end{array}\right.$$
+$$S_1\equivaut  \left\{ \begin{array}{ccccc}
+ &-x&-y&=&0
+\end{array}\right.$$
+\conclusion{Le système est de rang 1. }
+
+
+\item Le système n'est pas de Cramer, si $\lambda\in \{1,2\}$.
+
+Si $\lambda=1$ les solutions sont données par 
+\conclusion{$S_1=\{ (-y, y, z)\, | (y,z)\in \R^2\}$}
+
+Si $\lambda=2$ les solutions sont données par 
+\conclusion{$S_2=\{ (-z, 0, z)\, | z\in \R^2\}$}
+
+\item Si $\lambda\notin \Sigma$, le système est de Cramer, il admet une unique solution. Or il est homogène donc, $(0,0,0)$ est solution, c'est donc la seule :
+\conclusion{ $S=\{ (0,0,0)\}$}
+\end{enumerate}
+\end{correction}

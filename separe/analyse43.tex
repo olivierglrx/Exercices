@@ -1,0 +1,46 @@
+\subsection{Calcul de limites}
+
+\begin{exercice}
+Calculer les limites suivantes : 
+
+\begin{enumerate}
+\item $\lim_{x\tv+\infty} \ln(x+\sqrt{x^2 +1}) -\ln(x)$\\
+
+\item $\lim_{x\tv 0} \frac{x^x-1}{\sin(x)\ln(x^2)}$
+\item $\lim_{x\tv 1} \frac{\cos\left(\frac{\pi x}{2}\right)}{x^2-1}$
+\end{enumerate}
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+
+\item  Pour tout $x\in \R^+$ on a 
+\begin{align*}
+ \ln\left(x+\sqrt{x^2+1}\right) -\ln(x)  
+							&= \ln\left(\frac{x+\sqrt{x^2+1}}{x}\right)  \\
+							&= \ln\left(1+\sqrt{1+\frac{1}{x^2}}\right)  
+\end{align*}
+Comme $\lim_{x\tv+\infty} \frac{1}{x^2}=0$ on a 
+$$\lim_{x\tv+\infty} \ln\left(x+\sqrt{x^2+1}\right) -\ln(x)  =\ln(2).$$
+
+\item $x^x-1 = e^{x\ln(x) }-1 $ Comme $x\ln(x)\tv_0 0 $ et $e^u-1 \sim_0 u$  on obtient : $x^x-1 \sim_0 x\ln(x)$.
+Au dénominateur on a  $\sin(x )\ln(x^2) =2\sin(x)\ln(x) \sim_0 2x \ln(x)$. 
+Donc $\lim_{x\tv 0} \frac{x^x-1}{\sin(x)\ln(x^2)} = \frac{1}{2}$
+
+\item On fait le changement de variable $y=x-1$. On obtient 
+$\cos\left(\frac{\pi x}{2}\right) = \cos\left( \frac{\pi y}{2} +\frac{\pi}{2} \right) = -\sin\left(\frac{\pi y}{2}\right)\sim_0 -\frac{\pi y}{2}$
+et $x^2 - 1 = y^2 +2y=(y(2+y) $. Donc 
+$$\lim_{x\tv 1} \frac{\cos\left(\frac{\pi x}{2}\right) }{x^2-1}= \lim_{y\tv 0} \frac{ -\sin\left(\frac{\pi y}{2}\right)}{y(2+y)} = -\frac{\pi }{4}$$
+
+
+\item Version DS $\lim_{x\tv 1} \frac{\cos\left(\frac{\pi x}{2}\right) - 1}{x^2-1}$
+Le numérateur tend vers $-1$, le dénominateur tend vers $0$. On distingue la limite à droite et à gauche : 
+$$\lim_{x\tv 1^+} \frac{\cos\left(\frac{\pi x}{2}\right) - 1}{x^2-1}= -\infty$$
+
+$$\lim_{x\tv 1^-} \frac{\cos\left(\frac{\pi x}{2}\right) - 1}{x^2-1}= +\infty$$
+
+
+\end{enumerate}
+\end{correction}

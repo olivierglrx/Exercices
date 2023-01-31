@@ -1,0 +1,85 @@
+
+\begin{correction} \;
+Je ne donne ici que les r\'eponses et quelques indications pour trouver les limites demand\'ees. Une telle r\'edaction dans une copie serait tr\`es insuffisante.
+\begin{enumerate}
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{n}{\cos{\left(\ddp\frac{1}{n}  \right)}}=+\infty$ par compos\'ee et produit de limite car $\cos{(0)}=1$.
+\item On a ici une forme ind\'etermin\'ee avec une diff\'erence de racines. L'id\'ee est d'utiliser la quantit\'ee conjugu\'ee :
+$$\sqrt{n+1}-\sqrt{n} = \ddp \frac{(\sqrt{n+1}-\sqrt{n})(\sqrt{n+1}+\sqrt{n})}{\sqrt{n+1}+\sqrt{n}} = \frac{n+1-n}{\sqrt{n+1}+\sqrt{n}} = \frac{1}{\sqrt{n+1}+\sqrt{n}}.$$
+Par quotient de limites, on obtient donc : $\lim \limits_{n\to +\infty}\ddp\sqrt{n+1}-\sqrt{n}=0$.
+\item
+$\lim \limits_{n\to +\infty}\ln{(n+1)}-\ln{(n^2)}=-\infty$ en utilisant $\ln{\left( \ddp\frac{n+1}{n^2} \right)}$ et le th\'eor\`{e}me des mon\^{o}mes de plus haut degr\'e.
+\item
+$\lim\limits_{n\to +\infty}\left(1+\ddp\frac{2}{n}\right)^n=e^2$ en utilisant le fait que $\ln{\left( 1+\ddp\frac{2}{n} \right)} \underset{+\infty}{\thicksim} \ddp\frac{2}{n}$ (limite tr\`{e}s classique fait en cours).
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{2^n+n}{2^n}=1$ en mettant en facteur en haut et en bas le terme dominant, \`a savoir $2^n$ et en utilisant une croissance compar\'ee car $2^n=e^{n\ln{2}}$. 
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{n+(-1)^n}{n-\ln{(n^3)}}=1$ en mettant en facteur en haut et en bas $n$ et en remarquant que $\lim\limits_{n\to +\infty} \ddp\frac{(-1)^n}{n}=0$ par le th\'eor\`eme des gendarmes et que $\lim\limits_{n\to +\infty} \ddp\frac{\ln{(n^3)}}{n}=\lim\limits_{n\to +\infty} \ddp\frac{3\ln{(n)}}{n}=0 $ par croissance compar\'ee.
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{1}{n^2}\sum\limits_{k=1}^n k= \ddp\demi$ en \'ecrivant que $\sum\limits_{k=1}^n k=\ddp\frac{n(n+1)}{2}$ et d'apr\`es le th\'eor\`eme sur les mon\^omes de plus haut degr\'e.
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{3^n-4^n}{3^n+4^n}=-1$ en mettant en facteur en haut et en bas $4^n$ le terme dominant et appliquant le th\'eor\`eme sur les suites g\'eom\'etriques.
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{\sin{n}}{n}=0$ en utilisant un correctionollaire du th\'eor\`eme des gendarmes car $\left| \ddp\frac{\sin{n}}{n} \right|\leq \ddp\frac{1}{n}$ ou le th\'eor\`{e}me des gendarmes.
+\item 
+$\lim \limits_{n\to +\infty}\ddp\frac{1+(-1)^n}{n}=0$ en utilisant le th\'eor\`eme des gendarmes car: $0\leq \ddp\frac{1+(-1)^n}{n}\leq \ddp\frac{2}{n}$.
+\item
+$\lim \limits_{n\to +\infty}n^2-n\cos{n}+2=+\infty$ en mettant en facteur le terme dominant $n^2$ et en utilisant le correctionollaire du th\'eor\`eme des gendarmes avec $\left| \ddp\frac{\cos{n}}{n} \right|\leq\ddp\frac{1}{n}$.
+%\item 
+%$\lim \limits_{n\to +\infty}n^2\left( \ddp\demi \right)^n \sin{(n!)}=0$ en utilisant toujours le correctionollaire du th\'eor\`eme des gendarmes car $\left| n^2\left( \ddp\demi \right)^n\sin{n!} \right|\leq n^2\left( \ddp\demi \right)^n$ ainsi que les croissances compar\'ees car $n^2\left( \ddp\demi \right)^n=n^2 e^{-n\ln{2}}$. 
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{n!+(n+1)!}{(n+2)!}=0$ en utilisant la d\'efinition des factorielles.
+%\item
+%$\lim \limits_{n\to +\infty}\ddp\frac{1}{n^3}\sum\limits_{k=1}^n k^2=\ddp\frac{1}{3}$ en \'ecrivant que $\sum\limits_{k=1}^n k^2=\ddp\frac{n(n+1)(2n+1)}{6}$ et en utilisant le th\'eor\`eme sur les mon\^omes de plus haut degr\'e.
+\item
+$\lim \limits_{n\to +\infty}\ln{(2^n+n)}=+\infty$ par propri\'et\'e sur les somme et compos\'ee de limites.
+%\item
+%$\lim \limits_{n\to +\infty}\ln{(2^n-n)}=+\infty$ car $\ln{(2^n-n)}=n\ln{2}+\ln{\left( 1-\ddp\frac{n}{2^n} \right)}$ et en utilisant les croissances compar\'ees, on a: $\lim\limits_{n\to +\infty} 1-\ddp\frac{n}{2^n}=1$.
+\item
+$\lim \limits_{n\to +\infty}n^{\frac{1}{n}}=1$ car $n^{1/n}=e^{1/n\ln{n}}$ puis par croissance compar\'ee, on a: $\lim\limits_{n\to +\infty} \ddp\frac{\ln{n}}{n}=0$.  
+\item
+$\lim \limits_{n\to +\infty}(\ln{n})^n=+\infty$. Il n'y a pas de forme ind\'etermin\'ee ici, il suffit d'\'ecrire que $\left( \ln{n}\right)^n=e^{n\ln{(\ln{n})}}$.
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{n^3+2^n}{3^n}=0$ en mettant $2^n$ en facteur au num\'erateur et en utilisant ensuite le th\'eor\`eme sur la convergence des suites g\'eom\'etriques et les croissances compar\'ees car $\lim\limits_{n\to +\infty} \ddp\frac{n^3}{2^n}=\lim\limits_{n\to +\infty} \ddp\frac{n^3}{e^{n\ln{2}}}=0$. 
+%\item 
+%$\lim \limits_{n\to +\infty}(a^n+b^n)^{\frac{1}{n}}$ avec $a>0$ et $b>0$.\\
+%\noindent Pour cette limite, il faut \'etudier des cas selon que $a>b$, $a=b$ ou $a<b$. Faisons le par exemple pour $a>b$. On commence par \'ecrire que: $(a^n+b^n)^{1/n}=e^{1/n\ln{(a^n+b^n)}}$. Puis, comme $a>b$, on met le terme dominant en facteur, \`a savoir $a^n$. On obtient pour l'exposant qui est dans l'exponentielle: 
+%$$\ddp\frac{\ln{(a^n)}}{n}+\ddp\frac{\ln{\left( 1+(\frac{b}{a})^n \right)}}{n}=\ln{a}+\ddp\frac{\ln{\left( 1+(\frac{b}{a})^n \right)}}{n}.$$
+%Le deuxi\`eme terme tend vers 0 (pas de forme ind\'etermin\'ee) donc, par composition de limite, on obtient, si $a>b$,
+%$$\lim \limits_{n\to +\infty}(a^n+b^n)^{\frac{1}{n}}=e^{\ln{a}}=a.$$
+%Il suffit alors de faire un raisonnement analogue pour les deux autres cas.
+\item
+$\lim \limits_{n\to +\infty}(n^2+n+1)^{\frac{1}{n}}=1$ en transformant l'expression en mettant le terme dominant $n^2$ en facteur:
+$$(n^2+n+1)^{\frac{1}{n}}=e^{1/n\ln{(n^2+n+1)}}.$$
+Le terme en exposant dans l'exponentielle est alors
+$$\ddp\frac{\ln{(n^2+n+1)}}{n}=\ddp\frac{\ln{(n^2)}}{n}+\ddp\frac{\ln{(1+\frac{1}{n}+\frac{1}{n^2})}}{n}.$$
+On obtient alors la limite voulue en utilisant les croissances compar\'ees.
+\item
+$\lim \limits_{n\to +\infty}\ddp\frac{1}{a^n}\sum\limits_{k=1}^n b^k$.\\
+\noindent On suppose ici que $a>0$ et $b>0$. Commen\c{c}ons par calculer l'expression dont on cherche la limite. On obtient, si $b\not= 1$
+$$\ddp\frac{1}{a^n}\sum\limits_{k=1}^n b^k=\ddp\frac{b}{1-b}\ddp\frac{1-b^n}{a^n}.$$
+Et si $b=1$, on obtient $\ddp\frac{1}{a^n}\sum\limits_{k=1}^n b^k=\ddp\frac{n}{a^n}$.
+Etudions alors des cas:
+\begin{itemize}
+\item[$\star$] Si $b>1$:\\
+\noindent On a alors: $u_n\underset{+\infty}{\thicksim} \ddp\frac{-b}{1-b} \left( \ddp\frac{b}{a} \right)^n$ car $1-b^n\underset{+\infty}{\thicksim} -b^n$ et en utilisant ensuite les propri\'et\'es sur le produit et le quotient d'\'equivalent.
+Ainsi, on obtient les cas suivants:\\
+\noindent Si $b<a$, alors $\lim\limits_{n\to +\infty} u_n=0$\\
+\noindent Si $b=a$, alors $\lim\limits_{n\to +\infty} u_n=\ddp\frac{-b}{1-b}$\\
+\noindent Si $b>a$, alors $\lim\limits_{n\to +\infty} u_n=+\infty$\\
+\item[$\star$] Si $0<b<1$:\\
+\noindent On a alors: $u_n\underset{+\infty}{\thicksim} \ddp\frac{b}{1-b} \left( \ddp\frac{1}{a} \right)^n$ car $1-b^n\underset{+\infty}{\thicksim} 1$ et en utilisant ensuite les propri\'et\'es sur le produit et le quotient d'\'equivalent..
+Ainsi, on obtient les cas suivants:\\
+\noindent Si $a>1$, alors $\lim\limits_{n\to +\infty} u_n=0$\\
+\noindent Si $a=1$, alors $\lim\limits_{n\to +\infty} u_n=\ddp\frac{b}{1-b}$\\
+\noindent Si $a<1$, alors $\lim\limits_{n\to +\infty} u_n=+\infty$\\
+\item[$\star$] Si $b=1$:\\
+\noindent On a alors: $u_n\underset{+\infty}{\thicksim} \ddp\frac{n}{a^n}$.
+Ainsi, on obtient les cas suivants:\\
+\noindent Si $a>1$, alors $\lim\limits_{n\to +\infty} u_n=0$ par croissance compar\'ee\\
+\noindent Si $a=1$, alors $\lim\limits_{n\to +\infty} u_n=+\infty$\\
+\noindent Si $a<1$, alors $\lim\limits_{n\to +\infty} u_n=+\infty$\\
+\end{itemize}
+\item $ \lim\limits_{n\to+\infty}  \ddp n^2 \left(\cos\left(\frac{1}{n^2}\right)-1\right)$ : on utilise ici les \'equivalents usuels. On a : $\ddp u_n \underset{+\infty}{\thicksim} n^2 \times \left(-\frac{1}{2n^2}\right) = -\frac{1}{2}$, donc $\lim\limits_{n\to +\infty} u_n=\ddp -\demi$.
+\end{enumerate} 
+\end{correction}

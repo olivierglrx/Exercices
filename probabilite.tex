@@ -1,0 +1,2161 @@
+\section{Probabilité/Dénombrement}
+
+\subsection{Urne Indépendance d'évenements (facile)}
+
+\begin{exercice}
+ Une urne contient 12 boules numérotées de 1 à 12. On en tire une hasard, et on considère les événements
+\begin{center}
+A="tirage d'un nombre pair''\\
+B="tirage d'un multiple de 3''
+\end{center}
+Les événements A et B sont-ils indépendants?
+ Reprendre la question avec une urne contenant 13 boules.
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+  \item On a:
+
+$$
+\begin{gathered}
+A=\{2,4,6,8,10,12\} \\
+B=\{3,6,9,12\} \\
+A \cap B=\{6,12\} .
+\end{gathered}
+$$
+On a donc $P(A)=1 / 2, P(B)=1 / 3$ et $P(A \cap B)=1 / 6=P(A) P(B) .$ Les événements $A$ et $B$ sont indépendants.\\
+\item  Les événements $A, B$ et $A \cap B$ s'écrivent encore exactement de la même façon. Mais cette fois, on a : $P(A)=6 / 13, P(B)=4 / 13$ et $P(A \cap B)=2 / 13 \neq 24 / 169$. Les événements $A$ et $B$ ne sont pas indépendants. C'est conforme à l'intuition. Il n'y a plus la même répartition de boules paires et de boules impaires, et dans les multiples de 3 compris entre 1 et 13 , la répartition des nombres pairs et impairs est restée inchangée.
+\end{enumerate}
+\end{correction}
+
+
+\subsection{Chaine de markov - puce sur un triangle (événement, pas de diag)}
+
+
+
+
+\begin{exercice}
+
+On considère trois points distincts du plan nommés $A, B$ et $C$. Nous allons étudier le déplacement aléatoire d'un pion se déplaçant sur ces trois points. A l'étape $n=0$, on suppose que le pion se trouve sur le point $A$. Ensuite, le mouvement aléatoire du pion respecte les deux règles suivantes :
+\begin{itemize}
+\item  le mouvement du pion de l'étape $n$ à l'étape $n+1$ ne dépend que de la position du pion à l'étape $n$;
+\item pour passer de l'étape $n$ à l'étape $n+1$, on suppose que le pion a une chance sur deux de rester sur place, sinon il se déplace de manière équiprobable vers l'un des deux autres points.
+
+\end{itemize}
+
+Pour tout $n \in \mathbb{N}$, on note $A_{n}$ l'évènement "le pion se trouve en $A$ à l'étape $n$ ", $B_{n}$ l'évènement "le pion se trouve en $B$ à l'étape $n$ " et $C_{n}$ l'évènement "le pion se trouve en $C$ à l'étape $n$ ". On note également, pour tout $n \in \mathbb{N}$,
+$$
+a_{n}=P\left(A_{n}\right), b_{n}=P\left(B_{n}\right), c_{n}=P\left(C_{n}\right) \text { et } V_{n}=\left(\begin{array}{l}
+a_{n} \\
+b_{n} \\
+c_{n}
+\end{array}\right)
+$$
+\begin{enumerate}
+\item  Calculer les nombres $a_{n}, b_{n}$ et $c_{n}$ pour $n=0,1$.
+\item  Pour $n \in \mathbb{N}$, exprimer $a_{n+1}$ en fonction de $a_{n}, b_{n}$ et $c_{n} .$ Faire de même pour $b_{n+1}$ et $c_{n+1}$.
+\item  Donner une matrice $M$ telle que, pour tout $n \in \mathbb{N}$, on a $V_{n+1}=M V_{n}$.
+\item  On admet que, pour tout $n \in \mathbb{N}$, on a
+$$
+M^{n}=\frac{1}{3 \cdot 4^{n}}\left(\begin{array}{ccc}
+4^{n}+2 & 4^{n}-1 & 4^{n}-1 \\
+4^{n}-1 & 4^{n}+2 & 4^{n}-1 \\
+4^{n}-1 & 4^{n}-1 & 4^{n}+2
+\end{array}\right)
+$$
+En déduire une expression de $a_{n}, b_{n}$ et $c_{n}$ pour tout $n \in \mathbb{N}$.
+\item  Déterminer les limites respectives des suites $\left(a_{n}\right),\left(b_{n}\right)$ et $\left(c_{n}\right)$. Interpréter le résultat.
+\end{enumerate}
+
+
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+
+
+\item  Puisqu'en $n=0$ le pion est en $A$, on a $a_{0}=1, b_{0}=0$ et $c_{0}=0 .$ A l'étape $n=1$, d'après les informations de l'énoncé, $a_{1}=1 / 2, b_{1}=c_{1}$. Puisque $a_{1}+b_{1}+c_{1}=1$, on a $b_{1}=c_{1}=1 / 4$.
+\item  Les événements $A_{n}, B_{n}$ et $C_{n}$ forment un système complet d'événements. D'après la formule des probabilités totales,
+$$
+P\left(A_{n+1}\right)=P_{A_{n}}\left(A_{n+1}\right) P\left(A_{n}\right)+P_{B_{n}}\left(A_{n+1}\right) P\left(B_{n}\right)+P_{C_{n}}\left(A_{n+1}\right) P\left(C_{n}\right) .
+$$
+Comme à la question précédente, on a $P_{A_{n}}\left(A_{n+1}\right)=1 / 2, P_{B_{n}}\left(A_{n+1}\right)=1 / 4$ et $P_{C_{n}}\left(A_{n+1}\right)=1 / 4$. On en déduit que
+$$
+a_{n+1}=\frac{1}{2} a_{n}+\frac{1}{4} b_{n}+\frac{1}{4} c_{n}
+$$
+En raisonnant de la même façon, ou par symétrie,
+$$
+\begin{gathered}
+b_{n+1}=\frac{1}{4} a_{n}+\frac{1}{2} b_{n}+\frac{1}{4} c_{n} \\
+c_{n+1}=\frac{1}{4} a_{n}+\frac{1}{4} b_{n}+\frac{1}{2} c_{n}
+\end{gathered}
+$$
+\item  D'après la question précédente, la matrice
+$$
+M=\frac{1}{4}\left(\begin{array}{lll}
+2 & 1 & 1 \\
+1 & 2 & 1 \\
+1 & 1 & 2
+\end{array}\right)
+$$
+convient.
+\item  On a $V^{n}=M^{n} V_{0}$, ce qui donne
+$$
+\left\{\begin{array}{l}
+a_{n}=\frac{4^{n}+1}{3 \cdot 4^{n}} \\
+b_{n}=\frac{4^{n}-2}{3 \cdot 4^{n}} \\
+c_{n}=\frac{4^{n}-2}{3 \cdot 4^{n}}
+\end{array}\right.
+$$
+On remarque qu'on a bien $a_{n}+b_{n}+c_{n}=1$.
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+
+
+
+\subsection{Nombre de surjections (Pb)}
+
+\begin{exercice}
+Pour tout $n\in \N^*$, on note $E_n=\intent{1,n}$. 
+On note $S_{n,p}$ le nombre de surjections de $E_n$ sur $E_p$. 
+\begin{enumerate}
+\item Calculer $S_{n,p}$ si $p>n$. 
+\item Justifier grâce au cardinal qu'une surjection de $E_n$ dans $E_n$ est une bijection. En déduire $S_{n,n}$.
+\item Déterminer $S_{n,1}$. 
+\item Combien y-a-t-il d'applications de $E_n$ dans $E_2$ ? Parmi ces applications lesquelles ne sont pas surjectives ? En déduire $S_{n,2}$. 
+\item Soit $f$ une surjection de $E_{p+1}$ dans $E_p$, justifier que tous les éléments de $E_p$ ont exactement un antécédent sauf un qui en a exactement deux. 
+En déduire que $S_{p+1,p} = \frac{p}{2}(p+1)!$\\
+
+On suppose désormais que $0< p \leq n$. 
+\item Montrer que $\ddp \sum_{k=0}^p \binom{p}{k}(-1)^k=0$
+\item Montrer que pour tout $(k,q)$ tel que $0\leq k \leq q \leq p $ 
+$$\binom{p}{q}\binom{q}{k}=\binom{p}{k}\binom{p-k}{q-k}.$$
+\item \begin{enumerate}
+\item En déduire que, si 
+$0\leq k <p$, alors $\ddp \sum_{q=k}^p \binom{p}{q}\binom{q}{k} (-1)^q =0$.
+\item  Que vaut la somme précédente quand $k=p$ ?
+\end{enumerate}
+
+\item Montrer que pour tout entier $q$ de $E_p$ le nombre d'applications de $E_n$ dans $E_p$ ayant un enemble d'image à $q$ éléments est égal à $\binom{p}{q} S_{n,q}$. 
+\item En déduire que $p^n =\ddp \sum_{q=1}^p\binom{p}{q} S_{n,q}$. 
+\item A l'aide d'une inversion de sommes montrer que : $\ddp \sum_{k=1}^p (-1)^k \binom{p}{k}k^n=\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q}  $.
+\item A l'aide des questions précédentes (8, 10, 11 notamment), en déduire que $S_{n,p} = \ddp (-1)^p \sum_{k=1}^p (-1)^k \binom{p}{k}k^n$.\\
+
+Dans les questions suivantes on va essayer de déterminer une relation de récurrence entre $S_{n,p}$ et les valeurs de $S_{n-1,p}$ et $S_{n-1,p-1}$
+\item Soit $\phi : E_n \tv E_p$  une surjection. (Combien y-a-t-il de possibilités pour $\phi$ ? ) On note $\phi_1$ la restriction de $\phi$ à $E_{n-1}$. 
+\begin{enumerate}
+\item Supposons que $\phi_1$ est surjective. Combien y-a-t-il de possibilité pour $\phi_1$ ? 
+\item Supposons que $\phi_1$ n'est pas surjective, en déduire que $Im(\phi) = Im(\phi_1) \cup \{ \phi(n)\}$ cette union étant disjointe. $Im(\phi)$ désigne l'image  de la fonction, c'est-à-dire $\{ \phi(e) \, |\, e\in E_n\}$. Montrer ainsi que $\phi_1$ est surjective de $E_{n-1}$ sur $E_p\setminus\{ \phi(n)\}$. Combien y-a-t-il de possibilités pour $\phi_1$ ?
+\item En déduire que $S_{n,p}= p(S_{n-1,p} +S_{n-1,p-1})$.
+\item A l'image du triangle de Pascal, construire une table des $S_{n,p}$ pour $0\leq p\leq n \leq 5$
+\item Ecrire un programme Python qui prend en argument $(n,p)$ et retourne la valeur de $S_{n,p}$.
+\end{enumerate}
+
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item  D'après le cours si il existe une surjection de $E\tv F$ alors $\Card(E) \geq \Card(F)$. Ainsi $S_{n,p}=0$ dès que $p>n$.  
+\item Si $f :E_n\tv E_n$ est une surjection alors tous les éléments de l'image ont au moins un antécédents par définition. Mais ils ont au plus un antécédent sinon le cardinal de $f(E_n) $ serait strictement plus petit que celui de $E_n$. Ainsi d'après le cours $S_{n,n} =n!$. 
+\item Il n'y a qu'une seule application de $E_n$ dans $E_1$ : l'application constante égale à $1$. Cette application est bien surjcetive, donc $S_{n,1} = 1$. 
+\item Il y a  $2^n$ applications de $E_n $ dans $E_2$ (cf cours). Seules les applications constantes (l'application constante à $
+1$ et celle constante à $2$) ne sont pas surjectives. On trouve alors 
+$$S_{n,2} = 2^n -2.$$ 
+\item Soit $f$ une surjection de $E_{p+1}$ dans $E_p$. Tous les éléments ont au moins un antécédent par définition d'une surjection.  Comme  $\Card(E_{p+1}) =\Card E_p +1 $ il y a un élément de $E_p$ qui a deux antécédents. 
+
+On choisit les deux éléments qui auront la même image : 
+il y  a $\binom{p+1}{2}$ façons de choisir $2$ éléments dans $E_{p+1}$. Ensuite, choisir à chaque éléments une image revient à choisir une bijection entre deux ensembles à $p$ éléments, soit $p!$ choix .
+On  a alors $$S_{p+1,p} = \binom{p+1}{2} p! = \frac{p(p+1)}{2} p! = \frac{p}{2}(p+1)!.$$
+
+
+ \item C'est le binome de Newton 
+ $$\sum_{k= 0}^p \binom{p}{k}(-1)^k  =(1+(-1))^p = 0^p =0.$$ 
+ \item Cf DM 4 sur le binome. 
+ \item 
+ \begin{enumerate}
+\item Soit
+$0\leq k <p$ 
+\begin{align*}
+\sum_{q=k}^p \binom{p}{q}\binom{q}{k} (-1)^q &= \sum_{q=k}^p\binom{p}{k}\binom{p-k}{q-k}(-1)^q &\text{ D'après Q7} \\
+&= \binom{p}{k} \sum_{q=k}^p\binom{p-k}{q-k}(-1)^q &\binom{p}{k} \text{ ne dépend pas de $q$}\\
+&= \binom{p}{k} \sum_{j=0}^{p-k}\binom{p-k}{j}(-1)^{(j+k)}& \text{ Changement d'indice $q= j+k$}\\
+&= \binom{p}{k}(-1)^k \sum_{j=0}^{p-k}\binom{p-k}{j}(-1)^{j}\\
+&= 0 &\text{D'après Q6}
+\end{align*}
+
+\item  Si $k=p$ on  cherche la valeur de 
+$$\sum_{q=p}^p \binom{p}{q}\binom{q}{p} (-1)^q $$
+Il y a qu'un seul terme dans cette somme, il vaut $(-1)^p$. 
+\end{enumerate}
+
+\item Pour compter le nombre d'applications qui ont pour image $q$ éléments il suffit de dénombre les images possibles ($q$ éléments parmis $E_p$) : $\binom{p}{q}$. Ce choix fait, il suffit de dénombre les applications $E_n$ dans $E_p$ qui ont exactement ces $q$ élements comme image : c'est-à-dire par définitin $S_{n,q}$. Ainsi  il y a $\binom{p}{q}S_{n,q}$ applications qui ont pour image $q$ éléments dans $E_p$. 
+
+\item On regarde la partition suivante 
+$$\{\text{ applications } E_n \tv E_p\} =\bigcup_{q=1}^n \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \} $$
+On a $\Card(\{\text{ applications } E_n \tv E_p\}) =p^n$ et \\
+$\ddp \Card \bigcup_{q=1}^n \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \}  = \ddp \sum_{q=1}^n \Card  \{\text{ applications } E_n \tv E_p \text{ qui ont exactement $q$ images} \} =\sum_{q=1}^n \binom{p}{q}S_{n,q}$
+D'où 
+$$p^n =\sum_{q=1}^n \binom{p}{q}S_{n,q}$$
+\item 
+On repart de la formule obtenue à la question précédente, dont on  va changer le noms des variables pour se rapprocher de la formule demandée : 
+$$k^n =\sum_{q=1}^n \binom{k}{q}S_{n,q}$$
+Donc 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k} k^n  = \sum_{k=1}^p \sum_{q=1}^n  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$$
+Remarquons que la somme de droite vaut $0$ pour $q>k$ à cause de $\binom{k}{q}$. On a donc 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k} k^n  = \sum_{k=1}^p \sum_{q=1}^k  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$$
+Comme suggéré par l'énoncé on fait maintenant une interversion de somme 
+
+$\ddp \sum_{k=1}^p \sum_{q=1}^k  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}=\sum_{q=1}^p \sum_{k=q}^p  (-1)^k \binom{p}{k} \binom{k}{q}S_{n,q}$
+Avec l'équation précédente on obtient bien le résultat désiré :
+$$\ddp \sum_{k=1}^p (-1)^k \binom{p}{k}k^n=\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q} .$$
+\item D'après 8a),b) on sait que pour $q<p$
+$$\sum_{k=q}^p \binom{p}{k}\binom{k}{q} (-1)^k = 0$$
+et pour $q=p$ 
+$$\sum_{k=q}^p \binom{p}{k}\binom{k}{q} (-1)^k = (-1)^p$$
+Ainsi dans la double somme de 11, la somme la plus intérieure vaut $0$ sauf si $q=p$, on obtient ainsi : 
+$$\sum_{q=1}^p \left(\sum_{k=q}^p (-1)^k \binom{p}{k}\binom{k}{q} \right) S_{n,q} = (-1)^pS_{n,p}$$
+
+D'après la formule préalablement obtenue en $11$, on obtient 
+$$\sum_{k=1}^p (-1)^k \binom{p}{k } k^n = (-1)^p S_{n,p}$$
+Soit 
+$$S_{n,p}= (-1)^p \sum_{k=1}^p (-1)^k \binom{p}{k } k^n$$
+(où on utilise $\frac{1}{(-1)^p} = \frac{(-1)^p}{(-1)^{2p}} = (-1)^p$)
+
+
+\item Il y a $S_{n,p}$ possibilités pour $\phi$ par définition de $S_{n,p}$. 
+\begin{enumerate}
+\item Si $\phi_1$ est surjective, il  y a $S_{n-1,p}$ possibilités pour $\phi_1$.
+\item Remarquons que par définition de l'image  l'égalité entre les ensembles est toujours réalisée.  $Im(\phi_1) \cup \{ \phi(n)\} \subset Im(\phi)$. Il faut donc montrer que l'union est disjointe. Pour cela on remarque que lorsque $\phi_1$ n'est pas surjective et que $\phi$ est surjective $\phi(n)$ est nécessairement un élément qui a un unique antécédent : $n$. On obtient bien alors $\phi(n)$ n'est pas dans l'imgae de $\phi_1$, soit en d'autres termes, que l'union est disjointe. 
+
+$\phi_1$ est alors une fonction de $E_{n-1} $ dans $E_p$ dont l'image est celle de $\phi$ ($E_p$) privée de $\phi(n)$. il y a donc $S_{n-1,p-1}$ possibilités pour $\phi_1$ 
+\item Une fois $\phi_1$ choisit, dont on vient de voir qu'il y a $S_{n-1,p}+S_{n-1,p-1}$ possibilités, il reste à choisir la valeur de $\phi(n)$ ce qui laisse $p$ possibilités, indépendantes du choix de $\phi_1$. On obtient ainsi 
+$$S_{n,p} = p (S_{n-1,p}+S_{n-1,p-1})$$
+\item 
+$
+\begin{array}{|c|c|c|c|c|c|}
+\hline
+& p=1& p=2 & p=3& p=4& p=5\\
+\hline
+n=1& 1 &0 & 0 &0 &0  \\
+\hline
+n=2& 1& 2!=2& 0 & 0& 0 \\
+\hline
+n=3& 1&2(1+2)=6 &3 (2+0)=6  &0 & 0 \\
+\hline
+n=4& 1&2(6+1)=14 & 3(6+6)=36 & 4(6+0)=24&0  \\
+\hline
+n=5& 1&2(14+1)=30 & 3(14+36)=150 &4(24+36)=240 & 5(24+0)=120 \\
+\hline
+\end{array}
+$
+\item 
+Deux solutions.  Grace à ce qu'on vient de voir à la question 13)c) on peut programmer une fonction récursivement de la manière suivante : 
+\begin{lstlisting}
+def S_rec(n,p):
+  if p>n:
+    return 0
+  if p==1:
+    return 1
+  else:
+    return( p*( S_rec(n-1,p) +S_rec(n-1,p-1)))
+ 
+\end{lstlisting}
+
+Sinon on utilise la somme obtenue en 12: 
+\begin{lstlisting}
+from math import factorial
+def S_binomial(n,p):
+  if p>n:
+    return 0
+  else: 
+    s=0
+    for k in range(1,p+1):
+      s=s+((-1)**k)*factorial(p)/(factorial(k) *factorial(p-k) )* k**n
+  return(((-1)**p)* s)
+\end{lstlisting}
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+
+
+
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+\subsection{Urnes, boules et tirages ! }
+\begin{exercice}   \;
+Une urne A contient 1 boule rouge et 2 noires. Une urne B contient 3 rouges et 1 noire. Au d\'epart, on choisit une urne, la probabilit\'e de choisir l'urne A est $p\in \; \rbrack 0,1\lbrack$. Puis on choisit une boule dans cette urne. Si, \`a un tirage quelconque, on a tir\'e une boule rouge, le tirage suivant se fait dans A, sinon, on choisit une boule de B. Les tirages se font avec remise. On note $p_n$ la probabilit\'e de choisir une boule rouge au tirage de num\'ero $n$. Calculer $p_1$, puis exprimer $p_{n+1}$ en fonction de $p_n$. En d\'eduire $p_n$ en fonction de $n$ puis la limite de la suite $(p_n)_{n\in\N^{\star}}$.
+\end{exercice}
+\begin{correction}
+On note $R_n$ l'événement " tirer une Rouge au tirage $n$" et $N_n$: " tirer une Noire au tirage $n$". On a évidemment $\overline{N_n} =R_n$. 
+
+\begin{align*}
+p_{n+1} &= \bP(R_{n+1} ) \quad \text{Par définition} \\
+			&= \bP(R_{n+1}  | R_n ) \bP(R_n) +   \bP(R_{n+1}  | N_n ) \bP(N_n)  \quad \text{Par la formule des probabilités totales} 
+\end{align*}
+
+$\bP(R_{n+1}  | R_n ) =\frac{1}{3}$  car si on a tiré une boule rouge au tirage $n$ le tirage se fait dans l'urne $A$ qui contient 3 boules dont seuleemnt une noire. De même $\bP(R_{n+1}  | N_n ) =\frac{3}{4}$.
+Ainsi
+\begin{align*}
+p_{n+1} &= \frac{1}{3}p_n + \frac{3}{4}(1-p_n)\\
+			&= \frac{-5}{12} p_n + \frac{3}{4}
+\end{align*}
+
+C'est une suite arithmético géométrique. On cherche $\ell\in \R$ tel que 
+$$\ell =  \frac{-5}{12} \ell+ \frac{3}{4}$$
+on trouve $\ell = \frac{9}{17}$
+On sait d'après le cours (ou  on refait le calcul) que la suite $u_n=p_n - \ell  $ est géométrique de raison $\frac{-5}{12}$. 
+Ainsi pour tout $n\in \N^*$ on a 
+$$u_n = u_1 \left(\frac{-5}{12} \right)^{n-1}$$
+et $u_1 = p_1- \frac{9}{17} $
+Il faut encore calculer $p_1$ 
+On a $p_1= \bP(R_1) = \bP(R_1|A) \bP(A) +  \bP(R_1|B) \bP(B)$ d'après la formule des probabilités totales (ici $A$ et $B$ sont les événements 'choix de l'urne .... ') 
+On a donc $p_1 = \frac{1}{3}p +\frac{3}{4}(1-p)= \frac{-5}{12} p + \frac{3}{4}$
+
+Finalement $u_1= \frac{-5}{12} p + \frac{3}{4} - \frac{9}{17}=  \frac{-5}{12} p-\frac{15}{68}$
+
+Et $$p_n = \frac{9}{17}  + \left(\frac{-5}{12} p-\frac{15}{68}\right) \left(\frac{-5}{12} \right)^{n-1}$$
+La limite de $p_n$ est $\frac{9}{17}$.
+
+\end{correction}
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+
+\subsection{Dénombrement des matrices à coefficients $\{ 0,1\}$ (Pb)}
+\begin{exercice}
+Soit $A_n[X]$ le sous ensemble de $\R_n[X]$ dont tous les coefficients sont dans $\{0,1\}.$ 
+
+\begin{enumerate}
+\item Combien y-a-t-il d'éléments dans $A_n[X]$  ?
+\item Combien y-a-t-il d'éléments dans $A_n[X]$ de degré $n$ ? 
+On muni $A_n[X]$ de la probabilité uniforme. 
+\item On choisit un polynôme $P$ aléatoirement dans $A_n[X]$, quelle est la probabilité que $P$ soit de degré $n$ ? 
+\item On choisit un polynôme $P$ aléatoirement dans $A_n[X]$, quelle est la probabilité que $P$ admette 0 comme racine ? 
+\item Quelle est la probabilité que $P$ admette $0$ comme racine simple (mais pas double)? 
+\item Quelle est la probabilité que $P$ admette $0$ comme racine double sachant que $0$ est racine  ? 
+\item On modélise un polynôme  $\sum_{k=0}^na_k X^k$ de degré $n$ par une liste Python de longueur $n+1$, dont les éléments sont donnés par $a_0,\cdots, a_n$ dans cette ordre. 
+\begin{enumerate}
+\item Donner la liste correspondant au polynôme  $P = X^3+X+1$
+\item Ecrire une fonction \texttt{polynôme} qui prend en argument le degré $n$ et qui retourne une liste correspondant à un polynôme de $A_n[X]$ dont les coefficients sont pris aléatoirement dans $\{0,1\}$. 
+\item Créer une fonction \texttt{degre} qui prend en argument une liste (représentant un polynôme) et qui retourne son degré. 
+\item Créer une fonction \texttt{racine} qui prend en argument une liste (représentant un polynôme) et qui vérifie si $0$ est racine ou ne l'est pas. 
+\end{enumerate}
+\end{enumerate} 
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item On peut choisir $n+1$ coefficients différents dans $\{0,1\}$. Il y a donc $2^{n+1}$ polynômes dans $A_n[X]$. 
+\item Pour qu'un polynôme de $A_n[X]$ soit de degré $n$ il faut que le coefficient associé au monome de degré $n$ soit non nul, c'est-à-dire égal à $1$. Les autres coefficients peuvent etre choisis de manière indépendante on a donc $2^n$  polynômes de degré $n$ dans $A_n[X]$. 
+\item D'après la question précédente et comme les probabilités sont uniformes on a $\bP( \text{$ P$ de degré n }) =\frac{2^n}{2^{n+1}} =\frac{1}{2}$
+\item $P$ admet $0$ comme racine si $a_0=0$, le même argument que précédemment montre que :
+$$\bP( \text{$ P$ admet 0 comme racine}) = \frac{1}{2}$$
+
+\item $P$ admet $0$ comme racine si $a_0=0$, elle n'est pas double si $a_1\neq 0$. Le même argument que précédemment montre que :
+$$\bP( \text{$ P$ admet 0 comme racine simple mais pas double }) = \frac{1}{4}$$
+\item $\bP( \text{$ P$ admet 0 comme racine  double } | \text{$ P$ admet 0 comme racine}  )  = \bP (a_1= 0 \text{ et } a_0 =0 | a_0 =0 ) $ Comme les choix de $a_1$ et $a_0$ sont indépendants on a 
+$$\bP( \text{$ P$ admet 0 comme racine  double } | \text{$ P$ admet 0 comme racine}  )   =\bP (a_1= 0 ) =\frac{1}{2}$$
+\item 
+\begin{enumerate}
+\item $P=X^3+X+1$ correspond à $[1,1,0,1]$
+\item 
+\begin{lstlisting}
+from random import randint
+def polynome(n):
+	L=[] #creation d une liste vide
+	for i in range(n+1): # il y a n+1 coefficients a choisir et non pas n 
+	  a_i=randint(0,1) #choix aleatoire du coefficient a_i
+	  L= L+[a_i] #on ajoute le coefficient a_i a la liste L
+	return(L)		  
+\end{lstlisting}
+\item 
+On va regarder tous les coefficients en commencant par le dernier, dès qu'on obtient un coefficient non nul il correspondra au degré du polynôme. 
+\begin{lstlisting}
+def degre(L):
+	i=n # on initialise donc le 'compteur' au degre le plus haut  : n 
+	while i>0:
+	  if L[i+1] != 0: #on verifie si le coefficient est non nul. 
+	  	return( 'Le polynome est de degre i')
+	  else:
+	    i=i-1 #on regarde ensuite le coefficient juste avant 
+	return(' C est le polynome nul')
+\end{lstlisting}
+
+\item 
+\begin{lstlisting}
+def racine(L):
+	if  L[0]==0:
+		return('0 est racine')
+	else: 
+		return('0 n est pas  racine')
+\end{lstlisting}
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+
+
+\subsection{Urnes boules et tirages 2 }
+
+\begin{exercice}   \;
+Une urne contient $b$ boules blanches et $r$ boules rouges. On pose $N=b+r$. On tire au hasard et successivement une boule de l'urne: si la boule est rouge, on la remplace par une boule blanche dans l'urne, sinon on ne la remplace pas.\\
+\noindent Soit $R_i$ l'\'ev\'enement : \og on tire une boule rouge au i-\`eme tirage\fg \;  et $A_i$ l'\'ev\'enement : \og on tire, pour la premi\`ere fois, une boule blanche au i-\`eme tirage\fg.
+\begin{enumerate}
+ \item Exprimer $A_n$ \`a l'aide des $R_k$. Calculer $P(A_n)$.
+\item Soit $C_m$ l'\'ev\'enement : \og quand on tire pour la premi\`ere fois une boule blanche, il reste $m$ boules rouges dans l'urne \fg.
+\begin{enumerate}
+\item Calculer $P(C_0)$ puis montrer que : $\ddp \forall m\in\N^{\star},\; P(C_m)=\ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!}-\ddp\frac{N^{m-1}}{(m-1)!} \right).$
+\item V\'erifier que: $\ddp \sum\limits_{m=0}^r P(C_m)=1$. Qu'en conclure pour $\bigcup\limits_{m=0}^r C_m$ ?
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On suppose que $n\leq N-1$. On a $A_n=R_1\cap R_2\cap \dots \cap R_{n-1}\cap \overline{R_n}$. Comme tous ces \'ev\'enements ne sont pas mutuellement ind\'ependants, on utilise la formule des probabilit\'es compos\'ees et on obtient sous r\'eserve que toutes les probabilit\'es conditionnelles existent bien:
+$$P(A_n)=P(R_1)P_{R_1}(R_2)P_{R_1\cap R_2}(R_3)\times \dots \times P_{ R_1\cap \dots \cap R_{n-2}}(R_{n-1})P_{R_1\cap \dots \cap R_{n-1}}(\overline{R_n}).$$
+\item[$\bullet$] On a: $P(R_1)=\ddp\frac{r}{N}$.\\
+\noindent De plus $P(R_1)\not= 0$ car $r\not= 0$ et ainsi $P_{R_1}$ existe bien. 
+\item[$\bullet$] On a: $P_{R_1}(R_2)=\ddp\frac{r-1}{N}$ d'apr\`{e}s le protocole.\\
+\noindent De plus $P(R_1\cap R_2)=P(R_1)\times P_{R_1}(R_2)=\ddp\frac{r(r-1)}{N^2}\not= 0$ car $r\not= 0$ et $r\not= 1$ et ainsi $P_{R_1\cap R_2}$ existe bien.
+\item[$\bullet$] On a: $P_{R_1\cap R_2}(R_3)=\ddp\frac{r-2}{N}$ d'apr\`{e}s le protocole.\\
+\noindent De plus $P(R_1\cap R_2\cap R_3)=P(R_1)\times P_{R_1}(R_2)\times P_{R_1\cap R_2}(R_3)=\ddp\frac{r(r-1)(r-2)}{N^3}\not= 0$ car $r\not= 0$, $r\not= 1$ et $r\not= 2$ et ainsi $P_{R_1\cap R_2\cap R_3}$ existe bien. 
+\item[$\bullet$]  En it\'erant ainsi les calculs on montre que toutes les probabilit\'es conditionnelles existent bien et on obtient que: $$\fbox{$\ddp P(A_n)=\ddp\frac{r!}{N^n}\times\ddp\frac{b+n-1}{(r-n+1)!}$}.$$
+\end{itemize}
+\item
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On peut remarquer que $C_0=A_{r+1}$ car $C_0=R_1\cap R_2\cap \dots \cap R_{n-1}\cap R_r \cap\overline{R}_{r+1}$ car il faut commencer par tirer toutes les boules rouges pour qu'il n'en reste aucune (le protocole nous disant qu'on ne remet jamais de boule rouge dans l'urne). Ainsi d'apr\`{e}s la question pr\'ec\'edente, on obtient que: $P(C_0)=\ddp\frac{r!}{N^r}$ en rempla\c{c}ant dans la formule pr\'ec\'edente tous les $n$ par $r+1$.
+\item[$\bullet$] Soit $m\geq 1$ fix\'e. De m\^{e}me, on a: $C_m=A_{r-m+1}$ car il faut commencer par tirer $r-m$ boules rouges puis la premi\`{e}re boule banche. En effet, en tirant tout d'abord $r-m$ boules rouges, il va bien rester $m$ boules rouges dans l'urne. Ainsi en rempla\c{c}ant tous les $n$ par des $r-m$ dans la formule de la question pr\'ec\'edente, on obtient que: 
+$P(C_m)=\ddp\frac{r!}{N^r}\times \ddp\frac{N^m}{N}\times \ddp\frac{N-m}{m!}=\ddp\frac{r!}{N^r}\times \ddp\frac{N^m}{m!}\times \ddp\frac{N-m}{N}$. Mais $\ddp\frac{N-m}{N}=1-\ddp\frac{m}{N}$ et ainsi, en d\'eveloppant, on obtient que: 
+\fbox{$P(C_m)=\ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!} - \ddp\frac{N^{m-1}}{(m-1)!}   \right)$}. On obtient bien le r\'esultat voulu.
+\end{itemize}
+\item 
+\begin{itemize}
+\item[$\bullet$] On a: $\sum\limits_{m=0}^r P(C_m)=P(C_0)+\sum\limits_{m=1}^r \ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!} - \ddp\frac{N^{m-1}}{(m-1)!}   \right)=P(C_0)+ \ddp\frac{r!}{N^r} \left( \sum\limits_{m=1}^r \ddp\frac{N^m}{m!}    -\sum\limits_{m=1}^r   \ddp\frac{N^{m-1}}{(m-1)!}    \right)$. On reconna\^{i}t une somme t\'elescopique et ainsi, on a: $\sum\limits_{m=0}^r P(C_m)=P(C_0) + \ddp\frac{r!}{N^r}  \left(  \ddp\frac{N^r}{r!}-  \ddp\frac{N^{0}}{(0)!}  \right)=\ddp\frac{r!}{N^r}+1-\ddp\frac{r!}{N^r}=1$. On obtient bien le r\'esultat voulu.
+\item[$\bullet$] On obtient ainsi que $\bigcup\limits_{m=0}^r C_m=\Omega$ car les $\left(  C_m\right)_{m\in\intent{ 0,r}}$ forment un sce : ils sont incompatibles deux \`{a} deux et  la somme de leurs probabilit\'es fait 1.
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+%------------------
+
+
+
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+
+
+\subsection{Moteur d'avion d'après G2E (Pb)}
+
+\begin{exercice}[D'après G2E 2014]
+Une compagnie aérienne dispose d’une flotte constituée de deux types d’avions : des trimoteurs (un moteur situé en queue d’avion et un moteur sous chaque aile) et des quadrimoteurs (deux moteurs sous chaque aile).
+
+Tous les moteurs de ces avions sont susceptibles, durant chaque vol, de tomber en panne avec la même probabilité $x\in ]0,1[$ et indépendamment les uns des autres. Toutefois, les trimoteurs peuvent achever leur vol si le moteur situé en queue ou les deux moteurs d’ailes sont en  état de marche et les quadrimoteurs le peuvent si au moins deux moteurs situés sous deux ailes distinctes sont en  état de marche.
+
+\begin{enumerate}
+\item On note $X_3 $ (respectivement $X_4)$ la variable alétoire correponsdant au nombre de moteurs en panne sur un trimoteur (respectivement un quadirmoteur) durant un vol.
+\begin{enumerate}
+\item Quelles sont les lois suivies par $X_3$ et  $X_4$ ? 
+\item Calculer la probabilité que strictement moins de la moitié des moteurs du trimoteur tombent en panne. Même question pour le quadrimoteur. 
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On note $T$ l'événement \og le trimoteur achève son vol\fg. Démontrer que : 
+$$P(T) =(1-x)(-x^2+x+1)$$
+\item On note $Q$ l'événement \og le quadrimoteur achève son vol\fg. Démontrer que : 
+$$P(Q) =(1-x)^2(1+x)^2$$
+
+\end{enumerate}
+\item Déterminer , des quadrimoteurs ou des trimoteurs, quels sont les avions les plus sûrs. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item \begin{enumerate}
+\item $X_3$ (resp. $X_4$) suit une loi binomiale $\cB(3,x)$ (resp. $\cB(4,x)$)
+\item L'événement que strictmeent moins de la moitié des moteurs du trimoteur tombent en pannes correspond à l'événement $[X_3 <\frac{3}{2}]$. Comme $X_3$ est à valeur entière cela correspond à $[X_3\leq 1]$. Et on a 
+$$P(X_3\leq 1 ) =P(X_3=0)+P(X_3=1) =\\ (1-x)^3 +\binom{3}{1} x (1-x)^2 = (1-x)^2 (1-x + 3x) = (1-x)^2(1+2x)$$
+On obtient le même type de calcul pour le quadrimoteur, on a $[X_4 <\frac{4}{2}]= [X_4<2]=[X_4\leq 1]$ et donc 
+$$P(X_4 \leq 1 ) =P(X_4=0)+P(X_4=1) =\\ (1-x)^4 +\binom{4}{1} x (1-x)^3 = (1-x)^3 (1-x + 4x) = (1-x)^3(1+3x)$$
+
+
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Soit $M_G$ (resp $M_A$ resp. $M_D$) la variable aléatoire qui vaut $1$ si le moteur de gauche (resp. le moteur arrière, reps. le moteur de droite) tombe en panne et $0$ sinon. 
+L'évènement $T$ correspond à l'événément $[M_A=0] \cup\left( [M_G=0 \text{ et } M_D=0] \right)$
+On a donc 
+\begin{align*}
+P(T) &=P([M_A=0] \cup\left( [M_G=0 \text{ et } M_D=0] \right))\\
+	  &=P([M_A=0]) +P(\left( [M_G=0 \text{ et } M_D=0] \right))- P(M_A=0 \text{ et } M_G=0 \text{ et } M_D=0]) \\
+	  &=(1-x) +(1-x)^2 -  (1-x)^3\\
+	  &=(1-x) (1+(1-x) - (1-x)^2)\\
+	  &=(1-x) (1 +x-x^2)
+\end{align*}
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On fait la meme chose en considérant les 4 moteurs.
+Soit $M_{G_1}$ (resp $M_{G_2}$ resp. $M_{D_1}$ resp. $M_{D_2}$) la variable aléatoire qui vaut $1$ si le premier moteur de gauche (resp. le deuxième moteur de gauche , reps. le premier moteur de droite, resp. le deuxième motuer de droite) tombe en panne et $0$ sinon. 
+L'évènement $\bar{Q}$ correspond à l'événément $[M_{G_1}=1 \text{ et }  M_{G_2}=1] \cup [M_{D_1}=1 \text{ et }  M_{D_2}=1]$
+On a donc 
+\begin{align*}
+P(Q) &=1-P(\bar{Q})\\
+&= 1 - P([M_{G_1}=M_{G_2}=1]- P([M_{D_1}=M_{D_2}=1]) + P([M_{D_1}=M_{D_2} =  M_{G_1}=  M_{G_2}=1)	 \\
+&= 1 -x^2 -x^2 +x^4\\
+&= 1-2x^2 +x^4\\
+&=(1-x^2)^2 \\
+&=((1-x) (1+x))^2\\
+&=(1-x)^2(1+x)^2
+\end{align*}
+\end{enumerate}
+\item On peut estimer que $x$ est très proche de 0 (sinon il faut d'urgence arrêter de prendre l'avion) et regarder $P(T) -P(Q) $ quand $x$ tends vers $0$. 
+
+On a $P(T) - P(Q) = (1-x)(-x^2 +x+1) - (1-2x^2 +x^4) = x^3-x^4 =x^3+o(x^3)$. Ainsi proche de $0$, $P(T) \geq P(Q)$. Les trimoteurs sont donc plus fiables. (Il n'était même pas nécessaire de faire l'approximation $x\sim 0$ en effet $x^3-x^4 = x^3(1-x)$ et comme $x\in [0,1]$, on a bien $ P(T) \geq P(Q)$. La preuve avec l'approximation $x\sim0$ peut-etre intéressante par exemple en physique pour avoir une idée du comportement d'une expérience dans certain cas limite) 
+\end{enumerate}
+\end{correction}
+
+
+
+
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+\subsection{Grenouille sur escalier (marche aléatoire)}
+
+
+\begin{exercice}
+Une grenouille monte les marches d'un esacalier (supposé infini) en partant du sol (marche 0) et  en sautant 
+\begin{itemize}
+\item Ou bien une seule marche, avec probabilité $p$; 
+\item Ou bien deux marches, avec la probabilité $1-p$.
+\end{itemize}
+On suppose que les sauts sont indépenadnts les uns des autres. 
+\begin{enumerate}
+\item Dans cette question, on observe $n$ sauts de la grenouille, et on note $X_n$ le nombre de fois où la grenouille a sauté une marche, et $Y_n$ le nombre de marches franchies au total. Quelle est la loi de $X_n$ ? Exprimer $Y_n$ en fonciton de $X_n$. En déduire l'espérance et la variance de $Y_n$. 
+\item Pour $k\geq 1$, on note $p_k$ la probabilité que la grenouille passe par la marche $k$. Que vaut $p_1 $ ? Que vaut $p_2$ ? Etarblir une formule de réurrence liant $p_k$ à $p_{k-1}$. En déduire la valeur de $p_k$ pour $k\geq 1$. 
+\item On note désormais $Z_n$ le nombre de sauts nécessaires pour atteindre ou dépasser la $n$-ième marche. Ecrire un algorithme Python qui simule la variable aléatoire $Z_n$. 
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item Tout d'abord l'univers image est $X_n(\Omega)= \intent{0,n}$ car la grenouille fait $n$ sauts.
+L'expérience décrite correspond à un schéma de Bernouilli : $X_n$ compte le nombre de fois où $n$  expériences indépendantes (les $n$ premiers sauts) donnent un résultat ayant la probabilité $p$. La variable aléatoire $X_n$ suit donc une loi binomiale de paramétres $n,p$ : $X_n\hookrightarrow \cB(n,p)$.
+
+On a par ailleurs en suivant l'énoncé : 
+$$Y_n = X_n +2 (n-X_n)$$
+car $n-X_n$ correspond au nombre de fois où la grenouille a sauté 2 marches. 
+
+On calcule l'espérance en utilisant la linéarité et l'espèrance d'une loi binomiale : 
+\begin{align*}
+E(Y_n) &= E(X_n + 2 (n-X_n)) \\
+			&= E(X_n) +2n - 2 E(X_n)\\
+			&=-E(X_n) +2n\\
+			&= (2-p)n
+\end{align*}
+
+et la variance : 
+\begin{align*}
+Var(Y_n) &= Var(X_n + 2 (n-X_n)) \\
+			&= Var( -X_n +2n) \\
+			&=Var(X_n)\\
+			&= np(1-p)
+\end{align*}
+
+\item On a $p_1=p$ car la grenouille est à la marche $0$ au départ et qu'elle a une probabilité $p$ de sauter qu'une seule marche. 
+Pour trouver $p_2$ remarquons que les deux possibilités pour que la grenouille passe par la marche $2$ sont les suivantes : 
+\begin{itemize}
+\item Les deux premiers sauts sont des sauts de $1$ marche : c'est l'événement $[X_2=1 \cap X_1 = 1]$
+\item Le premier saut est un saut de $2$ marches : c'est l'événement $[X_1=0]$ ($X_i$ correspond au nombre de fois où on saute 1 marche, donc $[X_1 = 0]$ correspond à "le saut $1$ n'est pas de une marche", cad, c'est un saut de 2 marches... ) 
+\end{itemize}
+Ces deux événements sont incompatibles et on a alors :
+$$p_2 =  \bP (X_2 =2 \cap X_1 =1)  +\bP(X_1=0) = p^2 +(1-p)$$
+
+Il est plus simple de s'intéresser à l'évenement contraire,  $A_k$ : " la grenouille ne passe pas par la marche $k$". On  a $\bP(A_k) =1-p_k$. L'événemtn $A_k$ est réalisé si et seulement si la grenouille passe par la marche $k-1$  et fait un saut de deux marches, de probailité $p_{k-1} \times (1-p)$. 
+On  a donc 
+$$1- p_k = p_{k-1} (1-p)$$
+Soit en réarrangeant les termes : 
+$$p_k = (p-1) p_{k-1} +1$$
+C'est une suite arithmético-géométrique dont la limite vaut $\ell=\frac{2}{1-p}$, la suite 
+$u_k = p_k -\ell $ est géométrique de raison $(p-1)$ et on  a
+$$u_k =(p-1)^{k-1}  u_1 = (p-1)^{k-1} (p_1-\ell) $$
+et donc 
+$$p_k =  (p-1)^{k-1} (p_1-\ell) +\ell$$
+Après simplification on tombe sur
+$$p_k = \frac{1}{2-p} +(p-1)^{k-1}  \frac{2p-p^2 -1}{2-p}$$
+
+\begin{lstlisting}
+from random import *
+def simulation_Z(n,p):
+  Z=0
+  marche=0
+
+  while  marche <n:
+   saut = random()
+   Z+=1
+   if saut <p:
+     marche+=1
+   if saut >p:
+     marche+=2
+ 
+ return(Z)
+  	
+\end{lstlisting}
+
+
+
+\end{enumerate}
+
+
+
+\end{correction}
+
+
+\subsection{Archers proba de réussite}
+
+
+
+\begin{exercice}
+On considère deux archers $A_1$ et $A_2$ qui tirent chacun sur une cible de manière indépendante. 
+L’archer $A_1$ (respectivement $A_2$) touche sa cible avec une probabilité $p_1$ (respectivement 
+$p_2$) strictement comprise entre $0$ et $1$. On suppose de plus que les tirs des joueurs sont 
+indépendants les uns des autres. On appelle $X_1$ (respectivement $X_2$) la variable aléatoire donnant 
+le nombre de tirs nécessaires à l’archer $A_1$ (respectivement $A_2$) pour qu’il touche sa cible pour la 
+première fois. On note $q_1=1-p_1$ et $q_2=1 -p_2$
+\begin{enumerate}
+\item Déterminer les valeurs possibles prises par $X_1$
+
+\item On introduit, pour tout entier naturel non nul $i$, l'événement $E_i$ : \og Le joeur $A_1$ touche la cible à son $i$-ème tir\fg\, . 
+Exprimer, pour tout $k\in \N^*$ l'événement $(X_1=k)$ à l'aide des événements $E_i$, $i\in \N^*$
+\item En déduire la loi de $X_1$
+\begin{enumerate}
+\item Pour tout entier naturel non nul $k$, calculer $P(X_1>k)$ (on pourra s'intéresser à l'événement contraire) 
+\item En déduire que 
+$$\forall (n,m) \in {\N^*}^2, \quad P_{(X_1>m)} (X_1>n+m) = P(X_1>n)$$
+\end{enumerate}
+\item Calculer $P(X_1=X_2)$ (un peu difficile, il faut considérer des limites..., soit $\suite{u}$ une suite on pourra noter 
+$\lim_{k\tv \infty} \sum_{k=1}^n u_k $ de la manière suivante $\sum_{k=1}^\infty u_k$, il faudra évidemment s'assurer que la limite existe avant de faire ce genre de chose) 
+) 
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+
+\item $X_1(\Omega) =\N^*$
+\item $(X_1= k) = \ddp \bigcap_{i=1}^{k-1} \bar{E_i} \cap E_k$
+
+\item Ainsi par indépendances de tirs 
+\begin{align*}
+P(X_1= k) &= \ddp \prod_{i=1}^{k-1}P( \bar{E_i}) \cap P(E_k)\\
+				&=q_1^{k-1}p_1
+\end{align*}
+
+
+\begin{enumerate}
+\item $P(X_1>k) = 1-P(X_1 \leq k) $ et $P(X_1\leq k)$ 
+Les événements $P(X_1 = i)$ avec $i\in \intent{1,k}$ sont disjoints on a donc 
+\begin{align*}
+P(X_1 \leq k) &= \sum_{i=1}^k P(X_1= i)\\
+					& = \sum_{i=1}^k q_1^{i-1}p_1\\
+					&=\frac{1-q_1^k}{1-q_1}p_1\\
+					&=1-q_1^k
+\end{align*}
+
+\item Calculons $ P_{(X_1>m)} (X_1>n+m)$. On a  : 
+\begin{align*}
+P_{(X_1>m)} (X_1>n+m) &= \frac{P(X_1>m \text{ et } X_1>n+m)}{P(X_1>m)}\\
+								&= \frac{X_1>n+m)}{P(X_1>m)}\\
+								&= \frac{q_1^{n+m}}{q_1^m}\\
+								&=q^n_1\\
+								&= P(X_1>n)
+\end{align*}
+
+\end{enumerate}
+
+\item Cette dernière question est vraiment du niveau de deuxième année (voire dur pour de la deuxième année... donc ne vous inquiétez pas si vous n'y êtes pas arrivés ! )
+
+L'événement ($X_1 =X_2$) est égale à l'union disjointes  :
+$$\bigcup_{k\in \N} (X_1 = k \text{ et } X_2 = k) $$
+
+On a donc 
+$$P(X_1= X_2) = \sum_{k\in \N} P (X_1 = k \text{ et } X_2 = k)$$
+On somme ici un nombre infini de termes, on va donc considérer la limite correspondante : 
+$$P(X_1= X_2)  = \lim_{n\tv \infty}  \sum_{k\in n} P (X_1 = k \text{ et } X_2 = k)$$
+Comme $X_1= k $ et $X_2=k$ sont deux événements indépendants on a 
+\begin{align*}
+P(X_1= X_2) & = \lim_{n\tv \infty}  \sum_{k= 1}^n P (X_1 = k ) P(X_2 = k)\\
+					&= \lim_{n\tv \infty}  \sum_{k= 1}^nq_1^{k-1} p_1 q_2^{k-1} p_2\\
+					&= \lim_{n\tv \infty}  p_1p_2\sum_{k= 1}^n (q_1q_2)^{k-1} \\\\
+					&= \lim_{n\tv \infty}  p_1p_2\frac{1-(q_1q_2)^n}{1-q_1q_2} \\					
+					&= \frac{p_1p_2}{1-q_1q_2} 
+\end{align*}
+
+
+\end{enumerate}
+
+
+\end{correction}
+
+
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+%------------------------------------------------------------------
+
+
+\subsection{Sujet Révision - Shuffle Ipod}
+
+
+\begin{probleme}
+Dans tout le problème, $n$ sera un entier naturel supérieur ou égal à $2$. 
+
+Un I-Pod contient $n$ pistes (numérotées de $1$ à $n$) et fonctionne en mode aléatoire  selon le protocole suivant : 
+
+\begin{itemize}
+\item La première psite lie est choisie de façon aléatoire et uniforme parmi les $n$ pistes. 
+\item A la fin de la lecture d'une piste, la suivante est choisie de façon aléatoire et uniforme parmi les $n$ pistes. (Il est donc possible que la même piste soit lue plusieurs fois de suite...) 
+
+Ce problème étudie différents aspects de vette lecture aléatoire. Les différentes partites sont dans une grande mesure indépendantes les unes des autres. 
+\end{itemize}
+
+
+\paragraph{Partie A}
+\noindent
+
+Dans cette partie on fixe un entier naturel $k$ supéreiur ou égal à $1$ et on s'intéresse aux $k$ premières lectures effectuées. Pour tout $i\in \intent{1, n}$, on note $X_i$ le nombre de fois où la piste numéro $i$ est lue au cours des $k$ premières lectures. 
+
+\begin{enumerate}
+\item Déterminer la loi de $X_i$ et donner son espérance est sa variance. 
+
+
+\item Les variables aléatoires $X_1, X_2, \dots , X_n $ sont-elles indépendantes ? 
+
+
+\item \begin{enumerate}
+\item Que vaut $X_1 +X_2 +\dots +X_n $ ? 
+
+
+\item En déduire que la covariance de $X_i$ et $X_j $ pour tout $i\neq j$ vaut $\frac{-k}{n^2}.$
+
+
+\end{enumerate}
+\item \begin{enumerate}
+\item Déterminer la loi conjointe de $X_i $ et $X_j$ pour tout $i\neq j$. 
+
+\item  Retrouver alors le résultat du 3b. 
+
+\end{enumerate}
+\item Commenter le signe de la covariance de $X_i$ et $X_j$ pour $i\neq j$. 
+
+
+
+\item Soient $a_1, a_2, \dots, a_n$, $n$ entiers naturels. 
+\begin{enumerate}
+\item On suppose que $\sum_{i=1}^n a_i \neq k$. Que vaut la probabilité 
+$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n)$ ? 
+
+\item On suppose maintenant  que $\sum_{i=1}^n a_i = k$. Montrer que probabilité 
+$$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n) = \frac{k!}{a_1! a_2! \dots a_n ! } \left( \frac{1}{n}\right)^k$$ 
+
+\end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Partie B}
+\noindent 
+
+Pour tout $k\in \N^*$, on note $Z_k$ le nombre de pistes différentes qui ont été lues au moins une fois au cours des $k$ premières lectures. 
+\begin{enumerate}
+\item Décrire avec soin l'ensemble des valeurs que prend $Z_k$ en fonction de $n$ et $k$. 
+
+
+\item Quelle est la loi de $Z_1$ ? Donner son espérance et sa variance. 
+
+
+\item \begin{enumerate}
+\item Soient $i$  et $j$  entre $1$ et $n$. Détermminer $P_{(Z_k =i) } (Z_{k+1} =j)$ en distinguant les cas $j=i$, $j=i+1$ et $j\notin \{ i, i+1\}$
+
+
+\item En déduire que pour tout $k\in \N^*$ et pour tout $i\in \intent{1, n}$, on a : 
+$$P(Z_{k+1}  =i )= \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)$$
+
+\item Calculer $P(Z_k=1)$ pour tout $k\in \N^*$.
+
+\item On pose, pour tout $k\in \N^*$, $\alpha_k =n^{k-1} P(Z_k =2)$. Exprimer $\alpha_{k+1} $ en fonction de $\alpha_k$ et $n$, puis en déduire l'expression de $\alpha_k$ en fonction de $k$ et $n$. 
+
+\item Déduire de ce qui précède  la valeur de $P(Z_k=2) $ pour tout $k\in \N^*$. 
+\end{enumerate}
+\item \begin{enumerate}
+\item A l'aide de la question $3b$ montrer que :
+$$E(Z_{k+1}) = \frac{n-1}{n} E(Z_k) +1$$
+\item En déduire l'expression de $E(Z_k)$ en fonction de $n$ et $k$. 
+\item Calculer la limite quand $k\tv +\infty$ de $E(Z_k)$. Ce résultat  était-il prévisible ? 
+\item  Calculer la limite quand $n\tv +\infty$ de $E(Z_k)$. Ce résultat  était-il prévisible ? 
+
+
+\end{enumerate}
+\item On va dans cette question montrer par récurrence sur $k$ que pour tout $k\in \N^*$:
+$$\forall i\in \intent{ 1, n}, \quad P(Z_k =i) =\frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k$$
+\begin{enumerate}
+\item Montrer que la propriété est vraie pour $k=1$ (traiter séparément les cas $i=1$ et $i>1$.) 
+
+
+On suppose la propriété vraie pour un certain rang $k\in \N^*$ et on va montrer qu'elle est vraie pour le rang $k+1$. 
+\item Montrer que la relation au rang $k+1$ est vraie pour $i=1$. 
+
+
+
+\item A l'aide du résultat de la question 3b, montrer que la relation au rang $k+1$ est vraie pour tout $i\geq 2$. 
+
+
+
+\item Conclure. 
+
+\item Soient $k$ et $i$ deux entiers tels que $1\leq k < i $ . Que vaut $\ddp \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k$ ?
+
+
+
+\end{enumerate}
+
+\end{enumerate}
+\end{probleme}
+
+
+
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item Par symmétrie du problème, tous les $X_i$ suivent la même loi. On a $X_i (\Omega) =\intent{0,n}$ et ce sont des sommes de  $k$ variables de Bernouilli de paramètre $\frac{1}{n}$ ce sont donc des binomiales $\cB(k,\frac{1}{n})$
+\item $\bP (X_1 = k , X_2=1)=0$ en effet, si la piste $1$ a été jouée  $k$ fois, il n'est pas possible que la piste $2$ ait été jouée. En revanche $\bP(X_1=k)\bP(X_2=1) \neq 0$. Ainsi les variables ne sont pas 2 à $2$ indépendantes, donc a fortiori elles ne sont pas mutuellement indépendantes. 
+\item $\sum_{i=1}^n X_i = k$
+\item Remarquons que les covariances $\cov(X_i,X_j) $ sont toutes égales pour tout $i, j \in \intent{1, n}^2$ pour $i\neq  j$  par symmétrie du problème. On note ce nombre $\alpha$. 
+
+Par ailleurs, $\cov(X_i,X_i) = V(X_i)=\frac{1}{n}\frac{n-1}{n} k $ (formule du cours) 
+
+Maintenant on calcule $\ddp \cov(\sum_{i=1}^n X_i,X_j)$ de deux manières : 
+Par linéarité vis-à-vis de la première variable   on obtient 
+$$ \cov(\sum_{i=1}^n X_i,X_j) =\sum_{i=1}^n \cov(X_i,X_j) =(n-1) \alpha +\frac{1}{n}\frac{n-1}{n} k$$
+
+On calcule directement à l'aide de la formule de Koenig Huygens, comme $\sum_{i=1}^n X_i = k$ on obtient : 
+$$\cov(\sum_{i=1}^n X_i,X_j) = \cov(k,X_j) = E(kX_j)-E(k)E(X_j)  = 0$$
+
+
+Ainsi 
+$$ (n-1) \alpha +\frac{1}{n}\frac{n-1}{n} k  =0$$ et donc 
+$$ \cov(X_i,X_j)   = -\frac{k}{n^2}$$
+
+\item $(X_i,X_j) (\Omega) =\intent{1,k}^2$ 
+
+Soit $u,v \in \intent{1,k}^2$. 
+ Si $u+v\geq k$, on a alors $\bP(X_i = u ,X_j= v) = 0 $
+
+Maintenant si $u+v\leq k$, il faut choisir les places des $u$ fois où la piste $i$ est jouée : il y a 
+$\binom{k}{u} $ possibilités, chacune arrivant avec la probabilité $(\frac{1}{n})^{u}$. Ensuite il faut placer les $v$ fois où la psite $j$ est jouée parmi les lectures restantes : il y a  $\binom{k-u}{v} $ possibilités, chacune arrivant avec la probabilité $(\frac{1}{n})^{v}$. 
+
+On obtient : 
+
+$$\bP(X_i = u , X_j = v) =\binom{k}{u}\binom{k-u}{v} \left(\frac{1}{n}\right)^{u+v} \left(1-\frac{2}{n}\right)^{k-u-v}$$
+
+
+\item 
+On sait que $E(X_i) =E(X_j)=\frac{k}{n}$
+
+Calculons maintenant $E(X_iX_j)$. 
+\begin{align*}
+E(X_iX_j) &= \sum_{u=0}^k\sum_{v=0}^k uv \bP(X_i=u, X_j =v)\\
+			&=  \sum_{u=0}^k \sum_{v=0}^{k-u} uv \binom{k}{u}\binom{k-u}{v} \left(\frac{1}{n}\right)^{u+v} \left(1-\frac{2}{n}\right)^{k-u-v}\\
+			&=\sum_{u=0}^k u \binom{k}{u} \left(\frac{1}{n}\right)^{u}  \sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} \\
+\end{align*}
+
+Analysons la  somme  intérieure : 
+\begin{align*}
+\sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} &=
+\sum_{v=1}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} \\
+&= \sum_{v=1}^{k-u} (k-u) \binom{k-u-1}{v-1} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v}\\
+&= (k-u) \sum_{v=0}^{k-u-1} \binom{k-u-1}{v} \left(\frac{1}{n}\right)^{v+1} \left(1-\frac{2}{n}\right)^{k-u-1-v}\\
+&= (k-u)\frac{1}{n} \sum_{v=0}^{k-u-1} \binom{k-u-1}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-1-v}
+\end{align*}
+On reconnait un binome de Newton : 
+\begin{align*}
+\sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v}&=
+(k-u) \frac{1}{n}  \left(\frac{1}{n}+1-\frac{2}{n}\right)^{k-u-1}
+\end{align*}
+
+Revenons en au calcul de $E(X_iX_j)$, en remplacant la  somme intérieure par le terme que l'on vient de trouver. 
+\begin{align*}
+E(X_iX_j) &= \sum_{u=0}^k u \binom{k}{u} \left(\frac{1}{n}\right)^{u}    (k-u) \frac{1}{n}  \left(1-\frac{1}{n}\right)^{k-u-1}\\
+&=  \sum_{u=1}^k  (k-u)  k\binom{k-1}{u-1} \left(\frac{1}{n}\right)^{u+1}    \left(1-\frac{1}{n}\right)^{k-u-1}\\
+\end{align*}
+On utilise alors le fait que $(k-u) \binom{k-1}{u-1} =(k-1) \binom{k-2}{u-1}$ ( on peut le vériifer en passant par les factorielles) on obtient alors :
+\begin{align*}
+E(X_iX_j) &= \sum_{u=1}^{k-1}  k (k-1) \binom{k-2}{u-1} \left(\frac{1}{n}\right)^{u+1}    \left(1-\frac{1}{n}\right)^{k-u-1}\\
+&= k (k-1)  \sum_{u=0}^{k-2}  \binom{k-2}{u} \left(\frac{1}{n}\right)^{u+2}    \left(1-\frac{1}{n}\right)^{k-u-2}\\
+&= k (k-1) (\frac{1}{n} )^2 \sum_{u=0}^{k-2}  \binom{k-2}{u} \left(\frac{1}{n}\right)^{u}    \left(1-\frac{1}{n}\right)^{k-2- u}\\
+&= k (k-1) (\frac{1}{n} )^2 \left( \frac{1}{n} +1 -\frac{1}{n}\right)^{k-2}\\
+&=k(k-1) (\frac{1}{n} )^2
+\end{align*}
+
+
+On obtient bien alors 
+$$Cov(X_i,X_j)  =E(X_iX_j) -E(X_i)E(X_j) = k(k-1) (\frac{1}{n} )^2 - (\frac{k}{n})^2= \frac{-k}{n^2}$$
+
+
+\item La covariance est négative. En effet les deux variables aléatoires ont un comportement opposées : si le morceau $i$ est lu beaucoup de fois, le morceau $j$ a tendance à être moins lu. 
+
+
+\item 
+Dans ce cas, on a nécessairement
+$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n)=0$ car il y a $k$ morceaux joués. 
+
+
+\item Il faut placer les $a_1$ lectures du morceau $1$ parmi les $k$ lectures, puis les $a_2$ lecture du morceau $2$ parmi les $k-a$ restante et ainsi de suite. 
+
+Chacune de ces séquence a pour probabilité $\left(\frac{1}{n} \right)^{a_1}\left(\frac{1}{n} \right)^{a_2}...\left(\frac{1}{n} \right)^{a_n}=\left(\frac{1}{n} \right)^{k}$
+
+Ainsi $$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n) = 
+\binom{k}{a_1}\binom{k-a_1}{a_2}...\binom{k-a_1-a_2 -...-a_{n-1}}{a_n}
+\left(\frac{1}{n} \right)^{k} $$
+
+Simplifions le produit des coefficients binomiaux : 
+
+\begin{align*}
+\binom{k}{a_1}\binom{k-a_1}{a_2}...\binom{k-a_1-a_2 -...-a_{n-1}}{a_n} &= 
+\frac{k!}{a_1 ! (k-a_1)!} \frac{(k-a_1)!}{a_2 ! (k-a_2)!} ... \frac{(k-a_1-a_2 -...-a_{n-1})!}{a_n ! (k-a_1-a_2 -...-a_{n-1}-a_n)!}\\
+&= \frac{k!}{a_1  ! a_2! ... a_n! }
+\end{align*}
+
+On obtient bien le résultat demandé. 
+\end{enumerate}
+
+\begin{enumerate}
+\item $Z_k (\Omega) =\intent{1, \min(k,n)}$
+\item $Z_1  (\Omega) =\{1\}$. $Z_1$ est variable aléatoire égale certaine égale à $1$. 
+$\bP(Z_1 =1 ) = 1$ et $E(Z_1) = 1$, $V(Z_1) =0$
+
+\item \underline{Si $j=i$}
+$\bP_{(Z_k =i)} (Z_{k+1} = i ) $ est la probabilité que le morceau joué au rang $k+1$ soit compris dans les $i$ premiers morceaux joués. On a donc 
+$$\bP_{(Z_k =i)} (Z_{k+1} = i )= \frac{i}{n} $$
+
+\underline{Si $j=i+1$}
+$\bP_{(Z_k =i)} (Z_{k+1} = i+1 ) $ est la probabilité que le morceau joué au rang $k+1$ ne  soit pas compris dans les $i$ premiers morceaux joués. On a donc 
+$$\bP_{(Z_k =i)} (Z_{k+1} = i )= \frac{n-i}{n} $$
+
+\underline{Si $j\notin \{i,i+1\}$}
+$\bP_{(Z_k =i)} (Z_{k+1} = j ) $ est un événement impossible et on a 
+$$\bP_{(Z_k =i)} (Z_{k+1} = j ) =0$$
+
+\item On utilise la formule des probabilités totales. 
+
+On obtient 
+\begin{align*}
+\bP(Z_{k+1} = i ) &= \sum_{j=1}^{\min(n,k)} \bP( Z_{k+1} = i  \text{ et }  Z_k = j)\\
+						&= \bP( Z_{k+1} = i  \text{ et }  Z_k = i) +\bP( Z_{k+1} = i  \text{ et }  Z_k = i-1)\\
+						&= \bP_{( Z_k = i)}( Z_{k+1} = i  ) P( Z_k = i) +\bP_{( Z_k = i-1)}( Z_{k+1} = i ) \bP(Z_k = i-1)\\
+						&= \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)	
+\end{align*}
+\item $Z_k=1$ correspond à l'événement : " 1 seule piste a été jouée". On a donc 
+$$P(Z_k = 1) =(\frac{1}{n})^{k-1}$$
+
+\item \begin{align*}
+\alpha_{k+1} &= n^{k} P(Z_{k+1} = 2) \\
+					&= n^k  \left(  \frac{2}{n} P(Z_k =2 ) + \frac{n-1}{n} P(Z_k =1)	 \right)\\
+					&= 2 n^{k-1}   P(Z_k =2 ) + (n-1)n^{k-1} \frac{1}{n^{k-1}} 	 \\
+					&= 2 \alpha_k+ n-1
+\end{align*}
+
+C'est donc une suite arithmético géométrique. On obtient 
+$$\alpha_k = (n-1) (2^{k-1} -1)$$
+
+\item $$P(Z_k=2) = \frac{1}{n^{k-1}}\alpha_k = \frac{ (n-1) (2^{k-1} -1)}{n^{k-1}}$$
+\item \begin{align*}
+E(Z_{k+1})&= \sum_{i=1}^n i P(Z_{k+1} =i )\\
+				&= \sum_{i=1}^n  i\left(\frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)\right)	\\
+				&= \sum_{i=1}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=1}^n i    \frac{n-i+1}{n} P(Z_k =i-1)\\
+				&= \sum_{i=0}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=0}^{n-1} (i+1)    \frac{n-i}{n} P(Z_k =i) \quad \text{ changement de variable}\\
+					&= \sum_{i=0}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=0}^{n-1}  -\frac{i^2}{n} 
+					P(Z_k =i) + (i-\frac{i}{n}) P(Z_k=i) + (P(Z_k=i)\\
+					&= nP(Z_k=n) + (1-\frac{1}{n}) (E(Z_k) - P(Z_k=n) ) + (1 - P(Z_k=n))\\
+					&= (1-\frac{1}{n})E(Z_k)  - 1 
+\end{align*}
+
+
+
+\item C'est de nouveau une suite arithmético géométrique. On trouve : 
+$$E(Z_k) = n \left( 1 - \left(1- \frac{1}{n}\right)^k\right)$$
+
+\item $$\lim_{k\tv +\infty } E(Z_k) =  n$$
+En effet quand le nombre de lectures est grand, toutes les pistes ont tendance à avoir été lue au moins une fois et $Z_k$ tends vers la constante $n$, sont espérance en particulier aussi. 
+
+\item On  va faire un DL, on a $\left(1- \frac{1}{n}\right)^k = 1- \frac{k}{n} +o(\frac{1}{n})$
+et donc 
+$$E(Z_k) = k +o(1)$$
+donc $$\lim_{n\tv +\infty } E(Z_k) =  k$$
+
+Si le nombre de pistes est très grand devant le nombre de lecture, on aura à chaque écoute un nouveau morceau et donc le nombre de morceaux différents joués sera égale au nombre de lectures, autrement dit $Z_k $ aura tendance à être égal à $k$.
+
+
+\item On est dans le cas $k=1$. On cherche à montrer que 
+$$\forall i\in \intent{ 1, n}, \quad P(Z_1 =i) =\frac{\binom{n}{i}}{n} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)$$
+
+
+\underline{ Si $i =1$}
+On cherche à montrer que 
+$$P(Z_1 =1) =\frac{\binom{n}{1}}{n} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)$$
+On sait que $P(Z_1= 1) =1$  et par ailleurs 
+$\frac{\binom{n}{1}}{n} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j) =  \frac{n}{n}((-1)^0 1 (1-0) = 1$
+
+\underline{ Si $i >1$}
+On sait que $P(Z_1= i) =0$. Par ailleurs 
+\begin{align*}
+\sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j) &=  \sum_{j=0}^{i-1} (-1)^j \frac{i!}{j! (i-j)!}
+(i-j) \\
+&=  \sum_{j=0}^{i-1} (-1)^j \frac{i!}{j! (i-j-1)!}\\
+&=  i\sum_{j=0}^{i-1} (-1)^j \frac{(i-1)!}{j! (i-1-j)!}\\
+&=  i\sum_{j=0}^{i-1} (-1)^j \binom{i-1}{j}\\
+&=  i(1-1)^{i-1}\\
+&=0
+\end{align*}
+
+La propriété est donc vérifiée au rang $k=1$. 
+
+
+
+\item Pour $i=1$ on cherche à prouver que 
+$$P(Z_{k+1} =1) =\frac{\binom{n}{1}}{n^{k+1}} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)^{k+1}$$
+
+On sait d'une part que $P(Z_{k+1} =1) = (\frac{1}{n} )^{k}$
+
+et d'autre part on  a 
+\begin{align*}
+\frac{\binom{n}{1}}{n^{k+1}} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)^{k+1} &= \frac{1}{n^k} (-1) ^0 1 (1-0){k+1}\\
+&= \frac{1}{n^k}
+\end{align*}
+
+
+
+\item Soit $i\geq 2$ 
+
+\begin{align*}
+P(Z_{k+1} = i) &=  \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)	\\
+					&= \frac{i}{n}   \frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k +  \frac{n-i+1}{n}  \frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-2} (-1)^j \binom{i-1}{j}(i-1-j)^k
+\end{align*}
+REmarquons que 
+$\frac{n-i+1}{n}  \frac{\binom{n}{i}}{n^k}  =  \frac{i\binom{n}{i}}{n^{k+1}}$
+et en faisant un changement de variable on obtient 
+$$\sum_{j=0}^{i-2} (-1)^j \binom{i-1}{j}(i-1-j)^k = -\sum_{j=1}^{i-1} (-1)^j \binom{i-1}{j-1}(i-j)^k$$
+Donc 
+
+\begin{align*}
+P(Z_{k+1} = i) &=   \frac{i\binom{n}{i}}{n^{k+1}} \left(\sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k  +
+- \sum_{j=1}^{i-1} (-1)^j \binom{i-1}{j-1}(i-j)^k
+\right) \\
+&= \frac{i\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left( (-1)^j (i-j)^k\left[ \binom{i}{j} - \binom{i-1}{j-1} \right]\right) +i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^k\left[i \binom{i-1}{j}\right] \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^k (i-j) \binom{i}{j} \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^{k+1}  \binom{i}{j} \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=0}^{i-1} \left((-1)^j (i-j)^{k+1}  \binom{i}{j} \right)
+\right) 
+\end{align*}
+Ouchhh !
+ 
+
+
+
+\item Initialisé en 6a et héréditaire en 6c) la propriété est donc vraie pour tout $k\in \N$. 
+\item Cette somme vaut 0. 
+\end{enumerate}
+\end{correction}
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+\subsection{Fonction génératrice (Pb -dur)}
+
+\begin{exercice}%https://math1a.bcpsthoche.fr/docs/DS_1617.pdf
+Pour toute variable aléatoire $X$ telle que l'ensemble de ses valeurs images $X(\Omega)$ est un sous-ensemble fini de $\mathbb{N}$, on définit sa fonction génératrice par :
+$$g_{X}: t \mapsto \mathrm{E}\left(t^{X}\right) $$ où $\mathrm{E}$ désigne l'espérance.\\
+Soit $X$ une telle variable aléatoire. On note $m \in \mathbb{N}$ sa valeur image maximale, ainsi $X(\Omega) \subset\{0,1,2, \ldots, m\}$.
+
+\begin{enumerate}
+  \item Justifier que $g_{X}$ est une fonction polynomiale.
+  \item 
+ \begin{enumerate}
+\item   Calculer $g_{X}(1)$.
+\item Montrer que $g_{X}^{\prime}(1)=\mathrm{E}(X)$.
+\item  Montrer que $g_{X}^{\prime \prime}(1)=\mathrm{E}(X(X-1))$.
+\item  Exprimer $\mathrm{V}(X)$ (où $\mathrm{V}$ désigne la variance) en fonction de $g_{X}^{\prime}(1)$ et $g_{X}^{\prime \prime}(1)$. 
+\end{enumerate}  
+
+  \item
+  
+ \begin{enumerate}
+  \item  Exprimer $g_{X+1}$ à l'aide de $g_{X}$.
+\item  Exprimer $g_{2 X}$ à l'aide de $g_{X}$.
+\end{enumerate}  
+  \item Dans cette question, on suppose que $X \hookrightarrow \mathcal{B}(n, p)$ où $(n, p) \in \mathbb{N} \times[0,1]$.
+  
+  \begin{enumerate}
+\item  Calculer $g_{X}$.
+\item  Retrouver les valeurs de $\mathrm{E}(X)$ et $\mathrm{V}(X)$ à l'aide de la fonction   génératrice.
+  \end{enumerate}
+
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+
+\begin{enumerate}
+\item 
+\begin{itemize}
+  \item On a d'après le théorème de transfert:
+\end{itemize}
+$$
+g_{X}: t \mapsto \mathrm{E}\left(t^{X}\right)=\sum_{k=0}^{m} t^{k} \mathrm{P}(X=k)=\sum_{k=0}^{m} a_{k} t^{k} 
+$$
+ en posant  $a_{k}=\mathrm{P}(X=k)$
+\conclusion{Donc $g$ est bien une fonction polynomiale associée au polynôme $\ddp \sum_{k=0}^{m} a_{k} X^{k} \in \mathbb{R}[X]$.}
+
+\item \begin{enumerate}
+
+  \item Par définition de $g_{X}$, on a $g_{X}(1)=\mathrm{E}\left(1^{X}\right)=\mathrm{E}(1)=1$.
+  \begin{align*}
+g_{X}(1)&=\mathrm{E}\left(1^{X}\right)\\
+&=\sum_{k=0}^{m} 1^{k} \mathrm{P}(X=k)\\
+&=\sum_{k=0}^{m} \mathrm{P}(X=k)\\
+&=\mathrm{P}\left(\bigcup_{k=0}^{m}(X=k)\right)\\
+&=\mathrm{P}\left(X \in \bigcup_{k=0}^{m}\{k\}\right)\\
+&=\mathrm{P}(X \in\{0,1,2, \ldots, m\})=1
+  \end{align*}
+\conclusion{$g_{X}(1)= 1$}
+
+\item 
+ La fonction génératrice $g_{X}$ est dérivable sur $\mathbb{R}$ car c'est une fonction polynomiale d'après la question 1. On a d'après le théorème de transfert :
+
+$$
+g_{X}: t \mapsto \mathrm{E}\left(t^{X}\right)=\sum_{k=0}^{m} t^{k} \mathrm{P}(X=k) $$
+\text { donc }: $ g_{X}^{\prime}: t \mapsto \sum_{k=0}^{m} k t^{k-1} \mathrm{P}(X=k)
+$
+et en particulier :
+$$
+g_{X}^{\prime}(1)=\sum_{k=0}^{m} k 1^{k-1} \mathrm{P}(X=k)=\sum_{k=0}^{m} k \mathrm{P}(X=k)=\mathrm{E}(X)
+$$
+\conclusion{$g_{X}^{\prime}(1)=\mathrm{E}(X)$}
+
+
+\item  La fonction génératrice est deux fois dérivable sur $\mathbb{R}$ pour les mêmes raisons que celles exposées à la question précédente, et on a :
+$$
+g_{X}^{\prime \prime}: t \mapsto \sum_{k=0}^{m} k(k-1) t^{k-2} \mathrm{P}(X=k)
+$$
+donc en particulier :
+$$
+g_{X}^{\prime \prime}(1)=\sum_{k=0}^{m} k(k-1) 1^{k-2} \mathrm{P}(X=k)=\sum_{k=0}^{m} k(k-1) \mathrm{P}(X=k)=\mathrm{E}(X(X-1))
+$$
+d'après le théorème de transfert.
+\conclusion{$g_{X}^{\prime \prime}(1)=\mathrm{E}(X(X-1))$}
+\item  On a d'après la formule de Koenig-Huygens :
+
+$$
+\mathrm{V}(X)=\mathrm{E}\left((X-\mathrm{E}(X))^{2}\right)=\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X)^{2}
+$$
+Or on a par linéarité de l'espérance :
+$$
+\mathrm{E}(X(X-1))=\mathrm{E}\left(X^{2}-X\right)=\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X)
+$$
+ On peut également justifier cette égalité en détaillant les calculs à l'aide du  théorème de transfert et la linéarité de la somme.  D'où en utilisant les résultats des questions précédentes :
+ \begin{align*}
+\mathrm{V}(X) &=\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X)^{2}\\
+					&=\mathrm{E}\left(X^{2}\right)-\mathrm{E}(X)+\mathrm{E}(X)-\mathrm{E}(X)^{2}\\
+					&=\mathrm{E}(X(X-1))+\mathrm{E}(X)(1-\mathrm{E}(X)) \\
+					&= g_{X}^{\prime \prime}(1)+g_{X}^{\prime}(1)\left(1-g_{X}^{\prime}(1)\right) .
+\end{align*}  
+
+\conclusion{$\mathrm{V}(X) =g_{X}^{\prime \prime}(1)+g_{X}^{\prime}(1)\left(1-g_{X}^{\prime}(1)\right) .$}
+
+\end{enumerate}
+\item
+\begin{enumerate}
+\item $g_{X+1}: t \mapsto \mathrm{E}\left(t^{X+1}\right)=\mathrm{E}\left(t^{X} \times t\right)=\mathrm{E}\left(t^{X}\right) \times t=t g_{X}(t) \quad$ par linéarité de l'espérance.
+
+\conclusion{ $g_{X+1}(t) = tg_X(t)$}
+
+\item Par définition de la fonction génatrice, on a:
+$$
+g_{2 X}: t \mapsto \mathrm{E}\left(t^{2 X}\right)=\mathrm{E}\left(\left(t^{2}\right)^{X}\right)=g_{X}\left(t^{2}\right)
+$$
+\conclusion{$g_{2 X}(t)=g_{X}\left(t^{2}\right)$}
+\end{enumerate}
+\item \begin{enumerate}
+\item $$
+X(\Omega)=\{0,1,2, \ldots, n\} \quad \text { et } \quad \forall k \in X(\Omega), P(X=k)=\left(\begin{array}{l}
+n \\
+k
+\end{array}\right) p^{k}(1-p)^{n-k}
+$$
+On en déduit d'après le théorème de transfert que :
+\begin{align*}
+g_{X}( t)&=\mathrm{E}\left(t^{X}\right)&\\
+	&=\sum_{k=0}^{n} t^{k} \mathrm{P}(X=k)\\
+	&=\sum_{k=0}^{n} t^{k}\binom{n}{k}p^{k}(1-p)^{n-k}\\
+&=\sum_{k=0}^{n}\binom{n}{k}(p t)^{k}(1-p)^{n-k}
+\end{align*}
+
+Puis,  en utilisant la formule du binôme de Newton :
+\conclusion{
+$g_{X}( t)=(p t+1-p)^{n}
+$}
+\item On a d'après le résultat de la question précédente :
+$$
+g_{X}^{\prime}: t \mapsto n p(p t+1-p)^{n-1} \text { et } g_{X}^{\prime \prime}: t \mapsto n(n-1) p^{2}(p t+1-p)^{n-2} .
+$$
+On en déduit d'après les résultat de la question 2 que :
+$$
+\begin{aligned}
+\mathrm{E}(X) &=g_{X}^{\prime}(1)=n p(p+1-p)^{n-1}=n p(1)^{n-1}=n p \\
+\mathrm{~V}(X) &=g_{X}^{\prime \prime}(1)+g_{X}^{\prime}(1)\left(1-g_{X}^{\prime}(1)\right)=n(n-1) p^{2}(p+1-p)^{n-2}+n p(1-n p) \\
+&=n p\left((n-1) p(1)^{n-2}+(1-n p)\right)=n p(n p-p+1-n p)=n p(1-p) .
+\end{aligned}
+$$
+\conclusion{On retrouve bien l'espérance et la variance de la loi binomiale.}
+Cette méthode efficace peut bien sûr être utilisée pour calculer les moments d'autres lois de probabilité finies.
+
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+\end{correction}
+
+
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+%------------------------------------------------------------------------
+
+\subsection{Tirages boules urnes simultanés/successifs. }
+
+
+\begin{exercice}
+On dispose d'une urne avec 3 boules rouges, 5 boules vertes et 8 boules jaunes. 
+On tire simultanément 3 boules.
+\begin{enumerate}
+
+\item 
+\begin{enumerate}
+\item Quelle est la probabilité d'obtenir 3 boules rouges ?
+\item Quelle est la probabilité d'obtenir 3 boules de la même couleur ?
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes. \\
+\end{enumerate}
+On tire maintenant les boules de façon successive et avec remise. 
+\item 
+\begin{enumerate}
+\item Quelle est la probabilité d'obtenir 3 boules rouges ?
+\item Quelle est la probabilité d'obtenir 3 boules de la même couleur ?
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes. 
+\item Quelle est la probabilité d'obtenir 3 boules de couleurs différentes sachant que la première est rouge. 
+\end{enumerate}
+\end{enumerate} 
+
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item L'univers $\Omega$ est l'ensemble de 5 boules parmis 16.
+$$\Card(\Omega)  =\binom{16}{5}$$
+ \begin{enumerate}
+
+\item Il y a 3 rouges. Donc l'événement A= 'piocher trois boules rouges' est de cardinal $\Card(A) = \binom{3}{3}$
+et $$P(A) = \frac{1}{\binom{16}{5}}$$
+\item On peut choisir 3 rouges 3 vertest ou 3 jaunces. Ces événements sont incompatibles donc l'événement B= 'piocher trois boules de la même couleur' est de cardinal $\Card(B) = \binom{3}{3}+\binom{5}{3}+\binom{8}{3} $
+et $$P(B) = \frac{\binom{3}{3}+\binom{5}{3}+\binom{8}{3}}{\binom{16}{5}}$$
+\item Il faut donc piocher une jaune, une verte et une rouge. Le cardinal de l'événement C:' piocher trois boules de couleurs différentes' est donc 
+$\Card( C)  = \binom{3}{1}\binom{5}{1}\binom{8}{1} $
+et $$P(C) = \frac{3*5*8}{\binom{16}{5}}$$
+
+\end{enumerate}
+\item L'univers $\Omega$ est l'ensemble de 5 boules tirer successivement  parmi 16 avec répétition  car on remet les boules. 
+$$\Card(\Omega)  =16^5$$
+\begin{enumerate}
+
+
+\item Il y a 3 rouges. Donc l'événement A= 'piocher trois boules rouges' est de cardinal $\Card(A) = 3^5$
+et $$P(A) = \left(\frac{3}{16}\right)^5$$
+
+\item On peut choisir 3 rouges 3 vertest ou 3 jaunces. Ces événements sont incompatibles donc l'événement B= 'piocher trois boules de la même couleur' est de cardinal $\Card(B) = 3^5+5^5+8^5$
+et $$P(B) =\left(\frac{3}{16}\right)^5+\left(\frac{5}{16}\right)^5+\left(\frac{8}{16}\right)^5$$
+
+\item Il faut donc piocher une jaune, une verte et une rouge. On peut piocher ces boules dans l'ordre que l'on veut il faut donc multiplier par le cardinal des permutations sur 3 éléments. Le cardinal de l'événement C:' piocher trois boules de couleurs différentes' est donc 
+$\Card( C)  =3*5*8 *(3!) $
+et $$P(C) = \frac{3*5*8*6}{16^5}$$
+\item Soit $D$ l'événément 'piocher une rouge en premier'. 
+On a $P(D) = \frac{3}{16}$. 
+On cherche $P_D(C)= \frac{P(D\cap C)}{P(D)}$
+L'événement $D\cap C$ est : 'piocher une boule rouge en premier et obtenir 3 boules de couleurs différentes. 
+Il faut donc piocher une jaune et une verte sur les 2 autres tirages (On peut piocher ces boules dans l'ordre que l'on veut il faut donc multiplier par le cardinal des permutations sur 2 éléments.)
+On a donc $P(D\cap C)  =\frac{3}{16}*\frac{5}{16}*\frac{8}{16}*2!=\frac{15}{16^2}$
+
+Donc $$P_D(C) = \frac{\frac{15}{16^2}}{\frac{3}{16}}= \frac{5}{16}$$
+
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+
+\subsection{Chaine de Markov - Hamster}
+
+
+
+\begin{exercice}
+Roudoudou le hamster vit une vie paisible de hamster. Il a deux activités : manger et  dormir... 
+On va voir Roudoudou à 00h00 ($n=0$). Il est en train de dormir. 
+\begin{itemize}
+\item Quand Roudoudou dort à l'heure $n$, il y a 7 chances sur 10 qu'il dorme à l'heure suivante et 3 chances sur 10 qu'il mange à l'heure suivante. 
+\item Quand Roudoudou mange à l'heure $n$, il y a 2 chances sur 10 qu'il dorme à l'heure suivante et 8 chances sur 10 qu'il mange à l'heure suivante. 
+\end{itemize}
+
+
+On note $D_n$ l'événement 'Roudoudou dort à l'heure $n$' et $M_n$ 'Roudoudou mange à l'heure $n$'. On note $d_n =P(D_n)$ et $m_n=P(M_n)$ les probabilités respectives. 
+
+
+\begin{enumerate}
+\item Justifier que $d_n+m_n=1$. 
+\item Montrer rigoureusement que $$d_{n+1} =  0,7d_n+0,2m_n$$
+\item Exprimer de manière similaire $m_{n+1} $ en fonction de $d_n$ et $m_n$. 
+
+\item Soit $A$ la matrice $$A=\frac{1}{10}\left(\begin{array}{ccc}
+7 & 2\\
+3 & 8
+\end{array}
+\right).$$
+Résoudre en fonction de $\lambda \in \R$ l'équation $AX = \lambda X$ d'inconnue $\ddp X =\left(\begin{array}{c}
+x \\
+y 
+\end{array}
+\right)$. 
+\item Soit $P = 
+\left(\begin{array}{cc}
+1 & 2\\	
+-1 & 3
+\end{array}
+\right)$ Montrer que $P$ est inversible et calculer $P^{-1}$. 
+\item Montrer que $P^{-1} A P =\frac{1}{5} \left(\begin{array}{cc}
+ \frac{1}{2}& 0\\
+0 &  1 
+\end{array}
+\right)$
+\item Calculer $D^n$ où $D=\left(\begin{array}{cc}
+ \frac{1}{2}& 0\\
+0 &  1 
+\end{array}
+\right)$
+
+\item En déduire que pour tout  $n\in \N$, $\ddp A^n=\left(\begin{array}{ccc}
+3\left( 1/2\right)^n +2 & -2\left( 1/2\right)^n +2\\
+-3\left( 1/2\right)^n +3& 2\left( 1/2\right)^n +3
+\end{array}
+\right)$.
+\item En déduire la valeur de $d_n$ en fonction de $n$. 
+\end{enumerate}
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item $D_n$ et $M_n$ forment un système complet d'événements donc $
+d_n+m_n=1$. 
+\item On cherche à calculer $d_{n+1} =P(D_{n+1})$ 
+On applique la formule des probabilités totales avec le SCE $(M_N,D_N)$
+\begin{align*}
+d_{n+1} &= P(D_{n+1}\, |\, M_n) P(M_n) +P(D_{n+1}\, |\, D_n) P(D_n)\\
+			&= P(D_{n+1}\, |\, M_n) m_n +P(D_{n+1}\, |\, D_n) d_n
+\end{align*}
+L'énoncé donne : $ P(D_{n+1}\, |\, M_n) = \frac{2}{10}$ et  $ P(D_{n+1}\, |\, D_n) = \frac{7}{10}$
+et donc 
+$$d_{n+1} = 0,7 d_n  +0,2 m_n$$
+
+\item On cherche à calculer $m_{n+1} =P(M_{n+1})$ 
+On applique la formule des probabilités totales avec le SCE $(M_N,D_N)$
+\begin{align*}
+m_{n+1} &= P(M_{n+1}\, |\, M_n) P(M_n) +P(M_{n+1}\, |\, D_n) P(D_n)\\
+			&= P(M_{n+1}\, |\, M_n) m_n +P(M_{n+1}\, |\, D_n) d_n
+\end{align*}
+L'énoncé donne : $ P(M_{n+1}\, |\, M_n) = \frac{8}{10}$ et  $ P(M_{n+1}\, |\, D_n) = \frac{3}{10}$
+et donc 
+$$m_{n+1} = 0,3 d_n  +0,8 m_n$$
+
+\item 
+On obtient le système d'équations
+$$\left\{  
+\begin{array}{cc}
+7x +2y  &=10\lambda x\\
+3x +8y  &=10\lambda y
+\end{array}\right.$$
+
+
+
+$
+\equivaut
+\left\{  
+\begin{array}{cc}
+(7-10\lambda) x +2y  &=0\\
+3x +(8-10\lambda)y  &=0
+\end{array}\right.
+\equivaut 
+\left\{  
+\begin{array}{cc}
+3x +(8-10\lambda)y  &=0\\
+(7-10\lambda) x +2y  &=0
+\end{array}\right.$
+
+$L_2 \leftarrow3*L_2- (7-10\lambda)L_1$
+
+$
+\equivaut 
+\left\{  
+\begin{array}{cc}
+3x +(8-10\lambda)y  &=0\\
+(-100\lambda^2 +150\lambda -50 )y  &=0
+\end{array}\right.
+\equivaut
+\left\{  
+\begin{array}{cc}
+(7-10\lambda) x +2y  &=0\\
+(2\lambda^2 -3\lambda +1) y  &=0
+\end{array}\right.
+\equivaut
+\left\{  
+\begin{array}{cc}
+(7-10\lambda) x +2y  &=0\\
+(2\lambda-1)(\lambda-1) y  &=0
+\end{array}\right.
+$
+
+Le système est de Cramer pour $(2\lambda-1)(\lambda-1)\neq 0$ et l'unique solution est alors $(0,0)$. 
+
+Pour $\lambda=1$ on obtient 
+$\equivaut
+\left\{  
+\begin{array}{cc}
+-3 x +2y  &=0\\
+0 &=0
+\end{array}\right.
+$
+et les solutions sont de la forme : 
+$$\{ (2a,3a ) \, |\, a\in \R\} $$
+
+Pour $\lambda=\frac{1}{2}$ on obtient 
+$\equivaut
+\left\{  
+\begin{array}{cc}
+2 x +2y  &=0\\
+0 &=0
+\end{array}\right.
+$
+et les solutions sont de la forme : 
+$$\{ (a,-a ) \, |\, a\in \R\} $$
+
+\item Le determinant de $P$ vaut $det(P) = 3+2 = 5 \neq 0$ donc $P$ est inversible. 
+Son inverse vaut 
+$$P^{-1} = \frac{1}{5} \left( 
+\begin{array}{cc}
+3 & -2 \\
+1 & 1
+\end{array}
+\right)$$
+
+\item Ce n'est que du calcul. 
+
+\item $$D^n =  \left( 
+\begin{array}{cc}
+\frac{1}{2^n}& 0 \\
+0 & 1
+\end{array}
+\right)$$
+A prouver par récurrence ou  dire que c'est du cours pour des matrices diagonales. 
+\item 
+On prouve tout d'abord par récurrence que pour tout n :
+$Q(n) : " A^n = P D^n P^{-1} "$.
+Initialisation. La proposition est vraie pour $n=0$ les deux cotés valent l'identité. 
+
+On suppose $Q(n) $ vraie pour un $n \in \N$ fixé. On a 
+$A^{n} =   P D^n P^{-1}$ et donc
+\begin{align*}
+A^{n+1} &=A P D^n P^{-1}\\
+&=PDP^{-1} P D^n P^{-1} \\
+&= PD \Id D^n P^{-1}  \\
+&=PD  D^n P^{-1}\\
+&=PD^{n+1} P^{-1}
+\end{align*}
+
+Ensuite c'est du calcul. 
+\item 
+Et d'après les questions 2 et 3 on  a
+$$A \binom{d_n}{m_n}= \binom{d_{n+1}}{m_{n+1}}$$
+et par récurrence 
+$$A^n \binom{d_0}{m_0}= \binom{d_n}{m_n}$$
+D'après l'énoncé $d_0= 1$ c'est l'événement certain. 
+et donc $$ \binom{d_n}{m_n}= 
+\frac{1}{5} \binom{3\left( 1/2\right)^n +2 }{-3\left( 1/2\right)^n +3}$$
+En particulier 
+
+$$d_n=\frac{1}{5} (3\left( 1/2\right)^n +2) $$
+
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+
+\subsection{Probabilité, VAR, tirage boules et urnes. (ECRICOME 2002) }
+\begin{exercice}
+
+
+
+
+Une urne contient une boule blanche et une boule noire, les boules \'etant
+indiscernables au toucher.
+
+On y pr\'el\`eve une boule, chaque boule ayant la m\^{e}me probabilit\'e d'%
+\^{e}tre tir\'ee, on note sa couleur, et on la remet dans l'urne avec $c$
+boules de la couleur de la boule tir\'ee. On r\'ep\`ete cette \'epreuve, on
+r\'ealise ainsi une succession de $n$ tirages ($n\geqslant 2$).
+
+\paragraph{\small{A - \'Etude du cas $c=0$.}\\}
+
+On effectue donc ici $n$ tirages avec remise de la boule dans l'urne.
+
+On note $X$ la variable al\'{e}atoire r\'{e}elle \'{e}gale au nombre de
+boules blanches obtenues au cours des $n$ tirages et $Y$ la variable al\'{e}%
+atoire r\'{e}elle d\'{e}finie par~: 
+\begin{equation*}
+\begin{cases}
+Y=k & \text{si l'on obtient une boule blanche pour la premi\`{e}re fois au }%
+k^{i\grave{e}me}\text{ tirage.} \\ 
+Y=0 & \text{si les $n$ boules tir\'{e}es sont noires.}%
+\end{cases}%
+\end{equation*}
+
+\begin{enumerate}
+\item D\'{e}terminer la loi de $X$. Donner la valeur de $E(X)$ et de $V(X)$.
+
+\item Pour $k\in \{1,\ldots ,n\}$, d\'{e}terminer la probabilit\'{e} $P(Y=k) 
+$ de l'\'{e}v\'{e}nement $(Y=k)$, puis d\'{e}terminer $P(Y=0)$.
+
+\item V\'{e}rifier que~: 
+\begin{equation*}
+\sum_{k=0}^{n}P(Y=k)=1.
+\end{equation*}
+
+\item Pour $x\neq 1$ et $n$ entier naturel non nul, montrer que~: 
+\begin{equation*}
+\sum_{k=1}^{n}kx^{k}=\frac{nx^{n+2}-(n+1)x^{n+1}+x}{(1-x)^{2}}.
+\end{equation*}
+
+\item En d\'{e}duire $E(Y)$.
+\end{enumerate}
+
+\paragraph{\small{B - \'Etude du cas $c\neq 0$.}\\}
+
+On consid\`{e}re les variables al\'{e}atoires $\left( X_{i}\right)
+_{1\leqslant i\leqslant n}$ d\'{e}finies par~: 
+\begin{equation*}
+\begin{cases}
+X_{i}=1 & \text{si on obtient une boule blanche au }i^{\grave{e}me}\text{
+tirage.} \\ 
+X_{i}=0 & \text{sinon.}%
+\end{cases}%
+\end{equation*}%
+On d\'{e}finit alors, pour $2\leqslant p\leqslant n$, la variable al\'{e}%
+atoire $Z_{p}$, par~: 
+\begin{equation*}
+Z_{p}=\sum_{i=1}^{p}X_{i}.
+\end{equation*}
+
+\begin{enumerate}
+\item Que repr\'{e}sente la variable $Z_{p}$~?
+
+\item Donner la loi de $X_{1}$ et l'esp\'{e}rance $E(X_{1})$ de $X_{1}$.
+
+\item D\'{e}terminer la loi du couple $(X_{1},X_{2})$. En d\'{e}duire la loi
+de $X_{2}$ puis l'esp\'{e}rance $E(X_{2})$.
+
+\item D\'{e}terminer la loi de probabilit\'{e} de $Z_{2}$.
+
+\item D\'{e}terminer l'univers image $Z_{p}\left( \Omega \right) $ de $Z_{p} 
+$.
+
+\item Soit $p\leqslant n-1$.
+
+\begin{enumerate}
+\item D\'{e}terminer $P_{Z_{p}=k}(X_{p+1}=1)$ pour $k\in Z_{p}\left( \Omega
+\right) $.
+
+\item En utilisant la formule des probabilit\'{e}s totales, montrer que~: 
+\begin{equation*}
+P(X_{p+1}=1)=\frac{1+cE(Z_{p})}{2+pc}.
+\end{equation*}
+
+\item En d\'{e}duire que $X_{p}$ est une variable al\'{e}atoire de Bernoulli
+de param\`{e}tre $\displaystyle\frac{1}{2}$.
+
+(On raisonnera par r\'{e}currence sur $p$~: les variables $X_{1}$, $X_{2}$,
+...., $X_{p}$ \'{e}tant suppos\'{e}es suivre une loi de de Bernoulli de param%
+\`{e}tre $\displaystyle\frac{1}{2}$, et on calculera $E(Z_{p})$).
+\end{enumerate}
+\end{enumerate}
+
+\end{exercice}
+
+
+\begin{correction}
+
+
+Une urne contient une boule blanche et une boule noire, les boules \'etant
+indiscernables au toucher.
+
+On y pr\'el\`eve une boule, chaque boule ayant la m\^{e}me probabilit\'e d'%
+\^{e}tre tir\'ee, on note sa couleur, et on la remet dans l'urne avec $c$
+boules de la couleur de la boule tir\'ee. On r\'ep\`ete cette \'epreuve, on
+r\'ealise ainsi une succession de $n$ tirages ($n\geqslant 2$).
+
+\paragraph{\'Etude du cas $c=0$.}
+
+On effectue donc ici $n$ tirages avec remise de la boule dans l'urne.
+
+On note $X$ la variable al\'{e}atoire r\'{e}elle \'{e}gale au nombre de
+boules blanches obtenues au cours des $n$ tirages et $Y$ la variable al\'{e}%
+atoire r\'{e}elle d\'{e}finie par~:
+
+\begin{itemize}
+\item $Y=k$ si l'on obtient une boule blanche pour la premi\`{e}re fois au $%
+k^{i\grave{e}me}$ tirage.
+
+\item $Y=0$ si les $n$ boules tir\'{e}es sont noires.
+\end{itemize}
+
+\begin{enumerate}
+\item On effectue $n$ tirages ind\'{e}pendants (le contenu de l'urne ne
+change pas) pour lesquels la probabilit\'{e} d'obtenir $blanc$ est toujours
+1/2 (boules \'{e}quiprobables). Donc $X\hookrightarrow \mathcal{B}\left(
+n,1/2\right) $ et $E\left( X\right) =n/2$ et $V\left( x\right) =n/4$
+
+\item Pour $k\in \{1,\ldots ,n\}$, $\left( Y=k\right) $ signifie qu'on
+obtient $B$ pour la premi\`{e}re fois au $k^{i\grave{e}me}$ tirage. Donc que
+l'on a eu $N$ pour les tirages pr\'{e}c\'{e}dents
+
+\begin{equation*}
+\left( Y=k\right) =\bigcap_{i=1}^{k-1}N_{i}\cap B_{k}
+\end{equation*}
+et les tirages \'{e}tants ind\'{e}pendants, . 
+\begin{equation*}
+p\left( Y=k\right) =\prod_{i=1}^{k-1}p\left( N_{i}\right) \cdot p\left(
+B_{k}\right) =\left( \frac{1}{2}\right) ^{k}
+\end{equation*}
+
+$\left( Y=0\right) $ signifie qu'il n'y a eu que des $N$ lors des $n$
+tirages. Et donc $\displaystyle P(Y=0)=\left( \frac{1}{2}\right) ^{n}$
+
+\item Pour calculer cette somme, il faut traiter \`{a} part la valeur $k=0$
+: 
+\begin{eqnarray*}
+\sum_{k=0}^{n}p\left( Y=k\right) &=&\sum_{k=1}^{n}P(Y=k)+p\left( Y=0\right)
+\\
+&=&\sum_{k=1}^{n}\left( \frac{1}{2}\right) ^{k}+\left( \frac{1}{2}\right)
+^{n}=\sum_{k=0}^{n}\left( \frac{1}{2}\right) ^{k}-\left( \frac{1}{2}\right)
+^{0}+\left( \frac{1}{2}\right) ^{n} \\
+&=&\frac{\left( \frac{1}{2}\right) ^{n+1}-1}{\frac{1}{2}-1}-1+\left( \frac{1%
+}{2}\right) ^{n}=\frac{\left( \frac{1}{2}\right) ^{n}-1+\frac{1}{2}-\frac{1}{%
+2}\left( \frac{1}{2}\right) ^{n}}{-\frac{1}{2}} \\
+&=&1
+\end{eqnarray*}
+
+\item On le d\'{e}montre par r\'{e}currence : Pour $x\neq 1$
+
+\begin{itemize}
+\item Pour $n=1$ on a : 
+\begin{eqnarray*}
+\sum_{k=1}^{1}kx^{k} &=&x\mbox{ et } \\
+\frac{1x^{1+2}-(1+1)x^{1+1}+x}{(1-x)^{2}} &=&x\frac{x^{2}-2x+1}{(1-x)^{2}}=x
+\end{eqnarray*}
+d'o\`{u} l'\'{e}galit\'{e}.
+
+\item Soit $n\in \mathbb{N}^{*}$ tel que 
+\begin{equation*}
+\sum_{k=1}^{n}kx^{k}=\frac{nx^{n+2}-(n+1)x^{n+1}+x}{(1-x)^{2}}.
+\end{equation*}
+
+alors 
+\begin{eqnarray*}
+\sum_{k=1}^{n+1}kx^{k} &=&\sum_{k=1}^{n}kx^{k}+\left( n+1\right) x^{n+1} \\
+&=&\left( n+1\right) x^{n+1}+\frac{nx^{n+2}-(n+1)x^{n+1}+x}{(1-x)^{2}} \\
+&=&\frac{\left( n+1\right) x^{n+1}(1-x)^{2}+nx^{n+2}-(n+1)x^{n+1}+x}{%
+(1-x)^{2}} \\
+&=&\frac{\left( n+1\right) x^{n+1}-2\left( n+1\right) x^{n+2}+\left(
+n+1\right) x^{n+3}+nx^{n+2}-(n+1)x^{n+1}+x}{(1-x)^{2}} \\
+&=&\frac{\left( n+1\right) x^{n+3}+-\left( n+2\right) x^{n+2}+x}{(1-x)^{2}}
+\end{eqnarray*}
+
+Ce qu'il fallait d\'{e}montrer
+
+\item Donc la propri\'{e}t\'{e} est vraie pour tout entier $n\ge 1$
+\end{itemize}
+
+\item On a alors 
+\begin{eqnarray*}
+E\left( Y\right) &=&\sum_{k=0}^{n}k\cdot p\left( Y=k\right)
+=\sum_{k=1}^{n}k\cdot P(Y=k)+0\cdot p\left( Y=0\right) \\
+&=&\sum_{k=1}^{n+1}k\left( \frac{1}{2}\right) ^{k}=\frac{n\left( \frac{1}{2}%
+\right) ^{n+2}-(n+1)\left( \frac{1}{2}\right) ^{n+1}+\frac{1}{2}}{(1-\frac{1%
+}{2})^{2}} \\
+&=&4\left( n\left( \frac{1}{2}\right) ^{n+2}-(n+1)\left( \frac{1}{2}\right)
+^{n+1}+\frac{1}{2}\right) \\
+&=&-\left( n+2\right) \left( \frac{1}{2}\right) ^{n}+2
+\end{eqnarray*}
+\end{enumerate}
+
+\paragraph{\'Etude du cas $c\neq 0$.}
+
+On consid\`{e}re les variables al\'{e}atoires $\left( X_{i}\right)
+_{1\leqslant i\leqslant n}$ d\'{e}finies par~:
+
+\begin{itemize}
+\item $X_{i}=1$ si on obtient une boule blanche au $i^{\grave{e}me}$tirage
+
+\item $X_{i}=0$ sinon
+\end{itemize}
+
+On d\'{e}finit alors, pour $2\leqslant p\leqslant n$, la variable al\'{e}%
+atoire $Z_{p}$, par~: 
+\begin{equation*}
+Z_{p}=\sum_{i=1}^{p}X_{i}.
+\end{equation*}
+
+\begin{enumerate}
+\item $X_{i}$ compte le nombre de boule(s) balnches obtenue au $i^{\grave{e}%
+me}$ tirage (uniquement). $Z_{p}$ est donc le nombre total de boules
+blanches obtenues lors des $p$ premiers tirages.
+
+\item Au premier tirages, les 2 boules sont \'{e}quiprobables. Donc $%
+X_{1}\left( \Omega \right) =\left\{ 0,1\right\} $ et $p\left( X_{1}=1\right)
+=p\left( X_{2}=1\right) =1/2$ et $X_{1}$ suit une loi de Bernouilli de param%
+\`{e}tre $1/2.$ On a don $E\left( X\right) =1/2$ et $V\left( X\right) =1/4$
+
+\item Il y a ici 4 probabilit\'{e}s \`{a} d\'{e}terminer en d\'{e}composant
+en fonction du r\'{e}sultat de chacun des deux premiers tirages :
+
+\begin{itemize}
+\item $\left( X_{1}=0\cap X_{2}=0\right) =\left( N_{1}\cap N_{2}\right) $
+donc $p\left( X_{1}=0\cap X_{2}=0\right) =p\left( N_{1}\cap N_{2}\right)
+=p\left( N_{1}\right) p\left( N_{2}/N1\right) .$
+
+Quand on a $N_{1}$ on rajoute alors $c$ boules Noires. Il y a donc $1$
+blanche et c+1 noirs lors du second tirage. Ces boules \'{e}tant \'{e}%
+quiprobables :
+
+$p\left( X_{1}=0\cap X_{2}=0\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}$
+
+\item De m\^{e}me $p\left( X_{1}=0\cap X_{2}=1\right) =p\left( N_{1}\cap
+B_{2}\right) =p\left( N_{1}\right) p\left( B_{2}/N1\right) =\displaystyle
+\frac{1}{2}\cdot \frac{1}{c+2}$
+
+\item $p\left( X_{1}=1\cap X_{2}=0\right) =p\left( B_{1}\cap N_{2}\right)
+=p\left( B_{1}\right) p\left( N_{2}/B_{1}\right) =\displaystyle
+\frac{1}{2}\cdot \frac{1}{c+2}$
+
+\item et enfin $p\left( X_{1}=1\cap X_{2}=1\right) =p\left( B_{1}\cap
+B_{2}\right) =p\left( B_{1}\right) p\left( B_{2}/B1\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}$
+\end{itemize}
+
+La loi de $X_{2}$ est la loi marginale :
+
+\begin{itemize}
+\item $p\left( X_{2}=0\right) =p\left( X_{1}=1\cap X_{2}=0\right) +p\left(
+X_{1}=0\cap X_{2}=0\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}+\frac{1}{2}\cdot \frac{1}{c+2}=\frac{1}{2}$
+
+\item $p\left( X_{2}=1\right) =p\left( X_{1}=1\cap X_{2}=1\right) +p\left(
+X_{1}=0\cap X_{2}=1\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}+\frac{1}{2}\cdot \frac{1}{c+2}=\frac{1}{2}$
+\end{itemize}
+
+La loi de $X_{2}$ est donc la m\^{e}me que celle de $X_{1}$ et $E\left(
+X_{2}\right) =E\left( X_{1}\right) =1/2$
+
+\item Ici $Z_{2}$ est la somme de deux variables al\'{e}atoires suivant des
+lois binomiales de m\^{e}me param\`{e}tre de succ\`{e}s. \textbf{Mais }elles
+ne sont pas ind\'{e}pendantes. On ne peut donc pas conclure que $%
+Z_{2}\hookrightarrow \mathcal{B}\left( 2,1/2\right) $
+
+\begin{itemize}
+\item $Z_{2}\left( \Omega \right) =\left\{ 0,1,2\right\} $
+
+\item $\left( Z_{2}=0\right) =\left( X_{1}=0\cap X_{2}=0\right) $ et $%
+p\left( Z_{2}=0\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}$ (d'apr\`{e}s la loi du couple)
+
+\item $\left( Z_{2}=1\right) =\left( X_{1}=0\cap X_{2}=1\right) \cup \left(
+X_{1}=1\cap X_{2}=0\right) $ et comme ces deux parenth\`{e}ses sont
+incompatibles :
+
+$p\left( Z_{2}=1\right) =p\left( X_{1}=0\cap X_{2}=1\right) +p\left(
+X_{1}=1\cap X_{2}=0\right) =\displaystyle
+\frac{1}{2}\cdot \frac{1}{c+2}+\frac{1}{2}\cdot \frac{1}{c+2}=\frac{1}{c+2}$
+
+\item $\left( Z_{2}=2\right) =\left( X_{1}=1\cap X_{2}=1\right) $ et $%
+p\left( Z_{2}=2\right) =\displaystyle
+\frac{1}{2}\cdot \frac{c+1}{c+2}$.
+\end{itemize}
+
+\item On peut avoir en $p$ tirages de 0 \`{a} $p$ boules blanches. Donc $%
+Z_{p}\left( \Omega \right) =\left[ \left[ 0,p\right] \right] $
+
+\item Soit $p\leqslant n-1$.
+
+\begin{enumerate}
+\item Quand $\left( Z_{p}=k\right) $ on a obtenu $k$ boules blanches et $p-k 
+$ boules noires. On a donc rajout\'{e} lors de ces tirages $k\cdot c$ boules
+blanches et $\left( p-k\right) c$ boules noires.
+
+Il y a donc $k\cdot c+1$ blanches et $\left( p-k\right) c+1$ noires lors du $%
+p+1^{i\grave{e}me}$ tirages$.$
+
+Ces boules \'{e}tant \'{e}quiprobables 
+\begin{equation*}
+p(X_{p+1}=1\,/Z_{p}=k)=\frac{k\cdot c+1}{p\cdot c+2}
+\end{equation*}
+
+\item Les \'{e}v\'{e}nements $\left( Z_{p}=k\right) _{k\in \left[ \left[ 0,p%
+\right] \right] }$ forment un syst\`{e}me complet d'\'{e}v\'{e}nements. Donc
+d'apr\`{e}s la formule des probabilit\'{e}s totales :
+
+\begin{eqnarray*}
+p\left( X_{p+1}=1\right) &=&\sum_{k=0}^{p}p(X_{p+1}=1\,/Z_{p}=k)p\left(
+Z_{p}=k\right) \\
+&=&\sum_{k=0}^{p}\frac{k\cdot c+1}{p\cdot c+2}p\left( Z_{p}=k\right) \dots
+\end{eqnarray*}
+
+Mais on ne conna\^{\i}t pas la loi de $Z_{p}\dots $ Aussi ne fait on appara%
+\^{\i}tre que son esp\'{e}rance : 
+\begin{eqnarray*}
+p\left( X_{p+1}=1\right) &=&\sum_{k=0}^{p}\frac{k\cdot c+1}{p\cdot c+2}%
+p\left( Z_{p}=k\right) =\frac{1}{pc+2}\sum_{k=0}^{p}\left( k\cdot c+1\right)
+p\left( Z_{p}=k\right) \\
+&=&\frac{1}{pc+2}\left[ c\sum_{k=0}^{p}kp\left( Z_{p}=k\right)
++\sum_{k=0}^{p}p\left( Z_{p}=k\right) \right] \\
+&=&\frac{1}{pc+2}\left[ cE\left( Z_{p}\right) +1\right] =\frac{cE\left(
+Z_{p}\right) +1}{2+pc}
+\end{eqnarray*}
+
+\item On en d\'{e}duit par r\'{e}currence que $X_{p}$ est une variable al%
+\'{e}atoire de Bernoulli de param\`{e}tre $\displaystyle \frac{1}{2}$.
+
+\begin{itemize}
+\item Pour $p=1,$ $X_{1}$ suit bien une loi de Bernouilli de param\`{e}tre $%
+1/2$
+
+\item Soit $p\ge 1$ tel que pour tout $k\in \left[ \left[ 1,p\right] \right] 
+$, $X_{k}\hookrightarrow \mathcal{B}\left( 1/2\right) $
+
+Alors $E\left( Z_{p}\right) =\sum_{k=1}^{p}E\left( X_{i}\right) =p/2$
+
+et 
+\begin{eqnarray*}
+p\left( X_{p+1}=1\right) &=&\frac{cE\left( Z_{p}\right) +1}{2+pc}=\frac{%
+\displaystyle \frac{cp}{2}+1}{2+pc}=\frac{cp+2}{2\left( cp+2\right) } \\
+&=&\frac{1}{2}
+\end{eqnarray*}
+et donc $p\left( X_{p+1}=0\right) =1-p\left( X_{p}=1\right) =\frac{1}{2}$
+
+Donc $X_{p+1}$ suit une loi binomiale de param\`{e}tre 1/2
+
+\item Donc pour tout entier $p\geq 1:X_{p}$ suit une loi binomiale de param%
+\`{e}tre 1/2.
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+
+\subsection{Dérangements}
+
+\begin{exercice} 
+Une urne contient $n$ boules num\'erot\'ees de 1 \`a $n$. On les extrait successivement et sans remise et apr\`es chaque tirage, on observe le num\'ero de la boule tir\'ee. On dit qu'il y a rencontre au $i$-i\`eme tirage si la boule tir\'ee porte le num\'ero $i$. D\'eterminer la probabilit\'e de l'\'ev\'enement $E$: \og Il n'y a aucune rencontre\fg.
+
+\begin{rems}
+Le probl\`{e}me des rencontres peut prendre des formes diverses:
+\begin{itemize}
+\item[$\bullet$] Un facteur poss\`{e}de $n$ lettres adress\'ees \`{a} $n$ personnes diff\'erentes. Il les distribue au hasard. Quelle est la probabilit\'e pour qu'aucune n'arrive \`{a} destination ?
+\item[$\bullet$] \`{A} l'op\'era, $n$ spectateurs d\'epose au vestiaire leur chapeau num\'erot\'e selon leur ordre d'arriv\'e et un ticket leur est alors donn\'e. Mais le responsable a m\'elang\'e tous les tickets et tous les chapeaux sont rendus au hasard. Quelle est la probabilit\'e pour qu'aucun spectateur ne retrouve son chapeau.
+\item[$\bullet$] $n$ couples se pr\'esentent \`{a} un concours de danse. Chaque danseur choisit sa partenaire au hasard. Quelle est la probabilit\'e pour que personne ne danse avec son conjoint ?
+\end{itemize}
+\end{rems}
+
+\end{exercice}
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item Pour tout $i\in\intent{ 1,n}$, on note $N_i$ l'\'ev\'enement \og tirer une boule noire au tirage i\fg \, et on note $G$ l'\'ev\'enement \og \^{e}tre gagnant\fg. Ainsi on a: $G=N_1\cap N_2\cap \dots\cap N_n$. Comme il y a remise, on r\'ep\`ete bien la m\^{e}me exp\'erience $n$ fois dans les m\^{e}mes conditions. Ainsi les \'ev\'enements $(N_1,N_2,\dots, N_n)$ sont mutuellement ind\'ependants et on a: $P(G)=P(N_1)P(N_2)\dots P(N_n)=\left( \ddp\frac{n-1}{n} \right)^n=\left(1- \ddp\frac{1}{n} \right)^n$. On pouvait aussi calculer cette probabilit\'e sans utiliser la mutuelle ind\'ependance mais avec du d\'enombrement car on est dans un cadre d'ordre et de r\'ep\'etition.
+\item Pour cela, on montre que la fonction $f: x\mapsto \left( 1-\ddp\frac{1}{x} \right)^x=e^{x\ln{\left( 1-\frac{1}{x}  \right)}}$ est croissante sur $\lbrack 2,+\infty\lbrack$. Il s'agit ici d'une \'etude classique de fonction. La fonction $f$ est d\'erivable sur $\lbrack 2,+\infty\lbrack$ comme quotient, somme et compos\'ee de fonctions et pour tout $x\geq 2$: $f^{\prime}(x)=f(x)\left\lbrack  \ln{\left( 1-\ddp\frac{1}{x}  \right)} +\ddp\frac{1}{x-1}\right\rbrack$. On pose pour tout $x\geq 2$: $g(x)= \ln{\left( 1-\ddp\frac{1}{x}  \right)} +\ddp\frac{1}{x-1}$. Cette fonction est elle aussi d\'erivable sur $\lbrack 2,+\infty\lbrack$ et pour tout $x\geq 2$: $g^{\prime}(x)=\ddp\frac{-1}{x(x-1)^2}$. Ainsi comme on est sur $\lbrack 2,+\infty\lbrack$, $g^{\prime}$ est n\'egative et ainsi la fonction $g$ est strictement d\'ecroissante sur $\lbrack 2,+\infty\lbrack$. De plus $\lim\limits_{x\to +\infty} g(x)=0$ par propri\'et\'e sur les somme, quotient et compos\'ee de limites. Ainsi la fontion $g$ reste positive sur $\lbrack 2,+\infty\lbrack$. Donc $f^{\prime}$ est positive sur $\lbrack 2,+\infty\lbrack$ comme produit de deux nombres positifs et car $f$ est bien positive car c'est une exponentielle. Ainsi la fonction $f$ est bien croissante sur $\lbrack 2,+\infty\lbrack$. Et donc en particulier on a la croissance de la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ sur $\N^{\star}\setminus\lbrace 1\rbrace$. De plus si $n=1$, il n'y a pas de boule noire et ainsi $P(G)=0$. Ceci prouve la croissance sur $\N^{\star}$ car pour tout $n\geq 2$: $f(n)\geq 0\Leftrightarrow f(n)\geq f(1)$. Donc \fbox{la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ est bien croissante sur $\N^{\star}$}.
+\item 
+\begin{itemize}
+\item[$\bullet$] Comme la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ est croissante sur $\N^{\star}$, plus le nombre de boules totales $n$ augmente, plus le nombre $\left(1- \ddp\frac{1}{n} \right)^n$ augmente aussi, \`{a} savoir plus la probabilit\'e de gagner augmente. Le joueur a donc int\'er\^{e}t \`{a} ce que le nombre de boules totales soient le plus grand possible. 
+\item[$\bullet$] En utilisant les \'equivalents usuels, on a: $\ln{\left(1- \ddp\frac{1}{n} \right)}\underset{=\infty}{\thicksim} -\ddp\frac{1}{n}$. On obtient donc que: $n\ln{\left(1- \ddp\frac{1}{n} \right)}\underset{=\infty}{\thicksim} -1$. Ainsi, on a: $\lim\limits_{n\to +\infty} n\ln{\left(1- \ddp\frac{1}{n} \right)}=-1$ puis par propri\'et\'e sur la composition de limite, on a: $\lim\limits_{n\to +\infty} e^{n\ln{\left(1- \frac{1}{n} \right)}}=e^{-1}$. Or comme $p_n=e^{n\ln{\left(1- \frac{1}{n} \right)}}$ pour tout $n\in\N^{\star}$, on obtient que: \fbox{$\lim\limits_{n\to +\infty} p_n=e^{-1}$}.  
+\end{itemize}
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+
+
+\subsection{Urnes de Polya sans VAR + info (Pb)}
+\begin{exercice}
+On dispose d'une urne contenant initialement $b$ boules blanches et $r$ boules rouges. On fait des tirages successifs dans cette urne en respectant à chaque fois le protocole suivant : 
+\begin{itemize}
+\item Si la boule tirée est de couleur blanche, on la remet et on ajoute une boule blanche 
+\item Si la boule tirée est de couleur rouge, on la remet et on ajoute une boule rouge.  
+\end{itemize}
+
+On appelle $B_i$ l'événement "tirer une boule blanche au $i$-iéme tirage" et on note $p_i =P(B_i)$. 
+
+\begin{enumerate}
+\item Calculer $p_1$ en fonction de $b$ et $r$.
+\item Montrer que $p_2= \frac{b}{b+r}  $.
+\item On a tiré une boule blanche au deuxième tirage. Donner alors la probabilité que l'on ait tiré une boule blanche au premier tirage  en fonction de $b$ et $r$. 
+\item On appelle $E_n$  l'événément 
+\begin{center}
+$E_n$ : " On tire que des boules blanches sur les $n$ premiers tirages "
+\end{center}
+
+et $F_n$ l'événement
+\begin{center}
+$F_n$ : " On tire  pour la première fois une boule rouge au $n$-ième tirage"
+\end{center}
+
+\begin{enumerate}
+\item Exprimer $E_n$  à l'aide des événements $(B_k)_{k\in \intent{1,n}} $ 
+\item Exprimer $F_n$  à l'aide de $E_{n-1}$ et $B_n$ 
+\end{enumerate}
+
+
+\item Pour tout $k\geq 2$ calculer $P_{E_{k-1}}(B_k)$.
+\item Calculer $P(E_n)$ en fonction de $b, r$ et $n$ puis $P(F_n)$.
+
+\item On souhaite modéliser informatiquement cette expérience. On va utiliser la lettre 'B' pour désigner les boules blanches et 'R' pour les rouges. 
+\begin{enumerate}
+\item Créer une fonction \texttt{urne} qui prend en paramètres le nombre de boules blanches et rouges, et retourne une liste correspondant à l'urne initiale. (Cette  liste n'a pas à être "mélangée")
+%\item Créer une fonction \texttt{shuffle} qui prend en argument une liste et retourne une autre liste contenant les mêmes élèments que le première mélangés aléatoirement. 
+\item Créer une fonction \texttt{tirage} qui prend en argument une liste correspondant à une urne, modélise le tirage d'une boule alétoirement dans cette urne, affiche la couleur de la boule tirée et retourne une liste correspondant à l'urne aprés l'ajout de la boule de la couleur tirée. 
+\item Créer une fonction \texttt{compte} qui prend une liste correspondant à une urne et retourne   le nombre de  boules blanches  contenues dans l'urne. 
+\item Créer une fonction \texttt{expérience} qui prend en argument le nombre de boules blanches et rouges et $N$ le nombre de tirages effectués et retourne le nombre de boules blanches dans l'urne aprés $N$ tirages. 
+\end{enumerate}
+ 
+\end{enumerate}
+\begin{correction}
+\begin{enumerate}
+
+
+\item On a $p_1=P(B_1)$. Comme il y a $b$ boules et $b+r$ boules en tout, on en déduit que $P(B_1) =\frac{b}{b+r}$ 
+\conclusion{$p_1=\frac{b}{b+r}$}
+
+\item On utilise le système complet d'événements $(B_1, \overline{B_1})$, la formule des probabilités totales donnent : 
+$$p_2=P(B_2) =P(B_2|B_1) P(B_1) +P(B_2 |\overline{B_1})P(\overline{B_1})$$
+
+Si on a tiré une boule blanche au tirage 1, il y a $b+1$ boules blanches dans l'urne et $r$ boules rouges, donc 
+$$P(B_2|B_1)  =\frac{b+1}{b+r+1}$$
+
+De même, si on a tiré une boule rouge au tirage 1, il y a $b$ boules blanches dans l'urne et $r+1$ boules rouges, donc 
+$$P(B_2|\overline{B_1})  =\frac{b}{b+r+1}$$
+
+D'après le calcul de $p_1$, on sait que $P(\overline{B_1})= 1-P(B_1) =1-\frac{b}{b+r}= \frac{r}{b+r}$
+
+Ainsi 
+\begin{align*}
+p_2&=\frac{b+1}{b+r+1} \frac{b}{b+r} + \frac{b}{b+r+1} \frac{r}{b+r}\\
+	&=\frac{(b+1)b}{(b+r+1)(b+r)} + \frac{br}{(b+r+1)(b+r)} \\
+	&=\frac{(b+1+r)b}{(b+r+1)(b+r)}  \\
+	&=\frac{b}{b+r}  
+\end{align*}
+
+\conclusion{ $p_2= \frac{b}{b+r}  $}
+
+\item On cherche à calculer $P(B_1|B_2)$ et on utilise pour cela la formule de Bayes :
+$$P(B_1|B_2) =\frac{P(B_2|B_1) P(B_1)}{P(B_2)}$$
+Or on a vu que $P(B_1) =P(B_2)$ donc 
+$$P(B_1|B_2) =P(B_2|B_1)$$
+
+Ainsi \conclusion{ $P(B_1|B_2) = \frac{b+1}{b+r+1}$}
+\item \begin{enumerate}
+\item $E_n = B_1 \cap B_2 \cap \dots \cap B_{n} $. 
+\item $F_n =E_{n-1} \cap \overline{B_n}$. 
+\end{enumerate}
+\item Si l'événement $E_{k-1} $ est réalisé, on a tiré que des boules blanches sur les $k-1$ premiers tirages. Il y a donc $b+k-1$ boules blanches et $b+k-1+r$ boules au total. 
+Donc \conclusion{ $P(B_k |E_{k-1}) = \frac{b+k-1}{b+k-1+r}$} 
+
+\item On utilise la formule des probabilités conditionnelles et on obtient : 
+$$P(E_n) = P(B_1) P(B_2|B_1) P(B_3|B_2\cap B_1) \dots  P(B_{n}|B_{n-1}\cap \dots \cap B_2\cap B_1) $$
+Remarquons que les termes du produit sont de la forme $P(B_k |E_{k-1})$ que l'on a calculé à la question précédente. On a donc 
+\begin{align*}
+P(E_n) &=P(B_1) \prod_{k=2}^{n} P(B_k |E_{k-1})\\
+			&=\frac{b}{b+r}\frac{b+2-1}{b+2-1+r} \frac{b+3-1}{b+2-1+r}\dots \frac{b+n-1}{b+n-1+r}\\
+			&=\frac{b}{b+r}\frac{b+1}{b+1+r} \frac{b+2}{b+2+r}  \dots \frac{b+n-1}{b+n-1+r}\\
+			&= \frac{(b+n-1)!}{(b-1)!} \frac{(b+r-1)!}{(b+n-1+r)!} 
+\end{align*}
+
+
+\item On en déduit la valeur de $P(F_n) $ de nouveau en utilisant la formule des proababilités conditionnelles : 
+$$P(F_n) =P(E_{n-1}\cap \overline{B_n}) =P(E_{n-1} ) P(\overline{B_n}|E_{n-1})$$
+
+Si l'événement $E_{n-1}$ est réalisé, il y a  $r$ boules rouges et $b+n-1+r$ boules au total. 
+Donc 
+$$P(F_n) = \frac{r}{b+n-1+r}$$
+
+\item \begin{enumerate}
+\item
+\begin{lstlisting}
+def urne(b,r):
+  L=['B' for i in range(b)] +['R' for i in range(n)]
+  return(L)
+\end{lstlisting}
+
+\item
+\begin{lstlisting}
+from random import randint
+def tirage(L):
+	nouvel_urne=L[:]
+	k=randint(0,len(L)-1)
+	
+	if L[k]=='B':
+	  print('Boule blanche')
+	  nouvel_urne=nouvel_urne+['B']
+	else:
+	  print('Boule Rouge')
+	  nouvel_urne=nouvel_urne+['R']
+	return(nouvel_urne)
+\end{lstlisting}
+
+\item 
+\begin{lstlisting}
+
+def compte(L):
+  b=0
+  for e in L:
+    if e=='B':
+      b=b+1
+  return(b)
+\end{lstlisting}
+
+\item 
+\begin{lstlisting}
+def experience(b,r,N):
+  U=urne(b,r)
+  for k in range(N):
+    U=tirage(U)
+  boule_b=compte(U)
+  return(boule_b)
+    
+\end{lstlisting}
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{correction}
+
+
+\end{exercice}
+
+
+
+
+
+
+
+
+

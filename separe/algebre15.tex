@@ -1,0 +1,37 @@
+\subsection{Famille libre /générarive / base Exemples}
+
+\begin{exercice}
+Les familles suivantes sont-elles libres, génératrices dans $\R^3$ ?
+\begin{itemize}
+\item $F_u=(u_1,u_2) $ avec $u_1 = (1,1,1) $, $u_2=(2,1,2)$.
+\item $F_v=(v_1,v_2, v_3) $ avec $v_1 = (1,1,1) $, $v_2=(2,1,2)$, $v_3=(1,2,2)$. 
+\item $F_w=(w_1,w_2, w_3,w_4) $ avec $w_1 = (1,1,1) $, $w_2=(2,1,2)$, $w_3=(1,2,2)$, $w_4=(1,0,0)$. 
+\end{itemize}
+\end{exercice}
+\vsec\vsec\vsec
+\begin{correction}
+\begin{enumerate}
+\item $F_u$ n'est pas génératrice car $\R^3$ est de dimension $3$ et que $F_u$ ne possède que $2$ vecteurs. En revanche $F_u$ est libre, car les deux vecteurs ne sont pas proportionels (ceci ne marche que pour deux vecteurs )
+\item Cherchons à savoir si $F_v$ est libre. 
+Soit $(\lambda_1, \lambda_2, \lambda_3) $ tel que $\lambda_1 v_1 +\lambda_2 v_2 +\lambda_3 v_3 =0$. 
+On obtient les trois équations suivantes:
+\begin{align*}
+\left\{ 
+\begin{array}{cc}
+1\lambda_1 +2\lambda_2 +1\lambda_3 &=0\\
+1\lambda_1 +1\lambda_2 +2\lambda_3 &=0\\
+1\lambda_1 +2\lambda_2 +2\lambda_3 &=0
+\end{array}\right. & \equivaut 
+\left\{ 
+\begin{array}{cccc}
+\lambda_1 &+2\lambda_2 &+\lambda_3 &=0\\
+ &-\lambda_2 &+\lambda_3 &=0\\
+&&\lambda_3 &=0
+\end{array}\right. 
+\end{align*}
+Le système est échelonné et il est de Cramer, il possède donc une unique solution $(0,0,0)$. La famille $F_v$ est donc libre. 
+Elle est de cardinal 3 dans un espace vectoriel de dimension 3, c'est donc une base, en particulier elle est génératrice 
+\item La famille $F_w$ possède 4 éléments dans un espace vectoriel de dimension $3$ elle n'est donc pas libre. En revanche, comme elle contient la sous-famille $F_v$ elle est génératrice. 
+
+\end{enumerate}
+\end{correction}

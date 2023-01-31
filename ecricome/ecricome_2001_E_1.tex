@@ -1,0 +1,377 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, August 25, 2004 17:43:57}
+%TCIDATA{LastRevised=Saturday, August 28, 2004 15:11:43}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option économique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES}} \vspace{0.5cm}
+
+\textbf{Année 2001\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\newpage
+
+\section*{EXERCICE 1}
+
+Dans cet exercice on étudie l'évolution au cours du temps d'un titre dans
+une bourse de valeurs.
+
+\subsection*{I. Le but de la première partie est de calculer les puissances
+successives de la matrice:}
+
+\begin{equation*}
+M(a)=%
+\begin{pmatrix}
+1-2a & a & a \\ 
+a & 1-2a & a \\ 
+a & a & 1-2a%
+\end{pmatrix}%
+\end{equation*}%
+où $a$ représente un nombre réel.
+
+\begin{enumerate}
+\item Montrer que, pour tous réels $a$, $b$, on a : $M(a).M(b)=M(a+b-3ab)$.
+
+\item En déduire les valeurs de $a$ pour lesquelles la matrice $M(a)$ est
+inversible et exprimer son inverse.
+
+\item Justifier le fait que $M(a)$ est diagonalisable.
+
+\item Déterminer le réel $a_{0}$ non nul, tel que : 
+\begin{equation*}
+\left[ M(a_{0})\right] ^{2}=M(a_{0})
+\end{equation*}
+
+\item On considère les matrices : 
+\begin{equation*}
+P=M(a_{0})\quad \text{et}\quad Q=I-P
+\end{equation*}%
+où $I$ désigne la matrice carrée unité d'ordre $3$.
+
+\begin{enumerate}
+\item Montrer qu'il existe un réel $\alpha $, que l'on exprimera en fonction
+de $a$, tel que : 
+\begin{equation*}
+M(a)=P+\alpha Q
+\end{equation*}
+
+\item Calculer $P^{2}$, $QP$, $PQ$, $Q^{2}$.
+
+\item Pour tout entier naturel $n$, non nul, montrer que $\left[ M(a)\right]
+^{n}$ s'écrit comme combinaison linéaire de $P$ et $Q$.
+
+\item Expliciter alors la matrice $\left[ M(a)\right] ^{n}$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{II. \textbf{Évolution d'un titre boursier au cours du temps.}}
+
+Dans la suite de l'exercice, on suppose que $a\in \left] 0,\dfrac{2}{3}%
+\right[ $.
+
+\begin{enumerate}
+\item On définit des suites $(p_{n})_{n\in \mathbb{N}^{\ast }}$, $%
+(q_{n})_{n\in \mathbb{N}^{\ast }}$, $(r_{n})_{n\in \mathbb{N}^{\ast }}$ par
+leur premier terme $p_{1}$, $q_{1}$, $r_{1}$, et les relations de récurrence
+: 
+\begin{equation*}
+\begin{cases}
+p_{n+1}=(1-2a)p_{n}+aq_{n}+ar_{n} \\ 
+q_{n+1}=ap_{n}+(1-2a)q_{n}+ar_{n} \\ 
+r_{n+1}=ap_{n}+aq_{n}+(1-2a)r_{n}%
+\end{cases}%
+\end{equation*}
+
+\begin{enumerate}
+\item Exprimer $p_{n}$, $q_{n}$, $r_{n}$ en fonction de $%
+n,p_{1},q_{1},r_{1}. $
+
+\item Étudier la convergence de ces suites.
+\end{enumerate}
+
+\item Dans une bourse de valeurs, un titre donné peut monter, rester stable,
+ou baisser. Dans un modèle mathématique, on considère que :
+
+\begin{itemize}
+\item le premier jour le titre est stable ;
+
+\item si un jour $n$, le titre monte, le jour $n+1$, il montera avec la
+probabilité $\dfrac{2}{3}$, restera stable avec la probabilité $\dfrac{1}{6}$%
+, et baissera avec la probabilité $\dfrac{1}{6}$;
+
+\item si un jour $n$, le titre est stable, le jour $n+1$, il montera avec la
+probabilité $\dfrac{1}{6}$, restera stable avec la probabilité $\dfrac{2}{3}$%
+, et baissera avec la probabilité $\dfrac{1}{6}$;
+
+\item si un jour $n$, le titre baisse, le jour $n+1$, il montera avec la
+probabilité $\dfrac{1}{6}$, restera stable avec la probabilité $\dfrac{1}{6}$%
+, et baissera avec la probabilité $\dfrac{2}{3}$.
+\end{itemize}
+
+\noindent On note $M_{n}$ (respectivement $S_{n}$, respectivement $B_{n}$) l'%
+événement \textquotedblleft le titre donné monte (respectivement reste
+stable, respectivement baisse) le jour $n$.
+
+\begin{enumerate}
+\item Exprimer les probabilités de hausse, de stabilité, et de baisse au
+jour $n+1$ en fonction de ces mêmes probabilités au jour $n$.
+
+\item En déduire les probabilités de hausse, de stabilité, et de baisse au
+jour $n$.
+
+\item Quelles sont les limites de ces probabilités lorsque $n$ tend vers
+l'infini ?
+\end{enumerate}
+\end{enumerate}
+
+\section*{EXERCICE 2}
+
+Un système est constitué de $n$ composants. On suppose que les variables alé%
+atoires $T_{1},T_{2},\ldots ,T_{n}$ mesurant le temps de bon fonctionnement
+de chacun des $n$ composants sont indépendantes, de même loi, la loi
+exponentielle de paramètre $\lambda >0$.
+
+\subsection*{I. Calcul du nombre moyen de composants défaillants entre les
+instants $0$ et $t$.}
+
+On note $N_{t}$ la variable aléatoire égale au nombre de composants dé%
+faillants entre les instants $0$ et $t$ avec $t\geqslant 0$.
+
+\begin{enumerate}
+\item Pour tous les entiers $i$ de $\{1,2,\ldots ,n\}$, calculer la
+probabilité de l'événement $\{T_{i}<t\}$.
+
+\item Montrer que $N_{t}$ suit une loi binômiale. Préciser ses paramètres et
+son espérance $E(N_{t})$.
+
+\item À partir de quel instant $t_{0}$ le nombre moyen de composants dé%
+faillants dépasse-t-il la moitié du nombre de composants ?
+\end{enumerate}
+
+\subsection*{II. Montage en série.}
+
+On suppose que le système fonctionne correctement si tous les composants
+eux-mêmes fonctionnent correctement et note $S_{n}$ la variable aléatoire
+mesurant le temps de bon fonctionnement du système.
+
+\begin{enumerate}
+\item Pour $t\in \mathbb{R}$, exprimer l'événement $\{S_{n}>t\}$ en fonction
+des événements : 
+\begin{equation*}
+\{T_{1}>t\},\;\{T_{2}>t\},\;\ldots \;\{T_{n}>t\}.
+\end{equation*}
+
+\item Déterminer alors la fonction de répartition $F_{n}$, de $S_{n}$, puis d%
+éfinir sa densité $f_{n}$.
+
+\item Reconnaître la loi de $S_{n}$ et donner sans calcul l'espérance $%
+E(S_{n})$ et la variance $V(S_{n})$ de $S_{n}$.
+\end{enumerate}
+
+\subsection*{III. Montage en parallèle.}
+
+On suppose maintenant que le système fonctionne correctement si l'un au
+moins des composants fonctionne correctement et note $U_{n}$ la variable alé%
+atoire mesurant le temps de bon fonctionnement du système.
+
+\begin{enumerate}
+\item Exprimer $\{U_{n}<t\}$ en fonction des événements $\{T_{1}<t\},\;%
+\{T_{2}<t\},\;\ldots \;\{T_{n}<t\}$.
+
+\item Déterminer alors la fonction de répartition $G_{n}$ de $U_{n}$ puis
+montrer que sa densité $g_{n}$ est définie par : 
+\begin{equation*}
+\begin{cases}
+g_{n}(t)=n\lambda \left( 1-e^{-\lambda t}\right) ^{n-1}e^{-\lambda t}, & 
+t\geqslant 0 \\ 
+g_{n}(t)=0, & t<0%
+\end{cases}%
+\end{equation*}
+
+\item Montrer l'existence de l'espérance $E(U_{n})$ de $U_{n}$ et prouver
+que : 
+\begin{equation*}
+E(U_{n})=\dfrac{1}{\lambda }\sum_{k=0}^{n-1}\dfrac{(-1)^{k}}{k+1}C_{n}^{k+1}
+\end{equation*}%
+puis, que pour tous entiers naturels $n$, 
+\begin{equation*}
+E(U_{n+1})-E(U_{n})=\dfrac{1}{\lambda (n+1)}
+\end{equation*}
+
+\item Par sommation de la relation précédente, et en utilisant l'équivalent
+simple : 
+\begin{equation*}
+\sum_{k=1}^{n}\dfrac{1}{k}\underset{n\rightarrow +\infty }{\sim }\ln n
+\end{equation*}%
+donner un équivalent simple de $E(U_{n})$ lorsque $n$ tend vers $+\infty $.
+\end{enumerate}
+
+\section*{EXERCICE 3}
+
+On désigne par $n$ un entier naturel non nul et $a$ un réel strictement
+positif.\newline
+On se propose d'étudier les racines de l'équation : 
+\begin{equation*}
+(E_{n})\;:\;\dfrac{1}{x}+\dfrac{1}{x+1}+\dfrac{1}{x+2}+\ldots +\dfrac{1}{x+2n%
+}=a
+\end{equation*}%
+À cet effet, on introduit la fonction $f_{n}$, de la variable réelle $x$ dé%
+finie par : 
+\begin{equation*}
+f_{n}(x)=\dfrac{1}{x}+\dfrac{1}{x+1}+\dfrac{1}{x+2}+\cdots +\dfrac{1}{x+2n}-a
+\end{equation*}
+
+\subsection*{I. Étude d'un cas particulier.}
+
+Pour cette question seulement, on prend $a=\dfrac{11}{6}$ et $n=1$.
+
+\begin{enumerate}
+\item Représenter la fonction $f_{1}$ relativement à un repère orthonormal
+du plan. (unité graphique 2 cm)
+
+\item Calculer $f_{1}(1)$, puis déterminer les racines de $(E_{1})$.\newline
+(On donne $\sqrt{37}=6{,}08$ à $10^{-2}$ près par défaut)
+\end{enumerate}
+
+\subsection*{II. Dénombrement des racines de $(E_{n})$.}
+
+\begin{enumerate}
+\item Dresser le tableau de variations de $f_{n}$.
+
+\item Justifier l'existence de racines de l'équation $(E_{n})$ et en dé%
+terminer le nombre.
+\end{enumerate}
+
+\subsection*{III. Équivalent de la plus grande des racines quand $n$ tend
+vers $+\infty $.}
+
+On note $x_{n}$ la plus grande des racines de $(E_{n})$.
+
+\begin{enumerate}
+\item Justifier que $x_{n}>0$.
+
+\item Démontrer que pour tout réel $x>1$ : 
+\begin{equation*}
+\dfrac{1}{x}<\ln \dfrac{x}{x-1}<\dfrac{1}{x-1}
+\end{equation*}%
+En déduire que pour $x$ réel strictement positif : 
+\begin{equation*}
+f_{n}(x)-\dfrac{1}{x}+a<\ln (1+\dfrac{2n}{x})<f_{n}(x)-\dfrac{1}{x+2n}+a
+\end{equation*}%
+puis, que : 
+\begin{equation*}
+a-\dfrac{1}{x_{n}}<\ln \left( 1+\dfrac{2n}{x_{n}}\right) <a-\dfrac{1}{%
+x_{n}+2n}
+\end{equation*}
+
+\item Montrer que pour tout $n$ entier naturel, non nul : 
+\begin{equation*}
+x_{n}>\dfrac{2n}{\exp a-1}
+\end{equation*}
+
+\item Quelle est la limite de $x_{n}$, puis la limite de $\ln (1+\dfrac{2n}{%
+x_{n}})$, lorsque $n$ tend vers $+\infty $ ?
+
+\item Prouver enfin l'existence d'un réel $\delta $, que l'on exprimera en
+fonction de $a$, tel que l'on ait, au voisinage de l'infini, l'équivalent
+suivant%
+\begin{equation*}
+x_{n}\underset{n\rightarrow +\infty }{\sim }\delta .n
+\end{equation*}%
+\bigskip
+\end{enumerate}
+
+\begin{center}
+Fin de l'épreuve \label{fin}
+\end{center}
+
+\end{document}

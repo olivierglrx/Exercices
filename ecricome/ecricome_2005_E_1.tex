@@ -1,0 +1,389 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Tuesday, May 24, 2005 21:23:42}
+%TCIDATA{LastRevised=Tuesday, May 24, 2005 22:06:50}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION}
+
+\textbf{option économique}
+
+{\Large \textbf{MATHÉMATIQUES}}
+
+\textbf{Année 2005\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\vspace{13cm}
+
+\hfill \textbf{Tournez la page}
+
+\hfill \textbf{S.V.P\qquad }
+
+\newpage
+
+\section*{EXERCICE1}
+
+On considère, pour tout entier naturel $n$, l'application $\varphi _{n}$, dé%
+finie sur $\mathbb{R}$ par :%
+\begin{equation*}
+\forall x\in \mathbb{R},\quad \varphi _{n}(x)=(1-x)^{n}e^{-2x}
+\end{equation*}%
+ainsi que l'intégrale : $I_{n}=\int\limits_{0}^{1}\varphi _{n}(x)dx$.\newline
+On se propose de démontrer l'existence de trois réels, $a$, $b$, $c$ tels que%
+\begin{equation*}
+I_{n}=a+\dfrac{b}{n}+\dfrac{c}{n^{2}}+\dfrac{\varepsilon (n)}{n^{2}}\quad 
+\text{avec}\quad :\lim\limits_{n\rightarrow +\infty }\varepsilon (n)=0.
+\end{equation*}
+
+\begin{enumerate}
+\item Calculer $I_{0}$, $I_{1}$.
+
+\item Étudier la monotonie de la suite $(I_{n})_{n\in \mathbb{N}}$.
+
+\item Déterminer le signe de $I_{n}$ pour tout entier naturel $n$.
+
+\item Qu'en déduit-on pour la suite $(I_{n})_{n\in \mathbb{N}}$ ?
+
+\item Majorer la fonction $g:x\mapsto e^{-2x}$ sur $[0;1]$.
+
+\item En déduire que : $\forall n\in \mathbb{N}^{\times },\quad 0\leqslant
+I_{n}\leqslant \dfrac{1}{n+1}.$
+
+\item Déterminer la limite de la suite $(I_{n})_{n\in \mathbb{N}}$ lorsque $%
+n $ tend vers l'infini.
+
+\item À l'aide d'une intégration par parties, montrer que $\forall n\in 
+\mathbb{N},\quad 2I_{n+1}=1-(n+1)I_{n}.$
+
+\item En déduire la limite de la suite $(nI_{n})_{n\in \mathbb{N}}$ lorsque $%
+n$ tend vers l'infini.
+
+\item Déterminer la limite de la suite $(n(nI_{n}-1))_{n\in \mathbb{N}}$
+lorsque $n$ tend vers l'infini.
+
+\item Donner alors les valeurs de $a$, $b$, $c$.
+\end{enumerate}
+
+\section*{EXERCICE 2.}
+
+On considère la fonction $f$ définie par 
+\begin{equation*}
+\forall x\in \mathbb{R}_{+}^{\times },\quad f(x)=x^{2}-x\ln (x)-1\quad \text{%
+et}\quad f(0)=-1.
+\end{equation*}%
+ainsi que les fonctions $\varphi $ et $g$ définies par :
+
+\begin{itemize}
+\item $\forall x\in \mathbb{R}_{+}^{\times },\quad \varphi (x)=\dfrac{2}{x}%
++\ln (x)$
+
+\item $\forall (x;y)\in \mathbb{R}^{2},g(x\ ;y)=xe^{y}-ye^{x}.$
+\end{itemize}
+
+\noindent On donne le tableau de valeurs de $f$ :%
+\begin{equation*}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$x=$ & $0,5$ & $1$ & $1,5$ & $2$ & $2,5$ & $3$ & $3,5$ & $4$ \\ \hline
+$f(x)\simeq $ & $-0,4$ & $0$ & $0,6$ & $1,6$ & $3$ & $4,7$ & $6,9$ & $9,5$
+\\ \hline
+\end{tabular}%
+\end{equation*}
+
+\subsection*{2.1 Étude de deux suites associées à $f$.}
+
+\begin{enumerate}
+\item Montrer que $f$ est continue sur $\mathbb{R}_{+}$.
+
+\item Étudier la dérivabilité de la fonction $f$ en 0. En donner une interpré%
+tation graphique.
+
+\item Étudier la convexité de $f$ sur $\mathbb{R}_{+}^{\times }$, puis
+dresser son tableau de variations en précisant la limite de $f(x)$ lorsque $%
+x $ tend vers l'infini.
+
+\item Étudier la nature de la branche infinie.
+
+\item Montrer que $f$ réalise une bijection de $\mathbb{R}_{+}^{\times }$
+sur un intervalle $J$ que l'on précisera.
+
+\item Quel est le sens de variation de $f^{-1}$ ? Déterminer la limite de $%
+f^{-1}(x)$ lorsque $x$ tend vers l'infini.
+
+\item Justifier que pour tout entier naturel $k$, il existe un unique réel $%
+x_{k}$ positif tel que $f(x_{k})=k$.
+
+\begin{enumerate}
+\item Donner la valeur de $x_{0}$.
+
+\item Utiliser le tableau de valeurs de $f$ pour déterminer un encadrement
+de $x_{1}$ et $x_{2}$.
+
+\item Exprimer $x_{k}$ à l'aide de $f^{-1}$ puis justifier que la suite $%
+(x_{k})$ est croissante et déterminer sa limite lorsque $k$ tend vers
+l'infini.
+\end{enumerate}
+
+\item On définit la suite $(u_{n})$ par : $u_{0}=\dfrac{3}{2}$ et $\forall
+n\in \mathbb{N},\quad u_{n+1}=\varphi (u_{n})$
+
+\begin{enumerate}
+\item Étudier les variations de $\varphi $ sur $\mathbb{R}_{+}^{\times }$.
+
+\item On donne $\varphi (\dfrac{3}{2})\simeq 1,73$ et $\varphi (2)\simeq
+1,69 $. Montrer que $\varphi \left( \left[ \dfrac{3}{2};2\right] \right)
+\subset \left[ \dfrac{3}{2};2\right] $.
+
+\item En étudiant les variations de $\varphi ^{\prime }$, montrer que : $%
+\forall x\in \left[ \dfrac{3}{2};2\right] ,\quad \left\vert \varphi ^{\prime
+}(x)\right\vert \leqslant \dfrac{2}{9}$.
+
+\item Montrer que les équations $x=\varphi (x)$ et $f(x)=1$ sont é%
+quivalentes. En déduire que le réel $x_{1}$ est l'unique solution de l'é%
+quation $x=\varphi (x)$.
+
+\item Montrer successivement que pour tout entier $n$ :%
+\begin{equation*}
+\dfrac{3}{2}\leqslant u_{n}\leqslant 2\quad ;\quad \left\vert
+u_{n+1}-x_{1}\right\vert \leqslant \dfrac{2}{9}\left\vert
+u_{n}-x_{1}\right\vert \quad ;\quad \left\vert u_{n}-x_{1}\right\vert
+\leqslant \left( \dfrac{2}{9}\right) ^{n}.
+\end{equation*}
+
+\item En déduire la limite de la suite $(u_{n})$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{2.2 Recherche d'extremum éventuel de $g$.}
+
+\begin{enumerate}
+\item Calculer les dérivées partielles premières de la fonction $g$.
+
+\item Montrer que si $g$ admet un extremum local en $(a;b)$ de $\mathbb{R}%
+^{2}$, alors : $ab=1$ et $a=e^{a-1/a}$.\newline
+En déduire que nécessairement $a>0$, $ab=1$ et $f(a)=0$ et donc que le seul
+point où $g$ peut admettre un extremum est le couple $(1;1)$.
+
+\item Calculer les réels : $r=\dfrac{\partial ^{2}g}{\partial x^{2}}\left(
+1;1\right) $ ; $s=\dfrac{\partial ^{2}g}{\partial x\partial y}\left(
+1;1\right) $ ; $t=\dfrac{\partial ^{2}g}{\partial y^{2}}\left( 1;1\right) $.
+
+\item La fonction $g$ admet-elle un extremum local sur $\mathbb{R}^{2}$ ?
+\end{enumerate}
+
+\section*{EXERCICE 3}
+
+On effectue une suite de lancers d'une pièce de monnaie. On suppose que les r%
+ésultats des lancers sont indépendants et qu'à chaque lancer, la pièce donne
+pile avec la probabilité $p$ ($0<p<1$) et face avec la probabilité $q=1-p$.%
+\newline
+On s'intéresse dans cet exercice à l'apparition de deux piles consécutifs.%
+\newline
+Pour tout entier naturel $n$ non nul, on note $A_{n}$ l'événement :\newline
+\textquotedblleft\ deux piles consécutifs sont réalisés pour la première
+fois aux lancers numéro $n$ et $n+1$ \textquotedblright .\newline
+On définit alors la suite $(a_{n})_{n\in \mathbb{N}}$ des probabilités des év%
+énements $A_{n}$ par :\newline
+Pour tout entier naturel $n$ non nul : $a_{n}=P(A_{n})$ avec la convention $%
+a_{0}=0$.
+
+\subsection*{3.1. Encadrement des racines de l'équation caractéristique.}
+
+On considère la fonction polynomiale $f$ de la variable réelle $x$ définie
+par $f(x)=x^{2}-qx-pq.$
+
+\begin{enumerate}
+\item Montrer que l'équation $f(x)=0$ possède deux racines réelles
+distinctes $r_{1}$ et $r_{2}$ avec $r_{1}<r_{2}$.\newline
+Exprimer $r_{1}+r_{2}$ et $r_{1}\times r_{2}$ en fonction de $p$ et $q$.
+
+\item Calculer $f(1)$, $f(-1)$, $f(0)$.
+
+\item En déduire l'encadrement suivant : $\left\vert r_{1}\right\vert
+<\left\vert r_{2}\right\vert <1.$
+\end{enumerate}
+
+\subsection*{3.2. Équivalent de $a_{n}$ quand $n$ tend vers l'infini.}
+
+\begin{enumerate}
+\item Déterminer $a_{1}$, $a_{2}$ et $a_{3}$ en fonction de $p$ et $q$.
+
+\item En remarquant que l'événement $A_{n+2}$ est réalisé si et seulement si
+:
+
+\begin{itemize}
+\item on a obtenu pile au premier tirage, face au deuxième tirage, et à
+partir de ce moment, $A_{n}$est réalisé
+\end{itemize}
+
+\noindent ou
+
+\begin{itemize}
+\item on a obtenu face au premier tirage, et à partir de ce moment, $%
+A_{n+}{}_{1}$ est réalisé.
+\end{itemize}
+
+\noindent Montrer que l'on a, pour tout entier naturel $n$ : $%
+a_{n+2}-qa_{n+1}-pqa_{n}=0.$
+
+\item Écrire un programme, en langage Pascal, permettant de calculer $a_{n}$
+; l'entier $n$, le réel $p$ étant donnés par l'utilisateur.
+
+\item Montrer que pour tout entier naturel $n\ $; $a_{n}=\dfrac{p^{2}}{%
+r_{2}-r_{1}}((r_{2})^{n}-(r_{1})^{n}).$
+
+\item Donner un équivalent de $a_{n}$ lorsque $n$ tend vers plus l'infini.
+\end{enumerate}
+
+\subsection*{3.3. Expression de $a_{n}$ en fonction de $n$ par une méthode
+matricielle.}
+
+On définit les matrices $A$ et $P$ par : 
+\begin{equation*}
+A=%
+\begin{pmatrix}
+r_{1}+r_{2} & -r_{1}r_{2} \\ 
+1 & 0%
+\end{pmatrix}%
+\quad ;\quad P={{%
+\begin{pmatrix}
+r_{1} & r_{2} \\ 
+1 & 1%
+\end{pmatrix}%
+}}\quad ;\quad I={{%
+\begin{pmatrix}
+1 & 0 \\ 
+0 & 1%
+\end{pmatrix}%
+}};
+\end{equation*}%
+ainsi que les matrices unicolonnes $X_{n}$ tout entier naturel $n$, par : $%
+X_{n}={{%
+\begin{pmatrix}
+a_{n+1} \\ 
+a_{n}%
+\end{pmatrix}%
+}}$.
+
+\begin{enumerate}
+\item Vérifier que pour tout entier naturel $n$ : $X_{n+1}=AX_{n}$.
+
+\item Montrer que les matrices $A-r_{1}I$ et $A-r_{2}I$ ne sont pas
+inversibles.
+
+\item En déduire que $A$ est diagonalisable.
+
+\item Montrer que $P$ est inversible et déterminer $P^{-1}$.
+
+\item Calculer la matrice $D=P^{-1}AP$.\newline
+(Les coefficients de la matrice $D$ seront exprimés en fonction de $r_{1}$et 
+$r_{2}$seulement).
+
+\item Démontrer par récurrence, que pour tout entier naturel $n$ ; $%
+X_{n}=PD^{n}P^{-1}X_{0}.$
+
+\item Retrouver ainsi l'expression de $a_{n}$ en fonction de $r_{1}$, $r_{2}$%
+, $p$ et $n$.
+\end{enumerate}
+
+\subsection*{3.4. Étude du temps d'attente du premier double pile.}
+
+On désigne par $T$ l'application associant à toute suite de lancers
+successifs le numéro du lancer où pour la première fois on obtient un double
+pile. Ainsi, pour tout entier naturel $n$ ; $P(T=n+1)=a_{n}$.
+
+\begin{enumerate}
+\item Montrer que $T$ est une variable aléatoire, c'est-à-dire que : $%
+\sum\limits_{n=1}^{+\infty }P(T=n+1)=1.$
+
+\item Prouver que $T$ admet une espérance $E(T)$, et que : $E(T)=\dfrac{{1+p}%
+}{p^{2}}$.
+\end{enumerate}
+
+\label{fin}
+
+\end{document}

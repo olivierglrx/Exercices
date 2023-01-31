@@ -1,0 +1,613 @@
+\subsection{Matrice, endomorphisme, vp, (Ecricome 2002)}
+\begin{exercice}
+
+Dans l'ensemble $\mathcal{M}_{3}(\mathbb{R})$ des matrices carr\'{e}es
+d'ordre $3$ \`{a} coefficients r\'{e}els, on consid\`{e}re le sous-ensemble $%
+E$ des matrices $M(a,b)$ d\'{e}finies par~: 
+\begin{equation*}
+M(a,b)=\left( 
+\begin{array}{ccc}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}
+\right) .
+\end{equation*}
+Ainsi~: 
+\begin{equation*}
+E=\left\{ M(a,b)\quad a,b\in \mathbb{R}\right\} .
+\end{equation*}
+On note $f_{a,b}$ l'endomorphisme de $\mathbb{R}^{3}$ repr\'{e}sent\'{e} par
+la matrice $M(a,b)$ dans la base canonique $\mathcal{B}=(e_{1},e_{2},e_{3})$
+de $\mathbb{R}^{3}$.
+
+\begin{enumerate}
+
+
+\item Structure de $E$
+
+
+\begin{enumerate}
+\item Montrer que $E$ est un sous-espace vectoriel de $\mathcal{M}_{3}(%
+\mathbb{R})$.
+
+\item Donner une base de $E$, ainsi que sa dimension.
+\end{enumerate}
+
+
+
+
+
+
+
+\item \'Etude d'un cas particulier.
+
+On pose $A=M(1,0)$.
+
+\begin{enumerate}
+\item Calculer $A^{2}$. En d\'{e}duire que $A$ est une matrice inversible et
+exprimer $A^{-1}$ en fonction de $A$.
+
+\item D\'{e}terminer les valeurs propres de $A$.
+
+\item Trouver une base de $\mathbb{R}^{3}$ dans laquelle la matrice de $%
+f_{1,0}$ est~: 
+\begin{equation*}
+\left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & -1%
+\end{array}
+\right) .
+\end{equation*}
+\end{enumerate}
+
+\item Diagonalisation des \'{e}l\'{e}ments de $E$ et application.
+
+On consid\`ere les vecteurs de $\mathbb{R}^3$ suivants~: 
+\begin{equation*}
+\vec{u}=(1,1,1), \quad \vec{v}=(1,-1,0), \quad \vec{w}=(1,1,-2).
+\end{equation*}
+
+\begin{enumerate}
+\item Justifier que les matrices de l'ensemble $E$ sont diagonalisables.
+
+\item Montrer que $\mathcal{C}=\left( \vec{u},\vec{v},\vec{w}\right) $ est
+une base de $\mathbb{R}^{3}$.
+
+\item On note $P$ la matrice de passage de la base $\mathcal{B}$ \`{a} la
+base $\mathcal{C}$. \'{E}crire $P$.
+
+\item D\'{e}terminer $P^{-1}$.
+
+\item Exprimer les vecteurs $f_{a,b}\left( \vec{u}\right) $, $f_{a,b}\left( 
+\vec{v}\right) $, $f_{a,b}\left( \vec{w}\right) $ en fonction de $\vec{u}$, $%
+\vec{v}$, $\vec{w}$.
+
+\item En d\'{e}duire l'expression de la matrice $D_{a,b}$ de $f_{a,b}$ dans
+la base $\mathcal{C}$.
+
+\item Justifier l'\'{e}galit\'{e}~: 
+\begin{equation*}
+P^{-1}M_{a,b}P=D_{a,b}.
+\end{equation*}
+
+\item Donner une condition n\'{e}cessaire et suffisante portant sur $a$ et $%
+b $ pour que $D_{a,b}$ soit inversible.
+
+\item Cette condition \'{e}tant r\'{e}alis\'{e}e, d\'{e}terminer la matrice
+inverse de $D_{a,b}$.
+
+\item Donner une condition n\'{e}cessaire et suffisante portant sur $a$ et $%
+b $ pour que $M_{a,b}$ soit inversible.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{exercice}
+
+
+
+
+
+\begin{correction}
+
+Dans l'ensemble $\mathcal{M}_{3}(\mathbb{R})$ des matrices carr\'{e}es
+d'ordre $3$ \`{a} coefficients r\'{e}els, on consid\`{e}re le sous-ensemble $%
+E$ des matrices $M(a,b)$ d\'{e}finies par~: 
+\begin{equation*}
+M(a,b)=\left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}
+\right)
+\end{equation*}
+Ainsi~: 
+\begin{equation*}
+E=\left\{ M(a,b)\quad a,b\in \mathbb{R}\right\} .
+\end{equation*}
+On note $f_{a,b}$ l'endomorphisme de $\mathbb{R}^{3}$ repr\'{e}sent\'{e} par
+la matrice $M(a,b)$ dans la base canonique $\mathcal{B}=(e_{1},e_{2},e_{3})$
+de $\mathbb{R}^{3}$.
+
+\begin{enumerate}
+\item Structure de $E$. 
+\begin{enumerate}
+\item On a $E=\left\{ \left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}
+\right) /a,b\in \mathbb{R}\right\} =\left\{ a\left( 
+\begin{array}{rrr}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) +b\left( 
+\begin{array}{rrr}
+1 & 0 & 1 \\ 
+0 & 1 & 1 \\ 
+1 & 1 & 0%
+\end{array}
+\right) /a,b\in \mathbb{R}\right\} $
+
+on reconna\^{\i}t $\left( 
+\begin{array}{rrr}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\ 
+0 & 0 & 1%
+\end{array}%
+\right) =M\left( 1,0\right) $ et $\left( 
+\begin{array}{rrr}
+1 & 0 & 1 \\ 
+0 & 1 & 1 \\ 
+1 & 1 & 0%
+\end{array}%
+\right) =M\left( 0,1\right) $
+
+Donc $E=Vect\left( M\left( 1,0\right) ,M\left( 0,1\right) \right) $ sous
+espace de $\mathcal{M}_{3}(\mathbb{R})$.
+
+\item On a du m\^{e}me coup pour famille g\'{e}n\'{e}ratrice : $\left(
+M\left( 1,0\right) ,M\left( 0,1\right) \right) $
+
+Pour montrer qu'elle est libre on montre que \textbf{si} une combinaison lin%
+\'{e}aire est nulle \textbf{alors }les coefficients sont nuls :
+
+Soient $a$ et $b$ deux r\'{e}els. Si $aM\left( 1,0\right) +bM\left(
+0,1\right) =0$ alors $\left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}
+\right) =\left( 
+\begin{array}{rrr}
+0 & 0 & 0 \\ 
+0 & 0 & 0 \\ 
+0 & 0 & 0%
+\end{array}
+\right) $,
+
+donc $a=0$ et $b=0.$
+
+Cette famille est donc libre et g\'{e}n\'{e}ratrice. C'est donc une base de $%
+E$ qui est donc de dimension 2.
+\end{enumerate}
+
+\item \'Etude d'un cas particulier.\\
+
+On pose $A=M(1,0)$.
+
+\begin{enumerate}
+\item $A^{2}=\left( 
+\begin{array}{rrr}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) \left( 
+\begin{array}{rrr}
+0 & 1 & 0 \\ 
+1 & 0 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) =\allowbreak \left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) =I$
+
+Donc $A\cdot A=I$ (et $A\cdot A=I$) $A$ est inversible et son inverse est $%
+A^{-1}=A$
+
+\item On peut utiliser la relation pr\'{e}c\'{e}dente pour en d\'{e}duire
+les seules valeurs propres \textbf{possibles} de $A$ :
+
+\begin{itemize}
+\item \textbf{Si }$\alpha $ est une valeur propre de $A$ et $X$ une colonne
+propre (non nulle) alors $A^{2}X=A\left( AX\right) =\alpha AX=\alpha ^{2}X$
+et comme $A^{2}=I,$ on a aussi $A^{2}X=X$ donc $\alpha ^{2}X=X$ et comme $%
+X\neq 0$ on a $\alpha ^{2}=1.$ \textbf{Alors }$\alpha =1$ ou $\alpha =-1$
+
+\item \textbf{Est-ce que }1 est valeur propre de $A?$ (on aura besoi du sous
+espace propre ensuite). Avec $X=\left( 
+\begin{array}{c}
+x \\ 
+y \\ 
+z%
+\end{array}%
+\right) $
+
+$\left( A-I\right) \cdot X=0\Longleftrightarrow \left\{ 
+\begin{array}{c}
+-x+y=0 \\ 
+x-y=0 \\ 
+0=0%
+\end{array}%
+\right. \Leftrightarrow x=y$ donc $1$ est bien valeur propre et a pour sous
+espace propre associ\'{e} : \newline
+$\mathcal{S}_{1}=\left\{ \left( y,y,z\right) \ /\ y,z\in \mathbb{R}\right\} =%
+\mathrm{Vect}\left( \left( 1,1,0\right) ,\left( 0,0,1\right) \right) $
+
+Ces \textbf{deux }vecteurs sont non colin\'{e}aires. Ils forment donc une
+famille libre.
+
+C'est donc une famille libre et g\'{e}n\'{e}ratrice i.e. une base du sous
+espace propre.
+
+\item De la m\^{e}me fa\c{c}on \textbf{est-ce que }-1 est valeur propre de $%
+A?$
+
+$A\cdot X=-1\cdot X$ $\Leftrightarrow \left\{ 
+\begin{array}{c}
+y=-x \\ 
+x=-y \\ 
+z=-z%
+\end{array}%
+\right. \Leftrightarrow \left\{ 
+\begin{array}{c}
+y=-x \\ 
+z=0%
+\end{array}%
+\right. $
+
+L'ensemble des solutions est $\mathcal{S}_{-1}=\left\{ \left( x,-x,0\right)
+\ /\ x\in \mathbb{R}\right\} =\mathrm{Vect}\left( \left( 1,-1,0\right)
+\right) $
+
+Donc $-1$ est bien valeur propre et le sous espace propre associ\'{e} \`{a}
+-1 est engendr\'{e} par $\left( \left( 1,-1,0\right) \right) $ qui en est
+donc une base .
+
+\item Ce sont donc les deux seules valeurs propres de $A$
+\end{itemize}
+
+\item Soient $\vec{i}=\left( 1,1,0\right) ,\quad \vec{j}=\left( 0,0,1\right) 
+$ et $\vec{k}=\left( 1,-1,0\right) .$
+
+Ils ont pour coordonn\'{e}es dans la base canonique $\left( 1,1,0\right)
+,\quad \left( 0,0,1\right) $ et $\left( 1,-1,0\right) $
+
+Comme $A$ est la matrice de $f_{1,0}$ dans la base $\mathcal{B}$ les
+vecteurs $\left( \vec{i},\vec{j}\right) $ forment une base du sous espace
+propre de $f_{1,0}$ associ\'{e}s \`{a} la valeur propre 1 et le vecteur $%
+\left( \vec{k}\right) $ est une base du sous espace propre associ\'{e} \`{a}
+la valeur propre $-1$.
+
+Comme la somme des dimensions des sous espaces propres est \'{e}gal \`{a} 3
+(dimension de $\mathbb{R}^{3}$ ) la concat\'{e}nation $\left( \vec{i},\vec{j}%
+,\vec{k}\right) $ de ces bases forme une base de $\mathbb{R}^{3}$.
+
+Et la matrice de $f_{1,0}$ dans cette base est $\left( 
+\begin{array}{rrr}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & -1%
+\end{array}%
+\right) $
+\end{enumerate}
+
+
+
+\item Diagonalisation des \'el\'ements de $E$ et application.
+
+On consid\`ere les vecteurs de $\mathbb{R}^3$ suivants~: 
+\begin{equation*}
+\vec{u}=(1,1,1), \quad \vec{v}=(1,-1,0), \quad \vec{w}=(1,1,-2).
+\end{equation*}
+
+
+\begin{enumerate}
+\item Les matrices de $E$ sont sym\'{e}triques donc diagonalisables.
+
+\item Comme $\mathcal{C}=\left( \vec{u},\vec{v},\vec{w}\right) $ a 3 \'{e}l%
+\'{e}ments, il suffit de montrer que la famille est libre pour montrer
+qu'elle est une base :
+
+\textbf{Si }$x\vec{u}+y\vec{v}+z\vec{w}=\vec{0}$ \textbf{alors} $\dots
+x=y=z=0$
+
+\textbf{Mais comme on demande ensuite la matrice inverse} de la matrice de
+passage, il est plus \'{e}conome de tout faire en m\^{e}me temps.
+
+$\left( \vec{u},\vec{v},\vec{w}\right) $ est une base si et seulement si la
+matrice de leurs coordonn\'{e}es (en colonne) est inversible.
+
+Soit $P=\left( 
+\begin{array}{rrr}
+1 & 1 & 1 \\ 
+1 & -1 & 1 \\ 
+1 & 0 & -2%
+\end{array}
+\right) $ cette matrice. On applique la m\'{e}thode de Gauss
+
+$\left( \left. 
+\begin{array}{rrr}
+1 & 1 & 1 \\ 
+1 & -1 & 1 \\ 
+1 & 0 & -2%
+\end{array}
+\right| 
+\begin{array}{rrr}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) 
+\begin{array}{r}
+L_{1} \\ 
+L_{2}-L_{1} \\ 
+L_{3}-L_{1}%
+\end{array}
+\Leftrightarrow \left( \left. 
+\begin{array}{rrr}
+1 & 1 & 1 \\ 
+0 & -2 & 0 \\ 
+0 & -1 & -3%
+\end{array}
+\right| 
+\begin{array}{rrr}
+1 & 0 & 0 \\ 
+-1 & 1 & 0 \\ 
+-1 & 0 & 1%
+\end{array}
+\right) 
+\begin{array}{c}
+L_{1}+L_{2}/2 \\ 
+-L_{2}/2 \\ 
+L_{3}-L_{2}/2%
+\end{array}
+$
+
+$\Leftrightarrow \left( \left. 
+\begin{array}{rrr}
+1 & 0 & 1 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & -3%
+\end{array}
+\right| 
+\begin{array}{rrr}
+1/2 & 1/2 & 0 \\ 
+1/2 & -1/2 & 0 \\ 
+-1/2 & -1/2 & 1%
+\end{array}
+\right) 
+\begin{array}{c}
+L_{1}+L_{3}/3 \\ 
+L_{2} \\ 
+-L_{3}/3%
+\end{array}
+\Leftrightarrow \left( \left. 
+\begin{array}{rrr}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right| 
+\begin{array}{rrr}
+1/3 & 1/3 & 1/3 \\ 
+1/2 & -1/2 & 0 \\ 
+1/6 & 1/6 & -1/3%
+\end{array}
+\right) 
+\begin{array}{c}
+L_{1}+L_{3}/3 \\ 
+L_{2} \\ 
+-L_{3}/3%
+\end{array}
+$
+
+Donc $P$ est inversible et $P^{-1}=\left( 
+\begin{array}{rrr}
+1/3 & 1/3 & 1/3 \\ 
+1/2 & -1/2 & 0 \\ 
+1/6 & 1/6 & -1/3%
+\end{array}
+\right) $
+
+\textbf{Un raccourci} de la r\'{e}daction (le calcul d'inverse est \`{a}
+faire au brouillon) est de constater (sans expliquer d'o\`{u} vient cette
+matrice) que :
+
+$\left( 
+\begin{array}{rrr}
+1 & 1 & 1 \\ 
+1 & -1 & 1 \\ 
+1 & 0 & -2%
+\end{array}
+\right) \left( 
+\begin{array}{rrr}
+1/3 & 1/3 & 1/3 \\ 
+1/2 & -1/2 & 0 \\ 
+1/6 & 1/6 & -1/3%
+\end{array}
+\right) =\allowbreak \left( 
+\begin{array}{ccc}
+1 & 0 & 0 \\ 
+0 & 1 & 0 \\ 
+0 & 0 & 1%
+\end{array}
+\right) $
+
+Finalement $\left( \vec{u},\vec{v},\vec{w}\right) $ est une base de $\mathbb{%
+R}^{3}$
+
+\item La matrice de passage de la base $\mathcal{B}$ \`{a} la base $\mathcal{%
+C}$ est form\'{e}e par les coordonn\'{e}es (en colonne) des vecteurs de $%
+\mathcal{C}$ dans la base $\mathcal{B}.$ C'est donc la matrice $P$ \'{e}%
+crite ci-dessus.
+
+\item $P^{-1}=\left( 
+\begin{array}{rrr}
+1/3 & 1/3 & 1/3 \\ 
+1/2 & -1/2 & 0 \\ 
+1/6 & 1/6 & -1/3%
+\end{array}
+\right) $
+
+\item On pourrait utiliser la formule de changement de base pour obtenir les
+coordonn\'{e}es des images de $\vec{u}$, $\vec{v}$, $\vec{w}$ dans la base $%
+\mathcal{C}.$
+
+Mais comme ces vecteurs ne nous ont pas \'{e}t\'{e}s donn\'{e}s au hasard,
+on peut tenter directement \`{a} partir de leurs coordonn\'{e}es dans la
+base canonique et de la matrice de $f_{a,b}$ dans cette m\^{e}me base.
+
+$\vec{u}$ a pour coordonn\'{e}es $\left( 1,1,1\right) $ donc $f_{a,b}\left( 
+\vec{u}\right) $ a pour coordonn\'{e}es dans $\mathcal{B}$ : \newline
+$\left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}%
+\right) \left( 
+\begin{array}{c}
+1 \\ 
+1 \\ 
+1%
+\end{array}%
+\right) =\allowbreak \left( 
+\begin{array}{c}
+2b+a \\ 
+2b+a \\ 
+2b+a%
+\end{array}%
+\right) =\left( 2b+a\right) \left( 
+\begin{array}{c}
+1 \\ 
+1 \\ 
+1%
+\end{array}%
+\right) $
+
+Donc $f_{a,b}\left( \vec{u}\right) =\left( 2b+a\right) \vec{u}$ et de m\^{e}%
+me
+
+$f_{a,b}\left( \vec{v}\right) $ a pour coordonn\'{e}es : $\left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}%
+\right) \left( 
+\begin{array}{r}
+1 \\ 
+-1 \\ 
+0%
+\end{array}%
+\right) =\left( 
+\begin{array}{c}
+b-a \\ 
+a-b \\ 
+0%
+\end{array}%
+\right) =\left( b-a\right) \left( 
+\begin{array}{r}
+1 \\ 
+-1 \\ 
+0%
+\end{array}%
+\right) $
+
+donc $f_{a,b}\left( \vec{v}\right) =$ $\left( b-a\right) \vec{v}$
+
+Et enfin $\left( 
+\begin{array}{rrr}
+b & a & b \\ 
+a & b & b \\ 
+b & b & a%
+\end{array}%
+\right) \left( 
+\begin{array}{r}
+1 \\ 
+1 \\ 
+-2%
+\end{array}%
+\right) =\left( 
+\begin{array}{c}
+a-b \\ 
+a-b \\ 
+2b-2a%
+\end{array}%
+\right) =\left( a-b\right) \left( 
+\begin{array}{r}
+1 \\ 
+1 \\ 
+-2%
+\end{array}%
+\right) $ donc $f_{a,b}\left( \vec{w}\right) =$ $\left( a-b\right) \vec{w}$
+
+\item La matrice de $f_{a,b}$ dans la base $\mathcal{C}$. est donc : $%
+D_{a,b}=\left( 
+\begin{array}{ccc}
+2b+a & 0 & 0 \\ 
+0 & b-a & 0 \\ 
+0 & 0 & a-b%
+\end{array}%
+\right) $
+
+\item $P$ est la matrice de passage de $\mathcal{B}$ dans $\mathcal{C}.$ Son
+inverse $P^{-1}$ est donc la matrice de passage de $\mathcal{C}$ dans $%
+\mathcal{B}.$ Donc la matrice de $f_{a,b}$ dans la base $\mathcal{C}$
+s'obtient \`{a} partir de sa matrice $M_{a,b}$ dans la base $\mathcal{B}$
+par : 
+\begin{equation*}
+P^{-1}M_{a,b}P=D_{a,b}.
+\end{equation*}
+
+\item $D_{a,b}$ \'{e}tant une matrice diagonale, elle est inversible si et
+seulement si les coefficients de la diagonale sont tous non nuls.
+
+Donc si et seulement si $a\neq -2b$ et $a\neq b$
+
+\item On a alors comme $D_{a,b}$ est diagonale, son inverse en inversant les
+coefficients de la diagonale :
+
+\begin{equation*}
+D_{a,b}^{-1}=\left( 
+\begin{array}{ccc}
+1/\left( 2b+a\right) & 0 & 0 \\ 
+0 & 1/\left( b-a\right) & 0 \\ 
+0 & 0 & 1/\left( a-b\right)%
+\end{array}%
+\right)
+\end{equation*}
+
+\item Les deux matrices $M_{a,b}$ et $D_{a,b}\acute{e}\tan t$ semblables,
+elles sont simultan\'{e}ment inversible. Donc $M_{a,b}$ est inversible si et
+seulement si $a\neq -2b$ et $a\neq b.$
+\end{enumerate}
+
+
+\end{enumerate}
+
+\end{correction}

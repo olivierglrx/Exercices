@@ -1,0 +1,58 @@
+
+\begin{correction}   \;
+Dans cet exercice, je ne d\'etaille pas forc\'ement tous les calculs, je ne donne que la m\'ethode g\'en\'erale ou des indications.
+\begin{enumerate} 
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=-18}$:}
+\fbox{$z=18e^{i\pi}$}. On a en effet commenc\'e par calculer le module qui vaut $18$, puis on a mis en facteur le module et on a mis $-1$ sous forme exponentielle.
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=-7i}$:}
+$\fbox{$z=7e^{-i\frac{\pi}{2}}.$}$ On a en effet commenc\'e par calculer le module qui vaut $7$. Puis on a mis en facteur le module et on a mis $-i$ sous forme exponentielle.
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=1+i   }$:}
+$\fbox{$z=\sqrt{2}e^{i\frac{\pi}{4}}.$}$ On a calcul\'e le module qui vaut $\sqrt{2}$ et on l'a mis en facteur.
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z= (1+i)^5  }$:}
+On commence par mettre $1+i$ sous forme exponentielle et on obtient que $1+i=\sqrt{2}e^{i\frac{\pi}{4}}$. Ainsi on obtient que $(1+i)^5=(\sqrt{2})^5e^{i\frac{5\pi}{4}}=4\sqrt{2}e^{i\frac{5\pi}{4}}$. Ainsi on a: $\fbox{$z=4\sqrt{2}e^{i\frac{5\pi}{4}}.$}$
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z= \ddp\frac{1+i\sqrt{3}}{\sqrt{3}-i}  }$:}
+$\fbox{$z=e^{i\frac{\pi}{2}}.$}$ Ici on peut par exemple mettre sous forme exponentielle d'un c\^{o}t\'e le num\'erateur et de l'autre c\^{o}t\'e le d\'enominateur. Puis on utilise les propri\'et\'es sur les quotients d'exponentielles.
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=-2e^{i\frac{\pi}{3}}e^{-i\frac{\pi}{4}}   }$:}
+Ici le calcul du module donne $|z|=2$ car pour tout $\theta\in\R$: $|e^{i\theta}|=1$. On a donc: 
+$z=2\left\lbrack    -1\times e^{\frac{i\pi}{3}}\times  e^{-\frac{i\pi}{4}}\right\rbrack=2 e^{i\frac{13\pi}{12}}$. Ainsi on a: $\fbox{ $z=2 e^{i\frac{13\pi}{12}}.$  }$
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z= -10e^{i\pi}\left(\ddp\frac{2e^{i\frac{5\pi}{8}}}{e^{i\frac{7\pi}{4}}}\right)^6  }$:}
+M\^{e}me type de calcul qui utilise les propri\'et\'es de l'exponentielle. Ici le module vaut $10\times 2^6=640$ et on obtient que $z=640e^{i\frac{-27\pi}{4}}$. On simplifie alors $e^{i\frac{-27\pi}{4}}$ en remarquant par exemple que 
+$\ddp\frac{-27\pi}{4}=\ddp\frac{-28\pi+\pi}{4}=-7\pi+\ddp\frac{\pi}{4}$. Ainsi on a: $e^{i\frac{-27\pi}{4}}=e^{i(\pi+\frac{\pi}{4})}=e^{i\frac{5\pi}{4}}$. Ainsi on a: $\fbox{$ z=640e^{i\frac{5\pi}{4}} .$}$
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=  -5\left(\cos{\left(\ddp\frac{2\pi}{5}\right)} +i\sin{\left(\ddp\frac{2\pi}{5}\right)}  \right) }$:}
+$\fbox{$z=5e^{i(\frac{2\pi}{5}+\pi)}=5e^{\frac{7i\pi}{5}}.$}$ En effet on a: $z=-5e^{i\frac{2\pi}{5}}=5e^{i\pi}e^{i\frac{2\pi}{5}}$.
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z= \ddp\frac{1}{\frac{i}{2}-\frac{1}{2\sqrt{3}}}  }$:}
+Mettons tout d'abord sous forme exponentielle $Z=\ddp\frac{i}{2}-\ddp\frac{1}{2\sqrt{3}}$.
+On a $|Z|=\ddp\frac{1}{\sqrt{3}}$, ainsi,
+$$Z=\ddp\frac{1}{\sqrt{3}}\left(-\frac{1}{2}+i\frac{\sqrt{3}}{2}   \right)=\ddp\frac{1}{\sqrt{3}}e^{\frac{2i\pi}{3}}=\ddp\frac{1}{\sqrt{3}}j.$$
+Ainsi comme $z=\ddp\frac{1}{Z}$, on obtient: $\fbox{$z=\sqrt{3}e^{-\frac{2i\pi}{3}}=\sqrt{3}j^2.$}$
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z= \left( \ddp\frac{1+i\sqrt{3}}{1-i}  \right)^{20}   }$:}
+On commence par mettre ce qui est \`{a} l'int\'erieur de la parenth\`{e}se sous forme exponentielle. Comme c'est un quotient, on met sous forme exponentielle de fa\c{c}on s\'epar\'ee le num\'erateur et le d\'enominateur et on obtient que: $\ddp\frac{1+i\sqrt{3}}{1-i}=\ddp\frac{  2e^{i\frac{\pi}{3}} }{ \sqrt{2}e^{-i\frac{\pi}{4}}   }=\sqrt{2}e^{i\frac{7\pi}{12}}$. Ainsi on obtient : $z=\left(  \sqrt{2}e^{i\frac{7\pi}{12}} \right)^{20}=2^{10}e^{i\frac{140\pi}{12}}=2^{10}e^{i\frac{35\pi}{3}}=2^{10} e^{i\pi(10+\frac{5}{3})}=2^{10}\times e^{10i\pi}\times e^{i\frac{5\pi}{3}}=2^{10}e^{i\frac{5\pi}{3}}$. Ainsi on a: $\fbox{$z=2^{10}e^{i\frac{5\pi}{3}}.$}$
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=  \ddp\frac{1}{1+i\tan{\theta}},\ \theta\not= \ddp\frac{\pi}{2}+k\pi,\ k\in\Z }$:}
+Commen\c{c}ons par calculer le module. Le formulaire de trigonom\'etrie donne $|z|=|\cos{\theta}|$. Il faut donc discuter selon le signe du cosinus.
+\begin{itemize}
+ \item[$\bullet$] Si $\cos{\theta}\geq 0$, c'est-\`a-dire si $\exists k\in\Z,\ -\ddp\frac{\pi}{2}+2k\pi\leq \theta
+\leq \ddp\frac{\pi}{2}+2k\pi$,alors 
+$$z =\cos{\theta}\times\ddp\frac{1}{\cos{\theta}+i\sin{\theta}} = \cos{\theta}e^{-i\theta}.$$
+\item[$\bullet$] Si $\cos{\theta}\leq 0$, c'est-\`a-dire si $\exists k\in\Z,\ \ddp\frac{\pi}{2}+2k\pi\leq \theta
+\leq \ddp\frac{3\pi}{2}+2k\pi$,alors 
+$$z =-\cos{\theta}\times\ddp\frac{-1}{\cos{\theta}+i\sin{\theta}}
+= -\cos{\theta}e^{i\pi}e^{-i\theta}
+= -\cos{\theta}e^{i\left( \pi-\theta \right)}.$$
+\end{itemize}
+%--
+\item \textbf{Mettre sous forme exponentielle $\mathbf{z=\left( \ddp\frac{1+i\tan{(\theta)}}{1-i\tan{(\theta)}}  \right)^n,\ n\in\N,\ \theta\not= \ddp\frac{\pi}{2}+k\pi,\ k\in\Z   }$:}
+Ici plusieurs m\'ethodes sont possibles. On peut par exemple commencer par simplifier le quotient $\ddp\frac{1+i\tan{(\theta)}}{1-i\tan{(\theta)}}$. On obtient en utilisant la d\'efinition de la tangente: 
+$$\ddp\frac{1+i\tan{(\theta)}}{1-i\tan{(\theta)}}=\ddp\frac{ \frac{\cos{(\theta)} +i\sin{(\theta)}  }{\cos{(\theta)}}  }{   \frac{\cos{(\theta)} -i\sin{(\theta)}  }{\cos{(\theta)}}   }=\ddp\frac{\cos{(\theta)} +i\sin{(\theta)} }{ \cos{(\theta)} -i\sin{(\theta)} }.$$
+Il suffit alors de remarquer que: $\cos{(\theta)} +i\sin{(\theta)} =e^{i\theta}$ et que $\cos{(\theta)} -i\sin{(\theta)} =\cos{(-\theta)} +i\sin{(-\theta)} =e^{-i\theta}$ en utilisant la d\'efinition de $e^{i\theta}$, la parit\'e du cosinus et l'imparit\'e du sinus. Ainsi on obtient que: $\ddp\frac{1+i\tan{(\theta)}}{1-i\tan{(\theta)}}=\ddp\frac{e^{i\theta}}{e^{-i\theta}}=e^{2i\theta}$. En passant \`{a} la puissance $n$, on obtient que: $\fbox{$z=e^{2in\theta}.$}$
+\end{enumerate}
+\end{correction}

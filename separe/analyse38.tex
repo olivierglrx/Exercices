@@ -1,0 +1,84 @@
+\subsection{Calcul de $\sum_{k=0}^n k^4$ }
+
+\begin{exercice}
+\begin{enumerate}
+\item Rappeler  la valeur  de $ R_3=\ddp \sum_{k=0}^n k^3$ en fonction de $n\in \N$
+\item Soit $k\in \N$, développer $(k+1)^5 -k^5$. 
+\item A l'aide de la  somme téléscopique  $\sum_{k=0}^n(k+1)^5 -k^5$ donner la valeur de 
+$R_4= \ddp \sum_{k=0}^n k^4$  en fonction de $n\in \N$.  (On pourra garder une formule développée, malgré ce que j'ai pu dire en classe... ) 
+\item Soit $x\in \N$, on note $R_x(n) =  \ddp \sum_{k=0}^n k^x$
+Ecrire une fonction Python qui prend en paramètre $n\in \N $ et $x\in \N $  et rend la valeur de $R_x(n)$
+\item Soit $x\in \N$, on note $R_x(n) =  \ddp \sum_{k=0}^n k^x$. 
+Ecrire une fonction Python qui prend en paramètre $n\in \N $ et $x\in \N $, qui affiche un message d'erreur si $x$ n'est pas un entier positif et rend la valeur de $R_x(n)$ sinon. 
+
+\item Montrer que les suites $ a_n=\ddp \sum_{k=1}^n \frac{1}{k^2}$  et $b_n= a_n + \frac{1}{n}$ sont adjacentes. 
+
+\item  Ecrire une fonction   Python qui prend en paramètre $e>0$ et qui rend le premier rang $n_0\in \N$ tel que $\left|a_{n_0}-b_{n_0}\right| \leq e$
+et la valeur de $a_{n_0}$
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item $R_3 =\left(\frac{n(n+1)}{2}\right)^2$
+\item $(k+1)^5-k^5 = 5k^4 +10k^3+10k^2 +5k +1 $
+\item On a d'une part 
+$$\sum_{k=0}^n(k+1)^5 -k^5 = (n+1)^5$$
+et d'autre part 
+\begin{align*}
+\sum_{k=0}^n(k+1)^5 -k^5  &=\sum_{k=0}^n 5k^4 +10k^3+10k^2 +5k +1 \\
+											&= 5 R_4  +10 R_3 +10 \frac{n(n+1)(2n+1)}{6} +5 \frac{n(n+1)}{2}+ (n+1)
+\end{align*}
+
+Donc 
+$$R_4 =\frac{1}{5} \left( (n+1)^5- 10\left(\frac{n(n+1)}{2}\right)^2 -10  \frac{n(n+1)(2n+1)}{6}  - 5 \frac{n(n+1)}{2}-(n+1) \right)$$
+On trouve à la fin des calculs 
+$$R_4 = \frac{n}{30} (6n^4+15n^3 +10n^2-1)$$
+
+\item 
+\begin{lstlisting}
+def R(x,n):
+  if x<0 or type(x)!=int: #on teste que x est bien positif et entier
+    print('erreur')
+  else:
+    R=0
+    for k in range(n+1): # on fait une boucle for pour obtenir la somme
+      R=R+k**x #x est l'exposant, k l'indice de somme 
+  return(R) #on indente le return au niveau du if...else et pas au 
+  				#niveau de la boucle for. 
+   	
+
+\end{lstlisting}
+
+\item Regardons la monotonie de $\suite{a}$ et $\suite{b}$. On a pour tout $n\in \N$
+$$a_{n+1} -a_{n}= \frac{1}{(n+1)^2}>0$$ 
+donc $\suite{a}$ est  croissante. 
+\begin{align*}
+b_{n+1} -b_{n} &= a_{n+1} +\frac{1}{n+1}-a_{n}+\frac{1}{n}\\
+						&= \frac{1}{(n+1)^2} +\frac{1}{n+1}+\frac{1}{n}\\
+						&= \frac{n +n(n+1)-(n+1)^2}{n(n+1)^2}\\
+						&= \frac{-1}{n(n+1)^2} <0
+\end{align*}
+Donc la suite $\suite{b}$ est décroissante. 
+
+Enfin  $a_n-b_n= \frac{-1}{n}$, et donc $\lim_{n\tv+\infty} a_n-b_n =0$. 
+
+Ainsi les suites $\suite{a}$ et $\suite{b}$ sont adjacentes. 
+
+\item 
+\begin{lstlisting}
+from math import abs
+def limite(e):   # fonction qui prend en argument le parametre e
+   n=0   #on initialise la valeur de n 
+   a=1   #on initialise la valeur de a_0
+   b=2   #on initialise la valeur de b_0
+  
+   while abs(a-b) >e:   #tant que la difference est plus grande que e
+      n+=1    #on actualise la valeur de n
+      a=a+1/(n**2)     #on actualise la valeur de a_n
+      b=a+1/(n)     #on actualise la valeur de b_n
+   return(n,a ) 
+    
+\end{lstlisting}
+\end{enumerate}
+\end{correction}

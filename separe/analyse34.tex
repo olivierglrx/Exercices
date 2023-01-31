@@ -1,0 +1,104 @@
+\subsection{Partie Entière}
+
+
+\vspace{0.5cm}
+%\footnote{$http://math1a.bcpsthoche.fr/docs/DS_1516.pdf$}
+\begin{exercice}
+On considère l'équation suivante d'inconnue $x\in \R$:
+\begin{equation}\tag{$E$}
+\floor{2x - \sqrt{5x-1}}=0
+\end{equation}
+\begin{enumerate}
+\item Déterminer le domaine de définition de $E$.
+\item  Pour tout $a\in \R$, rappeler un encadrement de la partie entière  de $a$ en fonction de $a$. 
+\item Montrer que résoudre $(E)$ revient à résoudre deux inéquations qu'on déterminera. 
+\item Résoudre les deux équations obtenues à la question précédente. 
+\item Résoudre $(E)$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item La fonction partie entière est définie sur $\R$. La fonction racine carrée est définie sur $\R_+$ donc 
+l'expression $\floor{2x - \sqrt{5x-1}} $ pour tout $x$ tel que $5x-1\geq0$. 
+\begin{center}
+\fbox{L'équation est définie pour $x\geq \frac{1}{5}$. }
+\end{center} 
+
+\item Cf cours. Par définition, pour tout $a\in \R$, $\floor{a}\leq a <\floor{a}+1$ donc 
+
+\begin{center}
+\fbox{Pour tout $a\in \R$, $a-1 < \floor{a} \leq a$. }
+\end{center} 
+
+\item On a pour tout $y\in \R$, $\floor{y}=0$ si et seulement si $0\leq y <1$. Donc, résoudre E revient à résoudre 
+
+
+\begin{center}
+
+$\boxed{ 
+\left\{
+\begin{array}{c}
+2x-\sqrt{5x-1} <1 \quad (I_1)\\
+2x-\sqrt{5x-1} \geq 0  \quad (I_2)
+\end{array}\right.
+}$
+
+\end{center} 
+
+\item  Résolvons $(I_1)$ : 
+\begin{equation*}
+2x -\sqrt{5x-1}<1\quad \Longleftrightarrow \quad  2x-1 < \sqrt{5x-1} 
+\end{equation*}
+Si \underline{$2x-1<0$ et $x\geq \frac{1}{5}$}, $x$ est solution de $I_1$. Remarquons que $2x-1<0$ et $x\geq \frac{1}{5}$ se simplifie en $x\in [\frac{1}{5}, \frac{1}{2}[$.
+
+
+Si \underline{$2x-1\geq 0$ et $x\geq \frac{1}{5}$}, $(I_1)$ est équivalente à 
+$$4x^2-4x+1 < 5x-1 \quad \Longleftrightarrow \quad  4x^2-9x+2< 0 $$ 
+Le discrimant de $4x^2-9x+2$ vaut $\Delta= 81 -32= 49$.  \\
+Les racines de $4x^2-9x+2$ valent donc 
+$$r_1 = \frac{9+7}{8}=2 \quad \text{ et } \quad r_2= \frac{9-7}{8}=\frac{1}{4}$$.\\
+Donc $4x^2-9x+2 = 4(x-2)(x-\frac{1}{4})$.\\
+Le polynôme $4x^2-9x+2 $ est donc strictement négatif sur $ U_1 =] \frac{1}{4},2[. $
+Sous la condition ($2x-1\geq 0$ et $x\geq \frac{1}{5}$), les solutions de $(I_1)$ sont donc 
+$S= [\frac{1}{2}, 2[. $
+
+En conclusion l'ensemble des solutions de $(I_1)$ est 
+$$\boxed{ 
+\cS_1 = \Big[\frac{1}{5}, \frac{1}{2}\Big[\cup  \Big[\frac{1}{2}, 2\Big[ = \Big[\frac{1}{5}, 2\Big[.$$
+}$$
+
+
+
+\item  Résolvons $(I_2)$ : 
+\begin{equation*}
+2x -\sqrt{5x-1}\geq 0\quad \Longleftrightarrow \quad  2x\geq  \sqrt{5x-1} 
+\end{equation*}
+Si \underline{$2x<0$ et $x\geq \frac{1}{5}$}, $x$ n'est pas solution de $I_2$, car $ \sqrt{5x-1} \geq 0$. 
+
+
+Si \underline{$2x\geq 0$ et $x\geq \frac{1}{5}$}, $(I_2)$ est équivalente à 
+$$4x^2 \geq  5x-1 \quad \Longleftrightarrow \quad  4x^2-5x+1\geq  0 $$ 
+Le discrimant de $4x^2-5x+1$ vaut $\Delta= 25 -16= 9$. \\
+ Les racines de $4x^2-5x+1$ valent donc 
+$$r_1 = \frac{5+3}{8}=1 \quad \text{ et } \quad r_2= \frac{5-3}{8}=\frac{1}{4}.$$
+Donc $4x^2-5x+1 = 4(x-1)(x-\frac{1}{4})$, le polynôme $4x^2-5x+1 $ est donc positif  sur $ U_2 =\left]-\infty, \frac{1}{4}\right]\cup[1, +\infty[. $\\
+Sous la condition ($2x\geq 0$ et $x\geq \frac{1}{5}$), les solutions de $(I_2)$ sont donc 
+$S=U_2\cap [\frac{1}{5},+\infty[= \left[\frac{1}{5}, \frac{1}{4}\right] \cup [1, +\infty [ $
+
+En conclusion l'ensemble des solutions de $(I_1)$ est 
+$$\boxed{ 
+\cS_2 = \left[\frac{1}{5}, \frac{1}{4}\right] \cup [1, +\infty [ 
+}$$
+\item Le réel $x$ est solution de l'équation $(E)$ si et seulement si il est solution de $(I_1)$ et $(I_2)$. C'est-à-dire: 
+$$x\in \cS_1\cap \cS_2$$
+L'ensemble des solutions de $E$ est donc:
+$$\boxed{ 
+\cS_2 = \left[\frac{1}{5}, \frac{1}{4}\right] \cup [1,2[.
+}$$
+
+
+
+
+\end{enumerate}
+\end{correction}

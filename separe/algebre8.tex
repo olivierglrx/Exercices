@@ -1,0 +1,233 @@
+\subsection{Diagonalisation}
+
+
+
+
+
+\begin{exercice}
+Soit $A$ la matrice suivante : 
+$\left(\begin{array}{ccc}
+3&0&-1\\
+2&4&2\\
+-1&0&3
+\end{array}
+\right).$
+\begin{enumerate}
+\item Déterminer les réels $\lambda\in \R$ pour lesquels la matrice $A-\lambda \Id$ n'est pas  inversible. On appelle ces réels les \emph{valeurs propres} de $A$. 
+\item Soit $\lambda\in \R$, Montrer que l'espace 
+$E_\lambda =\{ X\in \cM_{3,1}(\R) \, |\, AX=\lambda X\}$ est un sev de $\cM_{3,1}(\R)$.
+\item Pour chaque valeur propre de A  (les réels obtenus à la question 1), déterminez une base de $E_\lambda$. Vérifier qu'on obtien au total 3 vecteurs que vous noterez $u_1,u_2,u_3$. 
+\item La famille $(u_1,u_2,u_3)$ est elle une base de $\cM_{3,1}(\R)$ ? 
+\item \begin{enumerate}
+\item Soit $P$ la matrice de $\cM_3(\R) $ dont la première colonne est constitutée des coordonnées de $u_1$, la seconde des coordonnées de $u_2$ et  la dernière des coordonnées de $u_3$. Déterminez explicitement $P$. 
+\item Montrer que $P$ est inversible et calculer son inverse. 
+\item Déterminez mla matrice $D=P^{-1} AP$. 
+\item Déterminez une expression de la matrice $A^n$ pour tout entier naturel $n$. 
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item $A-\lambda \Id= \left(\begin{array}{ccc}
+3-\lambda&0&-1\\
+2&4-\lambda&2\\
+-1&0&3-\lambda
+\end{array}
+\right).$
+On va appliquer l'algorithme du pivot de Gauss : 
+$\left(\begin{array}{ccc}
+3-\lambda&0&-1\\
+2&4-\lambda&2\\
+-1&0&3-\lambda
+\end{array}
+\right) \sim_{L_1\longleftrightarrow L_3} \left(\begin{array}{ccc}
+-1&0&3-\lambda\\
+2&4-\lambda&2\\
+3-\lambda&0&-1
+\end{array}
+\right) $\\
+$\sim_{L_2\longleftarrow L_2+2L_1\\ L_3\longleftarrow L_3+(3-\lambda) L_1} \left(\begin{array}{ccc}
+-1&0&3-\lambda\\
+0&4-\lambda&8-2\lambda \\
+0&0&8-6\lambda +\lambda^2
+\end{array}
+\right)  =\left(\begin{array}{ccc}
+-1&0&3-\lambda\\
+0&4-\lambda&8-2\lambda \\
+0&0&(\lambda -2) (\lambda-4)
+\end{array}
+\right) $
+Ainsi $A-\lambda\Id$ n'est pas inversible si et seulement si $\lambda \in \{2,4\}$
+
+\item Remarquons tout d'abord que le vecteur nul appartient à $E_\lambda$ qui est donc non vide. Soit $X, Y\in E_\lambda$ et $\mu\in \R$, montrons que $X+\mu Y$ appartient à $E_\lambda$ :
+$$A (X+\mu Y) = AX +\mu A Y$$ 
+Comme $X\in E_\lambda$ $AX =\lambda X$ et de même $AY =\lambda Y$. 
+On a donc 
+$$A(X+\mu Y) =\lambda X +\mu \lambda Y = \lambda (X+\mu Y)$$
+Ainsi, $X+\mu Y \in E_\lambda$. L'ensemble $E_\lambda$ est donc stable par combinaisons linéraires, c'est bien un sev de $\cM_{3,1} (\R)$. 
+\item \begin{itemize}
+\item \underline{$\lambda =2$ }.  Soit $\left(\begin{array}{c}
+x\\
+y\\
+z
+\end{array} \right)\in E_2$. 
+On a donc 
+$$AX = \left(\begin{array}{c}
+3x-z\\
+2x+4y+2z\\
+-x+3z
+\end{array} \right) = \left(\begin{array}{c}
+2x\\
+2y\\
+2z
+\end{array} \right)$$
+On obtient 
+\begin{align*}
+\left\{ 
+\begin{array}{lcc}
+3x-z &=&2x\\
+2x+4y+2z &=& 2y\\
+-x+3z &=& 2z
+\end{array} \right. &\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+x& &-z &=&0\\
+2x&+2y&+2z &=& 0\\
+-x& &+z &=& 0
+\end{array} \right. \\
+&\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+x& &-z &=&0\\
+0&+2y&+4z &=& 0\\
+0& &+0 &=& 0
+\end{array} \right. \\
+&\equivaut \quad \left\{ 
+\begin{array}{cc}
+x=&z\\
+y =& -2z\\
+\end{array} \right. 
+\end{align*}
+L'ensemble des solutions est donc $E_2= \{ (z,-2z,z) \, |\, z\in \R\} = \Vect( (1,-2,1))$ 
+$u_1 =(1,-2,1)$  est une base de $E_2$
+
+
+\item \underline{$\lambda =4$ }.  Soit $\left(\begin{array}{c}
+x\\
+y\\
+z
+\end{array} \right)\in E_4$. 
+On a donc 
+$$AX = \left(\begin{array}{c}
+3x-z\\
+2x+4y+2z\\
+-x+3z
+\end{array} \right) = \left(\begin{array}{c}
+4x\\
+4y\\
+'z
+\end{array} \right)$$
+On obtient 
+\begin{align*}
+\left\{ 
+\begin{array}{lcc}
+3x-z &=&4x\\
+2x+4y+2z &=& 4y\\
+-x+3z &=& 4z
+\end{array} \right. &\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+-x& &-z &=&0\\
+2x& &+2z &=& 0\\
+-x& &-z &=& 0
+\end{array} \right. \\
+&\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+x& &+z &=&0\\
+2x& &+2z &=& 0\\
+-x& &-z &=& 0
+\end{array} \right. \\
+&\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+x& &+z &=&0\\
+0& &0 &=& 0\\
+0& &0 &=& 0
+\end{array} \right.\\
+&\equivaut \quad \left\{ 
+\begin{array}{cc}
+x=&-z\\
+\end{array} \right. 
+\end{align*}
+L'ensemble des solutions est donc $E_2= \{ (-z,y,z) \, |\, (y,z)\in \R^2\} = \Vect( (-1,0,1), (0,1,0))$ 
+On note $u_2 =(-1,0,1)$ et $u_3= (0,1,0)$. $(u_2, u_3) $ est une base de $E_4$. (Elle est génératrice par définition et elle est libre car les deux vecteurs ne sont pas proportionels) 
+\end{itemize}
+\item Vérifions que la famille $(u_1,u_2,u_3)$ est libre. Soit $(\mu_1, \mu_2, \mu_3) \in \R^3$ tel que $\mu_1u_1 +\mu_2 u_2 +\mu_3 u_3 =0$. 
+En identifiant chaque coordonnées on obtient : 
+\begin{align*}
+\left\{ 
+\begin{array}{ccccc}
+\mu_1 &-\mu_2 &+0\mu_3 &=&0\\
+-2 \mu_1& +0\mu_2 &+\mu_3 &=&0\\
+\mu_1& +\mu_2 &+0\mu_3 &=&0\\
+\end{array} \right. &\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+\mu_1 &-\mu_2 &  &=&0\\
+-2 \mu_1&  &+\mu_3 &=&0\\
+\mu_1& +\mu_2 & &=&0\\
+\end{array} \right.\\
+&\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+\mu_1 &-\mu_2 &  &=&0\\
+0& -2\mu_2 &+\mu_3 &=&0\\
+0& 2\mu_2 & &=&0\\
+\end{array} \right. \\
+&\equivaut \quad \left\{ 
+\begin{array}{ccccc}
+\mu_1 &-\mu_2 &  &=&0\\
+0& -2\mu_2 &+\mu_3 &=&0\\
+0& 0 & -\mu_3&=&0\\
+\end{array} \right.\\
+&\equivaut \quad \left\{ 
+\begin{array}{c}
+\mu_1=\mu_2 =\mu_3 =0\\
+\end{array} \right. 
+\end{align*}
+Ainsi la famille est libre. Comme elle est de cardinal $3$ dans un ev de dimension $3$, c'est une base. 
+\item
+\begin{enumerate}
+\item $P= \left(\begin{array}{ccc}
+1&-1&0\\
+-2&0&1\\
+1&1&0
+\end{array}
+\right).$
+\item Le rang de $P$ est égal au rang de la famille $(u_1, u_2,u_3) $, qui d'après la question précédente vaut $3$. Donc $rg(P)=3$, elle est donc inversible. 
+
+L'algorithme du pivot permet de trouver son inverse, on trouve 
+$$P^{-1} = \left(\begin{array}{ccc}
+\frac{1}{2}&0&\frac{1}{2}\\
+-\frac{1}{2}&0&\frac{1}{2}\\
+1&1&1
+\end{array}
+\right).$$
+\item Après calcul on obtient 
+$$D=P^{-1} A P =\left(\begin{array}{ccc}
+2&0&0\\
+0&4&0\\
+0&0&4
+\end{array}
+\right).$$
+\item Par récurrence on montre $D^n = P^{-1} A^n P$ donc $A^n = P D^n P^{-1}$  et on  a par ailleurs $D^n =\left(\begin{array}{ccc}
+2^n&0&0\\
+0&4^n&0\\
+0&0&4^n
+\end{array}
+\right), $ car $D$ est une matrice diagonale. 
+Après calcul on obtient 
+$$A^n  = \left(\begin{array}{ccc}
+2^{n-1} +\frac{1}{2} 4^n&0&2^{n-1} -\frac{1}{2} 4^n\\
+-2^{n} + 4^n&4^n&-2^{n} + 4^n\\
+2^{n-1} -\frac{1}{2} 4^n&0&2^{n-1} +\frac{1}{2} 4^n
+\end{array}
+\right). $$  
+\end{enumerate}
+\end{enumerate}
+\end{correction}

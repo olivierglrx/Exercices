@@ -1,0 +1,295 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, August 25, 2004 17:43:57}
+%TCIDATA{LastRevised=Saturday, August 28, 2004 15:13:29}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option économique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES}} \vspace{0.5cm}
+
+\textbf{Année 2000\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\newpage
+
+\section*{Exercice 1}
+
+Soit $X$ une variable aléatoire à densité définie sur un espace probabilisé.
+On note $f$ une densité de $X$, $F$ sa fonction de répartition. On fait les
+trois hypothèses suivantes:
+
+\begin{itemize}
+\item[i)] Si $t$ appartient à $]-\infty ,0[$, $f(t)=0$.
+
+\item[ii)] Si $t$ appartient à $[0,+\infty \lbrack $, $f(t)$ est positif ou
+nul.
+
+\item[iii)] $f$ est continue sur $]0,+\infty \lbrack $.
+\end{itemize}
+
+\begin{enumerate}
+\item Montrer que l'équation $F(x)={\dfrac{1}{2}}$ admet une solution unique
+sur $]0,+\infty \lbrack $.\newline
+Cet unique réel, que l'on notera $m$, sera appelé \textbf{médiane} de $X$.
+
+\item Dans cette question, on suppose que $X$ suit une loi exponentielle de
+paramètre 1.\newline
+Montrer que $X$ satisfait aux hypothèses du début de l'exercice et dé%
+terminer la médiane de $X$.
+
+\item On suppose dans cette question que la densité de $X$ est donnée sur $%
+[0,+\infty \lbrack $ par $f(t)=t\ e^{-t}$ et sur $]-\infty ,0[$ par $f(t)=0$.
+
+\begin{enumerate}
+\item Vérifier que $f$ satisfait aux hypothèses du début de l'exercice.
+
+\item Déterminer la fonction de répartition $F$ de $X$.
+
+\item Montrer, sans chercher à la calculer, que la médiane $m$ de $X$ vé%
+rifie $1\leqslant m\leqslant 2$.\newline
+(On donne $6<e^{2}<9)$.\newline
+On se propose, dans la suite de cette question, de calculer une valeur
+approchée de $m$. On introduit pour cela la fonction $g$ définie sur $[1,2]$
+par $g(x)=\ln (2x+2)$, fonction qui va permettre de construire une suite
+convergeant vers $m$.
+
+\item Montrer que $g(m)=m$.
+
+\item Montrer que si $x$ appartient à $[1,2]$ alors $g(x)$ appartient à $%
+[1,2]$ et 
+\begin{equation*}
+|g(x)-m|\leqslant {\dfrac{1}{2}}|x-m|
+\end{equation*}
+
+\item On considère la suite $(u_{n})$ définie par $u_{0}=1$ et pour $n>0$
+par $u_{n}=g(u_{n-1})$.\newline
+Montrer que $|u_{n}-m|\leqslant \left( {\dfrac{1}{2}}\right) ^{n}$
+
+\item Déterminer un entier $n$ tel que $u_{n}$ soit une valeur approchée de $%
+m$ à $10^{-2}$ près.
+\end{enumerate}
+
+\item On revient maintenant au cas général et on suppose que la variable $X$
+admet une espérance $E(X)$ et une variance $V(X)$. On note toujours $m$ la mé%
+diane de $X$.
+
+\begin{enumerate}
+\item Montrer qu'on a les inégalités : 
+\begin{equation*}
+V(X)\geqslant \int\limits_{0}^{m}(t-E(X))^{2}f(t)dt\qquad \text{et}\qquad
+V(X)\geqslant \int\limits_{m}^{+\infty }(t-E(X))^{2}f(t)dt
+\end{equation*}
+
+\item En distinguant les cas $m\leqslant E(X)$ et $m>E(X)$, montrer que: 
+\begin{equation*}
+|m-E(X)|\leqslant \sqrt{2V(X)}
+\end{equation*}
+\end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2}
+
+$E$ est l'espace vectoriel des polynômes à coefficients réels et de degré inf%
+érieur ou égal à 3. On désigne par $f$ l'application qui à un polynôme $P$
+de $E$ associe le polynôme $f(P)$ défini par: 
+\begin{equation*}
+f(P)(X)=P(X+1)+P(X)
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $f$ est un endomorphisme de $E$.
+
+\item On nore $\mathcal{B}$ la base usuelle de $E$ constituée, dans cet
+ordre des quatre polynômes $1$, $X$, $X^{2}$, $X^{3}$.\newline
+Montrer que la matrice de $f$ dans la base $\mathcal{B}$ est $\left( 
+\begin{array}{cccc}
+2 & 1 & 1 & 1 \\ 
+0 & 2 & 2 & 3 \\ 
+0 & 0 & 2 & 3 \\ 
+0 & 0 & 0 & 2%
+\end{array}%
+\right) $
+
+\item Montrer que $f$ est bijectif.
+
+\item Calculer la matrice de $f^{-1}$ dans la base $\mathcal{B}$.
+
+\item Soit $P$ un élément de $E$ défini par : $%
+P(X)=a_{0}+a_{1}X+a_{2}X^{2}+a_{3}X^{3}$.
+
+\begin{enumerate}
+\item Expliciter en fonction des réels $a_{0}$, $a_{1}$, $a_{2}$, $a_{3}$ le
+polynôme $Q=f^{-1}(P)$.
+
+\item On considère pour tout entier strictement positif $n$ la somme 
+\begin{equation*}
+S(n)=\sum_{k=1}^{k=n}(-1)^{k}P(k)
+\end{equation*}%
+Exprimer simplement $S(n)$ en fonction de $(-1)^{n}$, $Q(n+1)$ et $Q(1)$.
+
+\item Expliciter alors la valeur de $S(n)$ en fonction de $n$, $a_{0}$, $%
+a_{1}$, $a_{2}$, $a_{3}$
+\end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 3}
+
+$T$ est l'ensemble des couples $(x,y)$ de réels solutions du système d'iné%
+quations 
+\begin{equation*}
+x\geqslant \dfrac{1}{4}\quad y\geqslant \dfrac{1}{4}\quad x+y\leqslant 
+\dfrac{3}{4}
+\end{equation*}%
+On note $T^{\prime }$ l' \textquotedblleft intérieur\textquotedblright\ de $T
+$ à savoir l'ensemble des couples $(x,y)$ solutions du système d'inéquations 
+\begin{equation*}
+x>\dfrac{1}{4}\quad y>\dfrac{1}{4}\quad x+y<\dfrac{3}{4}
+\end{equation*}%
+Soit $f$ la fonction définie sur $T$ par : \quad $f(x,y)=\dfrac{1}{x}+\dfrac{%
+1}{y}-\dfrac{2}{x+y}$
+
+\begin{enumerate}
+\item Représenter sur un même graphique $T$ et $T^{\prime }$.
+
+\item On admet que $T^{\prime }$ est un ouvert de $\mathbb{R}^{2}$.
+
+\begin{enumerate}
+\item Déterminer les dérivées partielles d'ordre $1$ sur $T^{\prime }$ de la
+fonction $f$.
+
+\item Montrer que $f$ n'admet pas d'extremum local (et donc a fortiori
+absolu) sur $T^{\prime }$.
+\end{enumerate}
+
+\item Démontrer par de simples considérations sur des inégalités que l'on a
+pour tout couple $(x,y)$ de $T$: 
+\begin{equation*}
+2\leqslant f(x,y)\leqslant \dfrac{16}{3}
+\end{equation*}%
+On considère une urne contenant des boules blanches (en proportion $p$), des
+boules rouges (en proportion $r$) et des boules vertes (en proportion $u$).%
+\newline
+On suppose que \quad $p\geqslant \dfrac{1}{4}$ \quad $r\geqslant \dfrac{1}{4}
+$ \quad $u\geqslant \dfrac{1}{4}$ \quad et que \quad $p+r+u=1$.\newline
+On effectue indéfiniment des tirages successifs d'une boule dans cette urne
+avec remise entre deux tirages.\newline
+Pour tout entier naturel $n$ supérieur ou égal à 1, on note $B_{n}$
+(respectivement $R_{n}$, $V_{n}$) l'événement: \textquotedblleft Tirer une
+boule blanche (respectivement rouge, verte) au $n^{i\grave{e}me}$ tirage". 
+\newline
+On appelle $X$ (resp $Y$) la variable aléatoire égale au rang d'apparition
+de la première blanche (resp rouge).\newline
+On définit alors la variable $D=|X-Y|$ égale au nombre de tirages séparant
+la sortie de la première blanche et de la première rouge.
+
+\item Déterminer la loi de $X$. Faire de même pour $Y$.
+
+\item Soit $i$ et $j$ des entiers naturels non nuls. En distinguant les cas $%
+i=j$, $i<j$ et $i>j$, exprimer l'événement $(X=i)\cap (Y=j)$ à l'aide des évé%
+nements décrits dans l'énoncé.\newline
+En déduire la loi du couple $(X,Y)$.
+
+\item Les variables $X$ et $Y$ sont-elles indépendantes?
+
+\item Soit $k$ un entier naturel non nul, montrer l'égalité: 
+\begin{equation*}
+P(D=k)=\dfrac{pr}{p+r}\left[ (1-p)^{k-1}+(1-r)^{k-1}\right]
+\end{equation*}
+
+\item Montrer que $D$ admet une espérance et que $E(D)=f(p,r)$. Encadrer
+alors $E(D)$.\bigskip
+\end{enumerate}
+
+\begin{center}
+Fin de l'épreuve\label{fin}
+\end{center}
+
+\end{document}

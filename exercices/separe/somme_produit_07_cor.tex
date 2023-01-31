@@ -1,0 +1,25 @@
+
+\begin{correction}  \; Il s'agit ici du m\^{e}me type de m\'ethode que pour l'exercice pr\'ec\'edent sauf que cette fois ci, on l'applique \`{a} la somme des termes d'une suite g\'eom\'etrique et plus au bin\^{o}me de Newton.
+\begin{enumerate}
+\item On reconna\^{i}t la somme des termes d'une suite g\'eom\'etrique et ainsi, on obtient, comme $x\not= 1$:\\
+\noindent  \fbox{$\forall x\in\R\setminus\lbrace 1\rbrace,\ f(x)=\ddp\frac{1-x^{n+1}}{1-x}$.}
+\item La fonction $f$ est d\'erivable sur $\R\setminus\lbrace 1\rbrace$ comme produit, somme et quotient dont le d\'enominateur ne s'annule pas de fonctions d\'erivables. 
+\begin{itemize}
+\item[$\bullet$] D'un c\^{o}t\'e, la fonction $f$ vaut: $f(x)=\ddp\frac{1-x^{n+1}}{1-x}$. Ainsi, en d\'erivant, on obtient que:\\
+\noindent \fbox{$\forall x\in\R\setminus\lbrace 1 \rbrace,\ f^{\prime}(x)=\ddp\frac{  1+nx^{n+1} -(n+1)x^n }{(1-x)^2}$.}
+\item[$\bullet$] De l'autre c\^{o}t\'e, la fonction $f$ vaut $f(x)=\ddp \sum\limits_{k=0}^{n} x^k=1+\ddp \sum\limits_{k=1}^{n} x^k$. La d\'eriv\'ee d'une somme \'etant \'egale \`{a} la somme des d\'eriv\'ees, on obtient que:\\
+\noindent \fbox{$\forall x\in\R\setminus\lbrace 1 \rbrace,\  f^{\prime}(x)=\ddp \sum\limits_{k=1}^{n} k x^{k-1}$.} \\
+\noindent \warning La somme commence bien \`{a} $k=1$ car le terme pour $k=0$ dans $f(x)$ est le terme constant $1$ qui est nul lorsqu'on d\'erive.
+\end{itemize} 
+On obtient donc que: \fbox{$\forall x\in\R\setminus\lbrace 1\rbrace,\ \ddp \sum\limits_{k=1}^{n} k x^{k-1}=\ddp\frac{  1+nx^{n+1} -(n+1)x^n }{(1-x)^2}$.}\\
+On a : $\ddp \sum\limits_{k=1}^{n} k x^{k}=\ddp \sum\limits_{k=1}^{n} k x\times x^{k-1}=x\ddp \sum\limits_{k=1}^{n} k x^{k-1}$. D'apr\`{e}s la question pr\'ec\'edente, on obtient donc:\begin{center}
+ \fbox{$\forall x\in\R\setminus\lbrace 1\rbrace,\ \ddp \sum\limits_{k=1}^{n} k x^{k}=x\times \ddp\frac{  1+nx^{n+1} -(n+1)x^n }{(1-x)^2}$.}
+\end{center}
+\item Il faut ici remarquer que la somme correctionrespond \`{a} d\'eriver deux fois la somme $f(x)=\ddp \sum\limits_{k=0}^{n} x^k=1+x+\ddp \sum\limits_{k=2}^{n} x^k$. La fonction $f$ est bien deux fois d\'erivables comme fonction polynomiale.
+Et en d\'erivant deux fois, on obtient bien: $\forall x\in\R\setminus\lbrace 1\rbrace,\ f^{\prime\prime}(x)=\ddp \sum\limits_{k=2}^{n} k(k-1)x^{k-2}$. Cette somme commence bien \`{a} $k=2$ car quand on d\'erive deux fois les termes $1$ et $x$, ils deviennent nuls. En d\'erivant deux fois l'autre expression de $f$, on obtient la valeur de la somme:\\ 
+\vsec
+ \begin{center}
+\fbox{$\forall x\in\R\setminus\lbrace 1\rbrace,\ \ddp \sum\limits_{k=2}^{n} k(k-1)x^{k-2}=\ddp\frac{  2-n(n+1)x^{n-1} +2(n^2-1)x^n-n(n-1)x^{n+1}    }{(1-x)^3}$. }
+\end{center}
+\end{enumerate}
+\end{correction}

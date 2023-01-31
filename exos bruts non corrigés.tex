@@ -1,0 +1,565 @@
+\documentclass[a4paper, 11pt,reqno]{article}
+\input{/Users/olivierglorieux/Desktop/BCPST/2020:2021/preambule.tex}
+\geometry{hmargin=2.0cm, vmargin=3.5cm}
+
+  \newif\ifshow
+\showfalse
+\input{/Users/olivierglorieux/Desktop/BCPST/2021:2022/ifshow.tex}
+
+\author{Olivier Glorieux}
+
+
+\begin{document}
+
+\title{Exos bruts à retravailler
+}
+\vspace{-0.5cm}
+
+\begin{exercice}
+
+On considère un réel $a>0$ et la suite récurrente définie par:
+
+$$
+\left\{\begin{array}{l}
+u_{0}=a \\
+\forall n \in \mathbb{N}, u_{n+1}=u_{n}^{2}+u_{n}
+\end{array}\right.
+$$
+
+a. Montrer que la suite $\left(u_{n}\right)$ diverge vers $+\infty$.
+
+b. On considère la suite $\left(v_{n}\right)$ définie par
+
+$$
+\forall n \in \mathbb{N}, v_{n}=\frac{1}{2^{n}} \ln \left(u_{n}\right)
+$$
+
+Montrer que $\left(v_{n}\right)$ est une suite croissante.
+
+c. En majorant pour $n \in \mathbb{N}, v_{n+1}-v_{n}$, montrer que la suite $\left(v_{n}\right)$ est majorée.
+
+d. La suite $\left(v_{n}\right)$ est donc convergente. On note $\alpha$ sa limite. Montrer que $\forall(n, p) \in \mathbb{N}^{2}$, on a
+
+$$
+0 \leq v_{n+p+1}-v_{n} \leq \frac{1}{2^{n}} \ln \left(1+\frac{1}{u_{n}}\right)
+$$
+
+e. En déduire que $u_{n} \underset{n \rightarrow+\infty}{\sim} e^{2^{n} \alpha}$. 
+
+
+\end{exercice}
+
+
+\begin{exercice}
+
+On considère la suite $\left(S_{n}\right)_{n \in \mathbb{N}^{*}}$ définie par
+
+$$
+\forall n \in \mathbb{N}^{*}, \quad S_{n}=\sum_{k=1}^{n} \frac{\ln k}{k} .
+$$
+
+1. Étude de la nature de la suite $\left(S_{n}\right)_{n \in \mathbb{N}^{*}} .$
+
+(a) Dresser le tableau de variations de la fonction $x \mapsto \frac{\ln (x)}{x}$.
+
+(b) En déduire que, pour tout entier $k$ supérieur ou égal à 4 , on a :
+
+$$
+\int_{k}^{k+1} \frac{\ln (x)}{x} \mathrm{~d} x \leq \frac{\ln (k)}{k} \leq \int_{k-1}^{k} \frac{\ln (x)}{x} \mathrm{~d} x .
+$$
+
+(c) En déduire l'existence de trois constantes réelles positives $A, B$ et $C$ telles que, pour tout entier naturel $n$ supérieur ou égal à 4 , on ait :
+
+$$
+\frac{\ln ^{2}(n+1)}{2}-A \leq S_{n}-B \leq \frac{\ln ^{2}(n)}{2}-C .
+$$
+
+(d) En déduire la limite de la suite $\left(S_{n}\right)_{n \in \mathbb{N}^{*}}$.
+
+2. Recherche d'un équivalent de $S_{n}$.
+
+(a) Montrer que $\ln ^{2}(n+1) \underset{n \rightarrow+\infty}{\sim} \ln ^{2}(n)$.
+
+(b) En déduire que $S_{n} \underset{n \rightarrow+\infty}{\sim} \frac{\ln ^{2}(n)}{2}$. 3. Étude asymptotique de la suite $u$ définie par :
+
+$$
+\forall n \in \mathbb{N}^{*}, \quad u_{n}=S_{n}-\frac{\ln ^{2}(n)}{2} .
+$$
+
+(a) Montrer que, pour tout entier $n$ supérieur ou égal à $3, u_{n+1}-u_{n} \leq 0$.
+
+(b) En déduire que la suite $u$ converge.
+
+Dans la suite de l'exercice, la limite de la suite $u$ sera notée $\ell$.
+
+4. Une application.
+
+On considère la suite $\left(A_{n}\right)_{n \in \mathbb{N}^{*}}$ définie par : $\forall n \in \mathbb{N}^{*}, A_{n}=\sum_{k=1}^{n}(-1)^{k-1} \frac{\ln (k)}{k}$.
+
+(a) Prouver que pour tout entier naturel non nul $n$, on a
+
+$$
+A_{2 n}=S_{2 n}-S_{n}-\ln (2) \sum_{k=1}^{n} \frac{1}{k} .
+$$
+
+(b) On admet qu'il existe un réel $\gamma$ tel que $\sum_{k=1}^{n} \frac{1}{k}=\ln (n)+\gamma+o(1)$.
+
+En déduire que la suite $\left(A_{2 n}\right)_{n \in \mathbb{N}^{*}}$ converge et déterminer sa limite en fonction de $\gamma$.
+
+(c) En déduire que la suite $\left(A_{2 n+1}\right)_{n \in \mathbb{N}^{*}}$ converge et déterminer sa limite en fonction de $\gamma$.
+
+(d) Que peut-on en déduire au sujet de la suite $\left(A_{n}\right)_{n \in \mathbb{N}^{*}}$ ?
+\end{exercice}
+
+
+
+\begin{exercice}
+
+On considère la fonction $f: x \longmapsto \frac{1}{2} x e^{-x}$, définie sur $\mathbb{R}$, ainsi que la suite $\left(u_{n}\right)$ définie par: $\left\{\begin{array}{l}u_{0} \in \mathbb{R} \\ \forall n \in \mathbb{N}, u_{n+1}=f\left(u_{n}\right)\end{array}\right.$.
+
+On note $\mathcal{C}_{f}$ la courbe représentative de $f$ dans un repère orthonormé du plan.
+
+Le but de l'exercice est d'étudier la suite $\left(u_{n}\right)$ en fonction des différentes valeurs de son premier terme u $_{0}$.
+
+1. Étude de $f$.
+
+(a) Discuter du signe de $f(x)$ selon les valeurs du réel $x$.
+
+(b) Dresser le tableau de variations de $f$ sur $\mathbb{R}$.
+
+(c) Déterminer l'équation réduite de la tangente à $\mathcal{C}_{f}$ au point d'abscisse 0, notée $\mathcal{T}_{0}$.
+
+(d) Démontrer: $\forall x \in \mathbb{R}, f(x) \leq \frac{1}{2} x$.
+
+(e) Étudier la position relative de $\mathcal{C}_{f}$ par rapport à la droite d'équation $y=x$ et préciser leurs éventuels points d'intersection.
+
+(f) Représenter l'allure de $\mathcal{C}_{f}$ sur le graphique ci-dessous. Données : $\ln (2) \simeq 0,7$ et $e^{-1} \simeq 0,4$.
+
+
+
+2. Ecrire une fonction Python, nommée $u$, prenant en arguments d'entrée un réel a et un entier naturel $n$ et renvoyant en sortie la valeur de $u_{n}$ dans le cas où $u_{0}=a$.
+
+3. (a) Représenter, en bleu sur le graphique ci-dessus, les trois premiers termes de $\left(u_{n}\right)$ dans le cas où $u_{0}=\frac{-4}{5}$.
+
+(b) Représenter, en bleu sur le graphique ci-dessus, les cinq premiers termes de $\left(u_{n}\right)$ dans le cas où $u_{0}=\frac{-3}{5}$.
+
+(c) Représenter, en rouge sur le graphique ci-dessus, les trois premiers termes de $\left(u_{n}\right)$ dans le cas où $u_{0}=1$.
+
+(d) Dans chaque cas, émettre des conjectures sur les variations de $\left(u_{n}\right)$ et son comportement en l'infini.
+
+4. Que dire des cas " $u_{0}=0$ " et " $u_{0}=-\ln (2)$ "?
+
+5. Cas $\left.u_{0} \in\right]-\ln (2) ; 0\left[.\right.$ Dans cette question, $\left.u_{0} \in\right]-\ln (2) ; 0[$.
+
+(a) Démontrer que pour tout $n \in \mathbb{N},-\ln (2)<u_{n}<0$.
+
+(b) Étudier les variations de $\left(u_{n}\right)$.
+
+6. Cas $u_{0}>0$. Dans cette question, $u_{0}>0$ et on admet que l'on a: $\forall n \in \mathbb{N}, u_{n}>0$ (que l'on démontrerait aisément par récurrence).
+
+(a) Étudier les variations de $\left(u_{n}\right)$.
+
+(b) A l'aide de la question 1 (d), démontrer : $\forall n \in \mathbb{N}, u_{n} \leq \frac{u_{0}}{2^{n}}$.
+
+(c) On suppose, dans cette question uniquement, que $u_{0}=1$.
+
+i. Résoudre, dans $\mathbb{N}$, l'ínéquation $\frac{1}{2^{n}} \leq 10^{-3}$, puis interpréter le résultat obtenu.
+
+ii. Le programme suivant (dans lequel u est la fonction Python définie à la question 2) renvoie la valeur 9. Interpréter cette valeur et la comparer à la valeur obtenue à la question précédente.
+
+
+
+(d) On considère maintenant les suites $\left(v_{n}\right)$ et $\left(\mathrm{S}_{n}\right)$ définies sur $\mathbb{N}$ par $v_{n}=\ln \left(u_{n}\right)$ et $\mathrm{S}_{n}=\sum_{k=0}^{n} u_{k}$.
+
+i. Établir, pour tout entier naturel $n$, une relation entre $v_{n+1}, v_{n}$ et $u_{n}$.
+
+ii. Démontrer alors que pour tout $n \in \mathbb{N}, S_{n}=\ln \left(u_{0}\right)-(n+1) \ln (2)-\ln \left(u_{n+1}\right)$.
+
+iii. Étudier les variations de la suite $\left(S_{n}\right)$ et, en utilisant le résultat de la question $6(b)$, démontrer qu'elle est majorée.
+
+iv. Bonus: que peut-on en déduire? Prouver alors qu'il existe un réel $\ell \in\left[u_{0} ; 2 u_{0}\right]$ tel que $\lim _{n \rightarrow+\infty} 2^{n} u_{n}=u_{0} e^{-\ell}$.
+
+7. Cas $u_{0}<-\ln (2)$. Dans cette question, $u_{0}<-\ln (2)$.
+
+Étudier les variations de $\left(u_{n}\right)$.
+
+
+\end{exercice}
+
+
+
+\begin{exercice}
+
+On considère les suites $\left(a_{n}\right)$ et $\left(b_{n}\right)$ définies par $a_{0}=0, b_{0}=1$ et :
+
+$$
+\forall n \in \mathbb{N},\left\{\begin{array}{l}
+a_{n+1}=2 a_{n}+b_{n} \\
+b_{n+1}=2 a_{n}+3 b_{n}
+\end{array}\right.
+$$
+
+1. Ecrire une fonction Python, d'en-tête def suites $(\mathrm{n})$ : prenant un entier naturel $n$ en argument d'entrée et renvoyant les valeurs de $a_{n}$ et $b_{n}$ en sortie.
+
+2. Calculer $a_{1}, b_{1}, a_{2}$ et $b_{2}$.
+
+3. Première méthode de détermination des termes généraux.
+
+(a) Déterminer une relation de récurrence d'ordre 1 sur la suite $\left(s_{n}\right)$ définie par: $\forall n \in \mathbb{N}, s_{n}=a_{n}+b_{n}$.
+
+(b) Déterminer une relation de récurrence d'ordre 1 sur la suite $\left(t_{n}\right)$ définie par: $\forall n \in \mathbb{N}, t_{n}=2 a_{n}-b_{n}$.
+
+(c) En déduire le terme général des suites $\left(a_{n}\right)$ et $\left(b_{n}\right)$.
+
+4. Deuxième méthode de détermination des termes généraux.
+
+(a) Démontrer que $\left(a_{n}\right)$ est une suite récurrente linéaire d'ordre $2 .$
+
+(b) En déduire le terme général de $\left(a_{n}\right)$ puis celui de $\left(b_{n}\right)$.
+
+5. On considère maintenant la suite $\left(u_{n}\right)$ définie par: $\left\{\begin{array}{l}u_{0}=0, u_{1}=1 \\ \forall n \in \mathbb{N}, u_{n+2}=u_{n+1}+2 u_{n}\end{array} .\right.$ On considère le programme suivant (dans lequel la fonction suites est la fonction définie dans la question 1): 
+
+
+Quels liens peut-on conjecturer entre les suites $\left(a_{n}\right),\left(b_{n}\right)$ et $\left(u_{n}\right)$ ? Démontrer cette conjecture.
+\end{exercice}
+\begin{exercice}
+Le but de l'exercice est de résoudre l'équation suivante, que l'on nommera (E):
+
+$$
+a^{b}=b^{a}
+$$
+
+où $a$ et $b$ sont des entiers naturels non nuls tels que $a<b$.
+
+1. Soient $a, b \in \mathbb{N}^{*}$, avec $a<b$. Montrer que l'équation $a^{b}=b^{a}$ est équivalente à l'équation $f(a)=f(b)$, avec $f: x \longmapsto \frac{\ln (x)}{x} .$
+
+2. Déterminer l'ensemble de définition de $f$ puis dresser son tableau de variations complet. On admettra et on fera apparaitre dans le tableau de variations que: $\lim _{x \rightarrow 0} f(x)=-\infty$ et $\lim _{x \rightarrow+\infty} f(x)=0$.
+
+3. Soit $y \in \mathbb{R}$. Discuter du nombre d'antécédents de $y$ par $f$. En déduire les valeurs possibles de a pour l'équation (E).
+
+4. Conclure en donnant tous les couples $(a, b)$ d'entiers naturels non nuls, avec $a<b$, vérifiant l'équation (E).
+
+\end{exercice}
+
+
+
+
+
+\begin{exercice}
+Soit $\left(u_{n}\right)$ la suite définie par $u_{0}=1$ et $\forall n \in \mathbb{N}, u_{n+1}=u_{n}+\frac{1}{4}\left(2-u_{n}^{2}\right)$.
+
+1. On note $f$ la fonction définie par $f(x)=x+\frac{1}{4}\left(2-x^{2}\right)$. Étudier les variations de $f$ et déterminer ses points fixes.
+
+2. Montrer que $\forall x \in[1 ; 2],\left|f^{\prime}(x)\right| \leq \frac{1}{2}$, et que $f([1 ; 2]) \subset[1 ; 2]$.
+
+3. En déduire que $\forall n \in \mathbb{N}, u_{n} \in[1 ; 2]$, et que $\left|u_{n+1}-\sqrt{2}\right| \leq \frac{1}{2}\left|u_{n}-\sqrt{2}\right|$.
+
+4. Prouver par récurrence que $\forall n \in \mathbb{N},\left|u_{n}-\sqrt{2}\right| \leq \frac{1}{2^{n}}$, et en déduire la limite de la suite $\left(u_{n}\right)$.
+
+5. À partir de quel rang a-t-on $\left|u_{n}-\sqrt{2}\right| \leq 10^{-9}$ ?
+
+\end{exercice}
+
+\begin{exercice}
+
+On considère la fonction $f$ définie sur $] 0 ; \frac{1}{e}[\cup] \frac{1}{e} ;+\infty\left[\right.$ par $f(x)=\frac{x}{\ln x+1}$.
+
+1. Montrer que $f$ est prolongeable par continuité en 0 . La fonction prolongée est-elle dérivable en 0 ?
+
+2. Étudiez les variations de $f$ et tracer l'allure de sa courbe représentative.
+
+3. Déterminer les points fixes de $f$.
+
+4. On définit une suite $\left(x_{n}\right)$ par $x_{0}=2$ et $\forall n \in \mathbb{N}, x_{n+1}=f\left(x_{n}\right)$.
+
+(a) Étudiez sur $\mathbb{R}_{+}$la fonction $g: x \mapsto \frac{x}{(x+1)^{2}}$, en déduire que $\left.\forall x \in\right] 1 ;+\infty\left[, 0 \leq f^{\prime}(x) \leq \frac{1}{4}\right.$.
+
+(b) En déduire que $\forall n \in \mathbb{N},\left|x_{n+1}-1\right| \leq \frac{1}{4}\left|x_{n}-1\right|$, puis que $\left|x_{n}-1\right| \leq \frac{1}{4^{n}}$.
+
+(c) En déduire la limite de la suite $\left(x_{n}\right)$.
+\end{exercice}
+
+
+\begin{exercice}
+Le but de ce problème est d'étudier numériquement les solutions d'équations du type $x^{n}+x^{n-1}+\cdots+x=a$.
+
+1. Résolution numérique de l'équation $x^{2}+x-1=0$.
+
+On considère dans cette question la fonction $f$ définie sur $\mathbb{R}_{+}$par $f(x)=\frac{1}{x+1}$.
+
+(a) Montrer que l'équation $x^{2}+x-1=0$ a une seule racine dans l'intervalle ]0; 1[ et préciser la valeur de cette racine, qu'on notera désormais $r_{2}$. (b) Montrer que, $\forall x \in\left[\frac{1}{2} ; 1\right], f(x) \in\left[\frac{1}{2} ; 1\right]$.
+
+(c) Calculer la dérivée $f^{\prime}$ de $f$ et prouver que, $\forall x \in\left[\frac{1}{2} ; 1\right],\left|f^{\prime}(x)\right| \leq \frac{4}{9}$.
+
+(d) On considère la suite $\left(u_{n}\right)$ définie par $u_{0}=1$ et $\forall n \in \mathbb{N}, u_{n+1}=f\left(u_{n}\right) .$ Prouver que $\forall n \in \mathbb{N},\left|u_{n}-r_{2}\right| \leq\left(\frac{4}{9}\right)^{n}$, et en déduire la convergence de $\left(u_{n}\right)$
+
+2. Résolution numérique de l'équation $x^{3}+x^{2}+x-1=0$.
+
+On considère désormais la fonction $g$ définie par $g(x)=\frac{1}{x^{2}+x+1}$.
+
+(a) Montrer que l'équation $x^{3}+x^{2}+x-1=0$ a une unique solution $r_{3}$ appartenant à $] 0 ; 1[$.
+
+(b) Montrer que l'intervalle $\left[\frac{1}{3} ; 1\right]$ est stable par $g$.
+
+(c) Calculer les dérivées $g^{\prime}$ et $g^{\prime \prime}$ et déterminer le maximum de $\left|g^{\prime}(x)\right|$ sur l'intervalle $\left[\frac{1}{3} ; 1\right]$.
+
+(d) On considère la suite $\left(v_{n}\right)$ définie par $v_{0}=1$ et $\forall n \in \mathbb{N}, v_{n+1}=g\left(v_{n}\right) .$ Majorer $\left|v_{n}-r_{3}\right|$ en fonction de $n$, et prouver la convergence de $\left(v_{n}\right)$ vers $r_{3}$.
+
+3. Racine positive de l'équation $x^{n}+x^{n-1}+\cdots+x^{2}+x-a=0$.
+
+On désigne désormais par $a$ un réel strictement positif, et on note, pour tout entier $n \geq 2, h_{n}$ la fonction définie par $h_{n}(x)=x^{n}+x^{n-1}+\cdots+x^{2}+x-a$.
+
+(a) Montrer que sur l'intervalle $] 0 ;+\infty\left[\right.$, l'équation $h_{n}(x)=0$ possède une unique racine qu'on notera $t_{n}$, puis que $\left.t_{n} \in\right] 0 ; 1[$ si $n>a$.
+
+(b) Montrer que $(x-1) h_{n}(x)=x^{n+1}-(a+1) x+a$.
+
+(c) Montrer que $h_{n+1}\left(t_{n}\right)>h_{n}\left(t_{n}\right)$, et en déduire que la suite $\left(t_{n}\right)$ est strictement décroissante, puis qu'elle converge vers une limite qu'on notera désormais $\alpha$.
+
+(d) Montrer que, si $A \in \mathbb{N}$, on aura $0<t_{n}^{n} \leq t_{A}^{n}$ si $n \geq A .$ En déduire, en choisissant $A>a$, que $\lim _{n \rightarrow+\infty} t_{n}^{n}=0$.
+
+(e) Exprimer la limite $\alpha$ en fonction de $a$.
+
+4. Racine positive de l'équation $n x^{n}+(n-1) x^{n-1}+\cdots+2 x^{2}+x-a=0$.
+
+On note dans cette partie $i_{n}(x)=n x^{n}+(n-1) x^{n-1}+\cdots+2 x^{2}+x-a$.
+
+(a) Montrer que l'équation $i_{n}(x)=0$ possède une unique solution sur $] 0 ;+\infty[$, et que cette solution appartient à l'intervalle $] 0 ; 1\left[\right.$ si $n(n+1)>2 a$. On notera cette solution $y_{n}$.
+
+(b) Prouver la relation $(x-1)^{2} i_{n}(x)=n x^{n+2}-(n+1) x^{n+1}+x-a(x-1)^{2}$.
+
+(c) Montrer que $i_{n+1}\left(y_{n}\right)>i_{n}\left(y_{n}\right)$. En déduire la décroissance de la suite $\left(y_{n}\right)$, et sa convergence vers un réel $\beta \in[0 ; 1[$.
+
+(d) Montrer que $0 \leq n y_{n}^{n} \leq n y_{A}^{n}$ dès que $n \geq A$, où $A(A+1) \geq 2 a .$ En déduire la limite de la suite $\left(n y_{n}^{n}\right)$, puis déterminer $\beta$ en fonction de $a$.
+
+\end{exercice}
+
+\begin{exercice}
+On considère une suite $\left(u_{n}\right)$ définie par $u_{0}>0$ et $\forall n \in \mathbb{N}, u_{n+1}=f\left(u_{n}\right)$, avec $f: x \mapsto \frac{x^{3}+3 x}{3 x^{2}+1} .$ Déterminer la nature de la suite $\left(u_{n}\right)$ en distinguant éventuellement plusieurs cas selon la valeur de $u_{0}$
+\end{exercice}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{exercice}
+
+On définit dans cet exercice une fonction $f$ par $f(z)=\left|z^{3}-z+2\right|$, où $z \in \mathbb{C} .$ Le but de l'exercice est de déterminer la valeur maximale prise par $f$ lorsque $z$ parcourt l'ensemble des nombres complexes de module $1 .$
+
+1. Exprimer $\cos (2 x)$ et $\cos (3 x)$ en fonction de $\cos (x)$, lorsque $x$ est un nombre réel quelconque (on démontrera la formule donnée pour $\cos (3 x)$ ).
+
+2. Calculer $f(z)$ lorsque $z=1 ; z=e^{i \frac{\pi}{3}} ; z=i$ et $z=e^{-i \frac{\pi}{4}}$.
+
+3. On pose maintenant $z=e^{i \theta}$, avec $\theta \in \mathbb{R}$. Montrer que $f(z)^{2}=4 g(\cos (\theta))$, où $g(x)=4 x^{3}-x^{2}-4 x+2$
+
+4. Étudier les variations de la fonction $g$ sur l'intervalle $[-1,1]$, et déterminer en particulier son maximum sur cet intervalle.
+
+5. Conclure.
+\end{exercice}
+
+\begin{exercice}
+
+
+Dans tout ce problème, on définit la fonction $f: \mathbb{R} \rightarrow \mathbb{R}$ par $f(x)=\arctan (x+1)$.
+
+\paragraph{A. Étude de la fonction $f$.}
+
+1. Donner le domaine de définition de $f$.
+
+2. Étudier les variations de la fonction $f$, et dresser son tableau de variations complet.
+
+3. Tracer la courbe représentative de $f$ en précisant ses asymptotes éventuelles, son point d'abscisse 0 , ainsi que sa tangente en son point d'abscisse $-1$. 
+
+\paragraph{B. Résolution numérique d'une équation.}
+
+1. Montrer que l'équation $f(x)=x$ admet une unique solution $\alpha$, et que $\alpha \in\left[1, \frac{\pi}{2}\right]$. On donne la valeur $\arctan (2) \simeq 1.1$.
+
+2. On définit une suite $\left(u_{n}\right) \operatorname{par}\left\{\begin{array}{l}u_{0}=1 \\ \forall n \in \mathbb{N}, \quad u_{n+1}=f\left(u_{n}\right)\end{array}\right.$.
+
+(a) Montrer que, $\forall n \in \mathbb{N}, u_{n} \in\left[1, \frac{\pi}{2}\right]$.
+
+(b) Montrer que, $\forall x \in\left[1, \frac{\pi}{2}\right],\left|f^{\prime}(x)\right| \leqslant \frac{1}{5}$.
+
+(c) En déduire rigoureusement que, $\forall n \in \mathbb{N},\left|u_{n+1}-\alpha\right| \leqslant \frac{1}{5}\left|u_{n}-\alpha\right|$.
+
+(d) Montrer que $\lim _{n \rightarrow+\infty} u_{n}=\alpha$.
+
+(e) Déterminer un entier naturel $n_{0}$ tel que $u_{n_{0}}$ soit une valeur approchée de $\alpha$ à $10^{-2}$ près (on ne demande pas de calculer la valeur de $u_{n_{0}}$ correspondante).
+
+3. On introduit maintenant la fonction $g:\left\{\begin{array}{rlc}\mathbb{R} & \rightarrow & \mathbb{R} \\ x & \mapsto \frac{\arctan (x+1)-\alpha}{x-\alpha}\end{array}\right.$, définie sur $\mathbb{R} \backslash\{\alpha\} .$ Montrer que la fonction $g$ est prolongeable par continuité en $\alpha$, et préciser ce prolongement.
+
+\paragraph{Résolution d'une équation différentielle.}
+
+1. A l'aide d'une intégration par parties, déterminer une primitive de la fonction $f$ sur $\mathbb{R}$ après avoir justifié son existence.
+
+2. Résoudre sur $\mathbb{R}$ l'équation différentielle $\left\{\begin{array}{l}y^{\prime}-f(x) y=0 \\ y(0)=1\end{array}\right.$
+
+\paragraph{D. Étude d'une somme.}
+
+On définit dans cette partie la somme $S_{n}=\sum_{k=1}^{n} \arctan \left(\frac{1}{1+k+k^{2}}\right)$, pour tout entier naturel $n$.
+
+1. Montrer en détaillant le raisonnement effectué que $\forall x \in[1,+\infty[, f(x)-f(x-1)=$ $\arctan \left(\frac{1}{1+x+x^{2}}\right)$.
+
+2. En déduire la convergence de la suite $\left(S_{n}\right)$, et préciser sa limite. 
+
+\paragraph{E. Calcul matriciel.}
+
+On considère dans cette partie l'application $u:\left\{\begin{array}{clc}\mathbb{R}^{2} & \rightarrow & \mathcal{M}_{2}(\mathbb{R}) \\ (x, y) & \mapsto & \left(\begin{array}{cc}f(x) & f^{\prime}(x) \\ f(y) & f^{\prime}(y)\end{array}\right)\end{array}\right.$.
+
+1. Expliquer rapidement pourquoi $u$ est une application de $\mathbb{R}^{2}$ dans $\mathcal{M}_{2}(\mathbb{R})$.
+
+2. L'application $u$ est-elle injective?
+
+3. L'application $u$ est-elle surjective?
+
+4. On note $A$ la matrice $u(0,-1)$.
+
+(a) Écrire explicitement la matrice $A$.
+
+(b) Vérifier que $A^{2}=\left(\frac{\pi}{4}+1\right) A-\frac{\pi}{4} I$, où on a noté $I$ la matrice identité dans $\mathcal{M}_{2}(\mathbb{R}) .$
+
+(c) Montrer l'existence de deux suites de réels $\left(x_{n}\right)$ et $\left(y_{n}\right)$ telle que, $\forall n \in \mathbb{N}, A^{n}=x_{n} A+y_{n} I .$
+
+(d) Expliciter $x_{n}$ et $y_{n}$ en fonction de $n$. Pour cette question, on pourra (mais ce n'est pas une obligation) étudier les deux suites auxiliaires $u$ et $v$ définies par $u_{n}=x_{n}+y_{n}$ et $v_{n}=\frac{\pi}{4} x_{n}+y_{n}$.
+
+(e) En déduire une forme simplifiée de $A^{n}$.
+
+\paragraph{F. Dénombrement.}
+
+1. Quelles sont les valeurs prises par $\lfloor f(x)\rfloor$ lorsque $x$ parcourt $\mathbb{R}$ (la notation $\lfloor x\rfloor$ désigne ici la partie entière du réel $x$ ) ?
+
+2. On considère une urne contenant, pour chaque entier $k$ correspondant à une des valeurs trouvées à la question précédente, $|k|+1$ boules numérotées $k$ (ainsi, si $k=4$ est une des valeurs trouvées à la question 1, l'urne contiendra 5 boules numérotées 4). On tire successivement et avec remise 3 boules dans cette urne.
+
+(a) Combien de boules au total l'urne contient-elle?
+
+(b) À quel objet mathématique peut-on apparenter un tirage?
+
+(c) En déduire le nombre de tirages différents possibles.
+
+(d) Combien y a-t-il de tirages avec au moins une boule portant le numéro $-2$ ?
+
+(e) Combien y a-t-il de tirages avec exactement deux boules numérotées 1 ?
+
+\end{exercice}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{exercice}
+
+On s'intéresse dans cet exercice à deux suites $\left(u_{n}\right)$ et $\left(v_{n}\right)$ définies pas les conditions suivantes : $u_{0}=2, v_{0}=1$ et $, \forall n \in \mathbb{N}:\left\{\begin{array}{l}u_{n+1}=2 u_{n}-v_{n} \\ v_{n+1}=2 v_{n}-u_{n}\end{array} .\right.$ On posera également dans la suite de l'exercice $A=\left(\begin{array}{cc}2 & -1 \\ -1 & 2\end{array}\right)$. Plusieurs questions dans l'exercice permettent de démontrer de différentes façons un même résultat, il est alors bien entendu exclu d'utiliser le résultat d'une question précédente pour redémontrer une formule déjà obtenue par une autre méthode.
+
+1. Calcul explicite de $u_{n}$ et $v_{n}$.
+
+(a) On pose $a_{n}=u_{n}+v_{n}$ et $b_{n}=u_{n}-v_{n}$. Vérifier que les deux suites $\left(a_{n}\right)$ et $\left(b_{n}\right)$ sont d'un type bien particulier, et déterminer leur expression explicite en fonction de $n$.
+
+(b) En déduire les expressions de $u_{n}$ et de $v_{n}$ en fonction de $n$.
+
+2. Lien entre les suites $\left(u_{n}\right)$ et $\left(v_{n}\right)$ et la matrice $A$ et calcul de $A^{n}$.
+
+(a) En posant, pour tout entier naturel $n, U_{n}=\left(\begin{array}{c}u_{n} \\ v_{n}\end{array}\right)$ (matrice à une seule colonne et deux lignes), vérifier que $U_{n+1}=A \times U_{n}$ et en déduire rigoureusement que $U_{n}=A^{n} \times\left(\begin{array}{c}2 \\ 1\end{array}\right)$.
+
+(b) Calculer $A^{2}$ et déterminer deux réels $a$ et $b$ tels que $A^{2}=a A+b I_{2}$.
+
+(c) Prouver par récurrence l'existence de deux suites réelles $\left(a_{n}\right)$ et $\left(b_{n}\right)$ telles que $A^{n}=$ $a_{n} A+b_{n} I_{2}$.
+
+(d) Calculer explicitement $a_{n}$ et $b_{n}$ en fonction de $n$, et en déduire la valeur de $A^{n}$ (on écrira explicitement les quatre coefficients de la matrice).
+
+(e) Retrouver les expressions explicites de $u_{n}$ et de $v_{n}$, puis calculer ces mêmes expressions si on modifie dans l'énoncé les conditions initiales en $u_{0}=1$ et $v_{0}=2($ en conservant les mêmes relations de récurrence).
+
+3. Différentes méthodes de calcul de l'inverse de $A$.
+
+(a) Calculer l'inverse $A^{-1}$ de la matrice $A$ à l'aide d'un pivot de Gauss.
+
+(b) Retrouver plus rapidement ce même inverse à l'aide du résultat de la question $2 . b$.
+
+(c) L'expression de $A^{n}$ obtenue à la question $2 . d$ fonctionne-t-elle pour $n=-1 ?$ Et pour $n=-2 ?$
+
+4. Calcul de $A^{n}$ à l'aide de la formule du binôme de Newton.
+
+(a) En posant $J=\left(\begin{array}{ll}1 & 1 \\ 1 & 1\end{array}\right)$, calculer rigoureusement les puissances de la matrice $J .$
+
+(b) Exprimer $A$ en fonction des matrices $J$ et $I_{2}$, puis retrouver la valeur de $A^{n}$ à l'aide d'une application maitrisée de la formule du binôme de Newton. 
+
+\end{exercice}
+
+
+\begin{exercice}
+
+On rappelle que la trace d'une matrice carrée $M \in \mathcal{M}_{n}(\mathbb{R})$ est définie par $\operatorname{Tr}(M)=\sum_{i=1}^{n} m_{i i}$ (somme des coefficients diagonaux de la matrice). On rappelle également que, pour deux matrices carrées de même taille, on a toujours $\operatorname{Tr}(A B)=\operatorname{Tr}(B A)$.
+
+\paragraph{A. Un exemple de taille 2 .}
+
+On définit dans cette partie $A=\left(\begin{array}{cc}1 & 1 \\ -1 & 1\end{array}\right)$.
+
+1. Calculer $A^{-1}$. A-t-on $\operatorname{Tr}\left(A^{-1}\right)=(\operatorname{Tr}(A))^{-1}$ ?
+
+2. Calculer $A^{2}$. A-t-on $\operatorname{Tr}\left(A^{2}\right)=(\operatorname{Tr}(A))^{2}$ ?
+
+3. Calculer plus généralement $A^{n}$ (on pourra donner plusieurs formules selon le reste de la division de $n$ par 4, sans les démontrer par une récurrence rigoureuse).
+
+4. En déduire la valeur de $\operatorname{Tr}\left(A^{n}\right)$ en fonction de $n$ (là encore on pourra distinguer plusieurs cas).
+
+5. L'application $\left\{\begin{array}{ccc}\mathcal{M}_{2}(\mathbb{R}) & \rightarrow & \mathbb{R} \\ M & \mapsto & \operatorname{Tr}(M)\end{array}\right.$ est-elle une application injective? Surjective? On justifiera les réponses données.
+
+\paragraph{B. Un exemple de taille $3 .$}
+
+On définit dans cette partie deux matrices $A=\left(\begin{array}{ccc}-1 & 5 & -3 \\ 1 & -1 & 1 \\ 0 & -4 & 2\end{array}\right)$ et $P=\left(\begin{array}{ccc}1 & -1 & 2 \\ 0 & 1 & -1 \\ -1 & 2 & -1\end{array}\right)$.
+
+1. Prouver que la matrice $P$ est inversible et calculer $P^{-1}$.
+
+2. Calculer le produit $P^{-1} A P$, qu'on notera désormais $D$ (on doit obtenir une matrice diagonale).
+
+3. Comparer la trace des matrices $A$ et $D$.
+
+4. Montrer que, $\forall n \in \mathbb{N}, A^{n}=P D^{n} P^{-1}$.
+
+5. En déduire $A^{n}$ (on écrira explicitement toute la matrice) puis comparer Tr $\left(A^{n}\right)$ et $\operatorname{Tr}\left(D^{n}\right)$.
+
+6. Démontrer que la relation $\operatorname{Tr}\left(P^{-1} A P\right)=\operatorname{Tr}(A)$ est toujours vraie.
+
+\paragraph{Une question indépendante pour conclure en beauté.}
+
+Déterminer une matrice $M \in \mathcal{M}_{3}(\mathbb{R})$ qui vérifie toutes les conditions suivantes :
+
+- $M$ est une matrice symétrique.
+
+- $\operatorname{Tr}(M)=1 .$
+
+- la somme des coefficients de la première ligne de $M$ vaut $2 .$
+
+- la somme des coefficients de la deuxième ligne de $M$ vaut $4 .$
+
+- la somme des coefficients de la troisième ligne de $M$ vaut $-5 .$
+
+- la somme des coefficients dans les quatre coins de la matrice $M$ vaut $-4$.
+
+- la somme des cinq autres coefficients (ceux qui ne sont pas dans les coins donc) de $M$ vaut $5 .$
+
+La solution de ce problème est-elle unique?
+\end{exercice}
+
+
+\end{document}

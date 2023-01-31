@@ -1,0 +1,88 @@
+\subsection{Grenouille sur escalier (marche aléatoire)}
+
+
+\begin{exercice}
+Une grenouille monte les marches d'un esacalier (supposé infini) en partant du sol (marche 0) et  en sautant 
+\begin{itemize}
+\item Ou bien une seule marche, avec probabilité $p$; 
+\item Ou bien deux marches, avec la probabilité $1-p$.
+\end{itemize}
+On suppose que les sauts sont indépenadnts les uns des autres. 
+\begin{enumerate}
+\item Dans cette question, on observe $n$ sauts de la grenouille, et on note $X_n$ le nombre de fois où la grenouille a sauté une marche, et $Y_n$ le nombre de marches franchies au total. Quelle est la loi de $X_n$ ? Exprimer $Y_n$ en fonciton de $X_n$. En déduire l'espérance et la variance de $Y_n$. 
+\item Pour $k\geq 1$, on note $p_k$ la probabilité que la grenouille passe par la marche $k$. Que vaut $p_1 $ ? Que vaut $p_2$ ? Etarblir une formule de réurrence liant $p_k$ à $p_{k-1}$. En déduire la valeur de $p_k$ pour $k\geq 1$. 
+\item On note désormais $Z_n$ le nombre de sauts nécessaires pour atteindre ou dépasser la $n$-ième marche. Ecrire un algorithme Python qui simule la variable aléatoire $Z_n$. 
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item Tout d'abord l'univers image est $X_n(\Omega)= \intent{0,n}$ car la grenouille fait $n$ sauts.
+L'expérience décrite correspond à un schéma de Bernouilli : $X_n$ compte le nombre de fois où $n$  expériences indépendantes (les $n$ premiers sauts) donnent un résultat ayant la probabilité $p$. La variable aléatoire $X_n$ suit donc une loi binomiale de paramétres $n,p$ : $X_n\hookrightarrow \cB(n,p)$.
+
+On a par ailleurs en suivant l'énoncé : 
+$$Y_n = X_n +2 (n-X_n)$$
+car $n-X_n$ correspond au nombre de fois où la grenouille a sauté 2 marches. 
+
+On calcule l'espérance en utilisant la linéarité et l'espèrance d'une loi binomiale : 
+\begin{align*}
+E(Y_n) &= E(X_n + 2 (n-X_n)) \\
+			&= E(X_n) +2n - 2 E(X_n)\\
+			&=-E(X_n) +2n\\
+			&= (2-p)n
+\end{align*}
+
+et la variance : 
+\begin{align*}
+Var(Y_n) &= Var(X_n + 2 (n-X_n)) \\
+			&= Var( -X_n +2n) \\
+			&=Var(X_n)\\
+			&= np(1-p)
+\end{align*}
+
+\item On a $p_1=p$ car la grenouille est à la marche $0$ au départ et qu'elle a une probabilité $p$ de sauter qu'une seule marche. 
+Pour trouver $p_2$ remarquons que les deux possibilités pour que la grenouille passe par la marche $2$ sont les suivantes : 
+\begin{itemize}
+\item Les deux premiers sauts sont des sauts de $1$ marche : c'est l'événement $[X_2=1 \cap X_1 = 1]$
+\item Le premier saut est un saut de $2$ marches : c'est l'événement $[X_1=0]$ ($X_i$ correspond au nombre de fois où on saute 1 marche, donc $[X_1 = 0]$ correspond à "le saut $1$ n'est pas de une marche", cad, c'est un saut de 2 marches... ) 
+\end{itemize}
+Ces deux événements sont incompatibles et on a alors :
+$$p_2 =  \bP (X_2 =2 \cap X_1 =1)  +\bP(X_1=0) = p^2 +(1-p)$$
+
+Il est plus simple de s'intéresser à l'évenement contraire,  $A_k$ : " la grenouille ne passe pas par la marche $k$". On  a $\bP(A_k) =1-p_k$. L'événemtn $A_k$ est réalisé si et seulement si la grenouille passe par la marche $k-1$  et fait un saut de deux marches, de probailité $p_{k-1} \times (1-p)$. 
+On  a donc 
+$$1- p_k = p_{k-1} (1-p)$$
+Soit en réarrangeant les termes : 
+$$p_k = (p-1) p_{k-1} +1$$
+C'est une suite arithmético-géométrique dont la limite vaut $\ell=\frac{2}{1-p}$, la suite 
+$u_k = p_k -\ell $ est géométrique de raison $(p-1)$ et on  a
+$$u_k =(p-1)^{k-1}  u_1 = (p-1)^{k-1} (p_1-\ell) $$
+et donc 
+$$p_k =  (p-1)^{k-1} (p_1-\ell) +\ell$$
+Après simplification on tombe sur
+$$p_k = \frac{1}{2-p} +(p-1)^{k-1}  \frac{2p-p^2 -1}{2-p}$$
+
+\begin{lstlisting}
+from random import *
+def simulation_Z(n,p):
+  Z=0
+  marche=0
+
+  while  marche <n:
+   saut = random()
+   Z+=1
+   if saut <p:
+     marche+=1
+   if saut >p:
+     marche+=2
+ 
+ return(Z)
+  	
+\end{lstlisting}
+
+
+
+\end{enumerate}
+
+
+
+\end{correction}

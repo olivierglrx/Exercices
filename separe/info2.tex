@@ -1,0 +1,57 @@
+\subsection{Lancers de dés. }
+
+
+
+\begin{exercice}
+Pour toutes les questions d'informatique on pourra utiliser les fonctions créées (ou citées) dans les questions précédentes. 
+
+On considère l'expérience suivante : on effectue une suite de lancers d'un dé  équilibré. On suppose les lancers indépendants. 
+
+Pour tout entier $n$ on note $F_n $ l'événement 
+: ' on obtient 6 au  lancer $n$.' 
+
+et $T_n$ l'événément : ' on obtient 6 pour la première fois au lancer $n$'.
+
+\begin{enumerate}
+\item Exprimer $T_n$ en fonction des $(F_k)_{k\in \intent{0,n}}$
+\item En déduire que $P(T_n) = \frac{5^{n-1} }{6^n}$. 
+\item Créer une fonction Python \texttt{premier\_six} qui simule le lancer d'un dé et retourne la première fois où l'on obtient le nombre 6. 
+\item Créer une fonction Python \texttt{moyenne\_empirique} qui prend en argument un nombre $N$ représentant le nombre d'itérations de l'expérience et qui retourne la valeur moyenne du nombre de lancers nécessaire pour obtenir le premier 6. 
+\item Soit $n\in \N$. On note $B_n$ l'événement 'On obtient  au moins un 6 dans les $n$ premiers lancers'. Exprimer $\overline{B_n}$  en fonction des $(F_k)_{k\in \intent{0,n}}$
+\item En déduire $P(B_n)$. 
+\item Créer une fonction  Python \texttt{combien\_de\_six} qui prend en argument un nombre $n$ qui correspond au nombre de lancers et retourne le nombre de $6$ obtenu pendant les $n$ lancers. 
+%\item Créer une fonction \texttt{frequence\_six} qui prend en argument un nombre   $n$ qui correspond au nombre de lancers et un nombre $N$ qui correspond au nombre d'itérations de l'expérience et qui retourne le nombre moyen de $6$ obtenu au cours des $n$ lancers. 
+
+\item Soit $k\in \N$. On note $C_k$ l'événement 'on obtient $k$ six au cours des 100 premiers lancers'.
+
+ Calculer $P(C_k)$ en fonction de $k$. 
+\item Créer une fonction Python \texttt{evenement\_C} qui prend en argument un nombre $k$ et retourne \texttt{True} si on a obtenu exactement $k$ six au cours des 100 premiers lancers et \texttt{False} sinon. 
+\item Créer une fonction \texttt{frequence\_C} qui prend en argument un nombre $k$ et un nombre $N$ qui correspond au nombres d'itération de l'expérience et  retourne la fréquence des expériences pour lequel on a obtenue exactement $k$ six pour 100 lancers. 
+
+\end{enumerate}
+
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item $\ddp T_n = \bigcap_{k=1}^{n-1} \overline{F_k}  \cap F_n$
+\item $P(F_k) = \frac{1}{6}$  et $P( \overline{F_k}) = \frac{5}{6}$. Les lancers sont indépendants donc 
+\begin{align*}
+P(T_n) &= \left(\prod_{k=1}^{n-1}  P( \overline{F_k} )\right) P (F_n)\\
+&= \left(\prod_{k=1}^{n-1}  \frac{5}{6}\right) \frac{1}{6}\\
+&= \frac{5^{n-1}}{6^n}
+\end{align*}
+\item cf dernière page
+\item cf dernière page
+\item $\overline{B_n} = \bigcap_{k=1}^{n} \overline{F_k}  \cap F_n$
+\item $P(B_n) = 1- P(\overline{B_n} ) = 1- \left(\frac{5}{6}\right)^n$
+\item cf dernière page
+\item L'univers est la suite des 100 lancers de dés, son cardinal est $6^{100}$ 
+Le cardinal de l'événement  est $\binom{100}{k}1^k 5^{100-k}$ (position des dés donnant 6 $\times$ possibilités pour 
+ ces dés  , $\times $ posiibilités pour les autres dés)
+ On obtient 
+ $$P(C_k)  =\frac{\binom{100}{k} 5^{100-k}}{6^{100}}$$
+
+\end{enumerate}
+\end{correction}

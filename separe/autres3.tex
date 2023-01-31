@@ -1,0 +1,67 @@
+\subsection{Equation du second degré à coeff complexes}
+
+
+\begin{exercice}
+On considère l'équation du second degré suivante : 
+$$z^2+(3i-4)z+1-7i=0 \quad (E) $$
+
+\begin{enumerate}
+\item A la manière d'une équation réelle, calculer le discriminant $\Delta$ du polynôme complexe, et montrer que $\Delta=3+4i$
+\item On se propose de résoudre $ (E_2) \, : \, u^2=\Delta \, $  d'inconnue complexe $u$. 
+\begin{enumerate}
+\item On écrit $u=x+iy$ avec $(x,y)\in \R^2$. Montrer que $(E_2)$ est équivalent à 
+$$ x^4-3x^2-4=0 \quadet y =\frac{2}{x}.$$
+\item En déduire que les solutions de $(E_2)$ sont 
+$$u_1=3-i\quadet u_2=1-2i$$
+\end{enumerate}
+\item Soit $u_1$ une solution de l'équation précédente. 
+On considère $r_1 = \frac{-3i+4 +u_1}{2}$. Montrer que $r_1$ est solutions de l'équation  $(E)$.
+\item Quelle est à l'autre solution  de  $(E)$ ? 
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+On suit les étapes indiquées dans l'énoncé. 
+\begin{enumerate}
+\item Le discriminant vaut 
+$$\Delta = (3i-4)^2 -u^4 (1-7i) = -9-24i +16 -4+28i = 3+4i$$
+\item Résolvons $u^2=3+4i$. \begin{enumerate}
+\item On pose donc $u=x+iy$ avec $x,y\in \R$ 
+On a  donc $(x+iy)^2 = 3+4i $, soit $x^2-y^2 +2xyi =3+4i$ En identifiant partie réelle et partie imaginaire on obtient : 
+$$x^2 -y^2 =3 \quad 2xy=4$$
+
+Comme $x\neq 0 $ (sinon $\Delta\in \R_-$ ), la deuxième équation devient 
+\conclusion{$y=\frac{2}{x}.$} On remplace alors $y$ avec cette valeur dans la première équation, ce qui donne : 
+$$x^2 -\frac{4}{x^2}=3$$ et  en multipliant par $x^2$ 
+\conclusion{ $x^4 -3x-4=0$}
+
+\item On fait un changement de variable $X=x^2$ dans l'équation $x^4-3x^2-4=0$. On obtient 
+$$X^2 -3X-4=0$$
+De discriminant $\Delta_2 = 9+4*4=25=5^2$. Cette équation admet ainsi deux solutions réelles : 
+$$X_1= \frac{3-5}{2}= -1\quadet X_2 =\frac{3+5}{2}=4$$
+Remarquons maintenant que $X$ doit être positif car $x^2=X$ ainsi, les solutions pour la variable $x$ sont 
+$$x_1 =\sqrt{4}=2 \quadet x_2 =-\sqrt{4}=-2$$
+Ce qui correspond respectivement à $y_1= 1$ et $y_2= -1$
+On obtient finalement deux solutions pour $u^2=\Delta $ 
+à savoir 
+\conclusion{$u_1= 2+i \quadet u_2 =-2-i$}
+
+
+
+\end{enumerate}
+\item  On considère donc $r_1 = \frac{-3i+4+2+i}{2}= 3-i$. Montrons que $r_1$ est solution de $(E)$ 
+
+$$r_1^2 = (3-i)^2 = 9-6i-1=8-6i$$
+$$(3i-4)r_1 =(3i-4) (3-i) = 9i+3-12+4i = -9+13i$$
+Donc 
+$r_1^2 +(3i-4)r_1 = 8-6i -9+13i  =-1 +7i$
+Soit 
+$$r_1^2 +(3i-4)r_1 +1-7i=0$$
+\conclusion{Donc $r_1$ est bien solution de $(E)$. }
+
+\item L'autre solution est sans aucun doute 
+\conclusion{ $r_2 = \frac{-3i+4+u_2}{2} = 1-2i$}
+
+\end{enumerate}
+\end{correction}

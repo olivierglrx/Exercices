@@ -1,0 +1,75 @@
+\subsection{Fonctions $k$-contractante (Pb)}
+
+\begin{exercice}  \;
+Fonctions $k$-contractantes.\\
+\noindent On suppose que $f$ est une fonction d\'efinie sur $\lbrack 0,1\rbrack$ \`a valeurs dans $\lbrack 0,1\rbrack$ et qu'il existe $k\in\rbrack 0,1\lbrack$ tel que
+$$\forall (x,y)\in\lbrack 0,1\rbrack^2,\ |f(x)-f(y)|\leq k|x-y|.$$
+Une telle fonction s'appelle une fonction $k$-contractante.
+\begin{enumerate}
+\item Montrer que $f$ est continue. 
+\item En déduire que $f$ admet au moins un point fixe dans $\lbrack 0,1\rbrack$. 
+\item Montrer par l'absurde que ce point fixe est unique. On le note $c$.  
+
+\item 
+On consid\`ere alors une suite $(c_n)_{n\in\N}$ d\'efinie par son premier terme $c_0\in\lbrack 0,1\rbrack$ et par la relation de r\'ecurrence  : $\forall n\in\N,\ c_{n+1}=f(c_n).$
+\begin{enumerate}
+\item Montrer que la suite $(c_n)_{n\in\N}$ est bien d\'efinie.
+\item Montrer que pour tout $n\in\N$, $|c_n-c|\leq k^n|c_0-c|$. 
+\item En d\'eduire la limite de la suite $(c_n)_{n\in\N}$.
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}  \;
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On cherche \`{a} \'etudier la continuit\'e de $f$ sur $\lbrack 0,1\rbrack$. On repasse pour cela par la d\'efinition de la continuit\'e en montrant que pour tout $x_0\in\lbrack 0,1\rbrack$, $f$ est continue en $x_0$. Pour cela il faut donc montrer que pour tout $x_0\in\lbrack 0,1\rbrack$: $\lim\limits_{x\to x_0} f(x)=f(x_0)$.\\
+\noindent Soit donc $x_0\in\lbrack 0,1\rbrack$ fix\'e. On cherche donc \`{a} montrer que $f(x)-f(x_0)$ tend vers 0 lorsque $x$ tend vers $x_0$. Mais par d\'efinition d'une fonction $k$-contractante, on sait que:
+$$\forall x\in\lbrack 0,1\rbrack,\ |f(x)-f(x_0)|\leq k|x-x_0|.$$
+On va donc obtenir le r\'esultat voulu en utilisant le corollaire du th\'eor\`{e}me des gendarmes. En effet, on a:
+\begin{itemize}
+\item[$\star$] $\lim\limits_{x\to x_0} k |x-x_0|=0$ par propri\'et\'e sur les somme, compos\'ee et produit de limites.
+\item[$\star$] $\forall x\in\lbrack 0,1\rbrack$, $|f(x)-f(x_0)|\leq k |x-x_0|$.
+\end{itemize}
+Ainsi d'apr\`{e}s le corollaire du th\'eor\`{e}me des gendarmes, on a: $\lim\limits_{x\to x_0} f(x)-f(x_0)=0\Leftrightarrow \lim\limits_{x\to x_0} f(x)=f(x_0)$. Ainsi on a montr\'e que la fonction $f$ est continue en $x_0$ et comme cela est vraie pour tout $x_0\in\lbrack 0,1\rbrack$, on a la continuit\'e de $f$ sur $\lbrack 0,1\rbrack$. 
+
+\end{itemize}
+\item V\'erifions que $f$ admet un unique point fixe dans $\lbrack 0,1\rbrack$.
+\begin{itemize}
+\item[$\star$] La fonction $f$ v\'erifie bien: $f: \lbrack 0,1\rbrack\rightarrow \lbrack 0,1\rbrack$ et on vient de montrer qu'elle est continue sur $\lbrack 0,1\rbrack$. Ainsi elle v\'erifie les hypoth\`{e}ses de la premi\`{e}re question et ainsi on a bien l'existence d'un point fixe dans $\lbrack 0,1\rbrack$.
+\item[$\star$] Comme il est impossible d'avoir une hypoth\`{e}se de croissance ou de d\'ecroissance pour $f$, on ne va pas pouvoir appliquer le th\'eor\`{e}me de la bijection. Ainsi, pour obtenir l'unicit\'e du point fixe, on suppose par l'absurde qu'il existe deux points fixes $(c,d)\in\lbrack 0,1\rbrack^2$ de $f$ diff\'erents. Ainsi, on a: 
+$|f(c)-f(d)|\leq k|c-d|\Leftrightarrow |c-d|\leq k|c-d|$. Or $0<k<1$ et ainsi, on a: $|c-d|<|c-d|$: absurde. Ainsi $c=d$ et $f$ admet bien un unique point fixe.
+\end{itemize}
+
+\item
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On montre par r\'ecurrence sur $n\in\N$ la propri\'et\'e $\mathcal{P}(n):\ c_n\ \hbox{est bien d\'efinie et}\ c_n\in\lbrack 0,1\rbrack$. 
+\item[$\bullet$] Initialisation: pour $n=0$: par d\'efinition de la suite, on sait que $c_0$ existe bien et que $c_0\in\lbrack 0,1\rbrack$. Ainsi $\mathcal{P}(0)$ est vraie. 
+\item[$\bullet$] H\'er\'edit\'e: soit $n\in\N$ fix\'e, on suppose la propri\'et\'e vraie au rang $n$, montrons que $\mathcal{P}(n+1)$ est vraie. Par hypoth\`{e}se de r\'ecurrence, on sait donc que $c_n$ existe et que $c_n\in\lbrack 0,1\rbrack$.
+\begin{itemize}
+\item[$\star$] Comme $\mathcal{D}_f=\lbrack 0,1\rbrack$ et que $c_n\in\lbrack 0,1\rbrack$, on a: $c_n\in\mathcal{D}_f$. Ainsi $f(c_n)$ existe bien \`{a} savoir $c_{n+1}$.
+\item[$\star$] De plus, comme on sait que $f: \lbrack 0,1\rbrack\rightarrow \lbrack 0,1\rbrack$ et que $c_n\in\lbrack 0,1\rbrack$, on obtient alors que: $f(c_n)\in\lbrack 0,1\rbrack$, \`{a} savoir $c_{n+1}\in\lbrack 0,1\rbrack$.
+\end{itemize}
+Ainsi $\mathcal{P}(n+1)$ est vraie.
+\item[$\bullet$] Conclusion: il r\'esulte du principe de r\'ecurrence que $(c_n)_{n\in\N}$ existe bien et que pour tout $n\in\N$, on a $c_n\in\lbrack 0,1\rbrack$.
+\end{itemize}
+\item
+\begin{itemize}
+\item[$\bullet$] On montre par r\'ecurrence sur $n\in\N$ la propri\'et\'e $\mathcal{P}(n):\ |c_n-c|\leq k^n |c_0-c|$.
+\item[$\bullet$] Initialisation: pour $n=0$: d'un c\^{o}t\'e, on a: $|c_0-c|$ et de l'autre c\^{o}t\'e, on a: $k^0|c_0-c|=|c_0-c|$. Donc $\mathcal{P}(0)$ est vraie.
+\item[$\bullet$] H\'er\'edit\'e: soit $n\in\N$ fix\'e, on suppose la propri\'et\'e vraie au rang $n$, montrons que $\mathcal{P}(n+1)$ est vraie. D'apr\`{e}s la d\'efinition de la fonction $f$, on sait que: $|f(c_n)-f(c)|\leq k|c_n-c|\Leftrightarrow |c_{n+1}-c|\leq k|c_n-c|$ car $c$ est le point fixe de $f$. Puis par hypoth\`{e}se de r\'ecurrence, on sait aussi que $|c_n-c|\leq k^n |c_0-c|$. Ainsi comme $k>0$, on a: $k|c_n-c|\leq k^{n+1}|c_0-c|$. Puis: $|c_{n+1}-c|\leq k^{n+1}|c_0-c|$. Donc $\mathcal{P}(n+1)$ est vraie.
+\item[$\bullet$] Conclusion: il r\'esulte du principe de r\'ecurrence que pour tout $n\in\N$, on a: $|c_n-c|\leq k^n |c_0-c|$.
+\end{itemize}
+\item On peut alors utiliser le corollaire du th\'eor\`{e}me des gendarmes et on obtient que:
+\begin{itemize}
+\item[$\bullet$] $\forall n\in\N,\ |c_n-c|\leq k^n |c_0-c|$.
+\item[$\bullet$] $\lim\limits_{n\to +\infty} k^n|c_0-c|=0$ car $-1<k<1$.
+\end{itemize}
+Ainsi d'apr\`{e}s le corollaire du th\'eor\`{e}me des gendarmes, on a: $\lim\limits_{n\to +\infty} c_n=c$.
+\end{enumerate}
+\end{enumerate}
+\end{correction}

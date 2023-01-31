@@ -1,0 +1,1226 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+\documentclass[a4paper, 11pt,reqno]{article}
+\input{/Users/olivierglorieux/Desktop/BCPST/2020:2021/preambule.tex}
+\geometry{hmargin=2.0cm, vmargin=3.5cm}
+
+  \newif\ifshow
+\showfalse
+\input{/Users/olivierglorieux/Desktop/BCPST/2021:2022/ifshow.tex}
+
+\author{Olivier Glorieux}
+
+\begin{document}
+
+
+
+\section*{Exercice1}
+
+$\alpha $ est un rel strictement positif. Pour tout $n\in \mathbb{N}$ on
+pose : 
+\begin{equation*}
+u_{n}\left( \alpha \right) =\dfrac{n!}{\prod\limits_{k=0}^{n}\left( \alpha
++k\right) }
+\end{equation*}
+
+\begin{enumerate}
+\item Etude de la convergence de la suite $\left( u_{n}\left( \alpha \right)
+\right) _{n\in \mathbb{N}}$
+
+\begin{enumerate}
+\item Montrer que la suite $\left( u_{n}\left( \alpha \right) \right) _{n\in 
+\mathbb{N}}$ est monotone et convergente. Que peut-on déduire pour la série
+de terme général $\left( u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha
+\right) \right) $ ?
+
+On note $\ell \left( \alpha \right) $ la limite de la suite $\left(
+u_{n}\left( \alpha \right) \right) _{n\in \mathbb{N}}$
+
+\item On suppose que $\ell \left( \alpha \right) $ est non nulle. Démontrer
+que : 
+\begin{equation*}
+u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha \right) \underset{%
+n\rightarrow +\infty }{\thicksim }\dfrac{\alpha \ell \left( \alpha \right) }{%
+n}
+\end{equation*}
+
+\item Déduire de ce qui précède que $\ell \left( \alpha \right) =0$
+\end{enumerate}
+
+\item Dans cette question : $\alpha \in ]0,1]$
+
+\begin{enumerate}
+\item Montrer que : 
+\begin{equation*}
+\forall n\in \mathbb{N\;\;}u_{n}\left( \alpha \right) \geqslant \dfrac{1}{%
+n+\alpha }
+\end{equation*}
+
+\item Quelle est la nature de la série de terme général $u_{n}\left( \alpha
+\right) $ ?
+\end{enumerate}
+
+\item On pose pour tout entier naturel $n$ : 
+\begin{equation*}
+I_{n}\left( \alpha \right) =\int\limits_{0}^{+\infty }e^{-\alpha t}\left(
+1-e^{-t}\right) ^{n}dt
+\end{equation*}
+
+\begin{enumerate}
+\item Etudier la convergence de l'intégrale généralisée $I_{n}\left( \alpha
+\right) $ et calculer $I_{0}\left( \alpha \right) $
+
+\item Soit un réel $x$ strictement positif. Intégrer par parties : 
+\begin{equation*}
+\int\limits_{0}^{x}e^{-\alpha t}\left( 1-e^{-t}\right) ^{n}dt
+\end{equation*}%
+et en déduire une relation simple entre $I_{n}\left( \alpha \right) $ et $%
+I_{n-1}\left( \alpha +1\right) $, pour tout $n$ entier naturel non nul.
+
+\item En déduire : $\forall n\in \mathbb{N\;\;}I_{n}\left( \alpha \right)
+=u_{n}$
+\end{enumerate}
+
+\item On suppose désormais que $\alpha >1$
+
+\begin{enumerate}
+\item Montrer que, pour tout $N$ entier naturel : 
+\begin{equation*}
+\sum_{n=0}^{N}I_{n}\left( \alpha \right) =\dfrac{1}{\alpha -1}-I_{N+1}\left(
+\alpha -1\right)
+\end{equation*}
+
+\item En déduire que la série de terme général $u_{n}\left( \alpha \right) $
+est convergente, et donner en fonction de $\alpha $ la valeur de $%
+\sum\limits_{n=0}^{+\infty }u_{n}\left( \alpha \right) $.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2}
+
+$\mathfrak{M}_{3}\left( \mathbb{R}\right) $ désigne l'ensemble des matrices
+carrées d'ordre 3 à coefficients réels.\newline
+$\mathfrak{M}_{3,1}\left( \mathbb{R}\right) $ est l'ensemble des matrices
+colonnes à trois lignes dont les coefficients sont réels.\newline
+On pose : 
+\begin{equation*}
+A=\left( 
+\begin{array}{lll}
+1 & 0 & 2 \\ 
+\dfrac{3}{2} & -2 & 6 \\ 
+\dfrac{1}{2} & -1 & \dfrac{5}{2}%
+\end{array}%
+\right) \;\text{et }B=\left( 
+\begin{array}{c}
+x \\ 
+y \\ 
+z%
+\end{array}%
+\right) 
+\end{equation*}%
+où $x,\;y$ et $z$ sont des nombres réels.\newline
+On définit alors une suite de matrices colonnes $\left( X_{n}\right) _{n\in 
+\mathbb{N}}$ de la manière suivante :
+
+\begin{equation*}
+\left\{ 
+\begin{array}{l}
+X_{0}\in \mathfrak{M}_{3,1}\left( \mathbb{R}\right) \\ 
+\forall n\in \mathbb{N\;X}_{n+1}=AX_{n}+B%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que 0 , $\dfrac{1}{2}$ et $1$ sont les valeurs propres de A,
+et préciser des vecteurs propres $u,\;v$ et $w$ qui leur sont respectivement
+associés.
+
+\item Justifier les affirmations suivantes :
+
+\begin{itemize}
+\item il existe un unique triplet $\left( \alpha ,\beta ,\gamma \right) $ de 
+$\mathbb{R}^{3}$ tel que : 
+\begin{equation*}
+B=\alpha u+\beta v+\gamma w
+\end{equation*}
+
+\item Pour tout entier naturel $n,$ il existe un unique triplet $\left(
+\alpha _{n},\beta _{n},\gamma _{n}\right) $ de $\mathbb{R}^{3}$ tel que : 
+\begin{equation*}
+X_{n}=\alpha _{n}u+\beta _{n}v+\gamma _{n}w
+\end{equation*}
+\end{itemize}
+
+\item Etablir par récurrence que 
+\begin{equation*}
+n\in \mathbb{N}^{\ast }\;\;\left\{ 
+\begin{array}{l}
+\alpha _{n}=\alpha \\ 
+\beta _{n}=\left( \dfrac{1}{2}\right) ^{n}\left( \beta _{0}-2\beta \right)
++2\beta \\ 
+\gamma _{n}=\gamma _{0}+n\gamma%
+\end{array}%
+\right.
+\end{equation*}
+
+\item Soit $\left( a_{n}\right) _{n\in \mathbb{N}},\;\left( b_{n}\right)
+_{n\in \mathbb{N}}$ et $\left( c_{n}\right) _{n\in \mathbb{N}}$ les suites ré%
+elles telles que : 
+\begin{equation*}
+\forall n\in \mathbb{N\;}X_{n}=\left( 
+\begin{array}{c}
+a_{n} \\ 
+b_{n} \\ 
+c_{n}%
+\end{array}%
+\right)
+\end{equation*}%
+On dit que la suite de matrices colonnes $\left( X_{n}\right) _{n\in \mathbb{%
+N}}$ converge si les suites réelles $\left( a_{n}\right) _{n\in \mathbb{N}%
+},\;\left( b_{n}\right) _{n\in \mathbb{N}}$ et $\left( c_{n}\right) _{n\in 
+\mathbb{N}}$ convergent. Dans ce cas on écrit : 
+\begin{equation*}
+\lim X_{n}=\left( 
+\begin{array}{c}
+\lim a_{n} \\ 
+\lim b_{n} \\ 
+\lim c_{n}%
+\end{array}%
+\right)
+\end{equation*}
+
+\begin{enumerate}
+\item Prouver que $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge si et
+seulement si le réel $\gamma $ (introduit en 2.) est nul.
+
+\item En déduire que $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge si et
+seulement si : 
+\begin{equation*}
+3x-4y+12z=0
+\end{equation*}
+\end{enumerate}
+
+\item On dit que le couple $(A,B)$ admet une position d'équilibre stable si
+la suite $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge vers la même
+limite quelle que soit la valeur de $X_{0}$.
+\end{enumerate}
+
+Expliquer pourquoi, quelle que soit la valeur de $B$, le couple $\left(
+A,B\right) $ n'admet pas de position d'équilibre stable.
+
+\section*{Exercice 3}
+
+Dans tout le problème (qui comporte deux parties indépendantes), on suppose
+que la durée, exprimée en minutes, d'une communication téléphonique est une
+variable aléatoire réelle $D$ qui suit la loi exponentielle de paramètre $%
+\alpha $
+
+\subsection*{I Comparaison de deux tarifications}
+
+Pour ses communications, on propose à l'utilisateur d'une ligne téléphonique
+deux tarifications $T_{1}$ et $T_{2}$, exprimées en francs, définies de la fa%
+çon suivante :
+
+\begin{itemize}
+\item $T_{1}=aD$, où $a$ est un nombre réel strictement supérieur à 1 qui
+représente le prix d'une minute de communication
+
+\item $T_{2}$ est à valeurs dans $\mathbb{N}^{\ast }$ et, pour tout $n$
+entier naturel non nul : $\{T_{2}=n\}=\{n-1<D\leqslant n\}$
+\end{itemize}
+
+\begin{enumerate}
+\item Calculer $E(T_{1})$ en fonction de $a$ et de $\alpha $.
+
+\item Déterminer la loi de $T_{2}$. De quelle loi s'agit-il ? Exprimer $%
+E(T_{2})$ en fonction de $\alpha $
+
+\item On pose : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\forall t\in \mathbb{R}_{+}^{\ast }:\varphi \left( t\right) =\dfrac{t}{%
+1-e^{-t}} \\ 
+\varphi \left( 0\right) =1%
+\end{array}%
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $\varphi $ est une fonction de classe $C^{1}$ sur $%
+[0,+\infty \lbrack $
+
+\item On définit de plus la fonction $\psi $ sur $[0,+\infty \lbrack $ par : 
+\begin{equation*}
+\forall t\in \mathbb{R}:\psi \left( t\right) =1-\left( 1+t\right) e^{-t}
+\end{equation*}%
+Utiliser cette fonction pour en déduire que $\varphi $ réalise une bijection
+de$[0,+\infty \lbrack $ vers $[1,+\infty \lbrack $
+\end{enumerate}
+
+\item Comparaison des tarifications
+
+\begin{enumerate}
+\item Montrer qu'il existe un unique réel $\alpha _{0}$ strictement positif
+tel que $\varphi \left( \alpha _{0}\right) =a$
+
+\item Préciser quelle est, en moyenne, la tarification la plus avantageuse
+suivant la valeur de la durée moyenne d'une communication.
+\end{enumerate}
+
+\item Pour $a=1,25$ donner, en utilisant votre calculatrice. une valeur
+approchée de $\dfrac{1}{\alpha _{0}}$
+
+(on ne donnera que les deux premières décimales fournies par la
+calculatrice).
+\end{enumerate}
+
+\subsection*{II Étude d'un standard téléphonique}
+
+Dans toute cette partie, $\theta $ est un nombre réel strictement positif
+représentant un temps exprimé en minutes. Un standard téléphonique de capacit%
+é illimitée reçoit des communications téléphoniques entre l'instant 0 et
+l'instant $\theta $ inclus.
+
+\subsubsection*{II. A) Cas d'une seule communication}
+
+On désigne par n un entier naturel non nul. L'instant où débute la
+communication est une variable aléatoire réelle $I_{n}$ telle que : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+I_{n}\left( \Omega \right) =\left\{ \dfrac{\theta }{n},\dfrac{2\theta }{n}%
+,\dots ,\dfrac{\left( n-1\right) \theta }{n},\dfrac{n\theta }{n}\right\}  \\ 
+\forall k\in \left[ \left[ 1,n\right] \right] :p\left( I_{n}=\dfrac{k\theta 
+}{n}\right) =\dfrac{1}{n}%
+\end{array}%
+\right. 
+\end{equation*}%
+où $p$ désigne la probabilité. De plus $I_{n}$ et $D$ (la durée aléatoire de
+la communication) sont indépendantes.
+
+\begin{enumerate}
+\item Pour tout réel positif $t,$ rappeler quelle est l'expression de $%
+p\left( D>t\right) $ en fonction de $t$ et de $\alpha $.
+
+\item En déduire, pour $k$ élément de $\left[ \left[ 1,n\right] \right] $ la
+probabilité conditionnelle de $\left\{ D+I_{n}>\theta \right\} $ sachant $%
+\left\{ I_{n}=\dfrac{k\theta }{n}\right\} .$
+
+\item Démontrer l'égalité suivante : 
+\begin{equation*}
+p\left( D+I_{n}>\theta \right) =\dfrac{1}{n}\left( \dfrac{1-e^{-\alpha
+\theta }}{1-e^{-\dfrac{\alpha \theta }{n}}}\right)
+\end{equation*}
+
+\item Déterminer : 
+\begin{equation*}
+\lim_{n\rightarrow +\infty }p\left( D+I_{n}>\theta \right)
+\end{equation*}
+\end{enumerate}
+
+\subsubsection*{II. B) Étude de l'encombrement du standard à l'instant $%
+\protect\theta $}
+
+Dans cette partie on définit les nombres réels $p$ et $q$ par : 
+\begin{equation*}
+p=\dfrac{1-e^{-\alpha \theta }}{\alpha \theta }\text{ et }q=1-p
+\end{equation*}%
+On suppose désormais que la probabilité qu'une communication reçue dans
+l'intervalle de temps $\left[ 0,\theta \right] $ se poursuive au-delà de
+l'instant $\theta $ est égale à $p$.\newline
+On note $N_{\theta }$ la variable aléatoire réelle égale au nombre de
+communications reçues dans l'intervalle de temps $\left[ 0,\theta \right] $
+et l'on suppose que $N_{\theta }$ suit une loi de Poisson de paramètre $%
+\theta $.\newline
+On note$C_{\theta }$ la variable aléatoire réelle égale au nombre de
+communications reçues dans l'intervalle de temps $\left[ 0,\theta \right] $
+qui se poursuivent au-delà de l'instant $\theta $\newline
+Les instants aléatoires où les communications se terminent sont mutuellement
+indépendant.
+
+\begin{enumerate}
+\item Loi de probabilité de $C_{\theta }$
+
+\begin{enumerate}
+\item Soit $r$ un entier naturel. Quelle est la loi conditionnelle de $%
+C_{\theta }$ sachant que $\left\{ N_{\theta }=r\right\} $ ?
+
+\item Démontrer que l'on a : 
+\begin{equation*}
+\forall r\in \mathbb{N\;\;\forall }k\in \left[ \left[ 0,r\right] \right]
+,\quad p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta
+}=r\right\} \right) =\dfrac{e^{-\theta }\left( p\theta \right) ^{k}\left(
+q\theta \right) ^{r-k}}{k!\left( r-k\right) !}
+\end{equation*}
+
+\item En déduire, pour tout entier naturel $k$, une expression simple de $%
+p\left( C_{\theta }=k\right) $ en fonction de $k$, $p,$ et $\theta $. Quelle
+est la loi de probabilité de $C_{\theta }?$
+\end{enumerate}
+
+\item Étude de l'espérance de $C_{\theta }$
+
+\begin{enumerate}
+\item Déterminer l'expression de $E\left( C_{\theta }\right) $ en fonction
+de $\theta $ et de $\alpha $.
+
+\item Quelle est la limite de $E\left( C_{\theta }\right) $ lorsque $\theta $
+tend vers$+\infty $ ? Vérifier qu'elle majore $E\left( C_{\theta }\right) $.
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+\section{correction}
+
+
+$\alpha $ est un r\'{e}el strictement positif. Pour tout $n\in \mathbb{N}$
+on pose : 
+\begin{equation*}
+u_{n}\left( \alpha \right) =\frac{n!}{\prod\limits_{k=0}^{n}\left( \alpha
++k\right) }
+\end{equation*}
+
+\begin{enumerate}
+\item Etude de la convergence de la suite $\left( u_{n}\left( \alpha \right)
+\right) _{n\in \mathbb{N}}$
+
+\begin{enumerate}
+\item Pour tout $n,$ $u_{n}\left( \alpha \right) \geq 0$ et 
+\begin{eqnarray*}
+u_{n+1}\left( \alpha \right) -u_{n}\left( \alpha \right)  &=&\frac{\left(
+n+1\right) !}{\prod\limits_{k=0}^{n+1}\left( \alpha +k\right) }-\frac{n!}{%
+\prod\limits_{k=0}^{n}\left( \alpha +k\right) } \\
+&=&\frac{n!}{\prod\limits_{k=0}^{n+1}\left( \alpha +k\right) }\left[
+n+1-\left( \alpha +n+1\right) \right] <0
+\end{eqnarray*}%
+Donc la suite est d\'{e}croissante et moinor\'{e}e par $0$.
+
+\textsl{Conclusion : }\fbox{ $\left( u_{n}\left( \alpha \right) \right)
+_{n\in \mathbb{N}}$ est monotonne et convergente}
+
+La somme partielle $\sum_{n=0}^{N}u_{n}\left( \alpha \right) -u_{n+1}\left(
+\alpha \right) =u_{0}\left( \alpha \right) -u_{N+1}\left( \alpha \right) $ a
+donc un e limite finie quand $N$ tende vers $+\infty .$
+
+\textsl{Conclusion : }\fbox{la s\'{e}rie de terme g\'{e}n\'{e}ral $\left(
+u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha \right) \right) $ converge}
+
+On note $\ell \left( \alpha \right) $ la limite de la suite $\left(
+u_{n}\left( \alpha \right) \right) _{n\in \mathbb{N}}$
+
+\item On suppose que $\ell \left( \alpha \right) $ est non nulle. 
+
+(par factorisation des pr\'{e}pond\'{e}rants) On a vu que 
+\begin{eqnarray*}
+u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha \right)  &=&\frac{n!\alpha 
+}{\prod\limits_{k=0}^{n+1}\left( \alpha +k\right) } \\
+&=&\frac{\alpha u_{n}\left( \alpha \right) }{\alpha +n+1} \\
+&=&\frac{\alpha \ell \left( \alpha \right) }{n}\underset{\rightarrow 1}{%
+\frac{u_{n}\left( \alpha \right) /\ell \left( \alpha \right) }{1+\left(
+\alpha +1\right) /n}} \\
+&&\underset{n\rightarrow +\infty }{\thicksim }\frac{\alpha \ell \left(
+\alpha \right) }{n}
+\end{eqnarray*}
+
+\item Or la s\'{e}rie (Riemann) $\sum_{n\geq 1}\frac{1}{n}$ diverge. et par 
+\'{e}quivalence de temres positifs, la s\'{e}rie $\sum_{n\geq 1}\left(
+u_{n}\left( \alpha \right) -u_{n+1}\left( \alpha \right) \right) $ diverge 
+\'{e}galement. FAUX ! DOnc $\ell \left( \alpha \right) $ n'est pas non nul.
+
+\textsl{Conclusion : }\fbox{$\ell \left( \alpha \right) =0$}
+\end{enumerate}
+
+\item Dans cette question : $\alpha \in ]0,1]$
+
+\begin{enumerate}
+\item On a alors 
+\begin{eqnarray*}
+\mathbb{\;}u_{n}\left( \alpha \right)  &=&\frac{n!}{\prod\limits_{k=0}^{n}%
+\left( \alpha +k\right) } \\
+&=&\frac{1\cdot 2\cdots \cdot n}{\alpha \cdot \left( \alpha +1\right) \cdots
+\left( \alpha +n\right) } \\
+&=&\frac{1}{\alpha }\frac{2}{\alpha +1}\cdots \frac{n}{\alpha +n-1}\frac{1}{%
+n+\alpha } \\
+&\geq &\frac{1}{n+\alpha }
+\end{eqnarray*}%
+car $\alpha +i\leq 1+i$ et donc $\dfrac{i+1}{\alpha +i}\geq 1$
+
+$N.B.$ il est plus naturel de le faire par r\'{e}currence avec 
+\begin{eqnarray*}
+u_{n+1}\left( \alpha \right)  &=&\frac{n+1}{\alpha +n+1}u_{n}\left( \alpha
+\right)  \\
+&\geq &\frac{1}{n+\alpha }\frac{n+1}{\alpha +n+1} \\
+&\geq &\frac{1}{\alpha +n+1}
+\end{eqnarray*}%
+car $n+\alpha \leq n+1$
+
+\textsl{Conclusion : }\fbox{$\forall n\in \mathbb{N\;\;}u_{n}\left( \alpha
+\right) \geq \dfrac{1}{n+\alpha }$}
+
+\item On a finalement $u_{n}\left( \alpha \right) \geq \dfrac{1}{n+\alpha }%
+\geq \dfrac{1}{n+1}$ dont la s\'{e}rie (de Riemann apr\`{e}s r\'{e}%
+indexation) diverge.
+
+et par minoration de teremes positifs, 
+
+\textsl{Conclusion : }\fbox{la s\'{e}rie de terme g\'{e}n\'{e}ral $%
+u_{n}\left( \alpha \right) $ diverge}
+\end{enumerate}
+
+\item On pose pour tout entier naturel $n$ : 
+\begin{equation*}
+I_{n}\left( \alpha \right) =\int_{0}^{+\infty }e^{-\alpha t}\left(
+1-e^{-t}\right) ^{n}dt
+\end{equation*}
+
+\begin{enumerate}
+\item $\left( 1-e^{-t}\right) ^{n}\rightarrow 1$ quand $t\rightarrow +\infty 
+$ donc $e^{-\alpha t}\left( 1-e^{-t}\right) ^{n}\sim e^{-\alpha t}$ dont la s%
+\'{e}rie converge ($\alpha >1$ )
+
+et par \'{e}quivalence de termes positifs, 
+
+\textsl{Conclusion : }\fbox{ l'int\'{e}grale g\'{e}n\'{e}ralis\'{e}e $%
+I_{n}\left( \alpha \right) $ converge}
+
+\begin{eqnarray*}
+I_{0}\left( \alpha \right)  &=&\int_{0}^{+\infty }e^{-\alpha t}dt \\
+\int_{0}^{M}e^{-\alpha t}dt &=&\left[ \frac{-1}{\alpha }e^{-\alpha t}\right]
+_{0}^{M}=\frac{-1}{\alpha }e^{-\alpha M}+\frac{1}{\alpha } \\
+&\rightarrow &\frac{1}{\alpha }
+\end{eqnarray*}%
+\textsl{Conclusion : }\fbox{$I_{0}\left( \alpha \right) =\dfrac{1}{\alpha }$}
+
+\item Soit un r\'{e}el $x$ strictement positif et $n\in \mathbb{N}^{\ast }$
+(pour la d\'{e}riv\'{e}e et pour $\left[ {}\right] $ en $0$ )
+
+$u\left( t\right) =\left( 1-e^{-t}\right) ^{n}:u^{\prime }\left( t\right)
+=n\left( 1-e^{-t}\right) ^{n-1}e^{-t}$
+
+$v^{\prime }\left( t\right) =e^{-\alpha t}:v\left( t\right) =\dfrac{-1}{%
+\alpha }e^{-\alpha t}$ avec $u$ et $v$ $C^{1}$%
+\begin{eqnarray*}
+\int_{0}^{x}e^{-\alpha t}\left( 1-e^{-t}\right) ^{n}dt &=&\left[ \dfrac{-1}{%
+\alpha }e^{-\alpha t}\left( 1-e^{-t}\right) ^{n}\right] _{0}^{x}-\int_{0}^{x}%
+\dfrac{-n}{\alpha }e^{-t}e^{-\alpha t}\left( 1-e^{-t}\right) ^{n-1}dt \\
+&=&\dfrac{-1}{\alpha }e^{-\alpha x}\left( 1-e^{-x}\right) ^{n}+\dfrac{n}{%
+\alpha }\int_{0}^{x}e^{-\left( \alpha +1\right) t}\left( 1-e^{-t}\right)
+^{n-1}dt \\
+&\rightarrow &\dfrac{n}{\alpha }I_{n-1}\left( \alpha +1\right) 
+\end{eqnarray*}
+
+\textsl{Conclusion : }\fbox{$I_{n}\left( \alpha \right) =\dfrac{n}{\alpha }%
+I_{n-1}\left( \alpha +1\right) $ pour tout $n\in \mathbb{N}^{\ast }$}
+
+\item On a alors $I_{n+1}\left( \alpha \right) =\dfrac{n+1}{\alpha }%
+I_{n}\left( \alpha +1\right) $ pour tout $n\in \mathbb{N}$ et par r\'{e}%
+currence 
+
+\textsl{Conclusion : }\fbox{$\forall n\in \mathbb{N\;\;}I_{n}\left( \alpha
+\right) =u_{n}$} car $u_{n+1}\left( \alpha \right) =\dfrac{n+1}{\alpha }%
+u_{n}\left( \alpha +1\right) $ et $u_{0}=I_{0}$
+\end{enumerate}
+
+\item On suppose d\'{e}sormais que $\alpha >1$
+
+\begin{enumerate}
+\item Par r\'{e}currence (avec $I_{n}\left( \alpha \right) =\dfrac{n}{\alpha 
+}I_{n-1}\left( \alpha +1\right) $  pour tout $n\in \mathbb{N}$ )
+
+Pour $N=0$ on a 
+\begin{eqnarray*}
+\sum_{n=0}^{0}I_{n}\left( \alpha \right)  &=&I_{0}\left( \alpha \right) =%
+\frac{1}{\alpha } \\
+I_{1}\left( \alpha -1\right)  &=&\dfrac{1}{\alpha -1}I_{0}\left( \alpha
+\right) =\dfrac{1}{\alpha -1}\frac{1}{\alpha }\text{ donc } \\
+\frac{1}{\alpha -1}-I_{1}\left( \alpha -1\right)  &=&\frac{1}{\alpha -1}-%
+\dfrac{1}{\alpha -1}\frac{1}{\alpha } \\
+&=&\frac{1}{\alpha -1}\left( 1-\frac{1}{\alpha }\right) =\frac{1}{\alpha }
+\end{eqnarray*}
+donc $\displaystyle\sum_{n=0}^{0}I_{n}\left( \alpha \right) =\frac{1}{\alpha
+-1}-I_{1}\left( \alpha -1\right) $
+
+Soit $n$ $\in \mathbb{N}$ tel que 
+\begin{equation*}
+\sum_{n=0}^{N}I_{n}\left( \alpha \right) =\frac{1}{\alpha -1}-I_{N+1}\left(
+\alpha -1\right) 
+\end{equation*}%
+alors 
+\begin{eqnarray*}
+\sum_{n=0}^{N+1}I_{n}\left( \alpha \right)  &=&\sum_{n=0}^{N}I_{n}\left(
+\alpha \right) +I_{N+1}\left( \alpha \right)  \\
+&=&\frac{1}{\alpha -1}-I_{N+1}\left( \alpha -1\right) +I_{N+1}\left( \alpha
+\right) 
+\end{eqnarray*}%
+la relation de r\'{e}currence ci-dessus ne m\`{e}ne \`{a} rien... mais sous
+forme d'int\'{e}grale :
+
+\begin{eqnarray*}
+I_{N+1}\left( \alpha \right) -I_{N+1}\left( \alpha -1\right) 
+&=&\int_{0}^{1}e^{-\alpha t}\left( 1-e^{-t}\right)
+^{N+1}dt-\int_{0}^{1}e^{-\left( \alpha -1\right) t}\left( 1-e^{-t}\right)
+^{N+1}dt \\
+&=&\int_{0}^{1}e^{-\left( \alpha -1\right) t}\left( e^{-t}-1\right) \left(
+1-e^{-t}\right) ^{n}dt \\
+&=&-I_{N+2}\left( \alpha -1\right) 
+\end{eqnarray*}
+
+\textsl{Conclusion : }\fbox{$\displaystyle\sum_{n=0}^{N}I_{n}\left( \alpha
+\right) =\frac{1}{\alpha -1}-I_{N+1}\left( \alpha -1\right) $ pouer tout
+eniter $n$}
+
+\item Comme $u_{n}\left( \alpha \right) =I_{n}\left( \alpha \right) $ et que 
+$u_{n}\left( \alpha \right) \rightarrow \ell \left( \alpha \right) =0$ alors 
+$\displaystyle\sum_{n=0}^{N}I_{n}\left( \alpha \right) \rightarrow \dfrac{1}{%
+\alpha -1}$
+
+\textsl{Conclusion : }\fbox{ $\sum\limits_{n=0}^{+\infty }u_{n}\left( \alpha
+\right) $ converge et vaut $\dfrac{1}{\alpha -1}$.}
+\end{enumerate}
+\end{enumerate}
+
+\begin{center}
+{\LARGE EXERCICE 2}
+\end{center}
+
+\begin{enumerate}
+\item Pour montrer que 0 , $\displaystyle
+\frac{1}{2}$ et $1$ sont \textbf{des} valeurs propres de $A$, il suffit de
+trouver (ou de donner) des vecteurs porpres associ\'{e}s.
+
+$A\left( 
+\begin{array}{c}
+-2 \\ 
+\frac{3}{2} \\ 
+1%
+\end{array}
+\right) =0=0\left( 
+\begin{array}{c}
+-2 \\ 
+\frac{3}{2} \\ 
+1%
+\end{array}
+\right) $ prouve par exemple que $0$ est valeur propre de $A$ car $u=\left( 
+\begin{array}{c}
+-2 \\ 
+\frac{3}{2} \\ 
+1%
+\end{array}
+\right) $
+
+On peut aussi r\'{e}diger la recherche de vecteurs propres :
+
+$\displaystyle
+\left( A-\frac{1}{2}I\right) U=0\Leftrightarrow \left\{ 
+\begin{array}{c}
+\frac{1}{2}x+2z=0 \\ 
+\frac{3}{2}x-\frac{5}{2}y+6z=0 \\ 
+\frac{1}{2}x-y+2z=0%
+\end{array}
+\right. $ $\Leftrightarrow \left\{ 
+\begin{array}{c}
+x=-4z \\ 
+y=0 \\ 
+y=0%
+\end{array}
+\right. \Leftrightarrow \left\{ 
+\begin{array}{c}
+x=-4z \\ 
+y=0%
+\end{array}
+\right. $
+
+donc $1/2$ est valeur propre car $v=\left( 
+\begin{array}{c}
+-4 \\ 
+0 \\ 
+1%
+\end{array}
+\right) $ est un vecteur propre associ\'{e}.
+
+$\left( A-1I\right) U=0\Leftrightarrow \left\{ 
+\begin{array}{c}
+2z=0 \\ 
+\frac{3}{2}x-3y+6z=0 \\ 
+\frac{1}{2}x-y+\frac{3}{2}z=0%
+\end{array}
+\right. \Leftrightarrow \left\{ 
+\begin{array}{c}
+z=0 \\ 
+x=2y \\ 
+0=0%
+\end{array}
+\right. \Leftrightarrow \left\{ 
+\begin{array}{c}
+z=0 \\ 
+x=2y%
+\end{array}
+\right. $
+
+Donc $1$ est une valeur propre car $w=\left( 
+\begin{array}{c}
+2 \\ 
+1 \\ 
+0%
+\end{array}
+\right) $ est un vecteur propre associ\'{e}.
+
+Donc $\displaystyle0,\ \frac{1}{2}$ et $1$ sont \textbf{des} valeurs propres
+de $A$.
+
+Pour prouver que ce sont \textbf{les }valeurs propres de $A,$ il reste \`{a}
+prouver que $A$ n'en a pas d'autres.
+
+Or $A$ est d'ordre 3 donc il a au plus 3 valeurs propres distinctes.
+
+Finalement $\displaystyle0,~\frac{1}{2}$ et $1$ sont \textbf{les} valeurs
+propres de $A$.
+
+\item Justifier les affirmations suivantes :
+
+\begin{itemize}
+\item Comme on a trois valeurs propres distinctes pour une matrice d'ordre
+3, alors la famille des colonnes propres associ\'{e}es $\left( u,v,w\right) $
+est une base.
+
+Donc pour toute colonne (et en particulier pour $B$ ) il existe un unique
+triplet $\left( \alpha ,\beta ,\gamma \right) $ de coordonn\'{e}es de $%
+\mathbb{R}^{3}$ tel que $B=\alpha u+\beta v+\gamma w$
+
+\item et de m\^{e}me, pour toute colonne $X_{n}$ il existe un unique triplet 
+$\left( \alpha _{n},\beta _{n},\gamma _{n}\right) $ de $\mathbb{R}^{3}$ tel
+que $X_{n}=\alpha _{n}u+\beta _{n}v+\gamma _{n}w$
+\end{itemize}
+
+\item Remarquer que la formule est donn\'{e}e pour $n\in \mathbb{N}^{\ast }$
+donc
+
+\begin{itemize}
+\item On commence pour $n=1:$On a $\alpha _{1},\;\beta _{1}$ et $\gamma _{1} 
+$ qui sont d\'{e}finis par : $X_{1}=\alpha _{1}u+\beta _{1}v+\gamma _{1}w$
+
+Or $X_{1}=AX_{0}+B=A\left( \alpha _{0}u+\beta _{0}v+\gamma _{0}w\right)
++\alpha u+\beta v+\gamma w.$
+
+Et comme $u,$ $v$ et $w$ sont des colonnes propres :
+
+$\displaystyle
+X_{1}=\alpha _{0}0u+\beta _{0}\frac{1}{2}v+\gamma _{0}w+\alpha u+\beta
+v+\gamma w=\alpha u+\frac{1}{2}\left( \beta _{0}+2\beta \right) v+\left(
+\gamma _{0}+\gamma \right) w$
+
+Donc par unicit\'{e} des coordonn\'{e}e :$\left\{ 
+\begin{array}{l}
+\alpha _{1}=\alpha \\ 
+\beta _{1}=\left( \frac{1}{2}\right) \left( \beta _{0}-2\beta \right) +2\beta
+\\ 
+\gamma _{n}=\gamma _{0}+1\gamma%
+\end{array}
+\right. $
+
+\item Soit $n\in \mathbb{N}^{*}$ tel que $\left\{ 
+\begin{array}{l}
+\alpha _{n}=\alpha \\ 
+\beta _{n}=\left( \frac{1}{2}\right) ^{n}\left( \beta _{0}-2\beta \right)
++2\beta \\ 
+\gamma _{n}=\gamma _{0}+n\gamma%
+\end{array}
+\right. $ alors
+
+$X_{n+1}=AX_{n}+B=\beta _{n}\frac{1}{2}v+\gamma _{n}1w+\alpha u+\beta
+v+\gamma w=\alpha u+\frac{1}{2}\left( \beta _{n}+2\beta \right) v+\left(
+\gamma _{n}+\gamma \right) w$
+
+Donc$\;\left\{ 
+\begin{array}{l}
+\alpha _{n+1}=\alpha \\ 
+\beta _{n+1}=\frac{1}{2}\left( \beta _{n}+2\beta \right) =\left( \frac{1}{2}%
+\right) ^{n+1}\left( \beta _{0}-2\beta \right) +2\beta \\ 
+\gamma _{n}=\gamma _{n}+\gamma =\gamma _{0}+n\gamma%
+\end{array}
+\right. $
+
+\item Donc pour tout entier $n\ge 1$, les formules de r\'{e}currence sont
+bien v\'{e}rifi\'{e}e.
+\end{itemize}
+
+\item Soit $\left( a_{n}\right) _{n\in \mathbb{N}},\;\left( b_{n}\right)
+_{n\in \mathbb{N}}$ et $\left( c_{n}\right) _{n\in \mathbb{N}}$ les suites r%
+\'{e}elles telles que :
+
+\begin{enumerate}
+\item On a $X_{n}=\alpha _{n}u+\beta _{n}v+\gamma _{n}w=\alpha _{n}\left( 
+\begin{array}{c}
+-2 \\ 
+\frac{3}{2} \\ 
+1%
+\end{array}
+\right) +\beta _{n}\left( 
+\begin{array}{c}
+-4 \\ 
+0 \\ 
+1%
+\end{array}
+\right) +\gamma _{n}\left( 
+\begin{array}{c}
+2 \\ 
+1 \\ 
+0%
+\end{array}
+\right) =\allowbreak \left( 
+\begin{array}{c}
+-2\alpha _{n}-4\beta _{n}+2\gamma _{n} \\ 
+\frac{3}{2}\alpha _{n}+\gamma _{n} \\ 
+\alpha _{n}+\beta _{n}%
+\end{array}
+\right) $
+
+Donc $a_{n}=-2\alpha _{n}-4\beta _{n}+2\gamma _{n}:b_{n}=\frac{3}{2}\alpha
+_{n}+\gamma _{n}$ et $c_{n}=\alpha _{n}+\beta _{n}$
+
+Et comme $\alpha _{n}\rightarrow \alpha $ que $\beta _{n}\rightarrow 2\beta $
+et $\gamma _{n}=\gamma _{0}+n\gamma \bar{\rightarrow}\pm \infty $ si $\gamma
+\ne 0$ et $\gamma _{0}$ si $\gamma =0$
+
+alors $a_{n}$ et $b_{n}$ donc $X_{n}$ convergent si et seulement si $\gamma
+=0$
+
+\item On r\'{e}sout donc $B=\alpha u+\beta v+\gamma w\Leftrightarrow \alpha
+\left( 
+\begin{array}{c}
+-2 \\ 
+\frac{3}{2} \\ 
+1%
+\end{array}
+\right) +\beta \left( 
+\begin{array}{c}
+-4 \\ 
+0 \\ 
+1%
+\end{array}
+\right) +\gamma \left( 
+\begin{array}{c}
+2 \\ 
+1 \\ 
+0%
+\end{array}
+\right) =\left( 
+\begin{array}{c}
+x \\ 
+y \\ 
+z%
+\end{array}
+\right) $
+
+$\Leftrightarrow \left\{ 
+\begin{array}{cc}
+-2\alpha -4\beta +2\gamma =x & L_{1}+2L_{3} \\ 
+\frac{3}{2}\alpha +\gamma =y & L_{2}-\frac{3}{2}L_{3} \\ 
+\alpha +\beta =z & L_{3}%
+\end{array}
+\right. \Leftrightarrow \left\{ 
+\begin{array}{cc}
+-2\beta +2\gamma =x+2z & L_{1}-\frac{4}{3}L_{2} \\ 
+-\frac{3}{2}\beta +\gamma =y-\frac{3}{2}z &  \\ 
+\alpha +\beta =z & 
+\end{array}
+\right. $
+
+$\Leftrightarrow \left\{ 
+\begin{array}{cc}
+\frac{1}{3}\gamma =x+2z-\frac{4}{3}\left( y-\frac{3}{2}z\right) & =x-\frac{4%
+}{3}y+4z \\ 
+-\frac{3}{2}\beta +\gamma =y-\frac{3}{2}z &  \\ 
+\alpha +\beta =z & 
+\end{array}
+\right. $
+
+Donc $\gamma =3x-4y+12z$ et donc $\left( X_{n}\right) _{n\in \mathbb{N}}$
+converge si et seulement si $3x-4y+12z=0$
+\end{enumerate}
+
+\item Si le couple $(A,B)$ admet une position d'\'{e}quilibre stable alors
+la suite $\left( X_{n}\right) _{n\in \mathbb{N}}$ converge. Donc $\gamma =0$
+
+La limite de la suite $\left( a_{n}\right) $ est donc $-2\alpha +4\beta
++2\gamma _{0},$ celle de la suite $\left( b_{n}\right) $ est $\frac{3}{2}%
+\alpha +\gamma _{0}$ et celle de la suite $\left( c_{n}\right) $ est $\alpha
++\beta $
+
+Comme $x,\;y$ et $z$ sont fix\'{e}es par $B$, alors $\alpha $, $\beta $ et $%
+\gamma $ le sont aussi. Les limites de $a$ et $b$ d\'{e}pendent donc de $%
+\gamma _{0}.$
+
+Donc, quelle que soit la valeur de $B$, le couple $\left( A,B\right) $
+n'admet pas de position d'\'{e}quilibre stable.
+\end{enumerate}
+
+\begin{center}
+{\Large Exercice 3}
+\end{center}
+
+Dans tout le probl\`{e}me (qui comporte deux parties ind\'{e}pendantes), on
+suppose que la dur\'{e}e, exprim\'{e}e en minutes, d'une communication t\'{e}%
+l\'{e}phonique est une variable al\'{e}atoire r\'{e}elle $D$ qui suit la loi
+exponentielle de param\`{e}tre $\alpha $
+
+\textbf{I Comparaison de deux tarifications}
+
+\begin{enumerate}
+\item Pour ses communications, on propose \`{a} l'utilisateur d'une ligne t%
+\'{e}l\'{e}phonique deux tarifications $T_{1}$ et $T_{2}$, exprim\'{e}es en
+francs, d\'{e}finies de la fa\c{c}on suivante :
+\end{enumerate}
+
+\begin{itemize}
+\item $T_{1}=aD$, o\`{u} $a$ est un nombre r\'{e}el strictement sup\'{e}%
+rieur \`{a} 1 qui repr\'{e}sente le prix d'une minute de communication
+
+\item $T_{2}$ est \`{a} valeurs dans $\mathbb{N}^{*}$ et, pour tout $n$
+entier naturel non nul : $\{T_{2}=n\}=\{n-1<D\le n\}$
+\end{itemize}
+
+\begin{enumerate}
+\item Comme $D$ suit une loi exponentielle, On a $E\left( D\right) =1/\alpha 
+$ donc $E(T_{1})=aE\left( D\right) =a/\alpha $
+
+\item On a pour tout entier $n\in \mathbb{N}^{*}:$%
+\begin{eqnarray*}
+p\left( T_{2}=n\right) &=&p\left( n-1<D\le n\right) \\
+&=&\int_{n-1}^{n}\alpha e^{-\alpha t}dt=\left[ -e^{-\alpha t}\right]
+_{n-1}^{n} \\
+&=&e^{-\alpha \left( n-1\right) }-e^{-\alpha n} \\
+&=&\left( e^{-\alpha }\right) ^{n-1}\left( 1-e^{-\alpha }\right)
+\end{eqnarray*}
+Donc $T_{2}\hookrightarrow \mathcal{G}\left( 1-e^{-\alpha }\right) $ et $%
+E(T_{2})=\displaystyle
+\frac{1}{1-e^{-\alpha }}$
+
+\item On pose : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\forall t\in \mathbb{R}_{+}^{*}:\displaystyle \varphi \left( t\right) =\frac{%
+t}{1-e^{-t}} \\ 
+\varphi \left( 0\right) =1%
+\end{array}
+\right.
+\end{equation*}
+
+\begin{enumerate}
+\item $\varphi $ est de calsse $C^{1}$ sur $]0,+\infty [$ comme quotient de
+fonction $C^{1}$
+
+En $0$ : on peut passer par le th\'{e}or\`{e}me de prolongement qui demande
+la continuit\'{e} de $\varphi $ d'abord puis la limite de la d\'{e}riv\'{e}e.
+
+ou revenir au taux d'accroissement puis prouver la continuit\'{e} de la d%
+\'{e}riv\'{e}e.
+
+par le prolongement :
+
+comme $e^{x}-1\thicksim x$ quand $x\rightarrow 0$ alors $e^{-t}-1\thicksim
+-t $ donc $\displaystyle
+\frac{-t}{e^{-t}-1}\rightarrow 1$ et $\varphi \left( t\right) \rightarrow 1$
+donc $\varphi $ est continue sur $\mathbb{R}^{+}$
+
+$\varphi $ est d\'{e}rivable sur $\left] 0,+\infty \right[ $ et pour avoir
+la limite de $\varphi ^{\prime }$ en $0$ on efffectue un d\'{e}veloppement
+limit\'{e} :
+
+(onsubsitue $-t$ \`{a} x dans le DL $e^{x}=1+x+x^{2}/2+x^{2}\varepsilon
+\left( x\right) $ avec $\varepsilon \left( x\right) \rightarrow 0.$ On prend
+le DL d'ordre 2 car celui d'ordre 1 au num\'{e}rateur laissaitune forme ind%
+\'{e}termin\'{e}e $\varepsilon \left( t\right) /t\dots )$%
+\begin{eqnarray*}
+\varphi ^{\prime }\left( t\right) &=&\frac{1-e^{-t}-t\left( -e^{-t}\left(
+-1\right) \right) }{\left( 1-e^{-t}\right) ^{2}} \\
+&=&\frac{1-\left( 1+t\right) e^{-t}}{\left( -1+e^{-t}\right) ^{2}} \\
+&=&\frac{1-\left( 1+t\right) \left( 1-t+\displaystyle\frac{t^{2}}{2}%
++t^{2}\varepsilon \left( t\right) \right) }{\left( 1-1-t-t\varepsilon
+_{1}\left( t\right) \right) ^{2}} \\
+&=&\frac{1-\left( 1-t^{2}/2+t^{2}\varepsilon _{2}\left( t\right) \right) }{%
+\left( -t-t\varepsilon _{1}\left( t\right) \right) ^{2}} \\
+&=&\frac{t^{2}/2-t^{2}\varepsilon _{2}\left( t\right) }{t^{2}\left(
+1+\varepsilon _{1}\left( t\right) \right) ^{2}}=\frac{\displaystyle\frac{1}{2%
+}-\varepsilon _{2}\left( t\right) }{\left( 1+\varepsilon _{1}\left( t\right)
+\right) ^{2}} \\
+&\rightarrow &\frac{1}{2}
+\end{eqnarray*}
+
+avec $\varepsilon ,\;\varepsilon _{1}$ et $\varepsilon _{2}$ qui tendent
+vars $0$ en $0.$
+
+Comme $\varphi $ est continue en $0$ et que $\varphi ^{\prime }$ $%
+\rightarrow 1/2$ alors $\varphi $ est d\'{e}rivable en $0$, $\varphi
+^{\prime }\left( 0\right) =1/2$ et $\varphi ^{\prime }$ est continue en $0.$
+
+Donc $\varphi $ est de classe $C^{1}$ en $0$ donc sur $[0,+\infty [$
+
+\item On a pour $t>0:\displaystyle
+\varphi ^{\prime }\left( t\right) =\frac{1-\left( 1+t\right) e^{-t}}{\left(
+-1+e^{-t}\right) ^{2}}=\frac{\psi \left( t\right) }{\left( -1+e^{-t}\right)
+^{2}}$ qui est donc du signe de $\psi \left( t\right) $
+
+$\psi $ est d\'{e}rivable sur $\mathbb{R}$ et $\psi ^{\prime }\left(
+t\right) =-e^{-t}-\left( 1+t\right) e^{-t}\left( -1\right) =te^{-t}$ du
+signe de $t$
+
+Donc $\psi $ est strictement croissante sur $\mathbb{R}^{+}$ et comme $\psi
+\left( 0\right) =0$ on a $\psi >0$ sur $\left] 0,+\infty \right[ $
+
+\textbf{Remarque : }$f$ est strictement croissante si $f$ est continue sur
+un intervalle $I$ et $f^{\prime }>0$ sauf en un nombre fini de points de $I$
+. Il n'est pas n\'{e}cessaire qu'elle soit d\'{e}rivable ou que la d\'{e}riv%
+\'{e}e soit strictement positive sur tout l'intervalle)
+
+Finalement $\varphi $ est strictement croissante et continue donc bijective
+de $[0,+\infty [$ dans
+
+$[\varphi \left( 0\right) ,\lim_{+\infty }\varphi [=[1,+\infty [$
+
+($\varphi $ ne donne pas de forme ind\'{e}termin\'{e}e en $+\infty $)
+\end{enumerate}
+
+\item Comparaison des tarifications
+
+\begin{enumerate}
+\item Comme $a>1$ on a $a\in [1,+\infty [$ donc il existe un unique $\alpha
+_{0}\in [0,+\infty [$ tel que $\varphi \left( \alpha _{0}\right) =a$
+
+\item Il faut ici comparer les couts moyens des deux facturations :
+
+\begin{equation*}
+\frac{E\left( T_{2}\right) }{E\left( T_{1}\right) }=\frac{\frac{1}{%
+1-e^{-\alpha }}}{\frac{a}{\alpha }}=\frac{1}{a}\frac{\alpha }{1-e^{-\alpha }}%
+=\frac{\varphi \left( \alpha \right) }{a}
+\end{equation*}
+
+Comme la dur\'{e}e moyenne de communication est $1/\alpha $,
+
+\begin{itemize}
+\item si cette dur\'{e}e moyenne ($1/\alpha $) est sup\'{e}rieure \`{a} $%
+1/\alpha _{0}$ alors $\alpha <\alpha _{0}$ et comme $\varphi $ est
+strictement croissante sur $\mathbb{R}^{+}$ on a $\varphi \left( \alpha
+\right) >\varphi \left( \alpha _{0}\right) =a$ donc $E\left( T_{2}\right)
+>E\left( T_{1}\right) $ et la premi\`{e}re tarifivcation est la plus
+avantageuse (la moins ch\`{e}re)
+
+\item Inversement, si elle est sup\'{e}rieure \`{a} $1/\alpha _{0}$ la
+seconde tarification est la plus avantageuse.
+\end{itemize}
+
+La tarificatin \`{a} la seconde estdonc interressante pour les
+communications longues
+\end{enumerate}
+\end{enumerate}
+
+\textbf{II \'{E}tude d'un standard t\'{e}l\'{e}phonique }
+
+Dans toute cette partie, $\theta $ est un nombre r\'{e}el strictement
+positif repr\'{e}sentant un temps exprim\'{e} en minutes. Un standard t\'{e}l%
+\'{e}phonique de capacit\'{e} illimit\'{e}e re\c{c}oit des communications t%
+\'{e}l\'{e}phoniques entre l'instant 0 et l'instant $\theta $ inclus.
+
+\textbf{II A Cas d'une seule communication}
+
+On d\'{e}signe par $n$ un entier naturel non nul. L'instant o\`{u} d\'{e}%
+bute la communication est une variable al\'{e}atoire r\'{e}elle $I_{n}$
+telle que : 
+\begin{equation*}
+\left\{ 
+\begin{array}{c}
+\displaystyle I_{n}\left( \Omega \right) =\left\{ \frac{\theta }{n},\frac{%
+2\theta }{n},\dots ,\frac{\left( n-1\right) \theta }{n},\frac{n\theta }{n}%
+\right\} \\ 
+\displaystyle \forall k\in \left[ \left[ 1,n\right] \right] :p\left( I_{n}=%
+\frac{k\theta }{n}\right) =\frac{1}{n}%
+\end{array}
+\right.
+\end{equation*}
+o\`{u} $p$ d\'{e}signe la probabilit\'{e}. De plus $I_{n}$ et $D$ (la dur%
+\'{e}e al\'{e}atoire de la communication) sont ind\'{e}pendantes.
+
+\begin{enumerate}
+\item Soit $f$ la densit\'{e} de la loi exponentielle de param\`{e}tre $%
+\alpha $.
+
+On a $p\left( D>t\right) =\int_{t}^{+\infty }f\left( x\right) dx$ int\'{e}%
+grale impropre en $+\infty ;$ Et comme $t\ge 0$%
+\begin{eqnarray*}
+\int_{t}^{A}\alpha e^{-\alpha x}dx=\left[ -e^{-\alpha x}\right]
+_{x=t}^{A}=e^{-\alpha t}-e^{-\alpha A} \\
+\rightarrow e^{-\alpha t}
+\end{eqnarray*}
+donc $p\left( D>t\right) =e^{-\alpha t}$
+
+\item On a donc 
+\begin{eqnarray*}
+p\left( D+I_{n}>\theta \;/\;I_{n}=\frac{k\theta }{n}\right) =p\left(
+D>\theta -\frac{k\theta }{n}\;/\;I_{n}=\frac{k\theta }{n}\right) \\
+=p\left( D>\theta -\frac{k\theta }{n}\right) \\
+=p\left( D>\theta \left( 1-\frac{k}{n}\right) \right) \\
+=e^{-\alpha \theta \left( 1-\displaystyle\frac{k}{n}\right) }
+\end{eqnarray*}
+on peut supprimer le conditinnment car $D$ et $I_{n}$ sont ind\'{e}pendantes.
+
+\item On utilise alors la formule des probabilit\'{e} totales avec pour syst%
+\`{e}me complet d'\'{e}v\'{e}nements : $\displaystyle
+\left( I_{n}=\frac{k\theta }{n}\right) _{k\in \left[ \left[ 1,n\right] %
+\right] }$
+
+on a alors 
+\begin{eqnarray*}
+p\left( D+I_{n}>\theta \right) =\sum_{k=1}^{n}p\left( D+I_{n}>\theta
+\;/\;I_{n}=\frac{k\theta }{n}\right) \cdot p\left( I_{n}=\frac{k\theta }{n}%
+\right) \\
+=\sum_{k=1}^{n}\;e^{-\alpha \theta +\alpha \theta \displaystyle\frac{k}{n}}%
+\frac{1}{n}=\frac{e^{-\alpha \theta }}{n}\sum_{k=1}^{n}\;\left( e^{\alpha
+\theta /n}\right) ^{k} \\
+=\frac{e^{-\alpha \theta }}{n}\left( \frac{e^{\left( n+1\right) \alpha
+\theta /n}-1}{e^{\alpha \theta /n}-1}-1\right) \\
+=\frac{e^{-\alpha \theta }}{n}\left( \frac{e^{\left( n+1\right) \alpha
+\theta /n}-e^{\alpha \theta /n}}{e^{\alpha \theta /n}-1}\right) =\frac{%
+e^{-\alpha \theta }e^{\alpha \theta }}{n}\left( \frac{e^{n\alpha \theta /n}-1%
+}{e^{\alpha \theta /n}-1}\right) \\
+=\frac{1}{n}\left( \frac{\displaystyle 1-e^{-\alpha \theta }}{\displaystyle %
+1-e^{-\frac{\alpha \theta }{n}}}\right)
+\end{eqnarray*}
+
+\item Comme $e^{x}-1\thicksim x$ quand $x$ $\rightarrow 0$ et que $-\frac{%
+\alpha \theta }{n}\rightarrow 0$ quand $n\rightarrow +\infty $ alors $%
+e^{-\alpha \theta /n}-1\thicksim -\displaystyle\frac{\alpha \theta }{n}$
+
+et 
+\begin{equation*}
+\frac{e^{-\displaystyle \alpha \theta /n}-1}{-\alpha \theta /n}=\frac{1-e^{-%
+\displaystyle \alpha \theta /n}}{\alpha \theta /n}\rightarrow 1
+\end{equation*}
+donc 
+\begin{eqnarray*}
+p\left( D+I_{n}>\theta \right) =\frac{1}{n}\left( \frac{\displaystyle %
+1-e^{-\alpha \theta }}{\displaystyle 1-e^{-\frac{\alpha \theta }{n}}}\right)
+\\
+=\frac{1-e^{-\displaystyle \alpha \theta }}{\alpha \theta }\frac{\alpha
+\theta /n}{1-e^{-\displaystyle \alpha \theta /n}} \\
+\rightarrow \frac{1-e^{-\displaystyle \alpha \theta }}{\alpha \theta }
+\end{eqnarray*}
+quand $n\rightarrow +\infty $
+
+c'est la limite de la probabilit\'{e} que l'appel se finisse apr\`{e}s $%
+\theta $ pour des d\'{e}buts d'appels \'{e}quir\'{e}partis sur $\left[
+0,\theta \right] $ (quand $n$ tend vers $+\infty $ chacun des segments $%
+\left[ \frac{k}{n},\frac{k+1}{n}\right] $ \'{e}tait \'{e}quiprobable)
+\end{enumerate}
+
+\textbf{II B \'{E}tude de l'encombrement du standard \`{a} l'instant }$%
+\theta $
+
+Dans cette partie on d\'{e}finit les nombres r\'{e}els $p$ et $q$ par : 
+\begin{equation*}
+p=\frac{1-e^{-\alpha \theta }}{\alpha \theta }\text{ \ et \ \ }q=1-p
+\end{equation*}
+On suppose d\'{e}sormais que la probabilit\'{e} qu'une communication re\c{c}%
+ue dans l'intervalle de temps $\left[ 0,\theta \right] $ se poursuive au-del%
+\`{a} de l'instant $\theta $ est \'{e}gale \`{a} $p$.
+
+On note $N_{\theta }$ la variable al\'{e}atoire r\'{e}elle \'{e}gale au
+nombre de communications re\c{c}ues dans l'intervalle de temps $\left[
+0,\theta \right] $ et l'on suppose que $N_{\theta }$ suit une loi de Poisson
+de param\`{e}tre $\theta $.
+
+On note$C_{\theta }$ la variable al\'{e}atoire r\'{e}elle \'{e}gale au
+nombre de communications re\c{c}ues dans l'intervalle de temps $\left[
+0,\theta \right] $ qui se poursuivent au-del\`{a} de l'instant $\theta $
+
+Les instants al\'{e}atoires o\`{u} les communications se terminent sont
+mutuellement ind\'{e}pendant.
+
+\begin{enumerate}
+\item Loi de probabilit\'{e} de $C_{\theta }$
+
+\begin{enumerate}
+\item Quand $N_{\theta }=r:C_{\theta }$ est le \emph{nombre de }comunication%
+\textbf{\ }qui se poursuivent au del\`{a} de $\theta $ \emph{parmi }$r$
+communications re\c{c}ues, de fin \emph{ind\'{e}pendantes} et ayants toutes
+la m\^{e}mes probabilit\'{e} $p$ de se poursuivre au del\`{a} de $\theta .$
+
+Donc la loi conditionnelle de $C_{\theta }$ sachant que $\left\{ N_{\theta
+}=r\right\} $ est une loi bin\^{o}miale de param\`{e}tres $\left( r,p\right) 
+$
+
+\item On a pour $r\in \mathbb{N\;}$et $\mathbb{\;\forall }k\in \left[ \left[
+0,r\right] \right] :$ 
+\begin{eqnarray*}
+p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta }=r\right\}
+\right) =p\left( C_{\theta }=k\;/\;N_{\theta }=r\right) \cdot p\left(
+N_{\theta }=r\right) \\
+=C_{r}^{k}p^{k}q^{r-k}\frac{\theta ^{r}e^{-\theta }}{r!} \\
+=\frac{r!}{k!\left( r-k\right) !}p^{k}q^{r-k}\theta ^{r-k+k}e^{-\theta }%
+\frac{1}{r!} \\
+=\displaystyle \frac{e^{-\theta }\left( p\theta \right) ^{k}\left( q\theta
+\right) ^{r-k}}{k!\left( r-k\right) !}
+\end{eqnarray*}
+la loi bin\^{o}miale \'{e}tant donn\'{e}e par cette formule car $0\le k\le r$%
+\begin{equation*}
+\;\;p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta }=r\right\}
+\right) =\displaystyle \frac{e^{-\theta }\left( p\theta \right) ^{k}\left(
+q\theta \right) ^{r-k}}{k!\left( r-k\right) !}\;\;\;
+\end{equation*}
+
+\item On a alors par la formule des probabilti\'{e}s totales, avec comme syst%
+\`{e}me complet d'\'{e}v\'{e}nements $\left( N_{\theta }=r\right) _{r\in 
+\mathbb{N}}$
+
+\begin{equation*}
+p\left( C_{\theta }=k\right) =\sum_{r=0}^{+\infty }p\left( \left\{ C_{\theta
+}=k\right\} \cap \left\{ N_{\theta }=r\right\} \right)
+\end{equation*}
+
+On calcule la somme partielle de cette s\'{e}rie en s\'{e}parant les valeurs 
+$r\ge k$ et $r<k$%
+\begin{eqnarray*}
+\sum_{r=0}^{M}p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta
+}=r\right\} \right) =\sum_{r=0}^{k-1}p\left( \left\{ C_{\theta }=k\right\}
+\cap \left\{ N_{\theta }=r\right\} \right) \\
++\sum_{r=k}^{M}p\left( \left\{ C_{\theta }=k\right\} \cap \left\{ N_{\theta
+}=r\right\} \right) \\
+=0+\sum_{r=k}^{M}\frac{e^{-\theta }\left( p\theta \right) ^{k}\left( q\theta
+\right) ^{r-k}}{k!\left( r-k\right) !} \\
+=\frac{e^{-\theta }\left( p\theta \right) ^{k}}{k!}\sum_{r=k}^{M}\frac{%
+\left( q\theta \right) ^{r-k}}{\left( r-k\right) !} \\
+=\frac{e^{-\theta }\left( p\theta \right) ^{k}}{k!}\sum_{i=0}^{M-k}\frac{%
+\left( q\theta \right) ^{i}}{i!} \\
+\rightarrow \frac{e^{-\theta }\left( p\theta \right) ^{k}}{k!}e^{q\theta }=%
+\frac{e^{\left( q-1\right) \theta }\left( p\theta \right) ^{k}}{k!} \\
+=\frac{e^{-p\theta }\left( p\theta \right) ^{k}}{k!}
+\end{eqnarray*}
+
+quand $M\rightarrow +\infty $
+
+Donc $p\left( C_{\theta }=k\right) =\displaystyle
+\frac{e^{-p\theta }\left( p\theta \right) ^{k}}{k!}$ pour tout $k\ge 0$ et
+on reconnait l\`{a} une loi de Poisson de param\^{e}tre $p\theta $
+\end{enumerate}
+
+\item \'{E}tude de l'esp\'{e}rance de $C_{\theta }$
+
+\begin{enumerate}
+\item On a donc $E\left( C_{\theta }\right) =p\theta =\displaystyle
+\frac{1-e^{-\alpha \theta }}{\alpha \theta }\theta =\frac{1-e^{-\alpha
+\theta }}{\alpha }$
+
+\item Quand $\theta $ tend vers $+\infty $ on a $e^{-\alpha \theta
+}\rightarrow 0$ car $\alpha >0$ et donc $E\left( C_{\theta }\right)
+\rightarrow 1/\alpha $ lorsque $\theta $ tend vers$+\infty $
+
+On a bien toujours $E\left( C_{\theta }\right) <1/\alpha .$
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}

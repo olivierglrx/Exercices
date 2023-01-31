@@ -1,0 +1,43 @@
+
+\begin{correction}   \;
+\begin{enumerate}
+%----------------------------------------------------
+\item  \textbf{R\'esolution de $\mathbf{z^n=(z-1)^n}$ :}
+On peut tout de suite remarquer que $z=1$ n'est pas solution. On obtient alors pour tout $z\not= 1$,
+$$\begin{array}{llll}
+z^n=(z-1)^n&\Leftrightarrow & \left( \ddp\frac{z}{z-1} \right)^n=1\vsec\\
+& \Leftrightarrow & \exists k\in\lbrace 0,\dots, n-1\rbrace,\ \ddp\frac{z}{z-1}=e^{\frac{2ik\pi}{n}}& \textmd{ (racines $n$-i\`emes de l'unit\'e)}\vsec\\
+& \Leftrightarrow & \exists k\in\lbrace 0,\dots, n-1\rbrace,\ z=e^{\frac{2ik\pi}{n}}(z-1).
+\end{array}$$
+Si $k=0$, $z=z-1$ n'a pas de solution. Ainsi, on peut prendre $k\in\lbrace 1,\dots,n-1\rbrace$. On obtient alors
+$$\begin{array}{lll}
+z^n=(z-1)^n&\Leftrightarrow & \exists k\in\lbrace 1,\dots, n-1\rbrace,\ z(1-e^{\frac{2ik\pi}{n}})=-e^{\frac{2ik\pi}{n}}\vsec\\
+&\Leftrightarrow & \exists k\in\lbrace 1,\dots, n-1\rbrace,\ z=\ddp\frac{-e^{\frac{2ik\pi}{n}}}{e^{\frac{ik\pi}{n}}\times \left(-2i\sin{\left( \ddp\frac{k\pi}{n}\right)}\right)   }\vsec\\
+&\Leftrightarrow & \exists k\in\lbrace 1,\dots, n-1\rbrace,\ z=e^{\frac{ik\pi}{n}}\ddp\frac{-i}{2\sin{\left( \ddp\frac{k\pi}{n}\right)}} = \frac{1}{2\sin{\left( \ddp\frac{k\pi}{n}\right)}} e^{i\frac{k\pi}{n}+ \frac{3pi}{2}}.
+\end{array}$$
+Donc on a : \fbox{$ \mathcal{S}=\left\lbrace \ddp  \frac{1}{2\sin{\left( \ddp\frac{k\pi}{n}\right)}} e^{i\frac{k\pi}{n}+ \frac{3pi}{2}}, k \in \intent{ 1, n-1 } \right\rbrace$}
+%----------------------------------------------------
+\item Exercice tr\`{e}s classique: L'id\'ee ici est de se ramener \`{a} la r\'esolution d'une \'equation type racine n-i\`{e}me de l'unit\'e.
+\begin{itemize}
+\item[$\bullet$] Comme 1 n'est pas solution de l'\'equation, on peut supposer que $z\not= 1$. Ainsi, on peut bien diviser par $(z-1)^n$ qui est bien non nul. Ainsi, on a
+$$(z+1)^n=(z-1)^n\Leftrightarrow \left( \ddp\frac{z+1}{z-1}\right)^n=1\Leftrightarrow Z^n=1$$
+en posant $Z=\ddp\frac{z+1}{z-1}$.
+\item[$\bullet$] R\'esolution des racines n-i\`{e}me de l'unit\'e: \`{a} savoir faire: voir cours:\\
+\noindent On obtient donc que les solutions sont les $Z$ de la forme
+$$Z_k=e^{\frac{2ik\pi}{n}},\quad k\in\intent{ 0,n-1}.$$
+\item[$\bullet$] On repasse alors \`{a} $z$ et on cherche donc les $z$ tels que: $\ddp\frac{z+1}{z-1}=e^{\frac{2ik\pi}{n}}$ avec $k\in\intent{ 0,n-1}$ fix\'e. On obtient alors
+$$\ddp\frac{z+1}{z-1}=e^{\frac{2ik\pi}{n}}\Leftrightarrow z+1=e^{\frac{2ik\pi}{n}} (z-1)\Leftrightarrow z\left(1- e^{\frac{2ik\pi}{n}} \right)=-e^{\frac{2ik\pi}{n}}-1\Leftrightarrow z\left(e^{\frac{2ik\pi}{n}} -1\right)=e^{\frac{2ik\pi}{n}}+1.$$
+Ici, il faut faire attention car on ne peut JAMAIS diviser par un nombre sans v\'erifier qu'il est bien NON nul. Or on a:
+$$e^{\frac{2ik\pi}{n}} -1=0\Leftrightarrow e^{\frac{2ik\pi}{n}} =1\Leftrightarrow \ddp\frac{2k\pi}{n}=2k^{\prime}\pi\Leftrightarrow k=nk^{\prime}$$
+avec $k^{\prime}\in\Z$. Or $k\in\intent{ 0,n-1}$ donc le seul $k$ qui v\'erifie cela est $k=0$. 
+\begin{itemize}
+\item[$\star$] Pour $k=0$, on obtient: $0=2$ donc il n'y a pas de solution pour $k=0$.
+\item[$\star$] Pour $k\not= 0$, \`{a} savoir pour $k\in\intent{ 1,n-1}$, on sait que $1- e^{\frac{2ik\pi}{n}}\not= 0$ et on peut donc bien diviser. On obtient
+$$z=\ddp\frac{e^{\frac{2ik\pi}{n}}+1}{e^{\frac{2ik\pi}{n}} -1}=-i\cot{\left( \ddp\frac{k\pi}{n} \right)}$$
+en utilisant la m\'ethode de l'angle moiti\'e.
+\end{itemize}
+\item[$\bullet$] Conclusion: $\fbox{$ \mathcal{S}=\left\lbrace  z\in\bC,\exists k\in\intent{ 1,n-1},\ z=-i\cot{\left( \ddp\frac{k\pi}{n} \right)}  \right\rbrace $}$
+\end{itemize}
+%----------------------------------------------------
+\end{enumerate}
+\end{correction}

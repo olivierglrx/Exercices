@@ -1,0 +1,38 @@
+\subsection{Suite récurrence complexes $z_{n+1} = z_n^2 -2iz_n-1+i$}
+
+
+\begin{exercice}
+Soit $1>\epsilon >0$ et $u\in \bC$ tel que $|u| \leq 1-\epsilon$.
+Soit $\suite{z}$ la suite définie par $z_0= i+u$ et pour tout $n\in \N$ :
+$$z_{n+1} = z_n^2 -2iz_n-1+i$$
+
+Montrer que $\forall n\in \N,\, |z_n-i|\leq (1-\epsilon)^{2^n}$. En déduire la limite de $\suite{z}$.
+\end{exercice}
+
+\begin{correction}
+On a pour tout $n\in \N$, 
+$$z_{n+1} -i =z_n^2 -2iz_n-1= (z_n-i)^2$$. 
+
+On va procéder par récurrence. Pour $n=0$ on a 
+$$|z_0-i |=|u| \leq 1-\epsilon =(1-\epsilon)^{2^0}$$
+
+Supposons donc qu'il existe $n$ tel que $|z_n-i|\leq (1-\epsilon)^{2^n}$  et montrons l'inégalité pour $(n+1)$
+
+
+On a $$z_{n+1} - i = z_n^2-2iz_n-1 = (z_n -i)^2.$$
+Donc 
+$$|z_{n+1} - i | =| z_n -i|^2,$$
+D'après l'hypothése de récurrence on a 
+$| z_n -i| \leq (1-\epsilon)^{2^n}$, d'où
+$$| z_n -i|^2 \leq \left((1-\epsilon)^{2^n}\right)^2 =(1-\epsilon)^{2\times 2^{n}}$$
+C'est à dire 
+$$|z_{n+1} - i | \leq (1-\epsilon)^{2^{n+1}}$$
+L'inégalité est donc héréditaire et la propriété est donc vraie pour tout $n\in \N$.
+
+Comme $|1-\epsilon|<1$ on a $\lim_{n\tv \infty}  (1-\epsilon)^{2^{n+1}}=0$ donc 
+$$\lim_{n\tv \infty}  z_n = i.$$
+
+
+
+
+\end{correction}

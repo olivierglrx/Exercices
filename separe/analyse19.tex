@@ -1,0 +1,24 @@
+\subsection{$I_{n+1} =(2n+1)I_n$}
+
+\begin{exercice}
+Soit $\suite{I}$ la suite définie par $I_0=1$ et pour tout $n\in \N,$ $I_{n+1} =(2n+1)I_n$.
+Exprimer $I_n$ en fonction de $n$ à l'aide uniquement de factorielle et puissance. 
+\end{exercice}
+
+
+
+\begin{correction}
+Pour tout $n\in \N$ on a $I_{n+1} = (2n+1)I_n$ . Donc on a 
+$I_n =(2(n-1) +1) I_{n-1}$ et $I_{n-1} =(2(n-2) +1) I_{n-2}$ et ainsi de suite jusqu'a $I_2 =(2\times 1+1) I_1=3I_1$ et $I_1 =(2\times 0+1) I_0 =I_0$. 
+Ceci donne 
+$$I_{n} = \left(\prod_{k=0}^{n-1} (2k+1) \right)I_0$$
+(on peut vérifier la formule par récurrence si l'on veut être sûr) 
+
+Ici il s'agit maintenant de simplifier le produit. 
+$\ddp \prod_{k=0}^{n-1} (2k+1) $ correspond au produit sur les nombres impairs de $1$ à $2n-1$. Le produit sur les pairs de 2 à $2n$  vaut 
+$$\ddp  \prod_{k=1}^{n} (2k)  = 2^n   \prod_{k=1}^{n} (k)  = 2^n \times n! $$
+et le produit sur tous les nombres de $1$ à $2n$ vaut 
+$$\ddp  \prod_{k=1}^{2n} (k)  =   (2n)! $$
+Ainsi 
+\conclusion{$\prod_{k=0}^{n-1} (2k+1)  = \frac{(2n)! }{2^n \times n! }$}
+\end{correction}

@@ -1,0 +1,78 @@
+\subsection{Intégrale de Gauss (D'après G2E 2019]}
+
+\begin{exercice}[G2E 2019]
+Dans cet exercice $\sigma$ désigne un réel strictement positif. \\
+
+On considère les trois fonctions définies respectivement sur $\R$, $\R$ et $\R^*$ par :
+$$
+f_\sigma (x) = \left\{\begin{array}{lr}
+0 & \text{si $x\leq 0,$}\\
+\frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}} &\text{si $x> 0$}
+\end{array}\right. \quad g(x) =xe^{-x}, \quad h(x) = \frac{2}{ex}
+$$
+$\cC_\sigma$ désigne la courbe représentative de $f_\sigma$ et $\cH$ la courbe représentative de $h$
+\begin{enumerate}
+\item Soit $\ddp I_\sigma(t) = \int_0^t f_\sigma(x) dx$. Calculer $I_\sigma(t) $ pour tout $t\geq 0$ et en déduire la limite $\ddp \lim_{t\tv \infty} I_\sigma(t) $ \\
+{\footnotesize L'année prochaine, on dira que $f_\sigma$ est une fonction de densité.}
+\item $f_\sigma$ est-elle continue ? 
+\item \begin{enumerate}
+\item Démontrer que $g$ admet un maximum que l'on déterminera. 
+\item En déduire que :
+$$\forall x\in \R_+^*, \quad f_\sigma (x) \leq h(x).$$
+\item Etudier le cas d'égalité dans l'inégalité précédente puis montrer que pour tout $\sigma \in \R^*_+$, les courbes $\cC_\sigma$ et $\cH$ ont une tangente commune dont on donnera une équation cartésienne. 
+\end{enumerate}
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Considérons $F_\sigma$ définie par $F_\sigma(t) =-e^{-\frac{x^2}{2\sigma^2}}$ pour tout $x\geq 0$, $F_\sigma$ est dérivalbe sur $\R_+$ et on a pour $x\geq 0$, $F_\sigma'(x) = f_\sigma(x)$ ainsi
+$$I_\sigma( t) =\left[ F_\sigma(x) \right]_0^t = F_\sigma(t) -F_\sigma(0)= e^{-\frac{t^2}{2\sigma^2}}+1.$$
+
+Or $\lim_{t\tv \infty} e^{-\frac{t^2}{2\sigma^2}}=0$ donc 
+$$\ddp \lim_{t\tv \infty} I_\sigma(t) =1.$$
+\item $f_\sigma $ est continue sur $\R_- $ et $\R_+$ comme composée de fonctions usuelles. En $0$, 
+$$\lim_{x\tv 0^+} f_\sigma(x)  = \lim_{x\tv 0^+} \frac{x}{\sigma^2}e^{-\frac{x^2}{2\sigma^2}}  =0$$ 
+et 
+$$\lim_{x\tv 0^-} f_\sigma(x)  = \lim_{x\tv 0^+} 0 =0$$ 
+Ainsi $f_\sigma $ est continue en $0$ et finalement continue sur $\R$. 
+\item 
+\begin{enumerate}
+\item $g$ est définie et dérivable sur $\R$ et on a pour tout $x\in \R$: 
+$$g'(x) = e^{-x} -xe^{-x} = (1-x) e^{-x}$$
+Ainsi $g$ est croissante sur $]-\infty, 0] $ et décroissante sur $[1,+\infty[$. 
+
+$g$ atteint son maximum en $1$ et vaut $e^{-1}$. 
+\item Pour tout $x> 0$ on   
+\begin{align*}
+f_\sigma(x)& = \frac{2}{x}  \frac{x^2}{2\sigma^2}e^{-\frac{x^2}{2\sigma^2}} \\
+				&= \frac{2}{x}   g(\frac{x^2}{2\sigma^2})\\
+				&\leq \frac{2}{x}   e^{-1} \quad \text{ d'après la question précédente} 
+\end{align*}
+ Ainsi $f_\sigma(x) \leq \frac{2}{ex} =h(x)$.  
+\item L'égalité a lieu en $x_0\geq 0$ vérifiant $g(\frac{x_0^2}{2\sigma^2})=e^{-1} =g(1)$. On a vu à la question 3)a) que $e^{-1}$ était atteint uniquement en $1$ par $g$. On a  donc $\frac{x_0^2}{2\sigma^2} =1$. 
+C'est-à-dire, comme $x_0\geq 0$, $$x_0=\sqrt{2}\sigma$$
+
+On a bien $$f_\sigma (x_0) = \frac{\sqrt{2}}{\sigma} e^{-1} = \frac{2}{e \sqrt{2} \sigma} = h(x_0).$$
+
+Ainsi $\cC_\sigma $ et $\cH$ ont bien un point en commun. Vérifions que les tangentes sont identiques en ce point. 
+
+Tout d'abord remarquons ques les deux courbes admettent bien  des tangentes car sont des courbes représentatives de fonctions $\cC^1$. L'équation de la tangente à $\cC_\sigma$ en $x_0$ est donnée par 
+$Y - f_\sigma(x_0) = f'_\sigma(x_0) (X-x_0)$
+et on a $f'_\sigma(x_0) = \frac{1}{\sigma^2} e^{-\frac{x_0^2}{2\sigma^2}}  - \frac{x_0^2}{\sigma^4}e^{-\frac{x_0^2}{2\sigma^2}} $ ce qui donne en  simplifiant :
+$$f'_\sigma(x_0) =  \frac{1}{\sigma^2} e^{-1} - \frac{2}{\sigma^2}e^{-1}= - \frac{1}{\sigma^2}e^{-1} $$
+
+On obtient ainsi comme équation pour la tangente à $\cC_\sigma$ en $x_0$:
+$$Y- \frac{\sqrt{2}}{e\sigma} = - \frac{1}{e\sigma^2} (X- \sqrt{2}\sigma)$$
+
+Faisons de même avec la tangente à $\cH$ en $x_0$ et calculons $h'(x_0)$. 
+On  a $h'(x_0) =\frac{-2}{ex_0^2}= \frac{-2}{e 2 \sigma^2} =- \frac{1}{e\sigma^2} =f'_\sigma(x_0) $
+Ainsi les deux courbes admettent bien la même tangente en $x_0$ à savoir :
+
+$$Y- \frac{\sqrt{2}}{e\sigma} = - \frac{1}{e\sigma^2} (X- \sqrt{2}\sigma)$$
+
+ 
+\end{enumerate}
+\end{enumerate}
+\end{correction}

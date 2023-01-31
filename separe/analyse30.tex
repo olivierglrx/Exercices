@@ -1,0 +1,54 @@
+\subsection{Etude $ x\exp(\sin^2(x)).$ [d'après Godillon 16-17]  }
+\begin{exercice}%d 'après DS8 godillon lycée hoche 2016-2017http://math1a.bcpsthoche.fr/docs/DS_1617.pdf
+On considère la fonction suivante :
+$$f : x\mapsto x\exp(\sin^2(x)).$$
+\begin{enumerate}
+\item Déterminer le développement limité à l'ordre $5$ en $0$ de $f$. 
+\item Justifier que $f$ réalise une bijection de l'intervalle $\ddp \left] \frac{-\pi}{2},\frac{\pi}{2}\right[$ vers un ensemble $I$ à déterminer. 
+\item Justifier que la bijection réciproque $f^{-1}$ de $f_{\left|{\left] \frac{-\pi}{2},\frac{\pi}{2}\right[}\right.}$ est de classe $\cC^\infty$ sur $I$. 
+\item Justifier l'existence de $(a,b,c) \in \R^3$ tel que $f^{-1} (x) =ax+bx^3 +cx^5 +o_{x\tv 0} (x^5)$.
+\item En composant les développements limités de $f^{-1}$ et $f$, déterminer les valeurs des constantes $a$, $b$ et $c$. 
+\item Que peut-on en déduire pour la tangente à la courbe représentatitve de $f^{-1}$ au voisinage de $0$ ?
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Tout calcul fait on obtient 
+$$f(x) =_0 x +x^3+\frac{1}{6}x^5 +o(x^5)$$
+\item $f$ est définie et dérivable sur $\ddp \left] \frac{-\pi}{2},\frac{\pi}{2}\right[$ et on a 
+\begin{align*}
+f'(x) &= \exp(\sin^2(x)) +x 2\cos(x)\sin(x) \exp(\sin^2(x)\\
+&= (1+ 2x\cos(x)\sin(x))\exp(\sin^2(x)) \\
+&=(1+x\sin(2x))\exp(\sin^2(x)) 
+\end{align*}
+Le signe de $f'$ est égal à celui de $(1+x\sin(2x)$ et on a :
+Pour $x \in [0,\frac{\pi}{2}[ :$ $x\geq 0 $ et $\sin(2x) \geq 0$ donc 
+$f'(x) \geq 0$. 
+et pour $x\in [-)\frac{\pi}{2} , 0]$ on a $x\leq 0$ et $\sin(2x) \leq 0$ donc $f'(x)\geq 0$.  
+
+Au final $f$ est strictement croissante sur l'intervalle considéré. Elle est de plus  continue, le théor§me de la bijection asssure que $f$ réalise une bijection de $\ddp \left] \frac{-\pi}{2},\frac{\pi}{2}\right[$ sur $$I =\left] f(\frac{-\pi}{2}),f(\frac{\pi}{2})\right[ = \left] \frac{-\pi}{2}e,\frac{\pi}{2}e\right[$$
+
+\item $f$ est $\cC^{\infty} $ sur  $\left] \frac{-\pi}{2},\frac{\pi}{2}\right[$ et $f'(x) \neq 0$ pour tout $x\in \left] \frac{-\pi}{2},\frac{\pi}{2}\right[$. Ainsi $f^{-1}$ est $\cC^{\infty}$ sur $I$ et 
+\item D'après la question précédente et la formule de Taylor-Young, $f$ admet un développement limité à tout ordre, donc en particulier à l'ordre $5$. 
+Comme $f$ est une fonction impaire, il en est de même pour $f^{-1}$ et aussi pour la partie régulière de son DL.  Ainsi les termes pairs du DL de $f^{-1}$ sont nuls et il l'existe $(a,b,c)\in \R^3$ tel que 
+$$f^{-1} (x) = ax+bx^3+cx^5+o(x^5)$$
+on a 
+$$a={f^{-1}}'(x), \quad b = \frac{{f^{-1}}^{(3)}(x)}{3!} \quad  c = \frac{{f^{-1}}^{(5)}(x)}{5!}$$
+
+\item On a d'une part $f^{-1}\circ f (x) = x$ et d'autre part 
+\begin{align*}
+f^{-1}\circ f (x) &= a (x +x^3+\frac{1}{6}x^5) +b (x +x^3+\frac{1}{6}x^5)^3 +c (x +x^3+\frac{1}{6}x^5)^5 +o(x^5)\\
+&=  a (x +x^3+\frac{1}{6}x^5) +b (x^3 +3x^5) +c x^5 +o(x^5)\\
+&=  a x +(a+b)x^3+(\frac{a}{6}+3b+c)x^5  +o(x^5)
+\end{align*}
+Ce qui donne par identification 
+$a=1, a+b=0 , (\frac{a}{6}+3b+c)=0$
+On trouve  $(a,b,c)= (1,-1 , \frac{17}{6}$, d'où 
+$$f^{-1} (x) = x-x^3 + \frac{17}{6} x^5 +o(x^5)$$
+\item Par conséquent la tangente à la courve représentative de $f^{-1} $ en $0$ admet pour équation $y=x$ et 
+
+au voisinage à gauche la courbe représentative de $f$ est au dessus de sa tangente et au voisinage à droite la courbe représentative de $f$ est en dessous de sa tangente et 
+\end{enumerate}
+
+\end{correction}

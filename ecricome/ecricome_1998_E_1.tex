@@ -1,0 +1,426 @@
+%BECHATA Abdellah
+%www.mathematiques.fr.st
+
+
+\documentclass[a4paper,french,11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[latin1]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.00.0.2552}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="3">}
+%TCIDATA{Created=Wednesday, August 25, 2004 17:43:57}
+%TCIDATA{LastRevised=Saturday, August 28, 2004 15:17:12}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="concours\ecricome">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\geometry{margin={1cm,2cm}}
+ \pagestyle{fancy}
+\cfoot{\thepage/\pageref{fin}}
+\renewcommand{\headrulewidth}{0pt}
+\input{tcilatex}
+
+\begin{document}
+
+
+\noindent {\Large \textbf{ECRI%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{COME}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{COME}%
+%EndExpansion
+}}\vspace{0.3cm}
+
+\noindent \textbf{Banque d'épreuves communes}
+
+\noindent aux concours des Ecoles
+
+\noindent esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{bordeaux}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{bordeaux}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{marseille}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{marseille}
+%EndExpansion
+/ icn%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{nancy}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{nancy}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{reims}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{reims}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{rouen}} }%
+%BeginExpansion
+\colorbox[gray]{0.95}{rouen}
+%EndExpansion
+/ esc%
+%TCIMACRO{\TeXButton{TeX field}{\colorbox[gray]{0.95}{toulouse}}}%
+%BeginExpansion
+\colorbox[gray]{0.95}{toulouse}%
+%EndExpansion
+\vspace{1cm}
+
+\begin{center}
+{\large CONCOURS D'ADMISSION }\vspace{0.5cm}
+
+\textbf{option économique} \vspace{0.5cm}
+
+{\Large \textbf{MATHÉMATIQUES}} \vspace{0.5cm}
+
+\textbf{Année 1998\bigskip }
+\end{center}
+
+\noindent \textbf{Aucun instrument de calcul n'est autorisé.}
+
+\noindent \textbf{Aucun document n'est autorisé.\bigskip }
+
+\noindent L'énoncé comporte \pageref{fin} pages\bigskip
+
+\begin{quotation}
+\noindent Les candidats sont invités à soigner la présentation de leur
+copie, à mettre en évidence les principaux résultats, à respecter les
+notations de l'énoncé, et à donner des démonstrations complètes (mais brè%
+ves) de leurs affirmations.\bigskip
+\end{quotation}
+
+\newpage
+
+\section*{Exercice 1}
+
+\begin{enumerate}
+\item Soit $g$ l'application de $]0,+\infty \lbrack $ dans $\mathbb{R}$ dé%
+finie par 
+\begin{equation*}
+g(x)=\ln (\dfrac{x}{1+x})-\dfrac{\ln (1+x)}{x}
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $g$ est dérivable sur $]0,+\infty \lbrack $ et expliciter
+sa dérivée.
+
+\item Dresser la tableau de variations de $g$, avec ses éventuelles limites
+aux bornes.
+\end{enumerate}
+
+\item Soit $f$ l'application de $\mathbb{R}$ dans $\mathbb{R}$ définie par 
+\begin{equation*}
+f(x)=e^{-x}\ln (1+e^{x})
+\end{equation*}
+
+\begin{enumerate}
+\item A l'aide d'un changement de variable, montrer que pour tout réel $x$
+positif, on a : 
+\begin{equation*}
+\int\limits_{0}^{x}f(t)dt=g(e^{x})+2\ln 2
+\end{equation*}
+
+\item Montrer qu'il existe un réel $c$, que l'on explicitera, tel que
+l'application $h_{c}$ définie sur $\mathbb{R}$ par : 
+\begin{equation*}
+x\longrightarrow h_{c}(x)=\left\{ 
+\begin{array}{cc}
+cf(x) & \text{si }x\geqslant 0 \\ 
+0 & \text{si }x<0%
+\end{array}%
+\right.
+\end{equation*}%
+soit une densité d'une variable aléatoire $X$.
+
+\item On considère la variable aléatoire $Y=e^{X}$.\newline
+Montrer que $Y$ a une densité que l'on explicitera.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Exercice 2}
+
+Dans cet exercice, on étudie la diagonalisation des matrices carrées d'ordre
+3 antisymétriques ( c'est à dire vérifiant $^{t}\!A=-A$ ).\newline
+On étudie d'abord un cas particulier avant de passer au cas général.
+
+\subsection*{Partie A}
+
+\begin{enumerate}
+\item On désigne par $E$ l'espace vectoriel $\mathbb{R}^{3}$ muni de sa base
+canonique $\mathcal{B}=(e_{1},e_{2},e_{3})$. On note $0_{E}$ l'élément nul
+de $\mathbb{R}^{3}$.\newline
+On rappelle que toute famille libre de trois vecteurs de $E$ est une base de 
+$E$.\newline
+Soit $A=\left( 
+\begin{array}{ccc}
+0 & 2 & -1 \\ 
+-2 & 0 & -2 \\ 
+1 & 2 & 0%
+\end{array}%
+\right) $ et $f$ l'endomorphisme de $E$ représenté par $A$ dans la base $%
+\mathcal{B}$.\newline
+Soit $\mathcal{U}=(u_{1},u_{2},u_{3})$ où $u_{1}=-2e_{1}+e_{2}+2e_{3}$, $%
+u_{2}=e_{1}+2e_{2}$ et $u_{3}=f(u_{2})$.
+
+\begin{enumerate}
+\item Déterminer le noyau de $f$ et en donner une base.
+
+\item Montrer que $\mathcal{U}$ est une base de $E$ et déterminer la matrice 
+$B$ représentant $f$ dans cette base.
+\end{enumerate}
+
+\item Soit $\lambda $ un réel non nul.\newline
+Montrer que pour tout vecteur $x$ de $E$, $[\ f(x)=\lambda x\ ]$ équivaut à $%
+[\ x=0_{E}\ ]$.\newline
+On pourra utiliser la décomposition de $x$ dans $\mathcal{U}$.
+
+\begin{enumerate}
+\item Quel est finalement l'ensemble des valeurs propres de $A$ ?
+
+\item La matrice $A$ est-elle diagonalisable ?
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie B}
+
+Soient $a$, $b$ et $c$ trois réels donnés. On pose $a^{2}+b^{2}+c^{2}=s$ et
+on suppose $s\neq 0$.\newline
+On considère la matrice $M=\left( 
+\begin{array}{lll}
+0 & -a & -b \\ 
+a & 0 & -c \\ 
+b & c & 0%
+\end{array}%
+\right) $ et $g$ l'endomorphisme de $E$ représenté par $M$ dans la base $%
+\mathcal{B}$.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Calculer $M^{2}$ et $M^{3}$.
+
+\item Vérifier que $M^{3}$ s'exprime simplement en fonction de $M$ et $s$.
+\end{enumerate}
+
+\item Montrer que si le réel $\lambda $ est valeur propre de $g$ alors $%
+\lambda $ est nécessairement nul. On utilisera la relation trouvée ci dessus.
+
+\item Montrer que l'hypothèse \textquotedblleft $M$ est inversible" conduit à
+une contradiction.
+
+\begin{enumerate}
+\item Quel est finalement l'ensemble des valeurs propres de $M$ ?
+
+\item La matrice $M$ est-elle diagonalisable ?
+\end{enumerate}
+\end{enumerate}
+
+\section*{Problème}
+
+Dans tout le problème, $X$ désigne une variable aléatoire définie sur un
+espace probabilisé $(\Omega ,\mathcal{A},P)$ et à valeurs dans $\mathbb{N}$
+et $E(X)$ l'espérance de $X$ si elle existe.\newline
+On note $A$ l'événement \textquotedblleft $X$ prend une valeur paire" (on é%
+crira dorénavant pour abréger \textquotedblleft $X$ est pair"). On rappelle
+que $0$ est pair. On pose : $a=P(A)$.
+
+\begin{itemize}
+\item On dit que $X$ a la propriété $\mathcal{P}$ si et seulement si $a>%
+\dfrac{1}{2}$.\newline
+On définit deux variables $X_{0}$ et $X_{1}$ : 
+\begin{equation*}
+X_{0}=\left\{ 
+\begin{array}{lc}
+X & \text{si }X\text{ est pair} \\ 
+0 & \text{sinon}%
+\end{array}%
+\right. \hspace{3cm}X_{1}=\left\{ 
+\begin{array}{lc}
+X & \text{si }X\text{ est impair} \\ 
+0 & \text{sinon}%
+\end{array}%
+\right.
+\end{equation*}
+
+\item On dit que $X$ a la propriété $\mathcal{Q}$ si et seulement si $%
+E(X_{1})>E(X_{0})$
+\end{itemize}
+
+\subsection*{Préliminaires}
+
+\begin{enumerate}
+\item Déterminer $X_{0}+X_{1}$.
+
+\item On note $Y$ la variable aléatoire qui vaut $\left\{ 
+\begin{array}{rc}
+1 & \text{si }X\text{ est pair} \\ 
+-1 & \text{si }X\text{ est impair}%
+\end{array}%
+\right. $\newline
+Montrer les relations : 
+\begin{equation*}
+X_{0}=\dfrac{1}{2}(1+Y)X\qquad \text{et}\qquad X_{1}={\dfrac{1}{2}}(1-Y)X
+\end{equation*}
+\end{enumerate}
+
+\subsection*{Partie A}
+
+Dans cette partie, on suppose que $X$ suit une loi géométrique de paramètre $%
+p$ $(0<p<1)$ et on pose $q=1-p$.
+
+\begin{enumerate}
+\item Montrer que $a=\dfrac{q}{q+1}$, puis que $X$ ne vérifie pas la propriét%
+é $\mathcal{P}$.
+
+\item Montrer que $X_{1}$ admet une espérance donnée $E(X_{1})=\dfrac{q^{2}+1%
+}{(1+q)(1-q^{2})}$
+
+\item Montrer que $X_{0}$ admet aussi une espérance que l'on précisera, puis
+que $X$ vérifie la propriété $\mathcal{Q}$.
+\end{enumerate}
+
+\subsection*{Partie B}
+
+\begin{enumerate}
+\item Pour tout entier naturel $n$, on pose $p_{n}=P(X=n)$ et on suppose que
+la suite $(p_{n})_{n\in \mathbb{N}}$ est strictement décroissante.\newline
+En écrivant $P(A)$ et $P(\overline{A})$ à l'aide des nombres $p_{n}$,
+montrer que $X$ vérifie $\mathcal{P}$.
+
+\item On suppose maintenant que $X$ a une espérance.
+
+\begin{enumerate}
+\item Montrer que $X_{0}$ et $X_{1}$ admettent aussi des espérances.
+
+\item Montrer à l'aide des préliminaires, que $X$ vérifie $\mathcal{Q}$ si
+et seulement si $E(YX)<0$.
+\end{enumerate}
+\end{enumerate}
+
+\subsection*{Partie C}
+
+On suppose ici que la variable aléatoire $X$ est en fait à valeurs dans
+l'intervalle entier $[[0,20]]$ et donc que, pour tout entier $n\geqslant 21$%
+, $p_{n}=0$.\newline
+On définit un type:
+
+\qquad type Table=array[0..20] of real;
+
+et on demande d'écrire un programme en TURBO PASCAL:
+
+\begin{itemize}
+\item contenant une procédure \texttt{ENTRE\_LOI} (à écrire) qui permet à l'
+utilisateur d'entrer dans une variable T de type TABLE les nombres $P(X=k)$
+pour $k=0,1,\ldots ,20$.
+
+\item calculant $E(YX)$et indiquant par un message si $X$ vérifie $\mathcal{Q%
+}$ou non.
+\end{itemize}
+
+\subsection*{\textbf{Partie D}}
+
+Le but de cette partie est d'étudier le cas où $X$ suit une loi binomiale $%
+\mathcal{B}(n,p)$avec $n\geqslant 2$ et $0<p<\dfrac{1}{2}$.
+
+\begin{enumerate}
+\item Soit $f$ la fonction de deux variables définie sur l'ouvert $%
+U=]1,+\infty \lbrack \times ]0,\dfrac{1}{2}[$ de $\mathbb{R}^{2}$ par : 
+\begin{equation*}
+(x,y)\longrightarrow f(x,y)=xy(1-2y)^{x-1}=xy\exp [(x-1)\ln (1-2y)]
+\end{equation*}
+
+\begin{enumerate}
+\item Montrer que $f$ admet en tout point $(x,y)$ de $U$ des dérivées
+partielles premières $\dfrac{\partial f}{\partial x}(x,y)$ et $\dfrac{%
+\partial f}{\partial y}(x,y)$. Les calculer et les mettre sous forme de
+produits.\newline
+Montrer que $f$ est de classe $C^{1}$ sur $U$.
+
+\item Montrer que, pour tout élément $u$ de $]0,1[:\quad \ln (1-u)<-u$%
+\newline
+En déduire que $f$ n'a pas d'extremum sur $U$.
+\end{enumerate}
+
+\item Dans cette question, $p$ est un réel vérifiant: $0<p<1$.\newline
+On réalise une suite d'épreuves de Bernoulli indépendantes, de probabilité
+de \textquotedblleft succès" $p$ et de probabilité d'\textquotedblleft é%
+chec" $q=1-p$.\newline
+Pour tout élément $n$ de $\mathbb{N}^{\ast }$, on définit l'événement : 
+\newline
+$F_{n}=$\textquotedblleft au cours des n premières épreuves, on obtient un
+nombre pair de succès" et on pose $u_{n}=P(F_{n})$.
+
+\begin{enumerate}
+\item Montrer que pour tout élément $n$ de $\mathbb{N}^{\ast }$, $%
+u_{n+1}=(1-p)u_{n}+p(1-u_{n})$\newline
+On pose par convention $u_{0}=1$. Vérifier que la relation précédent est
+encore vraie pour $n=0$.
+
+\item Donner l'expression générale de $u_{n}$ en fonction de $n$ pour tout
+entier naturel $n$.
+\end{enumerate}
+
+\item On se place maintenant dans le cas annoncé au début de la partie D: $X$
+suit une loi binomiale $\mathcal{B}(n,p)$ avec $n\geqslant 2$ et $0<p<\dfrac{%
+1}{2}$.
+
+\begin{enumerate}
+\item En reprenant la définition du réel $a$ associé à la variable $X$,
+montrer que $a=u_{n}$.\newline
+Montrer que $X$ vérifie la propriété $\mathcal{P}$.
+
+\item Calculer $E(YX)$\newline
+En déduire que $E(X_{1})-E(X_{0})=f(n,p)$ (où $f$ est la fonction introduite
+en D-1) puis que $X$ a la propriété $\mathcal{Q}$.
+
+\item On considère l'application partielle: 
+\begin{equation*}
+g:\quad y\longrightarrow g(y)=f(n,y)\quad \text{définie sur }]0,\dfrac{1}{2}%
+[\quad (n\geqslant 2)
+\end{equation*}%
+Montrer que $g$ admet un maximum $M_{n}=\dfrac{1}{2}\left( \dfrac{n-1}{n}%
+\right) ^{n-1}$
+
+\item Montrer que la fonction $\phi :\ x\longrightarrow (x-1)\ln (1-\dfrac{1%
+}{x})$ est de classe $C^{2}$ sur $[2,+\infty \lbrack $, que sa dérivée
+seconde est strictement positive sur $[2,+\infty \lbrack $ et que $%
+\lim\limits_{x\rightarrow +\infty }\phi ^{\prime }(x)=0$.\newline
+En déduire que la suite $(M_{k})_{k\geqslant 2}$ est strictement dé%
+croissante.
+
+\item Montrer que la suite $(M_{k})_{k\geqslant 2}$ converge, préciser sa
+limite et montrer que pour tout entier $k$ supérieur ou égal à 2, $\dfrac{1}{%
+2e}\leqslant M_{k}\leqslant \dfrac{1}{4}$
+\end{enumerate}
+
+\item On suppose que deux joueurs Alain et Béatrice jouent à pile ou face
+avec une pièce désiquilibrée, la probabilité d'obtenir \textquotedblleft
+face" étant égale à $p$ $(0<p<\dfrac{1}{2})$.\newline
+Une pièce est lancée $n$ fois $(n\geqslant 2)$, les lancers successifs sont
+supposés indépendants.\newline
+Alain empoche un gain égal au nombre de faces apparues si ce nombre de faces
+est pair et Béatrice, un gain égal au nombre de faces apparues si ce nombre
+est impair.
+
+\begin{enumerate}
+\item Quel est celui des joueurs qui a le plus de chances de gagner?
+
+\item Quel est celui des joueurs qui a la plus forte espérance de gain?
+
+\item Comment interpréter l'encadrement obtenu à la question 3-e) de cette
+partie?
+\end{enumerate}
+\end{enumerate}
+
+\label{fin}
+
+\end{document}

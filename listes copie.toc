@@ -1,0 +1,126 @@
+\select@language {french}
+\contentsline {section}{\numberline {I}Analyse}{3}{section.1}
+\contentsline {subsection}{\numberline {I. 1}R\IeC {\'e}solution in\IeC {\'e}quation}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {I. 2}Calcul ensemble de d\IeC {\'e}finition}{3}{subsection.1.2}
+\contentsline {subsection}{\numberline {I. 3}R\IeC {\'e}solution $\left \delimiter "4262304 \sqrt {x}\right \delimiter "5263305 = \left \delimiter "4262304 \frac {x}{2}\right \delimiter "5263305 $}{4}{subsection.1.3}
+\contentsline {subsection}{\numberline {I. 4}Etude de $I_n=\DOTSI \intop \ilimits@ _1^e (\qopname \relax o{ln}(x))^n dx$ }{4}{subsection.1.4}
+\contentsline {subsection}{\numberline {I. 5}Racine de $x^3-6x-9$}{4}{subsection.1.5}
+\contentsline {subsection}{\numberline {I. 6}R\IeC {\'e}solution de $\sqrt {e^x-2} \geq e^{x}-4$}{5}{subsection.1.6}
+\contentsline {subsection}{\numberline {I. 7}Equation trigonom\IeC {\'e}trique et changement de variable}{5}{subsection.1.7}
+\contentsline {subsection}{\numberline {I. 8}Equation diff\IeC {\'e}rentielle, changement de variable}{5}{subsection.1.8}
+\contentsline {subsection}{\numberline {I. 9}Suite arithm\IeC {\'e}tico-g\IeC {\'e}om\IeC {\'e}trique}{6}{subsection.1.9}
+\contentsline {subsection}{\numberline {I. 10}Equation rationnelle \IeC {\`a} param\IeC {\`e}tre}{6}{subsection.1.10}
+\contentsline {subsection}{\numberline {I. 11}R\IeC {\'e}solution de $\left \delimiter "4262304 2x-\sqrt {5x-1}\right \delimiter "5263305 =0 $}{6}{subsection.1.11}
+\contentsline {subsection}{\numberline {I. 12}Equation complexe}{7}{subsection.1.12}
+\contentsline {subsection}{\numberline {I. 13}Somme de nombres complexes(Pb)}{7}{subsection.1.13}
+\contentsline {subsection}{\numberline {I. 14}Equations trigonom\IeC {\'e}triques}{7}{subsection.1.14}
+\contentsline {subsection}{\numberline {I. 15}Arctan(Pb)}{7}{subsection.1.15}
+\contentsline {subsection}{\numberline {I. 16}Simplification Produit}{8}{subsection.1.16}
+\contentsline {subsection}{\numberline {I. 17}Suite r\IeC {\'e}currente et c\IeC {\'e}saro PB(long)}{8}{subsection.1.17}
+\contentsline {subsection}{\numberline {I. 18}$u_{n+1}=\qopname \relax o{sin}(u_n)$ (Pb)}{9}{subsection.1.18}
+\contentsline {subsection}{\numberline {I. 19}$I_{n+1} =(2n+1)I_n$}{10}{subsection.1.19}
+\contentsline {subsection}{\numberline {I. 20} Suite d\IeC {\'e}finites implicitement $x^3+nx-1$ (Pb) }{10}{subsection.1.20}
+\contentsline {subsection}{\numberline {I. 21}$I_n = \DOTSI \intop \ilimits@ _1^e (\qopname \relax o{ln}(x))^n dx$}{10}{subsection.1.21}
+\contentsline {subsection}{\numberline {I. 22}Etude de $f(x)= \frac {e^{x}}{\qopname \relax o{ln}(x)} $}{11}{subsection.1.22}
+\contentsline {subsection}{\numberline {I. 23}Wallis - Calcul $\qopname \relax m{lim}_{n\rightarrow \infty } \DOTSB \sum@ \slimits@ _{k=1}^n \frac {1}{k^2}$ (Pb)}{11}{subsection.1.23}
+\contentsline {subsubsection}{\numberline {I. 23. a}Convergence}{11}{subsubsection.1.23.1}
+\contentsline {subsubsection}{\numberline {I. 23. b}Calcul de la limite}{11}{subsubsection.1.23.2}
+\contentsline {subsection}{\numberline {I. 24}Etude de $f(x) = x+\qopname \relax o{cos}\left (\frac {1}{x}\right ).$}{12}{subsection.1.24}
+\contentsline {subsection}{\numberline {I. 25}Calculs de limites}{13}{subsection.1.25}
+\contentsline {subsection}{\numberline {I. 26}Etude d\IeC {\'e}rivabilit\IeC {\'e} }{13}{subsection.1.26}
+\contentsline {subsection}{\numberline {I. 27}Fonctions $k$-contractante (Pb)}{13}{subsection.1.27}
+\contentsline {subsection}{\numberline {I. 28}Etude de $\DOTSI \intop \ilimits@ _x^{x^2} \frac {dt}{\qopname \relax o{ln}(t)}.$ (Pb) }{14}{subsection.1.28}
+\contentsline {subsection}{\numberline {I. 29}Non interversion limite int\IeC {\'e}grale}{15}{subsection.1.29}
+\contentsline {subsection}{\numberline {I. 30}Etude $ x\qopname \relax o{exp}(\qopname \relax o{sin}^2(x)).$ [d'apr\IeC {\`e}s Godillon 16-17] }{15}{subsection.1.30}
+\contentsline {subsection}{\numberline {I. 31}In\IeC {\'e}galit\IeC {\'e}s / r\IeC {\'e}currence}{15}{subsection.1.31}
+\contentsline {subsection}{\numberline {I. 32}Fibonacci}{15}{subsection.1.32}
+\contentsline {subsection}{\numberline {I. 33}Equation \IeC {\`a} param\IeC {\`e}tre}{16}{subsection.1.33}
+\contentsline {subsection}{\numberline {I. 34}Partie Enti\IeC {\`e}re}{16}{subsection.1.34}
+\contentsline {subsection}{\numberline {I. 35}Equation trigonom\IeC {\'e}trique / changement de variable}{16}{subsection.1.35}
+\contentsline {subsection}{\numberline {I. 36}Calcul de la d\IeC {\'e}riv\IeC {\'e}e de $\qopname \relax o{arcsin}$ [Agro 2015]}{17}{subsection.1.36}
+\contentsline {subsection}{\numberline {I. 37}Somme double $\qopname \relax m{max}$ + info}{17}{subsection.1.37}
+\contentsline {subsection}{\numberline {I. 38}Calcul de $\DOTSB \sum@ \slimits@ _{k=0}^n k^4$ }{18}{subsection.1.38}
+\contentsline {subsection}{\numberline {I. 39}Formule D'inversion de somme (Pb)}{18}{subsection.1.39}
+\contentsline {subsection}{\numberline {I. 40}Etude de $ f(x) = \qopname \relax o{ln}\left (\sqrt {\frac {1}{2}+ \qopname \relax o{sin}(x)}\right )$}{19}{subsection.1.40}
+\contentsline {subsection}{\numberline {I. 41}EDL - concentration de glucose}{20}{subsection.1.41}
+\contentsline {subsection}{\numberline {I. 42}Etude de $u_{n+1} =1 +\frac {1}{u_n}$ (Pb)}{20}{subsection.1.42}
+\contentsline {subsection}{\numberline {I. 43}Calcul de limites}{21}{subsection.1.43}
+\contentsline {subsection}{\numberline {I. 44}Equation int\IeC {\'e}grale $f(x) =\DOTSI \intop \ilimits@ _0^{ax} f(t)dt$ (Pb)}{21}{subsection.1.44}
+\contentsline {subsection}{\numberline {I. 45}Fonction de plusieurs variables}{22}{subsection.1.45}
+\contentsline {subsection}{\numberline {I. 46}Int\IeC {\'e}grale de Gauss (D'apr\IeC {\`e}s G2E 2019]}{22}{subsection.1.46}
+\contentsline {subsection}{\numberline {I. 47}Etude famille de fonction, int\IeC {\'e}grale, et somme (ECRICOME 2002)}{23}{subsection.1.47}
+\contentsline {paragraph}{A- \'Etude des fonctions $f_n$.\\}{23}{section*.5}
+\contentsline {paragraph}{B- \'Etude d'une suite.\\}{23}{section*.6}
+\contentsline {subsection}{\numberline {I. 48}in\IeC {\'e}quation \IeC {\`a} param\IeC {\'e}tre - Une bien l'autre pas finie}{24}{subsection.1.48}
+\contentsline {section}{\numberline {II}Alg\IeC {\'e}bre}{25}{section.2}
+\contentsline {subsection}{\numberline {II. 1}Syst\IeC {\`e}me lin\IeC {\'e}aire}{25}{subsection.2.1}
+\contentsline {subsection}{\numberline {II. 2}Syst\IeC {\`e}me lin\IeC {\'e}aire (produit - changement de variables)}{25}{subsection.2.2}
+\contentsline {subsection}{\numberline {II. 3}Syst\IeC {\`e}me lin\IeC {\'e}aire $AX=\lambda X$}{26}{subsection.2.3}
+\contentsline {subsection}{\numberline {II. 4}Puissance matrice $M^n =\alpha _n M +\beta _n I_3$ }{26}{subsection.2.4}
+\contentsline {subsection}{\numberline {II. 5}Calcul du rang de $M_a$}{26}{subsection.2.5}
+\contentsline {subsection}{\numberline {II. 6}Etude des racines de $X^5 +tX-1$}{26}{subsection.2.6}
+\contentsline {subsection}{\numberline {II. 7}Tchebychev (Pb)}{27}{subsection.2.7}
+\contentsline {subsection}{\numberline {II. 8}Diagonalisation}{27}{subsection.2.8}
+\contentsline {subsection}{\numberline {II. 9}Etude application lin\IeC {\'e}aire [Godillon 17-18]}{27}{subsection.2.9}
+\contentsline {subsection}{\numberline {II. 10}Sujet R\IeC {\'e}visions Alg\IeC {\'e}bre lin\IeC {\'e}aire - (Pb ) }{28}{subsection.2.10}
+\contentsline {subsubsection}{\numberline {II. 10. a}Equation dans $\mathcal {L}(E)$ }{28}{subsubsection.2.10.1}
+\contentsline {paragraph}{Un exemple}{28}{section*.7}
+\contentsline {subsubsection}{\numberline {II. 10. b}Etude de $f$}{28}{subsubsection.2.10.2}
+\contentsline {paragraph}{Etude des puissance de $f$}{29}{section*.8}
+\contentsline {subsubsection}{\numberline {II. 10. c}Polyn\IeC {\^o}mes et application lin\IeC {\'e}aires}{29}{subsubsection.2.10.3}
+\contentsline {paragraph}{Etude d'un endomorphisme }{29}{section*.9}
+\contentsline {paragraph}{Etude d'une suite de polyn\IeC {\^o}mes}{30}{section*.10}
+\contentsline {subsection}{\numberline {II. 11}Fraction Rationnelle $Q_n(\qopname \relax o{tan}(\theta )) = \qopname \relax o{tan}(n\theta )$ (Pb) }{30}{subsection.2.11}
+\contentsline {subsection}{\numberline {II. 12}Diagonalisation (Pb)}{30}{subsection.2.12}
+\contentsline {subsection}{\numberline {II. 13}Racines de $z^n+z+1$ (Pb)}{31}{subsection.2.13}
+\contentsline {subsection}{\numberline {II. 14}EV - exemple et c-ex}{32}{subsection.2.14}
+\contentsline {subsection}{\numberline {II. 15}Famille libre /g\IeC {\'e}n\IeC {\'e}rarive / base Exemples}{32}{subsection.2.15}
+\contentsline {subsection}{\numberline {II. 16}Etude de $\DOTSB \sum@ \slimits@ _{k=1}^n \frac {\qopname \relax o{ln}(k)}{k}$ [Agro 2016]}{32}{subsection.2.16}
+\contentsline {subsection}{\numberline {II. 17}Tirages conditionnels }{33}{subsection.2.17}
+\contentsline {subsection}{\numberline {II. 18}Calcul de $\DOTSB \sum@ \slimits@ _{k=1}^n \frac {1}{k+n}$ (Pb)}{34}{subsection.2.18}
+\contentsline {subsection}{\numberline {II. 19}Matrice, endomorphisme, vp, (Ecricome 2002)}{35}{subsection.2.19}
+\contentsline {section}{\numberline {III}Probabilit\IeC {\'e}/D\IeC {\'e}nombrement}{36}{section.3}
+\contentsline {subsection}{\numberline {III. 1}Urne Ind\IeC {\'e}pendance d'\IeC {\'e}venements (facile)}{36}{subsection.3.1}
+\contentsline {subsection}{\numberline {III. 2}Chaine de markov - puce sur un triangle (\IeC {\'e}v\IeC {\'e}nement, pas de diag)}{36}{subsection.3.2}
+\contentsline {subsection}{\numberline {III. 3}Nombre de surjections (Pb)}{37}{subsection.3.3}
+\contentsline {subsection}{\numberline {III. 4}Urnes, boules et tirages ! }{38}{subsection.3.4}
+\contentsline {subsection}{\numberline {III. 5}D\IeC {\'e}nombrement des matrices \IeC {\`a} coefficients $\{ 0,1\}$ (Pb)}{38}{subsection.3.5}
+\contentsline {subsection}{\numberline {III. 6}Urnes boules et tirages 2 }{39}{subsection.3.6}
+\contentsline {subsection}{\numberline {III. 7}Moteur d'avion d'apr\IeC {\`e}s G2E (Pb)}{39}{subsection.3.7}
+\contentsline {subsection}{\numberline {III. 8}Grenouille sur escalier (marche al\IeC {\'e}atoire)}{40}{subsection.3.8}
+\contentsline {subsection}{\numberline {III. 9}Archers proba de r\IeC {\'e}ussite}{40}{subsection.3.9}
+\contentsline {subsection}{\numberline {III. 10}Sujet R\IeC {\'e}vision - Shuffle Ipod}{40}{subsection.3.10}
+\contentsline {paragraph}{Partie A}{41}{section*.12}
+\contentsline {paragraph}{Partie B}{41}{section*.13}
+\contentsline {subsection}{\numberline {III. 11}Fonction g\IeC {\'e}n\IeC {\'e}ratrice (Pb -dur)}{42}{subsection.3.11}
+\contentsline {subsection}{\numberline {III. 12}Tirages boules urnes simultan\IeC {\'e}s/successifs. }{43}{subsection.3.12}
+\contentsline {subsection}{\numberline {III. 13}Chaine de Markov - Hamster}{43}{subsection.3.13}
+\contentsline {subsection}{\numberline {III. 14}Probabilit\IeC {\'e}, VAR, tirage boules et urnes. (ECRICOME 2002) }{44}{subsection.3.14}
+\contentsline {paragraph}{\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {A - \'Etude du cas $c=0$.}\\}{44}{section*.14}
+\contentsline {paragraph}{\relax \fontsize {10}{12}\selectfont \abovedisplayskip 10\p@ plus2\p@ minus5\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6\p@ plus3\p@ minus3\p@ \def \leftmargin \leftmargini \parsep 4.5\p@ plus2\p@ minus\p@ \topsep 9\p@ plus3\p@ minus5\p@ \itemsep 4.5\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 6\p@ plus2\p@ minus2\p@ \parsep 3\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip {B - \'Etude du cas $c\not =0$.}\\}{44}{section*.15}
+\contentsline {subsection}{\numberline {III. 15}D\IeC {\'e}rangements}{45}{subsection.3.15}
+\contentsline {subsection}{\numberline {III. 16}Urnes de Polya sans VAR + info (Pb)}{45}{subsection.3.16}
+\contentsline {section}{\numberline {IV}Autres}{46}{section.4}
+\contentsline {subsection}{\numberline {IV. 1}Inclusion ensemble complexe}{46}{subsection.4.1}
+\contentsline {subsection}{\numberline {IV. 2}Simplification de $\sqrt [3]{2+\sqrt {5}}$ }{46}{subsection.4.2}
+\contentsline {subsection}{\numberline {IV. 3}Equation du second degr\IeC {\'e} \IeC {\`a} coeff complexes}{47}{subsection.4.3}
+\contentsline {subsection}{\numberline {IV. 4}In\IeC {\'e}galit\IeC {\'e}e somme/factorielle}{47}{subsection.4.4}
+\contentsline {subsection}{\numberline {IV. 5}Double somme des min}{47}{subsection.4.5}
+\contentsline {subsection}{\numberline {IV. 6}G\IeC {\'e}om\IeC {\'e}trie repr\IeC {\'e}sentation param\IeC {\'e}trique de droite.}{48}{subsection.4.6}
+\contentsline {subsection}{\numberline {IV. 7}G\IeC {\'e}om\IeC {\'e}trie et complexe }{48}{subsection.4.7}
+\contentsline {subsection}{\numberline {IV. 8}Logique et trigo}{48}{subsection.4.8}
+\contentsline {subsection}{\numberline {IV. 9}Suite r\IeC {\'e}currence complexes $z_{n+1} = z_n^2 -2iz_n-1+i$}{48}{subsection.4.9}
+\contentsline {subsection}{\numberline {IV. 10}Calcul de $e^{i\pi /7}$}{49}{subsection.4.10}
+\contentsline {subsection}{\numberline {IV. 11}Complexe, ensemble, minimum}{49}{subsection.4.11}
+\contentsline {subsection}{\numberline {IV. 12}Complexe minimum/maximum}{49}{subsection.4.12}
+\contentsline {subsection}{\numberline {IV. 13}Etude de $\qopname \relax o{sinh}$ sur $\mathbb {R}$ et $\mathbb {C}$ (A v\IeC {\'e}rifier)}{50}{subsection.4.13}
+\contentsline {subsection}{\numberline {IV. 14}G\IeC {\'e}om\IeC {\'e}trie, droite et inclusion}{50}{subsection.4.14}
+\contentsline {subsection}{\numberline {IV. 15}Matrice, famille libre, commutant}{51}{subsection.4.15}
+\contentsline {subsection}{\numberline {IV. 16}Complexe, raisonnement par l'absurde, recurrence}{51}{subsection.4.16}
+\contentsline {section}{\numberline {V}Info}{52}{section.5}
+\contentsline {subsection}{\numberline {V. 1}ADN - liste}{52}{subsection.5.1}
+\contentsline {subsection}{\numberline {V. 2}Lancers de d\IeC {\'e}s. }{54}{subsection.5.2}
+\contentsline {subsection}{\numberline {V. 3}$u_{n+1} = \qopname \relax o{cos}(u_n)$}{55}{subsection.5.3}
+\contentsline {subsection}{\numberline {V. 4}Mandelbrot}{56}{subsection.5.4}
+\contentsline {subsection}{\numberline {V. 5}Pendu}{57}{subsection.5.5}
+\contentsline {subsection}{\numberline {V. 6}Pivot de Gauss}{59}{subsection.5.6}

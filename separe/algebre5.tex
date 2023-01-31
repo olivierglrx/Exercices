@@ -1,0 +1,110 @@
+\subsection{Calcul du rang de $M_a$}
+
+\begin{exercice}
+Soit $a\in \R$ et  $M_a \in\cM_3(\R) $, définie par 
+$$ M_a =\left( 
+\begin{array}{ccc}
+1 & 0 & a\\
+0 & -a & 1\\
+a & 1 & 0
+\end{array}
+\right)$$
+\begin{enumerate}
+\item  Calculer le rang de $M_a$ en fonction de $a$. 
+\item Déterminer les valeurs de $a$ pour lesquelles $M_a$ est inversible et calculer l'inverse dans ces cas. 
+\end{enumerate}
+
+
+\end{exercice}
+\begin{correction}
+Appliquant l'algorithme du pivot de gauss à la matrice $M_a$. On est amené à aussi chercher l'inverse de $M_a$ donc on se contentera de faire que des opérations sur les lignes et on gardera trace des opérations sur la matrice $\Id$ afin d'obtenir l'inverse. 
+$$
+\begin{array}{ccc}
+ M_a & : &\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & -a & 1&  0& 1 & 0\\
+a & 1 & 0&0 & 0 & 1
+\end{array}
+\right)\vsec \\
+ &\stackrel{L_3\leftarrow L_3-aL_1}{\sim}&
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & -a & 1&  0& 1 & 0\\
+0 & 1 & -a^2&-a & 0 & 1
+\end{array}
+\right)\vsec \\
+& \stackrel{L_2\longleftrightarrow L_3}{\sim}&
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & 1 & -a^2&  -a& 0 & 1\\
+0 & -a & 1&0 & 1 & 0
+\end{array}
+\right) \vsec \\
+& \stackrel{L_3\leftarrow L_3+aL_2}{\sim}&
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & 1 & -a^2&  -a& 0 & 1\\
+0 & 0 & 1-a^3&-a^2 & 1 & +a
+\end{array}
+\right)\\
+\end{array}
+$$
+On voit dès à présent que la matrice est de rang $3$ si et seulementsi $1-a^3\neq 0$ c'est-à-dire si $a^\neq 1$. Si $a=1$ elle est de rang  $2$. 
+
+On finit avec le calcul de l'inverse dans le cas où $1-a^3 \neq 1$: 
+
+$$
+\begin{array}{ccc}
+ M_a 
+& \sim &
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & 1 & -a^2&  -a& 0 & 1\\
+0 & 0 & 1-a^3&-a^2 & 1 & a
+\end{array}
+\right) \vsec \\
+& \stackrel{L_3\leftarrow \frac{L_3}{1-a^3} }{\sim} &
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & a &1 & 0 & 0\\
+0 & 1 & -a^2&  -a& 0 & 1\\
+0 & 0 & 1 &\frac{-a^2}{1-a^3} & \frac{1}{1-a^3}  & \frac{a}{1-a^3} 
+\end{array}
+\right) \vsec \\
+
+& \stackrel{L_2\leftarrow L_2+a^2L_3 }{\stackrel{L_1\leftarrow L_1-aL_3 }{\sim} } &
+\left( 
+\begin{array}{ccc|ccc}
+1 & 0 & 0 &  \frac{1}{1-a^3} &  \frac{-a}{1-a^3} &  \frac{-a^2}{1-a^3}\\
+0 & 1 & 0&   \frac{-a}{1-a^3}&  \frac{a^2}{1-a^3} &  \frac{1}{1-a^3}\\
+0 & 0 & 1 &\frac{-a^2}{1-a^3} & \frac{1}{1-a^3}  & \frac{a}{1-a^3} 
+\end{array}
+\right) \vsec \\
+
+
+\end{array}
+$$
+
+Pour tout $a$ différent de $1$, l'invese de $M_a$ est donc donné par  
+$$M_a^{-1} = \left( 
+\begin{array}{ccc}
+\frac{1}{1-a^3} &  \frac{-a}{1-a^3} &  \frac{-a^2}{1-a^3}\\
+  \frac{-a}{1-a^3}&  \frac{a^2}{1-a^3} &  \frac{1}{1-a^3}\\
+\frac{-a^2}{1-a^3} & \frac{1}{1-a^3}  & \frac{a}{1-a^3} 
+\end{array}
+\right) =  \frac{1}{1-a^3}\left( 
+\begin{array}{ccc}
+1 &  -a &  -a^2\\
+  -a&  a^2&  1\\
+-a^2& 1& a
+\end{array}
+\right) $$
+
+
+
+\end{correction}

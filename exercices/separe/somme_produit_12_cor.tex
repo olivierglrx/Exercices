@@ -1,0 +1,92 @@
+
+\begin{correction}  \; 
+\begin{enumerate}
+\item \textbf{Calcul de $\mathbf{\ddp \sum\limits_{p=0}^{n} \ddp \sum\limits_{q=0}^{m} p(q^2+1)}$:}
+$$\begin{array}{lll} \ddp \sum\limits_{p=0}^{n} \ddp \sum\limits_{q=0}^{m} p(q^2+1)&=&\ddp \sum\limits_{p=0}^{n} \left\lbrack p\ddp \sum\limits_{q=0}^{m} q^2+p\ddp \sum\limits_{q=0}^{m} 1    \right\rbrack\vsec\\
+&=& \ddp \sum\limits_{p=0}^{n} \left\lbrack p\ddp\frac{m(m+1)(2m+1)}{6}+p(m+1)    \right\rbrack
+=\ddp\frac{m(m+1)(2m+1)}{6}\ddp \sum\limits_{p=0}^{n} p+(m+1)\ddp \sum\limits_{p=0}^{n} p\vsec\\
+&=&  \fbox{$\ddp\frac{m(m+1)(2m+1)}{6}\ddp\frac{n(n+1)}{2}+(m+1)\ddp\frac{n(n+1)}{2}.$}\end{array}$$
+%--------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^n 1}$ et de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i 1}$:}\\
+\noindent $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^n 1=\ddp \sum\limits_{i=1}^n\left\lbrack \ddp \sum\limits_{j=1}^n 1   \right\rbrack= \ddp \sum\limits_{i=1}^n\left\lbrack n \right\rbrack=n\ddp \sum\limits_{i=1}^n 1=\fbox{$n^2$.}$\vsec\\
+\noindent $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i 1=\ddp \sum\limits_{i=1}^n\left\lbrack \ddp \sum\limits_{j=1}^i 1\right\rbrack=\ddp \sum\limits_{i=1}^n\left\lbrack i \right\rbrack=\ddp \sum\limits_{i=1}^n i=\fbox{$\ddp\frac{n(n+1)}{2}$.}$
+%--------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^n i2^j}$:}\\
+\noindent $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^n i2^j=\ddp \sum\limits_{i=1}^n\left\lbrack \ddp \sum\limits_{j=1}^n i2^j \right\rbrack=\ddp \sum\limits_{i=1}^n  \left\lbrack i\ddp \sum\limits_{j=1}^n 2^j \right\rbrack
+ =\ddp \sum\limits_{i=1}^n \left\lbrack i\times 2\ddp\frac{1-2^n}{1-2} \right\rbrack =2(2^n-1) \ddp \sum\limits_{i=1}^n i=\fbox{$(2^n-1)n(n+1) $.}$
+ %--------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^n\ddp \sum\limits_{l=k}^n \ddp\frac{k}{l+1}}$:}\\
+\noindent On commence par essayer de calculer la somme la plus int\'erieure. On n'y arrive pas car on ne conna\^{i}t pas la somme des inverses. Ainsi on va donc commencer par inverser le sens des symboles sommes. On a :
+$$\ddp \sum\limits_{k=0}^n\ddp \sum\limits_{l=k}^n \ddp\frac{k}{l+1} \; = \; \sum_{0\leq k \leq l \leq n} \ddp\frac{k}{l+1}  \; = \;  \ddp \sum\limits_{l=0}^n\ddp \sum\limits_{k=0}^l \ddp\frac{k}{l+1}$$
+On peut \'egalement d\'etailler les calculs : $\left\lbrace \begin{array}{lllll}
+0 & \leq & k & \leq & n\\
+k & \leq & l & \leq & n
+\end{array}\right.
+\Longleftrightarrow
+\left\lbrace \begin{array}{lllll}
+0 & \leq &l & \leq & n\\
+0 & \leq & k & \leq & l.
+\end{array}\right.
+$
+Ainsi on obtient que: $$\begin{array}{lll}
+\ddp \sum\limits_{l=0}^n\ddp \sum\limits_{k=0}^l \ddp\frac{k}{l+1}&=& \ddp \sum\limits_{l=0}^n\left\lbrack \ddp\frac{1}{l+1}
+ \ddp \sum\limits_{k=0}^l k\right\rbrack
+=  \ddp \sum\limits_{l=0}^n\left\lbrack   \ddp\frac{1}{l+1}  \times \ddp\frac{l(l+1)}{2} \right\rbrack
+=\ddp\demi  \ddp \sum\limits_{l=0}^n l=\fbox{ $\ddp\frac{n(n+1)}{4}$.}
+\end{array}$$
+%--------
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=0}^n\ddp \sum\limits_{i=j}^{j+p} (i-j)^2}$:}\\
+%\noindent \`{A} ne pas faire, calculs horribles!
+%\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i 1}$:}\\
+%\noindent $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i 1=\ddp \sum\limits_{i=1}^n\left\lbrack \ddp \sum\limits_{j=1}^i 1\right\rbrack=\ddp \sum\limits_{i=1}^n\left\lbrack i \right\rbrack=\ddp \sum\limits_{i=1}^n i=\fbox{$\ddp\frac{n(n+1)}{2}$.}$
+%--------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i x^j}$:} 
+\begin{itemize}
+\item[$\bullet$] Si $x=1$, on a : $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i x^j = \ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i 1 = \ddp \sum\limits_{i=1}^n i = \frac{n(n+1)}{2}.$ 
+\item[$\bullet$] Si $x\not= 1$:
+\noindent  $\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i x^j=\ddp \sum\limits_{i=1}^n\left\lbrack \ddp \sum\limits_{j=1}^i x^j \right\rbrack=\ddp \sum\limits_{i=1}^n\left\lbrack x\ddp\frac{1-x^{i}  }{1-x} \right\rbrack
+= \ddp\frac{x}{1-x}  \ddp \sum\limits_{i=1}^n (1-x^{i}) =\ddp\frac{x}{1-x}  \left\lbrack \ddp \sum\limits_{i=1}^n  1 -  \ddp \sum\limits_{i=1}^n  x^i   \right\rbrack$. \\
+Ainsi on obtient que: \fbox{$\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=1}^i x^j= \ddp\frac{x}{1-x}  \left\lbrack  n-x\ddp\frac{1-x^n}{1-x}    \right\rbrack $.}
+\end{itemize}
+%----
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=0}^{n^2}\ddp \sum\limits_{i=k}^{k+2} ki^2}$:}
+$$\begin{array}{lll}
+\ddp \sum\limits_{k=0}^{n^2}\ddp \sum\limits_{i=k}^{k+2} ki^2 &=& \ddp \sum\limits_{k=0}^{n^2} \left\lbrack k \ddp \sum\limits_{i=k}^{k+2} i^2 \right\rbrack
+= \ddp \sum\limits_{k=0}^{n^2} \left\lbrack k \left(  k^2+(k+1)^2+(k+2)^2  \right) \right\rbrack
+=\ddp \sum\limits_{k=0}^{n^2}  k (3k^2+6k+5)\vsec\\
+&=& 3\ddp \sum\limits_{k=0}^{n^2} k^3  +6\ddp \sum\limits_{k=0}^{n^2} k^2+5\ddp \sum\limits_{k=0}^{n^2} k
+=\fbox{$3\left(  \ddp\frac{ n^2(n^2+1) }{ 2 }  \right)^2+n^2(n^2+1)(2n^2+1)+5\ddp\frac{n^2(n^2+1)}{2} $.}\end{array}$$
+%----
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=0}^j \ddp\frac{ x^{i} }{  x^j }}$:}
+\begin{itemize}
+\item[$\bullet$] Si $x=1$, on a : $\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=0}^j \ddp\frac{ x^{i} }{  x^j } = \sum\limits_{j=1}^n\ddp \sum\limits_{i=0}^j 1 = \sum\limits_{j=1}^n j = \frac{n(n+1)}{2}.$ 
+\item[$\bullet$] Si $x\not= 1$ :
+\noindent $\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=0}^j \ddp\frac{ x^{i} }{  x^j }=\ddp \sum\limits_{j=1}^n\left\lbrack x^{-j} \ddp \sum\limits_{i=0}^j x^{i}  \right\rbrack=
+\ddp \sum\limits_{j=1}^n\left\lbrack x^{-j}  \ddp\frac{1-x^{j+1}}{1-x}  \right\rbrack= \ddp\frac{1}{1-x}\ddp \sum\limits_{j=1}^n \left\lbrack \left( \ddp\frac{1}{x}\right)^j-x  \right\rbrack$
+\begin{center}
+\fbox{$\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=0}^j \ddp\frac{ x^{i} }{  x^j } =  \ddp\frac{1}{1-x}  \left\lbrack \ddp\frac{1-\left( \frac{1}{x}\right)^n}{x-1}-xn   \right\rbrack.$}
+\end{center}
+
+\end{itemize}
+%--------
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{i=1}^n\ddp \sum\limits_{j=i}^n \binom{j}{i}}$:}\\
+\noindent On commence par essayer de calculer la somme la plus int\'erieure. On n'y arrive pas. Ainsi on va donc commencer par inverser le sens des symboles sommes. On a :
+$$\sum\limits_{i=1}^n\ddp \sum\limits_{j=i}^n \binom{j}{i} \;=\; \sum\limits_{1\leq i \leq j \leq n} \binom{j}{i} \;=\;\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=1}^j \binom{j}{i}$$
+On peut \'egalement d\'etailler les calculs :
+$\left\lbrace \begin{array}{lllll}
+1 & \leq & i & \leq & n\\
+i & \leq & j & \leq & n
+\end{array}\right.
+\Longleftrightarrow
+\left\lbrace \begin{array}{lllll}
+1 & \leq &j & \leq & n\\
+1 & \leq & i & \leq & j.
+\end{array}\right.
+$
+Ainsi on obtient que: 
+$\ddp \sum\limits_{j=1}^n\ddp \sum\limits_{i=1}^j \binom{j}{i}=
+\ddp \sum\limits_{j=1}^n \left\lbrack  \ddp \sum\limits_{i=1}^j \binom{j}{i}  \right\rbrack=
+\ddp \sum\limits_{j=1}^n \left\lbrack 2^j-1 \right\rbrack=\fbox{$2(2^n-1)-n.$}
+$
+\end{enumerate}
+\end{correction}

@@ -1,0 +1,1236 @@
+\section{Autres}
+
+
+
+
+\subsection{Inclusion ensemble complexe}
+
+\begin{exercice}
+Montrer que 
+$$\{ z\in \bC\, , \, |z+1|\leq 1\} \subset \{ z \in \bC\, , \, -2\leq \Re(z)\leq0\}$$
+\footnotesize{On n'est pas obligé d'utiliser la forme algébrique...}
+\end{exercice}
+
+
+\begin{correction}
+ Comme pour tout $z\in \bC$, $|\Re(z)| \leq |z|$ on a pour tout $z\in \{ z\in \bC\, , \, |z+1|\leq 1\}$:
+ 
+$$|\Re(z+1)| \leq |z+1|\leq 1$$
+C'est-à-dire :
+$$-1\leq z+1\leq 1$$
+soit 
+\begin{center}
+\fbox{
+$-2\leq z \leq 0$}
+\end{center}
+\end{correction}
+ %------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+
+
+
+\subsection{Simplification  de $\sqrt[3]{2+\sqrt{5}}$ }
+\begin{exercice}
+On considère les nombres réels $\alpha =\sqrt[3]{2+\sqrt{5}}$ et $\beta =\sqrt[3]{2-\sqrt{5}}$. On rappelle que pour tout réel $y$ on note $\sqrt[3]{y}$ l'unique solution de l'équation $x^3=y$ d'inconnue $x$.
+
+Le but de l'exercice est de donner des expressions simplifiées de $\alpha$ et $\beta$. 
+
+\begin{enumerate}
+\item Ecrire un script Python qui permet d'afficher une valeur approchée de $\alpha$.
+\item 
+\begin{enumerate}
+\item Calculer $\alpha \beta$ et $\alpha^3+\beta^3$.
+\item Vérifier que $\forall (a,b)\in \R^2$, $(a+b) ^3 = a^3 +3a^2b+3ab^2 +b^3$.
+\item En déduire que  $(\alpha+\beta)^3= 4-3(\alpha+\beta)$ 
+\end{enumerate}
+\item On pose $u=\alpha +\beta$ et on considère la fonction polynomiale $P : x\mapsto x^3+3x-4$. 
+\begin{enumerate}
+\item A l'aide de  la question précédente montrer que $u$ est une racine de $P$ c'est-à-dire que $P(u)=0$. 
+\item Trouver une autre racine \og évidente \fg\, de $P$.
+\item Trouver trois nombres réels $a$, $b$, et $c$ tels que $\forall x\in \R, P(x) = (x-1)(ax^2+bx+c)$
+\item Résoudre l'équation $P(x)=0$ pour $x\in \R$.
+\item En déduire la valeur de $u$. 
+\end{enumerate}
+\item On considère la fonction polynomiale $Q : x\mapsto Q(x) = (x-\alpha)(x-\beta)$
+\begin{enumerate}
+\item A l'aide des questions précédentes, développer et simplifier $Q(x)$ pour tout nombre réel $x$. 
+\item En déduire des expressions plus simples de $\alpha $ et $\beta$. 
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item \begin{lstlisting}
+print((2+5**(1/2))**(1/3))
+\end{lstlisting}
+\item \begin{enumerate}
+\item \begin{align*}
+\alpha \beta &= \sqrt[3]{2+\sqrt{5}}\sqrt[3]{2-\sqrt{5}}\\
+					&=\sqrt[3]{(2+\sqrt{5})(2-\sqrt{5}}\\
+					&=\sqrt[3]{4-5}\\
+					&=\sqrt[3]{-1}\\					
+					&=-1
+\end{align*}
+
+\begin{align*}
+\alpha^3+\beta^3&= 2+\sqrt{5}+2-\sqrt{5}\\
+							&=4
+\end{align*}
+
+\conclusion{$\alpha\beta =-1$ et $\alpha^3+\beta^3=4$}
+
+\item 
+\begin{align*}
+(a+b)^3&=(a+b)^2(a+b)\\
+			&=(a^2+2ab+b^2)(a+b)\\
+			&=a^3+2a^2b+ab^2+ba^2+2ab^2+b^3\\
+			&=a^3+3a^2b+3ab^2+b^3
+\end{align*}
+
+\conclusion{ $\forall (a,b)\in \R^2$, $(a+b) ^3 = a^3 +3a^2b+3ab^2 +b^3$.}
+\item 
+\begin{align*}
+(\alpha+\beta)^3& = \alpha^3 +3\alpha^2\beta +3\alpha \beta^2 +\beta^3\\
+&=\alpha^3  +\beta^3 +3\alpha\beta(\alpha + \beta)\\
+&=4-3\alpha\beta
+\end{align*}
+\end{enumerate}
+\item 
+\begin{align*}
+P(u) &= P(\alpha+\beta) \\
+	&= (\alpha+\beta)^3+3\alpha\beta -4\\
+	&=0 \quad \text{ d'après la question précédente}
+\end{align*}
+
+\conclusion{ $u$ est racine de $P$}
+
+\item $1$ est aussi racine de $P$, en effet : $P(1) =1+3-4=0$
+
+\conclusion{ $1$ est racine de $P$}
+
+\item Développons 
+$(x-1) (ax^2+bx+c)$ on obtient 
+$$(x-1) (ax^2+bx+c) =ax^3 +(b-a)x^2 +(c-b)x -c$$
+En identifiant avec $P$, on a : 
+$a=1, b-a=0, c-b=3, -c=-4$
+c'est à dire 
+\conclusion{ $a=1$, $b=1$ et $c=4$}  
+
+
+\item D'après la question précédente $P(x) =(x-1) (x^2+x+4)$
+Le discriminant de $x^2+x+4$ est $\Delta =1-4*4 =-15<0$ 
+$x^2+x+4>0$ pour tout $x\in \R$. Ainsi $P(x)=0$ admet pour unique solution 
+\conclusion{ $\cS=\{1\}$} 
+ 
+ \item $1$ est racine de $P$, c'est la seule. Comme $u$ est aussi racine, 
+ \conclusion{$u=1$ }
+
+\item 
+\begin{enumerate}
+\item Développons $Q$:
+\begin{align*}
+Q(x) &= (x-\alpha) (x-\beta)\\
+		&=x^2 -(\alpha+\beta)x +\alpha\beta\\
+		&=x^2 -x -1
+\end{align*}
+
+\conclusion{ Pour tout $x\in \R, \, Q(x) =x^2-x-1$}
+
+\item L'expression $Q(x) = (x-\alpha) (x-\beta)$ montre que les racines de $Q$ sont   $\alpha$ et $\beta$. 
+
+D'autre part, on connait une autre expression des racines de $Q$ à l'aide du discriminant $\Delta =1+4=5$, les racines de $Q$ sont 
+$$r_1 = \frac{1+\sqrt{5}}{2}\quadet r_1 = \frac{1-\sqrt{5}}{2}$$
+
+Remarquons que $r_1<r_2$ et on  a $\alpha<\beta$ donc 
+\conclusion{ $\alpha =  \frac{1+\sqrt{5}}{2} $ et $\beta =  \frac{1-\sqrt{5}}{2} $ }
+
+
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+
+
+ 
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+\subsection{Equation du second degré à coeff complexes}
+
+
+\begin{exercice}
+On considère l'équation du second degré suivante : 
+$$z^2+(3i-4)z+1-7i=0 \quad (E) $$
+
+\begin{enumerate}
+\item A la manière d'une équation réelle, calculer le discriminant $\Delta$ du polynôme complexe, et montrer que $\Delta=3+4i$
+\item On se propose de résoudre $ (E_2) \, : \, u^2=\Delta \, $  d'inconnue complexe $u$. 
+\begin{enumerate}
+\item On écrit $u=x+iy$ avec $(x,y)\in \R^2$. Montrer que $(E_2)$ est équivalent à 
+$$ x^4-3x^2-4=0 \quadet y =\frac{2}{x}.$$
+\item En déduire que les solutions de $(E_2)$ sont 
+$$u_1=3-i\quadet u_2=1-2i$$
+\end{enumerate}
+\item Soit $u_1$ une solution de l'équation précédente. 
+On considère $r_1 = \frac{-3i+4 +u_1}{2}$. Montrer que $r_1$ est solutions de l'équation  $(E)$.
+\item Quelle est à l'autre solution  de  $(E)$ ? 
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+On suit les étapes indiquées dans l'énoncé. 
+\begin{enumerate}
+\item Le discriminant vaut 
+$$\Delta = (3i-4)^2 -u^4 (1-7i) = -9-24i +16 -4+28i = 3+4i$$
+\item Résolvons $u^2=3+4i$. \begin{enumerate}
+\item On pose donc $u=x+iy$ avec $x,y\in \R$ 
+On a  donc $(x+iy)^2 = 3+4i $, soit $x^2-y^2 +2xyi =3+4i$ En identifiant partie réelle et partie imaginaire on obtient : 
+$$x^2 -y^2 =3 \quad 2xy=4$$
+
+Comme $x\neq 0 $ (sinon $\Delta\in \R_-$ ), la deuxième équation devient 
+\conclusion{$y=\frac{2}{x}.$} On remplace alors $y$ avec cette valeur dans la première équation, ce qui donne : 
+$$x^2 -\frac{4}{x^2}=3$$ et  en multipliant par $x^2$ 
+\conclusion{ $x^4 -3x-4=0$}
+
+\item On fait un changement de variable $X=x^2$ dans l'équation $x^4-3x^2-4=0$. On obtient 
+$$X^2 -3X-4=0$$
+De discriminant $\Delta_2 = 9+4*4=25=5^2$. Cette équation admet ainsi deux solutions réelles : 
+$$X_1= \frac{3-5}{2}= -1\quadet X_2 =\frac{3+5}{2}=4$$
+Remarquons maintenant que $X$ doit être positif car $x^2=X$ ainsi, les solutions pour la variable $x$ sont 
+$$x_1 =\sqrt{4}=2 \quadet x_2 =-\sqrt{4}=-2$$
+Ce qui correspond respectivement à $y_1= 1$ et $y_2= -1$
+On obtient finalement deux solutions pour $u^2=\Delta $ 
+à savoir 
+\conclusion{$u_1= 2+i \quadet u_2 =-2-i$}
+
+
+
+\end{enumerate}
+\item  On considère donc $r_1 = \frac{-3i+4+2+i}{2}= 3-i$. Montrons que $r_1$ est solution de $(E)$ 
+
+$$r_1^2 = (3-i)^2 = 9-6i-1=8-6i$$
+$$(3i-4)r_1 =(3i-4) (3-i) = 9i+3-12+4i = -9+13i$$
+Donc 
+$r_1^2 +(3i-4)r_1 = 8-6i -9+13i  =-1 +7i$
+Soit 
+$$r_1^2 +(3i-4)r_1 +1-7i=0$$
+\conclusion{Donc $r_1$ est bien solution de $(E)$. }
+
+\item L'autre solution est sans aucun doute 
+\conclusion{ $r_2 = \frac{-3i+4+u_2}{2} = 1-2i$}
+
+\end{enumerate}
+\end{correction}
+
+
+ 
+ 
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+
+\subsection{Inégalitée somme/factorielle}
+
+\begin{exercice}
+Montrer que pour tout $n\in \N$, $$(n+1)! \geq \sum_{k=0}^n k! $$
+\footnotesize{Les récurrences c'est bien mais long...}
+\end{exercice}
+
+
+
+\begin{correction}
+Soit $n\in \N$, pour tout $k\in\intent{0,n} $, $k! \leq n! $, donc 
+$$\sum_{k=0}^n k! \leq \sum_{k=0}^n n! = (n+1) \times  n ! =(n+1)!$$
+\end{correction}
+ 
+ 
+
+
+
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+
+
+\subsection{Double somme des min}
+
+\begin{exercice}
+Calculer 
+$$\sum_{i,j \in \intent{1,n}} \min(i,j)$$
+\end{exercice}
+
+
+\begin{correction}
+\underline{Solution 1 :} 
+\begin{align*}
+\sum_{i,j \in \intent{1,n}} \min(i,j) &= \sum_{i=1}^n \sum_{j=1}^n\min(i,j)\\
+												&= \sum_{i=1}^n \sum_{j=1}^i\min(i,j) + \sum_{i=1}^n \sum_{j=i+1}^n\min(i,j)\\
+												&= \sum_{i=1}^n \sum_{j=1}^i j  + \sum_{i=1}^n \sum_{j=i+1}^n i\\
+													&= \sum_{i=1}^n \frac{i(i+1)}{2}+ \sum_{i=1}^n (n-i) i\\
+													&= \sum_{i=1}^n \frac{-i^2+(2n+1)i}{2}\\		
+													&= \frac{1}{2} \left( \sum_{i=1}^n -i^2  + (2n+1)\sum_{i=1}^ni \right)\\																					&= \frac{1}{2} \left(-\frac{n(n+1)(2n+1)}{6} +(2n+1)\frac{n(n+1)}{2}\right)\\											
+													&=\frac{n(n+1)(2n+1)}{6} 
+\end{align*}
+
+
+
+\underline{Solution 2 :}
+\begin{align*}
+\sum_{i,j \in \intent{1,n}} \min(i,j)  &= \sum_{i,j \in \intent{1,n}, i=j} \min(i,j)  +\sum_{i,j \in \intent{1,n}, i<j } \min(i,j)  + \sum_{i,j \in \intent{1,n}, j<i } \min(i,j) \\
+										&=\left( \sum_{i \in \intent{1,n} } i \right) +\left(2\sum_{i,j \in \intent{1,n}, i< j } i \right)\\
+										&= \frac{n(n+1)}{2} + 2 \sum_{i=1}^{n-1}\sum_{j=i+1}^n i \\
+										&= \frac{n(n+1)}{2} + 2 \sum_{i=1}^{n-1}(n-i) i \\
+										&= \frac{n(n+1)}{2} + 2 \sum_{i=1}^{n-1}(n-i) i \\
+										&= \frac{n(n+1)}{2} + 2 \left( \frac{n^2(n-1)}{2}  - \frac{(n-1)n(2n-1)}{6}     \right)  \\
+											&= \frac{n(n+1)}{2} + 2 \frac{n(n-1)(n+1)}{6} \\
+											&= \frac{n(n+1) (3 +2(n-1))}{6} \\
+											&= \frac{n(n+1) (2n+1)}{6} 
+\end{align*}
+
+
+\end{correction}
+
+
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+
+
+
+
+
+
+\subsection{Géométrie représentation paramétrique de droite.}
+
+
+\begin{exercice}
+On considère les vecteurs de l'espace $\vec{u} =(-2,1,2)$ et $\vec{v} =(1,4,-1)$.
+\begin{enumerate}
+\item Calculer $\|\vec{u} \|$ et $\| (-2) \vec{v}\|$.
+\item Montrer que les vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux. 
+\item Donner la représentation paramétrique de la droite $D$ passant par $A= (2,-3,1)$ et dirigée par $\vec{v}$. 
+\item Déterminer si le point $B=(3,1,0)$ appartient à $D$.  
+\end{enumerate} 
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item $$\|\vec{u} \| = \sqrt{ (-2)^2+1^2 +2^2 }= \sqrt{ 9}=3$$
+et 
+$$ \vec{v}= \sqrt{ 1^2+4^2 +(-1)^2 }= \sqrt{ 18}=3\sqrt{2}$$
+\item Calculons le produit scalaire entre $\vec{u}$ et $\vec{v}$:  $$\langle \vec{u}, \vec{v}\rangle = -2 \times 1 + 1 \times 4 +2\times -1  = -2+4-2=0$$
+D'après le cours, les deux vecteurs sont donc orthogonaux. 
+\item $M=(x,y,z)\in D$ si et seulement si $\vec{AM}$ est colinéaire à $\vec{v}$ si et seulement si il existe $\lambda \in \R $ tel que $\vec{AM} = \lambda \vec{v}$. On obtient donc 
+$$\left\{ \begin{array}{ccl}
+x-2&=&\lambda \times 1\\
+y+3&=&\lambda \times 4\\
+z-1&=&\lambda \times (-1)
+\end{array}\right.  \quad \equivaut \quad \left\{ \begin{array}{ccl}
+x&=&2+\lambda \\
+y&=&-3+4\lambda \\
+z&=&1-\lambda 
+\end{array}\right.  $$
+
+\item Il faut vérifier si il existe $\lambda \in \R$ tel que 
+$$\left\{ \begin{array}{ccl}
+3&=&2+\lambda \\
+1&=&-3+4\lambda \\
+0&=&1-\lambda 
+\end{array}\right.  $$
+
+La première équation donne $\lambda=1$, les autres équations sont compatibles : $1 = -3+4\times 1 $ et $ 0 = 1- 1\times 1$.  Ainsi $$B\in D$$
+\end{enumerate} 
+\end{correction}
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+
+
+
+\subsection{Géométrie et complexe  }
+
+
+\begin{exercice}
+On considère $ S= \{ z\in \bC\, | \, |z|=2\}$.
+\begin{enumerate}
+\item Rappeler la nature géométrique de $S$.
+Soit $f : \bC \tv \bC $ la fonction définie par $f(z) =\frac{2z +1}{z+1}$. Déterminer $D_f$ le domaine de définition de $f$. Est elle bien définie pour tous les points de $S$ ? 
+\item 
+\begin{enumerate}
+\item Mettre $f(z) -\frac{7}{3}$ sous la forme d'une fraction. 
+\item Montrer que pour tout $z$ dans l'ensemble de définition de $f$, $$\left| f(z) -\frac{7}{3}\right|^2 = \frac{|z|^2 +8\Re(z) +16 }{9 (|z|^2 +2\Re(z) +1)}$$
+\item On note $S_2$ le cercle de centre $7/3$ et de rayon $r_0$. Montrer que $f(S) \subset S_2$
+%En déduire qu'il existe $r_0\in \R$ tel que pour tout $z\in S$, 
+%$$\left| f(z) -\frac{7}{3}\right| =r_0.$$
+%\item  Montrer que pour tout $z$ dans l'ensemble de définition de $f$
+%$$\left| f(z) -\frac{7}{3}\right|^2 - r_0^2 = \frac{-3 |z|^2 +12}{9 (|z|^2 +2\Re(z) +1)}$$
+%\item On note $S_2$ le cercle de centre $7/3$ et de rayon $r_0$. Montrer que $f(S) \subset S_2$
+%\item Conclure sur la nature géométrique de $f(S)$. 
+\end{enumerate}
+\item
+\begin{enumerate}
+\item  Soit $y =f(z)$, exprimer $z$ en fonction de $y$ quand cela a un sens. 
+\item Déterminer l'ensemble $F$ tel que $f : D_f \tv F$ soit bijective. Déterminer l'expression de $f^{-1}$ 
+\item (Difficile) Montrer que pour tout $y\in S_2$, $f^{-1}(y) \in S$. 
+\item En déduire $f(S).$ 
+\end{enumerate}
+
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item $S$ est le cercle de centre $0$ et de rayon $2$. L'ensemble de définition de $f$ est $\bC\setminus \{ -1\}$. Comme $|-1|=1$, $-1\notin S$ donc $f$ est bien définie sur $S$. 
+\item 
+\begin{enumerate}
+\item $$f(z)-\frac{7}{3}= \frac{6z+3 - 7(z+1)}{3(z+1)} = \frac{-z -4}{3(z+1)}$$
+\item
+\begin{align*}
+\left| f(z) -\frac{7}{3}\right|^2 &= \left| \frac{-z -4}{3(z+1)}\right|^2\\
+												&=  \frac{ |z +4|^2}{9|z+1|^2}\\
+												&=  \frac{ (z +4)\overline{(z +4)}}{9(z+1)\overline{(z+1)}}\\
+												&=  \frac{ (z +4)(\bar{z} +4)}{9(z+1)(\overline{z}+1)}\\
+												&=  \frac{ z\bar{z}  +4(z+\bar{z} )+16}{9(z\bar{z} +(z+\overline{z})+1)}\\
+												&=\frac{ |z|^2  +8\Re(z)+16}{9(|z|^2  +2\Re(z)+1)}
+\end{align*}
+
+\item  (La question était manifestement mal posée, il aurait par exemple fallu présicer le rayon qui vaut $\frac{2}{3}$) 
+
+ Pour tout $z\in S$, on  a $|z|^2=4$ donc pour tout $z\in S$:
+\begin{align*}
+\left| f(z) -\frac{7}{3}\right|^2 &=\frac{ 4  +8\Re(z)+16}{9(4 +2\Re(z)+1)}\\
+												&=\frac{ 8\Re(z)+20}{9( 2\Re(z)+5)}\\
+												&=\frac{4 (2\Re(z)+5)}{9( 2\Re(z)+5)}\\
+												&= \frac{4}{9}\\
+												&=\left(\frac{2}{3}\right)^2
+\end{align*}
+On obtient $r_0=\frac{2}{3}$ car $\left| f(z) -\frac{7}{3}\right|>0$. 
+
+Ainsi pour tout $z\in S$ on a $f(z) \in S_2$. D'où $f(S) \subset S_2$. 
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On résout $y = f(z) $. 
+\begin{align*}
+y&= \frac{2z+1}{z+1}\\
+(z+1)y &= 2z+1\\
+z(y-2) &= 1-y\\
+z &= \frac{1-y}{y-2}\quad y\neq 2
+\end{align*}
+\item Ainsi $f : D_f \tv \bC\setminus \{ 2\} $ réalise une bijection et $f^{-1} (y) =\frac{1-y}{y-2}$
+
+\item Soit $y\in S_2$ on va réaliser le même procédé que la question 2b) pour $f^{-1}$. Comme on va s'intéresser aux images de $y \in S_2$ on cherche à mettre en lumière le role de $|y-\frac{7}{3}|$
+\begin{align*}
+\left|f^{-1} (y) \right|^2 &=\frac{|1-y|^2}{|y-2|^2}\\
+									&=\frac{|y-1|^2 }{|y-2|^2}	\\
+									&=\frac{|(y-\frac{7}{3}) +\frac{4}{3}|^2 }{|(y-\frac{7}{3}) +\frac{1}{3}|^2}	\\
+									&=\frac{|y-\frac{7}{3}|^2 +\frac{8}{3}\Re( y-\frac{7}{3}) + \frac{16}{9} }{|y-\frac{7}{3}|^2 +\frac{2}{3}\Re( y-\frac{7}{3}) + \frac{1}{9} }
+\end{align*}
+Maintenant, pour tout $y\in S_2$ on a $|y-\frac{7}{3}|^2 =\frac{4}{9}$ donc pour tout $y\in S_2$ on a 
+\begin{align*}
+\left|f^{-1} (y) \right|^2& = 
+\frac{\frac{4}{9}+\frac{8}{3}\Re( y-\frac{7}{3}) + \frac{16}{9} }{\frac{4}{9} +\frac{2}{3}\Re( y-\frac{7}{3}) + \frac{1}{9} }\\
+& = 
+\frac{\frac{8}{3}\Re( y-\frac{7}{3}) + \frac{20}{9} }{\frac{2}{3}\Re( y-\frac{7}{3}) + \frac{5}{9} }\\
+& = 
+\frac{24\Re( y-\frac{7}{3}) + 20 }{6\Re( y-\frac{7}{3}) + 5 }\\
+& = 
+\frac{4(6\Re( y-\frac{7}{3}) + 5) }{6\Re( y-\frac{7}{3}) + 5 }\\
+&=4
+\end{align*}
+Ainsi  pour tout $y\in S_2$  $f^{-1}(y)$ appartient au cercle de centre $0$ et de rayon $2$, c'est-à-dire $S$. 
+On vient donc de montrer $f^{-1} (S_2)\subset S$. 
+\item Les questions 2c) et 3c) impliquent que $f(S) =S_2$
+\end{enumerate}
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+\subsection{Logique et trigo}
+
+\begin{exercice}
+\begin{enumerate}
+\item A quelle condition sur $X,Y\in \R$ a-t-on 
+$$X=Y \Longleftrightarrow X^2=Y^2  $$
+\end{enumerate}
+\item Résoudre dans $\R$ puis dans $[-\pi, \pi[$ l'équation :
+%\begin{equation}
+%\cos(x+\frac{\pi}{3})=\sin(2x).\\
+%\end{equation}
+
+\begin{equation}
+|\cos(x)|=|\sin(x)|.\\
+\end{equation}
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item On a  $X=Y \Longleftrightarrow X^2=Y^2  $ si $X$ et $Y$ sont de même signe.
+\item Comme $|\cos(x)|\geq 0$ et $|\sin(x)|\geq 0$ l'équation est équivalente à $\cos^2(x) =\sin^2(x)$, soit encorrectione 
+$$\cos(2x)=0.$$
+On a donc $2x\equiv \frac{\pi}{2}\quad [\pi]$ ou encorrectione 
+$$x\equiv \frac{\pi}{4}\quad [\frac{\pi}{2}]$$
+ Les solutions sur $\R$ sont 
+ $$\cS =\bigcup_{k\in Z} \{ \frac{\pi}{4}+\frac{\pi k}{2}\}$$
+ Sur $[-\pi, \pi[$  les solutions sont :
+ $$\cS\cap [-\pi, \pi[ =  \{ \frac{\pi}{4}, \frac{3\pi}{4}, \frac{-\pi}{4}, \frac{-3\pi}{4}\}$$
+ 
+
+
+
+
+\end{enumerate}
+\end{correction}
+
+
+
+%------------------------------------------------------------%-------------------------------------------------------------%------------------------------------------------------------
+%--------------------------------------------------------
+\subsection{Suite récurrence complexes $z_{n+1} = z_n^2 -2iz_n-1+i$}
+
+
+\begin{exercice}
+Soit $1>\epsilon >0$ et $u\in \bC$ tel que $|u| \leq 1-\epsilon$.
+Soit $\suite{z}$ la suite définie par $z_0= i+u$ et pour tout $n\in \N$ :
+$$z_{n+1} = z_n^2 -2iz_n-1+i$$
+
+Montrer que $\forall n\in \N,\, |z_n-i|\leq (1-\epsilon)^{2^n}$. En déduire la limite de $\suite{z}$.
+\end{exercice}
+
+\begin{correction}
+On a pour tout $n\in \N$, 
+$$z_{n+1} -i =z_n^2 -2iz_n-1= (z_n-i)^2$$. 
+
+On va procéder par récurrence. Pour $n=0$ on a 
+$$|z_0-i |=|u| \leq 1-\epsilon =(1-\epsilon)^{2^0}$$
+
+Supposons donc qu'il existe $n$ tel que $|z_n-i|\leq (1-\epsilon)^{2^n}$  et montrons l'inégalité pour $(n+1)$
+
+
+On a $$z_{n+1} - i = z_n^2-2iz_n-1 = (z_n -i)^2.$$
+Donc 
+$$|z_{n+1} - i | =| z_n -i|^2,$$
+D'après l'hypothése de récurrence on a 
+$| z_n -i| \leq (1-\epsilon)^{2^n}$, d'où
+$$| z_n -i|^2 \leq \left((1-\epsilon)^{2^n}\right)^2 =(1-\epsilon)^{2\times 2^{n}}$$
+C'est à dire 
+$$|z_{n+1} - i | \leq (1-\epsilon)^{2^{n+1}}$$
+L'inégalité est donc héréditaire et la propriété est donc vraie pour tout $n\in \N$.
+
+Comme $|1-\epsilon|<1$ on a $\lim_{n\tv \infty}  (1-\epsilon)^{2^{n+1}}=0$ donc 
+$$\lim_{n\tv \infty}  z_n = i.$$
+
+
+
+
+\end{correction}
+
+
+
+
+\subsection{Calcul de $e^{i\pi/7}$}
+
+\begin{exercice}
+Soit $\omega =e^{\frac{2i\pi}{7}}$. On considère $A=\omega+\omega^2 +\omega^4$ et $B =\omega^3+\omega^5 +\omega^6$
+
+\begin{enumerate}
+\item Calculer $\frac{1}{\omega}$ en fonction de $\overline{\omega}$
+\item Montrer que pour tout $k\in \intent{0,7}$ on a 
+$$\omega^k =\overline{\omega}^{7-k}.$$
+\item En déduire que $\overline{A}=B$.
+\item Montrer que la partie imaginaire de $A$ est strictement positive. (On pourra montrer que $\sin\left( \frac{2\pi}{7}\right)-\sin\left( \frac{\pi}{7}\right)>0$.)
+\item  Rappelons la valeur de la  somme d'une suite géométrique : $\forall q\neq 1, \, \forall n\in \N : $
+$$\sum_{k=0}^n q^k =\frac{1-q^{n+1}}{1-q}.$$
+Montrer alors que $\ddp \sum_{k=0}^6 \omega^k =0$. En déduire que $A+B=-1$.
+\item Montrer que $AB=2$. 
+
+\item En déduire la valeur exacte de $A$.
+
+
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item $$\frac{1}{\omega} = e^{\frac{-2i\pi}{7}} =\overline{\omega}$$
+\item On a $\omega^7 = e^{7\frac{2i\pi}{7}}=e^{2i\pi}=1 $ donc pour tout $k\in \intent{0,7}$ on a 
+$$\omega^{7-k}\omega^{k}=1$$
+D'où 
+$$\omega^k=\frac{1}{\omega^{7-k}}=\overline{\omega}^{7-k}$$
+\item On  a d'après la question précédente : 
+$$\overline{\omega} =\omega^{6}$$
+$$\overline{\omega^2} =\omega^{5}$$
+$$\overline{\omega^4} =\omega^{3}$$
+Ainsi on a : 
+\begin{align*}
+\overline{A}&=\overline{\omega+\omega^2+\omega^4} \\
+					&=\overline{\omega}+\overline{\omega^2}+\overline{\omega^4} \\
+					&=\omega^6+\omega^5+\omega^3\\
+					&= B. 
+\end{align*}
+
+
+\item $$\Im(A) =\sin(\frac{2\pi}{7})+\sin(\frac{4\pi}{7})+\sin(\frac{8\pi}{7})=\sin(\frac{2\pi}{7}) +\sin(\frac{4\pi}{7}) -\sin(\frac{\pi}{7})$$
+
+Comme $\sin$ est croissante sur $[0, \frac{\pi}{2}[$ 
+$$\sin(\frac{\pi}{7}) \leq \sin(\frac{2\pi}{7})$$
+Donc 
+$$\Im(A) \geq \sin(\frac{4\pi}{7})>0$$
+
+
+\item On a 
+$$\sum_{k=0}^6 \omega^k = \frac{1-\omega^7}{1-\omega} = 0$$
+
+Or $$A+B= \sum_{k=1}^6 \omega^k =  \sum_{k=0}^6 \omega^k-1=-1$$
+
+
+
+\item  $AB = \omega^{4}+\omega^{6}+\omega^{7}+\omega^{5}+\omega^{7}+\omega^{8}+\omega^{7}+\omega^{9}+\omega^{10}$ 
+D'où 
+$$AB= 2\omega^7 + \omega^4(1+\omega^{1}+\omega^{2}+\omega^{3}+\omega^{4}+\omega^{5}+\omega^{6})=2\omega^7=2$$
+
+\item $A$ et $B$ sont donc les racines du polynome du second degré $X^2+X+2$. Son discriminant vaut $\Delta  =1-8 = -7$ donc 
+$$A\in \{\frac{-1 \pm i\sqrt{7}}{2}\}$$
+
+D'après la question 4, $\Im(A)>0$ donc 
+
+$$A= \frac{-1+ i\sqrt{7}}{2}$$
+
+\end{enumerate}
+
+\end{correction}
+
+
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+
+\subsection{Complexe, ensemble, minimum}
+
+
+\begin{exercice}
+Soit $\bU$ l'ensemble des complexes de module $1$. 
+\begin{enumerate}
+\item Calculer 
+$$\inf \left\{ \left| \frac{1}{z}+z\right| , z \in \bU\right\}$$
+
+\item Pour tout $z\in \bC^*$ on note  $\alpha(z)= \frac{1}{\bar{z}}+z$. 
+\begin{enumerate}
+\item Calculer le module de $\alpha(z)$ en fonction de celui de $z$. 
+\item Montrer que pour tout $x>0$ on a : $\ddp \frac{1}{x}+x\geq 2$.
+\item En déduire 
+$$\inf\{ \left| \alpha(z)\right| , z \in \bC^*\}$$
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item Comme $z\in \bU$, il existe $\theta\in [0,2\pi[$ tel que $z=e^{i\theta}$. 
+Donc 
+\begin{align*}
+\left| \frac{1}{z}+z\right| &= \left|e^{-i\theta} +e^{i\theta}\right|\\
+									&=  \left|2\cos(\frac{\theta}{2}\right|
+\end{align*}
+
+Pour $\theta =\pi $ on a $ \left|2\cos(\frac{\theta}{2}\right| =0$ donc 
+$$\inf \left\{ \left| \frac{1}{z}+z\right| , z \in \bU\right\}=0$$
+
+\item 
+\begin{enumerate}
+\item \begin{align*}
+ \left| \alpha(z)\right|  &= \left|  \frac{1}{\bar{z}}+z\right|  \\
+ 								&=  \left|  \frac{1+z\bar{z}}{\bar{z}}\right|  \\	 												&=  \left|  \frac{1+|z|^2}{\bar{z}}\right|  \\
+								&=   \frac{|1+|z|^2|}{|\bar{z}|}\\ 								
+								&=   \frac{1+|z|^2}{|z|}\\ 								 												&=   \frac{1}{|z|}+|z| 								 							
+\end{align*}
+\item Pour tout $x>0$ on a 
+\begin{align*}
+x+\frac{1}{x}-2 &=\frac{x^2-2x+1}{x}\\
+						&=\frac{(x-1)^2}{x}\geq 0\\
+\end{align*}
+Donc pour tout $x>0$, $x+\frac{1}{x}-2 \geq 0$. 
+\item 
+On a $ \left| \alpha(1)\right|  = \frac{1}{|1|}+|1|=2$ et on a vu que 
+pour tout $z\in \bC^*$,   $\left| \alpha(z)\right| \geq 2$ donc 
+$$\inf\{ \left| \alpha(z)\right| , z \in \bC^*\}=2$$
+\end{enumerate}
+\end{enumerate}
+
+
+\end{correction}
+
+
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+
+
+\subsection{Complexe minimum/maximum}
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Résoudre pour $\theta\in \R$, l'équation $e^{i\theta}=1$.
+
+On note $f(\theta) = e^{-i \theta} +1 +e^{i \theta}+e^{2i \theta}+e^{3i \theta}+e^{4i \theta}$
+\item Montrer que $|f(\theta)|=\left| 1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta}\right|$
+\item En déduire que pour tout $\theta \in \R\setminus\{ 2k\pi , k \in \Z\}$ on a 
+$$\left| f(\theta)\right| = \left|\frac{\sin(3\theta)}{ \sin(\frac{\theta}{2})}\right|.$$
+\item En déduire la valeur de  $\inf\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}$. 
+\item Montrer que pour tout $\theta \in \R$, $ \left| f(\theta)\right|\leq 6$.
+\item En déduire la valeur de $\sup\{ \left| f(\theta)\right|\, ,\,  \theta \in \R\}$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+$e^{i\theta}=1$ si et seulement si $\cos(\theta) = 1 $ et $\sin(\theta) =0$ c'est-à-dire 
+$$\theta \in \{ 2k\pi , k \in \Z\}$$
+
+On a $f(\theta) = e^{-i\theta} (1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta})$. On a donc 
+$$|f(\theta)|=|e^{i\theta}| \left| 1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta}\right|$$
+Comme $|e^{i\theta}| =1$ on a bien le résultat souhaité. 
+
+On reconnait la somme des termes d'une suite géométrique de raison $e^{i\theta}$. La raison est différent de 1 d'après la question 1 et l'hypothése faite sur $\theta $.  On a donc 
+$$\left| f(\theta)\right| =\left| \frac{1-e^{i6\theta}}{1-e^{i\theta}}\right|$$
+On utilise l'angle moitié, on obtient 
+$$ \frac{1-e^{i6\theta}}{1-e^{i\theta}} = \frac{e^{i3\theta}(e^{-3i\theta}-e^{i3\theta})}{e^{i\theta/2}(e^{-i\theta/2}-e^{i\theta/2})} $$
+Donc 
+\begin{align*}
+\left| f(\theta)\right| &= \left| \frac{e^{i3\theta}}{e^{i\theta/2}} \right| \left|\frac{e^{-3i\theta}-e^{i3\theta}}{e^{-i\theta/2}-e^{i\theta/2)}}\right|\\
+								&=1\left|\frac{2i \sin(3\theta)}{2i\sin(\frac{\theta}{2})}\right|\\
+	&=\left| \frac{\sin(3\theta)}{\sin(\frac{\theta}{2})}\right|						
+\end{align*}
+
+Pour tout $\theta \in \R$ on a $|f(\theta)| \geq 0$ par définition du module. Par ailleurs, d'après la question précédente 
+$$\left| f(\pi)\right|= \left| \frac{\sin(3\pi)}{\sin(\frac{\pi}{2})}\right|	=0$$
+donc 
+\begin{center}
+\fbox{$\inf\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}=0.$ }
+\end{center}
+
+Pour le maximum on applique l'inégalité triangulaire, on a 
+$$\left| f(\theta)\right| \leq \left| e^{-i\theta}\right| + 1+\left| e^{i\theta}\right| + \left| e^{2i\theta}\right| + \left| e^{3i\theta}\right| + \left| e^{4i\theta}\right|=6$$
+Enfin pour $\theta=0$ on obtient $f(0)=6$ donc 
+\begin{center}
+\fbox{$\sup\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}=6.$ }
+\end{center}
+
+\end{correction}
+
+
+
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+
+\subsection{Etude de $\sinh$ sur $\R$ et $\bC$ (A vérifier)} 
+
+
+\begin{exercice}
+On définit la fonction \emph{sinus hyperbolique} de  $\bC$ dans $\bC$ par  
+$$\forall z\in \bC, \sinh(z) =\frac{e^z -e^{-z}}{2}$$
+
+
+\begin{enumerate}
+\item Etude de la fonction $\sinh$ sur $\bC$.
+\begin{enumerate}
+\item Que vaut $\sinh(z)$ quand $z$ est imaginaire pur ? 
+\item La fonction $\sinh$ est elle injective ? 
+\end{enumerate}
+
+\item  On note $\mathrm{sh}$ la restriction de la fonction $\sinh$ à $\R$:
+$$\mathrm{sh} :  \begin{array}{|ccc}
+\R &\tv& \R\\
+x &\mapsto & \frac{e^x -e^{-x}}{2}
+\end{array}$$ 
+
+Etude de la fonction $\mathrm{sh}$ sur $\R$. 
+\begin{enumerate}
+\item Etudier la fonction $\mathrm{sh}$. 
+\item Montrer que $\mathrm{sh}$ réalise une bijection de $\R$ sur un ensemble que l'on précisera.
+\item \warning A retravailler \warning En déduire que la fonction $\sinh$ est surjective  de $\bC$ dans $\bC$.  
+%\item Calculer la dérivée seconde $\sh''$. 
+%\item Démontrer que pour tout $x\in \R$, $\sh(x) \geq x$. 
+\item On note $\ddp \mathrm{ch}(x)  =\frac{e^x +e^{-x}}{2}$. Montrer que pour tout $x\in \R$, $\mathrm{ch}^2(x)-\mathrm{sh}^2(x)=1$
+\end{enumerate}
+\item Etude de la réciproque. 
+On note $\mathrm{argsh} : \R \tv \R$ la bijection réciproque de $\mathrm{sh}$. 
+\begin{enumerate}
+\item  Comment  obtenir la courbe représentative de $\mathrm{argsh} $ à partir de celle de $\mathrm{sh}$. 
+
+\item Démontrer que $\mathrm{argsh} $ est dérivable sur $\R$ et que l'on a :
+$$\forall x\in \R, \mathrm{argsh}'(x) = \frac{1}{\sqrt{1+x^2}}$$
+
+\item En résolvant $y=\mathrm{sh}(x)$ déterminer l'expression de $\mathrm{argsh}(y)$ en fonction de $y$ et retrouver ensuite  le résultat de la question précédente. 
+\end{enumerate}
+\item Etudier la limite de $\mathrm{argsh}(x) - \ln(x)$ quand $x \tv +\infty$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+Soit $z$ un imaginaire pur, il existe donc $\theta \in \R$ tel que $z=i\theta$. On a alors 
+$\sinh(z) = \sinh(i\theta) = \frac{e^{i\theta}  - e^{-i\theta} }{2} = i\sin(\theta)$ d'après les formules d'Euler. 
+\item En particulier la fonction $\sinh$ n'est pas injective sur $\bC$ : on  a  
+$\sinh(0 ) = \sinh(2i\pi)=0$. 
+
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item  La fonction $\sh$ est définie et dérivable sur $\R$. Sa dérivée vaut pour tout $x\in \R$:  $\sh'(x) =\frac{e^x+e^{-x}}{2}$. Comme l'exponentielle est psitive sur $\R$, $\sh'(x)>0$ et la fonction est donc strictement croissante. 
+\item Ses limites valent $ \lim_{x\tv +\infty} sh(x)= +\infty$ et $ \lim_{x\tv -\infty} sh(x)= -\infty$. Comme $\sh$  est continue, le théorème de la bijection assure que $\sh$ est bijective de $\R$ dans $\R$. 
+
+\item Cette question était mal posée et trop compliquée, je l'ai retirée du barême. Je propose la solution à la fin de l'exercice. 
+
+\item Soit $x\in \R$ on a :
+\begin{align*}
+\ch^2(x)-\sh^2(x)&= \frac{(e^x+e^{-x})^2}{4}-\frac{(e^x-e^{-x})^2}{4}\\
+							&= \frac{(e^{2x}+2e^0+e^{-2x})}{4}-\frac{(e^{2x}-2e^0 +e^{-2x})}{4}\\
+					&= \frac{4}{4}=1
+\end{align*}
+
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item C'est du cours : il suffit de faire la symétrie par rapport à la première diagonale, la droite d'équation $y=x$. 
+\item La fonction $\argsh$ est dérivable car $\sh$ est dérivable de dérivée non nulle sur $\R$. Sa dérivée vérifie  : 
+$$\argsh'(x) = \frac{1}{\sh'(\argsh(x))}$$
+Or le calcul montre que $\sh'(x) = \ch(x) $,  comme de plus $\ch (x)= \sqrt{1+\sh^2(x)}$ d'après la question 2d) on  a : 
+$$\argsh'(x) = \frac{1}{\ch(\argsh(x))} = \frac{1 }{\sqrt{1+\sh^2(\argsh(x))}}= \frac{1}{\sqrt{1+x^2}}$$
+
+
+
+
+\item On résout $y = \sh(x)$. On obtient : 
+\begin{align*}
+y &= \frac{e^{x}-e^{-x}}{2}\\
+2ye^{x} &=e^{2x}-1\\
+e^{2x}-2ye^{x}-1&=0
+\end{align*}
+En posant $u=e^{x}$, on obtient une équation du second degré  
+$u^2 -2yu -1=0$ qui admet deux racines réelles : 
+$$u_+ = y + \sqrt{y^2 +1}  \quadet  u_- = y - \sqrt{y^2 +1}$$
+Comme $u_-$ est négatif et que l'on a posé $ u=e^x$ la seule solution de $
+e^{2x}-2ye^{x}-1=0$ est $e^x =  y + \sqrt{y^2 +1}  $, autrement dit 
+$$x= \ln( y +\sqrt{y^2+1}).$$
+En d'autres termes, pour tout $x\in \R$,  $$\argsh(x) = \ln( x +\sqrt{x^2+1})$$
+On retrouve que cette fonction est dérivable sur $\R$ et sa dérivée vaut 
+\begin{align*}
+\argsh'(x)  &= \left(1 + \frac{2x}{2\sqrt{x^2+1}} \right)\frac{1}{ x+\sqrt{x^2+1} }\\
+&= \left( \frac{\sqrt{x^2+1}+x}{\sqrt{x^2+1}} \right)\frac{1}{ x+\sqrt{x^2+1} }\\
+				&= \frac{1}{\sqrt{x^2+1}}
+\end{align*}
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+\item Pour tout $x\in \R^+$ on a 
+\begin{align*}
+\argsh(x)- \ln(x) &= \ln\left(x+\sqrt{x^2+1}\right) -\ln(x) \\
+							&= \ln\left(\frac{x+\sqrt{x^2+1}}{x}\right)  \\
+							&= \ln\left(1+\sqrt{+\frac{1}{x^2}}\right)  
+\end{align*}
+Comme $\lim_{x\tv+\infty} \frac{1}{x^2}=0$ on a 
+$$\lim_{x\tv+\infty} \argsh(x)- \ln(x) =\ln(2).$$
+
+
+
+\end{enumerate}
+
+
+Surjectivité de $\sinh$. Il faut commencer de la même manière que pour trouver l'expression de $\argsh$ dans $\R$ mais en se rappelant que $y\in \bC$. Pour tout $y\in \bC$ on cherche $z\in \bC$ tel que $\sinh(z) =y$. Autrement dit on résout 
+$$e^{2z}-2ye^{z} +1=0$$
+Soit $Z=e^{z}$. On souhaite résoudre $Z^2 -2yZ+1=0$. 
+Ici $y$ est complexe.  Le discriminant vaut $\Delta=4y^2+4$ (il n'est ni positif, ni négatif, il est complexe !) Il existe $u \in \bC$ tel que $u^2 =\Delta$. 
+Les deux racines sont donc 
+$$Z_+ = \frac{2y +u}{2} \quadet Z_- = \frac{2y-u}{2}$$
+On revient à la variable $z$.  Pour cela il faut écrire 
+$Z_+ $ (ou $Z_-$ d'ailleurs) sous forme trigonométrique : 
+$Z_+ = |Z_+|e^{i\theta_+}$. 
+et on fini par prendre $z = \ln(|Z_+|) +i\theta_+$
+(Ici le logarithme est bien définie, c'est le logarithme réel que l'on connait, bon il faudrait vérifier que $|Z_+|$ n'est pas égal à 0 ce qui équivaut à $Z_+ =0$...) 
+De nouveau on retrouve que la fonction n'est pas injective, on peut prendre $\theta_+ $ modulo $2\pi$. 
+\end{correction}
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+
+\subsection{Géométrie, droite et inclusion}
+
+\begin{exercice}
+Soit $D_1 = \{ (x,y,z) \in \R^3 \, |\, 2x-y=-2 \text{ et } 3y -2z=0\}$
+$D_2 = \{ (x,y,z) \in \R^3 \, |\, x+y-z=-1 \text{ et } 3x -z=-3\}$
+
+\begin{enumerate}
+\item Soit $P_1=(x_1,y_1,z_1)\in D_1$. Exprimer $x_1$ et $y_1$ en fonction de $z_1$. 
+\item Etablir que $D_1\subset D_2$
+\item Soit $P_2=(x_2,y_2,z_2)\in D_2$. Exprimer $x_2$ et $y_2$ en fonction de $z_2$. 
+\item Etablir que $D_2\subset D_1$. 
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+Soit $P_1 =(x_1,y_1,z_1)\in D_1$. On a 
+$x_1-y_1 =-2$ et $3y_1-2z_1= 0$ donc 
+\begin{center}
+\fbox{$y_1 = \frac{2}{3}z_1$ }
+\end{center}
+et  $2x_1 =-2 +y_1 = -2 + \frac{2}{3}z_1$
+donc 
+\begin{center}
+\fbox{$x_1 = -1+\frac{1}{3}z_1$ }
+\end{center}
+Ainsi 
+$$x_1+y_1-z-1= -1 + \frac{1}{3}z_1 + \frac{2}{3}z_1 -z_1=-1$$
+et 
+$$3x_1-z_1 = -3 +z_1-z_1=-3$$
+
+Donc $P_1 \in D_2$. Le résultat étant vrai pour tout $P_1 \in D_1$, on a donc 
+
+\begin{center}
+\fbox{$D_1 \subset D_2$ }
+
+\end{center}
+
+
+Soit $P_2 =(x_2,y_2,z_2)\in D_2$. On a 
+$x_2+y_2 -z_2=-1$ et $3x_2-z_2= -3$ donc 
+\begin{center}
+\fbox{$x_2 = -1 +\frac{1}{3}z_2$ }
+
+\end{center}
+
+et  $y_2 =-1+z_2-x_2 = -\frac{1}{3}z_2+z_2=\frac{2}{3}z_2$
+donc 
+\begin{center}
+\fbox{$y_2=\frac{2}{3}z_2$ }
+
+\end{center}
+
+
+Ainsi 
+$$2x_2-y_2 = -2 +\frac{2}{3}z_2-\frac{2}{3}z_2 =-2$$
+et 
+$$3y_2-z_2 = 3 \frac{2}{3}z_2 -z_2=0$$
+
+Donc $P_2 \in D_1$. Le résultat étant vrai pour tout $P_2 \in D_2$, on a donc 
+
+\begin{center}
+\fbox{$D_2 \subset D_1$ }
+
+\end{center}
+\end{correction}
+
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+%-------------------------------------------------------------
+\subsection{Matrice, famille libre, commutant}
+
+\begin{exercice}
+Soit $A$ la matrice suivante : 
+$\left(\begin{array}{ccc}
+0&0&0\\
+1&0&0\\
+0&1&0
+\end{array}
+\right).$
+\begin{enumerate}
+\item Déterminer les réels $\lambda\in \R$ pour lesquels la matrice $A-\lambda \Id$ n'est pas  inversible. On appelle ces réels les \emph{valeurs propres} de $A$. 
+\item
+\begin{enumerate}
+\item  Calculer $A^2$ et $A^3$. 
+\item Quelle est la dimension de $\cM_3(\R)$ ? 
+\item Montrer que $(Id_3, A, A^2)$ est une famille libre de l'espace vectoriel $\cM_3(\R)$.
+\item Est-ce une base ? 
+\end{enumerate}
+
+\item On considère $\cS$ l'ensemble des matrices  $M\in \cM_3(\R)$ telles que $AM=MA$. 
+\begin{enumerate}
+\item Montrer que $\cS$ est un sous-espace vectoriel de $\cM_3(\R)$. 
+\item Soit $\alpha, \beta, \gamma $  trois réels et $M = \alpha \Id_3 +\beta A +\gamma A^2$. Vérifier que $M\in \cS$
+\item Réciproquement, on considère $a, b, c, d, e, f, g, h, $ et $i$ des réels tel que $M =   \left(\begin{array}{ccc}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{array}
+\right) \in \cS$. Déterminer, en fonction des coefficients de $M$, trois réels $\alpha, \beta, \gamma$ tels que $ M =\alpha \Id_3 +\beta A +\gamma A^2$
+\item En déduire, une base de $\cS$. 
+\end{enumerate} 
+\item On considère $S'$ l'ensemble des matrices $M$ de $\cM_3(\R)$ telles que $M^3=0$  et $M^2 \neq 0$. 
+\begin{enumerate}
+\item Est ce que $\cS'$ est un sous-espace vectoriel de $\cM_3(\R)$ ?
+\item Soit $P\in \cM_3(\R)$  une matrice inversible et $M=P A P^{-1} $. Vérifier que $M\in \cS'$.\\
+Dans la suite, tout vecteur de $\R^3$ sera assimilé à une matrice colonne de $\cM_{3,1}(\R)$ de sorte que, pour tout vecteur $X\in \R^3$, le produit matriciel $MX$ soit correctement défini. 
+\item Soit $M =\left( 
+\begin{array}{ccc}
+-1&1& 1\\
+1&1&-1\\
+0&2&0
+\end{array}
+\right).$.
+\begin{enumerate}
+\item  Vérifier que $M \in \cS'$. 
+%On considère $f$ l'endomorphisme de $\R^3$ dont $M$ est la matrice dans la base canonique, c'est-à-dire $f : \R^3 \tv \R^3 $, $X\mapsto MX$.
+\item Prouver qu'il existe un vecteur $X\in \R^3$ tel que $M^2 X$ soit non nul.
+\item Montrer que la famlille $B=(X,MX,M^2X) $ est une base de $\R^3$.
+%\item Déterminer la matrice de $f$ dans la base $\cB$. 
+\end{enumerate}
+
+
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+\vspace{1cm}
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item $A-\lambda \Id_3 =\left(\begin{array}{ccc}
+-\lambda&0&0\\
+1&-\lambda&0\\
+0&1&-\lambda
+\end{array}
+\right).$ Cette matrice est déjà échelonnée, elle n'est pas  inversible si et seulement si $\lambda =0$.
+\item $A^2=\left(\begin{array}{ccc}
+0&0&0\\
+0&0&0\\
+1&0&0
+\end{array}
+\right)$  et  $A^3 =0$.
+\item 
+\begin{enumerate}
+\item $\cS$ contient la matrice nulle, $\cS$ est donc non vide. 
+De plus si $M,N \in \cS$ et $\lambda \in \R$, on a 
+\begin{align*}
+(M +\lambda N) A &= M A + \lambda NA \\
+							&= AM +\lambda AN\\
+							&= A (M +\lambda N) 
+\end{align*}
+Donc $\cS$ est stable par combinaison linéaire, c'est donc un sev de $\cM_3(\R)$. 
+\item Soit $(\alpha, \beta, \gamma )\in \R^3$  et $M = \alpha \Id_3 +\beta A +\gamma A^2$. On  a
+\begin{align*}
+AM &= A (  \alpha \Id_3 +\beta A +\gamma A^2 )\\
+	&= \alpha A +\beta A^2 +\gamma A^3 \\
+	&= (  \alpha \Id_3 +\beta A +\gamma A^2 ) A \\
+	&=MA
+\end{align*}
+Ainsi $M\in \cS$. 
+
+\item Soit $M =   \left(\begin{array}{ccc}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{array}
+\right) \in \cS$ On a 
+$$AM = \left(\begin{array}{ccc}
+0&0&0\\
+a&b&c\\
+d&e&f
+\end{array} \right)  \quad \text{ et } \quad MA = \left(\begin{array}{ccc}
+b&e&0\\
+e&f&0\\
+h&i&0
+\end{array}  \right) $$ 
+
+Si $M\in \cS$ on obtient les équations suivantes : 
+$\left\{ 
+\begin{array}{c}
+b=0\\
+e=0\\
+0=0\\
+a=e\\
+b=f \\
+c=0\\
+d=h\\
+e=i\\
+f=0
+\end{array}
+\right.$
+Ce qui se simplifie en
+$\left\{ 
+\begin{array}{l}
+b=c=f=0\\
+a=e=i\\
+d=h
+\end{array}
+\right.$
+Au final si $M\in \cS$, $M$ est de la forme 
+
+$$\left(\begin{array}{ccc}
+a&0&0\\
+d&a&0\\
+g&d&a
+\end{array}
+\right)  = a \Id_3 +d A +gA^2$$
+\item On en déduit que $\cS =\{ M =  \alpha \Id_3 +\beta A +\gamma A^2\, |\, (\alpha, \beta, \gamma) \in\R^3\} = \Vect( \Id_3, A, A^2)$. On a vu à la question 2b) que $( \Id_3, A, A^2)$ etait une famille libre de $\cM_3(\R)$, comme elle est génératrice de $\cS$ par définition d'un espace vectoriel engendré c'est donc une base de $\cS$. 
+
+
+ 
+ 
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item La matrice nulle n'appartient pas à $\cS'$ car $0^2=0$. 
+\item Soit $P\in \cM_3(\R)$  une matrice inversible et $M=P A P^{-1} $, on  d'une part
+$M^2 = PA^2P^{-1} $ qui est non nul car $A^2$ est non null et $P$ et $P^{-1}$ sont inversibles  et d'autre part  $M^3 =PA^3 P^{-1} = P 0 P^{-1} =0$. Donc $M \in \cS'$
+\item \begin{enumerate}
+\item $M^2 =\left(\begin{array}{ccc}
+2&2&-2\\
+0&0&0\\
+2&2&-2
+\end{array}
+\right)  $  et $M^3 = \left(\begin{array}{ccc}
+0&0&0\\
+0&0&0\\
+0&0&0
+\end{array}
+\right)  $. Ainsi $M\in \cS'$. 
+\item Si tous les vecteurs de $\R^3$ vérifiaient $M^2X=0$, alors $M^2 = 0$ (il suffit de vérifier avec les vecteurs de la base canonique). Ainsi il existe un vecteur tel $M^2X\neq 0$
+\item Soit $\lambda_0,\lambda_1,\lambda_2\in \R^3$ tel que  
+$$\lambda_0 X +\lambda_1 M X +\lambda_2 M^2 X= 0$$
+On a en composant par $M:$
+$$\lambda_0 M X +\lambda_1 M^2 X +\lambda_3 M^3 X=0$$
+Or $M^3 =0 $ donc 
+$$\lambda_0 M X +\lambda_1 M^2 X=0$$
+En réitérant le processus on obtient 
+$$\lambda_0 M^2 X =0  $$
+Or comme $M^2X \neq 0$ par hypothèse, on a $\lambda_0=0$ 
+L'équation précédente donne alors $\lambda_1=0$ et finalement 
+$$\lambda_0=\lambda_1 =\lambda_2 =0$$
+La famille est libre. Comme elle contient 3 vecteurs dans un ev de dimension $3$ c'est une base. 
+
+
+\end{enumerate}
+\end{enumerate}
+
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+\subsection{Complexe, raisonnement par l'absurde, recurrence}
+
+\begin{exercice}
+Soit $z,z'$ deux nombres complexes.
+
+\begin{enumerate}
+\item Rappeler les valeurs de $A=z\bar{z}$, $B=|z\bar{z}|$, $C=|\bar{z}z'|^2$ en fonction de $|z|$ et $|z'|$. 
+\item On suppose dans cette question et  la suivante que $|z|<1 $ et $|z' |<1$. Montrer que $$\bar{z}z'\neq 1$$
+
+\item  Montrer que 
+$$1- \left| \frac{z-z'}{1-\bar{z} z' } \right|^2 = \frac{(1-|z'|^2)(1-|z|^2)}{|1-\bar{z}z'|^2}$$
+\item Soit $\suite{z}$ une suite de nombres complexes vérifiant : $|z_0|<1, |z_1|<1$  et pour tout $n\in \N$ :
+$$z_{n+2} =\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}$$
+
+Montrer que pour tout $n\in \N$, $|z_n|<1$ et que $\bar{z_n}z_{n+1}\neq 1$, et donc que $\suite{z}$ est bien définie pour tout $n\in \N$. \\
+\footnotesize{On pourra utiliser les deux questions précédentes dans une récurrence double}
+
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Comme $|z|<1$ et $|z'|<1$ on a $|\bar{z}z'|= |\bar{z}| |z'| =|z||z'| <1$. Or si deux nombres complexes sont égaux ils ont même module, donc $\bar{z}z' $ ne peut pas être égal à $1$, sinon ils auraient le même module. 
+\item Après avoir mis au même dénominateur le membre de gauche, on va utiliser le fait que pour tout complexe $u$, on a $|u|^2 = u\bar{u}$ :
+\begin{align*}
+1- \left| \frac{z-z'}{1-\bar{z} z' } \right|^2  &= \frac{| 1-\bar{z} z' |^2 -|z-z' |^2}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' )(\bar{ 1-\bar{z} z'} )   -(z-z' )(\bar{z-z'})}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' )(1-z\bar{z'}  )   -(z-z' )(\bar{z}-\bar{z'})}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1-\bar{z} z' -z\bar{z'} + |\bar{z}z'|^2  )   -(|z|^2-\bar{z'}z - \bar{z}z' +|z'|^2)}{|1-\bar{z} z'  |^2}\\
+&= \frac{( 1+ |\bar{z}z'|^2-|z|^2-|z'|^2)}{|1-\bar{z} z'  |^2}
+\end{align*}
+Remarquons enfin que $(1-|z|^2) (1-|z'|^2)  =1 +|zz'|^2 -|z|^2 -|z'|^2$. Or 
+$ |\bar{z}z'|^2 = |\bar{z}|^2|z'|^2 =|z|^2 |z'|^2  = |zz'|^2$.
+On a bien 
+\conclusion{$\ddp 1- \ddp \left| \ddp \frac{z-z'}{1-\bar{z} z' } \right|^2    = \frac{(1-|z|^2) (1-|z'|^2) }{|1-\bar{z} z'  |^2}$}
+
+
+\item Soit $P(n)$ la propriété : \og $|z_n|<1$ et $|z_{n+1}|<1$\fg \,. Remarquons que d'après la question 2, $P(n)$ implique que $\bar{z_n}z_{n+1}\neq 1 $ et donc que $z_{n+2}$ est bien définie. 
+
+Prouvons $P(n)$ par récurrence. 
+
+\underline{Initialisation} : 
+$P(0)$ est vraie d'après l'énoncé : $|z_0|<1 $ et $|z_1|<1$.\\
+
+\underline{Hérédité} : On suppose qu'il existe $n\in \N$   tel que $P(n)$ soit vraie. Montrons alors $P(n+1)$ :  \og $|z_{n+1}|<1$ et $|z_{n+2}|<1$\fg. Par hypothèse de récurrence on sait déjà que $|z_{n+1}|<1$ il reste donc à prouver que $|z_{n+2} <1$. 
+
+On a $$|z_{n+2}| = \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|$$
+ Or d'après la question 3, 
+ $$ \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|^2 = 1- \frac{(1-|z_n|^2) (1-|z_{n+1}|^2) }{|1-\bar{z_n} z_{n+1}  |^2}$$
+ 
+Par hypothèse de récurrence,  $(1-|z_n|^2) (1-|z_{n+1}|^2)>0$. Le dénominateur est aussi positif, donc $\frac{(1-|z_n|^2) (1-|z_{n+1}|^2) }{|1-\bar{z_n} z_{n+1}  |^2}>0$ et ainsi :
+ $$ \left|\frac{z_n-z_{n+1}}{1-\bar{z_{n}} z_{n+1}}\right|^2 < 1$$
+Donc $|z_{n+2}|<1$. On a donc prouvé que la propriété $P$ était hériditaire. 
+
+\underline{Conclusion} : Par principe de récurrence, $P(n)$ est vraie pour tout $n\in \N$ et comme remarqué au début de récurrence, ceci implique que $\suite{z}$ est bien définie pour tout $n\in \N$.  
+
+ 
+\end{enumerate}
+\end{correction}
+
+
+
+
+
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------
+

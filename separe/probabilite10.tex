@@ -1,0 +1,373 @@
+\subsection{Sujet Révision - Shuffle Ipod}
+
+
+\begin{probleme}
+Dans tout le problème, $n$ sera un entier naturel supérieur ou égal à $2$. 
+
+Un I-Pod contient $n$ pistes (numérotées de $1$ à $n$) et fonctionne en mode aléatoire  selon le protocole suivant : 
+
+\begin{itemize}
+\item La première psite lie est choisie de façon aléatoire et uniforme parmi les $n$ pistes. 
+\item A la fin de la lecture d'une piste, la suivante est choisie de façon aléatoire et uniforme parmi les $n$ pistes. (Il est donc possible que la même piste soit lue plusieurs fois de suite...) 
+
+Ce problème étudie différents aspects de vette lecture aléatoire. Les différentes partites sont dans une grande mesure indépendantes les unes des autres. 
+\end{itemize}
+
+
+\paragraph{Partie A}
+\noindent
+
+Dans cette partie on fixe un entier naturel $k$ supéreiur ou égal à $1$ et on s'intéresse aux $k$ premières lectures effectuées. Pour tout $i\in \intent{1, n}$, on note $X_i$ le nombre de fois où la piste numéro $i$ est lue au cours des $k$ premières lectures. 
+
+\begin{enumerate}
+\item Déterminer la loi de $X_i$ et donner son espérance est sa variance. 
+
+
+\item Les variables aléatoires $X_1, X_2, \dots , X_n $ sont-elles indépendantes ? 
+
+
+\item \begin{enumerate}
+\item Que vaut $X_1 +X_2 +\dots +X_n $ ? 
+
+
+\item En déduire que la covariance de $X_i$ et $X_j $ pour tout $i\neq j$ vaut $\frac{-k}{n^2}.$
+
+
+\end{enumerate}
+\item \begin{enumerate}
+\item Déterminer la loi conjointe de $X_i $ et $X_j$ pour tout $i\neq j$. 
+
+\item  Retrouver alors le résultat du 3b. 
+
+\end{enumerate}
+\item Commenter le signe de la covariance de $X_i$ et $X_j$ pour $i\neq j$. 
+
+
+
+\item Soient $a_1, a_2, \dots, a_n$, $n$ entiers naturels. 
+\begin{enumerate}
+\item On suppose que $\sum_{i=1}^n a_i \neq k$. Que vaut la probabilité 
+$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n)$ ? 
+
+\item On suppose maintenant  que $\sum_{i=1}^n a_i = k$. Montrer que probabilité 
+$$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n) = \frac{k!}{a_1! a_2! \dots a_n ! } \left( \frac{1}{n}\right)^k$$ 
+
+\end{enumerate}
+\end{enumerate}
+
+
+\paragraph{Partie B}
+\noindent 
+
+Pour tout $k\in \N^*$, on note $Z_k$ le nombre de pistes différentes qui ont été lues au moins une fois au cours des $k$ premières lectures. 
+\begin{enumerate}
+\item Décrire avec soin l'ensemble des valeurs que prend $Z_k$ en fonction de $n$ et $k$. 
+
+
+\item Quelle est la loi de $Z_1$ ? Donner son espérance et sa variance. 
+
+
+\item \begin{enumerate}
+\item Soient $i$  et $j$  entre $1$ et $n$. Détermminer $P_{(Z_k =i) } (Z_{k+1} =j)$ en distinguant les cas $j=i$, $j=i+1$ et $j\notin \{ i, i+1\}$
+
+
+\item En déduire que pour tout $k\in \N^*$ et pour tout $i\in \intent{1, n}$, on a : 
+$$P(Z_{k+1}  =i )= \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)$$
+
+\item Calculer $P(Z_k=1)$ pour tout $k\in \N^*$.
+
+\item On pose, pour tout $k\in \N^*$, $\alpha_k =n^{k-1} P(Z_k =2)$. Exprimer $\alpha_{k+1} $ en fonction de $\alpha_k$ et $n$, puis en déduire l'expression de $\alpha_k$ en fonction de $k$ et $n$. 
+
+\item Déduire de ce qui précède  la valeur de $P(Z_k=2) $ pour tout $k\in \N^*$. 
+\end{enumerate}
+\item \begin{enumerate}
+\item A l'aide de la question $3b$ montrer que :
+$$E(Z_{k+1}) = \frac{n-1}{n} E(Z_k) +1$$
+\item En déduire l'expression de $E(Z_k)$ en fonction de $n$ et $k$. 
+\item Calculer la limite quand $k\tv +\infty$ de $E(Z_k)$. Ce résultat  était-il prévisible ? 
+\item  Calculer la limite quand $n\tv +\infty$ de $E(Z_k)$. Ce résultat  était-il prévisible ? 
+
+
+\end{enumerate}
+\item On va dans cette question montrer par récurrence sur $k$ que pour tout $k\in \N^*$:
+$$\forall i\in \intent{ 1, n}, \quad P(Z_k =i) =\frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k$$
+\begin{enumerate}
+\item Montrer que la propriété est vraie pour $k=1$ (traiter séparément les cas $i=1$ et $i>1$.) 
+
+
+On suppose la propriété vraie pour un certain rang $k\in \N^*$ et on va montrer qu'elle est vraie pour le rang $k+1$. 
+\item Montrer que la relation au rang $k+1$ est vraie pour $i=1$. 
+
+
+
+\item A l'aide du résultat de la question 3b, montrer que la relation au rang $k+1$ est vraie pour tout $i\geq 2$. 
+
+
+
+\item Conclure. 
+
+\item Soient $k$ et $i$ deux entiers tels que $1\leq k < i $ . Que vaut $\ddp \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k$ ?
+
+
+
+\end{enumerate}
+
+\end{enumerate}
+\end{probleme}
+
+
+
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item Par symmétrie du problème, tous les $X_i$ suivent la même loi. On a $X_i (\Omega) =\intent{0,n}$ et ce sont des sommes de  $k$ variables de Bernouilli de paramètre $\frac{1}{n}$ ce sont donc des binomiales $\cB(k,\frac{1}{n})$
+\item $\bP (X_1 = k , X_2=1)=0$ en effet, si la piste $1$ a été jouée  $k$ fois, il n'est pas possible que la piste $2$ ait été jouée. En revanche $\bP(X_1=k)\bP(X_2=1) \neq 0$. Ainsi les variables ne sont pas 2 à $2$ indépendantes, donc a fortiori elles ne sont pas mutuellement indépendantes. 
+\item $\sum_{i=1}^n X_i = k$
+\item Remarquons que les covariances $\cov(X_i,X_j) $ sont toutes égales pour tout $i, j \in \intent{1, n}^2$ pour $i\neq  j$  par symmétrie du problème. On note ce nombre $\alpha$. 
+
+Par ailleurs, $\cov(X_i,X_i) = V(X_i)=\frac{1}{n}\frac{n-1}{n} k $ (formule du cours) 
+
+Maintenant on calcule $\ddp \cov(\sum_{i=1}^n X_i,X_j)$ de deux manières : 
+Par linéarité vis-à-vis de la première variable   on obtient 
+$$ \cov(\sum_{i=1}^n X_i,X_j) =\sum_{i=1}^n \cov(X_i,X_j) =(n-1) \alpha +\frac{1}{n}\frac{n-1}{n} k$$
+
+On calcule directement à l'aide de la formule de Koenig Huygens, comme $\sum_{i=1}^n X_i = k$ on obtient : 
+$$\cov(\sum_{i=1}^n X_i,X_j) = \cov(k,X_j) = E(kX_j)-E(k)E(X_j)  = 0$$
+
+
+Ainsi 
+$$ (n-1) \alpha +\frac{1}{n}\frac{n-1}{n} k  =0$$ et donc 
+$$ \cov(X_i,X_j)   = -\frac{k}{n^2}$$
+
+\item $(X_i,X_j) (\Omega) =\intent{1,k}^2$ 
+
+Soit $u,v \in \intent{1,k}^2$. 
+ Si $u+v\geq k$, on a alors $\bP(X_i = u ,X_j= v) = 0 $
+
+Maintenant si $u+v\leq k$, il faut choisir les places des $u$ fois où la piste $i$ est jouée : il y a 
+$\binom{k}{u} $ possibilités, chacune arrivant avec la probabilité $(\frac{1}{n})^{u}$. Ensuite il faut placer les $v$ fois où la psite $j$ est jouée parmi les lectures restantes : il y a  $\binom{k-u}{v} $ possibilités, chacune arrivant avec la probabilité $(\frac{1}{n})^{v}$. 
+
+On obtient : 
+
+$$\bP(X_i = u , X_j = v) =\binom{k}{u}\binom{k-u}{v} \left(\frac{1}{n}\right)^{u+v} \left(1-\frac{2}{n}\right)^{k-u-v}$$
+
+
+\item 
+On sait que $E(X_i) =E(X_j)=\frac{k}{n}$
+
+Calculons maintenant $E(X_iX_j)$. 
+\begin{align*}
+E(X_iX_j) &= \sum_{u=0}^k\sum_{v=0}^k uv \bP(X_i=u, X_j =v)\\
+			&=  \sum_{u=0}^k \sum_{v=0}^{k-u} uv \binom{k}{u}\binom{k-u}{v} \left(\frac{1}{n}\right)^{u+v} \left(1-\frac{2}{n}\right)^{k-u-v}\\
+			&=\sum_{u=0}^k u \binom{k}{u} \left(\frac{1}{n}\right)^{u}  \sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} \\
+\end{align*}
+
+Analysons la  somme  intérieure : 
+\begin{align*}
+\sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} &=
+\sum_{v=1}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v} \\
+&= \sum_{v=1}^{k-u} (k-u) \binom{k-u-1}{v-1} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v}\\
+&= (k-u) \sum_{v=0}^{k-u-1} \binom{k-u-1}{v} \left(\frac{1}{n}\right)^{v+1} \left(1-\frac{2}{n}\right)^{k-u-1-v}\\
+&= (k-u)\frac{1}{n} \sum_{v=0}^{k-u-1} \binom{k-u-1}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-1-v}
+\end{align*}
+On reconnait un binome de Newton : 
+\begin{align*}
+\sum_{v=0}^{k-u} v \binom{k-u}{v} \left(\frac{1}{n}\right)^{v} \left(1-\frac{2}{n}\right)^{k-u-v}&=
+(k-u) \frac{1}{n}  \left(\frac{1}{n}+1-\frac{2}{n}\right)^{k-u-1}
+\end{align*}
+
+Revenons en au calcul de $E(X_iX_j)$, en remplacant la  somme intérieure par le terme que l'on vient de trouver. 
+\begin{align*}
+E(X_iX_j) &= \sum_{u=0}^k u \binom{k}{u} \left(\frac{1}{n}\right)^{u}    (k-u) \frac{1}{n}  \left(1-\frac{1}{n}\right)^{k-u-1}\\
+&=  \sum_{u=1}^k  (k-u)  k\binom{k-1}{u-1} \left(\frac{1}{n}\right)^{u+1}    \left(1-\frac{1}{n}\right)^{k-u-1}\\
+\end{align*}
+On utilise alors le fait que $(k-u) \binom{k-1}{u-1} =(k-1) \binom{k-2}{u-1}$ ( on peut le vériifer en passant par les factorielles) on obtient alors :
+\begin{align*}
+E(X_iX_j) &= \sum_{u=1}^{k-1}  k (k-1) \binom{k-2}{u-1} \left(\frac{1}{n}\right)^{u+1}    \left(1-\frac{1}{n}\right)^{k-u-1}\\
+&= k (k-1)  \sum_{u=0}^{k-2}  \binom{k-2}{u} \left(\frac{1}{n}\right)^{u+2}    \left(1-\frac{1}{n}\right)^{k-u-2}\\
+&= k (k-1) (\frac{1}{n} )^2 \sum_{u=0}^{k-2}  \binom{k-2}{u} \left(\frac{1}{n}\right)^{u}    \left(1-\frac{1}{n}\right)^{k-2- u}\\
+&= k (k-1) (\frac{1}{n} )^2 \left( \frac{1}{n} +1 -\frac{1}{n}\right)^{k-2}\\
+&=k(k-1) (\frac{1}{n} )^2
+\end{align*}
+
+
+On obtient bien alors 
+$$Cov(X_i,X_j)  =E(X_iX_j) -E(X_i)E(X_j) = k(k-1) (\frac{1}{n} )^2 - (\frac{k}{n})^2= \frac{-k}{n^2}$$
+
+
+\item La covariance est négative. En effet les deux variables aléatoires ont un comportement opposées : si le morceau $i$ est lu beaucoup de fois, le morceau $j$ a tendance à être moins lu. 
+
+
+\item 
+Dans ce cas, on a nécessairement
+$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n)=0$ car il y a $k$ morceaux joués. 
+
+
+\item Il faut placer les $a_1$ lectures du morceau $1$ parmi les $k$ lectures, puis les $a_2$ lecture du morceau $2$ parmi les $k-a$ restante et ainsi de suite. 
+
+Chacune de ces séquence a pour probabilité $\left(\frac{1}{n} \right)^{a_1}\left(\frac{1}{n} \right)^{a_2}...\left(\frac{1}{n} \right)^{a_n}=\left(\frac{1}{n} \right)^{k}$
+
+Ainsi $$\bP(X_1 =a_1 \cap X_2 =a_2 \cap \dots X_n =a_n) = 
+\binom{k}{a_1}\binom{k-a_1}{a_2}...\binom{k-a_1-a_2 -...-a_{n-1}}{a_n}
+\left(\frac{1}{n} \right)^{k} $$
+
+Simplifions le produit des coefficients binomiaux : 
+
+\begin{align*}
+\binom{k}{a_1}\binom{k-a_1}{a_2}...\binom{k-a_1-a_2 -...-a_{n-1}}{a_n} &= 
+\frac{k!}{a_1 ! (k-a_1)!} \frac{(k-a_1)!}{a_2 ! (k-a_2)!} ... \frac{(k-a_1-a_2 -...-a_{n-1})!}{a_n ! (k-a_1-a_2 -...-a_{n-1}-a_n)!}\\
+&= \frac{k!}{a_1  ! a_2! ... a_n! }
+\end{align*}
+
+On obtient bien le résultat demandé. 
+\end{enumerate}
+
+\begin{enumerate}
+\item $Z_k (\Omega) =\intent{1, \min(k,n)}$
+\item $Z_1  (\Omega) =\{1\}$. $Z_1$ est variable aléatoire égale certaine égale à $1$. 
+$\bP(Z_1 =1 ) = 1$ et $E(Z_1) = 1$, $V(Z_1) =0$
+
+\item \underline{Si $j=i$}
+$\bP_{(Z_k =i)} (Z_{k+1} = i ) $ est la probabilité que le morceau joué au rang $k+1$ soit compris dans les $i$ premiers morceaux joués. On a donc 
+$$\bP_{(Z_k =i)} (Z_{k+1} = i )= \frac{i}{n} $$
+
+\underline{Si $j=i+1$}
+$\bP_{(Z_k =i)} (Z_{k+1} = i+1 ) $ est la probabilité que le morceau joué au rang $k+1$ ne  soit pas compris dans les $i$ premiers morceaux joués. On a donc 
+$$\bP_{(Z_k =i)} (Z_{k+1} = i )= \frac{n-i}{n} $$
+
+\underline{Si $j\notin \{i,i+1\}$}
+$\bP_{(Z_k =i)} (Z_{k+1} = j ) $ est un événement impossible et on a 
+$$\bP_{(Z_k =i)} (Z_{k+1} = j ) =0$$
+
+\item On utilise la formule des probabilités totales. 
+
+On obtient 
+\begin{align*}
+\bP(Z_{k+1} = i ) &= \sum_{j=1}^{\min(n,k)} \bP( Z_{k+1} = i  \text{ et }  Z_k = j)\\
+						&= \bP( Z_{k+1} = i  \text{ et }  Z_k = i) +\bP( Z_{k+1} = i  \text{ et }  Z_k = i-1)\\
+						&= \bP_{( Z_k = i)}( Z_{k+1} = i  ) P( Z_k = i) +\bP_{( Z_k = i-1)}( Z_{k+1} = i ) \bP(Z_k = i-1)\\
+						&= \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)	
+\end{align*}
+\item $Z_k=1$ correspond à l'événement : " 1 seule piste a été jouée". On a donc 
+$$P(Z_k = 1) =(\frac{1}{n})^{k-1}$$
+
+\item \begin{align*}
+\alpha_{k+1} &= n^{k} P(Z_{k+1} = 2) \\
+					&= n^k  \left(  \frac{2}{n} P(Z_k =2 ) + \frac{n-1}{n} P(Z_k =1)	 \right)\\
+					&= 2 n^{k-1}   P(Z_k =2 ) + (n-1)n^{k-1} \frac{1}{n^{k-1}} 	 \\
+					&= 2 \alpha_k+ n-1
+\end{align*}
+
+C'est donc une suite arithmético géométrique. On obtient 
+$$\alpha_k = (n-1) (2^{k-1} -1)$$
+
+\item $$P(Z_k=2) = \frac{1}{n^{k-1}}\alpha_k = \frac{ (n-1) (2^{k-1} -1)}{n^{k-1}}$$
+\item \begin{align*}
+E(Z_{k+1})&= \sum_{i=1}^n i P(Z_{k+1} =i )\\
+				&= \sum_{i=1}^n  i\left(\frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)\right)	\\
+				&= \sum_{i=1}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=1}^n i    \frac{n-i+1}{n} P(Z_k =i-1)\\
+				&= \sum_{i=0}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=0}^{n-1} (i+1)    \frac{n-i}{n} P(Z_k =i) \quad \text{ changement de variable}\\
+					&= \sum_{i=0}^n \frac{i^2}{n} P(Z_k =i ) + \sum_{i=0}^{n-1}  -\frac{i^2}{n} 
+					P(Z_k =i) + (i-\frac{i}{n}) P(Z_k=i) + (P(Z_k=i)\\
+					&= nP(Z_k=n) + (1-\frac{1}{n}) (E(Z_k) - P(Z_k=n) ) + (1 - P(Z_k=n))\\
+					&= (1-\frac{1}{n})E(Z_k)  - 1 
+\end{align*}
+
+
+
+\item C'est de nouveau une suite arithmético géométrique. On trouve : 
+$$E(Z_k) = n \left( 1 - \left(1- \frac{1}{n}\right)^k\right)$$
+
+\item $$\lim_{k\tv +\infty } E(Z_k) =  n$$
+En effet quand le nombre de lectures est grand, toutes les pistes ont tendance à avoir été lue au moins une fois et $Z_k$ tends vers la constante $n$, sont espérance en particulier aussi. 
+
+\item On  va faire un DL, on a $\left(1- \frac{1}{n}\right)^k = 1- \frac{k}{n} +o(\frac{1}{n})$
+et donc 
+$$E(Z_k) = k +o(1)$$
+donc $$\lim_{n\tv +\infty } E(Z_k) =  k$$
+
+Si le nombre de pistes est très grand devant le nombre de lecture, on aura à chaque écoute un nouveau morceau et donc le nombre de morceaux différents joués sera égale au nombre de lectures, autrement dit $Z_k $ aura tendance à être égal à $k$.
+
+
+\item On est dans le cas $k=1$. On cherche à montrer que 
+$$\forall i\in \intent{ 1, n}, \quad P(Z_1 =i) =\frac{\binom{n}{i}}{n} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)$$
+
+
+\underline{ Si $i =1$}
+On cherche à montrer que 
+$$P(Z_1 =1) =\frac{\binom{n}{1}}{n} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)$$
+On sait que $P(Z_1= 1) =1$  et par ailleurs 
+$\frac{\binom{n}{1}}{n} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j) =  \frac{n}{n}((-1)^0 1 (1-0) = 1$
+
+\underline{ Si $i >1$}
+On sait que $P(Z_1= i) =0$. Par ailleurs 
+\begin{align*}
+\sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j) &=  \sum_{j=0}^{i-1} (-1)^j \frac{i!}{j! (i-j)!}
+(i-j) \\
+&=  \sum_{j=0}^{i-1} (-1)^j \frac{i!}{j! (i-j-1)!}\\
+&=  i\sum_{j=0}^{i-1} (-1)^j \frac{(i-1)!}{j! (i-1-j)!}\\
+&=  i\sum_{j=0}^{i-1} (-1)^j \binom{i-1}{j}\\
+&=  i(1-1)^{i-1}\\
+&=0
+\end{align*}
+
+La propriété est donc vérifiée au rang $k=1$. 
+
+
+
+\item Pour $i=1$ on cherche à prouver que 
+$$P(Z_{k+1} =1) =\frac{\binom{n}{1}}{n^{k+1}} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)^{k+1}$$
+
+On sait d'une part que $P(Z_{k+1} =1) = (\frac{1}{n} )^{k}$
+
+et d'autre part on  a 
+\begin{align*}
+\frac{\binom{n}{1}}{n^{k+1}} \sum_{j=0}^{0} (-1)^j \binom{1}{j}(1-j)^{k+1} &= \frac{1}{n^k} (-1) ^0 1 (1-0){k+1}\\
+&= \frac{1}{n^k}
+\end{align*}
+
+
+
+\item Soit $i\geq 2$ 
+
+\begin{align*}
+P(Z_{k+1} = i) &=  \frac{i}{n} P(Z_k =i ) + \frac{n-i+1}{n} P(Z_k =i-1)	\\
+					&= \frac{i}{n}   \frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k +  \frac{n-i+1}{n}  \frac{\binom{n}{i}}{n^k} \sum_{j=0}^{i-2} (-1)^j \binom{i-1}{j}(i-1-j)^k
+\end{align*}
+REmarquons que 
+$\frac{n-i+1}{n}  \frac{\binom{n}{i}}{n^k}  =  \frac{i\binom{n}{i}}{n^{k+1}}$
+et en faisant un changement de variable on obtient 
+$$\sum_{j=0}^{i-2} (-1)^j \binom{i-1}{j}(i-1-j)^k = -\sum_{j=1}^{i-1} (-1)^j \binom{i-1}{j-1}(i-j)^k$$
+Donc 
+
+\begin{align*}
+P(Z_{k+1} = i) &=   \frac{i\binom{n}{i}}{n^{k+1}} \left(\sum_{j=0}^{i-1} (-1)^j \binom{i}{j}(i-j)^k  +
+- \sum_{j=1}^{i-1} (-1)^j \binom{i-1}{j-1}(i-j)^k
+\right) \\
+&= \frac{i\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left( (-1)^j (i-j)^k\left[ \binom{i}{j} - \binom{i-1}{j-1} \right]\right) +i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^k\left[i \binom{i-1}{j}\right] \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^k (i-j) \binom{i}{j} \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=1}^{i-1} \left((-1)^j (i-j)^{k+1}  \binom{i}{j} \right)+i^k
+\right) \\
+&= \frac{\binom{n}{i}}{n^{k+1}} \left( 
+ \sum_{j=0}^{i-1} \left((-1)^j (i-j)^{k+1}  \binom{i}{j} \right)
+\right) 
+\end{align*}
+Ouchhh !
+ 
+
+
+
+\item Initialisé en 6a et héréditaire en 6c) la propriété est donc vraie pour tout $k\in \N$. 
+\item Cette somme vaut 0. 
+\end{enumerate}
+\end{correction}
