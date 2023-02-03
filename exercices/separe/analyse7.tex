@@ -1,0 +1,73 @@
+% Titre : Equation trigonométrique et changement de variable
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Résoudre l'inéquation d'inconnue $y$ suivante : 
+$$\frac{y-3}{2y-3}\leq 2y \quad (E_1)$$
+
+\item En déduire les solutions sur $\R$ de l'inéquation d'inconnue $X$  : 
+$$\frac{\sin^2(X)-3}{2\sin^2(X) -3} \leq 2 \sin^2(X)\quad (E_2)$$
+
+\item Finalement donner les solutions sur $[0,2\pi[ $ de l'inéquation d'inconnue $x$ : 
+$$\frac{\sin^2(2x+\frac{\pi}{6})-3}{2\sin^2(2x+\frac{\pi}{6}) -3} \leq 2 \sin^2(2x+\frac{\pi}{6}) \quad (E_3)$$
+\end{enumerate}
+
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item 
+$$\begin{array}{lrl}
+&\frac{y-3}{2y-3}&\leq 2y\\
+\equivaut &0 &\leq 2y - \frac{y-3}{2y-3}\\
+\equivaut &0 &\leq \frac{4y^2-7y+3}{2y-3}
+\end{array}$$
+$4y^2-7y+3$ admet pour racines : $y_0 = 1$ et $y_1 =\frac{3}{4}$, donc 
+$$\begin{array}{lrl}
+&\frac{y-3}{2y-3}&\leq 2y\\
+\equivaut &0&\leq \frac{4(y-1)(y-\frac{3}{4})}{2(y-\frac{3}{2})}
+\end{array}$$
+Donc les solutions de $(E_1)$ sont 
+\conclusion{ $\cS_1 = \left[ \frac{3}{4}, 1\right] \cup \left] \frac{3}{2}, +\infty\right[ $} 
+
+
+\item $X$ est solutions de $(E_2)$ si et seulement si : 
+$$\sin^2(X) \in \left[ \frac{3}{4}, 1\right] \cup \left] \frac{3}{2}, +\infty\right[ $$
+Comme pour tout $X\in \R$,  $\sin(X) \in [-1,1]$, ceci équivaut à 
+$$\sin^2(X) \in \left[ \frac{3}{4}, 1\right] $$
+c'est-à-dire : $\sin^2(X) \geq \frac{3}{4}$, soit 
+$\left(\sin(X) -\frac{\sqrt{3}}{2}\right)\left(\sin(X) +\frac{\sqrt{3}}{2}\right)\geq 0$ 
+On obtient donc 
+$$\sin(X) \in  \left[ -1, \frac{-\sqrt{3}}{2},\right] \cup  \left[ \frac{\sqrt3}{4}, 1\right] $$
+On a  d'une part $\sin(X) \leq  \frac{-\sqrt{3}}{2} \equivaut X \ddp \in \bigcup_{k\in \Z} \left[ \frac{4\pi}{3} +2k\pi,\frac{5\pi}{3} +2k\pi \right] $
+et d'autre part 
+$\sin(X) \geq  \frac{\sqrt{3}}{2} \equivaut X \in \ddp \bigcup_{k\in \Z} \left[ \frac{-\pi}{3} +2k\pi,\frac{2\pi}{3} +2k\pi \right] $
+
+Ainsi les solutions de $(E_2)$ sont
+ $$\cS_2 =\ddp   \bigcup_{k\in \Z} \left[ \frac{\pi}{3} +2k\pi,\frac{2\pi}{3} +2k\pi \right]  \cup \left[ \frac{4\pi}{3} +2k\pi,\frac{5\pi}{3} +2k\pi \right]$$
+ 
+ En remarquant que $ \frac{4\pi}{3} =  \frac{\pi}{3}+\pi$ et 
+  $ \frac{5\pi}{3} =  \frac{2\pi}{3}+\pi$, on peut  simplifier les solutions de la manière suivante : 
+  \conclusion{ $\cS_2 =\ddp   \bigcup_{k\in \Z} \left[ \frac{\pi}{3} +k\pi,\frac{2\pi}{3} +k\pi \right] $}
+ 
+
+\item $x$ est solution de $(E_3)$ si et seulement si 
+$$2x+\frac{\pi}{6}\in \ddp  \bigcup_{k\in \Z} \left[ \frac{\pi}{3} +k\pi,\frac{2\pi}{3} +k\pi \right] $$
+C'est-à-dire 
+$$2x \in  \ddp  \bigcup_{k\in \Z} \left[ \frac{\pi}{3}- \frac{\pi}{6} +k\pi,\frac{2\pi}{3}-\frac{\pi}{6} +k\pi \right] $$
+On obtient 
+$$x \in  \ddp  \bigcup_{k\in \Z} \left[ \frac{\pi}{12} +\frac{k\pi}{2},\frac{\pi}{4}+\frac{k\pi}{2}\right] $$
+Les solutions sur $[0,2\pi[$ sont donc 
+
+\conclusion{ $\cS_3=  \left[ \frac{\pi}{12} ,\frac{\pi}{4}\right] \cup \left[ \frac{\pi}{12} +\frac{\pi}{2},\frac{\pi}{4}+\frac{\pi}{2}\right] \cup \left[ \frac{\pi}{12} +\pi,\frac{\pi}{2}+\pi\right] \cup \left[ \frac{\pi}{12} +\frac{3\pi}{2},\frac{\pi}{4}+\frac{3\pi}{2}\right] $}
+
+\end{enumerate}
+\end{correction}

@@ -1,0 +1,324 @@
+% Titre : Sujet Révisions Algébre linéaire - (Pb )  
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : algebre
+% Subcategories : 
+% Keywords : algebre
+
+
+
+\subsubsection{Equation dans $\cL(E)$ }
+
+Soit $E$ un  $\R$-espace vectoriel non réduit à son vecteur nul. On s'intéresse aux endomorphismes $f$ de $E$ vérifiant la relation 
+$$f^2 =3f - 2\Id_E.\quad (*) $$
+\paragraph{Un exemple}
+
+
+
+On définit l'application : 
+$$g \left| \begin{array}{ccl}
+\R^2 &\tv& \R^2 \\
+(x,y) &\mapsto & (3x+2y, -x)
+\end{array}\right.$$
+\begin{enumerate}
+\item Montrer que $g$ est un endomorphisme de $\R^2$.
+\item Calculer $g\circ g$ et vérifier que $g$ est solution de $(*)$
+\item Déterminer $F =\ker(g-\Id_{\R^2}) $ et $G =\ker(g- 2\Id_{\R^2}) $ et donner une base de $F$ et une base de $G$. 
+\item Montrer que $F \cap G= \{ 0\}$ 
+\item Soit $u =(1,-1) $ et  $v= (-2 , 1) $ Montrer que $B=(u,v) $ est une base de $\R^2$.
+\item Soit $(x,y)\in \R^2$. Exprimer $(x,y) $ comme combinaison linéaire de $u$ et $v$.
+\item Calculer $g^n(u)$ et $g^n(v)$. 
+\item Donner finalement  l'expression de $g^n(x,y) $ en fonction de $x$ et $y$. 
+
+\end{enumerate}
+\subsubsection{Etude de $f$}
+On se place à nouveau dans le cas général et on s'intéresse à l'équation $(*)$.
+\begin{enumerate}
+%\item Montrer que $(*)$ possède une solution évidente. 
+\item Montrer que si $f$ vérifie $(*)$ alors $f$ est bijective et exprimer $f^{-1}$ comme combinaison linéaire de $f$ et de $ \Id_E$. 
+\item Déterminer les solutions de $(*)$ de la forme $\lambda \Id_E$ où $\lambda \in \R$. 
+\item L'ensemble des endomorphisme vérifiant $(*)$ est-il un sous-espace vectoriel de $\cL(E)$, espace des endomorphismes de $E$ ? 
+\end{enumerate}
+
+
+\paragraph{Etude des puissance de $f$}
+On suppose dans la suite que $f$ est une solution de $(*)$ et que $f$ n'est pas de la forme $\lambda \Id_E$. 
+\begin{enumerate}
+\item Montrer que $(f, \Id_E)$ est une famille libre de $\cL(E)$
+\item \begin{enumerate}
+\item Exprimer $f^3$ et $f^4$ comme combinaison linéaire de $\Id_E$ et $f$. 
+\item Montrer que pour tout $n$ de $\N$, $f^n$ peut s'écrire sous la forme $f^n = a_n f +b_n \Id_E$ avec $(a_n,b_n) \in \R^2$
+\item Justifier que dans l'écriture précédente, le couple $(a_n,b_n) $ est unique.
+
+\end{enumerate}
+\item \begin{enumerate}
+\item Montrer que pour tout entier $n\in \N$, $a_{n+1} -3a_n +2a_{n-1} = 0$
+\item En déduire une expression de $a_n$ ne faisant intervenir que $n$. 
+\item Calculer alors $b_n$.
+\end{enumerate}
+
+\end{enumerate}
+
+
+
+\subsubsection{Polynômes et application linéaires}
+$\R[X]$ désigne l'espace vectoriel des polynômes à coefficients réels et pour tout entier $n\in \N$, 
+$\R_n[X]$ est le sous-espace vectoriel de $\R[X]$ formé des polynômes de degré inférieur ou égal à $n$.
+
+On considère l'application $$\Delta \left|\begin{array}{ccc}
+\R[X] & \tv & \R[X]\\
+P &\mapsto  & P(X+1) -P(X)
+\end{array}\right.$$
+$P(X+1)$ désigne la composée et non le produit des polynômes $P$ et $X+1$.
+\paragraph{Etude d'un endomorphisme }
+\begin{enumerate}
+\item Vérifier que $\Delta$ est un endomorphisme de $\R[X]$. 
+\item Calculer $\Delta(X^k)$ pour tout $k\in N$.
+\item \begin{enumerate}
+\item Montrer que si $P\in \ker(\Delta)$ alors, pour tout entier $n\in \N$, $P(n) = P(0)$ 
+\item En déduire que si $P\in \ker(\Delta)$ alors  $P$ est un polynôme constant. 
+\item Montrer alors que $\ker(\Delta) = \R_0[X]$.
+\end{enumerate}
+\item \begin{enumerate}
+\item Si $P$ n'est pas un polynôme constant, préciser le degré de $\Delta(P)$ en fonction de celui de $P$, ainsi que le coefficient dominant. 
+\item Soit $n\in\N^*$, montrer que $\Delta(\R_{n}[X] ) \subset \R_{n-1} [X]$
+
+\end{enumerate}
+\item soit $n\geq 1$, on note $\Delta_n$ l'endomorphisme induit par $\Delta $ sur $\R_n[X]$. C'est-à-dire $$\Delta_n \left|\begin{array}{ccc}
+\R_n[X] & \tv & \R_n[X]\\
+P &\mapsto  & \Delta(P)
+\end{array}\right.$$
+
+Déterminer $\ker \Delta_n$ et montrer que $\mathrm{Im} \Delta_n = \R_{n-1} [X]$
+\item Montrer que $\Delta$ est surjectif. 
+\item On considère $F =\{ P \in \R[X] \, |\, P(0)=0\} $.
+\begin{enumerate}
+\item Vérifier que $P$ est un sev de $\R[X] $ et que $F\cap \ker(\Delta) = \{ 0\} $
+%\item Montrer que pour tout $Q \in \R[X]$ il existe un unique couple $(A,B)$ de polynômes tel que \begin{itemize}
+%\item $A\in F$, $B\in \ker(\Delta)$
+%\item $A+B =Q$
+%\end{itemize}
+\item Conclure que pour tout polynôme $Q$ de $\R[X]$ il existe un unique polynôme $P$ de $\R[X]$ tel que $P(0)=0$ et $\Delta(P)= Q$. Préciser le degré de $P$ en fonction de celui de $Q$. 
+\end{enumerate}
+\end{enumerate}
+
+\paragraph{Etude d'une suite de polynômes}
+\begin{enumerate}
+\item Montrer qu'il existe une unique suite $\suite{P}$ d'éléments de $\R[X]$ vérifiant $P_0=1$ et pour tout $n\in \N^*$ : $P_n(0)=0$ et $P_{n-1} =\Delta(P_n)$.
+\item Expliciter $P_1$ et $P_2$.
+\item Montrer que pour tout entier $n\geq1 $, $P_n = \frac{X (X-1) \cdots (X-n+1) }{n!}$.
+\item Montrer que pour tout entier $n\geq 1$, la famille $(P_0, \cdots, P_n)$ est une base de $\R_n[X]$.
+\end{enumerate}
+
+ 
+
+\begin{correction}
+\begin{enumerate}
+\item $g$ est une fonction de $\R^2$ dans $\R^2$, il suffit donc de vérifier que $g$ est linéaire. Pour cela on considère $(x_1,y_1)\in R^2,(x_2,y_2) \in \R^2, \lambda \in \R$ et 
+\begin{align*}
+g( (x_1,y_1) + \lambda (x_2,y_2))& = g( x_1 +\lambda x_2 , y_1 +\lambda y_2) \\
+												&= (3(x_1 +\lambda x_2)  +2 (y_1 +\lambda y_2) , - (x_1 +\lambda x_2)) \\
+												&= (3x_1 + 2y_1 +\lambda (3 x_2 +2y_2),  -x_1 -lambda x_2))\\
+												&= (3x_1 + 2y_1, -x_1) +  \lambda (3 x_2 +2y_2,  -x_2))\\
+												&= g(x_1,y_1) +\lambda g(x_2,y_2)
+\end{align*}
+Ainsi $g$ est linéaire, 
+\conclusion{ $g$ est donc un endomorphisme de $\R^2$}
+\item Soit $(x,y)\in \R^2$ 
+\begin{align*}
+g\circ g(x,y) &=g(3x+2y,-x)\\
+					&= (3 (3x+2y) +2 (-x) , - (3x+2y))\\
+					&=( 7x +6y, -3x-2y)\\
+					&= (9x+6y, -3x) + (-2x,-2y)\\
+					&= 3 (3x+2y,-x) -2(x,y)\\
+					&= 3 g(x,y) - 2\Id (x,y)
+\end{align*}
+
+\conclusion{ On a bien $g^2 = 3g -2\Id$}
+\item 
+\begin{align*}
+F&=\ker( g-\Id)\\
+  &= \{ (x,y)\in \R^2\, |\, g(x,y)-(x,y) =(0,0)\}\\
+  &= \{ (x,y)\in \R^2\, |\, (2x+2y,-x-y) =(0,0)\}\\
+  &= \{ (x,y)\in \R^2\, |\, 2x+2y=0 \text{ et } x+y = 0 \}\\
+  &= \{ (x,y)\in \R^2\, |\, x+y=0\}\\
+  &= \{ (x,y)\in \R^2\, |\, x=-y\}\\
+  &= \{ (-y,y)\, |\,y \in \R\}\\
+  &=\{ y(-1,1)\, |\,y \in \R\}\\
+  &= Vect(( -1,1))
+\end{align*}
+
+\conclusion{ Ainsi $F$ est un sev de $\R^2$ de dimension $1$, et $(-1,1)$ est une base de $F$}
+\item 
+\begin{align*}
+G&=\ker( g-2\Id)\\
+  &= \{ (x,y)\in \R^2\, |\, g(x,y)-2(x,y) =(0,0)\}\\
+  &= \{ (x,y)\in \R^2\, |\, (x+2y,-x-2y) =(0,0)\}\\
+  &= \{ (x,y)\in \R^2\, |\, x+2y=0 \text{ et } -x-2y = 0 \}\\
+  &= \{ (x,y)\in \R^2\, |\, x+2y=0\}\\
+  &= \{ (x,y)\in \R^2\, |\, x=-2y\}\\
+  &= \{ (-2y,y)\, |\,y \in \R\}\\
+  &=\{ y(-2,1)\, |\,y \in \R\}\\
+  &= Vect(( -2,1))
+\end{align*}
+
+\conclusion{ Ainsi $G$ est un sev de $\R^2$ de dimension $1$, et $(-2,1)$ est une base de $G$}
+
+\item  Comme $F$ et $G$ sont des espaces vectoriels, $0 \in F$ et $0\in G$ donc, 
+$\{ (0,0) \} \subset F\cap G$. 
+
+
+Soit $u \in F\cap G$, comme $u \in F$ on a $g(u)-u=0$ et  donc $g(u)=u$.  Comme $u \in G$ on a $g(u)-2u =0$ donc $g(u) =2u$. Ainsi 
+$u=2u$ et donc $u=0$. On a donc $F\cap G\subset \{ (0,0)\}$
+
+\conclusion{ Par double inclusion $F\cap G= \{ (0,0)\}$}
+
+\item $u$ et $v$ ne sont pas proportionnels et forment donc une famille libre. Comme $Card((u,v)) = 2 = \dim(\R^2)$, $(u,v)$ est aussi une famille génératrice de $\R^2$. 
+\conclusion{ $(u,v)$ est une base de $\R^2$}
+
+\item On cherche $\lambda, \mu \in \R^2$ tel que 
+$$\lambda u+\mu v =(x,v)$$
+On obtient le système suivant : 
+
+$$\left\{ \begin{array}{cc}
+\lambda -2\mu &= x\\
+-\lambda +\mu &=y
+\end{array}
+\right. \equivaut\left\{ \begin{array}{cc}
+\lambda -2\mu &= x\\
+-\mu &=y+ x
+\end{array}
+\right. \equivaut\left\{ \begin{array}{cc}
+\lambda &= -x-2y\\
+\mu &=-y- x
+\end{array}
+\right.$$
+
+\conclusion{ Pour tout $(x,y) \in \R^2 $ on a $(-x-2y)u + (-y-z) v= (x,y)$}
+
+\item 
+Prouvons par récurrence la proposition  $P(n):"g^n(u)  =u \text{ et } g^n (v) = 2^n v"$
+
+\paragraph{Initialisation }
+$g(u)= u$ et $ g(v) =2v$ car $u\in F$ et $v\in G$. donc $P(1) $ est vraie. 
+
+\paragraph{Hérédité}
+On suppose qu'il existe $n\in \N^*$ tel que $P(n)$ soit vraie. On a alors par HR, 
+$g^n(u) = u$ et $g^n(v) =2^n v$ donc 
+$$g^{n+1} (u) =g (g^n(u)) = g(u) =u$$
+et $$g^{n+1} (u) =g (g^n(v)) = g(2^nv) =2^n g(v) = 2^{n+1} v$$
+
+Ainsi la propriété $P$ est héréditaire, 
+
+\conclusion{ Pour tout $n\in N^*,  g^n(u)  =u \text{ et } g^n (v) = 2^n v$}
+\item 
+D'après la question  7: 
+$$g^n (x,y) = g^n((-x-2y)u + (-y-z) v) = (-x-2y) g^(u) +(-y-z)g^n (v)$$
+
+D'après la question 8, on a donc 
+$$g^n (x,y) = (-x-2y) u + (-x-y) 2^n v$$
+
+Ainsi 
+\begin{align*}
+g^n (x,y) &= (-x-2y) (1,-1) + (-2^n x -2^n y) (-2,1)\\
+				&=( -x-2y +2^{n+1} x +2^{n+1} y , x+2y -2^n x-2^n y)
+\end{align*}
+Pour tout $(x,y) \in \R^2$ pour tout $n\in \N^* $ on a : 
+\conclusion{  $g^n(x,y)=  (  (-1 +2^{n+1}) x +(-2+2^{n+1}) y , (1-2^n) x +(2-2^n) y )$}
+
+\item 
+La matrice de $g$ dans la base canonique est la matrice 
+$$A =\begin{pmatrix}
+3 & 2\\
+-1 & 0
+\end{pmatrix}$$
+D'après la question précédente, la matrice de $g^n$ est 
+\conclusion{$A^n = \begin{pmatrix}
+-1+2^{n+1} & -2+2^{n+1}\\
+ 1-2^n & 2-2^n
+\end{pmatrix}$}
+
+
+
+
+
+\end{enumerate}
+B - Cas général. 
+\begin{enumerate}
+\item Si $f$ vérifie $(*)$ on a 
+$f^2 = 3f- 2\Id_E$ donc $-f^2+3f =2\Id_E$ soit encore 
+$$f\circ \frac{1}{2}(-f +3\Id) = \Id_E$$
+\conclusion{ 
+$f$ est bijective et $f^{-1} =  \frac{1}{2}(-f +3\Id) $}
+
+\item Soit $f =\lambda \Id_E$ une solution de $(*)$ on a alors 
+$f^2 = \lambda^2 \Id_E$   et donc 
+$$\lambda^2 \Id_E = 3\lambda  \Id_E - 2\Id_E$$
+Donc $$(\lambda^2 - 3\lambda +2) \Id_E =0$$
+Comme $\Id_E$ n'est pas l'application nulle, on a $(\lambda^2 - 3\lambda +2)=0$ ainsi 
+$$(\lambda -1) (\lambda -2) =0$$
+ Finalement $\lambda \in \{1,2\}$
+ 
+ \conclusion{ Les seules solutions de $(*)$ de la forme $\lambda \Id_E$ sont $\Id_E $ et $2\Id_E$} 
+ 
+ \item \begin{enumerate}
+ \item Soit $f$ solution   de $(*)$ on a donc $f^2 =3f-2\Id_E$, en composant par $f$ on obtient 
+ $$f^3 =3f^2 -2f$$
+ Or $f^2 =3f-2\Id_E$ donc 
+\begin{align*}
+f^3 &= 3 (3f-2\Id_E) -2f \\
+		&= 7f -6\Id_E
+\end{align*}
+
+\conclusion{ $f^3 =7f-6\Id_E$}
+
+\item Montrons la propriété par récurrence. 
+
+Pour $n=1$ ,  $f^1 =f$ donc $a_1 =1 $ et $b_1 =0$ satisfont la condition demandée. 
+
+Supposons donc qu'il existe $n\in \N$ tel que $P(n) $ soit vraie. Il existe donc $(a_n,b_n)$ tel que 
+$f^n =a_n f +b_n \Id_E$
+En composant par $f$ on obtient 
+
+$$f^{n+1} =a_n f^2 +b_n f$$
+ Or $f^2 =3f-2\Id_E$ donc 
+\begin{align*}
+f^{n+1}  &= a_n (3f-2\Id_E) +b_nf  \\
+		&= (3a_n +b_n) f -2a_n\Id_E\\
+		&=a_{n+1} f +b_{n+1}\Id_E\\
+\end{align*}
+avec $a_{n+1} = 3a_n +b_n$ et $b_{n+1} = -2a_n$
+\conclusion{ Pour tout $n\in \N$, il existe $(a_n,b_n)$ tel que $f^n=a_n f +b_n \Id_E$}
+
+
+
+
+
+
+ \end{enumerate}
+\item \begin{enumerate}
+\item D'après la question précédente  $b_{n+1} = -2a_n$ donc $b_n =-2a_{n+1}$. En remettant dans l'équation  $a_{n+1} = 3a_n +b_n$, on obtient 
+$$a_{n+1} =3 a_n -2a_{n-1}$$
+
+\conclusion{ $\forall n\in \N, \, a_{n+1} -3 a_n +2a_{n-1}=0$}
+
+\item  On reconnait une suite récurrente linéaire d'ordre 2 à coefficients constants. Son équation caractérisitique est $X^2 -3X +2 =0$ dont les racines sont $1$ et $2$. 
+
+Ainsi il existe $\alpha, \beta \in \R$ tel que pour tout $n\in \N$ 
+
+$$a_{n} = \alpha +\beta 2^n $$ 
+
+D'après l'initialisation de la récurrence on sait que $a_0 = 0 $ et $a_1 =1$, donc 
+$\alpha +\beta =0$ et $\alpha +2 \beta =1$. Tout calcul fait, on obtient : 
+\conclusion{ $\forall n\in \N, a_n = -1 +2^n$} 
+
+\item On sait que $b_n = -2a_{n+1}$ donc 
+\conclusion{$b_n = -1 +2^{n+1}$}
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{correction}

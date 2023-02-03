@@ -1,0 +1,77 @@
+% Titre : Etude de $ f(x) = \ln\left(\sqrt{\frac{1}{2}+ \sin(x)}\right)$
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Résoudre $\sin(x) \geq \frac{-1}{2} $ sur $[0,2\pi],$ puis sur $\R$
+\item Donner l'ensemble de définition et de dérivabilité de $f$ définie par 
+$$ f(x) = \ln\left(\sqrt{\frac{1}{2}+ \sin(x)}\right)$$
+\item Rappeler la formule de dérivée d'une composée $(f\circ g) '$. 
+\item Calculer la dérivée de $f$ sur son ensemble de dérivabililité. 
+\item Calculer l'équation de la tangente à la courbe représentative de $f$ en $\frac{\pi}{6}$. 
+\item On rappelle que la fonction $a\% b$ en Python renvoie le reste de la division de $a$ par $b$, c'ets à dire l'unique réel $r$ entre $[0,b[$ tel qu'il existe $k\in \Z$ vérifiant $a= kb+r$. Cette fonction  peut prendre des paramètres $a,b$ réels, pas nécessairement entier. 
+\begin{enumerate}
+\item Ecrire une fonction Python \texttt{reste} qui prend en paramètre un réel $x$ et qui retourne son reste modulo $2\pi$. 
+\item Ecrire une fonction python  \texttt{definition} qui prend en paramètre un réel $x$ et renvoi $1$ si $x\in D_f$ et $0$ sinon. 
+\item Ecrire une fonction python \texttt{f} qui prend en parmètre un réel $x$, qui renvoie un message d'erreur si $x\notin D_f$ et retourne la valeur de $f(x)$ sinon.  
+\end{enumerate}
+\end{enumerate}
+
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item Sur $[0,2\pi]$ les solutions sont $S_0=[0,\frac{7\pi}{6}]\cup [\frac{11\pi}{6},2\pi]$. Sur $\R$, les solutions sont $S=\bigcup_{k\in \Z} [2k\pi,\frac{7\pi}{6}+2k\pi]\cup [\frac{11\pi}{6}+2k\pi,2\pi+2k\pi]$
+\item Pour que $f(x)$ soit défini il faut que : 
+
+\begin{itemize}
+\item  $\frac{1}{2}+\sin(x) \geq 0$ (racine défini sur $R_+$.)
+\item  $\sqrt{(\frac{1}{2}+\sin(x) )} >0$  (ln définie sur $\R_+^*$. )
+\end{itemize}
+Ces equations donnent $$D_f = \bigcup_{k\in \Z} [2k\pi,\frac{7\pi}{6}+2k\pi[\cup ]\frac{11\pi}{6}+2k\pi,2\pi+2k\pi]=\bigcup_{k\in \Z} ]\frac{-\pi}{6}+2k\pi,\frac{7\pi}{6}+2k\pi[ $$
+
+La fonction est dérivable sur le même ensemble $D_f=D_{f'}$
+
+\item $(f\circ g)' = g' \times f'\circ g$. 
+\item Pour tout $x\in D_{f}$ on a :
+$f(x) = \frac{1}{2}\ln(\frac{1}{2}+\sin(x))$ et donc
+$$f'(x) = \frac{1}{2} \cos(x) \frac{1}{\frac{1}{2}+\sin(x)}= \frac{\cos(x)}{1+2\sin(x)}$$
+\item LA fonction est dérivable en $\frac{\pi}{6}$, donc la courbe admet une tangente en ce point.  L'équation de la tangente est $y-f(\frac{\pi}{6}) =f'(\frac{\pi}{6}) (x-\frac{\pi}{6}) $ Ce qui donne : 
+$$ y =\frac{\sqrt{3}}{4}(x-\frac{\pi}{6})$$ 
+
+
+\item
+\begin{lstlisting}
+from math import *
+def reste(x):
+  r=x%2*pi
+  return(r)
+  
+def definition1(x):
+  r=reste(x)
+  if  0<= r<7*pi/6 or  11*pi/6<r:
+    return(1)
+  else:
+    return(0)
+
+def definition2(x): #autre solution
+  if  sin(x)<1/2:
+    return(1)
+  else:
+    return(0)
+    
+def f(x):
+  if definition1(x)==1:
+    return(log(sqrt( 1/2 +sin(x)))
+  else:
+    return('x n est pas dans le domaine de defiition')
+   
+\end{lstlisting}
+\end{enumerate}
+\end{correction}

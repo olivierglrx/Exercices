@@ -1,3 +1,13 @@
+% Titre : complexe
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :complexe
+% Subcategories : 
+% Keywords : complexe
+
+
+
 
 \begin{exercice}  \;
 R\'esoudre dans $\bC$ les \'equations suivantes et mettre les solutions sous forme exponentielle.
@@ -13,3 +23,112 @@ R\'esoudre dans $\bC$ les \'equations suivantes et mettre les solutions sous for
 \end{minipage}
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+ \item \textbf{R\'esolution de $\mathbf{z^2=i}$ :}
+Comme 0 n'est pas solution, on cherche les solutions $z$ sous la forme exponentielle $z=re^{i\theta}$ avec $r>0$ et $\theta\in\R$.
+$$ 
+z^2=i \Leftrightarrow  r^2e^{2i\theta}=e^{i\frac{\pi}{2}}
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r^2=1\vsec\\
+\exists k\in\Z,\ 2\theta=\ddp\frac{\pi}{2}+2k\pi
+\end{array}\right. 
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r=1\vsec\\
+\exists k\in\Z,\ \theta=\ddp\frac{\pi}{4}+k\pi.
+\end{array}\right. 
+$$
+Ainsi,
+$$\fbox{$\mathcal{S}=\left\lbrace  e^{i\frac{\pi}{4}},e^{i\frac{5\pi}{4}} \right\rbrace=\left\lbrace 
+\ddp\frac{1+i}{\sqrt{2}},\ddp\frac{-1-i}{\sqrt{2}}  \right\rbrace   .$}$$
+%----------------------------------------------------
+ \item \textbf{R\'esolution de $\mathbf{z^3=i}$ :}
+ Comme 0 n'est pas solution, on cherche les solutions $z$ sous la forme exponentielle $z=re^{i\theta}$ avec $r>0$ et $\theta\in\R$.
+$$ 
+z^3=i \Leftrightarrow  r^3e^{3i\theta}=e^{i\frac{\pi}{2}}
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r^3=1\vsec\\
+\exists k\in\Z,\ 3\theta=\ddp\frac{\pi}{2}+2k\pi
+\end{array}\right. 
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r=1\vsec\\
+\exists k\in\Z,\ \theta=\ddp\frac{\pi}{6}+\ddp\frac{2k\pi}{3}.
+\end{array}\right. 
+$$
+Ainsi,
+$$\fbox{$\mathcal{S}=\left\lbrace  e^{i\frac{\pi}{6}},e^{i\frac{5\pi}{6}},e^{i\frac{3\pi}{2}} \right\rbrace=\left\lbrace 
+\ddp\frac{\sqrt{3}+i}{2},\ddp\frac{-\sqrt{3}+i}{2},-i  \right\rbrace   .$}$$
+%------------------------------------------------------
+\item  \textbf{R\'esolution de $\mathbf{z^4=-4}$ :}
+0 n'est pas solution, on cherche donc les solutions sous la forme $z=re^{i\theta}$ avec $r>0$ et $\theta\in\R$.
+On obtient alors
+$$
+z^4=-4 \Leftrightarrow  r^4e^{4i\theta}=4e^{i\pi}
+\Leftrightarrow  \left\lbrace\begin{array}{lll}
+r^4=4\vsec\\
+\exists k\in\Z,\ 4\theta=\pi+2k\pi
+\end{array} \right.
+\Leftrightarrow  \left\lbrace\begin{array}{lll}
+r=\sqrt{2}\vsec\\
+\exists k\in\Z,\ \theta=\ddp\frac{\pi}{4}+\ddp\frac{k\pi}{2}.
+\end{array} \right.$$
+Ainsi, les solutions sont $\fbox{$ \mathcal{S}=\left\lbrace \sqrt{2}e^{i\frac{\pi}{4}},\sqrt{2}e^{i\frac{3\pi}{4}},\sqrt{2}e^{-i\frac{3\pi}{4}} ,\sqrt{2}e^{-i\frac{\pi}{4}}\right\rbrace .$}$
+%-----------------------------------------------------
+\item \textbf{R\'esolution de $\mathbf{z^2=3-4i}$ :}
+\begin{itemize}
+ \item[$\bullet$]
+On commence par essayer d'appliquer la m\'ethode du cours et on cherche donc \`a mettre $3-4i$ sous forme exponentielle. On ne trouve pas de forme exponentielle simple. Pour les racines secondes d'un nombre complexe, il existe aussi une autre m\'ethode qui utilise la forme alg\'ebrique. 
+\item[$\bullet$]  M\'ethode avec la forme alg\'ebrique pour les racines SECONDES d'un nombre complexe.\\
+On cherche donc $z$ sous la forme $z=x+iy$. On obtient donc
+$$z^2=3-4i\Leftrightarrow (x+iy)^2=3-4i  \Leftrightarrow x^2-y^2+2xy i = 3-4i \Leftrightarrow \left\lbrace\begin{array}{l}
+x^2-y^2=3\vsec\\
+2xy=-4.
+\end{array}\right.$$
+On obtient donc, car $xy=-2$, donc $x\not=0$ :
+$$\begin{array}{lllll}
+z^2=3-4i&\Leftrightarrow& \left\lbrace\begin{array}{l}
+x^2-y^2=3\vsec\\
+y=-\ddp\frac{2}{x}
+\end{array}\right.
+\Leftrightarrow 
+\left\lbrace\begin{array}{ll}
+\ddp x^2 - \frac{4}{x^2}=3&\vsec\\
+y=-\ddp\frac{2}{x}
+\end{array}\right.
+&\Leftrightarrow & 
+\left\lbrace\begin{array}{lll}
+x^4-3x^2-4 = 0\vsec\\
+y=-\ddp\frac{2}{x}
+\end{array}\right.
+\end{array}$$
+Dans la premi\`ere \'equation on pose $X=x^2$. On obtient alors : $X^2-3X-4=0$, dont les solutions sont $X_1=-1$ et $X_2=4$. On revient \`a $x$ : on a $x^2=-1$ qui est impossible, ou $x^2=4 \Leftrightarrow x=2$ ou $x=-2$. On en d\'eduit dont gr\^ace \`a la deuxi\`eme \'equation :
+$$z^2=3-4i \Leftrightarrow \left\{\begin{array}{rcr} x&=&2\\b&=&-1\end{array}\right. \textmd{ ou } \left\{\begin{array}{rcr} x&=&-2\\b&=&1\end{array}\right. $$
+Ainsi, les solutions sont $\fbox{$ \mathcal{S}=\left\lbrace  2-i, -2+i\right\rbrace .$}$
+\end{itemize}
+%---------------------------------------------
+\item \textbf{R\'esolution de $\mathbf{z^4=j}$ :}
+0 n'est pas solution, on cherche donc les solutions $z$ sous la forme $z=re^{i\theta}$ avec $r>0$ et $\theta\in\R$. On obtient
+$$
+z^4=j \Leftrightarrow  r^4e^{4i\theta}=j
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r^4=1\vsec\\
+\exists k\in\Z,\ 4\theta=\ddp\frac{2\pi}{3}+2k\pi
+\end{array}\right.
+\Leftrightarrow  \left\lbrace\begin{array}{l}
+r=1\vsec\\
+\exists k\in\Z,\ \theta=\ddp\frac{\pi}{6}+\ddp\frac{k\pi}{2}.
+\end{array}\right.
+$$
+Ainsi, $\fbox{$ \mathcal{S}=\left\lbrace  e^{i\frac{\pi}{6}},e^{i\frac{2\pi}{3}},e^{i\frac{-5\pi}{6}},e^{i\frac{-\pi}{3}}  \right\rbrace .$}$
+%----------------------------------------------------
+\end{enumerate}
+\end{correction}

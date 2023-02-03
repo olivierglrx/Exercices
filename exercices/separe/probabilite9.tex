@@ -1,0 +1,96 @@
+% Titre : Archers proba de réussite
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : probabilite
+% Subcategories : 
+% Keywords : probabilite
+
+
+
+
+
+
+\begin{exercice}
+On considère deux archers $A_1$ et $A_2$ qui tirent chacun sur une cible de manière indépendante. 
+L’archer $A_1$ (respectivement $A_2$) touche sa cible avec une probabilité $p_1$ (respectivement 
+$p_2$) strictement comprise entre $0$ et $1$. On suppose de plus que les tirs des joueurs sont 
+indépendants les uns des autres. On appelle $X_1$ (respectivement $X_2$) la variable aléatoire donnant 
+le nombre de tirs nécessaires à l’archer $A_1$ (respectivement $A_2$) pour qu’il touche sa cible pour la 
+première fois. On note $q_1=1-p_1$ et $q_2=1 -p_2$
+\begin{enumerate}
+\item Déterminer les valeurs possibles prises par $X_1$
+
+\item On introduit, pour tout entier naturel non nul $i$, l'événement $E_i$ : \og Le joeur $A_1$ touche la cible à son $i$-ème tir\fg\, . 
+Exprimer, pour tout $k\in \N^*$ l'événement $(X_1=k)$ à l'aide des événements $E_i$, $i\in \N^*$
+\item En déduire la loi de $X_1$
+\begin{enumerate}
+\item Pour tout entier naturel non nul $k$, calculer $P(X_1>k)$ (on pourra s'intéresser à l'événement contraire) 
+\item En déduire que 
+$$\forall (n,m) \in {\N^*}^2, \quad P_{(X_1>m)} (X_1>n+m) = P(X_1>n)$$
+\end{enumerate}
+\item Calculer $P(X_1=X_2)$ (un peu difficile, il faut considérer des limites..., soit $\suite{u}$ une suite on pourra noter 
+$\lim_{k\tv \infty} \sum_{k=1}^n u_k $ de la manière suivante $\sum_{k=1}^\infty u_k$, il faudra évidemment s'assurer que la limite existe avant de faire ce genre de chose) 
+) 
+\end{enumerate}
+\end{exercice}
+
+
+
+\begin{correction}
+\begin{enumerate}
+
+\item $X_1(\Omega) =\N^*$
+\item $(X_1= k) = \ddp \bigcap_{i=1}^{k-1} \bar{E_i} \cap E_k$
+
+\item Ainsi par indépendances de tirs 
+\begin{align*}
+P(X_1= k) &= \ddp \prod_{i=1}^{k-1}P( \bar{E_i}) \cap P(E_k)\\
+				&=q_1^{k-1}p_1
+\end{align*}
+
+
+\begin{enumerate}
+\item $P(X_1>k) = 1-P(X_1 \leq k) $ et $P(X_1\leq k)$ 
+Les événements $P(X_1 = i)$ avec $i\in \intent{1,k}$ sont disjoints on a donc 
+\begin{align*}
+P(X_1 \leq k) &= \sum_{i=1}^k P(X_1= i)\\
+					& = \sum_{i=1}^k q_1^{i-1}p_1\\
+					&=\frac{1-q_1^k}{1-q_1}p_1\\
+					&=1-q_1^k
+\end{align*}
+
+\item Calculons $ P_{(X_1>m)} (X_1>n+m)$. On a  : 
+\begin{align*}
+P_{(X_1>m)} (X_1>n+m) &= \frac{P(X_1>m \text{ et } X_1>n+m)}{P(X_1>m)}\\
+								&= \frac{X_1>n+m)}{P(X_1>m)}\\
+								&= \frac{q_1^{n+m}}{q_1^m}\\
+								&=q^n_1\\
+								&= P(X_1>n)
+\end{align*}
+
+\end{enumerate}
+
+\item Cette dernière question est vraiment du niveau de deuxième année (voire dur pour de la deuxième année... donc ne vous inquiétez pas si vous n'y êtes pas arrivés ! )
+
+L'événement ($X_1 =X_2$) est égale à l'union disjointes  :
+$$\bigcup_{k\in \N} (X_1 = k \text{ et } X_2 = k) $$
+
+On a donc 
+$$P(X_1= X_2) = \sum_{k\in \N} P (X_1 = k \text{ et } X_2 = k)$$
+On somme ici un nombre infini de termes, on va donc considérer la limite correspondante : 
+$$P(X_1= X_2)  = \lim_{n\tv \infty}  \sum_{k\in n} P (X_1 = k \text{ et } X_2 = k)$$
+Comme $X_1= k $ et $X_2=k$ sont deux événements indépendants on a 
+\begin{align*}
+P(X_1= X_2) & = \lim_{n\tv \infty}  \sum_{k= 1}^n P (X_1 = k ) P(X_2 = k)\\
+					&= \lim_{n\tv \infty}  \sum_{k= 1}^nq_1^{k-1} p_1 q_2^{k-1} p_2\\
+					&= \lim_{n\tv \infty}  p_1p_2\sum_{k= 1}^n (q_1q_2)^{k-1} \\\\
+					&= \lim_{n\tv \infty}  p_1p_2\frac{1-(q_1q_2)^n}{1-q_1q_2} \\					
+					&= \frac{p_1p_2}{1-q_1q_2} 
+\end{align*}
+
+
+\end{enumerate}
+
+
+\end{correction}

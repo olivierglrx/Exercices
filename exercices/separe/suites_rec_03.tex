@@ -1,3 +1,13 @@
+% Titre : suites
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :suites
+% Subcategories : 
+% Keywords : suites
+
+
+
 
 \begin{exercice} \;
 Soit une suite $\suiteu$ qui v\'erifie la relation de r\'ecurrence
@@ -12,3 +22,36 @@ Calculer $1-u_{n+1}$ en fonction de $1-u_n$.
 D\'eterminer la limite de la suite $\suiteu$, si elle existe, en fonction du premier terme $u_0$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction} \;
+\begin{enumerate}
+ \item Soit $n\in\N$, on a: $1-u_{n+1}=1+u_n^2-2u_n=(1-u_n)^2.$
+ \item On pose $v_n = 1-u_n$. On a alors $v_{n+1}=v_n^2$. Essayons de calculer $v_n$ : on a $v_1=v_0^2$, $v_2=v_0^4$, $v_3=v_0^8$. On conjecture donc : $\forall n\in\N,\ v_n=v_0^{2^n}$. \\
+Montrons par r\'ecurrence sur $n\in\N$ la propri\'et\'e : $\mathcal{P}(n):\quad v_n=v_0^{2^n}.$
+\begin{itemize}
+\item[$\bullet$]  Initialisation: pour $n=0$:\\
+\noindent On a: $v_0^{2^0}=v_0$. Donc $\mathcal{P}(0)$ est vraie.
+\item[$\bullet$]  H\'er\'edit\'e: Soit $n\in\N$. On suppose la propri\'et\'e vraie \`a l'ordre $n$, montrons qu'elle est vraie \`a l'ordre $n+1$. On a vu que: $v_{n+1}=v_n^2$. On utilise alors l'hypoth\`ese de r\'ecurrence et on obtient
+$$v_{n+1}=\left(v_0^{2^n}  \right)^2=v_0^{2^{n+1}}.$$
+Donc $\mathcal{P}(n+1)$ est vraie.
+\item[$\bullet$] Conclusion: il r\'esulte du principe de r\'ecurrence que
+$$\forall n\in\N,\quad v_n=v_0^{2^n}.$$
+\end{itemize}
+On obtient donc pour tout $n\in\N$: $u_n=1-(1-u_0)^{2^n}$.
+\begin{itemize}
+\item[$\bullet$] Si $1-u_0>1 \; \Leftrightarrow \; u_0<0$, alors : $\lim\limits_{n\to +\infty} (1-u_0)^{2^n}=+\infty$, donc $\lim\limits_{n\to +\infty} u_n=-\infty$.
+\item[$\bullet$] Si $u_0=0$, alors $1-u_0=1$ et ainsi: $\forall n\in\N,\quad u_n=0$ et donc $\lim\limits_{n\to +\infty} u_n=0$.
+\item[$\bullet$] Si $-1<1-u_0<1 \; \Leftrightarrow \; 0<u_0<2$, alors  : $\lim\limits_{n\to +\infty} u_n=1$.
+\item[$\bullet$] Si $u_0=2$, alors $1-u_0=-1$ et $(1-u_0)^{2^n} = 1$, et ainsi: $\forall n\in\N,\quad u_n=0$ et donc $\lim\limits_{n\to +\infty} u_n=0$.
+\item[$\bullet$] Si $1-u_0 < -1 \; \Leftrightarrow \; u_0 > 2$, alors $(1-u_0)^2 > 1$, et donc $\lim\limits_{n\to +\infty} (1-u_0)^{2^n}=+\infty$, soit $\lim\limits_{n\to +\infty} u_n=-\infty$.
+\end{itemize}
+\end{enumerate}
+\end{correction}

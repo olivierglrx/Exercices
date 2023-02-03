@@ -1,0 +1,10 @@
+\documentclass[11pt]{article}
+\usepackage{blindtext}
+\input{macro/package.tex}
+\input{macro/preambule.tex}
+\input{macro/header.tex}
+\input{macro/newcommand.tex}
+\usepackage[active, tightpage]{preview}
+\setlength\PreviewBorder{20pt}%
+\begin{document}
+\begin{preview}

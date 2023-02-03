@@ -1,4 +1,58 @@
+% Titre : fonctions
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :fonctions
+% Subcategories : 
+% Keywords : fonctions
+
+
+
 
 \begin{exercice}  \;
 Calculer les r\'eels suivants: $\cos{\left(\ddp\frac{\pi}{12}\right)},\ \sin{\left(\ddp\frac{\pi}{12}\right)},\ \cos{\left(\ddp\frac{7\pi}{12}\right)},\ \cos{\left(\ddp\frac{\pi}{8}\right)}\ \hbox{et}\ \sin{\left(\ddp\frac{\pi}{8}\right)} .$
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+\begin{correction}
+\begin{itemize}
+\item[$\bullet$] \textbf{Calcul de $\mathbf{\cos{\left(\ddp\frac{\pi}{12}\right)}}$:} on a $\ddp \frac{\pi}{3}-\frac{\pi}{4} = \frac{\pi}{12}$, donc :
+$$\ddp \cos\left(\ddp\frac{\pi}{12}\right) = \cos\left(\frac{\pi}{3}-\frac{\pi}{4}\right) = \cos \left(\frac{\pi}{3}\right)\cos \left(\frac{\pi}{4}\right) + \sin \left(\frac{\pi}{3}\right)\sin \left(\frac{\pi}{4}\right),$$
+soit apr\`es simplification : \fbox{$\ddp \cos \left(\frac{\pi}{12}\right) = \frac{\sqrt{2}(1+\sqrt{3})}{4}$}.
+\item[$\bullet$] \textbf{Calcul de $\mathbf{\sin{\left(\ddp\frac{\pi}{12}\right)}}$:}  de m\^eme, on a 
+$$\ddp \sin\left(\ddp\frac{\pi}{12}\right) = \sin\left(\frac{\pi}{3}-\frac{\pi}{4}\right) = \sin \left(\frac{\pi}{3}\right)\cos \left(\frac{\pi}{4}\right) - \cos \left(\frac{\pi}{3}\right)\sin \left(\frac{\pi}{4}\right),$$
+soit apr\`es simplification : \fbox{$\ddp \sin \left(\frac{\pi}{12}\right) = \frac{\sqrt{2}(\sqrt{3}-1)}{4}$}.
+\item[$\bullet$] \textbf{Calcul de $\mathbf{\cos{\left(\ddp\frac{7\pi}{12}\right)}}$:} \`a partir du calcul pr\'ec\'edent, on a :
+$$\ddp \cos{\left(\ddp\frac{7\pi}{12}\right)} = \cos{\left(\ddp\frac{\pi}{12}+\frac{\pi}{2}\right)} = -\sin{\left(\ddp\frac{\pi}{12}\right)} = \fbox{$\ddp \frac{\sqrt{2}(1-\sqrt{3})}{4}$}$$
+%-----
+\item[$\bullet$] \textbf{Calcul de $\mathbf{\cos{\left(\ddp\frac{\pi}{8}\right)}}$ et $\mathbf{\sin{\left(\ddp\frac{\pi}{8}\right)}}$:}  Il suffit de remarquer que: $\ddp\frac{\pi}{8}=\frac{\pi}{4}\times \demi$. On pose alors $\theta=\ddp\frac{\pi}{8}$ et on obtient par la formule de duplication des angles : $\cos{(2\theta)}=2\cos^2{(\theta)}-1.$
+Ainsi, 
+$$\cos^2{\left(\ddp\frac{\pi}{8}\right)}=\ddp\frac{\cos{\left(\frac{\pi}{4}\right)}+1}{2}=\ddp\frac{\sqrt{2}+2}{4}.$$
+Le r\'eel $\ddp\frac{\pi}{8}$ est dans l'intervalle $\left\lbrack 0,\ddp\frac{\pi}{2}\right\rbrack$ et le cosinus est positif sur cet intervalle, ainsi: 
+\begin{equation*}
+\fbox{
+$\cos{\left(\ddp\frac{\pi}{8}\right)}=\ddp\sqrt{\frac{\sqrt{2}+2}{4}}.$
+}
+\end{equation*}
+Une fois le cosinus connu, le sinus se d\'eduit par la formule $\cos^2{(x)}+\sin^2{(x)}=1$. On obtient ainsi, 
+$$\sin^2{\left(\ddp\frac{\pi}{8}\right)}=1-\ddp \frac{\sqrt{2}+2}{4} = \frac{2-\sqrt{2}}{4}.$$
+L\`a encore, le sinus \'etant positif sur l'intervalle $\left\lbrack 0,\ddp\frac{\pi}{2}\right\rbrack$, on obtient: 
+\begin{equation*}
+\fbox{
+$\sin{\left(\ddp\frac{\pi}{8}\right)}=\ddp\sqrt{\frac{2-\sqrt{2}}{4}}.$
+}
+\end{equation*}
+\end{itemize}
+\end{correction}
+
+\newpage
+
+
+%---------------------------------------------------
+%--------------------------------------------------

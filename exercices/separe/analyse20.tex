@@ -1,0 +1,63 @@
+% Titre :  Suite définites implicitement $x^3+nx-1$ (Pb) 
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Montrer que pour tout $n\in \N^*$ l'équation $x^3+nx=1$ admet une unique solution dans $\R^+$. On la note $x_n$. 
+\item Montrer que $x_{n+1}^3+n x_{n+1}-1<0$.
+\item En déduite que la suite $\suite{x} $ est décroissante. 
+\item Justifier que la suite est minorée par $0$ et majorée par $1$. 
+\item En déduire que $\suite{x}$ converge. 
+\item A l'aide d'un raisonement par l'absurde justifier que cette limite vaut $0$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item  Soit $n\in \N$. Pour tout $x\in \R$, on note $f_n(x) = x^3+nx-1$. C'est un polynome de degré 3, il est dérivable sur $\R$ et on a 
+$$f'(x) = 3x^2 +n $$
+Comme $n\geq 0$, la dérivée est strictement positive sur $\R$ et ainsi la fonction $f_n$ est strictement croissante. 
+
+On a par ailleurs $f_n(0) = -1$ et $f_n(1) =n\geq  1$. Comme $f_n$ est continue sur $[0,1]$ et strictement croissante on peut appliquer le théorème de la bijection pour la valeur $0\in [f_n(0), f_n(1)]=[-1, 1]$. Ce théorème assure qu'il existe un unique réel $x_n\in [0,1]$ tel que $f_n(x_n) = 0$. 
+
+
+\item On calcule $f_n(x_{n+1}) = x_{n+1}^3 +n x_{n+1}-1$, on va montrer que $f_n(x_{n+1})<0$. Or par définition de $x_{n+1}$ on a $f_{n+1} (x_{n+1})=0$ ce qui donne:
+$$ x_{n+1}^3 +(n+1) x_{n+1}-1=0$$
+Donc $x_{n+1}^3 +n x_{n+1}-1=-x_{n+1}$
+
+Finalement en remplaçant dans la première égalité on obtient : 
+$$f_n(x_{n+1}) =-x_{n+1}$$
+Comme pour tout $n\in \N$, $x_n\geq 0$ d'après la première question,on a bien 
+$$f_n(x_{n+1}) <0$$
+
+\item Comme pour tout $n\in \N$,  $f_n $ est strictement croissante, 
+et $f_n(x_{n+1}) \leq f_n(x_n)$ on a 
+$$x_{n+1} \leq x_n$$
+Ainsi, $\suite{x}$ est décroissante. 
+
+\item Le raisonement effectué à la question 1 montre que la suite $\suite{x}$ est minorée par 0 et majorée par 1. 
+
+\item La suite $\suite{x}$ est décroissante et minorée. Le théorème de la limite monotone assure que $\suite{x}$ converge. Notons $\ell\in \R$ cette limite. 
+
+\item Comme $x_n\geq 0$ pour tout $n\in \N$, on a $\lim x_n \geq 0. $. Supposons par l'absurde que $\ell>0$. 
+
+On a alors d'une par $f_n(x_n) =0$ donc $\lim x_n^3 +nx_n-1=0$. Par ailleurs,  $\lim x_n^3 -1=\ell^3 -1$ et $\lim nx_n =+\infty$. Donc 
+$\lim x_n^3+nx_n -1=+\infty$. 
+Comme $0\neq +\infty$ et que la limite est unique, c'est une contradiction. Ainsi $\ell=0$. 
+
+
+
+
+\end{enumerate}
+
+
+\end{correction}

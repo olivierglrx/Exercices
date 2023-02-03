@@ -1,0 +1,50 @@
+% Titre : Géométrie représentation paramétrique de droite.
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : autres
+% Subcategories : 
+% Keywords : autres
+
+
+
+
+
+\begin{exercice}
+On considère les vecteurs de l'espace $\vec{u} =(-2,1,2)$ et $\vec{v} =(1,4,-1)$.
+\begin{enumerate}
+\item Calculer $\|\vec{u} \|$ et $\| (-2) \vec{v}\|$.
+\item Montrer que les vecteurs $\vec{u}$ et $\vec{v}$ sont orthogonaux. 
+\item Donner la représentation paramétrique de la droite $D$ passant par $A= (2,-3,1)$ et dirigée par $\vec{v}$. 
+\item Déterminer si le point $B=(3,1,0)$ appartient à $D$.  
+\end{enumerate} 
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item $$\|\vec{u} \| = \sqrt{ (-2)^2+1^2 +2^2 }= \sqrt{ 9}=3$$
+et 
+$$ \vec{v}= \sqrt{ 1^2+4^2 +(-1)^2 }= \sqrt{ 18}=3\sqrt{2}$$
+\item Calculons le produit scalaire entre $\vec{u}$ et $\vec{v}$:  $$\langle \vec{u}, \vec{v}\rangle = -2 \times 1 + 1 \times 4 +2\times -1  = -2+4-2=0$$
+D'après le cours, les deux vecteurs sont donc orthogonaux. 
+\item $M=(x,y,z)\in D$ si et seulement si $\vec{AM}$ est colinéaire à $\vec{v}$ si et seulement si il existe $\lambda \in \R $ tel que $\vec{AM} = \lambda \vec{v}$. On obtient donc 
+$$\left\{ \begin{array}{ccl}
+x-2&=&\lambda \times 1\\
+y+3&=&\lambda \times 4\\
+z-1&=&\lambda \times (-1)
+\end{array}\right.  \quad \equivaut \quad \left\{ \begin{array}{ccl}
+x&=&2+\lambda \\
+y&=&-3+4\lambda \\
+z&=&1-\lambda 
+\end{array}\right.  $$
+
+\item Il faut vérifier si il existe $\lambda \in \R$ tel que 
+$$\left\{ \begin{array}{ccl}
+3&=&2+\lambda \\
+1&=&-3+4\lambda \\
+0&=&1-\lambda 
+\end{array}\right.  $$
+
+La première équation donne $\lambda=1$, les autres équations sont compatibles : $1 = -3+4\times 1 $ et $ 0 = 1- 1\times 1$.  Ainsi $$B\in D$$
+\end{enumerate} 
+\end{correction}

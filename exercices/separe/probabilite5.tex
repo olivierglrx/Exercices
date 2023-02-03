@@ -1,0 +1,81 @@
+% Titre : Dénombrement des matrices à coefficients $\{ 0,1\}$ (Pb)
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : probabilite
+% Subcategories : 
+% Keywords : probabilite
+
+
+
+\begin{exercice}
+Soit $A_n[X]$ le sous ensemble de $\R_n[X]$ dont tous les coefficients sont dans $\{0,1\}.$ 
+
+\begin{enumerate}
+\item Combien y-a-t-il d'éléments dans $A_n[X]$  ?
+\item Combien y-a-t-il d'éléments dans $A_n[X]$ de degré $n$ ? 
+On muni $A_n[X]$ de la probabilité uniforme. 
+\item On choisit un polynôme $P$ aléatoirement dans $A_n[X]$, quelle est la probabilité que $P$ soit de degré $n$ ? 
+\item On choisit un polynôme $P$ aléatoirement dans $A_n[X]$, quelle est la probabilité que $P$ admette 0 comme racine ? 
+\item Quelle est la probabilité que $P$ admette $0$ comme racine simple (mais pas double)? 
+\item Quelle est la probabilité que $P$ admette $0$ comme racine double sachant que $0$ est racine  ? 
+\item On modélise un polynôme  $\sum_{k=0}^na_k X^k$ de degré $n$ par une liste Python de longueur $n+1$, dont les éléments sont donnés par $a_0,\cdots, a_n$ dans cette ordre. 
+\begin{enumerate}
+\item Donner la liste correspondant au polynôme  $P = X^3+X+1$
+\item Ecrire une fonction \texttt{polynôme} qui prend en argument le degré $n$ et qui retourne une liste correspondant à un polynôme de $A_n[X]$ dont les coefficients sont pris aléatoirement dans $\{0,1\}$. 
+\item Créer une fonction \texttt{degre} qui prend en argument une liste (représentant un polynôme) et qui retourne son degré. 
+\item Créer une fonction \texttt{racine} qui prend en argument une liste (représentant un polynôme) et qui vérifie si $0$ est racine ou ne l'est pas. 
+\end{enumerate}
+\end{enumerate} 
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item On peut choisir $n+1$ coefficients différents dans $\{0,1\}$. Il y a donc $2^{n+1}$ polynômes dans $A_n[X]$. 
+\item Pour qu'un polynôme de $A_n[X]$ soit de degré $n$ il faut que le coefficient associé au monome de degré $n$ soit non nul, c'est-à-dire égal à $1$. Les autres coefficients peuvent etre choisis de manière indépendante on a donc $2^n$  polynômes de degré $n$ dans $A_n[X]$. 
+\item D'après la question précédente et comme les probabilités sont uniformes on a $\bP( \text{$ P$ de degré n }) =\frac{2^n}{2^{n+1}} =\frac{1}{2}$
+\item $P$ admet $0$ comme racine si $a_0=0$, le même argument que précédemment montre que :
+$$\bP( \text{$ P$ admet 0 comme racine}) = \frac{1}{2}$$
+
+\item $P$ admet $0$ comme racine si $a_0=0$, elle n'est pas double si $a_1\neq 0$. Le même argument que précédemment montre que :
+$$\bP( \text{$ P$ admet 0 comme racine simple mais pas double }) = \frac{1}{4}$$
+\item $\bP( \text{$ P$ admet 0 comme racine  double } | \text{$ P$ admet 0 comme racine}  )  = \bP (a_1= 0 \text{ et } a_0 =0 | a_0 =0 ) $ Comme les choix de $a_1$ et $a_0$ sont indépendants on a 
+$$\bP( \text{$ P$ admet 0 comme racine  double } | \text{$ P$ admet 0 comme racine}  )   =\bP (a_1= 0 ) =\frac{1}{2}$$
+\item 
+\begin{enumerate}
+\item $P=X^3+X+1$ correspond à $[1,1,0,1]$
+\item 
+\begin{lstlisting}
+from random import randint
+def polynome(n):
+	L=[] #creation d une liste vide
+	for i in range(n+1): # il y a n+1 coefficients a choisir et non pas n 
+	  a_i=randint(0,1) #choix aleatoire du coefficient a_i
+	  L= L+[a_i] #on ajoute le coefficient a_i a la liste L
+	return(L)		  
+\end{lstlisting}
+\item 
+On va regarder tous les coefficients en commencant par le dernier, dès qu'on obtient un coefficient non nul il correspondra au degré du polynôme. 
+\begin{lstlisting}
+def degre(L):
+	i=n # on initialise donc le 'compteur' au degre le plus haut  : n 
+	while i>0:
+	  if L[i+1] != 0: #on verifie si le coefficient est non nul. 
+	  	return( 'Le polynome est de degre i')
+	  else:
+	    i=i-1 #on regarde ensuite le coefficient juste avant 
+	return(' C est le polynome nul')
+\end{lstlisting}
+
+\item 
+\begin{lstlisting}
+def racine(L):
+	if  L[0]==0:
+		return('0 est racine')
+	else: 
+		return('0 n est pas  racine')
+\end{lstlisting}
+\end{enumerate}
+\end{enumerate}
+\end{correction}

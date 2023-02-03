@@ -1,0 +1,60 @@
+% Titre : Complexe minimum/maximum
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : autres
+% Subcategories : 
+% Keywords : autres
+
+
+
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Résoudre pour $\theta\in \R$, l'équation $e^{i\theta}=1$.
+
+On note $f(\theta) = e^{-i \theta} +1 +e^{i \theta}+e^{2i \theta}+e^{3i \theta}+e^{4i \theta}$
+\item Montrer que $|f(\theta)|=\left| 1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta}\right|$
+\item En déduire que pour tout $\theta \in \R\setminus\{ 2k\pi , k \in \Z\}$ on a 
+$$\left| f(\theta)\right| = \left|\frac{\sin(3\theta)}{ \sin(\frac{\theta}{2})}\right|.$$
+\item En déduire la valeur de  $\inf\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}$. 
+\item Montrer que pour tout $\theta \in \R$, $ \left| f(\theta)\right|\leq 6$.
+\item En déduire la valeur de $\sup\{ \left| f(\theta)\right|\, ,\,  \theta \in \R\}$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+$e^{i\theta}=1$ si et seulement si $\cos(\theta) = 1 $ et $\sin(\theta) =0$ c'est-à-dire 
+$$\theta \in \{ 2k\pi , k \in \Z\}$$
+
+On a $f(\theta) = e^{-i\theta} (1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta})$. On a donc 
+$$|f(\theta)|=|e^{i\theta}| \left| 1+e^{i \theta}+e^{i2 \theta}+e^{i3 \theta}+e^{4i \theta}+e^{5i \theta}\right|$$
+Comme $|e^{i\theta}| =1$ on a bien le résultat souhaité. 
+
+On reconnait la somme des termes d'une suite géométrique de raison $e^{i\theta}$. La raison est différent de 1 d'après la question 1 et l'hypothése faite sur $\theta $.  On a donc 
+$$\left| f(\theta)\right| =\left| \frac{1-e^{i6\theta}}{1-e^{i\theta}}\right|$$
+On utilise l'angle moitié, on obtient 
+$$ \frac{1-e^{i6\theta}}{1-e^{i\theta}} = \frac{e^{i3\theta}(e^{-3i\theta}-e^{i3\theta})}{e^{i\theta/2}(e^{-i\theta/2}-e^{i\theta/2})} $$
+Donc 
+\begin{align*}
+\left| f(\theta)\right| &= \left| \frac{e^{i3\theta}}{e^{i\theta/2}} \right| \left|\frac{e^{-3i\theta}-e^{i3\theta}}{e^{-i\theta/2}-e^{i\theta/2)}}\right|\\
+								&=1\left|\frac{2i \sin(3\theta)}{2i\sin(\frac{\theta}{2})}\right|\\
+	&=\left| \frac{\sin(3\theta)}{\sin(\frac{\theta}{2})}\right|						
+\end{align*}
+
+Pour tout $\theta \in \R$ on a $|f(\theta)| \geq 0$ par définition du module. Par ailleurs, d'après la question précédente 
+$$\left| f(\pi)\right|= \left| \frac{\sin(3\pi)}{\sin(\frac{\pi}{2})}\right|	=0$$
+donc 
+\begin{center}
+\fbox{$\inf\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}=0.$ }
+\end{center}
+
+Pour le maximum on applique l'inégalité triangulaire, on a 
+$$\left| f(\theta)\right| \leq \left| e^{-i\theta}\right| + 1+\left| e^{i\theta}\right| + \left| e^{2i\theta}\right| + \left| e^{3i\theta}\right| + \left| e^{4i\theta}\right|=6$$
+Enfin pour $\theta=0$ on obtient $f(0)=6$ donc 
+\begin{center}
+\fbox{$\sup\{ \left| f(\theta)\right|\, ,\,  \theta \in \R \}=6.$ }
+\end{center}
+
+\end{correction}

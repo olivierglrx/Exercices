@@ -1,0 +1,79 @@
+% Titre : Moteur d'avion d'après G2E (Pb)
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : probabilite
+% Subcategories : 
+% Keywords : probabilite
+
+
+
+
+\begin{exercice}[D'après G2E 2014]
+Une compagnie aérienne dispose d’une flotte constituée de deux types d’avions : des trimoteurs (un moteur situé en queue d’avion et un moteur sous chaque aile) et des quadrimoteurs (deux moteurs sous chaque aile).
+
+Tous les moteurs de ces avions sont susceptibles, durant chaque vol, de tomber en panne avec la même probabilité $x\in ]0,1[$ et indépendamment les uns des autres. Toutefois, les trimoteurs peuvent achever leur vol si le moteur situé en queue ou les deux moteurs d’ailes sont en  état de marche et les quadrimoteurs le peuvent si au moins deux moteurs situés sous deux ailes distinctes sont en  état de marche.
+
+\begin{enumerate}
+\item On note $X_3 $ (respectivement $X_4)$ la variable alétoire correponsdant au nombre de moteurs en panne sur un trimoteur (respectivement un quadirmoteur) durant un vol.
+\begin{enumerate}
+\item Quelles sont les lois suivies par $X_3$ et  $X_4$ ? 
+\item Calculer la probabilité que strictement moins de la moitié des moteurs du trimoteur tombent en panne. Même question pour le quadrimoteur. 
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On note $T$ l'événement \og le trimoteur achève son vol\fg. Démontrer que : 
+$$P(T) =(1-x)(-x^2+x+1)$$
+\item On note $Q$ l'événement \og le quadrimoteur achève son vol\fg. Démontrer que : 
+$$P(Q) =(1-x)^2(1+x)^2$$
+
+\end{enumerate}
+\item Déterminer , des quadrimoteurs ou des trimoteurs, quels sont les avions les plus sûrs. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item \begin{enumerate}
+\item $X_3$ (resp. $X_4$) suit une loi binomiale $\cB(3,x)$ (resp. $\cB(4,x)$)
+\item L'événement que strictmeent moins de la moitié des moteurs du trimoteur tombent en pannes correspond à l'événement $[X_3 <\frac{3}{2}]$. Comme $X_3$ est à valeur entière cela correspond à $[X_3\leq 1]$. Et on a 
+$$P(X_3\leq 1 ) =P(X_3=0)+P(X_3=1) =\\ (1-x)^3 +\binom{3}{1} x (1-x)^2 = (1-x)^2 (1-x + 3x) = (1-x)^2(1+2x)$$
+On obtient le même type de calcul pour le quadrimoteur, on a $[X_4 <\frac{4}{2}]= [X_4<2]=[X_4\leq 1]$ et donc 
+$$P(X_4 \leq 1 ) =P(X_4=0)+P(X_4=1) =\\ (1-x)^4 +\binom{4}{1} x (1-x)^3 = (1-x)^3 (1-x + 4x) = (1-x)^3(1+3x)$$
+
+
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Soit $M_G$ (resp $M_A$ resp. $M_D$) la variable aléatoire qui vaut $1$ si le moteur de gauche (resp. le moteur arrière, reps. le moteur de droite) tombe en panne et $0$ sinon. 
+L'évènement $T$ correspond à l'événément $[M_A=0] \cup\left( [M_G=0 \text{ et } M_D=0] \right)$
+On a donc 
+\begin{align*}
+P(T) &=P([M_A=0] \cup\left( [M_G=0 \text{ et } M_D=0] \right))\\
+	  &=P([M_A=0]) +P(\left( [M_G=0 \text{ et } M_D=0] \right))- P(M_A=0 \text{ et } M_G=0 \text{ et } M_D=0]) \\
+	  &=(1-x) +(1-x)^2 -  (1-x)^3\\
+	  &=(1-x) (1+(1-x) - (1-x)^2)\\
+	  &=(1-x) (1 +x-x^2)
+\end{align*}
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item On fait la meme chose en considérant les 4 moteurs.
+Soit $M_{G_1}$ (resp $M_{G_2}$ resp. $M_{D_1}$ resp. $M_{D_2}$) la variable aléatoire qui vaut $1$ si le premier moteur de gauche (resp. le deuxième moteur de gauche , reps. le premier moteur de droite, resp. le deuxième motuer de droite) tombe en panne et $0$ sinon. 
+L'évènement $\bar{Q}$ correspond à l'événément $[M_{G_1}=1 \text{ et }  M_{G_2}=1] \cup [M_{D_1}=1 \text{ et }  M_{D_2}=1]$
+On a donc 
+\begin{align*}
+P(Q) &=1-P(\bar{Q})\\
+&= 1 - P([M_{G_1}=M_{G_2}=1]- P([M_{D_1}=M_{D_2}=1]) + P([M_{D_1}=M_{D_2} =  M_{G_1}=  M_{G_2}=1)	 \\
+&= 1 -x^2 -x^2 +x^4\\
+&= 1-2x^2 +x^4\\
+&=(1-x^2)^2 \\
+&=((1-x) (1+x))^2\\
+&=(1-x)^2(1+x)^2
+\end{align*}
+\end{enumerate}
+\item On peut estimer que $x$ est très proche de 0 (sinon il faut d'urgence arrêter de prendre l'avion) et regarder $P(T) -P(Q) $ quand $x$ tends vers $0$. 
+
+On a $P(T) - P(Q) = (1-x)(-x^2 +x+1) - (1-2x^2 +x^4) = x^3-x^4 =x^3+o(x^3)$. Ainsi proche de $0$, $P(T) \geq P(Q)$. Les trimoteurs sont donc plus fiables. (Il n'était même pas nécessaire de faire l'approximation $x\sim 0$ en effet $x^3-x^4 = x^3(1-x)$ et comme $x\in [0,1]$, on a bien $ P(T) \geq P(Q)$. La preuve avec l'approximation $x\sim0$ peut-etre intéressante par exemple en physique pour avoir une idée du comportement d'une expérience dans certain cas limite) 
+\end{enumerate}
+\end{correction}

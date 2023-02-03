@@ -1,3 +1,13 @@
+% Titre : somme
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :somme
+% Subcategories : 
+% Keywords : somme
+
+
+
 
 \begin{exercice}   \; \textbf{Sommes d'indices pairs et impairs}\\
 \noindent Soit $n$ un entier naturel non nul. On d\'efinit les sommes suivantes: $S_n=\ddp \sum\limits_{k=0}^{n} \binom{2n}{2k}\quad \hbox{et}\quad T_n=\ddp \sum\limits_{k=0}^{n-1} \binom{2n}{2k+1}.$
@@ -6,3 +16,43 @@
 \item En d\'eduire une expression de $S_n$ et de $T_n$ en fonction de $n$.
 \end{enumerate} 
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] \textbf{Calcul de $\mathbf{S_n+T_n}$:}\\
+\noindent Si on ne voit pas comment d\'ebuter, on commence par \'ecrire la somme $S_n+T_n$ sous forme d\'evelopp\'ee. On obtient alors que: $S_n+T_n=\ddp \sum\limits_{k=0}^{2n} \binom{2n}{k}$ car on se rend compte en \'ecrivant les sommes sous forme d\'evelopp\'ees que l'on obtient au final la somme de tous les coefficients binomiaux: $S_n$ correctionrespond en effet \`{a} la somme des coefficients binomiaux $\binom{2n}{k}$ avec $k$ pair et $T_n$ correctionrespond \`{a} la somme des coefficients binomiaux $\binom{2n}{k}$ avec $k$ impair donc en sommant les deux on a bien la somme de tous les coefficients binomiaux pour $k$ allant de 0 \`{a} $2n$. Ainsi, d'apr\`{e}s le bin\^{o}me de Newton, on obtient que: \fbox{$S_n+T_n=2^{2n}=4^n$.}
+\item[$\bullet$] \textbf{Calcul de $\mathbf{S_n-T_n}$:}\\
+\noindent De m\^{e}me, on peut commencer par \'ecrire la somme $S_n-T_n$ sous forme d\'evelopp\'ee. On obtient alors que: $S_n-T_n=\ddp \sum\limits_{k=0}^{2n} \binom{2n}{k}(-1)^k$ car on se rend compte en \'ecrivant les sommes sous forme d\'evelopp\'ees que l'on obtient au final la somme de tous les coefficients binomiaux coefficient\'es par 1 ou par -1: les coefficients binomiaux $\binom{2n}{k}$ avec $k$ pair sont coefficient\'e par 1 et les coefficients binomiaux $\binom{2n}{k}$ avec $k$ impair sont coefficient\'e par -1. Ainsi cela revient bien \`{a} sommer tous les nombres $\binom{2n}{k}(-1)^k$ pour $k$ allant de 0 \`{a} 
+$2n$. 
+Ainsi, d'apr\`{e}s le bin\^{o}me de Newton, on obtient que: \fbox{$S_n+T_n=(1-1)^n=0$. }
+\end{itemize}
+%\begin{itemize}
+%\item[$\bullet$] On montre par r\'ecurrence sur $n\in\N^{\star}$ la propri\'et\'e 
+%$$\mathcal{P}(n):\quad S_n+T_n=2^{2n}\quad \hbox{et}\quad S_n-T_n=0.$$
+%\item[$\bullet$] Initialisation: pour $n=1$:
+%\begin{itemize}
+%\item[$\star$] $S_1+T_1=\ddp \sum\limits_{k=0}^{1} \binom{2}{2k}+\ddp \sum\limits_{k=0}^{0} \binom{2}{2k+1}=\binom{2}{0}+\binom{2}{2}+\binom{2}{1}=1+1+2=4$. Or $2^{2}=4$ donc $S_1+T_1=2^{2}$.
+%\item[$\star$] $S_1-T_1=\ddp \sum\limits_{k=0}^{1} \binom{2}{2k}-\ddp \sum\limits_{k=0}^{0} \binom{2}{2k+1}=\binom{2}{0}+\binom{2}{2}-\binom{2}{1}=1+1-2=0$.
+%\end{itemize}
+%Ainsi $\mathcal{P}(1)$ est vraie.
+%\item[$\bullet$] H\'er\'edit\'e: soit $n\in\N^{\star}$ fix\'e, on suppose la propri\'et\'e vraie \`{a} l'ordre $n$, montrons qu'elle est vraie \`{a} l'ordre $n+1$.
+%\begin{itemize}
+%\item[$\star$] $S_{n+1}+T_{n+1}=\ddp \sum\limits_{k=0}^{n+1} \binom{2(n+1)}{2k}+\ddp \sum\limits_{k=0}^{n} \binom{2(n+1)}{2k+1}=\ddp \sum\limits_{k=0}^{n} \binom{2n+2}{2k}+\ddp \sum\limits_{k=0}^{n} \binom{2(n+1)}{2k+1}$
+%\item[$\star$]
+%\end{itemize}
+
+%\item[$\bullet$]
+%\end{itemize}
+\item Il s'agit alors juste de r\'esoudre le syst\`{e}me $\left\lbrace \begin{array}{lll}  S_n+T_n&=&2^{2n}\vsec \\ S_n-T_n&=& 0. \end{array}\right.$. On obtient alors: $2S_n=2^{2n}$  donc $S_n= 2^{2n-1}$ et $T_n=S_n=2^{2n-1}$.
+\end{enumerate}
+\end{correction}

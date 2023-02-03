@@ -1,0 +1,35 @@
+% Titre : Non interversion limite intégrale
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+\begin{exercice}
+Soit $x\in [0,1]$ 
+
+\begin{enumerate}
+\item Calculer $\lim_{n\tv+\infty} nxe^{-nx^2}$.
+\item Calculer $I_n=\int_0^1 nxe^{-nx^2}dx$.
+\item Calculer $\lim_{n\tv+\infty} I_n$.
+\item Que doit-on retenir de cet exercice ? 
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item Par croissance comparée, on a $\lim_{n\tv+\infty} nxe^{-nx^2}=0$.
+\item \begin{align*}
+I_n&=\frac{-1}{2}\int_0^1 -2nxe^{-nx^2}dx\\
+	&=\frac{-1}{2}[e^{-nx^2}]_0^1 \\
+	&=\frac{-1}{2}(e^{-n} -e^{0}) \\
+		&=\frac{1}{2}(1-e^{-n}) 
+\end{align*}
+\item On  a donc $\lim_{n\tv+\infty} I_n=\frac{1}{2}$. 
+\item On NE peut PAS intervertir limite et intégrale !!
+\end{enumerate}
+\end{correction}

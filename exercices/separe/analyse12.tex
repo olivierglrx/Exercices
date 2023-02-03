@@ -1,0 +1,45 @@
+% Titre : Equation complexe
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+\begin{exercice}
+Résoudre dans $\bC$ l'équation d'inconnue $z$: 
+$$\left(\frac{z-2i}{z+2i}\right)^3+\left(\frac{z-2i}{z+2i}\right)^2+\left(\frac{z-2i}{z+2i}\right)+1=0$$
+\end{exercice}
+
+
+\begin{correction}
+On pose, $Z =\left(\frac{z-2i}{z+2i}\right)$, l'équation devient alors: 
+$$Z^3+Z^2+Z+1=0.$$
+On  remarque que $-1$ est une racine du polynôme,   $Z^3+Z^2+Z+1$, qui se factorise alors en 
+$(Z+1)(Z^2+1)$. $Z^2+1 =(Z-i)(Z+i)$ et on  a donc 
+$$Z^3+Z^2+Z+1 =(Z+1)(Z-i)(Z+i).$$
+
+\begin{enumerate}
+\item Pour $Z=-1 \Longleftrightarrow \left(\frac{z-2i}{z+2i}\right)=-1$, on obtient 
+$z-2i =-z-2i$ soit $$z=0.$$
+\item Pour $Z=i \Longleftrightarrow \left(\frac{z-2i}{z+2i}\right)=i$, on obtient 
+$z-2i =iz-2$. Soit $z(1-i) = -2+2i$, donc 
+$$z=-2$$
+
+
+\item Pour $Z=-i \Longleftrightarrow \left(\frac{z-2i}{z+2i}\right)=-i$, on obtient 
+$z-2i =-iz+2$ soit $z(1+i) =2+2i$ donc 
+$$z=2$$
+
+
+
+Les solutions de l'équation sont donc 
+\conclusion{$\cS=\{ -2,0,  2 \}$}
+
+\end{enumerate}
+
+
+
+\end{correction}

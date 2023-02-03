@@ -1,0 +1,150 @@
+% Titre : Formule D'inversion de somme (Pb)
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+
+
+\begin{exercice}
+Dans cet exercice, on considère une suite quelconque de nombres réels $\suite{a}$, et on pose pour tout $n\in \N$:
+$$b_n =\sum_{k=0}^n \binom{n}{k} a_k.$$
+\begin{center}
+\textbf{Partie I : Quelques exemples}
+\end{center}
+\begin{enumerate}
+\item Calculer $b_n$ pour tout $n \in \N$ lorsque la suite $\suite{a}$ est la suite constante égale à $1$.
+\item Calculer $b_n$ pour tout $n \in \N$ lorsque la suite $\suite{a}$ est définie par $a_n=\exp(n)$. 
+
+\item 
+\begin{enumerate}
+\item Démontrer que, pour tout $(n\geq 1,n\geq k\geq 1)$, $$k\binom{n}{k}=n \binom{n-1}{k-1}.$$
+\item En déduire que : $\forall n \in \N, \ddp \sum_{k=0}^n \binom{n}{k} k = n2^{n-1}$.
+\item Calculer la valeur de $b_n$, pour tout $n \in \N$ lorsque la suite $\suite{a}$ est définie par $a_n=\frac{1}{n+1}$. 
+\end{enumerate}
+\end{enumerate}
+\begin{center}
+\textbf{Partie II : Formule d'inversion }
+\end{center}
+Le  but de cette partie est de montrer que la suite $\suite{a}$ s'exprime en fonction de la suite $\suite{b}$. 
+\begin{enumerate}
+\item Montrer que pour tout $(k, n , p ) \in \N^3,$ tel que $k\leq p \leq n$ on  a:
+$$\binom{n+1}{p}\binom{p}{k}=\binom{n+1}{k}\binom{n+1-k}{p-k}.$$
+\item Montrer que, pour tout $(k,n) \in \N^2$, tel que $k\leq n$ on  a :
+$$\sum_{i=0}^{n-k} (-1)^i  \binom{n+1-k}{i}=(-1)^{n-k}.$$ 
+\item  Montrer que pour tout $n\in \N$ on a $$\sum_{p=0}^{n}\sum_{k=0}^p  \binom{n+1}{k}\binom{n+1-k}{p-k} (-1)^{p-k}  b_k	 = \sum_{k=0}^{n} (-1)^{n-k}  \binom{n+1}{k} b_k $$
+\item Donner, pour tout $n\in \N$, l'expression de $a_{n+1}$ en fonction de $b_{n+1}$ et de $a_0, ..., a_n$. 
+\item Prouver, par récurrence forte sur $n$ que :
+$$\forall n \in \N, a_n =\sum_{k=0}^n (-1)^{n-k} \binom{n}{k} b_k.$$
+\item En utilisant le résultat précédent montrer que pour tout $n\in \N$:
+$$\sum_{k=0}^{n}   \binom{n}{k}k2^k(-1)^{n-k}=2n.$$ 
+\end{enumerate}
+
+
+
+
+\end{exercice}
+
+\begin{correction}
+\begin{center}
+\textbf{Partie I : Quelques exemples}
+\end{center}
+\begin{enumerate}
+\item Pour $a_n=1$, $b_n=\sum_{k=0}^n \binom{n}{k}  =2^n$.
+\item  Pour $a_n=exp(n)$, $b_n=\sum_{k=0}^n \binom{n}{k}e^k  =(1+e^1)^n$.
+\item
+\begin{enumerate}
+\item  $$k\binom{n}{k}= k \frac{n! }{k! (n-k)!} = \frac{n! }{(k-1)! (n-k)!}  = n \frac{(n-1)! }{(k-1)! ((n-1)-(k-1))!}=  n\binom{n-1}{k-1}$$
+\item
+Comme le premier terme est nul  $\sum_{k=0}^n \binom{n}{k} k = \sum_{k=1}^n n\binom{n-1}{k-1}$
+Et d'après la question précédente on a donc $ \sum_{k=0}^n \binom{n}{k} k= n  \sum_{k=1}^n \binom{n-1}{k-1}$
+Or en faisant un changement de variable on obtient $\sum_{k=1}^n \binom{n-1}{k-1}= \sum_{k=0}^{n-1} \binom{n-1}{k}$. 
+Donc $$ \sum_{k=0}^n \binom{n}{k} k = n 2^{n-1}$$
+
+\item 
+D'après la question 3a) on a $ (k+1)\binom{n+1}{k+1} = (n+1)\binom{n}{k}$. Donc 
+$$\frac{1}{n+1}\binom{n+1}{k+1} =\frac{1}{k+1}\binom{n}{k}$$
+
+Ainsi $$\sum_{k=0}^n \binom{n}{k} \frac{1}{k+1} = \sum_{k=0}^{n} \frac{1}{n+1}\binom{n+1}{k+1}$$
+On fait un changement de variable $k+1=j$ on obtient 
+\begin{align*}
+\sum_{k=0}^n \binom{n}{k} \frac{1}{k+1} &=  \sum_{j=1}^{n+1} \frac{1}{n+1}\binom{n+1}{j}\\
+															&=  \frac{1}{n+1} \left( \sum_{j=0}^{n+1} \binom{n+1}{j} -1\right)\\
+															&= \frac{1}{n+1} \left( 2^{n+1}-1\right)
+\end{align*}
+\end{enumerate}
+\end{enumerate}
+
+
+
+\begin{center}
+\textbf{Partie II : Formule d'inversion }
+\end{center}
+\begin{enumerate}
+\item C'est l'exercice 2 du DM 4.
+\item 
+$$\sum_{i=0}^{n-k} (-1)^i  \binom{n+1-k}{i}= \sum_{i=0}^{n-k+1} (-1)^i  \binom{n+1-k}{i} -(-1)^{n-k+1} $$ 
+Et d'après le BdN : 
+$$ \sum_{i=0}^{n-k+1} (-1)^i  \binom{n+1-k}{i} =(1-1)^{n-k} =0$$ 
+et 
+$$-(-1)^{n-k+1} =(-1)^{n-k}$$
+Ce qui donne le résultat. 
+\item $b_{n+1} = \ddp \sum_{k=0}^{n+1} \binom{n+1}{k} a_k =\ddp  \sum_{k=0}^{n} \binom{n+1}{k} a_k   +a_{n+1}$. Donc
+$$a_{n+1} = b_{n+1}-\sum_{k=0}^{n} \binom{n+1}{k} a_k$$
+\item Soit $P(n)$ la propriété : " $\forall p \leq n \, a_p =\ddp \sum_{k=0}^p (-1)^{p-k} \binom{p}{k} b_p.$"\\
+
+Montrons $P(0) : " \forall j \leq 0 \, a_j =\ddp \sum_{k=0}^j (-1)^{j-k} \binom{j}{k} b_k.$" Il suffit  de vérifier $a_0 = \ddp \sum_{k=0}^0 (-1)^{0-k} \binom{0}{k} b_k.$
+
+Et on a  $\ddp \sum_{k=0}^0 (-1)^{0-k} \binom{0}{k} b_k. = b_0$ 
+Par ailleurs, par définition $b_0 =  \ddp  \sum_{k=0}^{0} \binom{0}{k} a_k =a_0$. Ainsi $P(0)$ est vraie.  
+
+\underline{Hérédité}
+
+
+On suppose que $P$ est vraie pour un certain entier naturel $n$ fixé. Montrons $P(n+1)$. 
+Pour cela il suffit de vérifier que 
+$$a_{n+1} =\sum_{k=0}^{n+1} (-1)^{n+1-k} \binom{n+1}{k} b_k$$
+Or on a vu que  
+$$a_{n+1}=b_{n+1}-\sum_{p=0}^{n} \binom{n+1}{p}  a_p$$ 
+et en utilisant l'hypothése de récurrence on obtient 
+\begin{align*}
+\sum_{p=0}^{n} \binom{n+1}{p} a_p &=\sum_{p=0}^{n} \binom{n+1}{p} \sum_{k=0}^p (-1)^{p-k} \binom{p}{k} b_k\\
+												&=\sum_{p=0}^{n}\sum_{k=0}^p  \binom{n+1}{p} \binom{p}{k} (-1)^{p-k}  b_k\\
+												&=\sum_{p=0}^{n}\sum_{k=0}^p  \binom{n+1}{k}\binom{n+1-k}{p-k} (-1)^{p-k}  b_k												
+\end{align*}
+D'après la question  II . 1. 
+
+
+On échange les deux symboles sommes on obtient : 
+\begin{align*}
+\sum_{p=0}^{n}\sum_{k=0}^p  \binom{n+1}{k}\binom{n+1-k}{p-k} (-1)^{p-k}  b_k		&=
+\sum_{k=0}^{n}\sum_{p=k}^n  \binom{n+1}{k}\binom{n+1-k}{p-k} (-1)^{p-k}  b_k	\\
+&=\sum_{k=0}^{n}   \binom{n+1}{k} b_k \sum_{p=k}^n \binom{n+1-k}{p-k} (-1)^{p-k}  	\\
+&= \sum_{k=0}^{n}   \binom{n+1}{k} b_k \sum_{i=0}^{n-k} \binom{n+1-k}{i} (-1)^{i}  	
+\end{align*}
+En faisant le cahngement d'indice $p-k=i$. 
+
+On obtient finalement  en utilisant la question  II. 2.
+\begin{align*}
+\sum_{p=0}^{n} \binom{n+1}{p} a_p &=\sum_{k=0}^{n}   \binom{n+1}{k} b_k (-1)^{n-k}
+\end{align*}
+On conclut en remarquant que $b_{n+1} 	= 	 \binom{n+1}{n+1} b_{n+1} (-1)^{n+1-(n+1)}$
+et ainsi 
+$$a_{n+1}= 	 (-1)^{n+1-(n+1)}  \binom{n+1}{n+1} b_{n+1} + \sum_{k=0}^{n}  (-1)^{n+1-k} \binom{n+1}{k} b_k = \sum_{k=0}^{n+1}  (-1)^{n+1-k} \binom{n+1}{k} b_k $$
+									
+											 
+
+\item On a vu dans la partie I que pour $a_n=n$ on a
+$b_n=n2^{n-1}$. Donc en appliquant le résultat précédent on a 
+$$ \sum_{k=0}^{n}   \binom{n}{k}k2^{k-1}(-1)^{n-k} = n$$ 
+Ce qui donne finalement 
+$$ \sum_{k=0}^{n}   \binom{n}{k}k2^k(-1)^{n-k} =  2 \sum_{k=0}^{n}   \binom{n}{k}k2^{k-1}(-1)^{n-k}= 2 n$$
+\end{enumerate}
+
+
+\end{correction}

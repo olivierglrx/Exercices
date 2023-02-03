@@ -1,3 +1,13 @@
+% Titre : suites
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :suites
+% Subcategories : 
+% Keywords : suites
+
+
+
 \begin{exercice}
 \'Etudier la suite $\suiteu$ d\'efinie par 
 $\left\lbrace\begin{array}{l}
@@ -5,3 +15,74 @@ u_0=1\vsec\\
 u_{n+1}=u_n^2+u_n.
 \end{array}\right.$
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+\begin{correction}
+\textbf{\'Etudions la suite $\mathbf{\suiteu}$ d\'efinie par $\mathbf{\left\lbrace\begin{array}{l}
+u_0=1\vsec\\
+u_{n+1}=u_n^2+u_n.
+\end{array}\right.}$}\\
+\noindent C'est une suite de type $u_{n+1}=f(u_n)$, on donne les id\'ees de l'\'etude. Ainsi la r\'edaction dans une copie doit \^{e}tre beaucoup plus d\'etaill\'ee qu'ici.
+\begin{enumerate}
+ \item \textbf{\'Etude des variations de la fonction $\mathbf{f}$ associ\'ee: $\mathbf{x\mapsto x^2+x}$:}\\
+\noindent La fonction $f$ est d\'efinie, continue et d\'erivable sur $\R$ et 
+$$\forall x\in\R,\ f^{\prime}(x)=2x+1.$$
+On obtient ainsi le tableau de variation suivant:
+\begin{center}
+\begin{tikzpicture}
+ \tkzTabInit{ $x$          /1,%
+	%$\sin{(3x)}$             /1,
+       %$\cos{(5x)}$     /1,%
+       $f'(x)$      /1,%
+       $f$       /2}%
+     { $-\infty$, $-\ddp\demi$ ,$+\infty$ }%
+  %\tkzTabLine {0,$+$,t,$+$,t,$+$,0,$-$,t}%
+  %\tkzTabLine {t,$+$,0,$-$,0,$+$,t,$+$,0}%
+  \tkzTabLine {,$-$,0,$+$,}%
+  \tkzTabVar{
+     % {-/ $1$       /,%
+       +/ $+\infty$        /,
+        -/$-\ddp\frac{1}{4}$           /,%
+       +/$+\infty$           /,
+      % +/           /,%
+       %-/ $-1$          /,
+       %R/           /,%
+       %-/ $-\infty$ /}
+                      }
+ \tkzTabVal[draw]{2}{3}{0.3}{$0$}{$0$}
+ \tkzTabVal[draw]{2}{3}{0.6}{$1$}{$2$}
+\end{tikzpicture}
+\end{center}
+\item \textbf{\'Etude du signe de la fonction $\mathbf{g: x\mapsto f(x)-x=x^2}$:}\\
+\noindent \fbox{Cette fonction est toujours positive sur $\R$ et elle ne s'annule qu'en 0.}
+\item \textbf{Calcul des limites \'eventuelles:}\\
+\noindent La fonction $f$ est continue sur $\R$, ainsi, si la suite $\suiteu$ converge, elle ne peut converger que vers $l$ v\'erifiant 
+$$l=f(l)\Leftrightarrow g(l)=0\Leftrightarrow l=0.$$
+Ainsi, \fbox{0 est la seule limite \'eventuelle de la suite.}
+\item \textbf{Montrons que la suite est bien d\'efinie et elle appartient \`{a} $\mathbf{I}$ intervalle stable par $\mathbf{f}$}:\\
+\noindent On remarque que $[ 1,+\infty[$ est un intervalle stable par $f$ et que $u_0=1\in\lbrack 1,+\infty\lbrack$. Un raisonnement par r\'ecurrence permet alors de v\'erifier que \fbox{la suite est bien d\'efinie et que $\forall n\in\N,\quad u_n\geq 1.$}
+\noindent 
+\item \textbf{\'Etude de la monotonie de la suite:}\\
+Comme $g$ est positive sur $\R$, \fbox{la suite est croissante.}
+\noindent 
+\item \textbf{\'Etude de la convergence de la suite:}\\
+\begin{itemize}
+\item[$\star$] La suite $\suiteu$ est croissante donc d'apr\`{e}s le th\'eor\`{e}me sur les suites monotones, elle converge ou elle diverge vers $+\infty$.
+\item[$\star$] On suppose par l'absurde que la suite $\suiteu$ converge vers un r\'eel $l$. On a alors:
+\begin{itemize}
+\item[$\circ$] La suite $\suiteu$ converge vers $l$.
+\item[$\circ$] Pour tout $n\in\N$: $u_n\geq 1$.
+\end{itemize}
+D'apr\`{e}s le th\'eor\`{e}me de passage \`{a} la limite, on obtient donc que: $l\geq 1$. Absurde car la seule limite \'eventuelle de la suite $\suiteu$ est 0. Ainsi \fbox{la suite $\suiteu$ diverge vers $+\infty$.}
+\end{itemize}
+\end{enumerate}
+
+
+
+\end{correction}

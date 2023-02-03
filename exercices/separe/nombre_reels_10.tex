@@ -1,6 +1,43 @@
+% Titre : nombre
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :nombre
+% Subcategories : 
+% Keywords : nombre
+
+
+
 
 \begin{exercice} 
 Montrer que pour tout $x\in \R_+$:
 $$\floor{x} =\floor{\frac{x}{2} } +\floor{\frac{x+1}{2} }.$$
 
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}
+Distinguons les cas selon la parité de $\floor{x}$. 
+\paragraph{Cas 1 : $\floor{x}$ est paire}
+Dans ce cas, il existe $k\in \N$ tel que $\floor{x} \in [2k,2k+1[$, où $\floor{x}=2k$. On a alors 
+$\frac{x}{2}\in [k,k+\frac{1}{2}[$ donc $\floor{\frac{x}{2}} =k$
+et $\frac{x+1}{2 }\in [k+\frac{1}{2}, k+1[$, donc de nouveau $\floor{\frac{x+1}{2 }}=k$
+
+On a bien l'égalité demandée. 
+
+\paragraph{Cas 2 : $\floor{x}$ est impaire}
+Dans ce cas, il existe $k\in \N$ tel que $\floor{x} \in [2k+1,2k+2[$, où $\floor{x}=2k+1$.  On a alors 
+$\frac{x}{2}\in [k+\frac{1}{2},k+1[$ donc $\floor{\frac{x}{2}} =k$
+et $\frac{x+1}{2 }\in [k+1, k+\frac{3}{2}$, donc cette fois $\floor{\frac{x+1}{2 }}=k+1$
+
+On a bien l'égalité demandée. 
+
+
+\end{correction}

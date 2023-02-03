@@ -1,3 +1,13 @@
+% Titre : somme
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :somme
+% Subcategories : 
+% Keywords : somme
+
+
+
 
 \begin{exercice}  \;  \textbf{Sommes et d\'erivation:} 
 Soit $n\in\N^{\star}$ et $S=\ddp \sum\limits_{k=1}^n k\ddp \binom{n}{k}$. %Calculons $S$ en utilisant une m\'ethode par d\'erivation terme \`a terme.
@@ -14,3 +24,35 @@ En d\'eduire, pour tout $x$ dans $\bR$, la valeur de $g(x)=\ddp \sum\limits_{k=1
 \end{enumerate}
 %\end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction} \;
+La d\'erivation d'une somme finie est une m\'ethode tr\`{e}s classique qui permet d'obtenir plein de nouvelles sommes. Il s'agit juste d'utiliser le fait que $(f+g)^{\prime}=f^{\prime}+g^{\prime}$ et ainsi la d\'eriv\'ee d'une somme est \'egale \`{a} la somme des d\'eriv\'ees.
+\begin{enumerate}
+\item D'apr\`{e}s le bin\^{o}me de Newton, on sait que: \fbox{$f(x)=(1+x)^n$.}
+\item La fonction $f$ est ainsi d\'erivable sur $\R$ comme compos\'ee de fonctions d\'erivables. La fonction $f$ est d\'efinie par deux expressions diff\'erentes que l'on peut d\'eriver:
+\begin{itemize}
+\item[$\bullet$] D'un c\^{o}t\'e, la fonction $f$ vaut: $f(x)=(1+x)^n$. Ainsi, en d\'erivant, on obtient que: \begin{center}
+\fbox{$\forall x\in\R,\ f^{\prime}(x)=n(1+x)^{n-1}$.}
+\end{center}
+\item[$\bullet$] De l'autre c\^{o}t\'e, la fonction $f$ vaut $f(x)=\ddp \sum\limits_{k=0}^{n} \binom{n}{k}x^k=1+nx+\dots+nx^{n-1}+x^n=1+\ddp \sum\limits_{k=1}^{n} \binom{n}{k}x^k$. La d\'eriv\'ee d'une somme \'etant \'egale \`{a} la somme des d\'eriv\'ees, on obtient que: \begin{center}
+\fbox{$\forall x\in\R,\ f^{\prime}(x)=0+\ddp \sum\limits_{k=1}^{n} k\binom{n}{k}x^{k-1}$}
+\end{center} 
+\vsec
+car le premier terme pour $k=0$ est constant donc sa d\'eriv\'ee est nulle. 
+
+\vsec
+%ATTENTION, la somme commence bien \`{a} $k=1$ car le terme pour $k=0$ dans $f(x)$ est le terme constant $1$ qui est nul lorsqu'on d\'erive.
+\end{itemize}
+On obtient donc que: \fbox{$\forall x\in\R,\ g(x)=\ddp \sum\limits_{k=1}^{n} k\binom{n}{k}x^{k-1}=n(1+x)^{n-1}$.}
+\item Il s'agit de remarquer que $S=g(1)=f^{\prime}(1)$ et ainsi, on obtient que: \fbox{$S=n2^{n-1}$.} On retrouve bien le m\^{e}me r\'esultat.
+\end{enumerate}
+%\end{enumerate}
+\end{correction}

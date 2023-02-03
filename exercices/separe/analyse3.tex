@@ -1,0 +1,201 @@
+% Titre : Résolution $\floor{\sqrt{x}} = \floor{ \frac{x}{2}}$
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+\begin{exercice}
+On cherche à résoudre l'équation $(E)$ suivante, d'inconnue réelle $x$: 
+$$\floor{\sqrt{x}} = \floor{ \frac{x}{2}}$$
+\begin{enumerate}
+\item Donner le domaine de définition de  l'équation $(E)$. 
+\item Ecrire un programme python qui demande à l'utilisateur un flottant $x$ et qui renvoie True si le réel ets solution de l'équation $(E)$  et False sinon. 
+\item Montrer que toute solution $x$  de $(E)$ est solution du système $(S)$ suivant : 
+$$\left\{ 
+\begin{array}{ccc}
+\sqrt{x}&<& \frac{x}{2}+1\\
+\frac{x}{2}-1&<& \sqrt{x}
+\end{array}
+\right. $$
+\item Résoudre le système $(S)$. 
+\item Soit $\alpha = 2(2+\sqrt{3})$ Calculer la partie entière de $\alpha$. 
+\item Pour tout $k\in \intent{0,7} $ déterminer si les réels de l'intervalle $[k,k+1[$ sont solutions de $(E)$. 
+\item Conclure.  
+\end{enumerate}
+\end{exercice}
+\begin{correction}
+\begin{enumerate}
+\item (E) est bien défini pour $x\geq 0$
+\item \begin{lstlisting}
+x=float(input('donnez une valeur de x' ))
+if floor(sqrt(x))==floor(x/2):
+	print(True)
+else:
+	print(false)
+\end{lstlisting}
+\item Rappelons l'inégalité vraie pour tout $y\in \R$ :
+$$y-1<\floor{y} \leq y <\floor{y}+1$$
+ Soit $x$ une solution de (E) on a d'une part : 
+$$\floor{\sqrt{x}}=\floor{\frac{x}{2}} \leq \frac{x}{2}$$
+et 
+$$\sqrt{x}-1< \floor{\sqrt{x}}$$
+Donc 
+\conclusion{$\sqrt{x}<\frac{x}{2}+1$}
+
+
+
+D'autre part on  a : 
+$$\floor{\frac{x}{2}}=\floor{\sqrt{x}}\leq \sqrt{x}$$
+et $$\frac{x}{2}-1<\floor{\frac{x}{2}}$$
+donc 
+\conclusion{$\frac{x}{2}-1< \sqrt{x}.$}
+
+\item 
+\begin{itemize}
+
+
+\item Résolvons la première inégalité : $\sqrt{x}<\frac{x}{2}+1$
+
+\begin{itemize}
+\item[•] Cas 1 $\frac{x}{2}+1\geq 0$ c'est-à-dire $x\geq -2$. Rappelons que l'ensemble de définion de l'équation est $x\geq 0$, on se concentre donc sur les réels positifs. 
+
+On peut alors mettre l'équation au carré qui devient 
+$$x < \frac{x^2}{4} +x+1.$$
+D'où $x^2>-4$ ce qui est toujours vrai. 
+\conclusion{ Les solutions de cette première inéquation sont $x\geq 0$}
+\item[•] Cas 2 $\frac{x}{2}+1< 0$. Ce cas ne se produit pas car $x\geq 0$ pour que l'équation soit bien définie. 
+\end{itemize}
+
+
+\item Résolvons la seconde inégalité : $\frac{x}{2}-1<\sqrt{x}$
+
+\begin{itemize}
+\item[•] Cas 1 $\frac{x}{2}-1\geq 0$ c'est-à-dire $x\geq 2$. 
+
+On peut alors mettre l'équation au carré qui devient 
+$$ \frac{x^2}{4} -x+1<x$$
+D'où l'on obtient $\frac{x^2}{4} -2x+1<0$. 
+Le discrimant vaut $\Delta =4-1=3>0$ et on obtient 2 racines 
+$$r_1 = \frac{2+\sqrt{3}}{\frac{1}{2}}\quadet r_2 = \frac{2-\sqrt{3}}{\frac{1}{2}}$$
+soit en simplifiant 
+$$r_1 = 2(2+\sqrt{3})\quadet r_2 = 2(2-\sqrt{3}).$$
+Le polynôme est strictement négatif entre les racines c'est-à-dire sur $]2(2-\sqrt{3}),2(2+\sqrt{3})[$.
+
+On doit maintenant prendre l'intersection avec l'ensemble de définition : $x\geq 0$ et l'hypothèse $x\geq 2$ 
+On obtient 
+$$x\in [2,2(2+\sqrt{3})[$$
+
+
+
+\item[•] Cas 2 $\frac{x}{2}-1< 0$ c'est-à-dire $x< 2$.   Ici tous les réels sont solutions car la racine est toujours positive. 
+
+On obtient donc $x\in [0,2[$
+
+En conclusion, les solutions de cette deuxième équation sont 
+\conclusion{  $[0,2(2+\sqrt{3})[$}
+
+\end{itemize}
+\end{itemize}
+
+Les solutions du système correspondent à l'intersection des deux enembles trouvés précédemment : c'est donc 
+\conclusion{  $[0,2(2+\sqrt{3})[$}
+
+
+\item $1<3< 4$ donc $1<\sqrt{3}<2$ et donc 
+$3<2+\sqrt{3}<4$ et finalement $\alpha \in ]6, 8[$.
+Ainsi $\floor{\alpha  }$ vaut $6$ ou $7$. 
+
+Vérifions que $\alpha >7$, pour cela regardons l'inégalité 
+
+$$\begin{array}{lrl}
+&2(2+\sqrt{3})&>7\\
+\equivaut &(2+\sqrt{3})&>\frac{7}{2}\\
+\equivaut &\sqrt{3} &>\frac{3}{2}\\
+\equivaut &3&>\frac{9}{4}\\
+\equivaut & 12&>9
+\end{array}$$
+La dernière inégalité étant vraie, comme nous avons procédé par équivalence, on a bien $\alpha >7$. 
+Ainsi 
+\conclusion{$\floor{\alpha  }=7$}
+
+\item \begin{itemize}
+\item \underline{Cas $k=0$}
+Soit $x\in [0,1[$. On a alors $0\leq \sqrt{x}<1$ et donc $\floor{x}=0$ et $0\leq \frac{x}{2}<\frac{1}{2}<1$ donc 
+$\floor{\frac{x}{2}} =0$. D'où 
+\conclusion{
+$\forall x\in [0,1[\,\quad  \floor{\sqrt{x}} = \floor{ \frac{x}{2}}$
+}
+\item \underline{Cas $k=1$}
+Soit $x\in [1,2[$. On a alors $1\leq \sqrt{x}<\sqrt{2}<2$ et donc $\floor{x}=1$ et $0\leq \frac{1}{2}\leq \frac{x}{2}<1$ donc 
+$\floor{\frac{x}{2}} =0$. D'où 
+\conclusion{
+$\forall x\in [1,2[\,\quad  \floor{\sqrt{x}} \neq  \floor{ \frac{x}{2}}$
+}
+\item \underline{Cas $k=2$}
+Soit $x\in [2,3[$. On a alors $1\leq \sqrt{2}\leq\sqrt{x}<\sqrt{3}<2$ et donc $\floor{x}=1$ et $1\leq \frac{x}{2}<\frac{3}{2}<2$ donc 
+$\floor{\frac{x}{2}} =1$. D'où 
+\conclusion{
+$\forall x\in [2,3[\,\quad  \floor{\sqrt{x}} =  \floor{ \frac{x}{2}}$
+}
+
+
+\item \underline{Cas $k=3$}
+
+Soit $x\in [3,4[$. On a alors $1\leq \sqrt{3}\leq\sqrt{x}<\sqrt{4}=2$ et donc $\floor{x}=1$ et $1\leq \frac{3}{2}\leq \frac{x}{2}<2$ donc 
+$\floor{\frac{x}{2}} =1$. D'où 
+\conclusion{
+$\forall x\in [3,4[\,\quad  \floor{\sqrt{x}} =  \floor{ \frac{x}{2}}$
+}
+
+
+\item \underline{Cas $k=4$}
+Soit $x\in [4,5[$. On a alors $2\leq \sqrt{x}<\sqrt{5}< 3$ et donc $\floor{x}=2$ et $2\leq \frac{x}{2}<\frac{5}{2}<3$ donc 
+$\floor{\frac{x}{2}} =2$. D'où 
+\conclusion{
+$\forall x\in [4,5[\,\quad  \floor{\sqrt{x}} =  \floor{ \frac{x}{2}}$
+}
+
+
+
+
+\item \underline{Cas $k=5$}
+Soit $x\in [5,6[$. On a alors $2\leq \sqrt{x}<\sqrt{5}< 3$ et donc $\floor{x}=2$ et $2\leq \frac{x}{2}<\frac{5}{2}<3$ donc 
+$\floor{\frac{x}{2}} =2$. D'où 
+\conclusion{
+$\forall x\in [5,6[\,\quad  \floor{\sqrt{x}} =  \floor{ \frac{x}{2}}$
+}
+
+
+\item \underline{Cas $k=6$}
+Soit $x\in [6,7[$. On a alors $2\leq \sqrt{6}\leq \sqrt{x}<\sqrt{7}< 3$ et donc $\floor{x}=2$ et $3\leq \frac{x}{2}<\frac{7}{2}<4$ donc 
+$\floor{\frac{x}{2}} =3$. D'où 
+\conclusion{
+$\forall x\in [6,7[\,\quad  \floor{\sqrt{x}} \neq  \floor{ \frac{x}{2}}$
+}
+
+
+
+\item \underline{Cas $k=7$}
+Soit $x\in [7,8[$. On a alors $2\leq \sqrt{7}\leq \sqrt{x}<\sqrt{8}< 3$ et donc $\floor{x}=2$ et $3\leq \frac{7}{2}\leq \frac{x}{2}<\frac{8}{2}=4$ donc 
+$\floor{\frac{x}{2}} =3$. D'où 
+\conclusion{
+$\forall x\in [7,8[\,\quad  \floor{\sqrt{x}} \neq  \floor{ \frac{x}{2}}$
+}
+
+\end{itemize}
+\item On a vu à la question $4$ que si $x$ était solution de $\floor{x}= \floor{ \frac{x}{2}}$ alors 
+$x\in [0,\alpha]\subset [0,8[$.
+
+Réciproquement, la question précédente permet de voir que $x$ est solution si $x\in  [0,1[\cup  [2,3[\cup  [3,4[\cup  [4,5[\cup  [5,6[= [0,1[\cup [2,6[$ et n'était pas solution pour $x\in [1,2[\cup [6,7[\cup [7,8[$. 
+
+\conclusion{
+$\cS = [0,1[\cup [2,6[$
+}
+
+\end{enumerate}
+\end{correction}

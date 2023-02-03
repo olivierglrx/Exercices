@@ -1,3 +1,13 @@
+% Titre : somme
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :somme
+% Subcategories : 
+% Keywords : somme
+
+
+
 
 \begin{exercice} \; \textbf{Coefficients binomiaux} \\
 Calculer les sommes suivantes: 
@@ -7,3 +17,30 @@ Calculer les sommes suivantes:
 \item $S_3= \ddp \sum\limits_{i=0}^n \ddp\frac{1}{i+1}\ddp \binom{n}{i}$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item \textbf{Calcul de $\mathbf{S_1=\ddp \sum\limits_{j=0}^n j\ddp \binom{n}{j}}$:}\\
+\noindent On peut d\'ej\`{a} remarquer que: $\ddp S_1= \sum\limits_{j=0}^n j\binom{n}{j}=0\times \binom{n}{0}+\ddp \sum\limits_{j=1}^n j\binom{n}{j}=\ddp \sum\limits_{j=1}^n j\binom{n}{j}$. \\
+Ici on ne sait pas calculer la somme sans transformation car il y a le $j$. On utilise d'abord une propri\'et\'e des coefficients binomiaux, et on obtient: 
+$$S_1=\ddp \sum\limits_{j=0}^n j\ddp \binom{n}{j}=\ddp \sum\limits_{j=1}^n n\binom{n-1}{j-1}=n\ddp \sum\limits_{j=1}^n \binom{n-1}{j-1}$$ 
+car $n$ est alors ind\'ependant de l'indice de sommation donc on peut le sortir de la somme. Pour se ramener \`{a} du bin\^{o}me de Newton, on commence par poser le changement de variable: $i=j-1$ et on obtient $\ddp S_1=\sum\limits_{j=0}^n j\binom{n}{j}=n \ddp \sum\limits_{i=0}^{n-1} \binom{n-1}{i}$ (c'est ici qu'il est mieux d'\^{e}tre pass\'e au d\'ebut d'une somme allant de 0 \`{a} $n$ \`{a} une somme allant de 1 \`{a} $n$ car sinon on aurait un indice commencant \`{a} -1. Si on n'a pas chang\'e la somme au d\'ebut, une autre m\'ethode est alors de faire ici une relation de Chasles afin d'isoler l'indice -1). On reconna\^{i}t alors un bin\^{o}me de Newton et on obtient \fbox{$S_1=\ddp \sum\limits_{j=0}^n j\binom{n}{j}=n2^{n-1}$.}
+\item   \textbf{Calcul de $\mathbf{T=\ddp \sum\limits_{k=1}^n k(k-1)\ddp \binom{n}{k}}$:}\\
+\noindent Il s'agit ici d'appliquer deux fois de suite la propri\'et\'e sur les coefficients binomiaux : $T=n\ddp \sum\limits_{k=2}^{n} (k-1)\binom{n-1}{k-1}$ en reprenant les calculs faits au-dessus. On pourra aussi remarquer que la somme $T$ peut \^{e}tre commenc\'ee \`{a} 2. Puis en r\'eappliquant la propri\'et\'e sur les coefficients binomiaux : $(k-1)\binom{n-1}{k-1}=(n-1)\binom{n-2}{k-2}$, on obtient que: $T=n(n-1)\ddp \sum\limits_{k=2}^{n} \binom{n-2}{k-2}$. On effectue alors le changement de variable $j=k-2$ et on obtient $T=n(n-1)\ddp \sum\limits_{j=0}^{n-2} \binom{n-2}{j}$. Donc en utilisant le bin\^{o}me de Newton, on a: \fbox{$T=n(n-1)2^{n-2}$.}\\
+\noindent \textbf{Calcul de $S_2=\mathbf{\ddp \sum\limits_{k=1}^n k^2\ddp \binom{n}{k}}$:}\\
+\noindent Comme $k^2=k(k-1)+k$ et par lin\'earit\'e de la somme, on obtient que: $S_2=\ddp \sum\limits_{k=1}^{n} k^2\binom{n}{k}=\ddp \sum\limits_{k=1}^{n} k(k-1)\binom{n}{k}+\ddp \sum\limits_{k=1}^{n} k\binom{n}{k}=\ddp \sum\limits_{k=2}^{n} k(k-1)\binom{n}{k}+\ddp \sum\limits_{k=1}^{n} k\binom{n}{k}=T+S_1=\fbox{$n(n+1)2^{n-2}$.}$
+\item  \textbf{Calcul de $\mathbf{\ddp S_3=\sum\limits_{i=0}^n \ddp\frac{1}{i+1}\ddp \binom{n}{i}}$:}\\
+\noindent L\`{a} encorrectione, il faut commencer par utiliser la propri\'et\'e sur les coefficients binomiaux. 
+Comme $\ddp (i+1)\binom{n+1}{i+1}=(n+1)\binom{n}{i}$, on obtient que: $\ddp\frac{1}{i+1}\binom{n}{i}= \ddp\frac{1}{n+1}\binom{n+1}{i+1}$. Ainsi, la somme devient: 
+$S_3=\ddp \sum\limits_{i=0}^n \ddp\frac{1}{i+1}\ddp \binom{n}{i}=\ddp \sum\limits_{i=0}^n \ddp\frac{1}{n+1}\binom{n+1}{i+1}= \ddp\frac{1}{n+1} \ddp \sum\limits_{i=0}^n \binom{n+1}{i+1}$ car $\ddp\frac{1}{n+1} $ ne d\'epend pas de l'indice de sommation $i$. On fait le changement d'indice $j=i+1$ et on utilise aussi la relation de Chasles pour faire appara\^{i}tre le bin\^{o}me de Newton. On obtient $S_3=\ddp \sum\limits_{i=0}^n \ddp\frac{1}{i+1}\ddp \binom{n}{i}= \ddp\frac{1}{n+1} \ddp \sum\limits_{j=1}^{n+1} \binom{n+1}{j}= \ddp\frac{1}{n+1} \left\lbrack \ddp \sum\limits_{j=0}^{n+1} \binom{n+1}{j}- \binom{n+1}{0} \right\rbrack$. Ainsi, on obtient 
+\fbox{$\ddp S_3= \sum\limits_{i=0}^n \ddp\frac{1}{i+1}\ddp \binom{n}{i}= \ddp\frac{1}{n+1} \left\lbrack 2^{n+1}-1 \right\rbrack$.}
+\end{enumerate}
+\end{correction}

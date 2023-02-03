@@ -1,0 +1,128 @@
+% Titre : Racine de $x^3-6x-9$
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+\begin{exercice}
+On cherche les racines réelles du polynôme $P(x) =x^3-6x-9$. 
+\begin{enumerate}
+\item Donner en fonction du paramètre $x$ réel, le nombre de solutions réelles de l'équation $x=y+\frac{2}{y}$ d'inconnue $y\in \R^*$. 
+\item Soit $x\in \R$ vérifiant $|x|\geq 2\sqrt{2}$. Montrer en posant le changement de variable $x=y+\frac{2}{y}$ que : 
+$$ P(x) =0 \equivaut y^6 -9y^3 +8=0$$
+\item Résoudre l'équation $z^2-9z+8=0$ d'inconnue $z\in \R$. 
+\item En déduire une racine du polynôme $P$.
+\item Donner toutes les racines réelles du polynôme $P$. 
+\end{enumerate}
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Résolvons l'équation proposée en fonction du paramètre $x$. 
+On a $$
+\begin{array}{lrl}
+&y+\frac{2}{y}&=x\\
+\equivaut & y^2+2&=yx\\
+\equivaut & y^2-xy+2&=0
+\end{array}
+$$
+
+On calcule le discriminant de ce polynome de degré $2$ on obtient
+$$\Delta = x^2-8$$
+
+Donc : 
+\begin{itemize}
+\item si $x^2-8>0$  c'est-à-dire si  $|x| >2\sqrt{2}$, 
+l'équation admet $2$ solutions. 
+\item si $x^2-8=0$  c'est-à-dire si  $x=2\sqrt{2}$ ou $x=-2\sqrt{2}$ 
+l'équation admet $1$ seule solution. 
+\item si $x^2-8<0$  c'est-à-dire si  $x\in ]-2\sqrt{2},22\sqrt{2}[$ 
+l'équation admet $0$ solution. 
+\end{itemize}
+
+\item 
+Soit $x=y+\frac{2}{y}$, on a :
+$$\begin{array}{lrl}
+&P(x)&=0 \\
+\equivaut&\left(y+ \frac{2}{y}\right)^3-6\left(y+ \frac{2}{y}\right)-9&=0
+\end{array}
+$$
+
+Développons à part 
+$\left(y+ \frac{2}{y}\right)^3$. On obtient tout calcul fait
+$$\left(y+ \frac{2}{y}\right)^3=y^3 +6y+\frac{12}{y}+\frac{8}{y^3}$$
+Donc 
+
+$$\begin{array}{lrl}
+&\left(y+ \frac{2}{y}\right)^3-6\left(y+ \frac{2}{y}\right)-9&=0\\
+\equivaut& y^3 +\frac{8}{y^3}-9&=0\\
+\equivaut& y^6 +8-9y^3&=0
+\end{array}
+$$
+où la dernière équivalence s'obtient en multipliant par $y^3$ non nul. 
+
+\item On résout $z^2-9z+8=0$ à l'aide du discriminant du polynôme $z^2-9z+8$ qui vaut 
+$\delta = 81-32= 49=7^2$. On  a donc deux solutions 
+\conclusion{
+$z_1 =\frac{9+7}{2}=8 \quadet z_2 =\frac{9-7}{2}=1$
+}
+
+\item La question d'avant montre que $\sqrt[3]{1}=1$ est solution de l'équation $y^6-9y^3+8=0$ (on peut le vérifier à la main si on veut, mais c'était le but de la question précédente.) 
+
+Comme  on a effectué le changement de variable  $x=y+\frac{2}{y}$ et à l'aide de la question $2$, on voit que $x=1+\frac{2}{1}=3$ est solution de l'équation $P(x)=0$ c'est-à-dire que 
+\conclusion{$3$ est une racine de $P$.} 
+
+(de nouveau on pourrait le revérifier en faisant le calcul, mais ceci n'est psa nécéssaire)
+
+\item Comme $3$ est racine de $P$, on peut écrire $P(x)$ sous la forme $(x-3)(ax^2+bx+c)$, avec $(a,b,c)\in \R^3$. 
+
+En développant on obtient 
+$P(x)= ax^3 +(-3a+b)x^2+(c-3b)x-3c.$ Maintenant par identification on obtient 
+$$\left\{\begin{array}{ccc}
+a&=&1\\
+-3a+b&=&0\\
+c-3b&=&-6\\
+-3c&=&-9
+\end{array}\right.$$
+Ce qui donne 
+$$\left\{\begin{array}{ccc}
+a&=&1\\
+b&=&3\\
+c&=&3\\
+c&=&3
+\end{array}\right.$$
+Et finalement 
+$$P(x) = (x-3) (x^2+3x+3)$$
+
+Il nous reste plus qu'à trouver les racines de $x^2+3x+3$ que l'on fait grâce à son discriminant qui vaut $\Delta =9-12<-3$. 
+
+\conclusion{
+L'unique racine réelle de $P$ est $3$}
+
+
+Je rajoute le graphique de la courbe représentative de $P$ avec le programme Python qui permet de le tracer. 
+\begin{lstlisting}
+import matplotlib.pyplot as plt
+import numpy as np
+def P(x):
+    return(x**3-6*x+9)
+X=np.linspace(-5,5,100)
+Y=P(X)
+Z=np.zeros(100)
+plt.plot(X,Y)
+plt.plot(X,Z)
+plt.show()
+\end{lstlisting}
+%\begin{center}
+%\includegraphics[scale=0.4]{../../../graph.png} 
+%\end{center}
+
+ 
+\end{enumerate}
+
+\end{correction}

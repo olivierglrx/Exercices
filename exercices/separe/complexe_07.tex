@@ -1,3 +1,13 @@
+% Titre : complexe
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :complexe
+% Subcategories : 
+% Keywords : complexe
+
+
+
 
 \begin{exercice} 
 On rappelle que $j=e^{\frac{2i\pi}{3}}$.
@@ -6,3 +16,26 @@ On rappelle que $j=e^{\frac{2i\pi}{3}}$.
 \item Simplifier les expressions $(1+j)^5$, $\ddp\frac{1}{(1+j)^4}$ et $\ddp\frac{1}{1-j^2}$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item \textbf{Calcul de $\mathbf{j^3}$ et de $\mathbf{1+j+j^2}$}:\\
+\noindent On a: $j^3=\left(  e^{i\frac{2\pi}{3}} \right)^3=e^{2i\pi}=1$. Pour le calcul de $1+j+j^2$, on reconna\^{i}t la somme des termes d'une suite g\'eom\'etrique de raison $j\not= 1$ et ainsi
+$$1+j+j^2=\ddp\frac{1-j^3}{1-j}=0.$$
+\item \textbf{Calcul de $\mathbf{(1+j)^5}$, $\mathbf{\ddp\frac{1}{(1+j)^4}}$ et de $\mathbf{\ddp\frac{1}{1-j^2}}$}:
+\begin{itemize}
+\item[$\bullet$] $(1+j)^5= (-j^2)^5= -j^{10}=-j^9\times j=-j=-e^{\frac{2i\pi}{3}}$.
+\item[$\bullet$] $\ddp\frac{1}{(1+j)^4}=\ddp\frac{1}{(-j^2)^4}=\ddp\frac{1}{j^8}=\ddp\frac{1}{j^2}=j^{-2}=e^{\frac{-4i\pi}{3}}=j$.
+\item[$\bullet$] En remarquant que $\overline{j^2}=j$, on obtient :
+$$\ddp\frac{1}{1-j^2}= \frac{1-\overline{j^2}}{(1-j^2)(1-\overline{j^2})} = \frac{1-j}{1-j^2-\overline{j^2}-|j^2|} = \frac{1-j}{1+1+1} = \frac{1-j}{3}.$$
+\end{itemize}
+\end{enumerate}
+\end{correction}

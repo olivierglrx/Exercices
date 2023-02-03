@@ -1,3 +1,13 @@
+% Titre : suites
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :suites
+% Subcategories : 
+% Keywords : suites
+
+
+
 
 \begin{exercice}  \; Suites homographiques.\\
 \noindent On consid\`ere les suites $\suiteu$ et $\suitev$ d\'efinies par
@@ -14,3 +24,43 @@ En d\'eduire l'expression explicite de $\suitev$ puis de $\suiteu$.
 \item Etudier la convergence de la suite $\suiteu$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction} \;
+\begin{enumerate}
+ \item Comme toujours pour ce genre de question, on fait une r\'ecurrence.
+\begin{itemize}
+\item[$\bullet$] On montre par r\'ecurrence sur $n\geq 3$ la propri\'et\'e $\mathcal{P}(n):\quad u_n \textmd{ d\'efini et  } u_n> 1.$
+\item[$\bullet$]  Initialisation: pour $n=3$:\\
+\noindent On a: $u_1=-1$ puis $u_2=-7$ et $u_3=\ddp\frac{37}{5}>1$. Ainsi, $\mathcal{P}(3)$ est vraie.
+\item[$\bullet$]  H\'er\'edit\'e: soit $n\geq 3$, on suppose la propri\'et\'e vraie \`a l'ordre $n$, montrons que $\mathcal{P}(n+1)$ est vraie. Par hypoth\`ese de r\'ecurrence, on sait que $u_n>1$, donc $u_n-1\not=0$ et $u_{n+1}$ est bien d\'efini. De plus, on a
+$$u_{n+1}>1 \; \Leftrightarrow \; \ddp\frac{5u_n-2}{u_n+2}>1 \; \Leftrightarrow \; 5u_n -2>u_n+2 \; \Leftrightarrow \; u_n>1.$$
+Ici on a utilis\'e le fait que $u_n>1$ d'apr\`es $\mathcal{P}(n)$, et donc que $u_n+2>0$. On arrive $u_n>1$ qui est bien vrai, donc par \'equivalences, $u_{n+1}>1$ est vrai aussi. Ainsi, $\mathcal{P}(n+1)$ est vraie.
+\item[$\bullet$]  Conclusion: il r\'esulte du principe de r\'ecurrence que $\forall n\geq 3,\ u_n>1.$
+\end{itemize}
+%--
+\item La suite $(v_n)_{n\in\N}$ est bien d\'efinie  car $u_0,\ u_1,\ u_2$ ne sont pas \'egaux \`a 1 et ensuite on a $\forall n \geq 3, u_n > 1$. Ainsi pour tout $n\in\N$, on a bien $u_n-1\not= 0$ et $v_n$ bien d\'efini. 
+%--
+\item Soit $n\in\N$:
+$$\begin{array}{lll}
+v_{n+1}&=& \ddp\frac{u_{n+1}-2}{u_{n+1}-1}
+= \ddp\frac{\frac{5u_n-2-2u_n-4}{u_n+2}}{\frac{5u_n-2-u_n-2}{u_n+2}}
+= \ddp\frac{3u_n-6}{4u_n-4}
+= \ddp\frac{3}{4}\ddp\frac{u_n-2}{u_n-1}
+= \ddp\frac{3}{4}v_n.
+\end{array}$$
+Ainsi la suite $(v_n)_{n\in\N}$ est une suite g\'eom\'etrique de raison $\ddp\frac{3}{4}$ et de premier terme $2$.
+\item On en d\'eduit la formule explicite de $v_n$:
+$$\forall n\in\N,\quad v_n=2\left( \ddp\frac{3}{4} \right)^n.$$
+En remarquant que: $u_n(v_n-1)=v_n-2$ et que la suite $(v_n)_{n\in\N}$ \'etait toujours diff\'erente de 1, on obtient que
+$$\forall n\in\N,\ u_n=\ddp\frac{v_n-2}{v_n-1}\Rightarrow u_n=\ddp\frac{2(\frac{3}{4})^n-2}{2(\frac{3}{4})^n-1}.$$
+\item Comme $-1<\ddp\frac{3}{4}<1$, la suite $(v_n)_{n\in\N}$ converge vers 0 et ainsi, on a: $\lim\limits_{n\to\N} u_n=2$.
+\end{enumerate}
+\end{correction}

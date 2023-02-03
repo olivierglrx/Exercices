@@ -1,0 +1,93 @@
+% Titre : Somme double $\max$ + info
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+\begin{exercice}
+\begin{enumerate}
+\item Montrer par récurrence que pour tout $n\in \N$, 
+$$ \sum_{k=1}^n  k^2= \frac{n(n+1)(2n+1)}{6}$$
+
+\item Soit $i\in \N$ et $n\in \N$ tel que $i\leq n$. Caculer en fonction de $i$ et $n$ :
+$$\sum_{j=i+1}^n j$$
+
+\item 
+On rappelle que l'on note $\max(i,j) =  \left\{
+    \begin{array}{ll}
+       i & \text{si\, } i \geq j \\
+        j & \mbox{sinon.}
+    \end{array}
+\right.
+$
+Montrer que pour tout $n\in \N$, $$\ddp \sum_{i,j\in \intent{1,n}} \max(i,j)  = \sum_{i=1}^n \frac{n^2+i^2 +n-i}{2}$$ 
+\item En déduire que 
+$$\ddp \sum_{i,j\in \intent{1,n}} \max(i,j) \left(   \frac{n(n+1)(4n-1)}{6} \right)	 $$
+
+\item On note $$S_k =  \sum_{i,j\in \intent{1,1000}} \max(i^k,j^k).$$ 
+\begin{enumerate}
+\item Rappeler ce que renvoie l'instruction Python $\texttt{range(a,b)}$ avec deux entiers $a,b\in \N$ tel que $a\leq b$.
+\item Ecrire un script Python qui demande à l'utilsateur la valeur de $k$, calcul $S_k$ et affiche le résultat. 
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+
+
+\begin{correction}
+Pour $n=0 $ on a d'une part $\sum_{k=1}^0 k^2 =0$ et 
+$\frac{0*1*(2*0+1)}{6}=0$ la propriété est vraie au rang 0
+
+Montrons l'hérédité de la formule et supposons qu'il existe $n\in \N$ tel que $ \sum_{k=1}^n  k^2= \frac{n(n+1)(2n+1)}{6}$
+On a 
+$$\sum_{k=1}^{n+1} k^2 =\sum_{k=1}^{n} k^2 +  (n+1)^2$$
+et donc par hypothèse : 
+\begin{align*}
+\sum_{k=1}^{n+1} k^2 &=\frac{n(n+1)(2n+1)}{6} +  (n+1)^2\\
+									&= \frac{(n+1) [ n(2n+1) +6(n+1)}{(n+1)^2}\\
+									&= \frac{(n+1) [ 2n^2+ +7n+6)}{(n+1)^2}		\\												&= \frac{(n+1) [ (2n+3)(n+2)}{(n+1)^2}				\\											&= \frac{(n+1) ((n+1)+1) (2(n+1)+1)}{(n+1)^2}			
+\end{align*}
+La formule est  bien héréditaire elle est donc vraie pour tout $n\in \N$. 
+
+
+
+D'après le cours :
+$\ddp \sum_{j=i+1}^n j = \frac{(n+i+1)(n-i)}{2}$
+\begin{align*}
+\sum_{i,j \in \intent{1,n}} \max(i,j) &= \sum_{i=1}^n \sum_{j=1}^n\max(i,j)\\
+												&= \sum_{i=1}^n \sum_{j=1}^i\max(i,j) + \sum_{i=1}^n \sum_{j=i+1}^n\max(i,j)\\
+												&= \sum_{i=1}^n \sum_{j=1}^i i  + \sum_{i=1}^n \sum_{j=i+1}^n j\\
+													&= \sum_{i=1}^n i^2+ \sum_{i=1}^n \frac{(n+i+1)(n-i)}{2} \\
+													&= \sum_{i=1}^n i^2 + \frac{n^2-i^2 +n-i}{2}\\		
+													&= \sum_{i=1}^n \frac{n^2+i^2 +n-i}{2}\\	
+\end{align*}
+\begin{align*}
+\sum_{i,j \in \intent{1,n}} \max(i,j)	&= \frac{1}{2} \left( n (n^2+n) + \sum_{i=1}^n i^2  -  \sum_{i=1}^n i\right)\\
+													&= \frac{1}{2} \left(  n^2 (n+1) +  \frac{n(n+1)(2n+1)}{6} -   \frac{n(n+1)}{2}\right)\\
+													&=\frac{1}{2} \left(   \frac{n(n+1)(6n +(2n+1) -3 }{6} \right)\\
+													&=\frac{1}{2} \left(   \frac{n(n+1)(8n-2)}{6} \right)\\		
+													&= \left(   \frac{n(n+1)(4n-1)}{6} \right)											
+\end{align*}
+
+\texttt{range(a,b)} renvoie la suite d'entiers de $a$ à $b-1$. 
+
+
+\begin{lstlisting}
+k = int(input ('quelle est la valeur de k ? ))
+S=0
+for i in range(1,1001):  #on fait une boucle for pour obtenir la somme sur i 
+  for j in range(1,1001):  #et une deuxieme pour la somme sur j
+    if i<=j:
+      S=S+j**k
+    else:
+      S=S+i**k
+print(S)
+\end{lstlisting}
+
+
+\end{correction}

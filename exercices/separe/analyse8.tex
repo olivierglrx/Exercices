@@ -1,0 +1,168 @@
+% Titre : Equation différentielle, changement de variable
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+\begin{exercice}
+Le but de cet exercice est de déterminer l'ensemble $\cS$ des fonctions
+$f :]0,+\infty[\tv \R$ telles que : 
+$$ \text{$f$ est dérivable sur $]0,+\infty[$ et } \forall t>0, \, f'(t) = f(1/t)$$
+
+On fixe une fonction $f\in \cS$ et on définit la fonction $g$ par 
+$$g(x) =f(e^{x})$$
+\begin{enumerate}
+\item Justifier que $f$ est deux fois dérivable sur $]0,+\infty[$ et exprimer sa dérivée seconde en fonction de $f$. 
+\item Justifier que $g$ est deux fois dérivable sur $\R$ et montrer que $g$ est solution de l'équation diffrentielle suivante : 
+$$y''-y'+y=0\quad(E)$$
+\item Résoudre $(E)$. 
+\item En déduire que $f$ est de la forme $$f(t) = A \sqrt{t}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right) +B\sqrt{t}  \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)$$ où $(A,B)$ sont deux constantes réelles.
+
+On appelle $f_1(t) =  \sqrt{t}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)$ et 
+$f_2(t)= \sqrt{t}  \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)$
+\item Calculer les dérivées premières de $f_1$ et $f_2$
+\item En considérant les cas $t=1$ et $t=e^{\pi/\sqrt{3}}$, montrer que $A$ et $B$ sont solutions de
+$$(S) \left\{ \begin{array}{ccc}
+A-B\sqrt{3}&=&0\\
+A\sqrt{3}-3B&=&0
+\end{array}\right.$$
+\item Résoudre $(S)$. 
+\item Conclure. 
+\end{enumerate} 
+\end{exercice}
+
+\begin{correction}
+\begin{enumerate}
+\item Remarquons qu'étant donné que $f$ est dérivable et $t\mapsto \frac{1}{t}$ est aussi dérivable, la fonction $f'$ est dérivable par composée de fonctions dérivables. Ainsi $f$ est dérivable deux fois sur $]0,+\infty[$ et on a \conclusion{$f''(t) = \frac{-1}{t^2}f'(1/t)  = \frac{-1}{t^2}f(t)$}
+
+\item La fonction $x\mapsto e^x$ est dérivable deux fois sur $\R$ et $exp(\R) = ]0,+\infty[$, de nouveau par composition, $g$ est dérivable deux fois sur $\R$. 
+
+Calculons les dérivées successives de $g$ en fonction de celles de $f$ :
+$$g'(x) = e^x f'(e^x) \quadet g''(x) = e^xf'(e^x) +e^{2x} f''(e^x)$$
+On  a donc 
+\begin{align*}
+g''(x)-g'(x)+g(x)  &= e^xf'(e^x) +e^{2x} f''(e^x)-e^x f'(e^x)+f(e^{x})\\
+						&= e^{2x} f''(e^x)+f(e^{x})
+\end{align*}
+On utilise alors la relation vérifiée par $f$ : $f'(x) = f(1/x)$, on a par dérivation $f''(x) = \frac{-1}{x^2}f'(1/x)  = \frac{-1}{x^2}f(x)$, d'où 
+$$f''(e^x) = \frac{-1}{e^{2x}}f(e^{x})=-e^{-2x} f(e^x)$$
+Donc pour tout $x\in \R$ :
+\begin{align*}
+g''(x)-g'(x)+g(x)  &=  -e^{2x}e^{-2x} f(e^x) +f(e^x)\\
+							&=0
+\end{align*}
+\conclusion{La fonction $g$ est donc solution de l'équation différentielle $g''-g'+g=0$.}
+
+\item Résolvons $(E)$ avec la méthode vue en cours. Le polynôme caractéristique est 
+$X^2-X+1$ qui admet comme discriminant $\Delta = 1-4 =-3<0$ et donc deux racines complexes : $r_1=\frac{1-i\sqrt{3}}{2}$ et $r_2=\frac{1+i\sqrt{3}}{2}$. 
+Les solutions de $(E)$ sont donc de la forme 
+\conclusion{
+$\cS = \left\{ x\mapsto  e^{x/2} \left(A\cos\left(\frac{\sqrt{3}}{2}x\right)+B\sin\left(\frac{\sqrt{3}}{2}x\right)\right) \, | \, A, B\in \R \right\}$}
+
+\item On vient de voir que $f(e^{x})$ est de la forme $e^{x/2} (A\cos\left(\frac{\sqrt{3}}{2}x\right)+B\sin\left(\frac{\sqrt{3}}{2}x\right)) $, donc 
+$f(t) $ est de la forme 
+$$f(t) = A \sqrt{t}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right) +B\sqrt{t}  \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)$$
+avec $A,B$ deux constantes réelles. Ceci est bien la forme demandée par l'énoncé, avec 
+$$f_1(t) = \sqrt{t}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)$$ et 
+$$f_2(t) = \sqrt{t}  \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)$$
+
+\item Calculons les dérivées des fonctions $f_1$ et $f_2$. 
+On a 
+\begin{align*}
+f_1'(t) &= \frac{1}{2\sqrt{t}}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)  - \sqrt{t} \frac{\sqrt{3}}{2t} \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)\\
+&= \frac{1}{2\sqrt{t}}  \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)  - \frac{\sqrt{3}}{2\sqrt{t} } \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)
+\end{align*}
+
+De même 
+$$f'_2(t)= \frac{1}{2\sqrt{t}}  \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)  + \frac{\sqrt{3}}{2\sqrt{t} } \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)$$
+
+\item Pour $t= 1$ on obtient d'une part 
+\begin{align*}
+f(1)& = A \sqrt{1}  \cos\left(\frac{\sqrt{3}}{2}\ln(1)\right) +B\sqrt{1}  \sin\left(\frac{\sqrt{3}}{2}\ln(1)\right)\\
+&=A
+\end{align*}
+et  d'autre part : 
+\begin{align*}
+f'(1) &= Af_1'(1) +  Bf_2'(1)\\
+		&= \frac{A}{2} + \frac{B\sqrt{3}}{2}
+\end{align*}
+Comme $f'(1) =f(1/1)=f(1)$,
+on obtient alors 
+$$A= \frac{A+B\sqrt{3}}{2}$$
+donc 
+$2A=A+B\sqrt{3} $ et finalement 
+\conclusion{$A-B\sqrt{3}=0$}
+C'est la première équation du système $(S)$
+
+
+Faisons la même chose pour $t=e^{\pi/\sqrt{3}}$. Remarquons tout d'abord que 
+$$f'(e^{\pi/\sqrt{3}}) = f(1/e^{\pi/\sqrt{3}}) = f(e^{-\pi/\sqrt{3}})$$
+
+Calculons alors les deux membres de cette égalité. 
+\begin{align*}
+f(e^{-pi/\sqrt{3}}) &=Ae^{-\pi/2\sqrt{3}}  \cos( -\frac{\pi}{2})+Be^{-\pi/2\sqrt{3}}  \sin( -\frac{\pi}{2})\\
+&=-B e^{-\pi/2\sqrt{3}} 
+\end{align*}
+
+et
+\begin{align*}
+ f'_1(e^{\pi/\sqrt{3}})&= -\frac{\sqrt{3}}{2}e^{-\pi/2\sqrt{3}}
+\end{align*}
+\begin{align*}
+ f'_2(e^{\pi/\sqrt{3}})&= \frac{1}{2}e^{-\pi/2\sqrt{3}}
+\end{align*}
+d'où 
+$$f'(e^{\pi/\sqrt{3}}) =  -\frac{A\sqrt{3}}{2}e^{-\pi/2\sqrt{3}}+ \frac{B}{2}e^{-\pi/2\sqrt{3}}$$
+
+Finalement on obtient 
+$$B e^{-\pi/2\sqrt{3}}  =  -\frac{A\sqrt{3}}{2}e^{-\pi/2\sqrt{3}}+ \frac{B}{2}e^{-\pi/2\sqrt{3}}$$
+Donc 
+$$-B =  -\frac{A\sqrt{3}}{2} +\frac{B}{2}$$
+Ce qui donne alors 
+$-2B = -A\sqrt{3} +B$ et finalement 
+\conclusion{$-3B+A\sqrt{3}=0$}
+C'est la deuxième équation du système $(S)$
+
+\item 
+Le système $(S)$ est équivalent à 
+$$\left\{ \begin{array}{ccc}
+A-B\sqrt{3}&=&0\\
+\sqrt{3}(A-\sqrt{3}B)&=&0
+\end{array}\right. \equivaut A-B\sqrt{3}=0$$
+
+Le système admet alors une infinité de solutions de la forme 
+\conclusion{$\cS = \{ (B\sqrt{3}, B) \, |\, B\in R\}$}
+
+\item On en déduit que $f$ est de la forme 
+$$f (t) = B\sqrt{3} f_1(t) +Bf_2(t)$$
+où 
+$B$ est une constante réelle. 
+
+Il faut maintenant vérifier que les fonctions de cette forme sont bien solutions de notre problème. 
+
+$f$ est bien définie et dérivable sur $]0, +\infty[$
+et $$f'(t) = \frac{B\sqrt{3}}{\sqrt{t}} \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)  - \frac{B}{\sqrt{t}} \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right) $$
+
+D'autre part $f(1/t) = B\sqrt{3}f_1(1/t) +Bf_2(1/t)$
+
+Et  on a 
+\begin{align*}
+f_1(1/t) &=\frac{1}{\sqrt{t}} \cos\left(\frac{\sqrt{3}}{2}\ln(1/t)\right)  \\
+			 &=\frac{1}{\sqrt{t}} \cos\left(-\frac{\sqrt{3}}{2}\ln(t)\right)  \\
+			 			 &=\frac{1}{\sqrt{t}} \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)  
+\end{align*}
+
+De même on obtient 
+$$f_2(1/t) = -\frac{1}{\sqrt{t}} \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right)  $$
+par imparité de la fonction $\sin$
+
+Ainsi $$f(1/t) =  B\frac{\sqrt{3}}{\sqrt{t}} \cos\left(\frac{\sqrt{3}}{2}\ln(t)\right)  - B\frac{1}{\sqrt{t}} \sin\left(\frac{\sqrt{3}}{2}\ln(t)\right) =f'(t)$$
+ 
+
+
+\end{enumerate}
+\end{correction}

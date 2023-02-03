@@ -1,3 +1,13 @@
+% Titre : complexe
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :complexe
+% Subcategories : 
+% Keywords : complexe
+
+
+
 
 \begin{exercice}  \;
 \begin{enumerate}
@@ -6,3 +16,41 @@
 \item Soit $(\alpha,\beta)\in\lbrack 0,2\pi\lbrack^2$. D\'eterminer la forme exponentielle de $Z=\ddp\frac{1-\cos \alpha +i\sin \alpha }{1-\sin \beta +i\cos \beta}$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+%-----------------
+\item \textbf{Module et argument de $\mathbf{Z=\ddp\frac{1+\cos{a}+i\sin{a}  }{ 1+\cos{b}+i\sin{b}  }}$}:\\
+On peut remarquer que: $\ddp\frac{1+\cos{a}+i\sin{a}  }{ 1+\cos{b}+i\sin{b}  }= \ddp\frac{ 1+e^{ia}  }{1+e^{ib}}$. On utilise donc la m\'ethode de l'angle moiti\'e pour le num\'erateur et le d\'enominateur. On obtient
+$$\ddp\frac{1+\cos{a}+i\sin{a}  }{ 1+\cos{b}+i\sin{b}  }= \ddp\frac{ e^{\frac{ia}{2}}   2\cos{\left( \frac{a}{2}\right)}  }{ e^{\frac{ib}{2}}   2\cos{\left( \frac{b}{2}\right)}   }=\ddp\frac{ e^{\frac{ia}{2}}   \cos{\left( \frac{a}{2}\right)}  }{ e^{\frac{ib}{2}}   \cos{\left( \frac{b}{2}\right)}   }.$$
+On peut remarquer que ce nombre est bien d\'efini car le d\'enominateur est bien non nul car on a suppos\'e que $b$ n'est pas de la forme $2k\pi+\pi$ donc $\ddp\frac{b}{2}$ n'est pas de la forme $k\pi+\ddp\frac{\pi}{2}$ avec $k\in\Z$ et ainsi $\cos{\left( \frac{b}{2}\right)} $ ne s'annule pas. On obtient donc
+$$Z=\ddp\frac{1+\cos{a}+i\sin{a}  }{ 1+\cos{b}+i\sin{b}  }=\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } e^{i\frac{a-b}{2}}.$$
+\begin{itemize}
+\item[$\bullet$] Calcul du module: $|Z|= \left| \ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  }   \right|$. Ainsi, il faut \'etudier des cas selon le signe de ce qui est \`{a} l'interieur du module.
+\item[$\bullet$] Cas 1: Si $ \ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } >0$, \`{a} savoir s'ils sont tous les deux positifs ou tous les deux n\'egatifs, on obtient alors:
+$$|Z|=\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } \quad \hbox{et}\quad Z=\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } e^{i\frac{a-b}{2}}.$$
+$Z$ est alors bien sous forme exponentielle et un argument de $Z$ est $\ddp\frac{a-b}{2}$.
+\item[$\bullet$] Cas 2: Si $ \ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } <0$, \`{a} savoir si l'un est n\'egatif et l'autre positif, on obtient alors:
+$$|Z|=-\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } \quad \hbox{et}\quad Z=-\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } \left(-e^{i\frac{a-b}{2}}\right)=-\ddp\frac{ \cos{\left( \frac{a}{2}\right)}  }{   \cos{\left( \frac{b}{2}\right)}  } 
+e^{i(\frac{a-b}{2}+\pi)}.$$
+$Z$ est alors bien sous forme exponentielle et un argument de $Z$ est $\ddp\frac{a-b}{2}+\pi$.
+\end{itemize}
+%-----------------
+\item \textbf{D\'eterminer la forme exponentielle de $\mathbf{Z=\ddp\frac{1-\cos{(\alpha)} +i\sin{(\alpha)} }{1-\sin{(\beta)} +i\cos{(\beta)}}}$} : on utilise le m\^{e}me type de raisonnement, en remarquant que :
+$$Z=\ddp\frac{1-(\cos \alpha -i\sin \alpha) }{1+i(\cos \beta - i \sin \beta)} = \frac{1-e^{-i\alpha}}{1+ie^{-i\beta}} =  \frac{1-e^{-i\alpha}}{1+e^{i\left(\frac{\pi}{2} - \beta\right)}}.$$
+On utilise ensuite la m\'ethode de l'angle moiti\'e, et on distingue 3 cas :
+\begin{itemize}
+\item[$\bullet$] Si $\ddp \frac{\sin\left(\frac{\alpha}{2}\right)}{\cos \left( \frac{\beta}{2}-\frac{\pi}{4}\right)} >0$, alors $Z = \ddp \frac{\sin\left(\frac{\alpha}{2}\right)}{\cos \left( \frac{\beta}{2}-\frac{\pi}{4}\right)} e^{i\left(\frac{\beta-\alpha}{2}+\frac{\pi}{4}\right)}$.
+\item[$\bullet$] Si $\ddp \frac{\sin\left(\frac{\alpha}{2}\right)}{\cos \left( \frac{\beta}{2}-\frac{\pi}{4}\right)} =0$, alors $Z=0$ et n'admet pas de forme exponentielle.
+\item[$\bullet$] Si $\ddp \frac{\sin\left(\frac{\alpha}{2}\right)}{\cos \left( \frac{\beta}{2}-\frac{\pi}{4}\right)} <0$, alors  $Z = \ddp -\frac{\sin\left(\frac{\alpha}{2}\right)}{\cos \left( \frac{\beta}{2}-\frac{\pi}{4}\right)} e^{i\left(\frac{\beta-\alpha}{2}+\frac{3\pi}{4}\right)}$.
+\end{itemize}
+\end{enumerate}
+\end{correction}

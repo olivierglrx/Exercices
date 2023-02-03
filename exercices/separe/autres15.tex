@@ -1,0 +1,191 @@
+% Titre : Matrice, famille libre, commutant
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : autres
+% Subcategories : 
+% Keywords : autres
+
+
+
+
+\begin{exercice}
+Soit $A$ la matrice suivante : 
+$\left(\begin{array}{ccc}
+0&0&0\\
+1&0&0\\
+0&1&0
+\end{array}
+\right).$
+\begin{enumerate}
+\item Déterminer les réels $\lambda\in \R$ pour lesquels la matrice $A-\lambda \Id$ n'est pas  inversible. On appelle ces réels les \emph{valeurs propres} de $A$. 
+\item
+\begin{enumerate}
+\item  Calculer $A^2$ et $A^3$. 
+\item Quelle est la dimension de $\cM_3(\R)$ ? 
+\item Montrer que $(Id_3, A, A^2)$ est une famille libre de l'espace vectoriel $\cM_3(\R)$.
+\item Est-ce une base ? 
+\end{enumerate}
+
+\item On considère $\cS$ l'ensemble des matrices  $M\in \cM_3(\R)$ telles que $AM=MA$. 
+\begin{enumerate}
+\item Montrer que $\cS$ est un sous-espace vectoriel de $\cM_3(\R)$. 
+\item Soit $\alpha, \beta, \gamma $  trois réels et $M = \alpha \Id_3 +\beta A +\gamma A^2$. Vérifier que $M\in \cS$
+\item Réciproquement, on considère $a, b, c, d, e, f, g, h, $ et $i$ des réels tel que $M =   \left(\begin{array}{ccc}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{array}
+\right) \in \cS$. Déterminer, en fonction des coefficients de $M$, trois réels $\alpha, \beta, \gamma$ tels que $ M =\alpha \Id_3 +\beta A +\gamma A^2$
+\item En déduire, une base de $\cS$. 
+\end{enumerate} 
+\item On considère $S'$ l'ensemble des matrices $M$ de $\cM_3(\R)$ telles que $M^3=0$  et $M^2 \neq 0$. 
+\begin{enumerate}
+\item Est ce que $\cS'$ est un sous-espace vectoriel de $\cM_3(\R)$ ?
+\item Soit $P\in \cM_3(\R)$  une matrice inversible et $M=P A P^{-1} $. Vérifier que $M\in \cS'$.\\
+Dans la suite, tout vecteur de $\R^3$ sera assimilé à une matrice colonne de $\cM_{3,1}(\R)$ de sorte que, pour tout vecteur $X\in \R^3$, le produit matriciel $MX$ soit correctement défini. 
+\item Soit $M =\left( 
+\begin{array}{ccc}
+-1&1& 1\\
+1&1&-1\\
+0&2&0
+\end{array}
+\right).$.
+\begin{enumerate}
+\item  Vérifier que $M \in \cS'$. 
+%On considère $f$ l'endomorphisme de $\R^3$ dont $M$ est la matrice dans la base canonique, c'est-à-dire $f : \R^3 \tv \R^3 $, $X\mapsto MX$.
+\item Prouver qu'il existe un vecteur $X\in \R^3$ tel que $M^2 X$ soit non nul.
+\item Montrer que la famlille $B=(X,MX,M^2X) $ est une base de $\R^3$.
+%\item Déterminer la matrice de $f$ dans la base $\cB$. 
+\end{enumerate}
+
+
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+\vspace{1cm}
+
+
+
+\begin{correction}
+\begin{enumerate}
+\item $A-\lambda \Id_3 =\left(\begin{array}{ccc}
+-\lambda&0&0\\
+1&-\lambda&0\\
+0&1&-\lambda
+\end{array}
+\right).$ Cette matrice est déjà échelonnée, elle n'est pas  inversible si et seulement si $\lambda =0$.
+\item $A^2=\left(\begin{array}{ccc}
+0&0&0\\
+0&0&0\\
+1&0&0
+\end{array}
+\right)$  et  $A^3 =0$.
+\item 
+\begin{enumerate}
+\item $\cS$ contient la matrice nulle, $\cS$ est donc non vide. 
+De plus si $M,N \in \cS$ et $\lambda \in \R$, on a 
+\begin{align*}
+(M +\lambda N) A &= M A + \lambda NA \\
+							&= AM +\lambda AN\\
+							&= A (M +\lambda N) 
+\end{align*}
+Donc $\cS$ est stable par combinaison linéaire, c'est donc un sev de $\cM_3(\R)$. 
+\item Soit $(\alpha, \beta, \gamma )\in \R^3$  et $M = \alpha \Id_3 +\beta A +\gamma A^2$. On  a
+\begin{align*}
+AM &= A (  \alpha \Id_3 +\beta A +\gamma A^2 )\\
+	&= \alpha A +\beta A^2 +\gamma A^3 \\
+	&= (  \alpha \Id_3 +\beta A +\gamma A^2 ) A \\
+	&=MA
+\end{align*}
+Ainsi $M\in \cS$. 
+
+\item Soit $M =   \left(\begin{array}{ccc}
+a&b&c\\
+d&e&f\\
+g&h&i
+\end{array}
+\right) \in \cS$ On a 
+$$AM = \left(\begin{array}{ccc}
+0&0&0\\
+a&b&c\\
+d&e&f
+\end{array} \right)  \quad \text{ et } \quad MA = \left(\begin{array}{ccc}
+b&e&0\\
+e&f&0\\
+h&i&0
+\end{array}  \right) $$ 
+
+Si $M\in \cS$ on obtient les équations suivantes : 
+$\left\{ 
+\begin{array}{c}
+b=0\\
+e=0\\
+0=0\\
+a=e\\
+b=f \\
+c=0\\
+d=h\\
+e=i\\
+f=0
+\end{array}
+\right.$
+Ce qui se simplifie en
+$\left\{ 
+\begin{array}{l}
+b=c=f=0\\
+a=e=i\\
+d=h
+\end{array}
+\right.$
+Au final si $M\in \cS$, $M$ est de la forme 
+
+$$\left(\begin{array}{ccc}
+a&0&0\\
+d&a&0\\
+g&d&a
+\end{array}
+\right)  = a \Id_3 +d A +gA^2$$
+\item On en déduit que $\cS =\{ M =  \alpha \Id_3 +\beta A +\gamma A^2\, |\, (\alpha, \beta, \gamma) \in\R^3\} = \Vect( \Id_3, A, A^2)$. On a vu à la question 2b) que $( \Id_3, A, A^2)$ etait une famille libre de $\cM_3(\R)$, comme elle est génératrice de $\cS$ par définition d'un espace vectoriel engendré c'est donc une base de $\cS$. 
+
+
+ 
+ 
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item La matrice nulle n'appartient pas à $\cS'$ car $0^2=0$. 
+\item Soit $P\in \cM_3(\R)$  une matrice inversible et $M=P A P^{-1} $, on  d'une part
+$M^2 = PA^2P^{-1} $ qui est non nul car $A^2$ est non null et $P$ et $P^{-1}$ sont inversibles  et d'autre part  $M^3 =PA^3 P^{-1} = P 0 P^{-1} =0$. Donc $M \in \cS'$
+\item \begin{enumerate}
+\item $M^2 =\left(\begin{array}{ccc}
+2&2&-2\\
+0&0&0\\
+2&2&-2
+\end{array}
+\right)  $  et $M^3 = \left(\begin{array}{ccc}
+0&0&0\\
+0&0&0\\
+0&0&0
+\end{array}
+\right)  $. Ainsi $M\in \cS'$. 
+\item Si tous les vecteurs de $\R^3$ vérifiaient $M^2X=0$, alors $M^2 = 0$ (il suffit de vérifier avec les vecteurs de la base canonique). Ainsi il existe un vecteur tel $M^2X\neq 0$
+\item Soit $\lambda_0,\lambda_1,\lambda_2\in \R^3$ tel que  
+$$\lambda_0 X +\lambda_1 M X +\lambda_2 M^2 X= 0$$
+On a en composant par $M:$
+$$\lambda_0 M X +\lambda_1 M^2 X +\lambda_3 M^3 X=0$$
+Or $M^3 =0 $ donc 
+$$\lambda_0 M X +\lambda_1 M^2 X=0$$
+En réitérant le processus on obtient 
+$$\lambda_0 M^2 X =0  $$
+Or comme $M^2X \neq 0$ par hypothèse, on a $\lambda_0=0$ 
+L'équation précédente donne alors $\lambda_1=0$ et finalement 
+$$\lambda_0=\lambda_1 =\lambda_2 =0$$
+La famille est libre. Comme elle contient 3 vecteurs dans un ev de dimension $3$ c'est une base. 
+
+
+\end{enumerate}
+\end{enumerate}
+
+\end{enumerate}
+\end{correction}

@@ -1,0 +1,13 @@
+\usepackage{comment}
+
+\ifshow
+\newenvironment{correction}{{\par\medskip \refstepcounter{correction}
+%\addcontentsline{toc}{section}{\footnotesize{Correction \thecorrection .}}
+\color{red}
+\textbf{ Correction \thecorrection .}\color{black} \ignorespaces
+}
+}{}
+\else
+  \excludecomment{correction}
+\fi
+

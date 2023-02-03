@@ -1,5 +1,60 @@
+% Titre : nombre
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :nombre
+% Subcategories : 
+% Keywords : nombre
+
+
+
 
 \begin{exercice}
 Résoudre l'équation pour $x\in \R$ de paramètre $a$  : 
 $$\frac{1}{x-a} \geq x$$
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}
+L'ensemble de définition est $D_a= \R\setminus \{ a\}$. 
+On a pour tout $x\in D_a$ : 
+\begin{eqnarray*}
+(I(a))  &\Longleftrightarrow &\frac{1}{x-a}  -x  \geq 0\\
+	&\Longleftrightarrow &\frac{1-x(x-a)}{x-a}  \geq 0\\
+	&\Longleftrightarrow &\frac{- x^2 + ax+1}{x-a}  \geq 0\\
+	&\Longleftrightarrow &\frac{x^2-ax-1}{x-a}  \leq 0 \\
+\end{eqnarray*}
+Le discriminant de $x^2-ax-1$ est $\Delta(a) = a^2+4>0$ pour tout $a\in \R$. 
+Les racines sont 
+$$r_+ (a) = \frac{a+\sqrt{a^2+4}}{2} \quad \text{ et} \quad r_- (a) = \frac{a-\sqrt{a^2+4}}{2} $$
+On va résoudre
+\begin{equation}\tag{$I_+$}
+r_+(a) \geq a 
+\end{equation} 
+ et 
+\begin{equation}\tag{$I_-$}
+r_-(a) \geq a
+\end{equation} 
+Résolvons $(I_+)$
+\begin{eqnarray}
+r_+(a) \geq a &\Longleftrightarrow & \sqrt{a^2+4} \geq a
+\end{eqnarray}
+Si $a\geq 0$, $ r_+(a) \geq a \Longleftrightarrow  a^2+4 \geq a^2$ toujours vrai. Donc $a\geq 0 $ solution. \\
+Si $a\leq 0$, $a$ est solution car $ \sqrt{a^2+4} \geq 0\geq a$
+Les solutions de $(I_+)$ sont $S_+=\R$
+
+
+Les solutions de $(I_-)$ sont $S_-=\emptyset$.
+
+
+Les solutions de $I(a)$ sont donc données par (tableau de signes)
+\conclusion{$]-\infty, r_-(a)]\cup ]a, r_+(a)]$)}
+
+\end{correction}

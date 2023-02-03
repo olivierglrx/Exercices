@@ -1,3 +1,13 @@
+% Titre : complexe
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :complexe
+% Subcategories : 
+% Keywords : complexe
+
+
+
 
 \begin{exercice}  \;
 \begin{enumerate}
@@ -5,3 +15,47 @@
 \item Exprimer en fonction des puissances de $\cos{x}$ et de $\sin{x}$: $\cos{(5x)}$ et $\sin{(5x)}.$ En d\'eduire la valeur de $\cos{\left(  \ddp\frac{\pi}{10}\right)}$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item Il s'agit ici d'utiliser la formule de Moivre pour exprimer le cosinus comme la partie r\'eelle d'une exponentielle complexe, et le sinus comme sa partie imaginaire. Puis on calcule l'exponentielle comme une puissance, en d\'eveloppant gr\^ace \`a la formule du bin\^ome de Newton, et on identifie la partie r\'eelle et la partie imaginaire.
+\begin{itemize}
+\item[$\bullet$] On a $\cos (3x) = \reel(e^{3ix})$. On a de plus :
+$$\begin{array}{rcl}
+e^{3ix} & = & \ddp (e^{ix})^3 \; = \; = \left(\cos x + i \sin x \right)^3\vsec\\
+& = & \ddp \cos^3 x + 3 i \cos^2 x \sin x - 3 \cos x \sin^2 x - i \sin^3 x
+\end{array}$$
+On a donc $\cos (3x) = \reel (\cos^3 x + 3 i \cos^2 x \sin x - 3 \cos x \sin^2 x - i \sin^3 x) = \cos^3{x}-3\cos{x}\sin^2{x}$, soit, en utilisant $\sin^2 x =1-\cos^2 x$ : \fbox{$\cos(3x)=4\cos^3{x}-3\cos{x}$}. 
+\item[$\bullet$] De m\^eme, on remarque que $\sin(4x) = \imag(e^{4ix})$. La m\^eme m\'ethode donne : \fbox{$\sin(4x)=4\cos{x}\sin{x}\left( \cos^2{x}-\sin^2{x} \right)=4\cos{x}\sin{x}\left( 1-2\sin^2{x}  \right)$}.
+\end{itemize}
+\item 
+\begin{itemize}
+\item[$\bullet$]  On applique la m\^eme m\'ethode, et on obtient :
+$$\cos{(5x)} = \cos^5{(x)}-10\cos^3{(x)}\sin^2{(x)}+5\cos{(x)}\sin^4{(x)}$$
+$$\sin{(5x)}= \sin^5{(x)} -10\cos^2{(x)}\sin^3{(x)}+5\cos^4{(x)}\sin{(x)}  .$$
+\item[$\bullet$] On commence par exprimer $\cos{(5x)}$ en fonction de $\cos x$ uniquement :
+$$\begin{array}{rcl}
+\cos{(5x)} & = & \cos^5{(x)}-10\cos^3{(x)}(1-\cos^2{(x)}+5\cos{(x)}(1-\cos^2{(x)})^2 \vsec\\
+ & = & 16 \cos^5 (x) - 20 \cos^3(x) + 5. 
+ \end{array}$$
+En prenant $x=\ddp\frac{\pi}{10}$ dans la relation pr\'ec\'edente, on a alors :
+$$\cos{\left(\frac{5\pi}{10}\right)} = 16 \cos^5{\left( \ddp\frac{\pi}{10}\right)}-20\cos^3{\left( \ddp\frac{\pi}{10}\right)}+5.$$
+En remarquant que $\ddp \cos{\left(\frac{5\pi}{10}\right)} = \cos{\left(\frac{\pi}{2}\right)}=0$, on obtient que $\ddp \cos{\left(\frac{\pi}{10}\right)}$ est solution de l'\'equation :
+$$16X^5-20X^3+5 = 0 \; \Leftrightarrow \; X(16X^4-20X^2+5)=0.$$
+Ainsi c'est \'equivalent \`{a}: $X=0$ ou \`{a} $16X^4-20X^2+5=0$. Comme $\cos{\left( \ddp\frac{\pi}{10}\right)}\not =0$, on doit donc r\'esoudre: $16X^4-20X^2+5=0$. On pose encore $Y=X^2$ afin de se ramener \`{a} une \'equation du second degr\'e en $Y$ et on obtient: $16Y^2-20Y+5=0$. Les solutions sont alors $Y=\ddp\frac{5-\sqrt{5}}{8}$ ou $Y=\ddp\frac{5+\sqrt{5}}{8}$. Ainsi, comme $Y=X^2$, on a
+$$ X=\ddp\sqrt{\ddp\frac{5-\sqrt{5}}{8}}\ \hbox{ou}\ X=-\ddp\sqrt{\ddp\frac{5-\sqrt{5}}{8}}\ \hbox{ou}\ X=\ddp\sqrt{\ddp\frac{5+\sqrt{5}}{8}}\ \hbox{ou}\ X=-\ddp\sqrt{\ddp\frac{5+\sqrt{5}}{8}}.$$
+Comme $\ddp\frac{\pi}{10}\in\left\rbrack 0,\ddp\frac{\pi}{6}\right\lbrack$, on sait, le cosinus \'etant d\'ecroissant sur cet intervalle que: $0<\ddp\frac{\sqrt{3}}{2}<\cos{\left( \ddp\frac{\pi}{10}\right)}<1$. En particulier, il ne peut pas \^{e}tre n\'egatif, donc $\ddp \cos\left(\frac{\pi}{10}\right)$ vaut $\ddp\sqrt{\ddp\frac{5-\sqrt{5}}{8}}$ ou $\ddp\sqrt{\ddp\frac{5+\sqrt{5}}{8}}$. Or on a :
+$$\sqrt{4} < \sqrt{5} < \sqrt{9} \; \Leftrightarrow \; 2 < 5-\sqrt{5} < 3 \; \Leftrightarrow \; \frac{1}{4} <\frac{5-\sqrt{5}}{8} < \frac{3}{8} \; \Leftrightarrow \; \demi < \sqrt{\frac{5-\sqrt{5}}{8}} < \frac{\sqrt{3}}{2\sqrt{2}}.$$
+En particulier, on a :  $\ddp\sqrt{\ddp\frac{5-\sqrt{5}}{8}}<\ddp\frac{\sqrt{3}}{2}=\cos\left(\frac{\pi}{6}\right)$, et donc 
+ \fbox{$\cos{\left( \ddp\frac{\pi}{10}\right)}=\ddp\sqrt{\ddp\frac{5+\sqrt{5}}{8}}$}.
+\end{itemize}
+\end{enumerate}
+\end{correction}

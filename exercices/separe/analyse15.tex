@@ -1,0 +1,170 @@
+% Titre : Arctan(Pb)
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : analyse
+% Subcategories : 
+% Keywords : analyse
+
+
+
+
+
+
+\begin{exercice}[Autour de $\arctan$]
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Soit $x\in \R$ que vaut $\tan (\arctan(x))$ ? 
+
+\item Soit $x\in ]-\pi/2, \pi/2[$, que vaut  $\arctan(\tan(x))$ ? 
+ \item Soit $x\in ]\pi/2, 3 \pi/2[$, que vaut  $\arctan(\tan(x))$ ? 
+  \item  Soit $k\in \Z$, et $x\in ]-\pi/2+k\pi, \pi/2+k\pi [$, que vaut  $\arctan(\tan(x))$ ? 
+\end{enumerate}
+
+\item On rappelle que la dérivée d'un quotient 
+$\frac{f}{g}$ vaut $\frac{f'g-fg'}{g^2}$. Montrer que pour tout $x$ où $\tan $  est définie on  a:
+$$\tan'(x) = 1+\tan^2(x).$$
+
+
+\item On rappelle que la dérivée d'une composée 
+$f \circ g$ vaut $g'\times f'\circ g$. Grâce à la formule obtenue en $1.(a)$ montrer que la dérivée de $\arctan$ sur $\R$ vaut 
+$$\arctan'(x) = \frac{1}{1+x^2}$$
+
+\item Montrer que pour tout $x>0$ on a :
+$$\arctan(x)+\arctan(\frac{1}{x})=\frac{\pi}{2}$$
+
+
+\item Soit $x, y $ deux réels positifs.  Montrer que si $xy<1$ alors 
+$$0\leq \arctan(x)+\arctan(y)< \frac{\pi}{2}$$
+
+\item Etant donnée $(x,y)\in \R_+^2$, tel que $xy<1$, montrer que 
+
+$$\arctan(x)+\arctan(y) =\arctan\left(\frac{x+y}{1-xy}\right),
+\footnote{
+De manière plus générale, $\arctan(x)+\arctan(y) =\arctan\left(\frac{x+y}{1-xy}\right) +k\pi, \quad \text{où : }$
+\begin{itemize}
+\item[•] $k=0$ si $xy<1$.
+\item[•] $k=1$ si $xy>1$, avec $x$ et $y$ positifs. 
+\item[•] $k=-1$ si $xy>1$, avec $x$ et $y$ négatifs. 
+\end{itemize}
+}$$
+
+
+\item Soit $x>0$, comparer : 
+$\arctan\left(\frac{1}{2x^2}\right) $ et 
+$\arctan\left(\frac{x}{x+1}\right)-\arctan\left(\frac{x-1}{x}\right)$.
+\item Simplifier 
+$$\sum_{k=1}^n \arctan\left(\frac{1}{2k^2}\right)$$
+\item En déduire $\ddp \lim_{n\tv \infty}\sum_{k=1}^n \arctan\left(\frac{1}{2k^2}\right)$.
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}
+\begin{enumerate}
+\item \begin{enumerate}
+\item 
+Par définition pour tout $x\in \R$, l'équation $\tan(\theta)=x$ d'inconnue $x$ a une unique solution dans $]-\pi/2, \pi/2[$ notée $\arctan (x)$. 
+
+Donc pour tout $x\in \R$, $$\tan(\arctan(x))=x$$
+
+\item Pour tout  $y \in \R$, l'équation $\tan(x)=y$ admet une unique solution dans $]-\pi/2, \pi/2[$. 
+Si $x\in  ]-\pi/2, \pi/2[$ et $\tan(x)=y$ alors par définition $x=\arctan (y)$. Ainsi pour tout $x\in ]-\pi/2, \pi/2[$, $\tan(x)=y$ implique 
+$$\arctan(\tan(x))= \arctan(y) = x$$
+
+\item Ici $x \notin ]-\pi/2, \pi/2[$, donc $tan(x)=y$ n'implique pas 
+$x=\arctan(y)$ !! Par contre, $x-\pi $ vérifie 
+\begin{enumerate}
+\item $x-\pi \in   ]-\pi/2, \pi/2[$
+\item  $tan(x-\pi)=y$
+\end{enumerate}
+Donc $x-\pi = \arctan(y)$ et finalement 
+\conclusion{$ \forall x\in ]\pi/2, 3\pi/2[, \, \arctan(\tan(x)) = \arctan(y) =x-\pi$}
+
+
+\item Soit $y$ tel que $\tan(x)=y$ et $x\in  ]-\pi/2+k\pi, \pi/2+k\pi[$ avec $k\in \Z$ 
+\begin{enumerate}
+\item $x-k \pi \in   ]-\pi/2, \pi/2[$
+\item  $tan(x-k\pi)=\tan(x)=y$
+\end{enumerate}
+Donc $x-k\pi =\arctan(y)$ et finalement 
+\conclusion{$ \forall x\in]-\pi/2+k\pi, \pi/2+k\pi[, \, \arctan(\tan(x)) = \arctan(y) =x-k\pi$}
+
+
+\end{enumerate}
+
+
+\item $\forall x\in \R\setminus \{ \pi/2 +k\pi, k\in \Z\}$:
+\begin{align*}
+\left(\frac{\sin(x)}{\cos(x)}\right)'&=\frac{\sin'(x)\cos(x)-\cos'(x)\sin(x)}{cos^2(x)}\\
+&=\frac{\cos^2(x)+\sin^2(x)}{cos^2(x)} =1+\tan^2(x)\\
+\end{align*}
+
+
+\item D'après la formule $1,a$, on a pour tout $x \in \R:$
+\begin{align*}
+\tan(\arctan(x))' &=1
+\end{align*}
+
+Et par ailleurs 
+\begin{align*}
+\tan(\arctan(x))' &=\arctan'(x) \times (1+\tan^2(\arctan(x))\\
+				&=\arctan'(x) \times (1+x^2)
+\end{align*}
+
+\conclusion{Donc $\arctan'(x)= \frac{1}{1+x^2}$}
+
+
+\item 
+Soit $f(x)=\arctan(x)+\arctan(\frac{1}{x})$. $f$ est dérivable  sur $\R^*$ et $f'(x)=0$ donc $f$ est constante sur $]0, \infty [$ et $]-\infty , 0[$. 
+
+$f(1)=\pi/2$ donc pour tout $x\in ]0, \infty [$, $f(x)=\pi/2$. 
+\footnote{On remarquera que $f(-1)=-\pi/2$ et pour tout $x\in  ]-\infty , 0[$, $f(x)=-\pi/2$}
+
+
+
+\item Soit $x\geq0, y\geq 0$ alors $\arctan(x)\geq0$ et $\arctan(y)\geq0$ donc l'inégalité de gauche est triviale. 
+
+Remarquons par ailleurs que $\arctan$ est croissante (cf 3). Ainsi,  
+ pour $xy < 1$, c'est-à-dire $y<\frac{1}{x}$ on a 
+ $$\arctan(y)< \arctan(\frac{1}{x})$$
+ donc 
+ \begin{align*}
+  \arctan(x)+\arctan(y)<\arctan(x)+\arctan(\frac{1}{x} )=\pi/2
+ \end{align*}
+
+
+
+
+\item On  a d'après 1-a$$\tan(\arctan(x)+\arctan(y) ) =\frac{\tan(\arctan(x))+\tan(\arctan(y))}{1-\tan(\arctan(x)) \tan(\arctan(y)}=\left(\frac{x+y}{1-xy}\right)$$
+
+
+De plus $\tan(\theta)=x$ équivaut à  $\theta =\arctan (x)$ pour $\theta\in ]-\pi/2, \pi/2[$. D'aprés la question 5, $\arctan(x)+\arctan(y)\in [0, \pi/2[$ donc on a bien 
+\conclusion{$\arctan(x)+\arctan(y) =\arctan\left(\frac{x+y}{1-xy}\right)$}
+
+
+\item Soit $X= \frac{x}{x+1}$ et $Y=-\frac{x-1}{x}$ avec $x>0$. 
+
+Pour tout $x>0$, $XY = \frac{1-x}{1+x}<1$, on peut donc appliquer le résultat de la question 6. On obtient : 
+$$\arctan(X)+\arctan(Y) =\arctan\left(\frac{X+Y}{1-XY}\right)$$
+
+
+\conclusion{$\arctan\left(\frac{x}{x+1}\right)-\arctan\left(\frac{x-1}{x}\right) = \arctan
+\left(\frac{\frac{x}{x+1}+\frac{1-x}{x}}{1-\frac{1-x}{1+x}}\right)= \arctan\left(\frac{1}{2x^2}\right) $}
+
+
+\item \begin{align*}
+\sum_{k=1}^n \arctan\left(\frac{1}{2k^2}\right)&=\sum_{k=1}^n  \arctan\left(\frac{k}{k+1}\right)-\arctan\left(\frac{k-1}{k}\right)\\
+&=\arctan(\frac{n}{n+1}) - \arctan(\frac{0}{1})\\
+&=\arctan(\frac{n}{n+1}).
+\end{align*}
+
+\item \conclusion{$\ddp \lim_{n\tv \infty}\sum_{k=1}^n \arctan\left(\frac{1}{2k^2}\right) =\lim_{n\tv \infty} \arctan(\frac{n}{n+1})= \arctan(1) =\frac{\pi}{4}$}
+\end{enumerate}
+
+
+
+
+\end{correction}

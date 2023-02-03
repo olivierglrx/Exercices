@@ -1,3 +1,13 @@
+% Titre : somme
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :somme
+% Subcategories : 
+% Keywords : somme
+
+
+
 
 \begin{exercice}  \; \textbf{Sommes t\'elescopiques}
 \begin{enumerate}
@@ -7,3 +17,64 @@
 Retrouver ce r\'esultat par r\'ecurrence : montrer que $\forall n\geq 1$: $\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{n(n+3)}{4(n+1)(n+2)}$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item \textbf{Calcul de $\mathbf{S=\ddp \sum\limits_{k=1}^{n}   \ddp\frac{1}{(k+1)(k+2)}}$:}
+\begin{itemize}
+\item[$\bullet$] On commence par montrer qu'il existe deux r\'eels $a$ et $b$ tels que pour tout $k\in\N^{\star}$: $\ddp\frac{1}{(k+1)(k+2)}=\ddp\frac{a}{k+1}+\ddp\frac{b}{k+2}$. En mettant au m\^{e}me d\'enominateur, on obtient que: $\forall k\in\N^{\star},\quad \ddp\frac{1}{(k+1)(k+2)}=\ddp\frac{  (a+b)k+2a+b }{(k+1)(k+2)}.$
+Cette relation doit \^{e}tre vraie pour tout $k\in\N^{\star}$ donc, par identification, on obtient que: $\left\lbrace \begin{array}{lll}  a+b&=&0\vsec\\ 2a+b&=&1  \end{array}\right.$ donc $a=1$ et $b=-1$. Ainsi, on obtient, par lin\'earit\'e, que: $S=\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k+1}-\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k+2}.$
+\item[$\bullet$] Il s'agit alors bien d'une somme t\'elescopique. On pose le changement d'indice: $j=k+1$ dans la premi\`{e}re somme et le changement d'indice: $i=k+2$ dans la deuxi\`{e}me somme et on obtient: $S=\ddp \sum\limits_{j=2}^{n+1}  \ddp\frac{1}{j}-\ddp \sum\limits_{i=3}^{n+2} \ddp\frac{1}{i}=\ddp \sum\limits_{k=2}^{n+1}  \ddp\frac{1}{k}-\ddp \sum\limits_{k=3}^{n+2} \ddp\frac{1}{k}=\fbox{$\ddp\demi-\ddp\frac{1}{n+2}$}$ en utilisation le fait que l'indice de sommation est muet et la relation de Chasles.
+\end{itemize}
+\item
+\begin{itemize}
+\item[$\bullet$] On cherche \`{a} d\'eterminer trois r\'eels $a$, $b$ et $c$ tels que $\forall k\in\N^{\star},\quad \ddp\frac{k-1}{k(k+1)(k+3)}=\ddp\frac{a}{k}+\ddp\frac{b}{k+1}+\ddp\frac{c}{k+3}.$ On met sur le m\^{e}me d\'enominateur puis on identifie car la relation doit \^{e}tre vraie pour tout $k\in\N^{\star}$. On obtient:  $\forall k\in\N^{\star},\quad \ddp\frac{k-1}{k(k+1)(k+3)}=\ddp\frac{ k^2(a+b+c)+k(4a+3b+c)+3a  }{k(k+1)(k+3)}$. Ainsi, par identification, on doit r\'esoudre le syst\`{e}me suivant: 
+$\left\lbrace\begin{array}{lll} a+b+c&=&0\vsec\\ 4a+3b+c&=& 1\vsec\\ 3a&=&-1\end{array}\right.$. La r\'esolution du syst\`{e}me donne: \fbox{$a=-\ddp\frac{1}{3},\ b=1\ \hbox{et}\ c=-\ddp\frac{2}{3}$.}
+\item[$\bullet$] En d\'eduire la valeur de $S=\ddp \sum\limits_{k=1}^{n}  \ddp\frac{k-1}{k(k+1)(k+3)}$. On obtient donc par lin\'earit\'e:
+$S=-\ddp\frac{1}{3} \ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}+\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k+1}-\ddp\frac{2}{3}\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k+3}.$ On pose les changements de variable suivant: $j=k+1$ et $i=k+3$ et on obtient: 
+$S=-\ddp\frac{1}{3} \ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}+\ddp \sum\limits_{j=2}^{n+1}  \ddp\frac{1}{j}-\ddp\frac{2}{3}\ddp \sum\limits_{i=4}^{n+3}  \ddp\frac{1}{i}=-\ddp\frac{1}{3} \ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}+\ddp \sum\limits_{k=2}^{n+1}  \ddp\frac{1}{k}-\ddp\frac{2}{3}\ddp \sum\limits_{k=4}^{n+3}  \ddp\frac{1}{k}$ car l'indice de sommation est muet. D'apr\`{e}s la relation de Chasles, on obtient: $S=-\ddp\frac{1}{3}  \left( 1+\ddp\frac{1}{2}+\ddp\frac{1}{3} \right)+\ddp\frac{1}{2}+\ddp\frac{1}{3}+\ddp\frac{1}{n+1}-\ddp\frac{2}{3}\left( \ddp\frac{1}{n+1}+\ddp\frac{1}{n+2}+\ddp\frac{1}{n+3}\right)=\fbox{$\ddp\frac{2}{9}+\ddp\frac{1}{3}\left( \ddp\frac{1}{n+1}-\ddp\frac{2}{n+2}-\ddp\frac{2}{n+3}\right)$.}$
+\end{itemize}
+\item  \textbf{Calcul de $\mathbf{\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k(k+1)(k+2)}}$:}\\
+\begin{itemize}
+\item[$\star$] M\'ethode 1 : calcul direct.
+\begin{itemize}
+\item[$\bullet$] On commence par montrer qu'il existe trois r\'eels $a,\ b$ et $c$ tels que pour tout $k\in\N^{\star}$: $\ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{a}{k}+\ddp\frac{b}{k+1}+\ddp\frac{c}{k+2}$. En mettant au m\^{e}me d\'enominateur, on obtient que: $\forall k\in\N^{\star},\quad \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{  (a+b+c)k^2+(3a+2b+c)k+2a }{k(k+1)(k+2)}.$
+Cette relation doit \^{e}tre vraie pour tout $k\in\N^{\star}$ donc, par identification, on obtient que: $\left\lbrace \begin{array}{lll}  a+b+c&=&0\vsec\\ 3a+2b+c&=&0\vsec\\ 2a&=&1  \end{array}\right.$ donc $a=c=\ddp\demi$ et $b=-1$. Ainsi, on obtient, par lin\'earit\'e, que: $\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k(k+1)(k+2)}=\ddp\demi\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k+1}+\ddp\demi\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k+2}.$
+\item[$\bullet$]  Il s'agit alors bien d'une somme t\'elescopique. On pose le changement d'indice: $j=k+1$ dans la deuxi\`{e}me somme et le changement d'indice: $i=k+2$ dans la troisi\`{e}me somme et on obtient:
+$$
+\begin{array}{lll}
+\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k(k+1)(k+2)}
+&=&\ddp\demi\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{j=2}^{n+1}  \ddp\frac{1}{j}+\ddp\demi\ddp \sum\limits_{i=3}^{n+2} \ddp\frac{1}{i}=\ddp\demi\ddp \sum\limits_{k=1}^{n}  \ddp\frac{1}{k}-\ddp \sum\limits_{k=2}^{n+1}  \ddp\frac{1}{k}+\ddp\demi\ddp \sum\limits_{k=3}^{n+2} \ddp\frac{1}{k}\vsec\\
+&=&
+\ddp\demi\left(  1+\ddp\demi \right)-\left(  1+\ddp\frac{1}{n+1} \right)+\ddp\demi\left( \ddp\frac{1}{n+1} +\ddp\frac{1}{n+2}    \right)
+=\fbox{$\ddp\frac{n(n+3)}{4(n+1)(n+2)}$}\end{array}$$ en utilisation le fait que l'indice de sommation est muet, la relation de Chasles et en mettant tout au m\^{e}me d\'enominateur.
+\end{itemize}
+
+\item[$\star$] M\'ethode 2 : par r\'ecurrence.
+\begin{itemize}
+\item[$\bullet$] On montre par r\'ecurrence sur $n\in\N^{\star}$ la propri\'et\'e 
+$$\mathcal{P}(n):\  \ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{n(n+3)}{4(n+1)(n+2)} .$$
+\item[$\bullet$] Initialisation: pour $n=1$:
+\begin{itemize}
+\item[$\star$] D'un c\^{o}t\'e, on a: $\ddp \sum\limits_{k=1}^{1} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{1}{1(1+1)(1+2)}=\ddp\frac{1}{6}$.
+\item[$\star$] De l'autre c\^{o}t\'e, on a: $\ddp\frac{n(n+3)}{4(n+1)(n+2)}=\ddp\frac{1(1+3)}{4(1+1)(1+2)}=\ddp\frac{4}{4\times 6}=\ddp\frac{1}{6}$.
+\end{itemize}
+Donc $\mathcal{P}(1)$ est vraie.
+\item[$\bullet$] H\'er\'edit\'e: soit $n\in\N^{\star}$ fix\'e. On suppose la propri\'et\'e vraie au rang $n$, montrons qu'elle est vraie au rang $n+1$.\\
+\noindent $\ddp \sum\limits_{k=1}^{n+1} \ddp\frac{1}{k(k+1)(k+2)}=\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k(k+1)(k+2)}+\ddp\frac{1}{(n+1)(n+2)(n+3)}$ d'apr\`{e}s la relation de Chasles. Puis par hypoth\`{e}se de r\'ecurrence, on obtient que:
+$\ddp \sum\limits_{k=1}^{n+1} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{n(n+3)}{4(n+1)(n+2)} +\ddp\frac{1}{(n+1)(n+2)(n+3)}=
+\ddp\frac{n^3+6n^2+9n+4}{4(n+1)(n+2)(n+3)}$ en mettant au m\^{e}me d\'enominateur. Pour le num\'erateur on remarque que -1 est racine \'evidente et ainsi en factorisant par $n+1$ on obtient par identification des coefficients que: 
+$n^3+6n^2+9n+4=(n+1)(n^2+5n+4)$. Puis le calcul du discriminant donne que $n^3+6n^2+9n+4=(n+1)(n^2+5n+4)=(n+1)(n+1)(n+4)$. Ainsi on obtient que: $\ddp \sum\limits_{k=1}^{n+1} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{(n+1)(n+4)}{4(n+2)(n+3)}$. Donc $\mathcal{P}(n+1)$ est vraie.  
+\item[$\bullet$] Conclusion: il r\'esulte du principe de r\'ecurrence que pour tout $n\in\N^{\star}$: $\ddp \sum\limits_{k=1}^{n} \ddp\frac{1}{k(k+1)(k+2)}=\ddp\frac{n(n+3)}{4(n+1)(n+2)}$.
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+\end{correction}

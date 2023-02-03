@@ -1,0 +1,154 @@
+\theoremstyle{definition}
+\newtheorem{probleme}{Problème}
+\theoremstyle{definition}
+
+
+%%%%% box environement 
+\newenvironment{fminipage}%
+     {\begin{Sbox}\begin{minipage}}%
+     {\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+\newenvironment{dboxminipage}%
+     {\begin{Sbox}\begin{minipage}}%
+     {\end{minipage}\end{Sbox}\doublebox{\TheSbox}}
+
+
+%\fancyhead[R]{Chapitre 1 : Nombres}
+
+
+\newenvironment{remarques}{ 
+\paragraph{Remarques :}
+	\begin{list}{$\bullet$}{}
+}{
+	\end{list}
+}
+
+
+
+
+\newtcolorbox{tcbdoublebox}[1][]{%
+  sharp corners,
+  colback=white,
+  fontupper={\setlength{\parindent}{20pt}},
+  #1
+}
+
+
+
+
+
+
+
+%Section
+\pretocmd{\section}{%
+  \ifnum\value{section}=0 \else\clearpage\fi
+}{}{}
+
+
+
+\sectionfont{\normalfont\Large \bfseries \underline }
+\subsectionfont{\normalfont\Large\itshape\underline}
+\subsubsectionfont{\normalfont\large\itshape\underline}
+
+
+
+%% Format théoreme, defintion, proposition.. 
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+nobreak=true
+]{theorem}{Théorème}
+
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+]{theorem_break}[theorem]{Théorème}
+
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+nobreak=true
+]{corollaire}[theorem]{Corollaire}
+
+\usepackage{mdframed}
+\newmdtheoremenv[%
+roundcorner=5px,
+innertopmargin=0px,
+leftmargin=15px,
+rightmargin=30px,
+nobreak=true
+]{defi}[theorem]{Définition}
+
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+nobreak=true
+]{prop}[theorem]{Proposition}
+
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+]{prop_break}[theorem]{Proposition}
+
+\newmdtheoremenv[roundcorner = 5px,
+leftmargin=15px,
+rightmargin=30px,
+innertopmargin=0px,
+nobreak=true
+]{regles}[theorem]{Règles de calculs}
+
+
+\newtheorem{exo}{Exercice}
+\newtheorem{exercice}[theorem]{Exercice}
+\newtheorem*{exemples}{Exemples}
+\newtheorem{exemple}{Exemple}
+\newtheorem*{rem}{Remarque}
+\newtheorem*{rems}{Remarques}
+% Warning sign
+
+\newcommand\warning[1][4ex]{%
+  \renewcommand\stacktype{L}%
+  \scaleto{\stackon[1.3pt]{\color{red}$\triangle$}{\tiny\bfseries !}}{#1}%
+}
+
+
+
+
+\theoremstyle{definition}
+
+%\newtheorem{prop}[theorem]{Proposition}
+%\newtheorem{\defi}[1]{
+%\begin{tcolorbox}[width=14cm]
+%#1
+%\end{tcolorbox}
+%}
+
+
+%--------------------------------------- 
+% Document
+%--------------------------------------- 
+
+
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=blue,
+    linkcolor=black,
+    urlcolor=black
+}
+
+
+ \newcounter{correction}
+% 
+
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt}
+
+
+
+

@@ -1,0 +1,56 @@
+% Titre : Urnes boules et tirages 2 
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : probabilite
+% Subcategories : 
+% Keywords : probabilite
+
+
+
+
+\begin{exercice}   \;
+Une urne contient $b$ boules blanches et $r$ boules rouges. On pose $N=b+r$. On tire au hasard et successivement une boule de l'urne: si la boule est rouge, on la remplace par une boule blanche dans l'urne, sinon on ne la remplace pas.\\
+\noindent Soit $R_i$ l'\'ev\'enement : \og on tire une boule rouge au i-\`eme tirage\fg \;  et $A_i$ l'\'ev\'enement : \og on tire, pour la premi\`ere fois, une boule blanche au i-\`eme tirage\fg.
+\begin{enumerate}
+ \item Exprimer $A_n$ \`a l'aide des $R_k$. Calculer $P(A_n)$.
+\item Soit $C_m$ l'\'ev\'enement : \og quand on tire pour la premi\`ere fois une boule blanche, il reste $m$ boules rouges dans l'urne \fg.
+\begin{enumerate}
+\item Calculer $P(C_0)$ puis montrer que : $\ddp \forall m\in\N^{\star},\; P(C_m)=\ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!}-\ddp\frac{N^{m-1}}{(m-1)!} \right).$
+\item V\'erifier que: $\ddp \sum\limits_{m=0}^r P(C_m)=1$. Qu'en conclure pour $\bigcup\limits_{m=0}^r C_m$ ?
+\end{enumerate}
+\end{enumerate}
+\end{exercice}
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On suppose que $n\leq N-1$. On a $A_n=R_1\cap R_2\cap \dots \cap R_{n-1}\cap \overline{R_n}$. Comme tous ces \'ev\'enements ne sont pas mutuellement ind\'ependants, on utilise la formule des probabilit\'es compos\'ees et on obtient sous r\'eserve que toutes les probabilit\'es conditionnelles existent bien:
+$$P(A_n)=P(R_1)P_{R_1}(R_2)P_{R_1\cap R_2}(R_3)\times \dots \times P_{ R_1\cap \dots \cap R_{n-2}}(R_{n-1})P_{R_1\cap \dots \cap R_{n-1}}(\overline{R_n}).$$
+\item[$\bullet$] On a: $P(R_1)=\ddp\frac{r}{N}$.\\
+\noindent De plus $P(R_1)\not= 0$ car $r\not= 0$ et ainsi $P_{R_1}$ existe bien. 
+\item[$\bullet$] On a: $P_{R_1}(R_2)=\ddp\frac{r-1}{N}$ d'apr\`{e}s le protocole.\\
+\noindent De plus $P(R_1\cap R_2)=P(R_1)\times P_{R_1}(R_2)=\ddp\frac{r(r-1)}{N^2}\not= 0$ car $r\not= 0$ et $r\not= 1$ et ainsi $P_{R_1\cap R_2}$ existe bien.
+\item[$\bullet$] On a: $P_{R_1\cap R_2}(R_3)=\ddp\frac{r-2}{N}$ d'apr\`{e}s le protocole.\\
+\noindent De plus $P(R_1\cap R_2\cap R_3)=P(R_1)\times P_{R_1}(R_2)\times P_{R_1\cap R_2}(R_3)=\ddp\frac{r(r-1)(r-2)}{N^3}\not= 0$ car $r\not= 0$, $r\not= 1$ et $r\not= 2$ et ainsi $P_{R_1\cap R_2\cap R_3}$ existe bien. 
+\item[$\bullet$]  En it\'erant ainsi les calculs on montre que toutes les probabilit\'es conditionnelles existent bien et on obtient que: $$\fbox{$\ddp P(A_n)=\ddp\frac{r!}{N^n}\times\ddp\frac{b+n-1}{(r-n+1)!}$}.$$
+\end{itemize}
+\item
+\begin{enumerate}
+\item 
+\begin{itemize}
+\item[$\bullet$] On peut remarquer que $C_0=A_{r+1}$ car $C_0=R_1\cap R_2\cap \dots \cap R_{n-1}\cap R_r \cap\overline{R}_{r+1}$ car il faut commencer par tirer toutes les boules rouges pour qu'il n'en reste aucune (le protocole nous disant qu'on ne remet jamais de boule rouge dans l'urne). Ainsi d'apr\`{e}s la question pr\'ec\'edente, on obtient que: $P(C_0)=\ddp\frac{r!}{N^r}$ en rempla\c{c}ant dans la formule pr\'ec\'edente tous les $n$ par $r+1$.
+\item[$\bullet$] Soit $m\geq 1$ fix\'e. De m\^{e}me, on a: $C_m=A_{r-m+1}$ car il faut commencer par tirer $r-m$ boules rouges puis la premi\`{e}re boule banche. En effet, en tirant tout d'abord $r-m$ boules rouges, il va bien rester $m$ boules rouges dans l'urne. Ainsi en rempla\c{c}ant tous les $n$ par des $r-m$ dans la formule de la question pr\'ec\'edente, on obtient que: 
+$P(C_m)=\ddp\frac{r!}{N^r}\times \ddp\frac{N^m}{N}\times \ddp\frac{N-m}{m!}=\ddp\frac{r!}{N^r}\times \ddp\frac{N^m}{m!}\times \ddp\frac{N-m}{N}$. Mais $\ddp\frac{N-m}{N}=1-\ddp\frac{m}{N}$ et ainsi, en d\'eveloppant, on obtient que: 
+\fbox{$P(C_m)=\ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!} - \ddp\frac{N^{m-1}}{(m-1)!}   \right)$}. On obtient bien le r\'esultat voulu.
+\end{itemize}
+\item 
+\begin{itemize}
+\item[$\bullet$] On a: $\sum\limits_{m=0}^r P(C_m)=P(C_0)+\sum\limits_{m=1}^r \ddp\frac{r!}{N^r}\left( \ddp\frac{N^m}{m!} - \ddp\frac{N^{m-1}}{(m-1)!}   \right)=P(C_0)+ \ddp\frac{r!}{N^r} \left( \sum\limits_{m=1}^r \ddp\frac{N^m}{m!}    -\sum\limits_{m=1}^r   \ddp\frac{N^{m-1}}{(m-1)!}    \right)$. On reconna\^{i}t une somme t\'elescopique et ainsi, on a: $\sum\limits_{m=0}^r P(C_m)=P(C_0) + \ddp\frac{r!}{N^r}  \left(  \ddp\frac{N^r}{r!}-  \ddp\frac{N^{0}}{(0)!}  \right)=\ddp\frac{r!}{N^r}+1-\ddp\frac{r!}{N^r}=1$. On obtient bien le r\'esultat voulu.
+\item[$\bullet$] On obtient ainsi que $\bigcup\limits_{m=0}^r C_m=\Omega$ car les $\left(  C_m\right)_{m\in\intent{ 0,r}}$ forment un sce : ils sont incompatibles deux \`{a} deux et  la somme de leurs probabilit\'es fait 1.
+\end{itemize}
+\end{enumerate}
+\end{enumerate}
+\end{correction}

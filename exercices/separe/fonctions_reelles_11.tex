@@ -1,3 +1,13 @@
+% Titre : fonctions
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :fonctions
+% Subcategories : 
+% Keywords : fonctions
+
+
+
 
 \begin{exercice}  \;
 \textbf{(Valeurs absolues)}
@@ -9,3 +19,44 @@ Donner l'ensemble de d\'efinition de $h$.
 Repr\'esenter graphiquement la fonction $h$.
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+\begin{correction}  \;
+\begin{enumerate}
+\item La fonction $f$ est bien d\'efinie si et seulement si $x\not= 0$. Ainsi on a: $\mathcal{D}_f=\R^{\star}$.
+\item On commence par donner l'expression de $f(x)$ selon les valeurs de $x$. 
+\begin{itemize}
+\item[$\bullet$] Si $x>0$, on a: $f(x)=xe^{  |  \ln{x} | }$. Il s'agit alors d'\'etudier le signe de $\ln{x}$. 
+\begin{itemize}
+\item[$\star$] Si $x\geq 1$, on obtient: $f(x)=xe^{\ln{x}}=x^2$.
+\item[$\star$] Si $0<x<1$, on obtient: $f(x)=xe^{ -\ln{x} }=xe^{\ln{ \frac{1}{x} }}=x\times \ddp\frac{1}{x}=1$.
+\end{itemize}
+\item[$\bullet$] Si $x<0$, on a: $f(x)=xe^{ | \ln{(-x)} | }$. L\`{a} encore, il s'agit d'\'etudier le signe de $\ln{(-x)}$:
+\begin{itemize}
+\item[$\star$] Si $-1 \leq x<0$ alors $0<-x\leq 1$ et on obtient: $f(x)=xe^{-\ln{(-x)}}=xe^{\ln{ \frac{-1}{x} }}=x\times \ddp\frac{-1}{x}=-1$.
+\item[$\star$] Si $x<-1$ alors $-x>1$, on obtient: $f(x)=xe^{ \ln{(-x)} }=-x^2$.
+\end{itemize}
+\end{itemize}
+Ainsi, on obtient les valeurs suivantes pour $f$ selon les valeurs de $x$:
+\begin{center}
+ \begin{tikzpicture}
+ \tkzTabInit{ $x$          /1,%
+            $f(x)$       /2}%
+     { $-\infty$,$-1$,$0$,$1$,$+\infty$}%   
+   \tkzTabLine{ ,-x^2,t,-1,d,1,t,x^2,}                 
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+\end{correction}
+
+
+
+%%--------------------------------------------------
+%%------------------------------------------------

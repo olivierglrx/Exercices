@@ -1,3 +1,13 @@
+% Titre : nombre
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :nombre
+% Subcategories : 
+% Keywords : nombre
+
+
+
 \begin{exercice}
 Montrer que pour tout $n\in \N^*$ et pour tout $x\in \R$, 
 $$\floor{\frac{\floor{nx}}{n}} =\floor{x}$$
@@ -5,3 +15,24 @@ $$\floor{\frac{\floor{nx}}{n}} =\floor{x}$$
 %$$ \sum_{k=0}^{n-1} \floor{x+ \frac{k}{n}} = \floor{nx}.$$
 
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction}
+Par définition de la partie entière : 
+$$nx-1<\floor{nx}\leq nx$$
+On a donc en divisant par $n\neq 0$:
+$$\frac{nx-1}{n}<\frac{\floor{nx}}{n} \leq \frac{nx}{n}$$
+Ce qui donne : 
+$$x-1<x-\frac{1}{n}<\frac{\floor{nx}}{n} \leq x$$
+Donc 
+$\floor{\frac{\floor{nx}}{n}}$ est un entier compris entre $x-1 $ et $x$, c'est par définition la partie entière de $x$. 
+
+
+\end{correction}

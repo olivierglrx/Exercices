@@ -1,0 +1,151 @@
+% Titre : Pivot de Gauss
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : info
+% Subcategories : 
+% Keywords : info
+
+
+
+
+
+
+\begin{exercice} [Extrait du Concours Agro-Veto 2019]
+Des éléments de syntaxe Python, et en particulier l'usage du module numpy, sont donnés en annexe . Dans tout ce qui suit, les variables $n, p, A, M, i, j$ et $c$ vérifient les conditions suivantes qui ne seront pas rappelées à chaque question :
+\begin{itemize}
+
+
+\item $n$ et $p$ sont des entiers naturels tels que $p \geq n \geq 2$;
+\item $A$ est une matrice carrée à $n$ lignes inversible;
+\item $M$ est une matrice à $n$ lignes et $p$ colonnes telle que la sous-matrice carrée constituée des $n$ premières colonnes de $M$ est inversible;
+\item  $i$ et $j$ sont des entiers tels que $0 \leq i \leq n-1$ et $0 \leq j \leq n-1$;
+\item  $c$ est un réel non nul.
+\end{itemize}
+On note $L_{i} \leftarrow L_{i}+c L_{j}$ l'opération qui ajoute à la ligne $i$ d'une matrice la ligne $j$ multipliée par c.
+\begin{enumerate}
+
+
+\item Soit la fonction initialisation:
+\begin{lstlisting}{python}
+def initialisation(A):
+    n = np.shape(A)[0]
+    mat = np.zeros((n,2*n))
+    for i in range(0, n):
+        for j in range(0, n):
+            mat[i,j] = A[i,j]
+    return(mat)
+\end{lstlisting}
+Pour chacune des affirmations suivantes, indiquer si elle est vraie ou fausse, en justifiant. L'appel initialisation (A) renvoie:
+\begin{enumerate}
+
+
+\item une matrice rectangulaire à $n$ lignes et $2 n$ colonnes remplie de zéros;
+\item une matrice de même taille que $A$;
+\item une erreur au niveau d'un range;
+\item une matrice rectangulaire telle que les $n$ premières colonnes correspondent aux $n$ colonnes de $A$, et les autres colonnes sont nulles.\end{enumerate}
+\item  Les trois fonctions multip, ajout et permut suivantes ne renvoient rien : elles modifient les matrices auxquelles elles s'appliquent.
+\begin{enumerate}
+
+
+\item Que réalise la fonction multip?
+\begin{lstlisting}{python}
+def multip(M, i, c):
+    p = np.shape(M)[1]
+    for k in range(0, p):
+        M[i,k] = c*M[i,k]
+\end{lstlisting}
+
+
+\item Compléter la fonction ajout, afin qu'elle effectue l'opération $L_{i} \leftarrow L_{i}+c L_{j}$.
+\begin{lstlisting}{python}
+def ajout(M, i, j, c):
+    p = np.shape(M)[1]
+    for k in range(0, p):
+        _____ ligne(s) a completer _____ 
+\end{lstlisting}
+
+\item Écrire une fonction permut prenant pour argument $M, i$ et $j$, et qui modifie $M$ en échangeant les valeurs des lignes $i$ et $j$.
+\end{enumerate}
+Dans la suite du sujet, l'expression "opération élémentaire sur les lignes" fera référence à l'utilisation de permut, multip ou ajout.
+\item  Soit la colonne numéro $j$ dans la matrice $M$. On cherche le numéro $r$ d'une ligne où est situé le plus grand coefficient (en valeur absolue) de cette colonne parmi les lignes $j$ à $n-1$. Autrement dit, $r$ vérifie :
+$$
+|A[r, j]|=\max \{|A[i, j]| \text { pour } i \text { tel que } j \leq i \leq n-1\} .
+$$
+Écrire une fonction \texttt{rang\_pivot} prenant pour argument $M$ et $j$, et qui renvoie cette valeur de $r$.
+
+ Lorsqu'il y a plusieurs réponses possibles pour $r$, dire (avec justification) si l'algorithme renvoie le plus petit $r$, le plus grand $r$ ou un autre choix.
+ 
+  (L'utilisation d'une commande max déjà programmée dans Python est bien sûr proscrite.)
+  
+\item Soit la fonction mystere:
+\begin{lstlisting}{python}
+def mystere(M):
+    n = np.shape(M)[0]
+    for j in range(0, n):
+        r = rang_pivot(M, j)
+        permut(M, r, j)
+        for k in range(j+1, n):
+            ajout(M, k, j, -M[k,j]/M[j,j])
+        print(M) 
+\end{lstlisting} 
+
+\begin{enumerate}
+\item On considère dans cette question l'algorithme mystere appliqué à la matrice \[M_{1}=\left(\begin{array}{ccc}3 & 2 & 2 \\ -6 & 0 & 12 \\ 1 & 1 & -3\end{array}\right)\] Indiquer combien de fois la ligne print (M) est exécutée ainsi que les différentes valeurs qu'elle affiche
+\item De façon générale, que réalise cet algorithme?
+\end{enumerate} 
+\item On considère la fonction reduire:
+\begin{lstlisting}{python}
+def reduire(M):
+    n = np.shape(M)[0]
+    mystere(M)
+    for i in range(0, n):
+        multip(M, i, 1/M[i,i])
+    #Les lignes suivantes sont \'a compl\'eter :
+        __________________________        
+\end{lstlisting}
+Compléter la fonction afin que la portion de code manquante effectue les opérations élémentaires suivantes sur les lignes :
+
+pour $j$ prenant les valeurs $n-1, n-2, \ldots, 1$, faire :
+
+
+\hspace{2cm}	pour $k$ prenant les valeurs $j-1, j-2, \ldots, 0$, faire :
+
+$$
+\mathrm{L}_{\mathrm{k}} \leftarrow \mathrm{L}_{\mathrm{k}}-\mathrm{M}[\mathrm{k}, \mathrm{j}] \mathrm{L}_{\mathrm{j}}
+$$
+
+
+
+Indiquer ce que réalise cette fonction.
+\end{enumerate}
+
+\begin{center}
+\textbf{\huge{Annexe}}
+\end{center}
+On considère que le module numpy, permettant de manipuler des tableaux à deux dimensions, est importé via import numpy as np. Pour une matrice $M$ à $n$ lignes et $p$ colonnes, les indices vont de 0 à $n-1$ pour les lignes et de 0 à $p-1$ pour les colonnes.
+
+\begin{center}
+\begin{tabular}{ll}
+\hline \multicolumn{1}{c}{ Python } & \multicolumn{1}{c}{ Interprétation } \\
+\hline $\mathrm{abs}(\mathrm{x})$ & Valeur absolue du nombre $x$ \\
+\hline $\mathrm{M}[\mathrm{i}, \mathrm{j}]$ & Coefficient d'indice $(i, j)$ de la matrice $M$ \\
+\hline $\mathrm{np} \cdot$ zeros $((\mathrm{n}, \mathrm{p}))$ & Matrice à $n$ lignes et $p$ colonnes remplie de zéros \\
+\hline $\mathrm{T}=\mathrm{np} . \mathrm{shape}(\mathrm{M})$ & Dimensions de la matrice $M$ \\
+$\mathrm{~T}[0]$ ou np.shape $(\mathrm{M})[0]$ & Nombre de lignes \\
+$\mathrm{T}[1]$ ou np.shape $(\mathrm{M})[1]$ & Nombre de colonnes \\
+\hline $\mathrm{M}[\mathrm{a}: \mathrm{b}, \mathrm{c}: \mathrm{d}]$ & Matrice extraite de $M$ constituée des lignes $a$ à $b-1$ et des \\
+& colonnes $c$ à $d-1:$ \\
+& si $a$ (resp. $c)$ n'est pas précisé, l'extraction commence à la \\
+& première ligne (resp. colonne) \\
+& si $b$ (resp. $d)$ n'est pas précisé, l'extraction finit à la dernière \\
+& ligne (resp. colonne) incluse \\
+\hline
+\end{tabular}
+\end{center}
+\end{exercice}
+
+
+\begin{correction}
+
+\end{correction}

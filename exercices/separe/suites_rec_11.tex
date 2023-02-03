@@ -1,3 +1,13 @@
+% Titre : suites
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :suites
+% Subcategories : 
+% Keywords : suites
+
+
+
 
 \begin{exercice} Moyenne arithm\'etico-g\'eom\'etrique.\\
 \noindent On consid\`ere deux suites $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ d\'efinies par 
@@ -20,3 +30,47 @@ En d\'eduire que les suites $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ convergent vers
 \end{enumerate}
 La limite des suites $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ ne d\'epend que de $a_0$ et $b_0$. On ne peut pas l'exprimer \`a l'aide des fonctions usuelles. On l'appelle moyenne arithm\'etico-g\'eom\'etrique de $a_0$ et $b_0$.
 \end{exercice}
+
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+\begin{correction}
+\begin{enumerate}
+ \item 
+\begin{itemize}
+ \item[$\bullet$] Montrons par r\'ecurrence sur $n\in\N$ la propri\'et\'e
+$$\mathcal{P}(n):\quad a_n\ \hbox{est bien d\'efinie},\ b_n\ \hbox{est bien d\'efinie}\ \hbox{et}\ 0<a_n\leq b_n.$$ 
+\item[$\bullet$] Initialisation: pour $n=0$:\\
+Par d\'efinition des suites, on a: $a_0$ et $b_0$ sont bien d\'efinis et $0<a_0<b_0$. Ainsi, $\mathcal{P}(0)$ est vraie.
+\item[$\bullet$]  H\'er\'edit\'e: soit $n\in\N$. On suppose la propri\'et\'e vraie \`a l'ordre $n$, montrons qu'elle est vraie \`a l'ordre $n+1$. Par hypoth\`ese de r\'ecurrence, on sait que $a_n$ et $b_n$ existe. Ainsi, $\ddp\frac{a_n+b_n}{2}$ existe bien et donc $b_{n+1}$ existe bien. De plus, toujours par hypoth\`ese de r\'ecurrence, on sait que $a_n>0$ et $b_n>0$ donc $\sqrt{a_nb_n}$ existe bien et $a_{n+1}$ existe donc bien. De plus, comme $a_n>0$ et $b_n>0$, on a aussi: $a_{n+1}>0$ et $b_{n+1}>0$. 
+De plus, on a:
+$$b_{n+1}-a_{n+1}=\ddp\frac{a_n+b_n-2\sqrt{a_nb_n}}{2}=\ddp\frac{(\sqrt{a_n}-\sqrt{b_n})^2}{2}\geq 0.$$
+Ainsi, $\mathcal{P}(n+1)$ est vraie.
+\item[$\bullet$] Conclusion: il r\'esulte du principe de r\'ecurrence que les deux suites $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ sont bien d\'efinies et que: $\forall n\in\N,\quad 0<a_n\leq b_n$.
+\end{itemize}
+\item 
+\begin{itemize}
+ \item[$\bullet$] Soit $n\in\N$, on a: 
+$$a_{n+1}-a_n=\sqrt{a_nb_n}-a_n=\sqrt{a_n}\left(\sqrt{b_n}-\sqrt{a_n}  \right).$$
+Or, on sait que $0<a_n\leq b_n$ et la fonction racine carr\'ee est strictement croissante sur $\R^+$, ainsi, on a: $\sqrt{b_n}\geq \sqrt{a_n}$. Donc, on obtient que: $a_{n+1}-a_n\geq 0$ et ainsi la suite $(a_n)_{n\in\N}$ est croissante.
+\item[$\bullet$]  Soit $n\in\N$, on a:
+$$b_{n+1}-b_n=\ddp\frac{a_n-b_n}{2}\leq 0$$
+car on sait que $a_n\leq b_n$. Ainsi, on obtient que la suite $(b_n)_{n\in\N}$ est d\'ecroissante.
+\end{itemize}
+\item Soit $n\in\N$. On a d\'ej\`a vu que
+$$b_{n+1}-a_{n+1}=\ddp\frac{(\sqrt{b_n}-\sqrt{a_n})^2}{2}=\ddp\frac{b_n-a_n}{2}\times \ddp\frac{\sqrt{b_n}-\sqrt{a_n}}{\sqrt{b_n}+\sqrt{a_n}},$$
+en utilisant la quantit\'e conjugu\'ee sur l'un des $\sqrt{b_n}-\sqrt{a_n}$.
+Il suffit alors de remarquer que l'on a bien: $\ddp\frac{\sqrt{b_n}-\sqrt{a_n}}{\sqrt{b_n}+\sqrt{a_n}}\leq 1$, puis en multipliant de chaque c\^ot\'e par $\ddp\frac{b_n-a_n}{2}$ qui est positif, on obtient le r\'esultat demand\'e.\\
+\noindent En it\'erant le r\'esultat, on conjecture que:
+$$\forall n\in\N,\quad b_n-a_n\leq \ddp\frac{1}{2^n}\left( b_0-a_0 \right).$$
+On a donc ainsi, pour tout $n\in\N$: $0\leq b_n-a_n\leq \ddp\frac{1}{2^n}\left( b_0-a_0 \right)$.
+Comme $0<\ddp\demi<1$, on obtient que: $\lim\limits_{n\to +\infty} \ddp\frac{1}{2^n}=0$, puis, par le th\'eor\`eme des gendarmes, on a:
+$$\lim\limits_{n\to +\infty} b_n-a_n=0.$$
+\item Les deux suites $(a_n)_{n\in\N}$ et $(b_n)_{n\in\N}$ sont donc adjacentes, elles convergent donc vers la m\^eme imite.
+\end{enumerate}
+\end{correction}

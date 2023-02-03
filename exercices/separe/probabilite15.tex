@@ -1,0 +1,38 @@
+% Titre : Dérangements
+% Filiere : BCPST
+% Difficulte :
+% Type : DS, DM
+% Categories : probabilite
+% Subcategories : 
+% Keywords : probabilite
+
+
+
+
+\begin{exercice} 
+Une urne contient $n$ boules num\'erot\'ees de 1 \`a $n$. On les extrait successivement et sans remise et apr\`es chaque tirage, on observe le num\'ero de la boule tir\'ee. On dit qu'il y a rencontre au $i$-i\`eme tirage si la boule tir\'ee porte le num\'ero $i$. D\'eterminer la probabilit\'e de l'\'ev\'enement $E$: \og Il n'y a aucune rencontre\fg.
+
+\begin{rems}
+Le probl\`{e}me des rencontres peut prendre des formes diverses:
+\begin{itemize}
+\item[$\bullet$] Un facteur poss\`{e}de $n$ lettres adress\'ees \`{a} $n$ personnes diff\'erentes. Il les distribue au hasard. Quelle est la probabilit\'e pour qu'aucune n'arrive \`{a} destination ?
+\item[$\bullet$] \`{A} l'op\'era, $n$ spectateurs d\'epose au vestiaire leur chapeau num\'erot\'e selon leur ordre d'arriv\'e et un ticket leur est alors donn\'e. Mais le responsable a m\'elang\'e tous les tickets et tous les chapeaux sont rendus au hasard. Quelle est la probabilit\'e pour qu'aucun spectateur ne retrouve son chapeau.
+\item[$\bullet$] $n$ couples se pr\'esentent \`{a} un concours de danse. Chaque danseur choisit sa partenaire au hasard. Quelle est la probabilit\'e pour que personne ne danse avec son conjoint ?
+\end{itemize}
+\end{rems}
+
+\end{exercice}
+
+
+
+\begin{correction}   \;
+\begin{enumerate}
+\item Pour tout $i\in\intent{ 1,n}$, on note $N_i$ l'\'ev\'enement \og tirer une boule noire au tirage i\fg \, et on note $G$ l'\'ev\'enement \og \^{e}tre gagnant\fg. Ainsi on a: $G=N_1\cap N_2\cap \dots\cap N_n$. Comme il y a remise, on r\'ep\`ete bien la m\^{e}me exp\'erience $n$ fois dans les m\^{e}mes conditions. Ainsi les \'ev\'enements $(N_1,N_2,\dots, N_n)$ sont mutuellement ind\'ependants et on a: $P(G)=P(N_1)P(N_2)\dots P(N_n)=\left( \ddp\frac{n-1}{n} \right)^n=\left(1- \ddp\frac{1}{n} \right)^n$. On pouvait aussi calculer cette probabilit\'e sans utiliser la mutuelle ind\'ependance mais avec du d\'enombrement car on est dans un cadre d'ordre et de r\'ep\'etition.
+\item Pour cela, on montre que la fonction $f: x\mapsto \left( 1-\ddp\frac{1}{x} \right)^x=e^{x\ln{\left( 1-\frac{1}{x}  \right)}}$ est croissante sur $\lbrack 2,+\infty\lbrack$. Il s'agit ici d'une \'etude classique de fonction. La fonction $f$ est d\'erivable sur $\lbrack 2,+\infty\lbrack$ comme quotient, somme et compos\'ee de fonctions et pour tout $x\geq 2$: $f^{\prime}(x)=f(x)\left\lbrack  \ln{\left( 1-\ddp\frac{1}{x}  \right)} +\ddp\frac{1}{x-1}\right\rbrack$. On pose pour tout $x\geq 2$: $g(x)= \ln{\left( 1-\ddp\frac{1}{x}  \right)} +\ddp\frac{1}{x-1}$. Cette fonction est elle aussi d\'erivable sur $\lbrack 2,+\infty\lbrack$ et pour tout $x\geq 2$: $g^{\prime}(x)=\ddp\frac{-1}{x(x-1)^2}$. Ainsi comme on est sur $\lbrack 2,+\infty\lbrack$, $g^{\prime}$ est n\'egative et ainsi la fonction $g$ est strictement d\'ecroissante sur $\lbrack 2,+\infty\lbrack$. De plus $\lim\limits_{x\to +\infty} g(x)=0$ par propri\'et\'e sur les somme, quotient et compos\'ee de limites. Ainsi la fontion $g$ reste positive sur $\lbrack 2,+\infty\lbrack$. Donc $f^{\prime}$ est positive sur $\lbrack 2,+\infty\lbrack$ comme produit de deux nombres positifs et car $f$ est bien positive car c'est une exponentielle. Ainsi la fonction $f$ est bien croissante sur $\lbrack 2,+\infty\lbrack$. Et donc en particulier on a la croissance de la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ sur $\N^{\star}\setminus\lbrace 1\rbrace$. De plus si $n=1$, il n'y a pas de boule noire et ainsi $P(G)=0$. Ceci prouve la croissance sur $\N^{\star}$ car pour tout $n\geq 2$: $f(n)\geq 0\Leftrightarrow f(n)\geq f(1)$. Donc \fbox{la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ est bien croissante sur $\N^{\star}$}.
+\item 
+\begin{itemize}
+\item[$\bullet$] Comme la fonction $n\mapsto \left(1- \ddp\frac{1}{n} \right)^n$ est croissante sur $\N^{\star}$, plus le nombre de boules totales $n$ augmente, plus le nombre $\left(1- \ddp\frac{1}{n} \right)^n$ augmente aussi, \`{a} savoir plus la probabilit\'e de gagner augmente. Le joueur a donc int\'er\^{e}t \`{a} ce que le nombre de boules totales soient le plus grand possible. 
+\item[$\bullet$] En utilisant les \'equivalents usuels, on a: $\ln{\left(1- \ddp\frac{1}{n} \right)}\underset{=\infty}{\thicksim} -\ddp\frac{1}{n}$. On obtient donc que: $n\ln{\left(1- \ddp\frac{1}{n} \right)}\underset{=\infty}{\thicksim} -1$. Ainsi, on a: $\lim\limits_{n\to +\infty} n\ln{\left(1- \ddp\frac{1}{n} \right)}=-1$ puis par propri\'et\'e sur la composition de limite, on a: $\lim\limits_{n\to +\infty} e^{n\ln{\left(1- \frac{1}{n} \right)}}=e^{-1}$. Or comme $p_n=e^{n\ln{\left(1- \frac{1}{n} \right)}}$ pour tout $n\in\N^{\star}$, on obtient que: \fbox{$\lim\limits_{n\to +\infty} p_n=e^{-1}$}.  
+\end{itemize}
+\end{enumerate}
+\end{correction}

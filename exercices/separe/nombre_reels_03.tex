@@ -1,3 +1,13 @@
+% Titre : nombre
+% Filiere : BCPST
+% Difficulte : 
+% Type : TD 
+% Categories :nombre
+% Subcategories : 
+% Keywords : nombre
+
+
+
 
 \begin{exercice} 
 R\'esoudre dans $\R$ et selon les valeurs du param\`etre $m\in\R$, les \'equations suivantes:
@@ -15,3 +25,135 @@ R\'esoudre dans $\R$ et selon les valeurs du param\`etre $m\in\R$, les \'equatio
 \end{minipage}
 \end{enumerate}
 \end{exercice}
+
+
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%
+
+
+
+
+\begin{correction} \;
+\begin{enumerate}
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{m(x+2)=2m(3x-4)}$:}\\
+\noindent \begin{itemize}
+\item[$\bullet$] Domaine de r\'esolution: $\R$.
+\item[$\bullet$] On r\'esout par \'equivalences successives, l'inconnue \'etant ici $x$. On obtient ainsi que:
+$$m(x+2)=2m(3x-4)\Leftrightarrow -5mx=-10m\Leftrightarrow mx=2m.$$
+On doit donc ici \'etudier deux cas selon que $m$ est nul ou pas car on ne peut pas diviser une \'egalit\'e par un nombre nul...
+\begin{itemize}
+\item[$\star$] Cas 1: si $m=0$: l'\'equation est alors \'equivalente \`{a}: $0=0$ et ainsi \fbox{$\mathcal{S}_{m=0}=\R$}.
+\item[$\star$] Cas 2: si $m\not= 0$: l'\'equation est alors \'equivalente \`{a}: $x=2$ et ainsi \fbox{$\mathcal{S}_{m\not=0}=\lbrace 2\rbrace$}.
+\end{itemize}
+\end{itemize}
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{(m+1)x+2-m=0}$:}\\
+\noindent Le domaine de r\'esolution est $\R$ et on a: 
+$$(m+1)x+2-m=0\Leftrightarrow (m+1)x=m-2.$$
+\begin{itemize}
+ \item[$\bullet$]  Si $m=-1$, l'\'equation devient $0=-1-2=-3$. On obtient donc : \fbox{$\mathcal{S}_{m=-1}=\emptyset$}.
+\item[$\bullet$]  Si $m\not= -1$, on peut alors diviser par $m+1\not= 0$ et on obtient : \fbox{$\mathcal{S}_{m \not=-1}=\left\lbrace  \ddp\frac{m-2}{m+1} \right\rbrace$}.
+\end{itemize}
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{mx^2-5m-50=100x}$:}\\
+%\noindent \begin{itemize}
+%\item[$\bullet$] Domaine de r\'esolution: $\R$.
+%\item[$\bullet$] L'\'equation est \'equivalente \`{a} $mx^2-100x-5m-50=0$. C'est une \'equation du second degr\'e en $x$ sauf si $m=0$ ou cela devient une \'equation du premier degr\'e.
+%\begin{itemize}
+%\item[$\star$] Cas 1: si $m=0$: l'\'equation est alors \'equivalente \`{a}: $-50=100x\Leftrightarrow x=-\ddp\demi$ et ainsi \fbox{$\mathcal{S}=\left\lbrace -\ddp\demi\right\rbrace$.}
+%\item[$\star$] Cas 2: si $m\not= 0$: on a alors une vrai \'equation du second degr\'e et on calcule donc le discriminant:
+%$\Delta=10000+20m^2+200m=20( m^2+10m+500 )$. Afin de conna\^{i}tre le signe de $\Delta$, on calcule le nouveau discriminant de l'\'equation du second degr\'e en $m$: $\Delta^{\prime}=100-2000=-1900<0$. Ainsi on vient de prouver que pour tout $m\in\R$, on a: $\Delta>0$ et il existe donc deux solutions r\'eelles distinctes qui sont: 
+%$x_1=\ddp\frac{ 100+2\sqrt{ 5(m^2+10m+500) } }{2m}=\ddp\frac{ 50+\sqrt{ 5(m^2+10m+500) } }{m}$ et $x_2=\ddp\frac{ 100-2\sqrt{ 5(m^2+10m+500) } }{2m}=\ddp\frac{ 50-\sqrt{ 5(m^2+10m+500) } }{m}$. Ainsi dans ce cas, on obtient que 
+%\fbox{$\mathcal{S}=\left\lbrace  \ddp\frac{ 50-\sqrt{ 5(m^2+10m+500) } }{m},\ddp\frac{ 50+\sqrt{ 5(m^2+10m+500) } }{m}\right\rbrace$.}
+%\end{itemize}
+%\end{itemize}
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^{2x}-2me^x+1=0}$:}\\
+\noindent Le domaine de r\'esolution est $\R$ et on a 
+$$e^{2x}-2me^x+1=0 \Leftrightarrow  \left\lbrace  \begin{array}{lll}
+X=e^x\vsec\\
+\hbox{et}\vsec\\
+X^2-2mX+1=0.
+\end{array}\right.$$
+\'Etude de l'\'equation $X^2-2mX+1=0$. Son discriminant vaut $\Delta=4(m^2-1)$. On fait des cas selon le signe de $\Delta$ :
+\begin{itemize}
+\item[$\bullet$] Si  $m\in \; \rbrack -1,1\lbrack$, alors $\Delta <0$, et \fbox{$ \mathcal{S}_{m \in\rbrack -1,1\lbrack}=\emptyset$}.
+\item[$\bullet$] Si $m\in \; \rbrack -\infty, -1\rbrack\cup\lbrack 1,+\infty\lbrack$, alors $\Delta \geq 0$. Il existe donc deux solutions r\'eelles (distinctes si $m\not= -1$ et $m\not= 1$ et \'egale sinon) qui sont
+$$X_1=m+\sqrt{m^2-1}\ \hbox{et}\ X_2=m-\sqrt{m^2-1}.$$
+Comme $X=e^x$, on doit v\'erifier si $X_1$ et $X_2$ sont bien strictement positives.
+\begin{itemize} 
+\item[$\star$] \'Etude de $X_1$: 
+$$X_1> 0\Leftrightarrow \sqrt{m^2-1}> -m.$$
+\begin{itemize}
+ \item[$\circ$] Si $m \in \; \rbrack -\infty,-1\rbrack$, alors $-m\geq 0$ et on peut passer au carr\'e de chaque c\^ot\'e tout en 
+conservant l'\'equivalence. Ainsi,
+$$\sqrt{m^2-1}> -m \Leftrightarrow m^2-1> m^2\Leftrightarrow -1> 0.$$
+Impossible donc $X_1$ ne peut pas \^etre solution si $m\in \; \rbrack -\infty,-1\rbrack$.
+\item[$\circ$]  Si $m\in\lbrack 1,+\infty\lbrack$, alors $-m<0$ et l'in\'equation est toujours v\'erifi\'ee. Ainsi, $X_1$ est solution si $m\in\lbrack 1,+\infty\lbrack$. 
+\end{itemize}
+\item[$\star$]  \'Etude de $X_2$. On refait un raisonnement analogue et on obtient que si $m\in \; \rbrack -\infty,-1\rbrack$, $X_2$ ne peut pas \^etre solution et que si $m\in\lbrack 1,+\infty\lbrack$, $X_2$ est solution. 
+\end{itemize}
+On peut donc conclure dans le cas o\`u $m\in\rbrack -\infty,-1\rbrack$, on a : \fbox{$\mathcal{S}_{m\in\rbrack -\infty,-1\rbrack}=\emptyset$}.\\
+Il nous reste ainsi \`a finir le cas o\`u $m\in\lbrack 1,+\infty\lbrack$. Dans ce cas, on a vu que $X_1$ et $X_2$ sont strictement positifs. On obtient alors en utilisant le fait que la fonction $\ln{}$ est strictement croissante sur $\R^{+\star}$:
+$$
+e^{2x}-2me^x+1=0 \Leftrightarrow  \left\lbrace\begin{array}{l}
+e^x=m+\sqrt{m^2-1}\vsec\\
+\hbox{ou}\vsec\\
+e^x=m-\sqrt{m^2+1}
+\end{array}\right.
+\Leftrightarrow 
+\left\lbrace\begin{array}{l}
+x=\ln{(m+\sqrt{m^2-1})}\vsec\\
+\hbox{ou}\vsec\\
+x=\ln{(m-\sqrt{m^2+1})}.
+\end{array}\right.$$
+Ainsi, on obtient : \fbox{$\mathcal{S}_{m\in\lbrack  1,+\infty \lbrack}=\lbrace \ln{(m+\sqrt{m^2-1})},\ln{(m-\sqrt{m^2-1})} \rbrace$}.
+\end{itemize}
+%---
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{\ddp\frac{m+3}{x}=\ddp\frac{2m-1}{x-1}}$:}\\
+\noindent \begin{itemize}
+\item[$\bullet$] Domaine de d\'efinition: $\mathcal{D}=\R\setminus\lbrace 0,1 \rbrace$.
+\item[$\bullet$] On passe tout du m\^{e}me c\^{o}t\'e et on met tout sur le m\^{e}me d\'enominateur. On obtient:
+$$\ddp\frac{m+3}{x}=\ddp\frac{2m-1}{x-1}\Leftrightarrow \ddp\frac{(4-m)x -(m+3) }{x(x-1)}=0\Leftrightarrow (4-m)x -(m+3)=0.$$
+On doit donc \'etudier des cas:
+\begin{itemize}
+\item[$\star$] Cas 1: si $m=4$, on obtient: $m+3=0\Leftrightarrow 7=0$. Ainsi \fbox{$\mathcal{S}_{m=4}=\emptyset$.}
+\item[$\star$] Cas 2: si $m\not=4$, on obtient $x=\ddp\frac{m+3}{4-m}$. Il reste alors \`{a} v\'erifier que ce nombre est bien dans le domaine de r\'esolution, \`{a} savoir que $\ddp\frac{m+3}{4-m}\not= 0$ et $\ddp\frac{m+3}{4-m}\not= 1$.
+\begin{itemize}
+\item[$\star$] Si $m=-3$ alors $\ddp\frac{m+3}{4-m}=0$ et ainsi \fbox{$\mathcal{S}_{m=-3}=\emptyset$.}
+\item[$\star$] Si $m=\ddp\demi$ alors $\ddp\frac{m+3}{4-m}=1$ et ainsi \fbox{$\mathcal{S}_{m=\frac{1}{2}}=\emptyset$. }
+\item[$\star$] Sinon \fbox{$\mathcal{S}_{m \in \R \backslash \{4,-3,\frac{1}{2} \}}=\left\lbrace \ddp\frac{m+3}{4-m} \right\rbrace$.}
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{x-m=\sqrt{x^2+mx}}$:}\\
+\begin{itemize} 
+\item[$\bullet$] Domaine de r\'esolution: L'\'equation est bien d\'efinie si $x^2+mx\geq 0\Leftrightarrow x(x+m)\geq 0$. Les racines du polyn\^ome de gauche sont $0$ et $-m$. On doit donc distinguer trois cas selon que $m>0$, $m=0$ et $m<0$.
+\begin{itemize}
+\item[$\star$] Cas 1: si $m>0$:\\
+\noindent Un tableau de signe donne que: $\mathcal{D}= \; \rbrack -\infty,-m\rbrack\cup\lbrack 0,+\infty\lbrack$.
+\item[$\star$] Cas 2: si $m=0$:\\
+\noindent On doit r\'esoudre $x^2\geq 0$ et ainsi: $\mathcal{D}=\R$.
+\item[$\star$] Cas 3: si $m<0$:\\
+\noindent Un tableau de signe donne que: $\mathcal{D}= \; \rbrack -\infty,0\rbrack\cup\lbrack -m,+\infty\lbrack$.
+\end{itemize}
+\item[$\bullet$] R\'esolution:\\
+\noindent Lorsque $x-m<0\Leftrightarrow x<m$: il n'y a pas de solution car une racine carr\'ee est positive ou nulle. Ainsi on se place dans le cas o\`{u} $x\geq m$. Dans ce cas l\`{a}, les deux membres de l'\'equation sont positifs et on peut donc passer au carr\'e tout en conservant l'\'equivalence. On obtient ainsi:
+$$ x-m=\sqrt{x^2+mx} \Leftrightarrow x^2-2mx+m^2=x^2+mx\Leftrightarrow 3mx=m^2.$$
+On doit alors distinguer deux cas selon que $m=0$ ou pas:
+\begin{itemize}
+\item[$\star$] Cas 2: $m=0$: dans ce cas, on obtient: $x-m=\sqrt{x^2+mx} \Leftrightarrow x = |x|$ ce qui est vrai si et seulement si $x \geq 0$. Ainsi \fbox{$\mathcal{S}_{m=0}=\R^+$} car le domaine de r\'esolution est $\R$.
+\item[$\star$] Cas 1 et Cas 3: $m\not= 0$: dans ce cas, on peut diviser par $m$ et on obtient:
+$$x-m=\sqrt{x^2+mx} \Leftrightarrow x=\ddp\frac{m}{3}.$$
+Il ne reste plus qu'\`{a} regarder si un tel $x$ est dans le domaine de d\'efinition, et s'il v\'erifie bien la condition $x\geq m$.
+\begin{itemize}
+\item[$\circ$] Cas 1: si $m>0$: on a $\ddp\frac{m}{3}\in \lbrack 0,+\infty\lbrack \subset\mathcal{D}$. Par contre, cette fois on a $\ddp \frac{m}{3} < m$, donc la solution ne convient pas. Ainsi on obtient que  \fbox{$\mathcal{S}_{m>0}= \emptyset$.} 
+\item[$\circ$] Cas 3: si $m<0$: on a bien $\ddp\frac{m}{3}\in \rbrack -\infty,0\rbrack\subset\mathcal{D}$, et d'autre part, on a aussi $\ddp \frac{m}{3} \geq m$. On obtient donc que \fbox{$\mathcal{S}_{m<0}=\left\lbrace  \ddp\frac{m}{3}  \right\rbrace$.} 
+\end{itemize}
+\end{itemize}
+\end{itemize}
+%\item \textbf{R\'esolution dans $\mathbf{\R}$ de $\mathbf{e^x+e^{-x}=2m}$:}\\
+%\begin{itemize}
+%\item[$\bullet$] Domaine de r\'esolution: $\mathcal{D}=\R$.
+%\item[$\bullet$] R\'esolution: on pose $X=e^x$ et l'\'equation devient alors: $X+\ddp\frac{1}{X}=2m\Leftrightarrow \ddp\frac{X^2-2mX+1}{X}=0\Leftrightarrow X^2-2mX+1=0$ car $X=e^x\not=0$. On s'est ainsi ramen\'e \`{a} la m\^{e}me \'equation que dans la question 4. On obtient donc les m\^{e}mes solutions.
+%\end{itemize}
+\end{enumerate}
+\end{correction}
